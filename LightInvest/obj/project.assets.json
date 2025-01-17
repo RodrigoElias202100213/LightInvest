@@ -8,19 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ivand\\.nuget\\packages\\": {}
+    "C:\\Users\\rodri\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ivand\\source\\repos\\LightInvest\\LightInvest\\LightInvest.csproj",
+      "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\LightInvest\\LightInvest\\LightInvest.csproj",
       "projectName": "LightInvest",
-      "projectPath": "C:\\Users\\ivand\\source\\repos\\LightInvest\\LightInvest\\LightInvest.csproj",
-      "packagesPath": "C:\\Users\\ivand\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivand\\source\\repos\\LightInvest\\LightInvest\\obj\\",
+      "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\LightInvest\\LightInvest\\LightInvest.csproj",
+      "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\LightInvest\\LightInvest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ivand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +33,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -70,7 +74,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.405/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
