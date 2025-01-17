@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LightInvest",
+    "\\LightInvest\\Controllers",
+    "\\LightInvest\\Models",
+    "\\LightInvest\\obj",
+    "\\LightInvest\\Properties",
+    "\\LightInvest\\Views",
+    "\\LightInvest\\wwwroot"
   ],
+  "SelectedNode": "\\LightInvest.sln",
   "PreviewInSolutionExplorer": false
 }
