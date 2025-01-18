@@ -1,51 +1,59 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LightInvest.Models;
 
-namespace LightInvest.Controllers
+public class AccountController : Controller
 {
-    public class AccountController : Controller
-    {
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
+	// Exibir a página de login
+	public IActionResult Login()
+	{
+		return View(new LoginViewModel());
+	}
+	// Processar o login
+	[HttpPost]
+	public IActionResult Login(LoginViewModel model)
+	{
+		if (ModelState.IsValid)
+		{
+			// Lógica de autenticação (exemplo simples)
+			if (model.Email == "teste@exemplo.com" && model.Password == "1234")
+			{
+				return RedirectToAction("Index", "Home");
+			}
 
-        [HttpPost]
-        public IActionResult Register(Register model)
-        {
-            // Lógica para registrar o usuário
-            return View();
-        }
+			//validar se o login e bem feito depois com a base de dados.
 
-        // Exibir o formulário de login
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
+			// Se as credenciais forem inválidas
+			ModelState.AddModelError("", "Credenciais inválidas.");
+		}
 
-        // Processar o login (a lógica será implementada mais tarde)
-        [HttpPost]
-        public IActionResult Login(Login model)
-        {
-            // Lógica de login
-            return View();
-        }
+		return View(model);
+	}
 
-        [HttpGet]
-        public IActionResult ForgotPassword()
-        {
-            return View();
-        }
+	public IActionResult Register()
+	{
+		// Passando uma instância do ViewModel para a View
+		return View(new RegisterViewModel());
+	}
 
-        [HttpPost]
-        public IActionResult ForgotPassword(ForgotPassword model)
-        {
-            // Lógica para enviar o e-mail de recuperação
-            return View();
-        }
+	// Processar o registro
+	[HttpPost]
+	public IActionResult Register(RegisterViewModel model)
+	{
+		if (ModelState.IsValid)
+		{
+			// Lógica fictícia de registro (substitua pela lógica real)
+			// Exemplo: Salvar usuário no banco de dados
+			TempData["SuccessMessage"] = "Conta criada com sucesso!";
+			return RedirectToAction("Login");
+		}
 
+		// Se falhar a validação, retorne à view com as mensagens de erro
+		return View(model);
+	}
 
-    }
+	// Exibe o formulário de recuperação de senha no PasswordRecoveryController
+	public IActionResult ForgotPassword()
+	{
+		return RedirectToAction("Recover", "PasswordRecovery");
+	}
 }
