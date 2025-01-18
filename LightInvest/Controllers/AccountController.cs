@@ -3,39 +3,33 @@ using LightInvest.Models;
 
 public class AccountController : Controller
 {
-	// Exibir a página de login
+	[HttpGet]
 	public IActionResult Login()
 	{
-		return View(new LoginViewModel());
+		return View();
 	}
-	// Processar o login
+
 	[HttpPost]
 	public IActionResult Login(LoginViewModel model)
 	{
 		if (ModelState.IsValid)
 		{
 			// Lógica de autenticação (exemplo simples)
-			if (model.Email == "teste@exemplo.com" && model.Password == "1234")
+			if (model.Email == "teste@gmail.com" && model.Password == "1234")
 			{
 				return RedirectToAction("Index", "Home");
 			}
-
 			//validar se o login e bem feito depois com a base de dados.
-
-			// Se as credenciais forem inválidas
 			ModelState.AddModelError("", "Credenciais inválidas.");
 		}
-
 		return View(model);
 	}
 
 	public IActionResult Register()
 	{
-		// Passando uma instância do ViewModel para a View
 		return View(new RegisterViewModel());
 	}
 
-	// Processar o registro
 	[HttpPost]
 	public IActionResult Register(RegisterViewModel model)
 	{

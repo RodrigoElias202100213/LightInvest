@@ -13,7 +13,7 @@ namespace LightInvest.Models
 		public string Email { get; set; }
 
 		[Required(ErrorMessage = "A palavra-passe é obrigatória.")]
-		[StringLength(100, MinimumLength = 6, ErrorMessage = "A palavra-passe deve ter pelo menos 6 caracteres.")]
+		[ValidPassword(ErrorMessage = "A palavra-passe deve ter pelo menos 8 caracteres, 2 números e 1 letra maiúscula.")]
 		public string Password { get; set; }
 
 		[Required(ErrorMessage = "A confirmação da palavra-passe é obrigatória.")]

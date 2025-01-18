@@ -7,13 +7,13 @@
 <div class="register-container">
     <div class="register-box">
         <div class="sidebar">
-            <img src="~/images/logo.png" alt="LightInvest Logo" />
+            <img src="~/images/logo.jpg" alt="LightInvest Logo" />
             <h1>LightInvest</h1>
         </div>
 
         <div class="register-form">
             <ul class="tabs">
-                <li><a href="@Url.Action("Login", "Account")">Login</a></li>
+                <li><a href="@Url.Action("Login", "Account")" style="text-decoration: none; border: none;">Login</a></li>
                 <li class="active">Registar</li>
             </ul>
 
@@ -121,7 +121,24 @@
             flex: 1;
             text-align: center;
             cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 30px;
+            font-weight: 500;
+            text-align: center;
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+            .tabs li:hover {
+                background-color: #004d40;
+                color: white;
+            }
+
+            .tabs li a {
+                text-decoration: none; /* Remove sublinhado */
+                border: none; /* Remove borda */
+                color: inherit; /* Mantém a cor atual */
+            }
 
         .tabs .active {
             font-weight: bold;
@@ -140,17 +157,31 @@
         }
 
     .form-actions {
-        text-align: right;
+        display: flex;
+        justify-content: center; /* Centraliza o botão */
+        margin-top: 20px;
     }
 
         .form-actions button {
-            padding: 10px 20px;
-            background: #004d40;
+            padding: 10px 25px;
+            background-color: #004d40;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 25px;
+            font-size: 1em;
             cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+            .form-actions button:hover {
+                background-color: #00796b;
+                transform: scale(1.05);
+            }
+
+            .form-actions button:active {
+                background-color: #00332a;
+            }
 
     .error-message {
         color: red;

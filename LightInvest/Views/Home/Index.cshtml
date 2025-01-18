@@ -1,8 +1,44 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid" style="font-family: Arial, sans-serif;">
+	<div class="row">
+		<!-- Sidebar -->
+		<div class="col-md-3 bg-teal text-white d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+			<div class="text-center">
+				<img src="~/images/logo.jpg" alt="LightInvest Logo"
+				style="width: 80px; margin-bottom: 20px;">
+				<h3>LightInvest</h3>
+			</div>
+		</div>
+
+		<!-- Main Content -->
+		<div class="col-md-9 d-flex flex-column justify-content-center align-items-center">
+			<div class="text-center">
+				<img src="/path-to-user-icon.png" alt="User Icon" style="width: 80px; margin-bottom: 20px;">
+				<p>USERNAME</p>
+			</div>
+            
+			<div class="mt-4" style="width: 50%;">
+				<button class="btn btn-teal btn-block mb-3" style="border-radius: 25px; height: 50px; font-size: 18px;">Simulações de ROI</button>
+				<button class="btn btn-teal btn-block mb-3" style="border-radius: 25px; height: 50px; font-size: 18px;">Simulações de Tarifas Energéticas</button>
+				<button class="btn btn-teal btn-block" style="border-radius: 25px; height: 50px; font-size: 18px;">Educação Energética</button>
+			</div>
+		</div>
+	</div>
 </div>
+
+<style>
+    .bg-teal {
+        background-color: #005f73; /* Adjust as per your design */
+    }
+    .btn-teal {
+        background-color: #0a9396;
+        color: white;
+    }
+    .btn-teal:hover {
+        background-color: #94d2bd;
+        color: black;
+    }
+</style>
