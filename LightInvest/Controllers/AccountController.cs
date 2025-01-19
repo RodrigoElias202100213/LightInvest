@@ -1,8 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LightInvest.Models;
+using LightInvest.Data; 
+using Microsoft.EntityFrameworkCore;
 
 public class AccountController : Controller
 {
+	private readonly ApplicationDbContext _context;
+
+	public AccountController(ApplicationDbContext context)
+	{
+		_context = context;
+	}
+
 	[HttpGet]
 	public IActionResult Login()
 	{
@@ -10,20 +19,33 @@ public class AccountController : Controller
 	}
 
 	[HttpPost]
-	public IActionResult Login(LoginViewModel model)
+	public async Task<IActionResult> Login(LoginViewModel model)
 	{
 		if (ModelState.IsValid)
 		{
-			// Lógica de autenticação (exemplo simples)
-			if (model.Email == "teste@gmail.com" && model.Password == "1234")
+			var user = await _context.Users
+				.FirstOrDefaultAsync(u => u.Email == model.Email);
+
+			if (user != null)
 			{
-				return RedirectToAction("Index", "Home");
+				if (user.Password == model.Password)
+				{
+					return RedirectToAction("Index", "Home");
+				}
+				else
+				{
+					ModelState.AddModelError("", "Palavra-passe incorreta.");
+				}
 			}
-			//validar se o login e bem feito depois com a base de dados.
-			ModelState.AddModelError("", "Credenciais inválidas.");
+			else
+			{
+				ModelState.AddModelError("", "Email não encontrado.");
+			}
 		}
 		return View(model);
 	}
+
+
 
 	public IActionResult Register()
 	{
@@ -31,21 +53,37 @@ public class AccountController : Controller
 	}
 
 	[HttpPost]
-	public IActionResult Register(RegisterViewModel model)
+	[ValidateAntiForgeryToken]
+	public async Task<IActionResult> Register(RegisterViewModel model)
 	{
 		if (ModelState.IsValid)
 		{
-			// Lógica fictícia de registro (substitua pela lógica real)
-			// Exemplo: Salvar usuário no banco de dados
-			TempData["SuccessMessage"] = "Conta criada com sucesso!";
-			return RedirectToAction("Login");
+			var existingUser = await _context.Users
+				.FirstOrDefaultAsync(u => u.Email == model.Email);
+
+			if (existingUser != null)
+			{
+				ModelState.AddModelError("Email", "Este email já está registado.");
+				return View(model);
+			}
+
+			var user = new User()
+			{
+				Name = model.Name,
+				Email = model.Email,
+				Password = model.Password
+			};
+
+			_context.Users.Add(user);
+			await _context.SaveChangesAsync();
+
+			TempData["SuccessMessage"] = "Registo bem-sucedido! Pode agora fazer login.";
+			return RedirectToAction("Login", "Account");
 		}
 
-		// Se falhar a validação, retorne à view com as mensagens de erro
 		return View(model);
 	}
 
-	// Exibe o formulário de recuperação de senha no PasswordRecoveryController
 	public IActionResult ForgotPassword()
 	{
 		return RedirectToAction("Recover", "PasswordRecovery");
