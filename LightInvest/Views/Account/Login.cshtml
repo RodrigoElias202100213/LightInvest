@@ -6,8 +6,7 @@
 <div class="login-container">
     <div class="login-box">
         <div class="sidebar">
-            <img src="~/images/logo.jpg" alt="LightInvest Logo" />
-            <h1>LightInvest</h1>
+            <img src="~/images/logo.jpg" alt="LightInvest Logo" style="width: 3000px; height: auto;" />
         </div>
 
         <div class="login-form">
@@ -29,7 +28,6 @@
                     <input type="password" id="password" name="password" placeholder="Palavra-Passe" required />
                 </div>
 
-                <!-- Centralizar o botão de login -->
                 <div class="form-actions">
                     <button type="submit">Login</button>
                 </div>
@@ -43,7 +41,7 @@
 </div>
 
 <style>
-    /* Estilo geral do contêiner */
+    /* Estilo geral do conteiner */
     .login-container {
         display: flex;
         justify-content: center;
@@ -61,22 +59,21 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Sidebar com imagem e título */
+    /* Sidebar com imagem */
     .sidebar {
-        background-color: #004d40;
+        background-color: #065A66;
         color: white;
         padding: 20px;
-        text-align: center;
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-        .sidebar img {
-            max-width: 100px;
-            margin: 0 auto 20px;
-        }
+    .sidebar img {
+        max-width: 250px;
+        margin: 0 auto 20px;
+    }
 
     /* Formulário de login */
     .login-form {
@@ -84,98 +81,100 @@
         padding: 30px;
     }
 
-    /* Estilo das abas de navegação */
+    /* Estilo das abas de Registo e Login*/
     .tabs {
         display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
     }
 
-        .tabs li {
-            flex: 1;
-            text-align: center;
-            cursor: pointer;
-            padding: 10px 15px;
-            border-radius: 30px;
-            font-weight: 500;
-            background-color: #f1f1f1;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
+    .tabs li {
+        flex: 1;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px 15px;
+        border-radius: 30px;
+        font-weight: 500;
+        background-color: #f1f1f1;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        list-style: none;
+        margin: 0 10px;
+       }
 
-        .tabs .active {
-            font-weight: bold;
-            border-bottom: 2px solid #004d40;
-        }
+    .tabs .active {
+        font-weight: bold;
+        border-bottom: 2px solid #065A66;
+    }
 
-        .tabs li:hover {
-            background-color: #004d40;
-            color: white;
-        }
+    .tabs li:hover {
+        background-color: #065A66;
+        color: white;
+    }
 
-        .tabs li a {
-            text-decoration: none;
-            color: inherit;
-        }
+    .tabs li a {
+        text-decoration: none;
+        color: inherit;
+    }
 
-            .tabs li a:hover {
-                color: #004d40;
-            }
+    .tabs li a:hover {
+        color: white;
+    }
+
 
     /* Estilo dos campos do formulário */
     .form-group {
         margin-bottom: 15px;
     }
 
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-    /* Centralização do botão de login */
-    .form-actions {
-        display: flex;
-        justify-content: center; /* Centraliza o botão */
-        margin-top: 20px;
-        width: 100%; /* Garante que ocupe toda a largura */
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
     }
 
-        .form-actions button {
-            padding: 10px 25px;
-            background-color: #004d40;
-            color: white;
-            border: none;
-            border-radius: 25px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .form-actions {
+        display: flex;
+        justify-content: center; 
+        margin-top: 20px;
+        width: 100%; 
+    }
 
-            .form-actions button:hover {
-                background-color: #00796b;
-                transform: scale(1.05);
-            }
+    .form-actions button {
+        padding: 10px 25px;
+        background-color: #065A66;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-            .form-actions button:disabled {
-                background-color: #dcdcdc;
-                cursor: not-allowed;
-            }
+    .form-actions button:hover {
+        background-color: #4C7B8B;
+        transform: scale(1.05);
+    }
 
-    /* Ações extras abaixo do formulário */
+    .form-actions button:disabled {
+        background-color: #dcdcdc;
+        cursor: not-allowed;
+    }
+
+    /* Ações extras abaixo do formulário - Esqueceu-se da palavra-passe? */
     .extra-actions {
         margin-top: 15px;
         text-align: center;
     }
 
-        .extra-actions a {
-            color: #004d40;
-            text-decoration: none;
-            font-size: 0.9em;
-        }
+    .extra-actions a {
+        color: #065A66;
+        text-decoration: none;
+        font-size: 0.9em;
+    }
 
-            .extra-actions a:hover {
-                text-decoration: underline;
-            }
+    .extra-actions a:hover {
+        text-decoration: underline;
+    }
 </style>

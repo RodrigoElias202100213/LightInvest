@@ -45,8 +45,6 @@ public class AccountController : Controller
 		return View(model);
 	}
 
-
-
 	public IActionResult Register()
 	{
 		return View(new RegisterViewModel());

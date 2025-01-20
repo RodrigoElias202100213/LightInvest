@@ -4734,24 +4734,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rodri\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\verag\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\LightInvest\\LightInvest\\LightInvest.csproj",
+      "projectUniqueName": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PA\\projeto_ligthinvest\\LightInvest\\LightInvest\\LightInvest.csproj",
       "projectName": "LightInvest",
-      "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\LightInvest\\LightInvest\\LightInvest.csproj",
-      "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\LightInvest\\LightInvest\\obj\\",
+      "projectPath": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PA\\projeto_ligthinvest\\LightInvest\\LightInvest\\LightInvest.csproj",
+      "packagesPath": "C:\\Users\\verag\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PA\\projeto_ligthinvest\\LightInvest\\LightInvest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\verag\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4759,6 +4754,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4776,8 +4772,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -4817,7 +4812,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
