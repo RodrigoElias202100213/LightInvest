@@ -30,7 +30,8 @@ public class AccountController : Controller
 			{
 				if (user.Password == model.Password)
 				{
-					return RedirectToAction("Index", "Home");
+                    HttpContext.Session.SetString("UserName", user.Name);
+                    return RedirectToAction("Index", "Home");
 				}
 				else
 				{
