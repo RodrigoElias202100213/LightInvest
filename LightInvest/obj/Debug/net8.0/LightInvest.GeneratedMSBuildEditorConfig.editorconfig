@@ -17,55 +17,51 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LightInvest
 build_property.RootNamespace = LightInvest
-build_property.ProjectDir = C:\Users\ivand\Source\Repos\LightInvest5\LightInvest\
+build_property.ProjectDir = C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ivand\Source\Repos\LightInvest5\LightInvest
+build_property.MSBuildProjectDirectory = C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/Account/Login.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/Account/Register.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/Home/Index.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/Home/Privacy.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/PasswordRecovery/Recover.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/PasswordRecovery/Recover.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRSZWNvdmVyeVxSZWNvdmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/ROICalculator/SimulacaoROI.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUk9JQ2FsY3VsYXRvclxTaW11bGFjYW9ST0kuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/Shared/Error.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/_ViewImports.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/_ViewStart.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ivand/Source/Repos/LightInvest5/LightInvest/Views/Shared/_Layout.cshtml]
+[C:/Users/verag/OneDrive - Instituto Politécnico de Setúbal/Documentos/IPS/3 ano/PV/LightInvest/LightInvest/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-a86u664hy4
