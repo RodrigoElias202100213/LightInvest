@@ -1,0 +1,62 @@
+﻿@model LightInvest.Models.ROICalculator
+
+@{
+    ViewData["Title"] = "Simulação de ROI";
+}
+
+<h2 class="text-center">Simulação de ROI</h2>
+
+<div class="container">
+    <form asp-action="CalcularROI" method="post">
+        <label>Custos Inicial de Instalação (€):</label>
+        <input type="text" asp-for="CustoInstalacao" />
+
+        <label>Consumo Energético Médio (anual/kWh):</label>
+        <input type="text" asp-for="ConsumoEnergeticoMedio" />
+
+        <label>Consumo Energético Rede (anual/kWh):</label>
+        <input type="text" asp-for="ConsumoEnergeticoRede" />
+
+        <label>Custo Manutenção (€):</label>
+        <input type="text" asp-for="CustoManutencaoAnual" />
+
+        <label>Retorno de Economia (anual/kWh):</label>
+        <input type="text" asp-for="RetornoEconomia" />
+
+        <button type="submit">Calcular</button>
+    </form>
+
+    @if (ViewBag.ROI != null)
+    {
+        <hr />
+        <h3>Resultado do ROI</h3>
+        <p><strong>ROI Calculado:</strong> @ViewBag.ROI %</p>
+        <p><strong>Tempo de Retorno do Investimento:</strong> @ViewBag.TempoRetorno anos</p>
+
+        <div>
+            <canvas id="roiChart"></canvas>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('roiChart').getContext('2d');
+        var roiChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: @Html.Raw(ViewBag.AnosJson),
+                datasets: [{
+                    label: 'Retorno do Investimento',
+                    data: @Html.Raw(ViewBag.RetornoJson),
+                    borderColor: 'green',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+}
