@@ -7,8 +7,8 @@
     "\\LightInvest\\obj",
     "\\LightInvest\\Properties",
     "\\LightInvest\\Views",
+    "\\LightInvest\\Views\\Account",
     "\\LightInvest\\wwwroot"
   ],
-  "SelectedNode": "\\LightInvest.sln",
   "PreviewInSolutionExplorer": false
 }
