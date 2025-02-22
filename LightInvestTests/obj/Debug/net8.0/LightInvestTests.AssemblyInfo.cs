@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LightInvestTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a444af827a0f119a3bbb3d6b7a0769e3b7f63957")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d6adb13d1aca859037459f5a5527c9f9b16a405")]
 [assembly: System.Reflection.AssemblyProductAttribute("LightInvestTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LightInvestTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

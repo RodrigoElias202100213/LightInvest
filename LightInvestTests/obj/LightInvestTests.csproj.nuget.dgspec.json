@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvestTests\\LightInvestTests.csproj": {}
+    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvestTests\\LightInvestTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvestTests\\LightInvestTests.csproj": {
+    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvestTests\\LightInvestTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvestTests\\LightInvestTests.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvestTests\\LightInvestTests.csproj",
         "projectName": "LightInvestTests",
-        "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvestTests\\LightInvestTests.csproj",
+        "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvestTests\\LightInvestTests.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvestTests\\obj\\",
+        "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvestTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvest\\LightInvest.csproj": {
-                "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvest\\LightInvest.csproj"
+              "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvest\\LightInvest.csproj": {
+                "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvest\\LightInvest.csproj"
               }
             }
           }
@@ -95,14 +95,14 @@
         }
       }
     },
-    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvest\\LightInvest.csproj": {
+    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvest\\LightInvest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvest\\LightInvest.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvest\\LightInvest.csproj",
         "projectName": "LightInvest",
-        "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvest\\LightInvest.csproj",
+        "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvest\\LightInvest.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lo\\LightInvest\\obj\\",
+        "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
