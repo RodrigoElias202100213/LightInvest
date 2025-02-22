@@ -1,11 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LightInvest.Models;
-using Newtonsoft.Json;
+using Microsoft.AspNetCore.Identity;
+using System;
+using LightInvest.Data;
 
 namespace LightInvest.Controllers
 {
 	public class ROICalculatorController : Controller
 	{
+		private readonly ApplicationDbContext _context;
+		private readonly UserManager<User> _userManager;
+
+		public ROICalculatorController(ApplicationDbContext context, UserManager<User> userManager)
+		{
+			_context = context;
+			_userManager = userManager;
+		}
+
 		// GET: ROICalculator
 		public ActionResult Index()
 		{
@@ -13,39 +24,43 @@ namespace LightInvest.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult Calcular(ROICalculator model)
+		public async Task<ActionResult> Calcular(ROICalculator model)
 		{
 			if (ModelState.IsValid)
 			{
-				try
-				{
-					decimal resultadoROI = model.CalcularROI();
-					ViewBag.ROI = resultadoROI;
+				// Calcular o ROI
+				decimal resultadoROI = model.CalcularROI();
 
-					// Cálculo do tempo de retorno (em anos) e dos dados para o gráfico
-					decimal tempoRetorno = model.CustoInstalacao /
-						(model.ConsumoEnergeticoRede - model.ConsumoEnergeticoMedio) * model.RetornoEconomia;
-					ViewBag.TempoRetorno = tempoRetorno;
+				// Obter o id do usuário logado
+				var user = await _userManager.GetUserAsync(User);
+				var userId = user?.Id;
 
-					// Simulando dados para gráfico (Exemplo de valores aleatórios)
-					var anos = new List<int> { 1, 2, 3, 4, 5 };
-					var retorno = new List<decimal> { 10, 20, 30, 40, 50 };
+				if (userId != null)
+				{
+					// Criar a nova entrada no banco de dados
+					var roiCalculation = new ROICalculator()
+					{
+						UserId = userId.Value,
+						CustoInstalacao = model.CustoInstalacao,
+						CustoManutencaoAnual = model.CustoManutencaoAnual,
+						ConsumoEnergeticoMedio = model.ConsumoEnergeticoMedio,
+						ConsumoEnergeticoRede = model.ConsumoEnergeticoRede,
+						RetornoEconomia = model.RetornoEconomia,
+						ROI = resultadoROI,
+						DataCalculado = DateTime.Now
+					};
 
-					ViewBag.AnosJson = JsonConvert.SerializeObject(anos);
-					ViewBag.RetornoJson = JsonConvert.SerializeObject(retorno);
+					// Salvar no banco de dados
+					_context.ROICalculators.Add(roiCalculation);
+					await _context.SaveChangesAsync();
 				}
-				catch (ArgumentException ex)
-				{
-					ViewBag.ROI = $"Erro: {ex.Message}";
-				}
-				catch (InvalidOperationException ex)
-				{
-					ViewBag.ROI = $"Erro: {ex.Message}";
-				}
+
+				// Exibir o resultado na view
+				ViewBag.Resultado = resultadoROI;
 			}
 			else
 			{
-				ViewBag.ROI = "Há erros de validação nos dados inseridos.";
+				ViewBag.Resultado = "Valores inválidos!";
 			}
 
 			return View("Index", model);
