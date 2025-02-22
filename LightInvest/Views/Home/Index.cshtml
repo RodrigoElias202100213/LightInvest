@@ -1,29 +1,32 @@
 ﻿@{
-	ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page";
 }
 
 <div class="home-container">
-	<div class="home-box">
-		<!-- Sidebar -->
-		<div class="sidebar">
-			<img src="~/images/logo.jpg" alt="LightInvest Logo" style="width: 3000px; height: auto;" />
-		</div>
-	
-		<!-- Main Content -->
-		<div class="main-content">
-			<div class="text-center">
-                <p>Bem-vindo, @ViewBag.UserName!</p>
-			</div>
-            
-			<div class="choices">
-				<button class="btn" style="border-radius: 25px; height: 50px; font-size: 18px;">Simulações de ROI</button>
-				<button class="btn" style="border-radius: 25px; height: 50px; font-size: 18px;">Simulações de Tarifas Energéticas</button>
-				<button class="btn" style="border-radius: 25px; height: 50px; font-size: 18px;">Educação Energética</button>
-			</div>
-		</div>
-	</div>
-</div>
+    <div class="home-box">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="~/images/logo.jpg" alt="LightInvest Logo" style="width: 3000px; height: auto;" />
+        </div>
 
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="text-center">
+                <p>Bem-vindo, @ViewBag.UserName!</p>
+            </div>
+
+            <div class="choices">
+                <!-- Botão para Simulação de ROI -->
+                <form asp-controller="ROICalculator" asp-action="Index">
+                    <button type="submit" class="btn">Simulações de ROI</button>
+                </form>
+
+                <button class="btn" style="border-radius: 25px; height: 50px; font-size: 18px;">Simulações de Tarifas Energéticas</button>
+                <button class="btn" style="border-radius: 25px; height: 50px; font-size: 18px;">Educação Energética</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
     /* Estilo geral do contêiner */
@@ -56,10 +59,10 @@
         align-items: center;
     }
 
-    .sidebar img {
-        max-width: 250px;
-        height: auto;
-    }
+        .sidebar img {
+            max-width: 250px;
+            height: auto;
+        }
 
     /* Conteúdo principal */
     .main-content {
@@ -83,7 +86,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 15px; 
+        gap: 15px;
     }
 
     .btn {
@@ -98,8 +101,8 @@
         text-align: center;
     }
 
-    .btn:hover {
-        background-color: #4C7B8B;
-        color: white;
-    }
+        .btn:hover {
+            background-color: #4C7B8B;
+            color: white;
+        }
 </style>

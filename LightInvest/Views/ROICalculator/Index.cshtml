@@ -1,0 +1,134 @@
+﻿@model LightInvest.Models.ROICalculator
+
+@{
+    ViewData["Title"] = "Simulação de ROI";
+}
+
+<div class="roi-container">
+    <div class="roi-box">
+        <!-- Formulário de Cálculo de ROI -->
+        <div class="roi-form">
+            <h2>Simulação de ROI</h2>
+            <form asp-action="Calcular" method="post">
+                <div class="form-group">
+                    <label for="CustoInstalacao">Custos Inicial de Instalação (€):</label>
+                    <input type="number" asp-for="CustoInstalacao" class="form-control" placeholder="Exemplo: 2000" />
+                </div>
+                <div class="form-group">
+                    <label for="ConsumoEnergeticoMedio">Consumo Energético Médio (anual/kWh):</label>
+                    <input type="number" asp-for="ConsumoEnergeticoMedio" class="form-control" placeholder="Exemplo: 1500" />
+                </div>
+                <div class="form-group">
+                    <label for="ConsumoEnergeticoRede">Consumo Energético Rede (anual/kWh):</label>
+                    <input type="number" asp-for="ConsumoEnergeticoRede" class="form-control" placeholder="Exemplo: 1000" />
+                </div>
+                <div class="form-group">
+                    <label for="CustoManutencaoAnual">Custo Manutenção (€):</label>
+                    <input type="number" asp-for="CustoManutencaoAnual" class="form-control" placeholder="Exemplo: 200" />
+                </div>
+                <div class="form-group">
+                    <label for="RetornoEconomia">Retorno de Economia (anual/kWh):</label>
+                    <input type="number" asp-for="RetornoEconomia" class="form-control" placeholder="Exemplo: 0.8" />
+                </div>
+                <button type="submit" class="btn btn-submit">Calcular ROI</button>
+            </form>
+        </div>
+
+        <!-- Exibir o Resultado do ROI -->
+        @if (ViewBag.Resultado != null)
+        {
+            <div class="roi-result">
+                <h3>Resultado do ROI</h3>
+                <p><strong>ROI Calculado:</strong> @ViewBag.Resultado</p>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    /* Contêiner principal */
+    .roi-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    /* Caixa do formulário */
+    .roi-box {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 100%;
+        max-width: 700px;
+        margin: 20px;
+    }
+
+    /* Título do formulário */
+    .roi-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #065A66;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    /* Estilo dos campos do formulário */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            font-size: 16px;
+            color: #333;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        color: #333;
+    }
+
+    /* Botão de envio */
+    .btn-submit {
+        width: 100%;
+        padding: 12px;
+        background-color: #065A66;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+        .btn-submit:hover {
+            background-color: #4C7B8B;
+        }
+
+    /* Estilo do resultado */
+    .roi-result {
+        margin-top: 30px;
+        text-align: center;
+        color: #333;
+    }
+
+        .roi-result h3 {
+            font-size: 22px;
+            color: #065A66;
+            font-weight: 600;
+        }
+
+        .roi-result p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    }
+</style>
