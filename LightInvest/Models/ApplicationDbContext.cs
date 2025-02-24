@@ -1,5 +1,6 @@
-﻿using LightInvest.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using LightInvest.Models;
 
 namespace LightInvest.Data
 {
@@ -9,10 +10,35 @@ namespace LightInvest.Data
 			: base(options)
 		{ }
 
-		// Adicione esta propriedade para representar a tabela de ROICalculators
-		public DbSet<ROICalculator> ROICalculators { get; set; }
-
-		// Se você tiver outras entidades, adicione-as aqui também
+		public DbSet<RoiCalculator> ROICalculators { get; set; }
 		public DbSet<User> Users { get; set; }
+
+		// Configuração do modelo no OnModelCreating
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			base.OnModelCreating(modelBuilder);
+
+			modelBuilder.Entity<RoiCalculator>(entity =>
+			{
+				// Definir a precisão e escala para as propriedades decimais
+				entity.Property(e => e.CustoInstalacao)
+					.HasColumnType("decimal(18,2)");
+
+				entity.Property(e => e.CustoManutencaoAnual)
+					.HasColumnType("decimal(18,2)");
+
+				entity.Property(e => e.ConsumoEnergeticoMedio)
+					.HasColumnType("decimal(18,2)");
+
+				entity.Property(e => e.ConsumoEnergeticoRede)
+					.HasColumnType("decimal(18,2)");
+
+				entity.Property(e => e.RetornoEconomia)
+					.HasColumnType("decimal(18,2)");
+
+				entity.Property(e => e.ROI)
+					.HasColumnType("decimal(18,2)");
+			});
+		}
 	}
 }

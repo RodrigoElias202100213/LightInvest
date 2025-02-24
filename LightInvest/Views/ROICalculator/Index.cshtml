@@ -1,4 +1,4 @@
-﻿@model LightInvest.Models.ROICalculator
+﻿@model LightInvest.Models.RoiCalculator
 
 @{
     ViewData["Title"] = "Simulação de ROI";
@@ -11,24 +11,24 @@
             <h2>Simulação de ROI</h2>
             <form asp-action="Calcular" method="post">
                 <div class="form-group">
-                    <label for="CustoInstalacao">Custos Inicial de Instalação (€):</label>
-                    <input type="number" asp-for="CustoInstalacao" class="form-control" placeholder="Exemplo: 2000" />
+                    <label for="CustoInstalacao">Custos Iniciais de Instalação (€):</label>
+                    <input type="number" asp-for="CustoInstalacao" class="form-control" placeholder="Exemplo: 2000" step="any" required />
                 </div>
                 <div class="form-group">
                     <label for="ConsumoEnergeticoMedio">Consumo Energético Médio (anual/kWh):</label>
-                    <input type="number" asp-for="ConsumoEnergeticoMedio" class="form-control" placeholder="Exemplo: 1500" />
+                    <input type="number" asp-for="ConsumoEnergeticoMedio" class="form-control" placeholder="Exemplo: 1500" step="any" required />
                 </div>
                 <div class="form-group">
                     <label for="ConsumoEnergeticoRede">Consumo Energético Rede (anual/kWh):</label>
-                    <input type="number" asp-for="ConsumoEnergeticoRede" class="form-control" placeholder="Exemplo: 1000" />
+                    <input type="number" asp-for="ConsumoEnergeticoRede" class="form-control" placeholder="Exemplo: 1000" step="any" required />
                 </div>
                 <div class="form-group">
-                    <label for="CustoManutencaoAnual">Custo Manutenção (€):</label>
-                    <input type="number" asp-for="CustoManutencaoAnual" class="form-control" placeholder="Exemplo: 200" />
+                    <label for="CustoManutencaoAnual">Custo de Manutenção Anual (€):</label>
+                    <input type="number" asp-for="CustoManutencaoAnual" class="form-control" placeholder="Exemplo: 200" step="any" required />
                 </div>
                 <div class="form-group">
                     <label for="RetornoEconomia">Retorno de Economia (anual/kWh):</label>
-                    <input type="number" asp-for="RetornoEconomia" class="form-control" placeholder="Exemplo: 0.8" />
+                    <input type="number" asp-for="RetornoEconomia" class="form-control" placeholder="Exemplo: 0.8" step="any" required />
                 </div>
                 <button type="submit" class="btn btn-submit">Calcular ROI</button>
             </form>
@@ -81,19 +81,26 @@
         margin-bottom: 15px;
     }
 
-        .form-group label {
-            font-size: 16px;
-            color: #333;
-        }
+    .form-group label {
+        font-size: 16px;
+        color: #333;
+        font-weight: 500;
+    }
 
     .form-control {
         width: 100%;
-        padding: 10px;
+        padding: 12px;
         margin-top: 5px;
-        border-radius: 5px;
+        border-radius: 8px;
         border: 1px solid #ddd;
         font-size: 14px;
         color: #333;
+        transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+        border-color: #065A66;
+        outline: none;
     }
 
     /* Botão de envio */
@@ -103,14 +110,15 @@
         background-color: #065A66;
         color: white;
         border: none;
-        border-radius: 25px;
+        border-radius: 30px;
         font-size: 18px;
         cursor: pointer;
+        transition: background-color 0.3s ease;
     }
 
-        .btn-submit:hover {
-            background-color: #4C7B8B;
-        }
+    .btn-submit:hover {
+        background-color: #4C7B8B;
+    }
 
     /* Estilo do resultado */
     .roi-result {
@@ -119,16 +127,15 @@
         color: #333;
     }
 
-        .roi-result h3 {
-            font-size: 22px;
-            color: #065A66;
-            font-weight: 600;
-        }
+    .roi-result h3 {
+        font-size: 22px;
+        color: #065A66;
+        font-weight: 600;
+    }
 
-        .roi-result p {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-        }
+    .roi-result p {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
     }
 </style>

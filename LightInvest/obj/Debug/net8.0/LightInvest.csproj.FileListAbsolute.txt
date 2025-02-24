@@ -888,3 +888,4 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\lololol\LightInvest\obj\Debug\net8.
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\lololol\LightInvest\obj\Debug\net8.0\LightInvest.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\lololol\LightInvest\obj\Debug\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\lololol\LightInvest\obj\Debug\net8.0\ref\LightInvest.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\lololol\LightInvest\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

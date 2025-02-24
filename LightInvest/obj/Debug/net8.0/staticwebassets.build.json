@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DLVgewU8GXjdkQxGNh8BpyqoaMi4Z7eZ0OdTPmIvjiM=",
+  "Hash": "k5y7v1SKpTT/VzVvEzWonFzSGfO+jtdkTwwWMB/oBc8=",
   "Source": "LightInvest",
   "BasePath": "_content/LightInvest",
   "Mode": "Default",
@@ -1186,8 +1186,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ay5nd8zt9x",
-      "Integrity": "4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E=",
+      "Fingerprint": "hgicp7rtim",
+      "Integrity": "cQ3yr3BfZTdcU8W0vbzdLGUr8b/bNcfKigKGHrLTJIg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
@@ -5688,7 +5688,7 @@
       ]
     },
     {
-      "Route": "lib/jquery-validation/dist/additional-methods.ay5nd8zt9x.js",
+      "Route": "lib/jquery-validation/dist/additional-methods.hgicp7rtim.js",
       "AssetFile": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lololol\\LightInvest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -5698,7 +5698,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "52977"
+          "Value": "52981"
         },
         {
           "Name": "Content-Type",
@@ -5706,11 +5706,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E=\""
+          "Value": "\"cQ3yr3BfZTdcU8W0vbzdLGUr8b/bNcfKigKGHrLTJIg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 22 Feb 2025 17:38:52 GMT"
+          "Value": "Sat, 22 Feb 2025 19:51:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5720,7 +5720,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ay5nd8zt9x"
+          "Value": "hgicp7rtim"
         },
         {
           "Name": "label",
@@ -5728,7 +5728,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E="
+          "Value": "sha256-cQ3yr3BfZTdcU8W0vbzdLGUr8b/bNcfKigKGHrLTJIg="
         }
       ]
     },
@@ -5743,7 +5743,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "52977"
+          "Value": "52981"
         },
         {
           "Name": "Content-Type",
@@ -5751,11 +5751,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E=\""
+          "Value": "\"cQ3yr3BfZTdcU8W0vbzdLGUr8b/bNcfKigKGHrLTJIg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 22 Feb 2025 17:38:52 GMT"
+          "Value": "Sat, 22 Feb 2025 19:51:42 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5765,7 +5765,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E="
+          "Value": "sha256-cQ3yr3BfZTdcU8W0vbzdLGUr8b/bNcfKigKGHrLTJIg="
         }
       ]
     },

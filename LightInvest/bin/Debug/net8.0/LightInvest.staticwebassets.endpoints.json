@@ -4431,7 +4431,7 @@
       ]
     },
     {
-      "Route": "lib/jquery-validation/dist/additional-methods.ay5nd8zt9x.js",
+      "Route": "lib/jquery-validation/dist/additional-methods.hgicp7rtim.js",
       "AssetFile": "lib/jquery-validation/dist/additional-methods.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -4445,7 +4445,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "52977"
+          "Value": "52981"
         },
         {
           "Name": "Content-Type",
@@ -4453,21 +4453,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E=\""
+          "Value": "\"cQ3yr3BfZTdcU8W0vbzdLGUr8b/bNcfKigKGHrLTJIg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 22 Feb 2025 17:38:52 GMT"
+          "Value": "Sat, 22 Feb 2025 19:51:42 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "ay5nd8zt9x"
+          "Value": "hgicp7rtim"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E="
+          "Value": "sha256-cQ3yr3BfZTdcU8W0vbzdLGUr8b/bNcfKigKGHrLTJIg="
         },
         {
           "Name": "label",
@@ -4490,7 +4490,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "52977"
+          "Value": "52981"
         },
         {
           "Name": "Content-Type",
@@ -4498,17 +4498,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E=\""
+          "Value": "\"cQ3yr3BfZTdcU8W0vbzdLGUr8b/bNcfKigKGHrLTJIg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 22 Feb 2025 17:38:52 GMT"
+          "Value": "Sat, 22 Feb 2025 19:51:42 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-4jrcLBsi0Ugm8iLKdqDsAyaCDjkscYZdoGuNH/zqs4E="
+          "Value": "sha256-cQ3yr3BfZTdcU8W0vbzdLGUr8b/bNcfKigKGHrLTJIg="
         }
       ]
     },
