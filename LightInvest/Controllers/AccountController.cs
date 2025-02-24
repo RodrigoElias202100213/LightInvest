@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using LightInvest.Models;
-using LightInvest.Data; 
+using LightInvest.Data;
 using Microsoft.EntityFrameworkCore;
 
 public class AccountController : Controller
@@ -30,8 +30,11 @@ public class AccountController : Controller
 			{
 				if (user.Password == model.Password)
 				{
-                    HttpContext.Session.SetString("UserName", user.Name);
-                    return RedirectToAction("Index", "Home");
+					// 🔥 Guarda o email na sessão para recuperação posterior
+					HttpContext.Session.SetString("UserEmail", user.Email);
+					HttpContext.Session.SetString("UserName", user.Name);
+
+					return RedirectToAction("Index", "Home");
 				}
 				else
 				{

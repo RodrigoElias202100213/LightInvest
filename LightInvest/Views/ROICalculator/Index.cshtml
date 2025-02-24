@@ -12,15 +12,15 @@
             <form asp-action="Calcular" method="post">
                 <div class="form-group">
                     <label for="CustoInstalacao">Custos Iniciais de Instalação (€):</label>
-                    <input type="number" asp-for="CustoInstalacao" class="form-control" placeholder="Exemplo: 2000" step="any" required />
+                    <input type="number" asp-for="CustoInstalacao" class="form-control" placeholder="Exemplo: 10000" step="any" required />
                 </div>
                 <div class="form-group">
                     <label for="ConsumoEnergeticoMedio">Consumo Energético Médio (anual/kWh):</label>
-                    <input type="number" asp-for="ConsumoEnergeticoMedio" class="form-control" placeholder="Exemplo: 1500" step="any" required />
+                    <input type="number" asp-for="ConsumoEnergeticoMedio" class="form-control" placeholder="Exemplo: 250" step="any" required />
                 </div>
                 <div class="form-group">
                     <label for="ConsumoEnergeticoRede">Consumo Energético Rede (anual/kWh):</label>
-                    <input type="number" asp-for="ConsumoEnergeticoRede" class="form-control" placeholder="Exemplo: 1000" step="any" required />
+                    <input type="number" asp-for="ConsumoEnergeticoRede" class="form-control" placeholder="Exemplo: 3000" step="any" required />
                 </div>
                 <div class="form-group">
                     <label for="CustoManutencaoAnual">Custo de Manutenção Anual (€):</label>
@@ -40,6 +40,13 @@
             <div class="roi-result">
                 <h3>Resultado do ROI</h3>
                 <p><strong>ROI Calculado:</strong> @ViewBag.Resultado</p>
+            </div>
+        }
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="roi-error">
+                <h3>Erro</h3>
+                <p><strong>@ViewBag.ErrorMessage</strong></p>
             </div>
         }
     </div>
@@ -81,11 +88,11 @@
         margin-bottom: 15px;
     }
 
-    .form-group label {
-        font-size: 16px;
-        color: #333;
-        font-weight: 500;
-    }
+        .form-group label {
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+        }
 
     .form-control {
         width: 100%;
@@ -98,10 +105,10 @@
         transition: border-color 0.3s ease;
     }
 
-    .form-control:focus {
-        border-color: #065A66;
-        outline: none;
-    }
+        .form-control:focus {
+            border-color: #065A66;
+            outline: none;
+        }
 
     /* Botão de envio */
     .btn-submit {
@@ -116,26 +123,26 @@
         transition: background-color 0.3s ease;
     }
 
-    .btn-submit:hover {
-        background-color: #4C7B8B;
-    }
+        .btn-submit:hover {
+            background-color: #4C7B8B;
+        }
 
     /* Estilo do resultado */
-    .roi-result {
+    .roi-result, .roi-error {
         margin-top: 30px;
         text-align: center;
         color: #333;
     }
 
-    .roi-result h3 {
-        font-size: 22px;
-        color: #065A66;
-        font-weight: 600;
-    }
+        .roi-result h3, .roi-error h3 {
+            font-size: 22px;
+            color: #065A66;
+            font-weight: 600;
+        }
 
-    .roi-result p {
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-    }
+        .roi-result p, .roi-error p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
 </style>

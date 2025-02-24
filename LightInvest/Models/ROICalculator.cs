@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LightInvest.Models
 {
@@ -6,19 +7,23 @@ namespace LightInvest.Models
 	{
 		public int Id { get; set; }
 
-		[Required] public int UserId { get; set; } // 🔥 O ID do usuário é obrigatório
+		[Required]
+		public string UserEmail { get; set; } // 🔥 Agora, associamos pelo email do usuário
 
-		[Required] public virtual User? User { get; set; } // 🔥 O usuário logado deve estar associado
+		[Required]
+		public decimal CustoInstalacao { get; set; }
 
-		[Required] public decimal CustoInstalacao { get; set; }
+		[Required]
+		public decimal CustoManutencaoAnual { get; set; }
 
-		[Required] public decimal CustoManutencaoAnual { get; set; }
+		[Required]
+		public decimal ConsumoEnergeticoMedio { get; set; }
 
-		[Required] public decimal ConsumoEnergeticoMedio { get; set; }
+		[Required]
+		public decimal ConsumoEnergeticoRede { get; set; }
 
-		[Required] public decimal ConsumoEnergeticoRede { get; set; }
-
-		[Required] public decimal RetornoEconomia { get; set; }
+		[Required]
+		public decimal RetornoEconomia { get; set; }
 
 		public decimal ROI { get; set; }
 
@@ -26,17 +31,21 @@ namespace LightInvest.Models
 
 		public decimal CalcularROI()
 		{
-			if (CustoInstalacao <= 0 || RetornoEconomia <= 0 || ConsumoEnergeticoMedio <= 0 ||
-			    ConsumoEnergeticoRede <= 0)
+			if (CustoInstalacao <= 0 || RetornoEconomia <= 0 || ConsumoEnergeticoMedio <= 0 || ConsumoEnergeticoRede <= 0)
 				throw new ArgumentException("Todos os valores devem ser positivos e maiores que zero.");
 
-			decimal economiaAnual = (ConsumoEnergeticoRede - ConsumoEnergeticoMedio) * RetornoEconomia;
-			decimal custoTotal = CustoInstalacao + CustoManutencaoAnual;
+			// Calcula a economia anual: 
+			// (Consumo Energético Rede - Consumo Energético Médio) * RetornoEconomia (em kWh)
+			// Subtraindo o Custo de Manutenção Anual
+			decimal economiaAnual = (ConsumoEnergeticoRede - ConsumoEnergeticoMedio) * RetornoEconomia - CustoManutencaoAnual;
 
 			if (economiaAnual <= 0)
 				throw new InvalidOperationException("A economia anual deve ser maior que zero para calcular o ROI.");
 
-			return (custoTotal / economiaAnual) * 100;
+			// Calculando o ROI como o número de anos para retorno do investimento
+			ROI = CustoInstalacao / economiaAnual; // O ROI aqui é o número de anos
+
+			return ROI;
 		}
 	}
 }
