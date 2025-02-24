@@ -86,6 +86,15 @@ public class AccountController : Controller
 		return View(model);
 	}
 
+	public IActionResult Logout()
+	{
+		// Limpa todas as informações da sessão
+		HttpContext.Session.Clear();
+
+		// Redireciona para a página de Login (ou para a Home, se preferir)
+		return RedirectToAction("Login", "Account");
+	}
+
 	public IActionResult ForgotPassword()
 	{
 		return RedirectToAction("Recover", "PasswordRecovery");

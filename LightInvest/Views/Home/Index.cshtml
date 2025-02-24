@@ -7,12 +7,13 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <img src="~/images/logo.jpg" alt="LightInvest Logo" style="width: 3000px; height: auto;" />
-        </div>
+            </div>
 
         <!-- Main Content -->
         <div class="main-content">
             <div class="text-center">
-                <p>Bem-vindo, @ViewBag.UserName!</p>
+	            <p>Bem-vindo, @ViewBag.UserName!</p>
+	            <a href="@Url.Action("Logout", "Account")" class="btn btn-danger">Logout</a>
             </div>
 
             <div class="choices">
