@@ -1,0 +1,67 @@
+﻿@model List<LightInvest.Models.RoiCalculator>
+
+@{
+	ViewBag.Title = "Evolução do ROI";
+}
+
+<h2>Evolução do ROI ao longo dos anos</h2>
+
+<div>
+	<canvas id="roiChart" width="800" height="400"></canvas>
+</div>
+
+@section Scripts {
+	<!-- Importa o Chart.js via CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+        // Prepara os dados para o gráfico
+        var labels = [
+            @foreach (var item in Model)
+            {
+	            @: '@item.DataCalculado.ToString("dd/MM/yyyy")',
+	            // Note que as vírgulas serão adicionadas automaticamente
+            }
+        ];
+
+        var dataValues = [
+            @foreach (var item in Model)
+            {
+	            @: @item.ROI,
+            }
+        ];
+
+        // Configuração do gráfico
+        var ctx = document.getElementById('roiChart').getContext('2d');
+        var roiChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'ROI (anos)',
+                    data: dataValues,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Data do Cálculo'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'ROI (anos)'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}

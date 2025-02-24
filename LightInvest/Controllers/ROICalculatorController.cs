@@ -59,7 +59,6 @@ public class ROICalculatorController : Controller
 
 		return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 	}
-
 	[HttpPost]
 	public async Task<IActionResult> Calcular(RoiCalculator model)
 	{
@@ -70,6 +69,12 @@ public class ROICalculatorController : Controller
 			return View("Index", model);
 		}
 
+		if (model.RetornoEconomia <= 0)
+		{
+			ViewBag.Resultado = "Erro: A economia total deve ser maior que zero!";
+			return View("Index", model);
+		}
+
 		// Buscar o cálculo de ROI existente
 		var roiCalculation = await _context.ROICalculators
 			.Where(r => r.UserEmail == user.Email)
@@ -77,7 +82,6 @@ public class ROICalculatorController : Controller
 
 		if (roiCalculation == null)
 		{
-			// Caso não exista cálculo anterior, criamos um novo
 			roiCalculation = new RoiCalculator
 			{
 				UserEmail = user.Email,
@@ -86,7 +90,7 @@ public class ROICalculatorController : Controller
 				ConsumoEnergeticoMedio = model.ConsumoEnergeticoMedio,
 				ConsumoEnergeticoRede = model.ConsumoEnergeticoRede,
 				RetornoEconomia = model.RetornoEconomia,
-				ROI = 0, // Inicialmente 0, pois ainda não foi calculado
+				ROI = 0,
 				DataCalculado = DateTime.Now
 			};
 
@@ -95,7 +99,6 @@ public class ROICalculatorController : Controller
 		}
 		else
 		{
-			// Atualizar os valores no banco de dados
 			roiCalculation.CustoInstalacao = model.CustoInstalacao;
 			roiCalculation.CustoManutencaoAnual = model.CustoManutencaoAnual;
 			roiCalculation.ConsumoEnergeticoMedio = model.ConsumoEnergeticoMedio;
@@ -107,22 +110,11 @@ public class ROICalculatorController : Controller
 			await _context.SaveChangesAsync();
 		}
 
-		// Validação: Garantir que a Economia Total seja maior que zero
-		if (roiCalculation.RetornoEconomia <= 0)
-		{
-			ViewBag.Resultado = "Erro: A economia total deve ser maior que zero!";
-			return View("Index", model); // Retorna à página com o erro
-		}
-
-		// Agora, após a atualização dos valores, o ROI será calculado
 		decimal resultadoROI = 0;
 		try
 		{
-			// Calcular o ROI
 			resultadoROI = roiCalculation.CalcularROI();
 			roiCalculation.ROI = resultadoROI;
-
-			// Atualiza o ROI calculado no banco de dados
 			_context.ROICalculators.Update(roiCalculation);
 			await _context.SaveChangesAsync();
 		}
@@ -132,9 +124,65 @@ public class ROICalculatorController : Controller
 			return View("Index", model);
 		}
 
-		// Exibir o resultado do cálculo do ROI na view
-		// Exibindo o resultado como anos e não como porcentagem
+		// Calcular a economia anual (valor que reduz a dívida a cada ano)
+		decimal economiaAnual = (roiCalculation.ConsumoEnergeticoRede - roiCalculation.ConsumoEnergeticoMedio)
+								 * roiCalculation.RetornoEconomia - roiCalculation.CustoManutencaoAnual;
+
+		// Determinar o número total de anos (arredondando para cima)
+		int totalAnos = (int)Math.Ceiling(resultadoROI);
+
+		// Gerar listas com os anos e o valor da dívida remanescente para cada ano
+		var anos = new List<int>();
+		var dividas = new List<decimal>();
+		for (int ano = 0; ano <= totalAnos; ano++)
+		{
+			anos.Add(ano);
+			decimal dividaRestante = roiCalculation.CustoInstalacao - (economiaAnual * ano);
+			if (dividaRestante < 0)
+				dividaRestante = 0;
+			dividas.Add(dividaRestante);
+		}
+
+		// Passa os arrays para a view via ViewBag
+		ViewBag.Years = anos;
+		ViewBag.Debts = dividas;
+
+		// Opcional: Buscar histórico de cálculos se desejar mostrar junto
+		var history = await _context.ROICalculators
+			.Where(r => r.UserEmail == user.Email)
+			.OrderBy(r => r.DataCalculado)
+			.ToListAsync();
+
+		// Cria o ViewModel do Dashboard (já criado anteriormente)
+		var dashboardViewModel = new RoiCalculatorDashboardViewModel
+		{
+			CurrentRoi = roiCalculation,
+			History = history
+		};
+
 		ViewBag.Resultado = $"ROI Calculado: {resultadoROI:F2} anos"; // Limitando para 2 casas decimais
-		return View("Index", model);
+
+		return View("Dashboard", dashboardViewModel);
 	}
+	
+	
+	[HttpGet]
+	public async Task<IActionResult> Grafico()
+	{
+		var user = await GetLoggedInUserAsync();
+		if (user == null)
+		{
+			TempData["Resultado"] = "Erro: Nenhum usuário autenticado!";
+			return RedirectToAction("Index");
+		}
+
+		// Recupera todos os registros de ROI do usuário, ordenados pela data
+		var roiRecords = await _context.ROICalculators
+			.Where(r => r.UserEmail == user.Email)
+			.OrderBy(r => r.DataCalculado)
+			.ToListAsync();
+
+		return View(roiRecords);
+	}
+
 }

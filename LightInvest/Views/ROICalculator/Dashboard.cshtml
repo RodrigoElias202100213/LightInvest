@@ -1,0 +1,66 @@
+﻿@model RoiCalculatorDashboardViewModel
+
+@{
+    ViewBag.Title = "Dashboard ROI";
+}
+
+<h2>@ViewBag.Resultado</h2>
+
+<div>
+    <p><strong>Data do Cálculo:</strong> @Model.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
+    <p><strong>ROI (Anos):</strong> @Model.CurrentRoi.ROI</p>
+    <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
+</div>
+
+<!-- Botões de navegação -->
+<div style="margin-bottom:20px;">
+	<a href="@Url.Action("Index", "ROICalculator")" class="btn btn-primary" style="margin-left:10px;">Voltar</a>
+	<a href="@Url.Action("Index", "Home")" class="btn btn-primary" style="margin-left:10px;">Página Principal</a>
+</div>
+
+<div>
+    <canvas id="roiChart" width="800" height="400"></canvas>
+</div>
+
+@section Scripts {
+    <!-- Importa o Chart.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Serializa os arrays passados pelo ViewBag -->
+    <script>
+        var anos = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Years));
+        var dividas = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Debts));
+
+        var ctx = document.getElementById('roiChart').getContext('2d');
+        var roiChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: anos, // Os anos (0, 1, 2, ..., totalAnos)
+                datasets: [{
+                    label: 'Dívida Remanescente (R$)',
+                    data: dividas,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Anos'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Dívida (R$)'
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}
