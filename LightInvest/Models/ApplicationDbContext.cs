@@ -9,6 +9,7 @@ namespace LightInvest.Data
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
 			: base(options)
 		{ }
+		public DbSet<PasswordRecoveryToken> PasswordRecoveryTokens { get; set; } // Nova tabela
 
 		public DbSet<RoiCalculator> ROICalculators { get; set; }
 		public DbSet<User> Users { get; set; }

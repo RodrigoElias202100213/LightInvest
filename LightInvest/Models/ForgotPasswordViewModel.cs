@@ -8,5 +8,4 @@ namespace LightInvest.Models
 		[EmailAddress]
 		public string Email { get; set; }
 	}
-
 }
