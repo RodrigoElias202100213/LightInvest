@@ -7,25 +7,18 @@
 <div class="register-container">
     <div class="register-box">
         <div class="sidebar">
-            <img src="~/images/logo.jpg" alt="LightInvest Logo" style="width: 3000px; height: auto;" />
+            <img src="~/images/logo.png" alt="LightInvest Logo" />
         </div>
 
         <div class="register-form">
-            <ul class="tabs">
-                <li><a href="@Url.Action("Login", "Account")" style="text-decoration: none; border: none;">Login</a></li>
-                <li class="active">Registar</li>
+            <ul class="header">
+                <li id="login"><a href="@Url.Action("Login", "Account")" style="text-decoration: none; border: none;">Login</a></li>
+                <li id="registo">Registar</li>
             </ul>
-
-            @if (TempData["SuccessMessage"] != null)
-            {
-                <div class="alert alert-success">
-                    @TempData["SuccessMessage"]
-                </div>
-            }
 
             <form method="post">
                 <div class="form-group">
-                    <label for="name">Nome *</label>
+                    <label for="name">Nome</label>
                     <input type="text" id="name" name="name" placeholder="Nome" required
                            value="@Model.Name" />
                     @if (ViewData.ModelState["Name"]?.Errors.Count > 0)
@@ -35,7 +28,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email *</label>
+                    <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Email" required
                            value="@Model.Email" />
                     @if (ViewData.ModelState["Email"]?.Errors.Count > 0)
@@ -45,7 +38,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Palavra-Passe *</label>
+                    <label for="password">Palavra-Passe</label>
                     <input type="password" id="password" name="password" placeholder="Palavra-Passe" required
                            value="@Model.Password" />
                     @if (ViewData.ModelState["Password"]?.Errors.Count > 0)
@@ -55,7 +48,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="confirmPassword">Confirmação da Palavra-Passe *</label>
+                    <label for="confirmPassword">Confirmação da Palavra-Passe</label>
                     <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmação da Palavra-Passe" required
                            value="@Model.ConfirmPassword" />
                     @if (ViewData.ModelState["ConfirmPassword"]?.Errors.Count > 0)
@@ -77,16 +70,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 110vh;
         background-color: #f9f9f9;
     }
 
     .register-box {
         display: flex;
         background: white;
-        width: 800px;
+        width: 950px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        height:600px;
     }
 
     .sidebar {
@@ -97,6 +91,9 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        color: white;
+        max-width: 250px;
+        height:600px;
     }
 
     .sidebar img {
@@ -104,23 +101,46 @@
         margin: 0 auto 20px;
     }
 
+    /* Estilo das abas de Registo e Login*/
+
+    #login {
+        font-weight: bold;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 2.5rem;
+        background-color: white;
+        color: #A3D1C6;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        list-style: none;
+        border-bottom: 2px solid #A3D1C6;
+    }
+
+    #registo {
+        font-weight: bold;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 2.5rem;
+        background-color: white;
+        color: #065A66;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        list-style: none;
+        border-bottom: 2px solid #065A66;
+    }
+
     .register-form {
         flex: 2;
         padding: 30px;
     }
 
-    .tabs {
+    .header {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: 5%;
     }
 
-    .tabs li {
+    .header li {
         flex: 1;
         text-align: center;
         cursor: pointer;
         padding: 10px 15px;
-        border-radius: 30px;
         font-weight: 500;
         text-align: center;
         background-color: #f1f1f1;
@@ -129,31 +149,24 @@
         margin: 0 10px;
     }
 
-    .tabs .active {
-        font-weight: bold;
-        border-bottom: 2px solid #065A66;
-    }
-
-    .tabs li:hover {
-         background-color: #065A66;
-        color: white;
-    }
-
-    .tabs li a {
+    .header li a {
         text-decoration: none; 
         border: none; 
         color: inherit;
     }
 
+    /*Formulário*/
     .form-group {
-        margin-bottom: 15px;
+        margin-top: 3%;
+        color: #065A66;
+        font-weight:bold;
     }
 
     .form-group input {
         width: 100%;
         padding: 10px;
         border: 1px solid #ddd;
-        border-radius: 4px;
+        border-radius: 20px;
     }
 
     .form-actions {
@@ -173,15 +186,6 @@
         transition: background-color 0.3s ease, transform 0.2s ease;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         margin-top: 20px; 
-    }
-
-    .form-actions button:hover {
-        background-color: #4C7B8B;
-        transform: scale(1.05);
-    }
-
-    .form-actions button:active {
-        background-color: #00332a;
     }
 
     .error-message {

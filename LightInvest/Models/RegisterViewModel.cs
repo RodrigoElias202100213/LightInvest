@@ -17,7 +17,7 @@ namespace LightInvest.Models
 		public string Password { get; set; }
 
 		[Required(ErrorMessage = "A confirmação da palavra-passe é obrigatória.")]
-		[Compare("Password", ErrorMessage = "As palavras-passe não coincidem.")]
+		[Compare("Password", ErrorMessage = "As palavras-passes não coincidem.")]
 		public string ConfirmPassword { get; set; }
 	}
 }
