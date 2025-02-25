@@ -30,7 +30,6 @@ public class AccountController : Controller
 			{
 				if (user.Password == model.Password)
 				{
-					// 🔥 Guarda o email na sessão para recuperação posterior
 					HttpContext.Session.SetString("UserEmail", user.Email);
 					HttpContext.Session.SetString("UserName", user.Name);
 
@@ -38,7 +37,7 @@ public class AccountController : Controller
 				}
 				else
 				{
-					ModelState.AddModelError("", "Palavra-passe incorreta.");
+					ModelState.AddModelError("", " Email ou palavra-passe incorreta.");
 				}
 			}
 			else
@@ -88,10 +87,7 @@ public class AccountController : Controller
 
 	public IActionResult Logout()
 	{
-		// Limpa todas as informações da sessão
 		HttpContext.Session.Clear();
-
-		// Redireciona para a página de Login (ou para a Home, se preferir)
 		return RedirectToAction("Login", "Account");
 	}
 

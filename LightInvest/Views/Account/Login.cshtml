@@ -16,7 +16,6 @@
             </ul>
 
             <form method="post">
-                <div asp-validation-summary="All" class="text-danger"></div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -26,6 +25,18 @@
                     <label for="password">Palavra-Passe</label>
                     <input type="password" id="password" name="password" placeholder="Palavra-Passe" required />
                 </div>
+
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="text-danger">
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <p>@error.ErrorMessage</p>
+                        }
+                    </div>
+                }
+
+
                 <div id="end-row">
                     <div class="extra-actions">
                         <a href="@Url.Action("ForgotPassword", "Account")">Esqueceu-se da palavra-passe?</a>
@@ -34,7 +45,7 @@
                         <button type="submit">Login</button>
                     </div>
                 </div>
-                
+
             </form>
         </div>
     </div>
@@ -134,7 +145,7 @@
 
     /* Estilo dos campos do formulário */
     .form-group {
-        margin-top:5%;
+        margin-top:3%;
         font-weight:bold;
         color: #065A66;
     }
@@ -176,5 +187,11 @@
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.2s ease;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /*Erros*/
+    .text-danger {
+        text-align: center;
+        margin-top:2%;
     }
 </style>
