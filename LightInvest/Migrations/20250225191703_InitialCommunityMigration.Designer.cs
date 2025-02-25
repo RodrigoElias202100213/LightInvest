@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LightInvest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250224135619_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250225191703_InitialCommunityMigration")]
+    partial class InitialCommunityMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

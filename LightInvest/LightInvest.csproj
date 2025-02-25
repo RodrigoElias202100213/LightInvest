@@ -7,11 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\images\logo.jpg" />
+    <Compile Remove="NewFolder\**" />
+    <Content Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="NewFolder\" />
+    <None Include="wwwroot\images\logo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
