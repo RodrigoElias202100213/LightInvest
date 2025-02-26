@@ -30,28 +30,22 @@
 					<label for="RetornoEconomia">Retorno de Economia (anual/kWh):</label>
 					<input type="number" asp-for="RetornoEconomia" class="form-control" placeholder="Exemplo: 0.8" step="any" required/>
 				</div>
+
+                <!-- Exibir o Resultado do ROI -->
+                @if (!string.IsNullOrEmpty(ViewBag.Resultado))
+                {
+                    <div class="roi-error">
+                        <p><strong>@ViewBag.Resultado</strong></p>
+                    </div>
+                }
+
+
 				<div id="end-row">
 					<a href="@Url.Action("Index", "Home")" class="btn-primary">Voltar</a>
 					<button type="submit" class="btn-submit">Calcular ROI</button>
 				</div> 
 			</form>
 		</div>
-
-		<!-- Exibir o Resultado do ROI -->
-		@if (ViewBag.Resultado != null)
-		{
-			<div class="roi-result">
-				<h3>Resultado do ROI</h3>
-				<p><strong>ROI Calculado:</strong> @ViewBag.Resultado</p>
-			</div>
-		}
-		@if (ViewBag.ErrorMessage != null)
-		{
-			<div class="roi-error">
-				<h3>Erro</h3>
-				<p><strong>@ViewBag.ErrorMessage</strong></p>
-			</div>
-		}
 	</div>
 </div>
 
@@ -161,9 +155,10 @@
     background-color: #4C7B8B;
 }
 
-.roi-result p, .roi-error p {
-    font-size: 18px;
+
+.roi-error p {
+    font-size: 15px;
     font-weight: bold;
-    color: #333;
+    color: red;
 }
 </style>
