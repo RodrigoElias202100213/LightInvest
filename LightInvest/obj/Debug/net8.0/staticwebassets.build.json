@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ldPPZZh32TIOOpYUotEtGv1uNKv+oC4er8Tlf/I2uR4=",
+  "Hash": "3zYAN6m5GiWhwZzqlOGyxt7F06QrkJ7JbyEo0gzx4SY=",
   "Source": "LightInvest",
   "BasePath": "_content/LightInvest",
   "Mode": "Default",
@@ -91,25 +91,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
-      "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\wwwroot\\images\\logo.jpg",
-      "SourceId": "LightInvest",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\wwwroot\\",
-      "BasePath": "_content/LightInvest",
-      "RelativePath": "images/logo.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\logo.jpg"
     },
     {
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\wwwroot\\images\\logo.png",

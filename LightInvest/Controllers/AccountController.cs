@@ -78,7 +78,6 @@ public class AccountController : Controller
 			_context.Users.Add(user);
 			await _context.SaveChangesAsync();
 
-			//TempData["SuccessMessage"] = "Registo bem-sucedido! Pode agora fazer login.";
 			return RedirectToAction("Login", "Account");
 		}
 

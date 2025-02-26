@@ -6,19 +6,25 @@
     <div class="login-box">
         <div class="sidebar">
             <img src="~/images/logo.png" alt="LightInvest Logo" />
-            <h1>LightInvest</h1>
         </div>
 
         <div class="login-form">
-            <h2>Recuperação de Senha</h2>
+            <h2>Recuperar Palavra-Passe</h2>
             <form method="post">
                 <div class="form-group">
-                    <label for="email">Digite seu e-mail *</label>
+                    <p>Insira o email associado à sua conta! Será enviado um email com instruções para redefinir a palavra-passe.</p>
                     <input type="email" id="email" name="email" placeholder="Email" required />
                 </div>
-                <div class="form-actions">
-                    <button type="submit">Recuperar Senha</button>
+                <div id="end-row">
+                    <div class="extra-actions">
+                        <a href="@Url.Action("Login", "Account")">Voltar para o Login</a>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Enviar</button>
+                    </div>
                 </div>
+                
+                
             </form>
 
             @if (TempData["SuccessMessage"] != null)
@@ -27,10 +33,6 @@
                     @TempData["SuccessMessage"]
                 </div>
             }
-
-            <div class="extra-actions">
-                <a href="@Url.Action("Login", "Account")">Voltar para o Login</a>
-            </div>
         </div>
     </div>
 </div>
@@ -48,69 +50,84 @@
         display: flex;
         background: white;
         width: 800px;
+        height:400px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     .sidebar {
-        background-color: #004d40;
+        background-color: #065A66;
         color: white;
         padding: 20px;
-        text-align: center;
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        max-width: 250px;
     }
 
-        .sidebar img {
-            max-width: 100px;
-            margin: 0 auto 20px;
-        }
+    .sidebar img {
+        width: 250px;
+    }
 
     .login-form {
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-content: center;
         flex: 2;
         padding: 30px;
     }
 
-    .form-group {
-        margin-bottom: 15px;
+    h2 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight:bold;
+        color: #065A66;
+        text-align:center;
+        font-size: 2.3rem;
+        margin-bottom: 2%;
     }
 
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-    .form-actions {
-        text-align: right;
-    }
-
-        .form-actions button {
-            padding: 10px 20px;
-            background: #004d40;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-    .extra-actions {
-        margin-top: 15px;
+    .form-group p {
         text-align: center;
     }
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 20px;
+        margin-bottom: 4%;
+        margin-top:7%;
+    }
 
-        .extra-actions a {
-            color: #004d40;
-            text-decoration: none;
-            font-size: 0.9em;
-        }
+    /*Ultima linha*/
+    #end-row{
+        display:flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content:center;
+    }
 
-            .extra-actions a:hover {
-                text-decoration: underline;
-            }
+    .form-actions button {
+        padding: 10px 25px;
+        background: #065A66;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size:1em;
+    }
+
+    .extra-actions {
+        margin-right:3%;
+    }
+
+    .extra-actions a {
+        color: #065A66;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+    }
 
     .alert-success {
         background-color: #d4edda;
