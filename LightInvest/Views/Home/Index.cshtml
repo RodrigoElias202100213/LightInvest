@@ -6,15 +6,18 @@
     <div class="home-box">
         <!-- Sidebar -->
         <div class="sidebar">
-            <img src="~/images/logo.jpg" alt="LightInvest Logo" style="width: 3000px; height: auto;" />
-            </div>
+            <img src="~/images/logo.png" alt="LightInvest Logo" />
+        </div>
 
         <!-- Main Content -->
         <div class="main-content">
-            <div class="text-center">
-	            <p>Bem-vindo, @ViewBag.UserName!</p>
-	            <a href="@Url.Action("Logout", "Account")" class="btn btn-danger">Logout</a>
+
+            <!--Cabeçalho-->
+            <div id="header">
+                <h2>Bem Vindo,</h2>
+                <p>@ViewBag.UserName!</p>
             </div>
+
 
             <div class="choices">
                 <!-- Botão para Simulação de ROI -->
@@ -22,8 +25,13 @@
                     <button type="submit" class="btn">Simulações de ROI</button>
                 </form>
 
-                <button class="btn" style="border-radius: 25px; height: 50px; font-size: 18px;">Simulações de Tarifas Energéticas</button>
-                <button class="btn" style="border-radius: 25px; height: 50px; font-size: 18px;">Educação Energética</button>
+                <button class="btn">Simulações de Tarifas Energéticas</button>
+                <button class="btn">Educação Energética</button>
+                
+                <div id="sair">
+                    <a href="@Url.Action("Logout", "Account")" class="btn btn-sair">Sair</a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -35,7 +43,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        height: 80vh;
         background-color: #f9f9f9;
     }
 
@@ -43,8 +51,8 @@
     .home-box {
         display: flex;
         background: white;
-        width: 1000px;
-        min-height: 500px;
+        width: 950px;
+        height: 450px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
@@ -56,14 +64,16 @@
         padding: 20px;
         flex: 1;
         display: flex;
+        flex-direction:column;
         justify-content: center;
-        align-items: center;
+        max-width: 250px;
+        height: 450px;
     }
 
-        .sidebar img {
-            max-width: 250px;
-            height: auto;
-        }
+    .sidebar img {
+        max-width: 250px;
+        margin: 0 auto 20px;
+    }
 
     /* Conteúdo principal */
     .main-content {
@@ -75,11 +85,29 @@
         padding: 20px;
     }
 
-    .username {
+    #header {
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+    }
+
+    h2 {
+        font-weight:bold;
+        font-size: 3rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+        text-align:center;
+    }
+
+    p {
         margin-bottom: 20px;
         text-align: center;
-        font-size: 18px;
+        font-size: 1.5rem;
         font-weight: bold;
+        color: #87C8B8;
+        margin-bottom:20%;
     }
 
     /* Botões */
@@ -92,7 +120,7 @@
 
     .btn {
         border-radius: 25px;
-        height: 50px;
+        height: 35px;
         width: 400px;
         font-size: 18px;
         background-color: #065A66;
@@ -102,8 +130,25 @@
         text-align: center;
     }
 
-        .btn:hover {
-            background-color: #4C7B8B;
-            color: white;
-        }
+    .btn:hover {
+        background-color: #4C7B8B;
+        color: white;
+    }
+
+    .btn-sair {
+        background-color: #87C8B8;
+        cursor:pointer ;
+        border-radius: 25px;
+        height: 35px;
+        width: 400px;
+        font-size: 18px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .btn-sair:hover{
+            background-color: #A3D1C6;
+    }
 </style>
