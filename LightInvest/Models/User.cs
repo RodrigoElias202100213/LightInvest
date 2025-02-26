@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace LightInvest.Models
 {
-	public class User
+	public class User : IdentityUser
 	{
 		public int Id { get; set; }
 

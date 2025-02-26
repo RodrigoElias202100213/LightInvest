@@ -1,16 +1,33 @@
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using LightInvest.Data;
 using LightInvest.Models;
-using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Registrar o DbContext
+// 🔹 1. Configurar o banco de dados
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// 🔹 2. Configurar o Identity corretamente
+builder.Services.AddIdentity<User, IdentityRole>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = false;
+})
+    .AddEntityFrameworkStores<ApplicationDbContext>() // 🔥 Agora o Identity funcionará
+    .AddDefaultTokenProviders();
 
-// Registrar os servi�os necess�rios
+// 🔹 3. Configurar autenticação e cookies
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Account/Login"; // Redireciona usuários não autenticados
+    options.AccessDeniedPath = "/Account/AccessDenied";
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+    options.SlidingExpiration = true;
+});
+
+// 🔹 4. Adicionar suporte a Controllers e Views
 builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -28,12 +45,14 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
+
 app.UseSession();
-app.UseAuthentication();  // Importante: Adicionar a autentica��o
+app.UseAuthentication();  // 🔥 Agora o Identity está funcionando!
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -41,3 +60,5 @@ app.MapControllerRoute(
     pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();
+
+
