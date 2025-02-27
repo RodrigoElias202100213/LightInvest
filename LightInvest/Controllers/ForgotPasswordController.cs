@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using LightInvest.Models;
+
 
 [Route("PasswordRecovery")]
 public class PasswordRecoveryController : Controller
@@ -19,37 +20,31 @@ public class PasswordRecoveryController : Controller
         return View();
     }
 
-    [HttpPost]
-    [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Recover(string email)
+    [HttpPost("Recover")]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Recover(string email)
+{
+    if (string.IsNullOrEmpty(email))
     {
-        if (string.IsNullOrEmpty(email))
-        {
-            ModelState.AddModelError("", "Por favor, insira um e-mail válido.");
-            return View();
-        }
-
-        var user = await _userManager.FindByEmailAsync(email);
-        if (user == null)
-        {
-            TempData["SuccessMessage"] = "Se este e-mail estiver registrado, um código de redefinição foi enviado.";
-            return RedirectToAction("Recover");
-        }
-
-        // Gerar o token de redefinição de senha
-        var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-
-        // Para testes: exibe o token na view (remova em produção)
-        TempData["TokenForTesting"] = token;
-        TempData["SuccessMessage"] = $"Token gerado (para teste): {token}";
-
-        // Em produção, você enviaria o token por e-mail aqui
-        // bool emailEnviado = await EnviarEmailComToken(user.Email, token);
-        // TempData["SuccessMessage"] = emailEnviado ? "Código enviado para o e-mail." : "Erro ao enviar o e-mail.";
-
-        return RedirectToAction("ValidateCode");
-
+        ModelState.AddModelError("", "Por favor, insira um e-mail válido.");
+        return View();
     }
+
+    var user = await _userManager.FindByEmailAsync(email);
+    if (user == null)
+    {
+        // Mesmo se o usuário não for encontrado, exibimos uma mensagem genérica
+        TempData["SuccessMessage"] = "Se este e-mail estiver registrado, um código de redefinição de senha foi enviado para o seu e-mail.";
+        return RedirectToAction("Recover");
+    }
+
+    var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+    // Em produção, você enviaria o token por e-mail e não o exibiria na mensagem
+    TempData["SuccessMessage"] = "Se este e-mail estiver registrado, um código de redefinição de senha foi enviado para o seu e-mail.";
+
+    return RedirectToAction("ValidateCode");
+}
+
 
     [HttpGet("ValidateCode")]
     public IActionResult ValidateCode()
@@ -112,6 +107,4 @@ public class PasswordRecoveryController : Controller
         return RedirectToAction("Login", "Account");
     }
 }
-
-
 
