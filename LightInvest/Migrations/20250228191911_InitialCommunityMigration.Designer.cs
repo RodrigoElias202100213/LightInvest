@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LightInvest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250225191703_InitialCommunityMigration")]
+    [Migration("20250228191911_InitialCommunityMigration")]
     partial class InitialCommunityMigration
     {
         /// <inheritdoc />

@@ -9,14 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// 🔹 2. Configurar o Identity corretamente
-builder.Services.AddIdentity<User, IdentityRole>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = false;
-})
-    .AddEntityFrameworkStores<ApplicationDbContext>() // 🔥 Agora o Identity funcionará
-    .AddDefaultTokenProviders();
-
+	
 // 🔹 3. Configurar autenticação e cookies
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -26,6 +19,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
     options.SlidingExpiration = true;
 });
+
+builder.Services.AddSingleton<EmailService>();  // Registra o EmailService como singleton
 
 // 🔹 4. Adicionar suporte a Controllers e Views
 builder.Services.AddControllersWithViews();
