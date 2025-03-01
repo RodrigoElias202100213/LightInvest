@@ -12,15 +12,15 @@ namespace LightInvest.Data
 
 		public DbSet<RoiCalculator> ROICalculators { get; set; }
 		public DbSet<User> Users { get; set; }
+		public DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
 
-		// Configuração do modelo no OnModelCreating
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
 
 			modelBuilder.Entity<RoiCalculator>(entity =>
 			{
-				// Definir a precisão e escala para as propriedades decimais
 				entity.Property(e => e.CustoInstalacao)
 					.HasColumnType("decimal(18,2)");
 

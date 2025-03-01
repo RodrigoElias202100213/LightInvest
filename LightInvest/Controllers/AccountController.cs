@@ -2,6 +2,8 @@
 using LightInvest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
+using System.Text;
 
 public class AccountController : Controller
 {
@@ -117,5 +119,189 @@ public class AccountController : Controller
 
 		return RedirectToAction("Index", "Home");
 	}
+
 	
+	[HttpPost]
+	public async Task<IActionResult> GeneratePasswordResetTokenAndSendEmail(string email)
+	{
+		if (string.IsNullOrEmpty(email))
+		{
+			return BadRequest("O e-mail é obrigatório.");
+		}
+
+		var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+		if (user == null)
+		{
+			return NotFound("Se este e-mail estiver cadastrado, um link de recuperação será enviado.");
+		}
+
+		// Gerar um token seguro aleatório
+		var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32));
+
+		// Criar um novo registro na tabela de tokens de redefinição de senha
+		var resetToken = new PasswordResetToken
+		{
+			Email = email,
+			Token = token,
+			Expiration = DateTime.UtcNow.AddHours(1) // Token válido por 1 hora
+		};
+
+		// Adicionar o token ao banco de dados
+		_context.PasswordResetTokens.Add(resetToken);
+		await _context.SaveChangesAsync();
+
+		// Enviar o token por e-mail (sem link, apenas o token)
+		string subject = "Recuperação de Senha - LightInvest";
+		string body = $"Olá,\n\nO seu token de recuperação de senha é: {token}\n\nEste token é válido por 1 hora. Utilize-o para redefinir sua senha.";
+
+		bool emailSent = await _emailService.SendEmailAsync(email, subject, body);
+
+		if (emailSent)
+		{
+			TempData["Message"] = "O token de recuperação foi enviado para o seu e-mail.";
+		}
+		else
+		{
+			TempData["Message"] = "Erro ao enviar o e-mail. Tente novamente mais tarde.";
+		}
+
+		return RedirectToAction("GeneratePasswordResetTokenAndSendEmail");
+	}
+
+
+
+	[HttpGet]
+	public IActionResult ForgotPassword()
+	{
+		return View();
+	}
+
+	[HttpPost]
+	[ValidateAntiForgeryToken]
+	public async Task<IActionResult> ForgotPassword(string email)
+	{
+		if (string.IsNullOrEmpty(email))
+		{
+			ModelState.AddModelError("", "O email é obrigatório.");
+			return View();
+		}
+
+		var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+		if (user == null)
+		{
+			ModelState.AddModelError("", "Email não encontrado.");
+			return View();
+		}
+
+		// Gerar um token único e enviar o email
+		var token = Guid.NewGuid().ToString();
+
+		var tokenEntry = new PasswordResetToken
+		{
+			Email = email,
+			Token = token,
+			Expiration = DateTime.UtcNow.AddHours(1) // Defina o tempo de expiração do token
+		};
+
+		_context.PasswordResetTokens.Add(tokenEntry);
+		await _context.SaveChangesAsync();
+
+		// Enviar o token por email
+		var body = $"Seu token de recuperação de senha é: {token}";
+		await Enviaremail(email, "Recuperação de Senha", body); // Função para envio de email
+
+		// Após enviar o token, redireciona para a página de validação do token
+		return RedirectToAction("ValidateToken", new { email = email });
+	}
+
+	[HttpGet]
+	public IActionResult ValidateToken(string email)
+	{
+		// Verifica se o e-mail foi passado como parâmetro
+		if (string.IsNullOrEmpty(email))
+		{
+			return RedirectToAction("ForgotPassword");
+		}
+
+		return View(new ValidateTokenViewModel { Email = email });
+	}
+
+	[HttpPost]
+	[ValidateAntiForgeryToken]
+	public async Task<IActionResult> ValidateToken(ValidateTokenViewModel model)
+	{
+		if (string.IsNullOrEmpty(model.Token) || string.IsNullOrEmpty(model.Email))
+		{
+			ModelState.AddModelError("", "O token e o e-mail são obrigatórios.");
+			return View(model);
+		}
+
+		var tokenEntry = await _context.PasswordResetTokens
+			.FirstOrDefaultAsync(t => t.Token == model.Token && t.Email == model.Email && t.Expiration > DateTime.UtcNow);
+
+		if (tokenEntry == null)
+		{
+			ModelState.AddModelError("", "Token inválido ou expirado.");
+			return View(model);
+		}
+
+		// Se o token for válido, redireciona para a página de redefinir senha
+		return RedirectToAction("ResetPassword", new { email = model.Email, token = model.Token });
+	}
+
+
+	[HttpGet]
+	public IActionResult ResetPassword(string email, string token)
+	{
+		// Verifica se o token e o e-mail são válidos
+		if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(token))
+		{
+			return NotFound();
+		}
+
+		// Retorna a view para redefinir a senha com o e-mail e o token
+		return View(new ResetPasswordViewModel { Email = email, Token = token });
+	}
+
+	[HttpPost]
+	[ValidateAntiForgeryToken]
+	public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
+	{
+		if (ModelState.IsValid)
+		{
+			// Verifica se o token e o e-mail são válidos no banco de dados
+			var tokenEntry = await _context.PasswordResetTokens
+				.FirstOrDefaultAsync(t => t.Email == model.Email && t.Token == model.Token && t.Expiration > DateTime.UtcNow);
+
+			if (tokenEntry == null)
+			{
+				ModelState.AddModelError("", "Token inválido ou expirado.");
+				return View(model);
+			}
+
+			var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+			if (user == null)
+			{
+				ModelState.AddModelError("", "Usuário não encontrado.");
+				return View(model);
+			}
+
+			// Aqui você pode adicionar uma validação de força de senha, se necessário
+
+			// Altera a senha do usuário
+			user.Password = model.NewPassword;
+
+			_context.Users.Update(user);
+			_context.PasswordResetTokens.Remove(tokenEntry); // Remove o token após o uso
+			await _context.SaveChangesAsync();
+
+			TempData["Message"] = "Senha redefinida com sucesso! Faça login com sua nova senha.";
+			return RedirectToAction("Login", "Account");
+		}
+
+		return View(model);
+	}
+
+
+
 }

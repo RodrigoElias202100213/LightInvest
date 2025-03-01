@@ -12,7 +12,6 @@
     <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
 </div>
 
-<!-- Botões de navegação -->
 <div style="margin-bottom:20px;">
 	<a href="@Url.Action("Index", "ROICalculator")" class="btn btn-primary" style="margin-left:10px;">Voltar</a>
 	<a href="@Url.Action("Index", "Home")" class="btn btn-primary" style="margin-left:10px;">Página Principal</a>
@@ -23,9 +22,7 @@
 </div>
 
 @section Scripts {
-    <!-- Importa o Chart.js via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Serializa os arrays passados pelo ViewBag -->
     <script>
         var anos = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Years));
         var dividas = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Debts));
@@ -34,7 +31,7 @@
         var roiChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: anos, // Os anos (0, 1, 2, ..., totalAnos)
+                labels: anos,
                 datasets: [{
                     label: 'Dívida Remanescente (R$)',
                     data: dividas,

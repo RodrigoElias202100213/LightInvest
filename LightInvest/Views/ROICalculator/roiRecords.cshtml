@@ -11,15 +11,12 @@
 </div>
 
 @section Scripts {
-	<!-- Importa o Chart.js via CDN -->
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script>
-        // Prepara os dados para o gráfico
         var labels = [
             @foreach (var item in Model)
             {
 	            @: '@item.DataCalculado.ToString("dd/MM/yyyy")',
-	            // Note que as vírgulas serão adicionadas automaticamente
             }
         ];
 
@@ -30,7 +27,6 @@
             }
         ];
 
-        // Configuração do gráfico
         var ctx = document.getElementById('roiChart').getContext('2d');
         var roiChart = new Chart(ctx, {
             type: 'line',

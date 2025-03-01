@@ -2,12 +2,12 @@
 
 namespace LightInvest.Models
 {
-    public class ValidateCodeViewModel
-    {
+    public class ValidateTokenViewModel
+	{
         [Required]
         public string Email { get; set; }
 
         [Required]
-        public string Code { get; set; }
+        public string Token { get; set; }
     }
 }

@@ -5,24 +5,21 @@ using LightInvest.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔹 1. Configurar o banco de dados
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 	
-// 🔹 3. Configurar autenticação e cookies
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/Account/Login"; // Redireciona usuários não autenticados
+    options.LoginPath = "/Account/Login";
     options.AccessDeniedPath = "/Account/AccessDenied";
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
     options.SlidingExpiration = true;
 });
 
-builder.Services.AddSingleton<EmailService>();  // Registra o EmailService como singleton
+builder.Services.AddSingleton<EmailService>();  
 
-// 🔹 4. Adicionar suporte a Controllers e Views
 builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -47,7 +44,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseSession();
-app.UseAuthentication();  // 🔥 Agora o Identity está funcionando!
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

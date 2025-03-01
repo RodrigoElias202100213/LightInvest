@@ -1,22 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace LightInvest.Models
+public class ResetPasswordViewModel
 {
-    public class ResetPasswordViewModel
-    {
-        [Required]
-        public string Email { get; set; }
+	public string Email { get; set; }
+	public string Token { get; set; }
 
-        [Required]
-        public string Token { get; set; }
+	[Required]
+	[DataType(DataType.Password)]
+	[Display(Name = "Nova Password")]
+	public string NewPassword { get; set; }
 
-        [Required]
-        [DataType(DataType.Password)]
-        public string NewPassword { get; set; }
-
-        [Required]
-        [DataType(DataType.Password)]
-        [Compare("NewPassword", ErrorMessage = "As senhas não coincidem.")]
-        public string ConfirmPassword { get; set; }
-    }
+	[Required]
+	[DataType(DataType.Password)]
+	[Compare("NewPassword", ErrorMessage = "As passwrods não coincidem.")]
+	[Display(Name = "Confirmar passowrd")]
+	public string ConfirmPassword { get; set; }
 }
