@@ -11,11 +11,10 @@ public class AccountController : Controller
 	private readonly ApplicationDbContext _context;
 	private readonly EmailService _emailService;
 
-	// Modificando o construtor para injetar o EmailService
 	public AccountController(ApplicationDbContext context, EmailService emailService)
 	{
 		_context = context;
-		_emailService = emailService; // Agora o serviço de email é injetado
+		_emailService = emailService;
 	}
 
 	[HttpGet]
@@ -113,10 +112,8 @@ public class AccountController : Controller
 	[HttpPost]
 	public async Task<IActionResult> Enviaremail(string toAddress, string subject, string body)
 	{
-		// Chama o serviço de envio de e-mail
 		bool emailSent = await _emailService.SendEmailAsync(toAddress, subject, body);
 
-		// Exibe uma mensagem após o envio do e-mail
 		if (emailSent)
 		{
 			TempData["Message"] = "E-mail enviado com sucesso!";
@@ -144,24 +141,20 @@ public class AccountController : Controller
 			return NotFound("Se este e-mail estiver cadastrado, um link de recuperação será enviado.");
 		}
 
-		// Gerar um token seguro aleatório
 		var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32));
 
-		// Criar um novo registro na tabela de tokens de redefinição de senha
 		var resetToken = new PasswordResetToken
 		{
 			Email = email,
 			Token = token,
-			Expiration = DateTime.UtcNow.AddHours(1) // Token válido por 1 hora
+			Expiration = DateTime.UtcNow.AddHours(1)
 		};
 
-		// Adicionar o token ao banco de dados
 		_context.PasswordResetTokens.Add(resetToken);
 		await _context.SaveChangesAsync();
 
-		// Enviar o token por e-mail (sem link, apenas o token)
-		string subject = "Recuperação de Senha - LightInvest";
-		string body = $"Olá,\n\nO seu token de recuperação de senha é: {token}\n\nEste token é válido por 1 hora. Utilize-o para redefinir sua senha.";
+		string subject = "Recuperação de password - LightInvest";
+		string body = $"Olá,\n\nO seu token de recuperação de password é: {token}\n\nEste token é válido por 1 hora. Utilize-o para redefinir sua password.";
 
 		bool emailSent = await _emailService.SendEmailAsync(email, subject, body);
 
@@ -201,31 +194,27 @@ public class AccountController : Controller
 			return View();
 		}
 
-		// Gerar um token único e enviar o email
 		var token = Guid.NewGuid().ToString();
 
 		var tokenEntry = new PasswordResetToken
 		{
 			Email = email,
 			Token = token,
-			Expiration = DateTime.UtcNow.AddHours(1) // Defina o tempo de expiração do token
+			Expiration = DateTime.UtcNow.AddHours(1)
 		};
 
 		_context.PasswordResetTokens.Add(tokenEntry);
 		await _context.SaveChangesAsync();
 
-		// Enviar o token por email
-		var body = $"Seu token de recuperação de senha é: {token}";
-		await Enviaremail(email, "Recuperação de Senha", body); // Função para envio de email
+		var body = $"Seu token de recuperação de password é: {token}";
+		await Enviaremail(email, "Recuperação de password", body);
 
-		// Após enviar o token, redireciona para a página de validação do token
 		return RedirectToAction("ValidateToken", new { email = email });
 	}
 
 	[HttpGet]
 	public IActionResult ValidateToken(string email)
 	{
-		// Verifica se o e-mail foi passado como parâmetro
 		if (string.IsNullOrEmpty(email))
 		{
 			return RedirectToAction("ForgotPassword");
@@ -253,7 +242,6 @@ public class AccountController : Controller
 			return View(model);
 		}
 
-		// Se o token for válido, redireciona para a página de redefinir senha
 		return RedirectToAction("ResetPassword", new { email = model.Email, token = model.Token });
 	}
 
@@ -261,13 +249,11 @@ public class AccountController : Controller
 	[HttpGet]
 	public IActionResult ResetPassword(string email, string token)
 	{
-		// Verifica se o token e o e-mail são válidos
 		if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(token))
 		{
 			return NotFound();
 		}
 
-		// Retorna a view para redefinir a senha com o e-mail e o token
 		return View(new ResetPasswordViewModel { Email = email, Token = token });
 	}
 	[HttpPost]
@@ -276,7 +262,6 @@ public class AccountController : Controller
 	{
 		if (ModelState.IsValid)
 		{
-			// Verifica se o token e o e-mail são válidos no banco de dados
 			var tokenEntry = await _context.PasswordResetTokens
 				.FirstOrDefaultAsync(t => t.Email == model.Email && t.Token == model.Token && t.Expiration > DateTime.UtcNow);
 
@@ -289,31 +274,29 @@ public class AccountController : Controller
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
 			if (user == null)
 			{
-				ModelState.AddModelError("", "Usuário não encontrado.");
+				ModelState.AddModelError("", "Utilizador não encontrado.");
 				return View(model);
 			}
 
-			// Verificação adicional de segurança (se desejar)
 			if (model.NewPassword.Length < 8)
 			{
-				ModelState.AddModelError("", "A senha deve ter pelo menos 8 caracteres.");
+				ModelState.AddModelError("", "A password deve ter pelo menos 8 caracteres.");
 				return View(model);
 			}
 
 			if (!model.NewPassword.Any(char.IsDigit) || !model.NewPassword.Any(char.IsUpper))
 			{
-				ModelState.AddModelError("", "A senha deve conter pelo menos 1 número e 1 letra maiúscula.");
+				ModelState.AddModelError("", "A password deve conter pelo menos 2 número e 1 letra maiúscula.");
 				return View(model);
 			}
 
-			// Define a nova senha diretamente, sem aplicar hashing
 			user.Password = model.NewPassword;
 
 			_context.Users.Update(user);
-			_context.PasswordResetTokens.Remove(tokenEntry); // Remove o token após o uso
+			_context.PasswordResetTokens.Remove(tokenEntry);
 			await _context.SaveChangesAsync();
 
-			TempData["Message"] = "Senha redefinida com sucesso! Faça login com sua nova senha.";
+			TempData["Message"] = "Passowrd redefinida com sucesso! Faça login com sua nova password.";
 			return RedirectToAction("Login", "Account");
 		}
 

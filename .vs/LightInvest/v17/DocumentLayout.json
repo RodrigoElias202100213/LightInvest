@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\lginvest\\lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\lginvest\\lightinvest\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\lginvest\\lightinvest\\models\\validatetokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\validatetokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\lginvest\\lightinvest\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -21,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\lginvest\\lightinvest\\models\\roicalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\roicalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\lginvest\\lightinvest\\models\\validatetokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\validatetokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\lginvest\\lightinvest\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,7 +94,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 37,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -110,7 +118,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "LightInvest\\Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAcwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-02T16:33:15.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-02T16:33:10.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\appsettings.json",
               "RelativeDocumentMoniker": "LightInvest\\appsettings.json",
@@ -123,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\_ViewStart.cshtml",
@@ -136,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Program.cs",
               "RelativeDocumentMoniker": "LightInvest\\Program.cs",
@@ -149,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "ROICalculator.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\ROICalculator.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ROICalculator.cs",
@@ -162,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "PasswordResetToken.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\PasswordResetToken.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\PasswordResetToken.cs",
@@ -175,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\LoginViewModel.cs",
@@ -188,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ForgotPasswordViewModel.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\ForgotPasswordViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ForgotPasswordViewModel.cs",
@@ -201,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ValidPasswordAttribute .cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\ValidPasswordAttribute .cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ValidPasswordAttribute .cs",
@@ -214,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "ResetPasswordViewModel.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\ResetPasswordViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ResetPasswordViewModel.cs",
@@ -227,20 +261,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "ValidateTokenViewModel.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\ValidateTokenViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ValidateTokenViewModel.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\ValidateTokenViewModel.cs",
               "RelativeToolTip": "LightInvest\\Models\\ValidateTokenViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-02T15:42:36.724Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\Account\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\ResetPassword.cshtml",
@@ -253,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ValidateToken.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\Account\\ValidateToken.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\ValidateToken.cshtml",
@@ -266,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ForgotPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\Account\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\ForgotPassword.cshtml",
@@ -279,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\Login.cshtml",
@@ -292,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\Register.cshtml",
@@ -305,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\User.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\User.cs",
@@ -318,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\RegisterViewModel.cs",
@@ -331,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ErrorViewModel.cs",
@@ -344,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lginvest\\LightInvest\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "LightInvest\\Controllers\\AccountController.cs",

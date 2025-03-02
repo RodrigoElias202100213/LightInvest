@@ -1,48 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Validar Token";
+	ViewData["Title"] = "Validar Token";
 }
 
 <div class="validate-token-container">
-    <div class="validate-token-box">
-        <div class="sidebar">
-            <img src="~/images/logo.png" alt="LightInvest Logo" />
-        </div>
+	<div class="validate-token-box">
+		<div class="sidebar">
+			<img src="~/images/logo.png" alt="LightInvest Logo"/>
+		</div>
 
-        <div class="validate-token-form">
-            <h2>Validar Token</h2>
-            <p>Insira o token enviado para o seu email.</p>
+		<div class="validate-token-form">
+			<h2>Validar Token</h2>
+			<p>Insira o token enviado para o seu email.</p>
 
-            <form method="post">
-                <input type="hidden" name="email" value="@Model.Email" />
+			<form method="post">
+				<input type="hidden" name="email" value="@Model.Email"/>
 
-                <div class="form-group">
-                    <input type="text" id="token" name="token" placeholder="Digite o token" required />
-                </div>
+				<div class="form-group">
+					<input type="text" id="token" name="token" placeholder="Digite o token" required/>
+				</div>
 
-                @if (!ViewData.ModelState.IsValid)
-                {
-                    <div class="text-danger">
-                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-                        {
-                            <p>@error.ErrorMessage</p>
-                        }
-                    </div>
-                }
-					<div id="end-row">
-	                <div class="extra-actions">
-		                <a href="@Url.Action("Login", "Account")">Voltar para o login</a>
-	                </div>
-	                <div class="form-actions">
-		                <button type="submit">Confirmar</button>
-	                </div>
-                </div>
-            </form>
-        </div>
-    </div>
+				@if (!ViewData.ModelState.IsValid)
+				{
+					<div class="text-danger">
+						@foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+						{
+							<p>@error.ErrorMessage</p>
+						}
+					</div>
+				}
+				<div id="end-row">
+					<div class="extra-actions">
+						<a href="@Url.Action("Login", "Account")">Voltar para o login</a>
+					</div>
+					<div class="form-actions">
+						<button type="submit">Confirmar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 
 <style>
-    /* Estilo do container */
     .validate-token-container {
         display: flex;
         justify-content: center;
@@ -51,7 +50,6 @@
         background-color: #f9f9f9;
     }
 
-    /* Estrutura principal */
     .validate-token-box {
         display: flex;
         background: white;
@@ -61,7 +59,6 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Sidebar com logo */
     .sidebar {
         display: flex;
         flex-direction: column;
@@ -79,7 +76,6 @@
             margin-left: 45px;
         }
 
-    /* Formulário */
     .validate-token-form {
         flex: 2;
         padding: 30px;
@@ -102,7 +98,6 @@
             font-size: 1rem;
         }
 
-    /* Campo de token */
     .form-group {
         margin-top: 20px;
         position: relative;
@@ -119,7 +114,6 @@
             color: gray;
         }
 
-    /* Última Linha */
     #end-row {
         display: flex;
         flex-direction: row;
@@ -127,8 +121,7 @@
         align-items: center;
         margin-top: 8%;
     }
-    /* Ações extras abaixo do formulário - Esqueceu-se da palavra-passe? */
-
+   
     .extra-actions {
         margin-right: 3%;
     }
@@ -139,8 +132,8 @@
             font-size: 1em;
             font-weight: bold;
         }
-    /* Butão Login*/
-    .form-actions button {
+    
+        .form-actions button {
         padding: 7px 30px;
         background-color: #065A66;
         color: white;
@@ -152,8 +145,8 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    /*Erros*/
     .text-danger {
+        color: red;
         text-align: center;
         margin-top: 2%;
     }</style>
