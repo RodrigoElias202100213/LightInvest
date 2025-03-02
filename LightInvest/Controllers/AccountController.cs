@@ -280,13 +280,13 @@ public class AccountController : Controller
 
 			if (model.NewPassword.Length < 8)
 			{
-				ModelState.AddModelError("", "A password deve ter pelo menos 8 caracteres.");
+				ModelState.AddModelError("", "A palavra-passe deve ter pelo menos 8 caracteres.");
 				return View(model);
 			}
 
 			if (!model.NewPassword.Any(char.IsDigit) || !model.NewPassword.Any(char.IsUpper))
 			{
-				ModelState.AddModelError("", "A password deve conter pelo menos 2 número e 1 letra maiúscula.");
+				ModelState.AddModelError("", "A palavra-passe deve conter pelo menos 2 número e 1 letra maiúscula.");
 				return View(model);
 			}
 

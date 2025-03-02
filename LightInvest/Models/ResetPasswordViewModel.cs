@@ -7,12 +7,12 @@ public class ResetPasswordViewModel
 
 	[Required]
 	[DataType(DataType.Password)]
-	[Display(Name = "Nova Password")]
+	[Display(Name = "Nova Palavra-Passe")]
 	public string NewPassword { get; set; }
 
 	[Required]
 	[DataType(DataType.Password)]
-	[Compare("NewPassword", ErrorMessage = "As passwrods não coincidem.")]
-	[Display(Name = "Confirmar passowrd")]
+	[Compare("NewPassword", ErrorMessage = "As palavras-passes não coincidem.")]
+	[Display(Name = "Confirmar Palavra-Passe")]
 	public string ConfirmPassword { get; set; }
 }
