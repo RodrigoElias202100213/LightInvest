@@ -47,7 +47,7 @@ public class AccountController : Controller
 			}
 			else
 			{
-				ModelState.AddModelError("", "Email não encontrado.");
+				ModelState.AddModelError("", "Email ou palavra-passe não encontrada.");
 			}
 		}
 		return View(model);
@@ -70,7 +70,7 @@ public class AccountController : Controller
 			{
 				if (existingUser.Email == model.Email)
 				{
-					ModelState.AddModelError("Email", "Este email já está registado.");
+					ModelState.AddModelError("Email", "Já existe uma conta com este email.");
 				}
 
 				if (existingUser.Name == model.Name)
@@ -138,7 +138,7 @@ public class AccountController : Controller
 		var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
 		if (user == null)
 		{
-			return NotFound("Se este e-mail estiver cadastrado, um link de recuperação será enviado.");
+			return NotFound("Se este e-mail existir, um token será enviado para o email.");
 		}
 
 		var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32));
@@ -153,8 +153,8 @@ public class AccountController : Controller
 		_context.PasswordResetTokens.Add(resetToken);
 		await _context.SaveChangesAsync();
 
-		string subject = "Recuperação de password - LightInvest";
-		string body = $"Olá,\n\nO seu token de recuperação de password é: {token}\n\nEste token é válido por 1 hora. Utilize-o para redefinir sua password.";
+		string subject = "Recuperação da  palavra-passe LightInvest";
+		string body = $"Olá,\n\nO seu token para conseguir proceder à redefinição da palavra-passe é: {token}\n\nEste token é válido por 1 hora.";
 
 		bool emailSent = await _emailService.SendEmailAsync(email, subject, body);
 
@@ -296,7 +296,7 @@ public class AccountController : Controller
 			_context.PasswordResetTokens.Remove(tokenEntry);
 			await _context.SaveChangesAsync();
 
-			TempData["Message"] = "Passowrd redefinida com sucesso! Faça login com sua nova password.";
+			TempData["Message"] = "Palavra-passe redefinida com sucesso! Faça login com sua nova palavra-passe.";
 			return RedirectToAction("Login", "Account");
 		}
 
