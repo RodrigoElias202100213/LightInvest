@@ -10,7 +10,7 @@
 
 		<div class="validate-token-form">
 			<h2>Validar Token</h2>
-			<p>Insira o token enviado para o seu email.</p>
+            <p><strong>Insira o token enviado para o seu email.</strong></p>
 
 			<form method="post">
 				<input type="hidden" name="email" value="@Model.Email"/>
@@ -21,7 +21,7 @@
 
 				@if (!ViewData.ModelState.IsValid)
 				{
-					<div class="text-danger">
+					<div id="text-error_validation">
 						@foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
 						{
 							<p>@error.ErrorMessage</p>
@@ -71,10 +71,10 @@
         height: 100%;
     }
 
-        .sidebar img {
-            max-width: 250px;
-            margin-left: 45px;
-        }
+    .sidebar img {
+        max-width: 250px;
+        margin-left: 45px;
+    }
 
     .validate-token-form {
         flex: 2;
@@ -82,58 +82,62 @@
         text-align: center;
     }
 
-        .validate-token-form h2 {
-            font-size: 2rem;
-            color: #065A66;
-            font-weight: bold;
-            margin-bottom: 5px;
-            border-bottom: 2px solid #065A66;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
+    .validate-token-form h2 {
+        font-size: 2.5rem;
+        color: #065A66;
+        font-weight: bold;
+        margin-bottom: 5%;
+        border-bottom: 2px solid #065A66;
+        display: inline-block;
+        padding-bottom: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .validate-token-form p {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
+    .validate-token-form p {
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 1.2rem;
+        text-align:center;
+        margin-bottom:8%;
+    }
 
     .form-group {
         margin-top: 20px;
         position: relative;
     }
 
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #ddd;
-            border-radius: 20px;
-            font-size: 1rem;
-            text-align: center;
-            background-color: #F2F2F2;
-            color: gray;
-        }
+    .form-group input {
+        width: 80%;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 20px;
+        font-size: 1rem;
+        text-align: center;
+        background-color: #F2F2F2;
+        color: gray;
+        text-align:left;
+    }
 
     #end-row {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin-top: 8%;
+        margin-top: 6%;
     }
    
     .extra-actions {
         margin-right: 3%;
     }
 
-        .extra-actions a {
-            color: #065A66;
-            text-decoration: none;
-            font-size: 1em;
-            font-weight: bold;
-        }
+    .extra-actions a {
+        color: #065A66;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: bold;
+    }
     
-        .form-actions button {
+    .form-actions button {
         padding: 7px 30px;
         background-color: #065A66;
         color: white;
@@ -145,8 +149,10 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .text-danger {
+    #text-error_validation p {
         color: red;
         text-align: center;
         margin-top: 2%;
-    }</style>
+        font-size:1rem;
+    }
+    </style>

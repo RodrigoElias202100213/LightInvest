@@ -206,8 +206,8 @@ public class AccountController : Controller
 		_context.PasswordResetTokens.Add(tokenEntry);
 		await _context.SaveChangesAsync();
 
-		var body = $"Seu token de recuperação de password é: {token}";
-		await Enviaremail(email, "Recuperação de password", body);
+		var body = $"Olá,\nO token para conseguires proceder à redefinição da palavra-passe é: {token}.\n Este Token tem a validade de 1 hora, depois disso deixa de ser válido. \n\n  LigthInvest";
+		await Enviaremail(email, "Recuperação da palavra-passe", body);
 
 		return RedirectToAction("ValidateToken", new { email = email });
 	}
