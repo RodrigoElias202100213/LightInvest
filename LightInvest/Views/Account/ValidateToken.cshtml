@@ -4,37 +4,42 @@
 
 <div class="validate-token-container">
     <div class="validate-token-box">
-        <div class="form-title">
-            <h2>Validar Token de Recuperação</h2>
-            <p>Insira o token enviado para o seu e-mail.</p>
+        <div class="sidebar">
+            <img src="~/images/logo.png" alt="LightInvest Logo" />
         </div>
 
-        <form method="post">
-            <input type="hidden" name="email" value="@Model.Email" />
+        <div class="validate-token-form">
+            <h2>Validar Token</h2>
+            <p>Insira o token enviado para o seu email.</p>
 
-            <div class="form-group">
-                <label for="token">Token</label>
-                <input type="text" id="token" name="token" placeholder="Digite o Token" required />
-            </div>
+            <form method="post">
+                <input type="hidden" name="email" value="@Model.Email" />
 
-            @if (!ViewData.ModelState.IsValid)
-            {
-                <div class="text-danger">
-                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
-                    {
-                        <p>@error.ErrorMessage</p>
-                    }
+                <div class="form-group">
+                    <input type="text" id="token" name="token" placeholder="Digite o token" required />
                 </div>
-            }
 
-            <div class="form-actions">
-                <button type="submit">Confirmar Token</button>
-            </div>
-        </form>
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="text-danger">
+                        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                        {
+                            <p>@error.ErrorMessage</p>
+                        }
+                    </div>
+                }
+
+                <div class="form-actions">
+                    <a href="@Url.Action("Login", "Account")" class="back-link">Voltar para o login</a>
+                    <button type="submit">Confirmar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
 <style>
+    /* Estilo do container */
     .validate-token-container {
         display: flex;
         justify-content: center;
@@ -43,23 +48,61 @@
         background-color: #f9f9f9;
     }
 
+    /* Estrutura principal */
     .validate-token-box {
+        display: flex;
         background: white;
-        padding: 40px;
+        width: 950px;
+        height: 400px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        width: 400px;
+    }
+
+    /* Sidebar com logo */
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        background-color: #065A66;
+        color: white;
+        max-width: 250px;
+        height: 100%;
+    }
+
+        .sidebar img {
+            max-width: 250px;
+            margin-left: 45px;
+        }
+
+    /* Formulário */
+    .validate-token-form {
+        flex: 2;
+        padding: 30px;
         text-align: center;
     }
 
-    .form-title {
-        margin-bottom: 20px;
-    }
+        .validate-token-form h2 {
+            font-size: 2rem;
+            color: #065A66;
+            font-weight: bold;
+            margin-bottom: 5px;
+            border-bottom: 2px solid #065A66;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
 
+        .validate-token-form p {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+    /* Campo de token */
     .form-group {
-        margin-bottom: 20px;
-        font-weight: bold;
-        color: #065A66;
+        margin-top: 20px;
+        position: relative;
     }
 
         .form-group input {
@@ -67,25 +110,46 @@
             padding: 10px;
             border: 2px solid #ddd;
             border-radius: 20px;
+            font-size: 1rem;
+            text-align: center;
+            background-color: #F2F2F2;
+            color: gray;
         }
 
+    /* Estilo do botão e do link */
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .back-link {
+        color: #065A66;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
     .form-actions button {
-        padding: 10px 30px;
+        padding: 7px 30px;
         background-color: #065A66;
         color: white;
         border: none;
         border-radius: 25px;
         font-size: 1em;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
         .form-actions button:hover {
             background-color: #A3D1C6;
         }
 
+    /* Mensagens de erro */
     .text-danger {
         color: red;
         margin-top: 10px;
+        text-align: center;
     }
 </style>

@@ -1,5 +1,6 @@
 ﻿using LightInvest.Data;
 using LightInvest.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
@@ -57,7 +58,6 @@ public class AccountController : Controller
 	{
 		return View(new RegisterViewModel());
 	}
-
 	[HttpPost]
 	[ValidateAntiForgeryToken]
 	public async Task<IActionResult> Register(RegisterViewModel model)
@@ -65,11 +65,20 @@ public class AccountController : Controller
 		if (ModelState.IsValid)
 		{
 			var existingUser = await _context.Users
-				.FirstOrDefaultAsync(u => u.Email == model.Email);
+				.FirstOrDefaultAsync(u => u.Email == model.Email || u.Name == model.Name);
 
 			if (existingUser != null)
 			{
-				ModelState.AddModelError("Email", "Este email já está registado.");
+				if (existingUser.Email == model.Email)
+				{
+					ModelState.AddModelError("Email", "Este email já está registado.");
+				}
+
+				if (existingUser.Name == model.Name)
+				{
+					ModelState.AddModelError("Name", "Este nome de utilizador já existe, por favor escolha outro.");
+				}
+
 				return View(model);
 			}
 
@@ -175,7 +184,6 @@ public class AccountController : Controller
 	{
 		return View();
 	}
-
 	[HttpPost]
 	[ValidateAntiForgeryToken]
 	public async Task<IActionResult> ForgotPassword(string email)
@@ -262,7 +270,6 @@ public class AccountController : Controller
 		// Retorna a view para redefinir a senha com o e-mail e o token
 		return View(new ResetPasswordViewModel { Email = email, Token = token });
 	}
-
 	[HttpPost]
 	[ValidateAntiForgeryToken]
 	public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
@@ -286,9 +293,20 @@ public class AccountController : Controller
 				return View(model);
 			}
 
-			// Aqui você pode adicionar uma validação de força de senha, se necessário
+			// Verificação adicional de segurança (se desejar)
+			if (model.NewPassword.Length < 8)
+			{
+				ModelState.AddModelError("", "A senha deve ter pelo menos 8 caracteres.");
+				return View(model);
+			}
 
-			// Altera a senha do usuário
+			if (!model.NewPassword.Any(char.IsDigit) || !model.NewPassword.Any(char.IsUpper))
+			{
+				ModelState.AddModelError("", "A senha deve conter pelo menos 1 número e 1 letra maiúscula.");
+				return View(model);
+			}
+
+			// Define a nova senha diretamente, sem aplicar hashing
 			user.Password = model.NewPassword;
 
 			_context.Users.Update(user);
@@ -301,7 +319,5 @@ public class AccountController : Controller
 
 		return View(model);
 	}
-
-
 
 }
