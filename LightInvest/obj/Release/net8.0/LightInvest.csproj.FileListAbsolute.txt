@@ -349,6 +349,7 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\lginvest\LightInvest\obj\Release\ne
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\lginvest\LightInvest\obj\Release\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\lginvest\LightInvest\obj\Release\net8.0\ref\LightInvest.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\lginvest\LightInvest\bin\Release\net8.0\MvcTestingAppManifest.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\lginvest\LightInvest\bin\Release\net8.0\refs\Microsoft.AspNetCore.Antiforgery.dll
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\lginvest\LightInvest\bin\Release\net8.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
@@ -821,3 +822,5 @@ C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 an
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PA\LigthInvest 2.0\LightInvest\LightInvest\obj\Release\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PA\LigthInvest 2.0\LightInvest\LightInvest\obj\Release\net8.0\ref\LightInvest.dll
 >>>>>>> fb8a2362cec0b687a65cb4796d1c6636921d5788
+=======
+>>>>>>> parent of b9d99a4 (teste)
