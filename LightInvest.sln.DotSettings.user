@@ -1,0 +1,13 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=50dfe862_002Dca57_002D4527_002Da2fb_002Da5fe88bc7f40/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RegisterViewModel_InvalidPassword_ShouldFailValidation #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::EC1FD23D-7B9C-45B4-9273-72F99493D2EA::net8.0::AccountControllerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::EC1FD23D-7B9C-45B4-9273-72F99493D2EA::net8.0::EmailServiceTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::EC1FD23D-7B9C-45B4-9273-72F99493D2EA::net8.0::LightInvestTests.AccountControllerTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a0841144_002D0e79_002D44b3_002Da276_002Defe7b882e6d4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RegisterViewModel_InvalidPassword_ShouldFailValidation" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::EC1FD23D-7B9C-45B4-9273-72F99493D2EA::net8.0::LightInvestTests.RegisterViewModel_InvalidPassword_ShouldFailValidation&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
