@@ -173,3 +173,6 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\pppp\LightInvest\obj\Release\net8.0
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\pppp\LightInvest\obj\Release\net8.0\LightInvest.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\pppp\LightInvest\obj\Release\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\pppp\LightInvest\obj\Release\net8.0\ref\LightInvest.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\pppp\LightInvest\bin\Release\net8.0\Castle.Core.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\pppp\LightInvest\bin\Release\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\pppp\LightInvest\bin\Release\net8.0\Moq.dll
