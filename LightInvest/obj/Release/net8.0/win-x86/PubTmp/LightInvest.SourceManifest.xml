@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<sitemanifest>
-  <IisApp path="C:\Users\rodri\OneDrive\Ambiente de Trabalho\lginvest\LightInvest\obj\Release\net8.0\win-x86\PubTmp\Out\" />
-  <dbfullsql path="C:\Users\rodri\OneDrive\Ambiente de Trabalho\lginvest\LightInvest\obj\Release\net8.0\win-x86\PubTmp\EFSQLScripts\LightInvest.Data.ApplicationDbContext.sql" />
-</sitemanifest>
