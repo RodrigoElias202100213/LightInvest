@@ -1,128 +1,128 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\",
+  "WorkspaceRootPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvesttest\\externalapiservicemock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\externalapiservicemock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\lightinvest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\lightinvest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvesttest\\roicalculatorintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\roicalculatorintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvesttest\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvesttest\\roicalculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\roicalculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\controllers\\roicalculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\roicalculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvesttest\\emailservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvesttest\\emailservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\emailservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvesttest\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvesttest\\roicalculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\roicalculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvesttest\\roicalculatorintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\roicalculatorintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvesttest\\externalapiservicemock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\externalapiservicemock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\controllers\\roicalculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\roicalculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvesttest\\lightinvesttest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvesttest\\lightinvesttest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\lightinvesttest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\lightinvest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\lightinvest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\lightinvest.csproj.backup.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\lightinvest.csproj.backup.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\lightinvest.csproj.backup.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\validpasswordattribute .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\validpasswordattribute .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\validpasswordattribute .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\validatetokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\validatetokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\validatetokenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\views\\account\\validatetoken.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\views\\account\\validatetoken.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\validatetoken.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\roicalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\roicalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\roicalculator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\resetpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\passwordresettoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\passwordresettoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\passwordresettoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\ivand\\source\\repos\\lightinvest1\\lightinvest\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\new folder (3)\\lightinvest\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -133,11 +133,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 37,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Bookmark",
@@ -153,44 +157,92 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:1:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{da1e233c-cfa8-5021-b06c-abc3d02f44e8}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ExternalApiServiceMock.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\ExternalApiServiceMock.cs",
-              "RelativeDocumentMoniker": "LightInvestTest\\ExternalApiServiceMock.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\ExternalApiServiceMock.cs",
-              "RelativeToolTip": "LightInvestTest\\ExternalApiServiceMock.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AccountControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\AccountControllerTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\AccountControllerTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\AccountControllerTests.cs",
+              "RelativeToolTip": "LightInvestTest\\AccountControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T09:39:36.585Z",
+              "WhenOpened": "2025-03-04T00:38:30.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "emailServiceTest.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\emailServiceTest.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\emailServiceTest.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\emailServiceTest.cs",
+              "RelativeToolTip": "LightInvestTest\\emailServiceTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T00:37:23.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RoiCalculatorTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\RoiCalculatorTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\RoiCalculatorTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\RoiCalculatorTests.cs",
+              "RelativeToolTip": "LightInvestTest\\RoiCalculatorTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T00:29:27.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LightInvest.csproj",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\LightInvest.csproj",
+              "RelativeDocumentMoniker": "LightInvest\\LightInvest.csproj",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\LightInvest.csproj",
+              "RelativeToolTip": "LightInvest\\LightInvest.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-04T00:13:27.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ROICalculatorController.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Controllers\\ROICalculatorController.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Controllers\\ROICalculatorController.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Controllers\\ROICalculatorController.cs",
+              "RelativeToolTip": "LightInvest\\Controllers\\ROICalculatorController.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAAAK4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T09:06:55.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ROICalculatorIntegrationTests.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\ROICalculatorIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\ROICalculatorIntegrationTests.cs",
               "RelativeDocumentMoniker": "LightInvestTest\\ROICalculatorIntegrationTests.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\ROICalculatorIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\ROICalculatorIntegrationTests.cs",
               "RelativeToolTip": "LightInvestTest\\ROICalculatorIntegrationTests.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -200,61 +252,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ROICalculatorController.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Controllers\\ROICalculatorController.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Controllers\\ROICalculatorController.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Controllers\\ROICalculatorController.cs",
-              "RelativeToolTip": "LightInvest\\Controllers\\ROICalculatorController.cs",
-              "ViewState": "AgIAAJUAAAAAAAAAAAAAAK4AAAAAAAAAAAAAAA==",
+              "Title": "ExternalApiServiceMock.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\ExternalApiServiceMock.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\ExternalApiServiceMock.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\ExternalApiServiceMock.cs",
+              "RelativeToolTip": "LightInvestTest\\ExternalApiServiceMock.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T09:06:55.175Z",
+              "WhenOpened": "2025-03-04T09:39:36.585Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AccountControllerTests.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\AccountControllerTests.cs",
-              "RelativeDocumentMoniker": "LightInvestTest\\AccountControllerTests.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\AccountControllerTests.cs",
-              "RelativeToolTip": "LightInvestTest\\AccountControllerTests.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAqwD4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:38:30.681Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "emailServiceTest.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\emailServiceTest.cs",
-              "RelativeDocumentMoniker": "LightInvestTest\\emailServiceTest.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\emailServiceTest.cs",
-              "RelativeToolTip": "LightInvestTest\\emailServiceTest.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:37:23.706Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RoiCalculatorTests.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\RoiCalculatorTests.cs",
-              "RelativeDocumentMoniker": "LightInvestTest\\RoiCalculatorTests.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvestTest\\RoiCalculatorTests.cs",
-              "RelativeToolTip": "LightInvestTest\\RoiCalculatorTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:29:27.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Controllers\\AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "LightInvest\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Controllers\\AccountController.cs",
               "RelativeToolTip": "LightInvest\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAAwBAAAAAAAAAAAQwCIBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -262,23 +276,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAFIAAAAAAAAAAAAQwKkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-04T00:13:20.819Z"
+              "WhenOpened": "2025-03-04T00:13:20.819Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "LightInvestTest.csproj",
-              "DocumentMoniker": "C:\\Users\\ivand\\Source\\Repos\\LightInvest1\\LightInvestTest\\LightInvestTest.csproj",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\LightInvestTest.csproj",
               "RelativeDocumentMoniker": "LightInvestTest\\LightInvestTest.csproj",
-              "ToolTip": "C:\\Users\\ivand\\Source\\Repos\\LightInvest1\\LightInvestTest\\LightInvestTest.csproj",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvestTest\\LightInvestTest.csproj",
               "RelativeToolTip": "LightInvestTest\\LightInvestTest.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -286,23 +301,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LightInvest.csproj",
-              "DocumentMoniker": "C:\\Users\\ivand\\Source\\Repos\\LightInvest1\\LightInvest\\LightInvest.csproj",
-              "RelativeDocumentMoniker": "LightInvest\\LightInvest.csproj",
-              "ToolTip": "C:\\Users\\ivand\\Source\\Repos\\LightInvest1\\LightInvest\\LightInvest.csproj",
-              "RelativeToolTip": "LightInvest\\LightInvest.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-04T00:13:27.833Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 12,
               "Title": "LightInvest.csproj.Backup.tmp",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\LightInvest.csproj.Backup.tmp",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\LightInvest.csproj.Backup.tmp",
               "RelativeDocumentMoniker": "LightInvest\\LightInvest.csproj.Backup.tmp",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\LightInvest.csproj.Backup.tmp",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\LightInvest.csproj.Backup.tmp",
               "RelativeToolTip": "LightInvest\\LightInvest.csproj.Backup.tmp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -324,9 +327,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -336,9 +339,9 @@
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "_ViewStart.cshtml",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\_ViewStart.cshtml",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\_ViewStart.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -346,36 +349,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Program.cs",
               "RelativeDocumentMoniker": "LightInvest\\Program.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Program.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Program.cs",
               "RelativeToolTip": "LightInvest\\Program.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAAADIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-04T00:13:20.778Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "ROICalculator.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ROICalculator.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ROICalculator.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ROICalculator.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ROICalculator.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ROICalculator.cs",
               "RelativeToolTip": "LightInvest\\Models\\ROICalculator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.781Z"
+              "WhenOpened": "2025-03-04T00:13:20.781Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\appsettings.json",
               "RelativeDocumentMoniker": "LightInvest\\appsettings.json",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\appsettings.json",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\appsettings.json",
               "RelativeToolTip": "LightInvest\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -385,21 +388,22 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "ValidPasswordAttribute .cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ValidPasswordAttribute .cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ValidPasswordAttribute .cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ValidPasswordAttribute .cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ValidPasswordAttribute .cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ValidPasswordAttribute .cs",
               "RelativeToolTip": "LightInvest\\Models\\ValidPasswordAttribute .cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.798Z"
+              "WhenOpened": "2025-03-04T00:13:20.798Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\_ViewImports.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -409,69 +413,74 @@
               "$type": "Document",
               "DocumentIndex": 26,
               "Title": "PasswordResetToken.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\PasswordResetToken.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\PasswordResetToken.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\PasswordResetToken.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\PasswordResetToken.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\PasswordResetToken.cs",
               "RelativeToolTip": "LightInvest\\Models\\PasswordResetToken.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.784Z"
+              "WhenOpened": "2025-03-04T00:13:20.784Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
               "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\LoginViewModel.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\LoginViewModel.cs",
               "RelativeToolTip": "LightInvest\\Models\\LoginViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.787Z"
+              "WhenOpened": "2025-03-04T00:13:20.787Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 28,
               "Title": "ForgotPasswordViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ForgotPasswordViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ForgotPasswordViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ForgotPasswordViewModel.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ForgotPasswordViewModel.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ForgotPasswordViewModel.cs",
               "RelativeToolTip": "LightInvest\\Models\\ForgotPasswordViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.793Z"
+              "WhenOpened": "2025-03-04T00:13:20.793Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
               "Title": "ResetPasswordViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ResetPasswordViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ResetPasswordViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ResetPasswordViewModel.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ResetPasswordViewModel.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ResetPasswordViewModel.cs",
               "RelativeToolTip": "LightInvest\\Models\\ResetPasswordViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.802Z"
+              "WhenOpened": "2025-03-04T00:13:20.802Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "ValidateTokenViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ValidateTokenViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ValidateTokenViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ValidateTokenViewModel.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ValidateTokenViewModel.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ValidateTokenViewModel.cs",
               "RelativeToolTip": "LightInvest\\Models\\ValidateTokenViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.806Z"
+              "WhenOpened": "2025-03-04T00:13:20.806Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "ResetPassword.cshtml",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\ResetPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\ResetPassword.cshtml",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\ResetPassword.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\ResetPassword.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\Account\\ResetPassword.cshtml",
               "ViewState": "AgIAAI0AAAAAAAAAAAAcwKEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -481,9 +490,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "ValidateToken.cshtml",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\ValidateToken.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\ValidateToken.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\ValidateToken.cshtml",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\ValidateToken.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\ValidateToken.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\Account\\ValidateToken.cshtml",
               "ViewState": "AgIAAHkAAAAAAAAAAAAcwJwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -493,9 +502,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "ForgotPassword.cshtml",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\ForgotPassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\ForgotPassword.cshtml",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\ForgotPassword.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\Account\\ForgotPassword.cshtml",
               "ViewState": "AgIAAAoAAAAAAAAAAABBwJ0AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -505,45 +514,48 @@
               "$type": "Document",
               "DocumentIndex": 30,
               "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Views\\Account\\Register.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\Account\\Register.cshtml",
               "ViewState": "AgIAACsAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-04T00:13:20.822Z"
+              "WhenOpened": "2025-03-04T00:13:20.822Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\User.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\User.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\User.cs",
               "RelativeToolTip": "LightInvest\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.824Z"
+              "WhenOpened": "2025-03-04T00:13:20.824Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
               "Title": "RegisterViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\RegisterViewModel.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\RegisterViewModel.cs",
               "RelativeToolTip": "LightInvest\\Models\\RegisterViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-04T00:13:20.827Z"
+              "WhenOpened": "2025-03-04T00:13:20.827Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 29,
               "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\ivand\\source\\repos\\LightInvest1\\LightInvest\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\Models\\ErrorViewModel.cs",
               "RelativeToolTip": "LightInvest\\Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

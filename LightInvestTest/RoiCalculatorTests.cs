@@ -1,6 +1,6 @@
-using System;
-using Xunit;
 using LightInvest.Models;
+
+namespace LightInvestTest;
 
 public class RoiCalculatorTests
 {
