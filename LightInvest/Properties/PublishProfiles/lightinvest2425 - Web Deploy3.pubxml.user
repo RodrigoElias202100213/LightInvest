@@ -7,8 +7,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACnfsiYWRxUeP3+ozqQe97AAAAAACAAAAAAAQZgAAAAEAACAAAAB/n2soWCshCP/hmvSyVscHO3SR7DSSiwSRmTZtUhk2QwAAAAAOgAAAAAIAACAAAADXKFChqk403oXkXz3TJfSSb+fqUA6kbCgyDdMh/XP0bIAAAADRU39FDmphkgH/Y36jpVThxdcMfHpA558YoufSdVFHiFcNENEWw2x37gEPCe0KqilKdx2Wk1JrCmWkLhxeBOmjzg0mBuyWSEJiVl3iDanQlcqa/C32iTfBkj8xc+cVmF84BN60Whp5C6PWAO9if1iKEwKWmwmaKuKoDnHbOA3mf0AAAAD7OKN0J8UmwY0MsMqHtourrhl/55dukTBA6zaPAtbfR1EivdWi2Yw0nFVlsFEAuAI4bzsTjjnNe1WYjXZsVZNk</EncryptedPassword>
-    <History>True|2025-03-05T12:04:14.6739807Z||;</History>
+    <History>True|2025-03-06T20:24:11.3347009Z||;True|2025-03-06T20:03:59.0760617+00:00||;True|2025-03-05T12:06:44.1522750+00:00||;True|2025-03-05T12:04:14.6739807+00:00||;</History>
     <LastFailureDetails />
-    <IsBasicAuthAllowed>True</IsBasicAuthAllowed>
   </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:lightinvestserverdb.database.windows.net,1433%3bInitial Catalog=lightInvest%3bPersist Security Info=False%3bUser ID=rodrigo%3bPassword=admin123!%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="LightInvest.Data.ApplicationDbContext">
+      <Value>Server=tcp:lightinvestserverdb.database.windows.net,1433%3bInitial Catalog=lightInvest%3bPersist Security Info=False%3bUser ID=rodrigo%3bPassword=admin123!%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
 </Project>
