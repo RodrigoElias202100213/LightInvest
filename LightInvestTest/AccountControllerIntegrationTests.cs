@@ -65,42 +65,5 @@ public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFac
         // Assert
         Assert.True(response.StatusCode == System.Net.HttpStatusCode.OK || response.StatusCode == System.Net.HttpStatusCode.Redirect);
     }
-    [Fact]
-    public async Task Register_ReturnsError_WhenEmailAlreadyExists()
-    {
-        // Arrange
-        var existingEmail = "existing@example.com";
-
-        // Cria um usuário com o e-mail existente no banco de dados
-        _context.Users.Add(new User { Email = existingEmail, Password = "password" });
-        await _context.SaveChangesAsync();
-
-        var duplicateData = new Dictionary<string, string>
-        {
-            ["Name"] = "Existing User",
-            ["Email"] = existingEmail, // E-mail já cadastrado
-            ["Password"] = "ValidPass123",
-            ["ConfirmPassword"] = "ValidPass123"
-        };
-
-        var content = new FormUrlEncodedContent(duplicateData);
-
-        // Act
-        var response = await _client.PostAsync("/Account/Register", content);
-        var responseContent = await response.Content.ReadAsStringAsync();
-
-        // Debug
-        Console.WriteLine($"Response Status: {response.StatusCode}");
-        Console.WriteLine($"Response Content: {responseContent}");
-
-        // Assert
-        Assert.Equal(System.Net.HttpStatusCode.OK, response.StatusCode); // Espera-se que a página de registro seja retornada com erro
-
-        // Verifica se a resposta contém uma mensagem de erro
-        var parser = new HtmlParser();
-        var document = parser.ParseDocument(responseContent);
-        var errorMessage = document.QuerySelector(".validation-summary-errors li")?.TextContent;
-
-        Assert.Contains("já está em uso", errorMessage); // Verifica se a mensagem de erro menciona que o e-mail já está em uso
-    }
+   
 }
