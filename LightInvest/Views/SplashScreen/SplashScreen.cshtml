@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Splash Screen";
+}
+
+<div class="splash-screen-container">
+    <img src="~/images/logo.png" alt="LightInvest Logo" class="splash-logo" />
+</div>
+
+<style>
+    .splash-screen-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #065A66;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .splash-logo {
+        width: 200px; 
+        height: auto;
+    }
+</style>

@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\views\\roicalculator\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\roicalculator\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\models\\passwordresettoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\passwordresettoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\views\\roicalculator\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\roicalculator\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\controllers\\roicalculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\roicalculatorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\views\\roicalculator\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\roicalculator\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pa\\ligthinvest 2.0\\lightinvest\\lightinvest\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -30,20 +42,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 37,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
               "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAIwFgAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAuwEYAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-06T21:35:27.88Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PasswordResetToken.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Models\\PasswordResetToken.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\PasswordResetToken.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Models\\PasswordResetToken.cs",
+              "RelativeToolTip": "LightInvest\\Models\\PasswordResetToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T12:20:06.83Z",
               "EditorCaption": ""
             },
             {
@@ -88,7 +112,56 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\ROICalculator\\Index.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\ROICalculator\\Index.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\ROICalculator\\Index.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\ROICalculator\\Index.cshtml",
+              "ViewState": "AgIAAE8AAAAAaFuPinz8v4kAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T21:30:35.663Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAHAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T21:30:31.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ROICalculatorController.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Controllers\\ROICalculatorController.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Controllers\\ROICalculatorController.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Controllers\\ROICalculatorController.cs",
+              "RelativeToolTip": "LightInvest\\Controllers\\ROICalculatorController.cs",
+              "ViewState": "AgIAAKkAAAAArKoxfYsWwHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T02:31:08.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAADoAAAAAMKO3VZ0HwEgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-06T21:30:14.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ResetPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\Account\\ResetPassword.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\ResetPassword.cshtml",
@@ -100,39 +173,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\ROICalculator\\Index.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\ROICalculator\\Index.cshtml",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\ROICalculator\\Index.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\ROICalculator\\Index.cshtml",
-              "ViewState": "AgIAAKAAAAAAaFuPinz8v4kAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-06T21:30:35.663Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAA4AAACAvJ+A8qAZwHAAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-06T21:30:31.639Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\Account\\Register.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\Register.cshtml",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Views\\Account\\Register.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAAFUAAAAAmNHbDigSwLEAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-06T21:30:14.392Z"
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LightInvest\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T02:41:27.013Z"
             }
           ]
         }

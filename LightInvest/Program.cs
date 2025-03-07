@@ -12,8 +12,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/Account/Login";
-    options.AccessDeniedPath = "/Account/AccessDenied";
+    options.LoginPath = "/ScreenSplah/ScreenSplash";
+    //options.AccessDeniedPath = "/Account/AccessDenied";
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
     options.SlidingExpiration = true;
@@ -50,7 +50,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Account}/{action=Login}/{id?}");
+    pattern: "{controller=SplashScreenController}/{action=SplashScreen}");
 
 app.Run();
 

@@ -12,7 +12,7 @@
 
 
 <div>
-    <canvas id="roiChart" width="900" height="500"></canvas>
+    <canvas id="roiChart" width="850" height="450"></canvas>
 </div>
 
 @section Scripts {
@@ -41,6 +41,15 @@
                         title: {
                             display: true,
                             text: 'Anos'
+                        },
+                        type: 'linear', 
+                        min: 0, 
+                        suggestedMax: Math.max(...anos), 
+                        ticks: {
+                            stepSize: 0.1, 
+                            callback: function (value) {
+                                return value.toFixed(2); 
+                            }
                         }
                     },
                     y: {
@@ -54,6 +63,7 @@
             }
         });
     </script>
+
 }
 
 <div id="metrics">
@@ -78,7 +88,7 @@
     }
 
     #metrics {
-    margin-left:13%;
+    margin-left:14%;
     margin-bottom:5%;
     }
 
