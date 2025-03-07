@@ -4,21 +4,15 @@
     ViewBag.Title = "Dashboard ROI";
 }
 
-<h2>@ViewBag.Resultado</h2>
+<h2>Simulação do ROI</h2>
+
+@*
+    <p>A faltar paragrafo a explicar </p>
+*@
+
 
 <div>
-    <p><strong>Data do Cálculo:</strong> @Model.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
-    <p><strong>ROI (Anos):</strong> @Model.CurrentRoi.ROI</p>
-    <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
-</div>
-
-<div style="margin-bottom:20px;">
-	<a href="@Url.Action("Index", "ROICalculator")" class="btn btn-primary" style="margin-left:10px;">Voltar</a>
-	<a href="@Url.Action("Index", "Home")" class="btn btn-primary" style="margin-left:10px;">Página Principal</a>
-</div>
-
-<div>
-    <canvas id="roiChart" width="800" height="400"></canvas>
+    <canvas id="roiChart" width="900" height="500"></canvas>
 </div>
 
 @section Scripts {
@@ -61,3 +55,62 @@
         });
     </script>
 }
+
+<div id="metrics">
+    <p><strong>Data do Cálculo:</strong> @Model.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
+    <p><strong>Anos até Retorno do Investimento:</strong> @ViewBag.Resultado</p>
+    <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
+</div>
+
+<div id="buttons">
+    <a href="@Url.Action("Index", "ROICalculator")" id="btn-v">Voltar</a>
+    <a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
+</div>
+
+<style>
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+        font-weight: bold;
+        margin-bottom:5%;
+    }
+
+    #metrics {
+    margin-left:13%;
+    margin-bottom:5%;
+    }
+
+    #buttons {
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        gap:3%;
+    }
+
+   #btn-v, #btn-pp  {
+        width: 160px;
+        height: 35px;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: #065A66;
+        color:white;
+        text-decoration:none;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    #roiChart {
+        max-width: 1000px;
+        max-height: 500px;
+        display: block;
+        margin: auto;
+        margin-bottom:5%;
+    }
+
+
+</style>

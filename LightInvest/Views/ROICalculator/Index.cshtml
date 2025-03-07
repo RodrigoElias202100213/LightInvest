@@ -8,6 +8,15 @@
 	<div class="roi-box">
 		<div class="roi-form">
 			<h2>Simulação de ROI</h2>
+            <div id="text-header">
+              @*
+                <p>
+                O Retorno sobre o Investimento (ROI) é um indicador essencial para avaliar a viabilidade da instalação de painéis solares.
+                Ele permite calcular em quanto tempo o investimento inicial será recuperado através da economia gerada na fatura de eletricidade.
+                Com esta simulação, podes perceber se a instalação de painéis solares compensa financeiramente e qual o impacto da economia de energia ao longo dos anos.
+                </p>
+              *@  
+            </div>
 			<form asp-action="Calcular" method="post">
 				<div class="form-group">
 					<label for="CustoInstalacao">Custos Iniciais de Instalação (€):</label>
@@ -54,7 +63,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f2f2f2;
+        background-color: #f9f9f9;
     padding: 20px;
 }
 
@@ -83,6 +92,12 @@
     font-weight: bold;
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-bottom:5%;
+}
+
+#text-header{
+    text-align:center;
+    margin-left:5%;
+    margin-right: 5%;
 }
 
 .form-group {
