@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace LightInvest.Controllers
+public class SplashScreenController : Controller
 {
-    public class SplashScreenController : Controller
+    public IActionResult SplashScreen()
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        return View();
     }
 }
