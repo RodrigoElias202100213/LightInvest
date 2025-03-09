@@ -40,7 +40,7 @@ public class SecurityTests : IClassFixture<WebApplicationFactory<Program>>
 
 
     [Fact]
-    public async Task Cadastro_DeveFalhar_SeContiverXSS()
+    public async Task Registo_DeveFalhar_SeContiverXSS()
     {
         var xssPayload = new { Name = "<script>alert('Hacked!')</script>", Email = "xss@teste.com", Password = "Senha123!" };
         var content = new StringContent(JsonSerializer.Serialize(xssPayload), Encoding.UTF8, "application/json");
@@ -51,7 +51,7 @@ public class SecurityTests : IClassFixture<WebApplicationFactory<Program>>
 
  
     [Fact]
-    public async Task Registro_DeveFalhar_SeSenhaForFraca()
+    public async Task Registo_DeveFalhar_SePasswordForFraca()
     {
         var weakPasswordPayload = new { Name = "Teste", Email = "user@teste.com", Password = "123" };
         var content = new StringContent(JsonSerializer.Serialize(weakPasswordPayload), Encoding.UTF8, "application/json");
