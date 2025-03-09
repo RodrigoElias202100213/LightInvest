@@ -7,7 +7,6 @@ public class RoiCalculatorTests
 	[Fact]
 	public void CalcularROI_DeveRetornarValorCorreto()
 	{
-		// Arrange
 		var roiCalculator = new RoiCalculator
 		{
 			CustoInstalacao = 50000,
@@ -17,10 +16,8 @@ public class RoiCalculatorTests
 			RetornoEconomia = 0.5m
 		};
 
-		// Act
 		var resultado = roiCalculator.CalcularROI();
 
-		// Assert
 		Assert.True(resultado > 0);
 	}
 

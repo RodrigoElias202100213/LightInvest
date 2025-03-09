@@ -15,17 +15,13 @@ public class SecurityTests : IClassFixture<WebApplicationFactory<Program>>
         _client = factory.CreateClient();
     }
 
-    //  Teste de Autenticação - Usuário não autenticado tenta acessar área protegida
     [Fact]
     public async Task AcessoProtegido_DeveRetornar_UnauthorizedOuNotFound_SeNaoAutenticado()
     {
         var response = await _client.GetAsync("/Admin/Dashboard");
-        // Aceita Unauthorized ou NotFound
         Assert.True(response.StatusCode == HttpStatusCode.Unauthorized || response.StatusCode == HttpStatusCode.NotFound);
     }
 
-
-    //  Teste de Autorização - Usuário comum tenta acessar área de administrador
     [Fact]
     public async Task AcessoAdmin_DeveRetornar_ForbiddenOuNotFound_SeNaoAutorizado()
     {
@@ -35,20 +31,14 @@ public class SecurityTests : IClassFixture<WebApplicationFactory<Program>>
         var loginResponse = await _client.PostAsync("/Account/Login", content);
         Assert.True(loginResponse.IsSuccessStatusCode);
 
-        // Simula um token inválido para indicar falta de autorização
         _client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", "token-falso");
 
         var response = await _client.GetAsync("/Admin/Dashboard");
 
-        // Aceita Forbidden ou NotFound, dependendo da estratégia de segurança
         Assert.True(response.StatusCode == HttpStatusCode.Forbidden || response.StatusCode == HttpStatusCode.NotFound);
     }
 
 
-   
-
-
-    //  Teste contra XSS - Evitar que scripts sejam armazenados no sistema
     [Fact]
     public async Task Cadastro_DeveFalhar_SeContiverXSS()
     {
@@ -59,7 +49,7 @@ public class SecurityTests : IClassFixture<WebApplicationFactory<Program>>
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
 
-    // Teste de Segurança de Senha - Validar regras mínimas de senha
+ 
     [Fact]
     public async Task Registro_DeveFalhar_SeSenhaForFraca()
     {

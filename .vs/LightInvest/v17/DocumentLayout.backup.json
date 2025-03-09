@@ -89,7 +89,7 @@
               "RelativeDocumentMoniker": "LightInvest\\Controllers\\SplashScreenController.cs",
               "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PA\\LigthInvest 2.0\\LightInvest\\LightInvest\\Controllers\\SplashScreenController.cs",
               "RelativeToolTip": "LightInvest\\Controllers\\SplashScreenController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-09T12:34:12.218Z",
               "EditorCaption": ""
@@ -104,8 +104,7 @@
               "RelativeToolTip": "LightInvest\\Views\\SplashScreen\\SplashScreen.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAIwB8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-09T12:47:47.357Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T12:47:47.357Z"
             },
             {
               "$type": "Document",
@@ -117,8 +116,7 @@
               "RelativeToolTip": "LightInvest\\Program.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAuwAUAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T12:37:09.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T12:37:09.262Z"
             }
           ]
         }

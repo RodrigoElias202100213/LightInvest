@@ -22,7 +22,6 @@ public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFac
 
     public AccountControllerIntegrationTests(WebApplicationFactory<Program> factory)
     {
-        // Configura o HttpClient e o banco de dados em memória
         var scopeFactory = factory.Services.GetRequiredService<IServiceScopeFactory>();
         var scope = scopeFactory.CreateScope();
         _context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
@@ -31,7 +30,6 @@ public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFac
         {
             builder.ConfigureServices(services =>
             {
-                // Remove o contexto do banco de dados existente e substitui por um banco em memória
                 var descriptor = services.SingleOrDefault(d => d.ServiceType == typeof(DbContextOptions<ApplicationDbContext>));
                 if (descriptor != null)
                 {
@@ -47,7 +45,6 @@ public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFac
 
     public void Dispose()
     {
-        // Limpa o banco de dados em memória após cada teste
         _context.Database.EnsureDeleted();
         _context.Dispose();
     }
@@ -55,14 +52,11 @@ public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFac
     [Fact]
     public async Task Login_ReturnsRedirect_WhenCredentialsAreValid()
     {
-        // Arrange
         var loginData = new { Email = "test@example.com", Password = "Password123" };
         var content = new StringContent(JsonSerializer.Serialize(loginData), Encoding.UTF8, "application/json");
 
-        // Act
         var response = await _client.PostAsync("/Account/Login", content);
 
-        // Assert
         Assert.True(response.StatusCode == System.Net.HttpStatusCode.OK || response.StatusCode == System.Net.HttpStatusCode.Redirect);
     }
    

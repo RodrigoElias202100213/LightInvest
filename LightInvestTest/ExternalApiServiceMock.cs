@@ -9,7 +9,6 @@ public class ExternalApiServiceMock
     {
         var mock = new Mock<IExternalApiService>();
 
-        // Simula um retorno esperado da API
         mock.Setup(api => api.ObterTaxaCambioAsync("USD"))
             .ReturnsAsync(5.25m);
 
