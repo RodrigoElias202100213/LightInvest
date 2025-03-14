@@ -1,0 +1,120 @@
+﻿@model EnergyConsumptionViewModel
+
+@{
+	ViewData["Title"] = "Consumo de Energia";
+}
+
+<div class="container">
+	<h2>Consumo de Energia</h2>
+
+	<form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
+
+		<!-- Consumo Horário Dias de Semana -->
+		<div class="section">
+			<h3>Consumo Horário: Segunda-feira a Sexta-feira</h3>
+			<div class="hourly-inputs">
+				@for (int i = 0; i < 24; i++)
+				{
+					<div class="hour-box">
+						<label>@i h</label>
+						<input type="number" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01" />
+					</div>
+				}
+			</div>
+		</div>
+
+		<!-- Consumo Horário Fins de Semana -->
+		<div class="section">
+			<h3>Consumo Horário: Feriados/Fim de Semana</h3>
+			<div class="hourly-inputs">
+				@for (int i = 0; i < 24; i++)
+				{
+					<div class="hour-box">
+						<label>@i h</label>
+						<input type="number" asp-for="ConsumoFimSemana[i]" min="0" step="0.01" />
+					</div>
+				}
+			</div>
+		</div>
+		<div class="section">
+			<h3>Ocupação Mensal</h3>
+			<div class="month-checkboxes">
+				@foreach (var mes in Enum.GetNames(typeof(Meses)))
+				{
+					<label>
+						<input type="checkbox" name="MesesOcupacao" value="@mes"
+						       @(Model.MesesOcupacao.Contains(mes) ? "checked" : "") />
+						@mes
+					</label>
+				}
+			</div>
+		</div>
+
+
+
+
+		<!-- Estatísticas -->
+		<div class="section stats">
+			<h3>Estatísticas</h3>
+			<p>Semana útil: média @Model.MediaSemana kWh por dia</p>
+			<p>Fim de semana: média @Model.MediaFimSemana kWh por dia</p>
+			<p>No base anual: média @Model.MediaAnual kWh por ano</p>
+		</div>
+
+		<button type="submit" class="btn">Calcular</button>
+
+		<div>
+			<a href="@Url.Action("Simulation", "EnergySimulation")" class="btn btn-primary">Continuar</a>
+			<a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Cancelar</a>
+		</div>
+
+	</form>
+
+
+
+</div>
+
+<style>
+	.container {
+		text-align: center;
+		max-width: 800px;
+		margin: auto;
+	}
+
+	.section {
+		margin-bottom: 20px;
+	}
+
+	.hourly-inputs, .month-checkboxes {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	.hour-box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	input[type="number"] {
+		width: 50px;
+		text-align: center;
+	}
+
+	.btn {
+		background: #065A66;
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		cursor: pointer;
+	}
+
+	.hourly-inputs {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr); /* 6 colunas para 24h */
+		gap: 10px;
+	}
+
+</style>

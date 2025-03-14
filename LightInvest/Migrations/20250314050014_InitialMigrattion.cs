@@ -6,11 +6,46 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LightInvest.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCommunityMigration : Migration
+    public partial class InitialMigrattion : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "EnergyConsumptions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ConsumoDiaSemana = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ConsumoFimSemana = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MesesOcupacao = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MediaSemana = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    MediaFimSemana = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    MediaAnual = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ConsumoTotal = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_EnergyConsumptions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PasswordResetTokens",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Token = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Expiration = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PasswordResetTokens", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "ROICalculators",
                 columns: table => new
@@ -50,6 +85,12 @@ namespace LightInvest.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "EnergyConsumptions");
+
+            migrationBuilder.DropTable(
+                name: "PasswordResetTokens");
+
             migrationBuilder.DropTable(
                 name: "ROICalculators");
 

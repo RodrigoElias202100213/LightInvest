@@ -52,6 +52,7 @@ app.MapControllerRoute(
    pattern: "{controller=SplashScreen}/{action=SplashScreen}"
 );
 
+
 app.Run();
 
 public partial class Program { }

@@ -21,7 +21,9 @@
                     <button type="submit" class="btn">Simulações do ROI</button>
                 </form>
 
-                <button class="btn">Simulações de Tarifas Energéticas</button>
+                <form asp-controller="EnergySimulation" asp-action="Simulation">
+	                <button type="submit" class="btn">Simulações de Tarifas Energéticas</button>
+                </form>
                 <button class="btn">Educação Energética</button>
                 
                 <div id="sair">

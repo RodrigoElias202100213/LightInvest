@@ -17,10 +17,51 @@ namespace LightInvest.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.1")
+                .HasAnnotation("ProductVersion", "9.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("LightInvest.Models.EnergyConsumption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.PrimitiveCollection<string>("ConsumoDiaSemana")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.PrimitiveCollection<string>("ConsumoFimSemana")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("ConsumoTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MediaAnual")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MediaFimSemana")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("MediaSemana")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.PrimitiveCollection<string>("MesesOcupacao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EnergyConsumptions");
+                });
 
             modelBuilder.Entity("LightInvest.Models.PasswordResetToken", b =>
                 {

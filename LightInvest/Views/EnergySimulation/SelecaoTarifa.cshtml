@@ -1,0 +1,19 @@
+﻿@model LightInvest.Models.ResultadoTarifaViewModel
+
+<form method="post" asp-action="SimularCusto">
+	<div class="form-group">
+		<label for="TarifaEscolhida">Escolha a Tarifa</label>
+		<select asp-for="TarifaEscolhida" class="form-control">
+			<option value="Residencial">Residencial</option>
+			<option value="Comercial">Comercial</option>
+			<option value="Industrial">Industrial</option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label for="PrecoKwh">Preço do kWh (R$)</label>
+		<input type="number" asp-for="PrecoKwh" class="form-control" step="0.01" value="@Model.PrecoKwh" />
+	</div>
+
+	<button type="submit" class="btn btn-primary">Calcular</button>
+</form>
