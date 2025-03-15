@@ -286,6 +286,15 @@ BEGIN
     VALUES (N'20250315021558_SeedCidadesAndPaineis', N'9.0.2');
 END;
 
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250315035324_CreateDadosInstalacaoTable'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250315035324_CreateDadosInstalacaoTable', N'9.0.2');
+END;
+
 COMMIT;
 GO
 

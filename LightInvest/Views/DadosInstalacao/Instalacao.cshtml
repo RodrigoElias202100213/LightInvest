@@ -1,0 +1,84 @@
+﻿@model LightInvest.Models.DadosInstalacao
+
+@{
+    ViewData["Title"] = "Nova Instalação";
+}
+
+<h2>Nova Instalação</h2>
+
+<form asp-action="" method="post">
+	<div class="form-group">
+		<label for="CidadeId">Cidade</label>
+		<select asp-for="CidadeId" asp-items="ViewBag.Cidades" class="form-control">
+			<option value="">Selecione uma cidade</option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label for="ModeloPainelId">Modelo do Painel Solar</label>
+		<select asp-for="ModeloPainelId" asp-items="ViewBag.ModelosPaineis" class="form-control" id="modeloPainel">
+			<option value="">Selecione um modelo</option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label for="ConsumoPainel">Potência do Painel</label>
+		<select asp-for="ConsumoPainel" class="form-control" id="potenciaPainel">
+			<option value="">Selecione a potência</option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label for="NumeroPaineis">Número de Painéis</label>
+		<input asp-for="NumeroPaineis" class="form-control" type="number" min="1" required />
+	</div>
+
+	<div class="form-group">
+		<label for="Inclinacao">Inclinação</label>
+		<input asp-for="Inclinacao" class="form-control" type="number" step="0.1" min="0" max="90" required />
+	</div>
+
+	<div class="form-group">
+		<label for="Dificuldade">Dificuldade</label>
+		<select asp-for="Dificuldade" class="form-control">
+			<option value="fácil">Fácil</option>
+			<option value="média">Média</option>
+			<option value="difícil">Difícil</option>
+		</select>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+<script>
+	$(document).ready(function () {
+		$("#ModeloPainelId").change(function () {
+			var modeloId = $(this).val(); // Obtém o ID do modelo selecionado
+			console.log("Modelo selecionado:", modeloId); // Debug
+
+			if (modeloId) {
+				$.getJSON(`/DadosInstalacao/GetPotencias?modeloId=${modeloId}`, function (data) {
+					console.log("Dados recebidos da API:", data); // Debug
+
+					var potenciaSelect = $("#PotenciaPainelId");
+					potenciaSelect.empty(); // Limpa as opções
+
+					if (data.error) {
+						console.error("Erro da API:", data.error);
+						alert(data.error);
+					} else if (data.message) {
+						potenciaSelect.append('<option value="">Nenhuma potência encontrada</option>');
+					} else {
+						potenciaSelect.append('<option value="">Selecione uma potência</option>');
+						$.each(data, function (index, item) {
+							potenciaSelect.append(`<option value="${item.id}">${item.potencia} W</option>`);
+						});
+					}
+				}).fail(function () {
+					console.error("Erro ao chamar a API");
+					alert("Erro ao carregar as potências.");
+				});
+			}
+		});
+	});
+</script>

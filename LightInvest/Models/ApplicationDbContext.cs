@@ -31,7 +31,14 @@ namespace LightInvest.Data
 		{
 			base.OnModelCreating(modelBuilder);
 
-			// Seed data for Cidade
+			// Relação entre ModeloPainelSolar e PotenciaPainelSolar
+			modelBuilder.Entity<PotenciaPainelSolar>()
+				.HasOne(p => p.PainelSolar)
+				.WithMany(m => m.Potencias)
+				.HasForeignKey(p => p.PainelSolarId)
+				.OnDelete(DeleteBehavior.Cascade); // Define a ação ao deletar um modelo
+
+			// Seed data para Cidade
 			modelBuilder.Entity<Cidade>().HasData(
 				new Cidade { Id = 1, Nome = "Lisboa" },
 				new Cidade { Id = 2, Nome = "Porto" },
@@ -39,38 +46,29 @@ namespace LightInvest.Data
 				new Cidade { Id = 4, Nome = "Funchal" }
 			);
 
-			// Seed data for ModeloPainelSolar
+			// Seed data para ModeloPainelSolar
 			modelBuilder.Entity<ModeloPainelSolar>().HasData(
-				new ModeloPainelSolar { Id = 1, Modelo = "Modelo A"},
-				new ModeloPainelSolar { Id = 2, Modelo = "Modelo B"},
-				new ModeloPainelSolar { Id = 3, Modelo = "Modelo C"}
+				new ModeloPainelSolar { Id = 1, Modelo = "Modelo A" },
+				new ModeloPainelSolar { Id = 2, Modelo = "Modelo B" },
+				new ModeloPainelSolar { Id = 3, Modelo = "Modelo C" }
 			);
+
+			// Seed data para PotenciaPainelSolar
 			modelBuilder.Entity<PotenciaPainelSolar>().HasData(
 				new PotenciaPainelSolar { Id = 1, Potencia = 250, PainelSolarId = 1 },
 				new PotenciaPainelSolar { Id = 2, Potencia = 300, PainelSolarId = 2 },
 				new PotenciaPainelSolar { Id = 3, Potencia = 350, PainelSolarId = 3 }
 			);
 
-			// Seed data for RoiCalculator
+			// Configuração da entidade RoiCalculator
 			modelBuilder.Entity<RoiCalculator>(entity =>
 			{
-				entity.Property(e => e.CustoInstalacao)
-					.HasColumnType("decimal(18,2)");
-
-				entity.Property(e => e.CustoManutencaoAnual)
-					.HasColumnType("decimal(18,2)");
-
-				entity.Property(e => e.ConsumoEnergeticoMedio)
-					.HasColumnType("decimal(18,2)");
-
-				entity.Property(e => e.ConsumoEnergeticoRede)
-					.HasColumnType("decimal(18,2)");
-
-				entity.Property(e => e.RetornoEconomia)
-					.HasColumnType("decimal(18,2)");
-
-				entity.Property(e => e.ROI)
-					.HasColumnType("decimal(18,2)");
+				entity.Property(e => e.CustoInstalacao).HasColumnType("decimal(18,2)");
+				entity.Property(e => e.CustoManutencaoAnual).HasColumnType("decimal(18,2)");
+				entity.Property(e => e.ConsumoEnergeticoMedio).HasColumnType("decimal(18,2)");
+				entity.Property(e => e.ConsumoEnergeticoRede).HasColumnType("decimal(18,2)");
+				entity.Property(e => e.RetornoEconomia).HasColumnType("decimal(18,2)");
+				entity.Property(e => e.ROI).HasColumnType("decimal(18,2)");
 			});
 		}
 

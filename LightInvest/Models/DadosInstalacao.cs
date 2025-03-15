@@ -21,8 +21,11 @@ namespace LightInvest.Models
 		
 		public decimal ConsumoPainel { get; set; }
 		public decimal Inclinacao { get; set; } 
-		public string Dificuldade { get; set; } 
-		
+		public string Dificuldade { get; set; }
+
+		public decimal PrecoInstalacao { get; set; } // Adiciona a propriedade para exibir o preço calculado
+
+
 		public decimal CalcularPrecoPorInclinacao()
 		{
 			decimal fatorInclinacao = 1.0m;

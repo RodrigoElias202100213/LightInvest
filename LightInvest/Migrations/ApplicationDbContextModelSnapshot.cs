@@ -49,6 +49,9 @@ namespace LightInvest.Migrations
                     b.Property<int>("NumeroPaineis")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("PrecoInstalacao")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("UserEmail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

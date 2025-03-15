@@ -1,0 +1,40 @@
+﻿@model LightInvest.Models.DadosInstalacao
+
+@{
+	ViewData["Title"] = "Dados da Instalação";
+}
+
+<h2>Dados da Instalação</h2>
+
+<div class="form-group">
+	<label>Cidade</label>
+	<p>@Model.CidadeId</p>
+</div>
+
+<div class="form-group">
+	<label>Modelo do Painel Solar</label>
+	<p>@Model.ModeloPainelId</p>
+</div>
+
+<div class="form-group">
+	<label>Potência do Painel</label>
+	<p>@Model.ConsumoPainel W</p>
+</div>
+
+<div class="form-group">
+	<label>Número de Painéis</label>
+	<p>@Model.NumeroPaineis</p>
+</div>
+
+<div class="form-group">
+	<label>Inclinação</label>
+	<p>@Model.Inclinacao</p>
+</div>
+
+<div class="form-group">
+	<label>Dificuldade</label>
+	<p>@Model.Dificuldade</p>
+</div>
+
+<!-- Se quiser adicionar uma opção de editar ou voltar para o formulário -->
+<a href="@Url.Action("Instalacao", "DadosInstalacao")" class="btn btn-secondary">Voltar</a>
