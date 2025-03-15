@@ -46,6 +46,9 @@ public class ROICalculatorController : Controller
 		return View(roiCalculation);
 	}
 
+
+
+
 	private async Task<User> GetLoggedInUserAsync()
 	{
 		var userEmail = HttpContext.Session.GetString("UserEmail");

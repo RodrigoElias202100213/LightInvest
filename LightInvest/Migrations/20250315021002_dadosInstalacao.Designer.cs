@@ -4,6 +4,7 @@ using LightInvest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LightInvest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250315021002_dadosInstalacao")]
+    partial class dadosInstalacao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,28 +235,6 @@ namespace LightInvest.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cidades");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Nome = "Lisboa"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Nome = "Porto"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Nome = "Coimbra"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Nome = "Funchal"
-                        });
                 });
 
             modelBuilder.Entity("LightInvest.Models.b.ModeloPainelSolar", b =>
@@ -272,23 +253,6 @@ namespace LightInvest.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ModelosDePaineisSolares");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Modelo = "Modelo A"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Modelo = "Modelo B"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Modelo = "Modelo C"
-                        });
                 });
 
             modelBuilder.Entity("LightInvest.Models.b.PotenciaPainelSolar", b =>
@@ -310,26 +274,6 @@ namespace LightInvest.Migrations
                     b.HasIndex("PainelSolarId");
 
                     b.ToTable("PotenciasDePaineisSolares");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            PainelSolarId = 1,
-                            Potencia = 250m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            PainelSolarId = 2,
-                            Potencia = 300m
-                        },
-                        new
-                        {
-                            Id = 3,
-                            PainelSolarId = 3,
-                            Potencia = 350m
-                        });
                 });
 
             modelBuilder.Entity("LightInvest.Models.DadosInstalacao", b =>
