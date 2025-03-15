@@ -17,9 +17,14 @@
 					{
 						<div class="hour-box">
 							<label><strong>@i h</strong></label>
-							<input type="number" class="borders" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01" value="" />
+							<input type="number" class="borders" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01" 
+							       value="@(Model.ConsumoDiaSemana[i] > 0 ? Model.ConsumoDiaSemana[i].ToString("F2") : "")" />
 						</div>
 					}
+
+
+
+
 				</div>
 			</div>
 
@@ -31,9 +36,13 @@
 					{
 						<div class="hour-box">
 							<label><strong>@i h</strong></label>
-							<input type="number" class="borders" asp-for="ConsumoFimSemana[i]" min="0" step="0.01" value=" " />
+							<input type="number" class="borders" asp-for="ConsumoFimSemana[i]" min="0" step="0.01" 
+							       value="@(Model.ConsumoFimSemana[i] > 0 ? Model.ConsumoFimSemana[i].ToString("F2") : "")" />
 						</div>
 					}
+
+
+
 				</div>
 			</div>
 
@@ -59,11 +68,15 @@
 				<p><strong>Fim de semana:</strong> média @Model.MediaFimSemana kWh por dia</p>
 				<p><strong>Base anual:</strong> média @Model.MediaAnual kWh por ano</p>
 			</div>
+
+			
+			<div id="not-hidden-button">
+				<button type="submit" class="btn">Calcular</button>
+			</div>
+
 		</form>
-	</div>
-	<div id="not-hidden-button">
-		<button type="submit" class="btn">Calcular</button>
-	</div>
+	
+		</div>
 	
 	<div id="hidden-buttons">
 		<a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
@@ -72,6 +85,17 @@
 
 </div>
 
+<script>
+	document.querySelector('form').addEventListener('submit', function(event) {
+		const inputs = document.querySelectorAll('input[type="number"]');
+
+		inputs.forEach(input => {
+			if (input.value.trim() === '') {
+				input.value = '0';
+			}
+		});
+	});
+</script>
 
 	
 

@@ -66,7 +66,8 @@ public class EnergySimulationController : Controller
 		await SaveConsumptionToDatabase(user.Email, model, consumoTotal);
 		StoreTempData(model);
 
-		return View(model);
+		// Aqui, retornamos a view com os valores preenchidos, para que o usuário veja os dados novamente
+		return View(model); // Aqui passamos o model atualizado com os dados preenchidos.
 	}
 
 	private void EnsureValidData(EnergyConsumptionViewModel model)
@@ -75,6 +76,7 @@ public class EnergySimulationController : Controller
 		model.ConsumoFimSemana ??= Enumerable.Repeat(0m, 24).ToList();
 		model.MesesOcupacao ??= new List<string>();
 	}
+
 
 	private decimal CalculateTotalConsumption(EnergyConsumptionViewModel model)
 	{
@@ -111,8 +113,7 @@ public class EnergySimulationController : Controller
 		return consumoTotal;
 	}
 
-	private async Task SaveConsumptionToDatabase(string userEmail, EnergyConsumptionViewModel model,
-		decimal consumoTotal)
+	private async Task SaveConsumptionToDatabase(string userEmail, EnergyConsumptionViewModel model, decimal consumoTotal)
 	{
 		var consumoExistente = await _context.EnergyConsumptions
 			.FirstOrDefaultAsync(c => c.UserEmail == userEmail);
@@ -144,7 +145,6 @@ public class EnergySimulationController : Controller
 			};
 
 			_context.EnergyConsumptions.Add(consumo);
-
 		}
 
 		await _context.SaveChangesAsync();
@@ -187,7 +187,7 @@ public class EnergySimulationController : Controller
 		foreach (var mes in mesesDisponiveis)
 		{
 			bool estaOcupado = model.MesesOcupacao.Contains(mes);
-			decimal consumo = estaOcupado ? new Random().Next(200, 500) : 0;
+			decimal consumo = estaOcupado ? new Random().Next(200, 500) : 0; // Simulação de consumo (ajuste conforme necessário)
 			decimal custo = consumo * model.PrecoKwh;
 
 			consumoMensal.Add(new MesConsumo { Mes = mes, Consumo = consumo, Custo = custo });
@@ -241,7 +241,9 @@ public class EnergySimulationController : Controller
 	{
 		if (!ModelState.IsValid)
 		{
-			return View(model);  }
+			return View(model);
+
+		}
 
 		var user = await GetLoggedInUserAsync();
 		if (user == null)
@@ -255,6 +257,7 @@ public class EnergySimulationController : Controller
 			var tarifaBase = TarifasBase[tipoTarifa];
 
 			model.PrecoKwh = tarifaBase + model.PrecoKwh;
+
 			var tarifa = new Tarifa
 			{
 				Nome = tipoTarifa,
@@ -269,7 +272,6 @@ public class EnergySimulationController : Controller
 
 		ViewBag.Resultado = "Erro: Tipo de tarifa inválido!";
 		return View(model);
-
 	}
 
 	public IActionResult ResultadoSimulacao(ResultadoTarifaViewModel model)
@@ -279,6 +281,7 @@ public class EnergySimulationController : Controller
 
 	private async Task SaveTarifaToDatabase(Tarifa tarifa)
 	{
+
 		var tarifaExistente = await _context.Tarifas
 			.Where(t => t.UserEmail == tarifa.UserEmail)
 			.FirstOrDefaultAsync();
@@ -294,10 +297,9 @@ public class EnergySimulationController : Controller
 		{
 			tarifa.DataAlteracao = DateTime.Now;
 			_context.Tarifas.Add(tarifa);
-
 		}
+
 		await _context.SaveChangesAsync();
 	}
 
 }
-
