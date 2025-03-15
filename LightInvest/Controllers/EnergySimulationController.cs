@@ -66,7 +66,8 @@ public class EnergySimulationController : Controller
 		await SaveConsumptionToDatabase(user.Email, model, consumoTotal);
 		StoreTempData(model);
 
-		return View(model);
+		// Aqui, retornamos a view com os valores preenchidos, para que o usuário veja os dados novamente
+		return View(model); // Aqui passamos o model atualizado com os dados preenchidos.
 	}
 
 	private void EnsureValidData(EnergyConsumptionViewModel model)
@@ -75,6 +76,7 @@ public class EnergySimulationController : Controller
 		model.ConsumoFimSemana ??= Enumerable.Repeat(0m, 24).ToList();
 		model.MesesOcupacao ??= new List<string>();
 	}
+
 
 	private decimal CalculateTotalConsumption(EnergyConsumptionViewModel model)
 	{
@@ -279,14 +281,14 @@ public class EnergySimulationController : Controller
 
 	private async Task SaveTarifaToDatabase(Tarifa tarifa)
 	{
-		
+
 		var tarifaExistente = await _context.Tarifas
 			.Where(t => t.UserEmail == tarifa.UserEmail)
 			.FirstOrDefaultAsync();
 
 		if (tarifaExistente != null)
 		{
-			tarifaExistente.PrecoKwh = tarifa.PrecoKwh;  
+			tarifaExistente.PrecoKwh = tarifa.PrecoKwh;
 			tarifaExistente.DataAlteracao = DateTime.Now;
 
 			_context.Tarifas.Update(tarifaExistente);
@@ -301,4 +303,3 @@ public class EnergySimulationController : Controller
 	}
 
 }
-
