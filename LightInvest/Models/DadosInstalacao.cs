@@ -32,23 +32,19 @@ namespace LightInvest.Models
 		[Required]
 		public string Dificuldade { get; set; }
 
-		// Campo privado para armazenar o preço de instalação calculado
 		private decimal _precoInstalacao;
 
-		// Propriedade que retorna o preço de instalação calculado
 		public decimal PrecoInstalacao
 		{
 			get => _precoInstalacao;
-			set => _precoInstalacao = value; // Não vai mais gerar recursão
+			set => _precoInstalacao = value; 
 		}
 
-		// Método para atualizar o preço de instalação com base nos dados
 		public void AtualizarPrecoInstalacao()
 		{
 			_precoInstalacao = CalcularPrecoInstalacao();
 		}
 
-		// Método para calcular o preço com base nos dados da instalação
 		public decimal CalcularPrecoPorInclinacao()
 		{
 			if (Inclinacao <= 35) return 0.3m;
@@ -63,14 +59,13 @@ namespace LightInvest.Models
 				"fácil" => 1.0m,
 				"média" => 1.2m,
 				"difícil" => 1.5m,
-				_ => 1.0m // Caso a dificuldade seja inválida, mantém o preço base
+				_ => 1.0m 
 			};
 		}
 
-		// Método que calcula o preço total de instalação
 		public decimal CalcularPrecoInstalacao()
 		{
-			const decimal precoBase = 5000.00m; // preço base fixo
+			const decimal precoBase = 5000.00m; 
 			return precoBase * CalcularPrecoPorInclinacao() * CalcularPrecoPorDificuldade() * NumeroPaineis;
 		}
 	}
