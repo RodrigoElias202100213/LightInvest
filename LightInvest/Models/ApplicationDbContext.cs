@@ -10,6 +10,7 @@ namespace LightInvest.Data
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
 			: base(options)
 		{
+
 		}
 
 		public DbSet<RoiCalculator> ROICalculators { get; set; }
@@ -55,9 +56,20 @@ namespace LightInvest.Data
 
 			// Seed data para PotenciaPainelSolar
 			modelBuilder.Entity<PotenciaPainelSolar>().HasData(
+				// Potências para o Modelo A
 				new PotenciaPainelSolar { Id = 1, Potencia = 250, PainelSolarId = 1 },
-				new PotenciaPainelSolar { Id = 2, Potencia = 300, PainelSolarId = 2 },
-				new PotenciaPainelSolar { Id = 3, Potencia = 350, PainelSolarId = 3 }
+				new PotenciaPainelSolar { Id = 2, Potencia = 270, PainelSolarId = 1 },
+				new PotenciaPainelSolar { Id = 3, Potencia = 300, PainelSolarId = 1 },
+
+				// Potências para o Modelo B
+				new PotenciaPainelSolar { Id = 4, Potencia = 300, PainelSolarId = 2 },
+				new PotenciaPainelSolar { Id = 5, Potencia = 320, PainelSolarId = 2 },
+				new PotenciaPainelSolar { Id = 6, Potencia = 350, PainelSolarId = 2 },
+
+				// Potências para o Modelo C
+				new PotenciaPainelSolar { Id = 7, Potencia = 350, PainelSolarId = 3 },
+				new PotenciaPainelSolar { Id = 8, Potencia = 380, PainelSolarId = 3 },
+				new PotenciaPainelSolar { Id = 9, Potencia = 400, PainelSolarId = 3 }
 			);
 
 			// Configuração da entidade RoiCalculator

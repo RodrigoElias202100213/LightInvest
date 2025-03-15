@@ -46,9 +46,6 @@ public class ROICalculatorController : Controller
 		return View(roiCalculation);
 	}
 
-
-
-
 	private async Task<User> GetLoggedInUserAsync()
 	{
 		var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -57,6 +54,7 @@ public class ROICalculatorController : Controller
 
 		return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 	}
+	
 	[HttpPost]
 	public async Task<IActionResult> Calcular(RoiCalculator model)
 	{

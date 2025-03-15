@@ -1,0 +1,95 @@
+﻿@model LightInvest.Models.DadosInstalacao
+
+@{
+    ViewData["Title"] = "Nova Instalação";
+}
+
+<h2>Nova Instalação</h2>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+}
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="CidadeId">Cidade</label>
+        <select asp-for="CidadeId" class="form-control" asp-items="@(new SelectList(ViewBag.Cidades, "Id", "Nome"))">
+            <option value="">Selecione uma cidade</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ModeloPainelId">Modelo do Painel Solar</label>
+        <select asp-for="ModeloPainelId" class="form-control" id="modeloPainelSelect" asp-items="@(new SelectList(ViewBag.ModelosPaineis, "Id", "Modelo"))">
+            <option value="">Selecione um modelo</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ConsumoPainel">Consumo do Painel (kWh)</label>
+        <select asp-for="ConsumoPainel" class="form-control" id="consumoPainelSelect">
+            <option value="">Selecione um consumo</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="NumeroPaineis">Número de Painéis</label>
+        <input asp-for="NumeroPaineis" class="form-control" type="number" min="1" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Inclinacao">Inclinação do Telhado (graus)</label>
+        <input asp-for="Inclinacao" class="form-control" type="number" step="0.01" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Dificuldade">Dificuldade da Instalação</label>
+        <select asp-for="Dificuldade" class="form-control">
+            <option value="fácil">Fácil</option>
+            <option value="média">Média</option>
+            <option value="difícil">Difícil</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Salvar</button>
+</form>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#modeloPainelSelect").change(function () {
+                var modeloPainelId = $(this).val();
+
+                if (modeloPainelId) {
+                    $.ajax({
+                        url: "/DadosInstalacao/GetConsumosPainel",
+                        type: "GET",
+                        data: { modeloPainelId: modeloPainelId },
+                        success: function (data) {
+                            var consumoSelect = $("#consumoPainelSelect");
+                            consumoSelect.empty();
+                            consumoSelect.append('<option value="">Selecione um consumo</option>');
+                            $.each(data, function (index, item) {
+                                consumoSelect.append('<option value="' + item.id + '">' + item.potencia + ' kWh</option>');
+                            });
+                        },
+                        error: function () {
+                            $("#consumoPainelSelect").empty();
+                            $("#consumoPainelSelect").append('<option value="">Erro ao carregar consumos</option>');
+                        }
+                    });
+                } else {
+                    $("#consumoPainelSelect").empty();
+                    $("#consumoPainelSelect").append('<option value="">Selecione um consumo</option>');
+                }
+            });
+        });
+    </script>
+}

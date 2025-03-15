@@ -1,12 +1,9 @@
 ﻿using LightInvest.Data;
 using LightInvest.Models;
-using LightInvest.Models.b;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 public class DadosInstalacaoController : Controller
 {
@@ -17,177 +14,94 @@ public class DadosInstalacaoController : Controller
 		_context = context;
 	}
 
-	public async Task<IActionResult> Instalacao()
+	// Exibe o formulário para inserir os dados de instalação
+	public async Task<IActionResult> Create()
 	{
-		// Obtenha a lista de cidades e modelos de painéis do banco de dados
-		var cidades = await _context.Cidades.ToListAsync();
-		ViewBag.Cidades = cidades.Select(c => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
-		{
-			Value = c.Id.ToString(),  // O valor do item será o Id da cidade
-			Text = c.Nome            // O texto exibido será o nome da cidade
-		}).ToList();
-
-		var modelosPaineis = await _context.ModelosDePaineisSolares.ToListAsync();
-		ViewBag.ModelosPaineis = modelosPaineis.Select(m => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem
-		{
-			Value = m.Id.ToString(),
-			Text = m.Modelo
-		}).ToList();
-
-		var model = InitializeViewModel();
-		LoadTempData(model);
-		return View(model);
+		ViewBag.Cidades = await _context.Cidades.ToListAsync();
+		ViewBag.ModelosPaineis = await _context.ModelosDePaineisSolares.ToListAsync();
+		return View();
 	}
 
-
-	private DadosInstalacao InitializeViewModel()
-	{
-		return new DadosInstalacao()
-		{
-			//CidadeId = 1,
-			//ModeloPainelId = 1,
-			Inclinacao = 0,
-			Dificuldade = "fácil",
-			NumeroPaineis = 1,
-			ConsumoPainel = 0, // TODO: AQUI
-
-		};
-	}
-
-	private void LoadTempData(DadosInstalacao model)
-	{
-		if (TempData["PrecoInstalacao"] != null && decimal.TryParse(TempData["PrecoInstalacao"].ToString(), out decimal preco))
-		{
-			model.PrecoInstalacao = preco;
-		}
-	}
-
-
-	private async Task<User> GetLoggedInUserAsync()
-	{
-		var userEmail = HttpContext.Session.GetString("UserEmail");
-		return string.IsNullOrEmpty(userEmail) ? null : await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
-	}
-
+	// Salva ou atualiza os dados preenchidos pelo usuário
 	[HttpPost]
-	public async Task<IActionResult> Instalacao(DadosInstalacao model)
+	[ValidateAntiForgeryToken]
+	public async Task<IActionResult> Create(DadosInstalacao dados)
 	{
-		if (!ModelState.IsValid)
-		{
-			// Repopula os dropdowns com SelectListItem
-			ViewBag.Cidades = (await _context.Cidades.ToListAsync()).Select(c => new SelectListItem
-			{
-				Value = c.Id.ToString(),
-				Text = c.Nome
-			}).ToList();
-
-			ViewBag.ModelosPaineis = (await _context.ModelosDePaineisSolares.ToListAsync()).Select(m => new SelectListItem
-			{
-				Value = m.Id.ToString(),
-				Text = m.Modelo
-			}).ToList();
-
-			return View(model);
-		}
-
 		var user = await GetLoggedInUserAsync();
 		if (user == null)
 		{
-			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
-			return View("Index", model);
+			TempData["ErrorMessage"] = "Usuário não autenticado.";
+			return RedirectToAction("Login", "Account"); // Redireciona para login se não autenticado
 		}
 
-		decimal precoInstalacao = CalcularPrecoInstalacao(model);
-		await SaveInstalacaoToDatabase(user.Email, model, precoInstalacao);
-		StoreTempData(model);
-
-		return View(model);
-	}
-
-	private decimal CalcularPrecoInstalacao(DadosInstalacao model)
-	{
-		// Se a lógica de cálculo de preço precisa de alguma alteração, pode ser ajustada aqui
-		var dadosInstalacao = new DadosInstalacao
+		if (ModelState.IsValid)
 		{
-			CidadeId = model.CidadeId,
-			ModeloPainelId = model.ModeloPainelId,
-			NumeroPaineis = model.NumeroPaineis,
-			ConsumoPainel = model.ConsumoPainel,
-			Inclinacao = model.Inclinacao,
-			Dificuldade = model.Dificuldade
-		};
+			// Verifica se já existe um dado de instalação para o usuário
+			var dadosExistentes = await _context.DadosInstalacao
+				.Where(d => d.UserEmail == user.Email)
+				.FirstOrDefaultAsync();
 
-		return dadosInstalacao.CalcularPrecoInstalacao();  // Método que já existe no modelo DadosInstalacao
-	}
-
-	private async Task SaveInstalacaoToDatabase(string userEmail, DadosInstalacao model, decimal precoInstalacao)
-	{
-		Console.WriteLine($"Salvando instalação para {userEmail}: Preço={precoInstalacao}");
-
-		var instalacaoExistente = await _context.DadosInstalacao
-			.FirstOrDefaultAsync(i => i.UserEmail == userEmail);
-
-		if (instalacaoExistente != null)
-		{
-			instalacaoExistente.NumeroPaineis = model.NumeroPaineis;
-			instalacaoExistente.ConsumoPainel = model.ConsumoPainel; // TODO: AQUI
-			instalacaoExistente.Inclinacao = model.Inclinacao;
-			instalacaoExistente.Dificuldade = model.Dificuldade;
-			instalacaoExistente.PrecoInstalacao = precoInstalacao;
-			instalacaoExistente.CidadeId = model.CidadeId;
-			instalacaoExistente.ModeloPainelId = model.ModeloPainelId;
-
-			_context.Entry(instalacaoExistente).State = EntityState.Modified;
-		}
-		else
-		{
-			var dadosInstalacao = new DadosInstalacao
+			if (dadosExistentes == null)
 			{
-				UserEmail = userEmail,
-				CidadeId = model.CidadeId,
-				ModeloPainelId = model.ModeloPainelId,
-				NumeroPaineis = model.NumeroPaineis,
-				ConsumoPainel = model.ConsumoPainel,  // TODO: AQUI
-				Inclinacao = model.Inclinacao,
-				Dificuldade = model.Dificuldade,
-				PrecoInstalacao = precoInstalacao
-			};
+				// Caso não exista, cria um novo dado de instalação
+				dados.UserEmail = user.Email;
+				dados.PrecoInstalacao =
+					dados.CalcularPrecoInstalacao(); // Certifique-se de que este método calcula corretamente o preço
+				_context.DadosInstalacao.Add(dados);
+				await _context.SaveChangesAsync();
+				TempData["SuccessMessage"] = "Dados de instalação salvos com sucesso!";
+			}
+			else
+			{
+				// Caso já exista, atualiza os dados de instalação
+				dadosExistentes.CidadeId = dados.CidadeId;
+				dadosExistentes.ModeloPainelId = dados.ModeloPainelId;
+				dadosExistentes.NumeroPaineis = dados.NumeroPaineis;
+				dadosExistentes.ConsumoPainel = dados.ConsumoPainel; // Atualiza o consumo do painel
+				dadosExistentes.Inclinacao = dados.Inclinacao;
+				dadosExistentes.Dificuldade = dados.Dificuldade;
+				dadosExistentes.PrecoInstalacao = dados.CalcularPrecoInstalacao(); // Atualiza o preço de instalação
 
-			_context.DadosInstalacao.Add(dadosInstalacao);
+				_context.DadosInstalacao.Update(dadosExistentes);
+				await _context.SaveChangesAsync();
+				TempData["SuccessMessage"] = "Dados de instalação atualizados com sucesso!";
+			}
+
+			return RedirectToAction("Index", "Home"); // Redireciona após salvar ou atualizar
 		}
 
-		await _context.SaveChangesAsync();
+		// Se o modelo não for válido, recarrega as opções de cidades e modelos de painéis
+		ViewBag.Cidades = await _context.Cidades.ToListAsync();
+		ViewBag.ModelosPaineis = await _context.ModelosDePaineisSolares.ToListAsync();
+		return View(dados); // Retorna à view com os dados preenchidos
 	}
 
-	private void StoreTempData(DadosInstalacao model)
+	// Método para obter o usuário logado com base no e-mail armazenado na sessão
+	private async Task<User> GetLoggedInUserAsync()
 	{
-		TempData["PrecoInstalacao"] = model.PrecoInstalacao.ToString("F2");
+		var userEmail = HttpContext.Session.GetString("UserEmail");
+		if (string.IsNullOrEmpty(userEmail))
+			return null;
+
+		return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 	}
 
+	// Função que retorna os consumos disponíveis para o painel solar selecionado
 	[HttpGet]
-	public async Task<IActionResult> GetPotencias(int modeloId)
+	public async Task<IActionResult> GetConsumosPainel(int modeloPainelId)
 	{
-		Console.WriteLine($"Recebido modeloId: {modeloId}");
-
-		if (modeloId <= 0)
-		{
-			Console.WriteLine("Erro: Modelo inválido.");
-			return Json(new { error = "Modelo inválido." });
-		}
-
-		var potencias = await _context.PotenciasDePaineisSolares
-			.Where(p => p.PainelSolarId == modeloId)
-			.Select(p => new { p.Id, p.Potencia })
+		// Buscando as potências (ou consumos) do painel solar selecionado
+		var consumos = await _context.PotenciasDePaineisSolares
+			.Where(p => p.PainelSolarId == modeloPainelId)
+			.Select(p => new { p.Id, p.Potencia }) // Retorna a ID e a Potência do painel solar
 			.ToListAsync();
 
-		Console.WriteLine($"Potências encontradas: {potencias.Count}");
-
-		if (!potencias.Any())
+		if (consumos == null || !consumos.Any())
 		{
-			Console.WriteLine("Nenhuma potência encontrada.");
-			return Json(new { message = "Nenhuma potência encontrada." });
+			return NotFound(); // Retorna erro caso não haja consumos
 		}
 
-		return Json(potencias);
+		return Json(consumos); // Retorna os consumos no formato JSON
 	}
+
 }
