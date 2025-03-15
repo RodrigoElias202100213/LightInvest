@@ -295,6 +295,79 @@ BEGIN
     VALUES (N'20250315035324_CreateDadosInstalacaoTable', N'9.0.2');
 END;
 
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250315153140_InitialMigration'
+)
+BEGIN
+    ALTER TABLE [DadosInstalacao] ADD [PrecoInstalacao] decimal(18,2) NOT NULL DEFAULT 0.0;
+END;
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250315153140_InitialMigration'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250315153140_InitialMigration', N'9.0.2');
+END;
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250315160555_InitialMigrationaaUT'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250315160555_InitialMigrationaaUT', N'9.0.2');
+END;
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250315173354_AddMorePotenciasToPaineis'
+)
+BEGIN
+    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 1, [Potencia] = 270.0
+    WHERE [Id] = 2;
+    SELECT @@ROWCOUNT');
+END;
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250315173354_AddMorePotenciasToPaineis'
+)
+BEGIN
+    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 1, [Potencia] = 300.0
+    WHERE [Id] = 3;
+    SELECT @@ROWCOUNT');
+END;
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250315173354_AddMorePotenciasToPaineis'
+)
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PainelSolarId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
+        SET IDENTITY_INSERT [PotenciasDePaineisSolares] ON;
+    EXEC(N'INSERT INTO [PotenciasDePaineisSolares] ([Id], [PainelSolarId], [Potencia])
+    VALUES (4, 2, 300.0),
+    (5, 2, 320.0),
+    (6, 2, 350.0),
+    (7, 3, 350.0),
+    (8, 3, 380.0),
+    (9, 3, 400.0)');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PainelSolarId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
+        SET IDENTITY_INSERT [PotenciasDePaineisSolares] OFF;
+END;
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250315173354_AddMorePotenciasToPaineis'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250315173354_AddMorePotenciasToPaineis', N'9.0.2');
+END;
+
 COMMIT;
 GO
 
