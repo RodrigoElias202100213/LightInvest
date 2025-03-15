@@ -22,6 +22,49 @@ namespace LightInvest.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("LightInvest.Models.DadosInstalacao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CidadeId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ConsumoPainel")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Dificuldade")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Inclinacao")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ModeloPainelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumeroPaineis")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PrecoInstalacao")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CidadeId");
+
+                    b.HasIndex("ModeloPainelId");
+
+                    b.ToTable("DadosInstalacao");
+                });
+
             modelBuilder.Entity("LightInvest.Models.EnergyConsumption", b =>
                 {
                     b.Property<int>("Id")
@@ -174,6 +217,193 @@ namespace LightInvest.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("LightInvest.Models.b.Cidade", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cidades");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Nome = "Lisboa"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Nome = "Porto"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Nome = "Coimbra"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Nome = "Funchal"
+                        });
+                });
+
+            modelBuilder.Entity("LightInvest.Models.b.ModeloPainelSolar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Modelo")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ModelosDePaineisSolares");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Modelo = "Modelo A"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Modelo = "Modelo B"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Modelo = "Modelo C"
+                        });
+                });
+
+            modelBuilder.Entity("LightInvest.Models.b.PotenciaPainelSolar", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PainelSolarId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Potencia")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PainelSolarId");
+
+                    b.ToTable("PotenciasDePaineisSolares");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            PainelSolarId = 1,
+                            Potencia = 250m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            PainelSolarId = 1,
+                            Potencia = 270m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            PainelSolarId = 1,
+                            Potencia = 300m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            PainelSolarId = 2,
+                            Potencia = 300m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            PainelSolarId = 2,
+                            Potencia = 320m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            PainelSolarId = 2,
+                            Potencia = 350m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            PainelSolarId = 3,
+                            Potencia = 350m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            PainelSolarId = 3,
+                            Potencia = 380m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            PainelSolarId = 3,
+                            Potencia = 400m
+                        });
+                });
+
+            modelBuilder.Entity("LightInvest.Models.DadosInstalacao", b =>
+                {
+                    b.HasOne("LightInvest.Models.b.Cidade", "Cidade")
+                        .WithMany()
+                        .HasForeignKey("CidadeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LightInvest.Models.b.ModeloPainelSolar", "ModeloPainel")
+                        .WithMany()
+                        .HasForeignKey("ModeloPainelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cidade");
+
+                    b.Navigation("ModeloPainel");
+                });
+
+            modelBuilder.Entity("LightInvest.Models.b.PotenciaPainelSolar", b =>
+                {
+                    b.HasOne("LightInvest.Models.b.ModeloPainelSolar", "PainelSolar")
+                        .WithMany("Potencias")
+                        .HasForeignKey("PainelSolarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("PainelSolar");
+                });
+
+            modelBuilder.Entity("LightInvest.Models.b.ModeloPainelSolar", b =>
+                {
+                    b.Navigation("Potencias");
                 });
 #pragma warning restore 612, 618
         }

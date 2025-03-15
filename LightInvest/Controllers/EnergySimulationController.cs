@@ -267,7 +267,7 @@ public class EnergySimulationController : Controller
 
 			await SaveTarifaToDatabase(tarifa);
 
-			return RedirectToAction("ResultadoSimulacao", model);
+			return RedirectToAction("Create", "DadosInstalacao");
 		}
 
 		ViewBag.Resultado = "Erro: Tipo de tarifa inválido!";
