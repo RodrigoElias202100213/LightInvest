@@ -14,7 +14,7 @@ namespace LightInvest.Models
 		[Key]
 		public int Id { get; set; }
 		public string UserEmail { get; set; }
-		public DateTime DataAlteracao { get; set; }  // Data da alteração
+		public DateTime DataAlteracao { get; set; }
 		public TipoTarifa Nome { get; set; } // Tipo de tarifa: Residencial, Comercial, Industrial
 		public decimal PrecoKwh { get; set; }
 

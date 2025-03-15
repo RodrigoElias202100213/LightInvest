@@ -111,15 +111,14 @@ public class EnergySimulationController : Controller
 		return consumoTotal;
 	}
 
-	private async Task SaveConsumptionToDatabase(string userEmail, EnergyConsumptionViewModel model, decimal consumoTotal)
+	private async Task SaveConsumptionToDatabase(string userEmail, EnergyConsumptionViewModel model,
+		decimal consumoTotal)
 	{
-		// Verifique se já existe um registro de consumo para o usuário
 		var consumoExistente = await _context.EnergyConsumptions
 			.FirstOrDefaultAsync(c => c.UserEmail == userEmail);
 
 		if (consumoExistente != null)
 		{
-			// Atualize os dados do consumo existente
 			consumoExistente.ConsumoDiaSemana = model.ConsumoDiaSemana;
 			consumoExistente.ConsumoFimSemana = model.ConsumoFimSemana;
 			consumoExistente.MesesOcupacao = model.MesesOcupacao;
@@ -128,12 +127,10 @@ public class EnergySimulationController : Controller
 			consumoExistente.MediaAnual = model.MediaAnual;
 			consumoExistente.ConsumoTotal = consumoTotal;
 
-			// Sinalize que a entidade foi modificada
 			_context.Entry(consumoExistente).State = EntityState.Modified;
 		}
 		else
 		{
-			// Crie um novo registro caso não exista um anterior
 			var consumo = new EnergyConsumption
 			{
 				UserEmail = userEmail,
@@ -146,10 +143,11 @@ public class EnergySimulationController : Controller
 				ConsumoTotal = consumoTotal
 			};
 
-			_context.EnergyConsumptions.Add(consumo); // Adiciona um novo registro
+			_context.EnergyConsumptions.Add(consumo);
+
 		}
 
-		await _context.SaveChangesAsync(); // Salva as alterações no banco
+		await _context.SaveChangesAsync();
 	}
 
 	private void StoreTempData(EnergyConsumptionViewModel model)
@@ -166,24 +164,18 @@ public class EnergySimulationController : Controller
 			return View("Index", model);
 		}
 
-		// Exemplo de como chamar a função de salvar a tarifa
 		if (Enum.TryParse(model.TarifaEscolhida, out TipoTarifa tipoTarifa))
 		{
 			var tarifa = new Tarifa { Nome = tipoTarifa, PrecoKwh = TarifasBase[tipoTarifa] };
-			model.PrecoKwh = tarifa.GetPrecoKwh(); // Aplica acréscimos se necessário
-
-			// Salvar no banco de dados
-			await SaveTarifaToDatabase(tarifa);  // Passando o objeto Tarifa
+			model.PrecoKwh = tarifa.GetPrecoKwh();
+			await SaveTarifaToDatabase(tarifa);
 		}
 
-		// Simular o consumo mensal com base na ocupação dos meses
 		model.ConsumoMensal = CalcularConsumoMensal(model);
 
-		// Calcular o consumo total anual e o custo anual
 		model.ConsumoTotal = model.ConsumoMensal.Sum(m => m.Consumo);
 		model.ValorAnual = model.ConsumoMensal.Sum(m => m.Custo);
 
-		// Retornar os dados atualizados para a view
 		return View("ResultadoSimulacao", model);
 	}
 
@@ -195,7 +187,7 @@ public class EnergySimulationController : Controller
 		foreach (var mes in mesesDisponiveis)
 		{
 			bool estaOcupado = model.MesesOcupacao.Contains(mes);
-			decimal consumo = estaOcupado ? new Random().Next(200, 500) : 0; // Simulação de consumo (ajuste conforme necessário)
+			decimal consumo = estaOcupado ? new Random().Next(200, 500) : 0;
 			decimal custo = consumo * model.PrecoKwh;
 
 			consumoMensal.Add(new MesConsumo { Mes = mes, Consumo = consumo, Custo = custo });
@@ -214,26 +206,21 @@ public class EnergySimulationController : Controller
 	{
 		if (Enum.TryParse(tarifaEscolhida, out TipoTarifa tipoTarifa))
 		{
-			// Recupera o preço do kWh com base no tipo de tarifa
 			decimal precoKwh = TarifasBase[tipoTarifa];
 
-			// Cria uma nova instância de Tarifa
 			var tarifa = new Tarifa
 			{
 				Nome = tipoTarifa,
 				PrecoKwh = precoKwh
 			};
 
-			// Adiciona a nova tarifa ao contexto e salva no banco
 			_context.Tarifas.Add(tarifa);
 			await _context.SaveChangesAsync();
 
-			// Redireciona ou exibe mensagem de sucesso
 			ViewBag.Resultado = "Tarifa salva com sucesso!";
 			return RedirectToAction("Tarifas");
 		}
 
-		// Caso o tipo de tarifa não seja válido
 		ViewBag.Resultado = "Erro: Tipo de tarifa inválido!";
 		return View("Index");
 	}
@@ -243,7 +230,6 @@ public class EnergySimulationController : Controller
 	{
 		var model = new SelecionarTarifaViewModel
 		{
-			// Fill TiposDeTarifa with the enum values or any predefined list of tariffs
 			TiposDeTarifa = Enum.GetNames(typeof(TipoTarifa)).ToList()
 		};
 
@@ -255,8 +241,7 @@ public class EnergySimulationController : Controller
 	{
 		if (!ModelState.IsValid)
 		{
-			return View(model);  // Se o modelo não for válido, retorne a view com o modelo atual
-		}
+			return View(model);  }
 
 		var user = await GetLoggedInUserAsync();
 		if (user == null)
@@ -265,16 +250,11 @@ public class EnergySimulationController : Controller
 			return View("Index", model);
 		}
 
-		// Tenta converter o tipo de tarifa escolhido pelo usuário para o enum TipoTarifa
 		if (Enum.TryParse(model.TarifaEscolhida, out TipoTarifa tipoTarifa))
 		{
-			// Recupera o preço da tarifa com base no tipo selecionado
 			var tarifaBase = TarifasBase[tipoTarifa];
 
-			// O valor do Preço por kWh será a soma do valor da tarifa base com o valor inserido pelo usuário
 			model.PrecoKwh = tarifaBase + model.PrecoKwh;
-
-			// Cria uma nova instância de Tarifa com os dados do usuário e o preço calculado
 			var tarifa = new Tarifa
 			{
 				Nome = tipoTarifa,
@@ -282,48 +262,40 @@ public class EnergySimulationController : Controller
 				UserEmail = user.Email
 			};
 
-			// Salva a tarifa no banco de dados
 			await SaveTarifaToDatabase(tarifa);
 
-			// Redireciona o utilizador para a página de resultados da simulação
 			return RedirectToAction("ResultadoSimulacao", model);
 		}
 
-		// Caso a conversão do tipo de tarifa falhe, retorna uma mensagem de erro
 		ViewBag.Resultado = "Erro: Tipo de tarifa inválido!";
-		return View(model);  // Retorna a view com a mensagem de erro
+		return View(model);
+
 	}
 
 	public IActionResult ResultadoSimulacao(ResultadoTarifaViewModel model)
 	{
-		// Aqui você pode processar o model e retornar a View
-		return View(model); // Retorna a view de resultado
+		return View(model);
 	}
 
 	private async Task SaveTarifaToDatabase(Tarifa tarifa)
 	{
-		// Verifica se já existe uma tarifa para o mesmo usuário (por email)
 		var tarifaExistente = await _context.Tarifas
-			.Where(t => t.UserEmail == tarifa.UserEmail)  // Busca pela tarifa do usuário com base no email
+			.Where(t => t.UserEmail == tarifa.UserEmail)
 			.FirstOrDefaultAsync();
 
 		if (tarifaExistente != null)
 		{
-			// Se a tarifa já existir, atualiza os valores de PrecoKwh e DataAlteracao
-			tarifaExistente.PrecoKwh = tarifa.PrecoKwh;  // Atualiza o preço da tarifa
-			tarifaExistente.DataAlteracao = DateTime.Now;  // Atualiza a data de alteração
+			tarifaExistente.PrecoKwh = tarifa.PrecoKwh;
+			tarifaExistente.DataAlteracao = DateTime.Now;
 
-			// Atualiza a tarifa no banco de dados
 			_context.Tarifas.Update(tarifaExistente);
 		}
 		else
 		{
-			// Caso não exista, cria a tarifa com a data atual
-			tarifa.DataAlteracao = DateTime.Now;  // Define a data de alteração
-			_context.Tarifas.Add(tarifa);  // Adiciona a tarifa inicial
-		}
+			tarifa.DataAlteracao = DateTime.Now;
+			_context.Tarifas.Add(tarifa);
 
-		// Salva as alterações no banco de dados
+		}
 		await _context.SaveChangesAsync();
 	}
 
