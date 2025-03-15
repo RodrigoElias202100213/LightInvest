@@ -125,6 +125,32 @@ namespace LightInvest.Migrations
                     b.ToTable("ROICalculators");
                 });
 
+            modelBuilder.Entity("LightInvest.Models.Tarifa", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Nome")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PrecoKwh")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Tarifas");
+                });
+
             modelBuilder.Entity("LightInvest.Models.User", b =>
                 {
                     b.Property<int>("Id")

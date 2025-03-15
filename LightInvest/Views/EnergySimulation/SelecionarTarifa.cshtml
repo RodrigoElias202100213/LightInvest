@@ -1,0 +1,23 @@
+﻿@model SelecionarTarifaViewModel
+
+@{
+	ViewData["Title"] = "Selecionar Tarifa";
+}
+
+<h2>Escolha o Tipo de Tarifa</h2>
+
+<form asp-action="SelecionarTarifa" method="post">
+	<div class="form-group">
+		<label for="TarifaEscolhida">Tipo de Tarifa:</label>
+		<select asp-for="TarifaEscolhida" class="form-control" asp-items="@(new SelectList(Model.TiposDeTarifa))">
+			<option value="">Selecione uma tarifa</option>
+		</select>
+	</div>
+
+	<div class="form-group">
+		<label for="PrecoKwh">Preço por kWh:</label>
+		<input type="number" asp-for="PrecoKwh" class="form-control" step="0.01" min="0" placeholder="Digite o preço por kWh" />
+	</div>
+
+	<button type="submit" class="btn btn-primary">Seguinte</button>
+</form>

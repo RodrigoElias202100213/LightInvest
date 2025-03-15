@@ -15,6 +15,8 @@ namespace LightInvest.Data
 		public DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
 
 		public DbSet<EnergyConsumption> EnergyConsumptions { get; set; }
+		public DbSet<Tarifa> Tarifas { get; set; }
+
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

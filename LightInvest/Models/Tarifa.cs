@@ -1,4 +1,6 @@
-﻿namespace LightInvest.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LightInvest.Models
 {
 	public enum TipoTarifa
 	{
@@ -6,22 +8,23 @@
 		Comercial,
 		Industrial
 	}
+
 	public class Tarifa
 	{
-		public TipoTarifa Nome { get; set; }  // Tipo de tarifa: Residencial, Comercial, Industrial
+		[Key]
+		public int Id { get; set; }
+		public string UserEmail { get; set; }
+		public DateTime DataAlteracao { get; set; }  // Data da alteração
+		public TipoTarifa Nome { get; set; } // Tipo de tarifa: Residencial, Comercial, Industrial
 		public decimal PrecoKwh { get; set; }
 
-		public decimal GetPrecoKwh()
+		private static readonly Dictionary<TipoTarifa, decimal> Adicionais = new()
 		{
-			var adicionais = new Dictionary<TipoTarifa, decimal>
-			{
-				{ TipoTarifa.Residencial, 0.0m },
-				{ TipoTarifa.Comercial, 0.15m },
-				{ TipoTarifa.Industrial, 0.12m }
-			};
+			{ TipoTarifa.Residencial, 0.0m },
+			{ TipoTarifa.Comercial, 0.15m },
+			{ TipoTarifa.Industrial, 0.12m }
+		};
 
-			return PrecoKwh + adicionais[Nome];
-		}
-
+		public decimal GetPrecoKwh() => PrecoKwh + (Adicionais.TryGetValue(Nome, out var adicional) ? adicional : 0);
 	}
 }

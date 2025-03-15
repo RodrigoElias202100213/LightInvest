@@ -12,18 +12,25 @@
 		public List<MesConsumo> ConsumoMensal { get; set; }
 		public decimal ValorAnual { get; set; }
 		public string TarifaEscolhida { get; set; }
-		public decimal PrecoKwh { get; set; }  // Esta é a propriedade que você deseja alterar
+		public decimal PrecoKwh { get; set; } // Esta é a propriedade que você deseja alterar
 
 		// Adiciona MesesOcupacao
 		public List<string> MesesOcupacao { get; set; }
 
 		public ResultadoTarifaViewModel()
 		{
-			// Inicializa a lista de meses ocupados
 			MesesOcupacao = new List<string>();
 			ConsumoMensal = new List<MesConsumo>();
 		}
+
+		// Método para atualizar o preço por kWh, aplicando o acréscimo se necessário
+		public void AtualizarPrecoKwh(TipoTarifa tipoTarifa, decimal precoBase)
+		{
+			var tarifa = new Tarifa { Nome = tipoTarifa, PrecoKwh = precoBase };
+			PrecoKwh = tarifa.GetPrecoKwh();  // Aplica os acréscimos
+		}
 	}
+
 
 	public class MesConsumo
 	{
