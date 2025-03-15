@@ -1,0 +1,23 @@
+﻿@model List<Tarifa>
+
+<h2>Histórico de Tarifas</h2>
+
+<table>
+	<thead>
+	<tr>
+		<th>Tipo de Tarifa</th>
+		<th>Preço por kWh</th>
+		<th>Data de Alteração</th>
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (var tarifa in Model)
+	{
+		<tr>
+			<td>@tarifa.Nome</td>
+			<td>@tarifa.PrecoKwh</td>
+			<td>@tarifa.DataAlteracao.ToString("dd/MM/yyyy HH:mm:ss")</td>
+		</tr>
+	}
+	</tbody>
+</table>
