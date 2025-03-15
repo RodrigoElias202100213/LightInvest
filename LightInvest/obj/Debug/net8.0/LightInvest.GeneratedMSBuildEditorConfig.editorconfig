@@ -48,11 +48,15 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWYWxpZGF0ZVRva2VuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/rodri/OneDrive/Imagens/oooo/LightInvest/Views/DadosInstalacao/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFkb3NJbnN0YWxhY2FvXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rodri/OneDrive/Imagens/oooo/LightInvest/Views/EnergySimulation/ResultadoSimulacao.cshtml]
+=======
+[C:/Users/rodri/OneDrive/Imagens/oooo/lightinvest/Views/EnergySimulation/ResultadoSimulacao.cshtml]
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5lcmd5U2ltdWxhdGlvblxSZXN1bHRhZG9TaW11bGFjYW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 

@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using LightInvest.Models;
-using LightInvest.Models.b;
 
 namespace LightInvest.Data
 {
@@ -9,9 +8,13 @@ namespace LightInvest.Data
 	{
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
 			: base(options)
+<<<<<<< HEAD
 		{
 
 		}
+=======
+		{ }
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 
 		public DbSet<RoiCalculator> ROICalculators { get; set; }
 		public DbSet<User> Users { get; set; }
@@ -21,6 +24,7 @@ namespace LightInvest.Data
 		public DbSet<Tarifa> Tarifas { get; set; }
 
 
+<<<<<<< HEAD
 		public DbSet<DadosInstalacao> DadosInstalacao { get; set; }
 
 		public DbSet<Cidade> Cidades { get; set; }
@@ -28,10 +32,13 @@ namespace LightInvest.Data
 		public DbSet<PotenciaPainelSolar> PotenciasDePaineisSolares { get; set; }
 
 
+=======
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
 
+<<<<<<< HEAD
 			// Relação entre ModeloPainelSolar e PotenciaPainelSolar
 			modelBuilder.Entity<PotenciaPainelSolar>()
 				.HasOne(p => p.PainelSolar)
@@ -73,6 +80,8 @@ namespace LightInvest.Data
 			);
 
 			// Configuração da entidade RoiCalculator
+=======
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 			modelBuilder.Entity<RoiCalculator>(entity =>
 			{
 				entity.Property(e => e.CustoInstalacao).HasColumnType("decimal(18,2)");
@@ -83,6 +92,6 @@ namespace LightInvest.Data
 				entity.Property(e => e.ROI).HasColumnType("decimal(18,2)");
 			});
 		}
-
 	}
+
 }

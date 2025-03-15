@@ -30,7 +30,11 @@ namespace LightInvest.Models
 
 		public void CalcularMediaSemana()
 		{
+<<<<<<< HEAD
 			if (ConsumoDiaSemana.Count == 7) 
+=======
+			if (ConsumoDiaSemana.Count == 7)
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 			{
 				MediaSemana = ConsumoDiaSemana.Average();
 			}

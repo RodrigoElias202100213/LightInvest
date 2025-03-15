@@ -302,4 +302,8 @@ public class EnergySimulationController : Controller
 		await _context.SaveChangesAsync();
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0

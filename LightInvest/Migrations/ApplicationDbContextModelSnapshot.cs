@@ -22,6 +22,7 @@ namespace LightInvest.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+<<<<<<< HEAD
             modelBuilder.Entity("LightInvest.Models.DadosInstalacao", b =>
                 {
                     b.Property<int>("Id")
@@ -65,6 +66,8 @@ namespace LightInvest.Migrations
                     b.ToTable("DadosInstalacao");
                 });
 
+=======
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
             modelBuilder.Entity("LightInvest.Models.EnergyConsumption", b =>
                 {
                     b.Property<int>("Id")
@@ -218,6 +221,7 @@ namespace LightInvest.Migrations
 
                     b.ToTable("Users");
                 });
+<<<<<<< HEAD
 
             modelBuilder.Entity("LightInvest.Models.b.Cidade", b =>
                 {
@@ -405,6 +409,8 @@ namespace LightInvest.Migrations
                 {
                     b.Navigation("Potencias");
                 });
+=======
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 #pragma warning restore 612, 618
         }
     }

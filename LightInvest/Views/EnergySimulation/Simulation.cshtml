@@ -5,7 +5,11 @@
 }
 
 <div class="simulation-container">
+<<<<<<< HEAD
 	<div class="simulation-box">
+=======
+	<div  class="simulation-box">
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 		<h2>Formulário Consumo de Energia</h2>
 		<form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
 
@@ -17,8 +21,13 @@
 					{
 						<div class="hour-box">
 							<label><strong>@i h</strong></label>
+<<<<<<< HEAD
 							<input type="number" class="borders" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01"
 								   value="@(Model.ConsumoDiaSemana[i] > 0 ? Model.ConsumoDiaSemana[i].ToString("F2") : "")" />
+=======
+							<input type="number" class="borders" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01" 
+							       value="@(Model.ConsumoDiaSemana[i] > 0 ? Model.ConsumoDiaSemana[i].ToString("F2") : "")" />
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 						</div>
 					}
 
@@ -36,8 +45,13 @@
 					{
 						<div class="hour-box">
 							<label><strong>@i h</strong></label>
+<<<<<<< HEAD
 							<input type="number" class="borders" asp-for="ConsumoFimSemana[i]" min="0" step="0.01"
 								   value="@(Model.ConsumoFimSemana[i] > 0 ? Model.ConsumoFimSemana[i].ToString("F2") : "")" />
+=======
+							<input type="number" class="borders" asp-for="ConsumoFimSemana[i]" min="0" step="0.01" 
+							       value="@(Model.ConsumoFimSemana[i] > 0 ? Model.ConsumoFimSemana[i].ToString("F2") : "")" />
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 						</div>
 					}
 
@@ -59,6 +73,7 @@
 						</label>
 					}
 				</div>
+<<<<<<< HEAD
 			</div>
 
 			<!-- Estatísticas -->
@@ -70,14 +85,33 @@
 			</div>
 
 
+=======
+			</div>
+
+			<!-- Estatísticas -->
+			<div class="section">
+				<h5>4. Estatísticas</h5>
+				<p><strong>Segunda a sexta:</strong> média @Model.MediaSemana kWh por dia</p>
+				<p><strong>Fim de semana:</strong> média @Model.MediaFimSemana kWh por dia</p>
+				<p><strong>Base anual:</strong> média @Model.MediaAnual kWh por ano</p>
+			</div>
+
+			
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 			<div id="not-hidden-button">
 				<button type="submit" class="btn">Calcular</button>
 			</div>
 
 		</form>
+<<<<<<< HEAD
 
 	</div>
 
+=======
+	
+		</div>
+	
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 	<div id="hidden-buttons">
 		<a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
 		<a href="@Url.Action("SelecionarTarifa", "EnergySimulation")" class="btn">Seguinte</a>
@@ -97,7 +131,11 @@
 	});
 </script>
 
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 
 <style>
 	.simulation-container {
@@ -106,7 +144,11 @@
 	}
 
 
+<<<<<<< HEAD
 	h2 {
+=======
+	h2{
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 		font-weight: bold;
 		font-size: 3rem;
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -115,19 +157,34 @@
 		margin-bottom: 4%;
 	}
 
+<<<<<<< HEAD
 	.section {
 		border-radius: 20px;
 		padding: 4%;
 		margin-bottom: 6%;
 		background-color: white;
+=======
+	.section{ 
+		border-radius: 20px; 
+		padding: 4%; 
+		margin-bottom: 6%;
+		background-color:white;
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 	}
 
 
+<<<<<<< HEAD
 	h5 {
 		color: rgba(0, 0, 0, 0.61);
 		margin-bottom: 3%;
 		font-weight: bold;
+=======
+	h5{
+		color: rgba(0, 0, 0, 0.61);
+		margin-bottom:3%;
+		font-weight:bold;
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 	}
 
 	.borders {
@@ -138,6 +195,7 @@
 	.month-checkboxes {
 		display: flex;
 		flex-wrap: wrap;
+<<<<<<< HEAD
 		gap: 10px;
 		font-size: 20px;
 	}
@@ -145,6 +203,15 @@
 		.month-checkboxes label {
 			flex: 1 1 calc(25% - 10px);
 		}
+=======
+		gap: 10px; 
+		font-size:20px;
+	}
+
+	.month-checkboxes label {
+		flex: 1 1 calc(25% - 10px); 
+	}
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 
 
 	.hourly-inputs {
@@ -172,6 +239,14 @@
 		border: none;
 		cursor: pointer;
 		border-radius: 25px;
+<<<<<<< HEAD
+=======
+	}
+
+	.btn:hover {
+		color: white; 
+		background: #054850; 
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 	}
 
 		.btn:hover {
@@ -185,15 +260,23 @@
 		gap: 10px;
 	}
 
+<<<<<<< HEAD
 	#not-hidden-button {
 		margin-bottom: 4%;
 		display: flex;
 		justify-content: center;
+=======
+	#not-hidden-button{
+		margin-bottom:4%;
+		display:flex;
+		justify-content:center;
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
 		align-items: center;
 	}
 
 	#hidden-buttons {
 		display: flex;
+<<<<<<< HEAD
 		justify-content: center;
 		align-items: center;
 		gap: 2%;
@@ -204,3 +287,15 @@
 	}
 
 </style>
+=======
+		justify-content:center;
+		align-items:center;
+		gap:2%;
+	}
+
+	p{
+		font-size:18px;
+	}
+
+</style>
+>>>>>>> 6f1280410c6fc0b5bc957e67d01c2a07fabd69f0
