@@ -1,57 +1,51 @@
-﻿@using LightInvest.Models.b
-@using Microsoft.AspNetCore.Mvc.TagHelpers
-@model LightInvest.Models.DadosInstalacao
+﻿@model DadosInstalacao
+
+@{
+    ViewData["Title"] = "Criar Dados de Instalação";
+}
+
+<h2>@ViewData["Title"]</h2>
 
 <form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="CidadeId" class="control-label"></label>
+        <select asp-for="CidadeId" class="form-control" asp-items="ViewBag.Cidades"></select>
+        <span asp-validation-for="CidadeId" class="text-danger"></span>
+    </div>
 
-	<div>
-		<label>Cidade:</label>
-		<select asp-for="CidadeId" asp-items="@(ViewBag.Cidades != null ? new SelectList(ViewBag.Cidades, "Id", "Nome") : new SelectList(new List<Cidade>()))" required>
-			<option value="">Selecione uma cidade</option>
-		</select>
-		<span asp-validation-for="CidadeId" class="text-danger"></span>
-	</div>
+    <div class="form-group">
+        <label asp-for="ModeloPainelId" class="control-label"></label>
+        <input asp-for="ModeloPainelId" class="form-control" />
+        <span asp-validation-for="ModeloPainelId" class="text-danger"></span>
+    </div>
 
-	<div>
-		<label>Modelo de Painel:</label>
-		<select asp-for="ModeloPainelId" asp-items="@(ViewBag.Modelos != null ? new SelectList(ViewBag.Modelos, "Id", "Nome") : new SelectList(new List<ModeloPainelSolar>()))" required>
-			<option value="">Selecione um modelo</option>
-		</select>
-		<span asp-validation-for="ModeloPainelId" class="text-danger"></span>
-	</div>
+    <div class="form-group">
+        <label asp-for="NumeroPaineis" class="control-label"></label>
+        <input asp-for="NumeroPaineis" class="form-control" />
+        <span asp-validation-for="NumeroPaineis" class="text-danger"></span>
+    </div>
 
-	<div>
-		<label>Número de Painéis:</label>
-		<input asp-for="NumeroPaineis" type="number" min="1" required />
-		<span asp-validation-for="NumeroPaineis" class="text-danger"></span>
-	</div>
+    <div class="form-group">
+        <label asp-for="ConsumoPainel" class="control-label"></label>
+        <input asp-for="ConsumoPainel" class="form-control" />
+        <span asp-validation-for="ConsumoPainel" class="text-danger"></span>
+    </div>
 
-	<div>
-		<label>Consumo Painel (kWh):</label>
-		<input asp-for="ConsumoPainel" type="number" step="0.01" min="0" required />
-		<span asp-validation-for="ConsumoPainel" class="text-danger"></span>
-	</div>
+    <div class="form-group">
+        <label asp-for="Inclinacao" class="control-label"></label>
+        <input asp-for="Inclinacao" class="form-control" />
+        <span asp-validation-for="Inclinacao" class="text-danger"></span>
+    </div>
 
-	<div>
-		<label>Inclinação (graus):</label>
-		<input asp-for="Inclinacao" type="number" step="0.01" min="0" max="90" required />
-		<span asp-validation-for="Inclinacao" class="text-danger"></span>
-	</div>
+    <div class="form-group">
+        <label asp-for="Dificuldade" class="control-label"></label>
+        <input asp-for="Dificuldade" class="form-control" />
+        <span asp-validation-for="Dificuldade" class="text-danger"></span>
+    </div>
 
-	<div>
-		<label>Dificuldade:</label>
-		<select asp-for="Dificuldade" required>
-			<option value="Fácil">Fácil</option>
-			<option value="Média">Média</option>
-			<option value="Difícil">Difícil</option>
-		</select>
-		<span asp-validation-for="Dificuldade" class="text-danger"></span>
-	</div>
-
-	<button type="submit">Salvar</button>
-
+    <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
 
 @section Scripts {
-	<partial name="_ValidationScriptsPartial" />
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

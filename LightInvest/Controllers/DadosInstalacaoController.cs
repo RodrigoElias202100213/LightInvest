@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LightInvest.Controllers
 {
+
 	public class DadosInstalacaoController : Controller
 	{
 		private readonly ApplicationDbContext _context;
@@ -19,26 +20,11 @@ namespace LightInvest.Controllers
 			_context = context;
 		}
 
-		private async Task<User> GetLoggedInUserAsync()
-		{
-			var userEmail = HttpContext.Session.GetString("UserEmail");
-			if (string.IsNullOrEmpty(userEmail))
-				return null;
-
-			return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
-		}
-
-		[HttpGet]
 		public async Task<IActionResult> Create()
 		{
-			var user = await GetLoggedInUserAsync();
-			if (user == null)
-			{
-				ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
-				return View();
-			}
+			var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == User.Identity.Name);
 
-			var dadosInstalacao = await _context.DadosInstalacao
+			DadosInstalacao dadosInstalacao = await _context.DadosInstalacao
 				.FirstOrDefaultAsync(d => d.UserEmail == user.Email);
 
 			if (dadosInstalacao == null)
@@ -46,76 +32,69 @@ namespace LightInvest.Controllers
 				dadosInstalacao = new DadosInstalacao
 				{
 					UserEmail = user.Email,
-					CidadeId = 0,
-					ModeloPainelId = 0,
+					CidadeId = 1,  // A cidade será definida aqui como "1" (padrão)
+					ModeloPainelId = 1,
 					NumeroPaineis = 0,
 					ConsumoPainel = 0,
 					Inclinacao = 0,
 					Dificuldade = "fácil"
 				};
 
+				if (!_context.Cidades.Any(c => c.Id == 1))
+				{
+					ModelState.AddModelError("CidadeId", "Cidade não encontrada.");
+					return View(dadosInstalacao);
+				}
+
 				_context.DadosInstalacao.Add(dadosInstalacao);
 				await _context.SaveChangesAsync();
 			}
 
-			ViewBag.Cidades = new SelectList(_context.Cidades, "Id", "Nome");
-			ViewBag.Modelos = new SelectList(_context.ModelosDePaineisSolares, "Id", "Nome");
+			if (_context.Cidades == null || !_context.Cidades.Any())
+			{
+				ViewBag.Cidades = new SelectList(new List<Cidade>());
+			}
+			else
+			{
+				ViewBag.Cidades = new SelectList(_context.Cidades, "Id", "Nome");
+			}
 
 			return View(dadosInstalacao);
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Create(DadosInstalacao model)
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Create(DadosInstalacao dadosInstalacao)
 		{
-			var user = await GetLoggedInUserAsync();
-			if (user == null)
+			if (ModelState.IsValid)
 			{
-				ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
-				return View(model);
-			}
-
-			var dadosInstalacao = await _context.DadosInstalacao
-				.FirstOrDefaultAsync(d => d.UserEmail == user.Email);
-
-			if (dadosInstalacao == null)
-			{
-				dadosInstalacao = new DadosInstalacao
+				if (!_context.Cidades.Any(c => c.Id == dadosInstalacao.CidadeId))
 				{
-					UserEmail = user.Email,
-					CidadeId = model.CidadeId,
-					ModeloPainelId = model.ModeloPainelId,
-					NumeroPaineis = model.NumeroPaineis,
-					ConsumoPainel = model.ConsumoPainel,
-					Inclinacao = model.Inclinacao,
-					Dificuldade = model.Dificuldade
-				};
+					ModelState.AddModelError("CidadeId", "Cidade não encontrada.");
+					return View(dadosInstalacao); // retorna com erro
+				}
 
-				_context.DadosInstalacao.Add(dadosInstalacao);
-			}
-			else
-			{
-				dadosInstalacao.CidadeId = model.CidadeId;
-				dadosInstalacao.ModeloPainelId = model.ModeloPainelId;
-				dadosInstalacao.NumeroPaineis = model.NumeroPaineis;
-				dadosInstalacao.ConsumoPainel = model.ConsumoPainel;
-				dadosInstalacao.Inclinacao = model.Inclinacao;
-				dadosInstalacao.Dificuldade = model.Dificuldade;
+				if (dadosInstalacao.Id == 0)
+				{
+					_context.DadosInstalacao.Add(dadosInstalacao);
+				}
+				else
+				{
+					_context.DadosInstalacao.Update(dadosInstalacao);
+				}
 
-				_context.DadosInstalacao.Update(dadosInstalacao);
+				await _context.SaveChangesAsync();
+				return RedirectToAction("Index");
+
 			}
 
-			await _context.SaveChangesAsync();
+			ViewBag.Cidades = new SelectList(_context.Cidades, "Id", "Nome", dadosInstalacao.CidadeId);
 
-			return RedirectToAction("Index");
-		}
-
-		public async Task<IActionResult> GetPotenciasByModelo(int modeloId)
-		{
-			var potencias = await _context.PotenciasDePaineisSolares
-				.Where(p => p.PainelSolarId == modeloId)
-				.ToListAsync();
-
-			return Json(potencias);
+			return View(dadosInstalacao);
 		}
 	}
+
+
+
+
 }
