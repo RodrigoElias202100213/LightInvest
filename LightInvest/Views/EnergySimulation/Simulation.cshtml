@@ -4,88 +4,128 @@
 	ViewData["Title"] = "Consumo de Energia";
 }
 
-<div class="container">
-	<h2>Consumo de Energia</h2>
+<div class="simulation-container">
+	<div  class="simulation-box">
+		<h2>Consumo de Energia</h2>
+		<form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
 
-	<form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
-
-		<!-- Consumo Horário Dias de Semana -->
-		<div class="section">
-			<h3>Consumo Horário: Segunda-feira a Sexta-feira</h3>
-			<div class="hourly-inputs">
-				@for (int i = 0; i < 24; i++)
-				{
-					<div class="hour-box">
-						<label>@i h</label>
-						<input type="number" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01" />
-					</div>
-				}
+			<!-- Consumo Horário Dias de Semana -->
+			<div class="section">
+				<h5>Consumo Horário: Segunda-feira a Sexta-feira</h5>
+				<div class="hourly-inputs">
+					@for (int i = 0; i < 24; i++)
+					{
+						<div class="hour-box">
+							<label><strong>@i h</strong></label>
+							<input type="number" class="borders" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01" value="" />
+						</div>
+					}
+				</div>
 			</div>
-		</div>
 
-		<!-- Consumo Horário Fins de Semana -->
-		<div class="section">
-			<h3>Consumo Horário: Feriados/Fim de Semana</h3>
-			<div class="hourly-inputs">
-				@for (int i = 0; i < 24; i++)
-				{
-					<div class="hour-box">
-						<label>@i h</label>
-						<input type="number" asp-for="ConsumoFimSemana[i]" min="0" step="0.01" />
-					</div>
-				}
+			<!-- Consumo Horário Fins de Semana -->
+			<div class="section">
+				<h5>Consumo Horário: Feriados/Fim de Semana</h5>
+				<div class="hourly-inputs">
+					@for (int i = 0; i < 24; i++)
+					{
+						<div class="hour-box">
+							<label><strong>@i h</strong></label>
+							<input type="number" class="borders" asp-for="ConsumoFimSemana[i]" min="0" step="0.01" value=" " />
+						</div>
+					}
+				</div>
 			</div>
-		</div>
-		<div class="section">
-			<h3>Ocupação Mensal</h3>
-			<div class="month-checkboxes">
-				@foreach (var mes in Enum.GetNames(typeof(Meses)))
-				{
-					<label>
-						<input type="checkbox" name="MesesOcupacao" value="@mes"
-						       @(Model.MesesOcupacao.Contains(mes) ? "checked" : "") />
-						@mes
-					</label>
-				}
+
+			<!--Ocupação Mensal-->
+			<div class="section">
+				<h5>Ocupação Mensal</h5>
+				<div class="month-checkboxes">
+					@foreach (var mes in Enum.GetNames(typeof(Meses)))
+					{
+						<label>
+							<input type="checkbox" name="MesesOcupacao" value="@mes"
+							@(Model.MesesOcupacao.Contains(mes) ? "checked" : "") />
+							@mes
+						</label>
+					}
+				</div>
 			</div>
-		</div>
 
-
-
-
-		<!-- Estatísticas -->
-		<div class="section stats">
-			<h3>Estatísticas</h3>
-			<p>Semana útil: média @Model.MediaSemana kWh por dia</p>
-			<p>Fim de semana: média @Model.MediaFimSemana kWh por dia</p>
-			<p>No base anual: média @Model.MediaAnual kWh por ano</p>
-		</div>
-
+			<!-- Estatísticas -->
+			<div class="section stats">
+				<h5>Estatísticas</h5>
+				<p><strong>Segunda a sexta:</strong> média @Model.MediaSemana kWh por dia</p>
+				<p><strong>Fim de semana:</strong>Fim de semana: média @Model.MediaFimSemana kWh por dia</p>
+				<p><strong>Base anual:</strong> média @Model.MediaAnual kWh por ano</p>
+			</div>
+		</form>
+	</div>
+	<div id="not-hidden-button">
 		<button type="submit" class="btn">Calcular</button>
-
-		<div>
-			<a href="@Url.Action("SelecionarTarifa", "EnergySimulation")" class="btn btn-primary">Continuar</a>
-			<a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Cancelar</a>
-		</div>
-
-	</form>
-
-
+	</div>
+	
+	<div id="hidden-buttons">
+		<a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
+		<a href="@Url.Action("SelecionarTarifa", "EnergySimulation")" class="btn">Seguinte</a>
+	</div>
 
 </div>
 
+
+	
+
 <style>
-	.container {
+	.simulation-container {
+		height: 80vh;
+		background-color: #f9f9f9;
+	}
+
+	.simulation-box {
+		
+	}
+
+	h2{
+		font-weight: bold;
+		font-size: 3rem;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		color: #065A66;
 		text-align: center;
-		max-width: 800px;
-		margin: auto;
+		margin-bottom: 4%;
 	}
 
-	.section {
-		margin-bottom: 20px;
+	.section{
+		border: 1px solid black; 
+		border-radius: 20px; 
+		padding: 6%; 
+		margin-bottom: 6%;
 	}
 
-	.hourly-inputs, .month-checkboxes {
+
+	h5{
+		color: rgba(0, 0, 0, 0.61);
+		margin-bottom:3%;
+		font-weight:bold;
+	}
+
+	.borders {
+		border: 1px solid black;
+		border-radius: 8px;
+	}
+
+	.month-checkboxes {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px; 
+		font-size:20px;
+	}
+
+	.month-checkboxes label {
+		flex: 1 1 calc(25% - 10px); 
+	}
+
+
+	.hourly-inputs {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -109,12 +149,17 @@
 		padding: 10px 20px;
 		border: none;
 		cursor: pointer;
+		border-radius: 25px;
 	}
 
 	.hourly-inputs {
 		display: grid;
-		grid-template-columns: repeat(6, 1fr); /* 6 colunas para 24h */
+		grid-template-columns: repeat(6, 1fr);
 		gap: 10px;
+	}
+
+	.not-hidden-button{
+		margin-bottom:4%;
 	}
 
 </style>
