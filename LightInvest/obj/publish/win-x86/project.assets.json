@@ -6890,11 +6890,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\LightInvest.csproj",
+      "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Imagens\\oooo\\LightInvest\\LightInvest.csproj",
       "projectName": "LightInvest",
-      "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\LightInvest.csproj",
+      "projectPath": "C:\\Users\\rodri\\OneDrive\\Imagens\\oooo\\LightInvest\\LightInvest.csproj",
       "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\New folder (3)\\LightInvest\\obj\\publish\\win-x86\\",
+      "outputPath": "C:\\Users\\rodri\\OneDrive\\Imagens\\oooo\\LightInvest\\obj\\publish\\win-x86\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

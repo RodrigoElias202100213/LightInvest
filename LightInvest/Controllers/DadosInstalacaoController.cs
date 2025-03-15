@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
+using LightInvest.Models.b;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace LightInvest.Controllers
 {
@@ -16,7 +18,6 @@ namespace LightInvest.Controllers
 			_context = context;
 		}
 
-		// Método para obter o usuário logado
 		private async Task<User> GetLoggedInUserAsync()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -26,47 +27,18 @@ namespace LightInvest.Controllers
 			return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 		}
 
+		[HttpGet]
 		public async Task<IActionResult> Create()
 		{
-			var user = await GetLoggedInUserAsync();
-			if (user == null)
-			{
-				ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
-				return View();
-			}
+			var cidades = await _context.Cidades.ToListAsync() ?? new List<Cidade>();
+			var modelos = await _context.ModelosDePaineisSolares.ToListAsync() ?? new List<ModeloPainelSolar>();
 
-			// Buscar ou criar os dados de instalação para o usuário
-			var dadosInstalacao = await _context.DadosInstalacao
-				.Where(d => d.UserEmail == user.Email)
-				.FirstOrDefaultAsync();
+			ViewBag.Cidades = new SelectList(cidades, "Id", "Nome");
+			ViewBag.ModelosPainel = new SelectList(modelos, "Id", "Nome");
 
-			if (dadosInstalacao == null)
-			{
-				// Caso não exista dados de instalação, cria um novo com valores padrão
-				dadosInstalacao = new DadosInstalacao
-				{
-					UserEmail = user.Email,
-					CidadeId = 1, // Defina um valor padrão (id de uma cidade no banco de dados)
-					ModeloPainelId = 1, // Defina um modelo de painel solar padrão (id de um modelo no banco)
-					NumeroPaineis = 1, // Defina um valor padrão para o número de painéis
-					ConsumoPainel = 300, // Defina um valor padrão para o consumo de painel (em kWh)
-					Inclinacao = 30, // Defina um valor padrão para a inclinação (em graus)
-					Dificuldade = "Média", // Defina um valor padrão para a dificuldade da instalação
-				};
-
-
-				_context.DadosInstalacao.Add(dadosInstalacao);
-				await _context.SaveChangesAsync();
-			}
-
-			// Repopula as listas de cidades e modelos de painéis solares
-			ViewBag.Cidades = await _context.Cidades.ToListAsync();
-			ViewBag.ModelosPainel = await _context.ModelosDePaineisSolares.ToListAsync();
-
-			return View(dadosInstalacao);
+			return View(new DadosInstalacao());
 		}
 
-		// Método para buscar as potências associadas ao modelo de painel solar
 		public async Task<IActionResult> GetPotenciasByModelo(int modeloId)
 		{
 			var potencias = await _context.PotenciasDePaineisSolares

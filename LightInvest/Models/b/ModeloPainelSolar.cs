@@ -13,6 +13,6 @@ namespace LightInvest.Models.b
 		public string Modelo { get; set; }
 
 		[InverseProperty("PainelSolar")]
-		public List<PotenciaPainelSolar> Potencias { get; set; } // Lista de potências
+		public List<PotenciaPainelSolar> Potencias { get; set; }
 	}
 }

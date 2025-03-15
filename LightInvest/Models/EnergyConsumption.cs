@@ -19,9 +19,8 @@ namespace LightInvest.Models
 		public decimal MediaSemana { get; set; }
 		public decimal MediaFimSemana { get; set; }
 		public decimal MediaAnual { get; set; }
-		public decimal ConsumoTotal { get; set; }  // Armazenar o consumo total calculado
+		public decimal ConsumoTotal { get; set; }
 
-		// Construtor para inicializar as listas de consumo (opcional)
 		public EnergyConsumption()
 		{
 			ConsumoDiaSemana = new List<decimal>(7); // Inicializa com 7 elementos (se necessário)
@@ -29,10 +28,9 @@ namespace LightInvest.Models
 			MesesOcupacao = new List<string>();
 		}
 
-		// Métodos para calcular as médias
 		public void CalcularMediaSemana()
 		{
-			if (ConsumoDiaSemana.Count == 7) // Garantir que a lista tenha 7 valores
+			if (ConsumoDiaSemana.Count == 7) 
 			{
 				MediaSemana = ConsumoDiaSemana.Average();
 			}
@@ -40,7 +38,7 @@ namespace LightInvest.Models
 
 		public void CalcularMediaFimSemana()
 		{
-			if (ConsumoFimSemana.Count == 2) // Garantir que a lista tenha 2 valores
+			if (ConsumoFimSemana.Count == 2)
 			{
 				MediaFimSemana = ConsumoFimSemana.Average();
 			}
@@ -48,7 +46,6 @@ namespace LightInvest.Models
 
 		public void CalcularMediaAnual()
 		{
-			// A média anual pode ser calculada somando todas as semanas e dividindo por 12 ou 52, por exemplo
 			var totalDias = ConsumoDiaSemana.Count * MesesOcupacao.Count;
 			MediaAnual = totalDias > 0 ? (ConsumoDiaSemana.Sum() * MesesOcupacao.Count) / totalDias : 0;
 		}

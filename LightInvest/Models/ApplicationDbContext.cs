@@ -20,7 +20,7 @@ namespace LightInvest.Data
 		public DbSet<Tarifa> Tarifas { get; set; }
 
 
-		public DbSet<DadosInstalacao> DadosInstalacao { get; set; } // Tabela DadosInstalacao
+		public DbSet<DadosInstalacao> DadosInstalacao { get; set; }
 
 		public DbSet<Cidade> Cidades { get; set; }
 		public DbSet<ModeloPainelSolar> ModelosDePaineisSolares { get; set; }

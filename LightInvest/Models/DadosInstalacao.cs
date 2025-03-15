@@ -7,29 +7,26 @@ namespace LightInvest.Models
 	public class DadosInstalacao
 	{
 		[Key]
-		public int Id { get; set; } // Chave primária
-		
+		public int Id { get; set; }
 		public string UserEmail { get; set; }
 
-		public int CidadeId { get; set; } // Relacionamento com a tabela Cidade
+		public int CidadeId { get; set; }
 		[ForeignKey("CidadeId")]
-		public Cidade Cidade { get; set; } // Navegação para a entidade Cidade
-
-		public int ModeloPainelId { get; set; } // Relacionamento com ModeloPainelSolar
+		public Cidade Cidade { get; set; } 
+		public int ModeloPainelId { get; set; } 
 		[ForeignKey("ModeloPainelId")]
-		public ModeloPainelSolar ModeloPainel { get; set; } // Navegação para a entidade ModeloPainelSolar
-
-		public int NumeroPaineis { get; set; } // Número de painéis solares
-		public decimal ConsumoPainel { get; set; } // Consumo por painel (em kWh)
-		public decimal Inclinacao { get; set; } // Inclinação da instalação (em graus)
-		public string Dificuldade { get; set; } // Dificuldade da instalação (ex: "Fácil", "Média", "Difícil")
-
-		// Método para calcular o preço baseado na inclinação
+		public ModeloPainelSolar ModeloPainel { get; set; } 
+		
+		public int NumeroPaineis { get; set; } 
+		
+		public decimal ConsumoPainel { get; set; }
+		public decimal Inclinacao { get; set; } 
+		public string Dificuldade { get; set; } 
+		
 		public decimal CalcularPrecoPorInclinacao()
 		{
 			decimal fatorInclinacao = 1.0m;
 
-			// Define o fator de acordo com a inclinação (entre 0 e 30 graus)
 			if (Inclinacao >= 0 && Inclinacao <= 30)
 			{
 				fatorInclinacao = 0.3m;
@@ -46,12 +43,10 @@ namespace LightInvest.Models
 			return fatorInclinacao;
 		}
 
-		// Método para calcular o preço baseado na dificuldade
 		public decimal CalcularPrecoPorDificuldade()
 		{
 			decimal fatorDificuldade = 1.0m;
 
-			// Define o fator de acordo com a dificuldade
 			switch (Dificuldade.ToLower())
 			{
 				case "fácil":
@@ -70,14 +65,12 @@ namespace LightInvest.Models
 			return fatorDificuldade;
 		}
 
-		// Método para calcular o preço total da instalação
 		public decimal CalcularPrecoInstalacao()
 		{
 			decimal precoBase = 5000.00m; // Valor base da instalação (exemplo)
 			decimal precoInclinacao = CalcularPrecoPorInclinacao();
 			decimal precoDificuldade = CalcularPrecoPorDificuldade();
 
-			// O preço total é influenciado pela inclinação, dificuldade e número de painéis solares
 			decimal precoFinal = precoBase * precoInclinacao * precoDificuldade * NumeroPaineis;
 
 			return precoFinal;

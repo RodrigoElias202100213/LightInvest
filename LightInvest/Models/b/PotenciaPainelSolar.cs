@@ -11,8 +11,8 @@ namespace LightInvest.Models.b
 		[ForeignKey("PainelSolar")]
 		public int PainelSolarId { get; set; }
 
-		public decimal Potencia { get; set; } // Potência do painel solar
+		public decimal Potencia { get; set; }
 
-		public ModeloPainelSolar PainelSolar { get; set; } // Relacionamento com ModeloPainelSolar
+		public ModeloPainelSolar PainelSolar { get; set; }
 	}
 }
