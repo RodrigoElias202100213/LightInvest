@@ -6,12 +6,12 @@
 
 <div class="simulation-container">
 	<div  class="simulation-box">
-		<h2>Consumo de Energia</h2>
+		<h2>Formulário Consumo de Energia</h2>
 		<form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
 
 			<!-- Consumo Horário Dias de Semana -->
 			<div class="section">
-				<h5>Consumo Horário: Segunda-feira a Sexta-feira</h5>
+				<h5>1. Consumo Horário: Segunda-feira a Sexta-feira</h5>
 				<div class="hourly-inputs">
 					@for (int i = 0; i < 24; i++)
 					{
@@ -25,7 +25,7 @@
 
 			<!-- Consumo Horário Fins de Semana -->
 			<div class="section">
-				<h5>Consumo Horário: Feriados/Fim de Semana</h5>
+				<h5>2. Consumo Horário: Feriados/Fim de Semana</h5>
 				<div class="hourly-inputs">
 					@for (int i = 0; i < 24; i++)
 					{
@@ -39,7 +39,7 @@
 
 			<!--Ocupação Mensal-->
 			<div class="section">
-				<h5>Ocupação Mensal</h5>
+				<h5>3. Ocupação Mensal</h5>
 				<div class="month-checkboxes">
 					@foreach (var mes in Enum.GetNames(typeof(Meses)))
 					{
@@ -53,10 +53,10 @@
 			</div>
 
 			<!-- Estatísticas -->
-			<div class="section stats">
-				<h5>Estatísticas</h5>
+			<div class="section">
+				<h5>4. Estatísticas</h5>
 				<p><strong>Segunda a sexta:</strong> média @Model.MediaSemana kWh por dia</p>
-				<p><strong>Fim de semana:</strong>Fim de semana: média @Model.MediaFimSemana kWh por dia</p>
+				<p><strong>Fim de semana:</strong> média @Model.MediaFimSemana kWh por dia</p>
 				<p><strong>Base anual:</strong> média @Model.MediaAnual kWh por ano</p>
 			</div>
 		</form>
@@ -91,11 +91,12 @@
 		margin-bottom: 4%;
 	}
 
-	.section{
-		border: 1px solid black; 
+	.section{ 
 		border-radius: 20px; 
-		padding: 6%; 
+		padding: 4%; 
 		margin-bottom: 6%;
+		background-color:white;
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 	}
 
 
@@ -172,6 +173,10 @@
 		justify-content:center;
 		align-items:center;
 		gap:2%;
+	}
+
+	p{
+		font-size:18px;
 	}
 
 </style>
