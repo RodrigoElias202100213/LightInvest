@@ -1,0 +1,17 @@
+﻿@model LightInvest.Models.RoiCalculator
+
+@{
+	ViewData["Title"] = "Resultado do ROI";
+}
+
+<h2>Resultado do Retorno Sobre Investimento (ROI)</h2>
+
+<ul>
+	<li><strong>Custo da Instalação:</strong> @Model.CustoInstalacao.ToString("C")</li>
+	<li><strong>Custo de Manutenção Anual:</strong> @Model.CustoManutencaoAnual.ToString("C")</li>
+	<li><strong>Consumo Energético Médio:</strong> @Model.ConsumoEnergeticoMedio kWh</li>
+	<li><strong>Retorno Estimado por Economia:</strong> @Model.RetornoEconomia.ToString("C")</li>
+	<li><strong>ROI Estimado:</strong> @Model.ROI anos</li>
+</ul>
+
+<a asp-action="SimulacaoCompleta" class="btn btn-primary">Voltar</a>

@@ -63,13 +63,13 @@ public class ROICalculatorController : Controller
 			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
 			return View("Index", model);
 		}
-
+		/*
 		if (model.RetornoEconomia <= 0)
 		{
 			ViewBag.Resultado = "Erro: A economia total deve ser maior que zero!";
 			return View("Index", model);
 		}
-
+		*/
 		var roiCalculation = await _context.ROICalculators
 			.Where(r => r.UserEmail == user.Email)
 			.FirstOrDefaultAsync();

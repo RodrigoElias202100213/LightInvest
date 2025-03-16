@@ -35,10 +35,11 @@ namespace LightInvest.Models
 				throw new ArgumentException("Todos os valores devem ser positivos e maiores que zero.");
 
 			decimal economiaAnual = (ConsumoEnergeticoRede - ConsumoEnergeticoMedio) * RetornoEconomia - CustoManutencaoAnual;
-
+	
+			/*
 			if (economiaAnual <= 0)
 				throw new InvalidOperationException("A economia anual deve ser maior que zero para calcular o ROI.");
-
+			*/	
 			ROI = CustoInstalacao / economiaAnual;
 
 			return ROI;

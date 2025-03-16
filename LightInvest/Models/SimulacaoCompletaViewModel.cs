@@ -6,6 +6,8 @@
 		public ResultadoTarifaViewModel ResultadoTarifaViewModel { get; set; }
 		public DadosInstalacao DadosInstalacao { get; set; }
 		public decimal PrecoInstalacao { get; set; }
+		public decimal PotenciaPainel { get; set; }
+
 	}
 
 }

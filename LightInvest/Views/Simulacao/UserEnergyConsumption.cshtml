@@ -55,10 +55,15 @@
     <li><strong>Cidade:</strong> @(Model.DadosInstalacao.Cidade?.Nome ?? "Não disponível")</li>
     <li><strong>Modelo de Painel:</strong> @Model.DadosInstalacao.ModeloPainel.Modelo</li>
     <li><strong>Número de Painéis:</strong> @Model.DadosInstalacao.NumeroPaineis</li>
-    <li><strong>Consumo por Painel:</strong> @Model.DadosInstalacao.ConsumoPainel kWh</li>
+    <li><strong>Potência do Painel:</strong> @Model.PotenciaPainel kW</li>
     <li><strong>Inclinação:</strong> @Model.DadosInstalacao.Inclinacao °</li>
     <li><strong>Dificuldade de Instalação:</strong> @Model.DadosInstalacao.Dificuldade</li>
     <li><strong>Preço de Instalação:</strong> @Model.PrecoInstalacao.ToString("C")</li>
 </ul>
 
 <a asp-action="SimulacaoCompleta" class="btn btn-primary">Voltar</a>
+
+<form method="post" asp-action="CalcularROI">
+	<button type="submit" class="btn btn-success">Calcular ROI</button>
+</form>
+

@@ -2,6 +2,9 @@
 using LightInvest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace LightInvest.Controllers
 {
@@ -14,7 +17,6 @@ namespace LightInvest.Controllers
 			_context = context;
 		}
 
-		// Método auxiliar para obter o usuário logado
 		private async Task<User> GetLoggedInUserAsync()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -23,7 +25,6 @@ namespace LightInvest.Controllers
 				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 		}
 
-		// Método auxiliar para mapear dados de consumo de energia para o ViewModel
 		private EnergyConsumptionViewModel MapToViewModel(EnergyConsumption energyConsumption)
 		{
 			return new EnergyConsumptionViewModel
@@ -36,7 +37,6 @@ namespace LightInvest.Controllers
 				MediaAnual = energyConsumption.MediaAnual
 			};
 		}
-
 		[HttpGet("simulacao-completa")]
 		public async Task<IActionResult> SimulacaoCompleta()
 		{
@@ -46,7 +46,7 @@ namespace LightInvest.Controllers
 				return Unauthorized("Usuário não autenticado.");
 			}
 
-			// Buscar consumo de energia do usuário
+			// Fetch energy consumption data
 			var energyConsumption = await _context.EnergyConsumptions
 				.Where(ec => ec.UserEmail == user.Email)
 				.FirstOrDefaultAsync();
@@ -56,7 +56,7 @@ namespace LightInvest.Controllers
 				return NotFound("Nenhum dado de consumo encontrado.");
 			}
 
-			// Buscar tarifa do usuário
+			// Fetch latest tariff data
 			var tarifa = await _context.Tarifas
 				.Where(t => t.UserEmail == user.Email)
 				.OrderByDescending(t => t.DataAlteracao)
@@ -67,50 +67,52 @@ namespace LightInvest.Controllers
 				return NotFound("Nenhuma tarifa associada ao usuário.");
 			}
 
-			// Buscar dados de instalação do usuário, incluindo as entidades relacionadas (ModeloPainel, Cidade)
+			// Fetch installation data including panel models and available powers
 			var dadosInstalacao = await _context.DadosInstalacao
-				.Include(di => di.ModeloPainel) // Incluir ModeloPainel se for uma entidade relacionada
-				.Include(di => di.Cidade) // Incluir Cidade se for uma entidade relacionada
+				.Include(di => di.ModeloPainel)
+				.ThenInclude(mp => mp.Potencias) // Includes the available powers
+				.Include(di => di.Cidade)
 				.Where(di => di.UserEmail == user.Email)
 				.FirstOrDefaultAsync();
 
+			// Ensure that installation data exists
 			if (dadosInstalacao == null)
 			{
 				return NotFound("Nenhum dado de instalação encontrado.");
 			}
 
-			// Calcular custo do consumo
+
+			var potenciaPainel = dadosInstalacao?.ModeloPainel?.Potencias
+				.FirstOrDefault(p => p.Id == dadosInstalacao.ConsumoPainel)?.Potencia ?? 0;
+
+			if (potenciaPainel == 0)
+			{
+				return BadRequest("Nenhuma potência registrada para o modelo do painel solar.");
+			}
+
+			// Calculate energy consumption metrics
 			energyConsumption.CalcularMedias();
 			decimal custoAnual = energyConsumption.MediaAnual * tarifa.PrecoKwh;
-
-			// Calcular o preço de instalação
+			
 			dadosInstalacao.AtualizarPrecoInstalacao();
 
-			// Calcular o custo mensal considerando o número de meses ocupados
-			var consumoMensal =
-				energyConsumption.MediaAnual /
-				energyConsumption.MesesOcupacao.Count; // Dividido pelo número de meses ocupados
+			// Monthly consumption calculation
+			var consumoMensal = energyConsumption.MediaAnual / energyConsumption.MesesOcupacao.Count;
+			
 			decimal custoMensal = consumoMensal * tarifa.PrecoKwh;
 
-			// Preencher o ViewModel de Resultado de Tarifa
 			var resultado = new ResultadoTarifaViewModel
 			{
-				ConsumoTotal = energyConsumption.MediaAnual, // Usando média anual de consumo
+				ConsumoTotal = energyConsumption.MediaAnual,
 				ValorAnual = custoAnual,
-				TarifaEscolhida = tarifa.Nome.ToString(), // Corrigido para usar o nome do enum
+				TarifaEscolhida = tarifa.Nome.ToString(),
 				PrecoKwh = tarifa.PrecoKwh,
 				MesesOcupacao = energyConsumption.MesesOcupacao,
 				ConsumoMensal = energyConsumption.MesesOcupacao
-					.Select(mes => new MesConsumo
-					{
-						Mes = mes,
-						Consumo = consumoMensal, // Agora usando o consumo mensal calculado
-						Custo = custoMensal // Agora usando o custo mensal calculado
-					})
+					.Select(mes => new MesConsumo { Mes = mes, Consumo = consumoMensal, Custo = custoMensal })
 					.ToList()
 			};
 
-			// Preencher o ViewModel de Consumo de Energia
 			var energyConsumptionViewModel = new EnergyConsumptionViewModel
 			{
 				ConsumoDiaSemana = energyConsumption.ConsumoDiaSemana,
@@ -121,16 +123,58 @@ namespace LightInvest.Controllers
 				MediaAnual = energyConsumption.MediaAnual
 			};
 
-			// Criar o ViewModel composto com os dados de instalação
+
+
+			// Crie um modelo de exibição que inclui a potência
 			var viewModel = new SimulacaoCompletaViewModel
 			{
 				EnergyConsumptionViewModel = energyConsumptionViewModel,
 				ResultadoTarifaViewModel = resultado,
 				DadosInstalacao = dadosInstalacao,
-				PrecoInstalacao = dadosInstalacao.PrecoInstalacao
+				PrecoInstalacao = dadosInstalacao.PrecoInstalacao,
+				PotenciaPainel = potenciaPainel // Adicionando a potência aqui
 			};
 
+			// Return the view with the model
 			return View("UserEnergyConsumption", viewModel);
+		}
+
+		[HttpPost("calcular-roi")]
+		public async Task<IActionResult> CalcularROI()
+		{
+			var user = await GetLoggedInUserAsync();
+			if (user == null)
+			{
+				return Unauthorized("Usuário não autenticado.");
+			}
+
+			var simulacao = await SimulacaoCompleta() as ViewResult;
+			if (simulacao?.Model is not SimulacaoCompletaViewModel viewModel)
+			{
+				return NotFound("Erro ao obter dados da simulação.");
+			}
+
+			var roiCalculator = new RoiCalculator
+			{
+				UserEmail = user.Email,
+				CustoInstalacao = viewModel.PrecoInstalacao,
+				CustoManutencaoAnual = 1, // Exemplo fixo, pode ser ajustado
+				ConsumoEnergeticoMedio = viewModel.EnergyConsumptionViewModel.MediaAnual,
+				ConsumoEnergeticoRede = viewModel.EnergyConsumptionViewModel.MediaAnual,
+				RetornoEconomia = viewModel.ResultadoTarifaViewModel.ValorAnual,
+				DataCalculado = DateTime.Now
+			};
+
+			if (roiCalculator.RetornoEconomia <= 0)
+			{
+				return BadRequest("A economia anual deve ser maior que zero para calcular o ROI.");
+			}
+
+			roiCalculator.ROI = roiCalculator.CalcularROI();
+			_context.ROICalculators.Add(roiCalculator);
+			await _context.SaveChangesAsync();
+
+			return View("ROIResult", roiCalculator);
 		}
 	}
 }
