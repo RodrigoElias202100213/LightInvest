@@ -4,66 +4,206 @@
     ViewData["Title"] = "Simulação Completa de Consumo e Tarifa";
 }
 
-<h2>Simulação Completa de Consumo e Tarifa</h2>
+<!-- Estilos personalizados -->
+<style>
+    .card-header {
+        background-color: #f8f9fa;
+        font-weight: bold;
+        text-align: center;
+    }
 
-<!-- Exibir informações de Consumo -->
-<h3>Consumo de Energia</h3>
-<ul>
-    <li><strong>Média Semanal:</strong> @Model.EnergyConsumptionViewModel.MediaSemana kWh</li>
-    <li><strong>Média Fim de Semana:</strong> @Model.EnergyConsumptionViewModel.MediaFimSemana kWh</li>
-    <li><strong>Média Anual:</strong> @Model.EnergyConsumptionViewModel.MediaAnual kWh</li>
-</ul>
+    .chart-container {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
 
-<!-- Exibir informações de Tarifa -->
-<h3>Tarifa Aplicada</h3>
-<p><strong>Tarifa Escolhida:</strong> @Model.ResultadoTarifaViewModel.TarifaEscolhida</p>
-<p><strong>Preço por kWh:</strong> @Model.ResultadoTarifaViewModel.PrecoKwh €</p>
+    .table th {
+        background-color: #f1f1f1;
+    }
 
-<!-- Comparação de Consumo -->
-<h3>Comparação de Consumo</h3>
-<ul>
-    <li><strong>Consumo Total:</strong> @Model.ResultadoTarifaViewModel.ConsumoTotal kWh</li>
-    <li><strong>Custo Total Estimado:</strong> @Model.ResultadoTarifaViewModel.ValorAnual €</li>
-    <li><strong>Média de Custo Mensal:</strong> @(Model.ResultadoTarifaViewModel.ValorAnual / 12) €</li>
-</ul>
+    .table td {
+        text-align: center;
+    }
 
-<!-- Comparação Mensal em Tabela -->
-<h3>Distribuição Mensal do Consumo e Custo</h3>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Mês</th>
-            <th>Consumo (kWh)</th>
-            <th>Custo (€)</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var mesConsumo in Model.ResultadoTarifaViewModel.ConsumoMensal)
-        {
-            <tr>
-                <td>@mesConsumo.Mes</td>
-                <td>@mesConsumo.Consumo</td>
-                <td>@mesConsumo.Custo</td>
-            </tr>
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .table-container {
+        margin-top: 30px;
+    }
+
+    h3 {
+        color: #343a40;
+    }
+
+    .info-item {
+        padding: 8px 0;
+    }
+</style>
+
+<div class="container">
+    <h2 class="text-center my-4">Simulação Completa de Consumo e Tarifa</h2>
+
+    <!-- Exibir informações de Consumo -->
+    <div class="card mb-4">
+        <div class="card-header">Consumo de Energia</div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item info-item"><strong>Média Semanal:</strong> @Model.EnergyConsumptionViewModel.MediaSemana.ToString("F3") kWh</li>
+                <li class="list-group-item info-item"><strong>Média Fim de Semana:</strong> @Model.EnergyConsumptionViewModel.MediaFimSemana.ToString("F3") kWh</li>
+                <li class="list-group-item info-item"><strong>Média Anual:</strong> @Model.EnergyConsumptionViewModel.MediaAnual.ToString("F3") kWh</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Exibir informações de Tarifa -->
+    <div class="card mb-4">
+        <div class="card-header">Tarifa Aplicada</div>
+        <div class="card-body">
+            <p><strong>Tarifa Escolhida:</strong> @Model.ResultadoTarifaViewModel.TarifaEscolhida</p>
+            <p><strong>Preço por kWh:</strong> @Model.ResultadoTarifaViewModel.PrecoKwh.ToString("F3") €</p>
+        </div>
+    </div>
+
+    <!-- Comparação de Consumo -->
+    <div class="card mb-4">
+        <div class="card-header">Comparação de Consumo</div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item info-item"><strong>Consumo Total:</strong> @Model.ResultadoTarifaViewModel.ConsumoTotal.ToString("F3") kWh</li>
+                <li class="list-group-item info-item"><strong>Custo Total Estimado:</strong> @Model.ResultadoTarifaViewModel.ValorAnual.ToString("F3") €</li>
+                <li class="list-group-item info-item">
+                    <strong>Média de Custo Mensal:</strong> @($"{Model.ResultadoTarifaViewModel.ValorAnual / 12:F3}") €
+                </li>
+
+                </ul>
+        </div>
+    </div>
+
+    <!-- Gráfico de Consumo Mensal -->
+    <div class="chart-container">
+        <h3>Gráfico de Consumo Mensal</h3>
+        <canvas id="consumoMensalChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Gráfico de Custo Mensal -->
+    <div class="chart-container">
+        <h3>Gráfico de Custo Mensal</h3>
+        <canvas id="custoMensalChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Comparação Mensal em Tabela -->
+    <div class="table-container">
+        <h3>Distribuição Mensal do Consumo e Custo</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Mês</th>
+                    <th>Consumo (kWh)</th>
+                    <th>Custo (€)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mesConsumo in Model.ResultadoTarifaViewModel.ConsumoMensal)
+                {
+                    <tr>
+                        <td>@mesConsumo.Mes</td>
+                        <td>@mesConsumo.Consumo.ToString("F3")</td>
+                        <td>@mesConsumo.Custo.ToString("F3")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Exibir informações de Instalação -->
+    <div class="card mb-4">
+        <div class="card-header">Informações de Instalação</div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item info-item"><strong>Cidade:</strong> @(Model.DadosInstalacao.Cidade?.Nome ?? "Não disponível")</li>
+                <li class="list-group-item info-item"><strong>Modelo de Painel:</strong> @Model.DadosInstalacao.ModeloPainel.Modelo</li>
+                <li class="list-group-item info-item"><strong>Número de Painéis:</strong> @Model.DadosInstalacao.NumeroPaineis</li>
+                <li class="list-group-item info-item"><strong>Potência do Painel:</strong> @Model.PotenciaPainel.ToString("F3") kW</li>
+                <li class="list-group-item info-item"><strong>Inclinação:</strong> @Model.DadosInstalacao.Inclinacao.ToString("F3") °</li>
+                <li class="list-group-item info-item"><strong>Dificuldade de Instalação:</strong> @Model.DadosInstalacao.Dificuldade</li>
+                <li class="list-group-item info-item"><strong>Preço de Instalação:</strong> @Model.PrecoInstalacao.ToString("C")</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <a asp-action="SimulacaoCompleta" class="btn btn-primary">Voltar</a>
+
+        <form method="post" asp-action="CalcularROI">
+            <button type="submit" class="btn btn-success">Calcular ROI</button>
+        </form>
+    </div>
+</div>
+
+<!-- Carregar o Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Dados do gráfico de consumo mensal
+    var consumoMensalLabels = @Html.Raw(Json.Serialize(Model.ResultadoTarifaViewModel.ConsumoMensal.Select(c => c.Mes).ToList()));
+    var consumoMensalData = @Html.Raw(Json.Serialize(Model.ResultadoTarifaViewModel.ConsumoMensal.Select(c => c.Consumo).ToList()));
+
+    // Dados do gráfico de custo mensal
+    var custoMensalData = @Html.Raw(Json.Serialize(Model.ResultadoTarifaViewModel.ConsumoMensal.Select(c => c.Custo).ToList()));
+
+    // Gráfico de Consumo Mensal
+    var ctxConsumo = document.getElementById('consumoMensalChart').getContext('2d');
+    var consumoMensalChart = new Chart(ctxConsumo, {
+        type: 'bar',
+        data: {
+            labels: consumoMensalLabels,
+            datasets: [{
+                label: 'Consumo Mensal (kWh)',
+                data: consumoMensalData,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
-    </tbody>
-</table>
+    });
 
-<!-- Exibir informações de Instalação -->
-<h3>Informações de Instalação</h3>
-<ul>
-    <li><strong>Cidade:</strong> @(Model.DadosInstalacao.Cidade?.Nome ?? "Não disponível")</li>
-    <li><strong>Modelo de Painel:</strong> @Model.DadosInstalacao.ModeloPainel.Modelo</li>
-    <li><strong>Número de Painéis:</strong> @Model.DadosInstalacao.NumeroPaineis</li>
-    <li><strong>Potência do Painel:</strong> @Model.PotenciaPainel kW</li>
-    <li><strong>Inclinação:</strong> @Model.DadosInstalacao.Inclinacao °</li>
-    <li><strong>Dificuldade de Instalação:</strong> @Model.DadosInstalacao.Dificuldade</li>
-    <li><strong>Preço de Instalação:</strong> @Model.PrecoInstalacao.ToString("C")</li>
-</ul>
-
-<a asp-action="SimulacaoCompleta" class="btn btn-primary">Voltar</a>
-
-<form method="post" asp-action="CalcularROI">
-	<button type="submit" class="btn btn-success">Calcular ROI</button>
-</form>
-
+    // Gráfico de Custo Mensal
+    var ctxCusto = document.getElementById('custoMensalChart').getContext('2d');
+    var custoMensalChart = new Chart(ctxCusto, {
+        type: 'bar',
+        data: {
+            labels: consumoMensalLabels,
+            datasets: [{
+                label: 'Custo Mensal (€)',
+                data: custoMensalData,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
