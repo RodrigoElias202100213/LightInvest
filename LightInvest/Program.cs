@@ -27,15 +27,15 @@ if (!File.Exists(rotativaPath))
 {
 	throw new FileNotFoundException($"Erro: 'wkhtmltopdf.exe' não foi encontrado em {rotativaPath}. Verifique a pasta e mova o arquivo para o local correto.");
 }
-
-RotativaConfiguration.Setup(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "rotativa"));
+/*
+// RotativaConfiguration.Setup(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "rotativa"));
 
 // Verifique se o arquivo realmente existe
 if (!File.Exists(rotativaPath))
 {
 	throw new FileNotFoundException($"O arquivo 'wkhtmltopdf.exe' não foi encontrado no caminho especificado: {rotativaPath}");
 }
-
+*/
 
 // Adicionando os serviços necessários
 builder.Services.AddSingleton<PdfGenerator>(new PdfGenerator(rotativaPath));
