@@ -1054,3 +1054,4 @@ C:\Users\rodri\OneDrive\Imagens\o\LightInvest\obj\Debug\net8.0\refint\LightInves
 C:\Users\rodri\OneDrive\Imagens\o\LightInvest\obj\Debug\net8.0\LightInvest.pdb
 C:\Users\rodri\OneDrive\Imagens\o\LightInvest\obj\Debug\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Imagens\o\LightInvest\obj\Debug\net8.0\ref\LightInvest.dll
+C:\Users\rodri\OneDrive\Imagens\o\LightInvest\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

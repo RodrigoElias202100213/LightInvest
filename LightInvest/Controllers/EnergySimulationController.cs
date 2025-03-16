@@ -3,6 +3,11 @@ using LightInvest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+using LightInvest.Data;
+using LightInvest.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 public class EnergySimulationController : Controller
 {
 	private readonly ApplicationDbContext _context;
@@ -164,20 +169,23 @@ public class EnergySimulationController : Controller
 			return View("Index", model);
 		}
 
-		if (Enum.TryParse(model.TarifaEscolhida, out TipoTarifa tipoTarifa))
+		if (!Enum.TryParse(model.TarifaEscolhida, true, out TipoTarifa tipoTarifa))
 		{
-			var tarifa = new Tarifa { Nome = tipoTarifa, PrecoKwh = TarifasBase[tipoTarifa] };
-			model.PrecoKwh = tarifa.GetPrecoKwh();
-			await SaveTarifaToDatabase(tarifa);
+			ModelState.AddModelError("TarifaEscolhida", "Tipo de tarifa inválido.");
+			return View("Index", model);
 		}
 
-		model.ConsumoMensal = CalcularConsumoMensal(model);
+		var tarifa = new Tarifa { Nome = tipoTarifa, PrecoKwh = TarifasBase[tipoTarifa] };
+		model.PrecoKwh = tarifa.GetPrecoKwh();
+		await SaveTarifaToDatabase(tarifa);
 
+		model.ConsumoMensal = CalcularConsumoMensal(model);
 		model.ConsumoTotal = model.ConsumoMensal.Sum(m => m.Consumo);
 		model.ValorAnual = model.ConsumoMensal.Sum(m => m.Custo);
 
 		return View("ResultadoSimulacao", model);
 	}
+
 
 	private List<MesConsumo> CalcularConsumoMensal(ResultadoTarifaViewModel model)
 	{
@@ -201,30 +209,6 @@ public class EnergySimulationController : Controller
 		return View();
 	}
 
-	[HttpPost("save-tarifa")]
-	public async Task<IActionResult> SaveTarifa(string tarifaEscolhida)
-	{
-		if (Enum.TryParse(tarifaEscolhida, out TipoTarifa tipoTarifa))
-		{
-			decimal precoKwh = TarifasBase[tipoTarifa];
-
-			var tarifa = new Tarifa
-			{
-				Nome = tipoTarifa,
-				PrecoKwh = precoKwh
-			};
-
-			_context.Tarifas.Add(tarifa);
-			await _context.SaveChangesAsync();
-
-			ViewBag.Resultado = "Tarifa salva com sucesso!";
-			return RedirectToAction("Tarifas");
-		}
-
-		ViewBag.Resultado = "Erro: Tipo de tarifa inválido!";
-		return View("Index");
-	}
-
 	[HttpGet]
 	public IActionResult SelecionarTarifa()
 	{
@@ -242,7 +226,6 @@ public class EnergySimulationController : Controller
 		if (!ModelState.IsValid)
 		{
 			return View(model);
-
 		}
 
 		var user = await GetLoggedInUserAsync();
@@ -252,26 +235,24 @@ public class EnergySimulationController : Controller
 			return View("Index", model);
 		}
 
-		if (Enum.TryParse(model.TarifaEscolhida, out TipoTarifa tipoTarifa))
+		if (!Enum.TryParse(model.TarifaEscolhida, true, out TipoTarifa tipoTarifa))
 		{
-			var tarifaBase = TarifasBase[tipoTarifa];
-
-			model.PrecoKwh = tarifaBase + model.PrecoKwh;
-
-			var tarifa = new Tarifa
-			{
-				Nome = tipoTarifa,
-				PrecoKwh = model.PrecoKwh,
-				UserEmail = user.Email
-			};
-
-			await SaveTarifaToDatabase(tarifa);
-
-			return RedirectToAction("Create", "DadosInstalacao");
+			ModelState.AddModelError("TarifaEscolhida", "Selecione um tipo de tarifa válido.");
+			return View(model);
 		}
 
-		ViewBag.Resultado = "Erro: Tipo de tarifa inválido!";
-		return View(model);
+		var tarifaBase = TarifasBase[tipoTarifa];
+		model.PrecoKwh = tarifaBase + model.PrecoKwh;
+
+		var tarifa = new Tarifa
+		{
+			Nome = tipoTarifa,
+			PrecoKwh = model.PrecoKwh,
+			UserEmail = user.Email
+		};
+
+		await SaveTarifaToDatabase(tarifa);
+		return RedirectToAction("Create", "DadosInstalacao");
 	}
 
 	public IActionResult ResultadoSimulacao(ResultadoTarifaViewModel model)
@@ -279,16 +260,40 @@ public class EnergySimulationController : Controller
 		return View(model);
 	}
 
+
+	[HttpPost("save-tarifa")]
+	public async Task<IActionResult> SaveTarifa(string tarifaEscolhida)
+	{
+		if (!Enum.TryParse(tarifaEscolhida, true, out TipoTarifa tipoTarifa))
+		{
+			ViewBag.Resultado = "Erro: Tipo de tarifa inválido!";
+			return View("Index");
+		}
+
+		decimal precoKwh = TarifasBase[tipoTarifa];
+
+		var tarifa = new Tarifa
+		{
+			Nome = tipoTarifa, // Salvar o Enum corretamente
+			PrecoKwh = precoKwh
+		};
+
+		_context.Tarifas.Add(tarifa);
+		await _context.SaveChangesAsync();
+
+		ViewBag.Resultado = "Tarifa salva com sucesso!";
+		return RedirectToAction("Tarifas");
+	}
+
 	private async Task SaveTarifaToDatabase(Tarifa tarifa)
 	{
-
 		var tarifaExistente = await _context.Tarifas
-			.Where(t => t.UserEmail == tarifa.UserEmail)
-			.FirstOrDefaultAsync();
+			.FirstOrDefaultAsync(t => t.UserEmail == tarifa.UserEmail);
 
 		if (tarifaExistente != null)
 		{
 			tarifaExistente.PrecoKwh = tarifa.PrecoKwh;
+			tarifaExistente.Nome = tarifa.Nome; // Certifique-se de atualizar o nome corretamente
 			tarifaExistente.DataAlteracao = DateTime.Now;
 
 			_context.Tarifas.Update(tarifaExistente);
@@ -301,5 +306,6 @@ public class EnergySimulationController : Controller
 
 		await _context.SaveChangesAsync();
 	}
+
 
 }
