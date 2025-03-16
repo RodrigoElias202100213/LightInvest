@@ -13,9 +13,24 @@
 </div>
 
 <div id="buttons">
-    <a href="@Url.Action("Create", "DadosInstalacao")" id="btn-v">Voltar</a>
-    <a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
+	<a href="@Url.Action("Create", "DadosInstalacao")" id="btn-v">Voltar</a>
+	<a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
 </div>
+<div class="export-options" style="text-align: center; margin: 20px 0;">
+	<a href="@Url.Action("ExportarSimulacao", "Simulacao", new { tipo = "pdf" })" class="btn btn-outline-primary" style="margin-right:10px;">Exportar para PDF</a>
+	<a href="@Url.Action("ExportarSimulacao", "Simulacao", new { tipo = "excel" })" class="btn btn-outline-success" style="margin-right:10px;">Exportar para Excel</a>
+	<a href="@Url.Action("ExportarSimulacao", "Simulacao", new { tipo = "csv" })" class="btn btn-outline-info">Exportar para CSV</a>
+</div>
+
+
+<script>
+    document.getElementById("exportButton").addEventListener("click", function () {
+        var dropdown = document.getElementById("exportDropdown");
+        dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+    });
+</script>
+
+
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

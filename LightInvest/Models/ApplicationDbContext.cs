@@ -93,39 +93,72 @@ namespace LightInvest.Data
 				new ModeloPainelSolar { Id = 10, Modelo = "Spic" }
 			);
 
-			//Potencia para cada painel solar
+			// Potencia para cada painel solar
 			modelBuilder.Entity<PotenciaPainelSolar>().HasData(
 				// Para o Modelo Aiko - Comet 2U
 				new PotenciaPainelSolar { Id = 1, Potencia = 670, PainelSolarId = 1 },
+				new PotenciaPainelSolar { Id = 2, Potencia = 680, PainelSolarId = 1 },
+				new PotenciaPainelSolar { Id = 3, Potencia = 690, PainelSolarId = 1 },
+				new PotenciaPainelSolar { Id = 4, Potencia = 700, PainelSolarId = 1 },
 
-				//Para o Modelo Maxeon 7
-				new PotenciaPainelSolar { Id = 2, Potencia = 445, PainelSolarId = 2 },
+				// Para o Modelo Maxeon 7
+				new PotenciaPainelSolar { Id = 5, Potencia = 445, PainelSolarId = 2 },
+				new PotenciaPainelSolar { Id = 6, Potencia = 455, PainelSolarId = 2 },
+				new PotenciaPainelSolar { Id = 7, Potencia = 465, PainelSolarId = 2 },
+				new PotenciaPainelSolar { Id = 8, Potencia = 475, PainelSolarId = 2 },
 
-				//Para o Modelo Longi - HI-MO X6
-				new PotenciaPainelSolar { Id = 3, Potencia = 600, PainelSolarId = 3 },
+				// Para o Modelo Longi - HI-MO X6
+				new PotenciaPainelSolar { Id = 9, Potencia = 600, PainelSolarId = 3 },
+				new PotenciaPainelSolar { Id = 10, Potencia = 610, PainelSolarId = 3 },
+				new PotenciaPainelSolar { Id = 11, Potencia = 620, PainelSolarId = 3 },
+				new PotenciaPainelSolar { Id = 12, Potencia = 630, PainelSolarId = 3 },
 
-				//Para o Modelo Huasun - Himalaya
-				new PotenciaPainelSolar { Id = 4, Potencia = 720, PainelSolarId = 4 },
+				// Para o Modelo Huasun - Himalaya
+				new PotenciaPainelSolar { Id = 13, Potencia = 720, PainelSolarId = 4 },
+				new PotenciaPainelSolar { Id = 14, Potencia = 730, PainelSolarId = 4 },
+				new PotenciaPainelSolar { Id = 15, Potencia = 740, PainelSolarId = 4 },
+				new PotenciaPainelSolar { Id = 16, Potencia = 750, PainelSolarId = 4 },
 
-				//Para o Modelo TW Solar
-				new PotenciaPainelSolar { Id = 5, Potencia = 715, PainelSolarId = 5 },
-				new PotenciaPainelSolar { Id = 6, Potencia = 590, PainelSolarId = 5 },
+				// Para o Modelo TW Solar
+				new PotenciaPainelSolar { Id = 17, Potencia = 715, PainelSolarId = 5 },
+				new PotenciaPainelSolar { Id = 18, Potencia = 725, PainelSolarId = 5 },
+				new PotenciaPainelSolar { Id = 19, Potencia = 735, PainelSolarId = 5 },
+				new PotenciaPainelSolar { Id = 20, Potencia = 745, PainelSolarId = 5 },
 
-				//Para o Modelo JA Solar DeepBlue 4.0 Pro
-				new PotenciaPainelSolar { Id = 7, Potencia = 595, PainelSolarId = 6 },
+				new PotenciaPainelSolar { Id = 21, Potencia = 590, PainelSolarId = 5 },
+				new PotenciaPainelSolar { Id = 22, Potencia = 600, PainelSolarId = 5 },
+				new PotenciaPainelSolar { Id = 23, Potencia = 610, PainelSolarId = 5 },
+				new PotenciaPainelSolar { Id = 24, Potencia = 620, PainelSolarId = 5 },
 
-				//Para o Modelo Astroenergy - Astro N5
-				new PotenciaPainelSolar { Id = 8, Potencia = 640, PainelSolarId = 7 },
+				// Para o Modelo JA Solar DeepBlue 4.0 Pro
+				new PotenciaPainelSolar { Id = 25, Potencia = 595, PainelSolarId = 6 },
+				new PotenciaPainelSolar { Id = 26, Potencia = 605, PainelSolarId = 6 },
+				new PotenciaPainelSolar { Id = 27, Potencia = 615, PainelSolarId = 6 },
+				new PotenciaPainelSolar { Id = 28, Potencia = 625, PainelSolarId = 6 },
 
-				//Para o Modelo Grand Sunergy
-				new PotenciaPainelSolar { Id = 9, Potencia = 710, PainelSolarId = 8 },
+				// Para o Modelo Astroenergy - Astro N5
+				new PotenciaPainelSolar { Id = 29, Potencia = 640, PainelSolarId = 7 },
+				new PotenciaPainelSolar { Id = 30, Potencia = 650, PainelSolarId = 7 },
+				new PotenciaPainelSolar { Id = 31, Potencia = 660, PainelSolarId = 7 },
+				new PotenciaPainelSolar { Id = 32, Potencia = 670, PainelSolarId = 7 },
 
-				//Para o Modelo DMEGC - Infinity RT
-				new PotenciaPainelSolar { Id = 10, Potencia = 615, PainelSolarId = 9 },
+				// Para o Modelo Grand Sunergy
+				new PotenciaPainelSolar { Id = 33, Potencia = 710, PainelSolarId = 8 },
+				new PotenciaPainelSolar { Id = 34, Potencia = 720, PainelSolarId = 8 },
+				new PotenciaPainelSolar { Id = 35, Potencia = 730, PainelSolarId = 8 },
+				new PotenciaPainelSolar { Id = 36, Potencia = 740, PainelSolarId = 8 },
 
-				//Para o Modelo Spic
-				new PotenciaPainelSolar { Id = 11, Potencia = 410, PainelSolarId = 10 }
+				// Para o Modelo DMEGC - Infinity RT
+				new PotenciaPainelSolar { Id = 37, Potencia = 615, PainelSolarId = 9 },
+				new PotenciaPainelSolar { Id = 38, Potencia = 625, PainelSolarId = 9 },
+				new PotenciaPainelSolar { Id = 39, Potencia = 635, PainelSolarId = 9 },
+				new PotenciaPainelSolar { Id = 40, Potencia = 645, PainelSolarId = 9 },
 
+				// Para o Modelo Spic
+				new PotenciaPainelSolar { Id = 41, Potencia = 410, PainelSolarId = 10 },
+				new PotenciaPainelSolar { Id = 42, Potencia = 420, PainelSolarId = 10 },
+				new PotenciaPainelSolar { Id = 43, Potencia = 430, PainelSolarId = 10 },
+				new PotenciaPainelSolar { Id = 44, Potencia = 440, PainelSolarId = 10 }
 			);
 
 			modelBuilder.Entity<RoiCalculator>(entity =>
