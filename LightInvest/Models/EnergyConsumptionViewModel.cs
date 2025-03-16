@@ -10,6 +10,7 @@ namespace LightInvest.Models
 		public decimal MediaSemana { get; set; } // Média de consumo durante a semana
 		public decimal MediaFimSemana { get; set; } // Média de consumo no fim de semana
 		public decimal MediaAnual { get; set; } // Média anual do consumo
+
 	}
 
 }

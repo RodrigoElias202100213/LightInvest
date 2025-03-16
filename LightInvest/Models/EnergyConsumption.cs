@@ -15,6 +15,7 @@ namespace LightInvest.Models
 
 		[Required]
 		public List<string> MesesOcupacao { get; set; } = new List<string>();
+		
 
 		public decimal MediaSemana { get; set; }
 		public decimal MediaFimSemana { get; set; }
@@ -26,6 +27,13 @@ namespace LightInvest.Models
 			ConsumoDiaSemana = new List<decimal>(7); // Inicializa com 7 elementos (se necessário)
 			ConsumoFimSemana = new List<decimal>(2); // Inicializa com 2 elementos (sábado e domingo)
 			MesesOcupacao = new List<string>();
+		}
+
+		public void CalcularMedias()
+		{
+			CalcularMediaSemana();
+			CalcularMediaFimSemana();
+			CalcularMediaAnual();
 		}
 
 		public void CalcularMediaSemana()
@@ -41,6 +49,23 @@ namespace LightInvest.Models
 			if (ConsumoFimSemana.Count == 2)
 			{
 				MediaFimSemana = ConsumoFimSemana.Average();
+			}
+		}
+
+		public void CalcularConsumoMensal()
+		{
+			if (MesesOcupacao.Any())
+			{
+				decimal consumoTotalAnual = MediaAnual;
+
+				decimal consumoPorMes = consumoTotalAnual / MesesOcupacao.Count;
+
+				foreach (var mes in MesesOcupacao)
+				{
+					Console.WriteLine($"Mês: {mes}, Consumo: {consumoPorMes}");
+				}
+
+				ConsumoTotal = consumoPorMes * MesesOcupacao.Count;
 			}
 		}
 

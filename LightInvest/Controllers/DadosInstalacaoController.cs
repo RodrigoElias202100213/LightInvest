@@ -21,7 +21,7 @@ public class DadosInstalacaoController : Controller
 		if (user == null)
 		{
 			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
-			return RedirectToAction("Index", "Home"); // Redireciona se não houver usuário logado
+			return RedirectToAction("Privacy", "Home"); // Redireciona se não houver usuário logado 111111111111111111111111
 		}
 
 		ViewBag.Cidades = await _context.Cidades.ToListAsync();
@@ -66,7 +66,7 @@ public class DadosInstalacaoController : Controller
 			await _context.SaveChangesAsync();
 		}
 
-		return RedirectToAction("Index", "Home"); // Redireciona após salvar ou atualizar
+		return RedirectToAction("SimulacaoCompleta", "Simulacao"); // Redireciona após salvar ou atualizar
 	}
 
 	// Método para obter o usuário logado com base no e-mail armazenado na sessão
