@@ -21,7 +21,7 @@ public class DadosInstalacaoController : Controller
 		if (user == null)
 		{
 			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
-			return RedirectToAction("Privacy", "Home"); // Redireciona se não houver usuário logado 111111111111111111111111
+			return RedirectToAction("Privacy", "Home"); 
 		}
 
 		ViewBag.Cidades = await _context.Cidades.ToListAsync();
@@ -29,7 +29,7 @@ public class DadosInstalacaoController : Controller
 		return View();
 	}
 
-	// Salva ou atualiza os dados preenchidos pelo usuário
+
 	[HttpPost]
 	[ValidateAntiForgeryToken]
 	public async Task<IActionResult> Create(DadosInstalacao dados)
@@ -41,7 +41,7 @@ public class DadosInstalacaoController : Controller
 			return RedirectToAction("Index", "Home");
 		}
 
-		// Verifica se os dados de instalação já existem para o usuário logado
+	
 		var dadosExistentes = await _context.DadosInstalacao
 			.Where(d => d.UserEmail == user.Email)
 			.FirstOrDefaultAsync();
@@ -49,7 +49,7 @@ public class DadosInstalacaoController : Controller
 		if (dadosExistentes == null)
 		{
 			dados.UserEmail = user.Email;
-			dados.AtualizarPrecoInstalacao(); // Atualiza o preço antes de salvar
+			dados.AtualizarPrecoInstalacao(); 
 			_context.DadosInstalacao.Add(dados);
 			await _context.SaveChangesAsync();
 		}
@@ -61,15 +61,15 @@ public class DadosInstalacaoController : Controller
 			dadosExistentes.ConsumoPainel = dados.ConsumoPainel;
 			dadosExistentes.Inclinacao = dados.Inclinacao;
 			dadosExistentes.Dificuldade = dados.Dificuldade;
-			dadosExistentes.AtualizarPrecoInstalacao(); // Atualiza o preço antes de salvar
+			dadosExistentes.AtualizarPrecoInstalacao(); 
 			_context.DadosInstalacao.Update(dadosExistentes);
 			await _context.SaveChangesAsync();
 		}
 
-		return RedirectToAction("SimulacaoCompleta", "Simulacao"); // Redireciona após salvar ou atualizar
+		return RedirectToAction("SimulacaoCompleta", "Simulacao"); 
 	}
 
-	// Método para obter o usuário logado com base no e-mail armazenado na sessão
+	
 	private async Task<User> GetLoggedInUserAsync()
 	{
 		var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -79,21 +79,19 @@ public class DadosInstalacaoController : Controller
 		return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 	}
 
-	// Função que retorna os consumos disponíveis para o painel solar selecionado
 	[HttpGet]
 	public async Task<IActionResult> GetConsumosPainel(int modeloPainelId)
 	{
-		// Buscando as potências (ou consumos) do painel solar selecionado
 		var consumos = await _context.PotenciasDePaineisSolares
 			.Where(p => p.PainelSolarId == modeloPainelId)
-			.Select(p => new { p.Id, p.Potencia }) // Retorna a ID e a Potência do painel solar
+			.Select(p => new { p.Id, p.Potencia }) 
 			.ToListAsync();
 
 		if (consumos == null || !consumos.Any())
 		{
-			return NotFound(); // Retorna erro caso não haja consumos
+			return NotFound(); 
 		}
 
-		return Json(consumos); // Retorna os consumos no formato JSON
+		return Json(consumos); 
 	}
 }
