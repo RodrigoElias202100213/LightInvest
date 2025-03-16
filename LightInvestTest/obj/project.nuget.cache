@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K/skD6k8c8Q=",
+  "dgSpecHash": "XuV2d3MaZlY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\rodri\\OneDrive\\Imagens\\New folder (2)\\LightInvestTest\\LightInvestTest.csproj",
+  "projectFilePath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\lil\\LightInvestTest\\LightInvestTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rodri\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
