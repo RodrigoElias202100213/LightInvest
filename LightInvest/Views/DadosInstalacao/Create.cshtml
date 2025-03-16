@@ -1,10 +1,10 @@
 ﻿@model LightInvest.Models.DadosInstalacao
 
 @{
-	ViewData["Title"] = "Nova Instalação";
+	ViewData["Title"] = "Simulação";
 }
 
-<h2>Nova Instalação</h2>
+<h2>Simulação</h2>
 
 @if (TempData["ErrorMessage"] != null)
 {
@@ -17,47 +17,61 @@
 }
 
 <form asp-action="Create" method="post">
-	<div class="form-group">
-		<label for="CidadeId">Cidade</label>
-		<select asp-for="CidadeId" class="form-control" asp-items="@(new SelectList(ViewBag.Cidades, "Id", "Nome"))">
-			<option value="">Selecione uma cidade</option>
-		</select>
-	</div>
+	<div class="simulation-container">
+		<div class="simulation-box">
 
-	<div class="form-group">
-		<label for="ModeloPainelId">Modelo do Painel Solar</label>
-		<select asp-for="ModeloPainelId" class="form-control" id="modeloPainelSelect" asp-items="@(new SelectList(ViewBag.ModelosPaineis, "Id", "Modelo"))">
-			<option value="">Selecione um modelo</option>
-		</select>
-	</div>
+			<!--Cidades-->
+			<div class="form-group">
+				<label for="CidadeId">Cidade</label>
+				<select asp-for="CidadeId" class="form-control" asp-items="@(new SelectList(ViewBag.Cidades, "Id", "Nome"))">
+					<option value="">Selecione uma cidade</option>
+				</select>
+			</div>
 
-	<div class="form-group">
-		<label for="ConsumoPainel">Consumo do Painel (kWh)</label>
-		<select asp-for="ConsumoPainel" class="form-control" id="consumoPainelSelect">
-			<option value="">Selecione um consumo</option>
-		</select>
-	</div>
+			<!--Numero de Paineis Solares-->
+			<div class="form-group">
+				<label for="NumeroPaineis">Número de Painéis Solares</label>
+				<input asp-for="NumeroPaineis" class="form-control" type="number" min="1" required />
+			</div>
 
-	<div class="form-group">
-		<label for="NumeroPaineis">Número de Painéis</label>
-		<input asp-for="NumeroPaineis" class="form-control" type="number" min="1" required />
-	</div>
+			<!--Modelo do Painel-->
+			<div class="form-group">
+				<label for="ModeloPainelId">Modelo do Painel Solar</label>
+				<select asp-for="ModeloPainelId" class="form-control" id="modeloPainelSelect" asp-items="@(new SelectList(ViewBag.ModelosPaineis, "Id", "Modelo"))">
+					<option value="">Selecione um modelo</option>
+				</select>
+			</div>
 
-	<div class="form-group">
-		<label for="Inclinacao">Inclinação do Telhado (graus)</label>
-		<input asp-for="Inclinacao" class="form-control" type="number" step="0.01" required />
-	</div>
+			<!--Consumo do Painel-->
+			<div class="form-group">
+				<label for="ConsumoPainel">Consumo do Painel (kWh)</label>
+				<select asp-for="ConsumoPainel" class="form-control" id="consumoPainelSelect">
+					<option value="">Selecione um consumo</option>
+				</select>
+			</div>
 
-	<div class="form-group">
-		<label for="Dificuldade">Dificuldade da Instalação</label>
-		<select asp-for="Dificuldade" class="form-control">
-			<option value="fácil">Fácil</option>
-			<option value="média">Média</option>
-			<option value="difícil">Difícil</option>
-		</select>
-	</div>
+			<!--Inclinação-->
+			<div class="form-group">
+				<label for="Inclinacao">Inclinação do Telhado (graus)</label>
+				<input asp-for="Inclinacao" class="form-control" type="number" step="0.01" required />
+			</div>
 
-	<button type="submit" class="btn btn-primary mt-3">Salvar</button>
+			<!--Dificuldade-->
+			<div class="form-group">
+				<label for="Dificuldade">Dificuldade da Instalação</label>
+				<select asp-for="Dificuldade" class="form-control">
+					<option value="fácil">Fácil</option>
+					<option value="média">Média</option>
+					<option value="difícil">Difícil</option>
+				</select>
+			</div>
+
+			<div class="button-container">
+				<button type="submit" class="btn">Salvar</button>
+			</div>
+		</div>
+	</div>
+	
 </form>
 
 @section Scripts {
@@ -93,3 +107,71 @@
 			});
 		</script>
 }
+
+
+<style>
+	.simulation-container {
+        height: 100vh;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+	.simulation-box {
+		display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 70%;
+        max-width: 600px;
+	}
+
+	h2 {
+        font-weight: bold;
+        font-size: 3rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+        text-align: center;
+        margin-bottom: 4%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+	 .form-control {
+        width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+	.button-container {
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}
+
+	.btn {
+		background: #065A66;
+		color: white;
+		padding: 10px 20px;
+		border: none;
+		cursor: pointer;
+		border-radius: 25px;
+		margin-top: 15px;
+		width: 100%;
+		text-align: center;
+	}
+
+	.btn:hover {
+		color: white;
+		background: #054850;
+	}
+
+</style>
