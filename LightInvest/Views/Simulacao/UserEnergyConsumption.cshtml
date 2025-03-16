@@ -140,11 +140,11 @@
     </div>
 
     <div class="d-flex justify-content-between">
-        <a asp-action="SimulacaoCompleta" class="btn btn-primary">Voltar</a>
+	    
+	    <a asp-action="SimulacaoCompleta" class="btn btn-primary">Voltar</a>
 
-        <form method="post" asp-action="CalcularROI">
-            <button type="submit" class="btn btn-success">Calcular ROI</button>
-        </form>
+        <a href="@Url.Action("CalcularROI", "Simulacao")">Calcular ROI</a>
+
     </div>
 </div>
 

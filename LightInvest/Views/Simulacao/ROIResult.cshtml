@@ -1,17 +1,119 @@
-﻿@model LightInvest.Models.RoiCalculator
+﻿@model LightInvest.Models.SimulacaoCompletaViewModel
 
-@{
-	ViewData["Title"] = "Resultado do ROI";
+<h2>Simulação do ROI</h2>
+
+<div>
+    <canvas id="roiChart" width="900" height="500"></canvas>
+</div>
+
+<div id="metrics">
+    <p><strong>Data do Cálculo:</strong> @Model.ROI.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
+    <p><strong>ROI Atual:</strong> @Model.ROI.CurrentRoi.ROI</p>
+    <p><strong>Custo de Instalação:</strong> @Model.ROI.CurrentRoi.CustoInstalacao.ToString("C")</p>
+</div>
+
+<div id="buttons">
+    <a href="@Url.Action("Create", "DadosInstalacao")" id="btn-v">Voltar</a>
+    <a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Obter dados passados para a ViewBag
+        var anos = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Years));
+        var dividas = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Debts));
+        var roiValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.RoiValues));
+
+        // Criar gráfico
+        var ctx = document.getElementById('roiChart').getContext('2d');
+        var roiChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: anos,
+                datasets: [
+                    {
+                        label: 'Dívida Remanescente ($)',
+                        data: dividas,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'ROI ($)',
+                        data: roiValues,
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: false,
+                        tension: 0.1
+                    }
+                ]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Anos'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Valor ($)'
+                        },
+                        beginAtZero: false // Não forçar começar do 0
+                    }
+                }
+            }
+        });
+    </script>
 }
 
-<h2>Resultado do Retorno Sobre Investimento (ROI)</h2>
+<style>
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+        font-weight: bold;
+        margin-bottom: 5%;
+    }
 
-<ul>
-	<li><strong>Custo da Instalação:</strong> @Model.CustoInstalacao.ToString("C")</li>
-	<li><strong>Custo de Manutenção Anual:</strong> @Model.CustoManutencaoAnual.ToString("C")</li>
-	<li><strong>Consumo Energético Médio:</strong> @Model.ConsumoEnergeticoMedio kWh</li>
-	<li><strong>Retorno Estimado por Economia:</strong> @Model.RetornoEconomia.ToString("C")</li>
-	<li><strong>ROI Estimado:</strong> @Model.ROI anos</li>
-</ul>
+    #metrics {
+        margin-left: 13%;
+        margin-bottom: 5%;
+    }
 
-<a asp-action="SimulacaoCompleta" class="btn btn-primary">Voltar</a>
+    #buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3%;
+    }
+
+    #btn-v, #btn-pp {
+        width: 160px;
+        height: 35px;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: #065A66;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #roiChart {
+        max-width: 1000px;
+        max-height: 500px;
+        display: block;
+        margin: auto;
+        margin-bottom: 5%;
+    }
+</style>

@@ -37,6 +37,7 @@ namespace LightInvest.Controllers
 				MediaAnual = energyConsumption.MediaAnual
 			};
 		}
+
 		[HttpGet("simulacao-completa")]
 		public async Task<IActionResult> SimulacaoCompleta()
 		{
@@ -93,12 +94,12 @@ namespace LightInvest.Controllers
 			// Calculate energy consumption metrics
 			energyConsumption.CalcularMedias();
 			decimal custoAnual = energyConsumption.MediaAnual * tarifa.PrecoKwh;
-			
+
 			dadosInstalacao.AtualizarPrecoInstalacao();
 
 			// Monthly consumption calculation
 			var consumoMensal = energyConsumption.MediaAnual / energyConsumption.MesesOcupacao.Count;
-			
+
 			decimal custoMensal = consumoMensal * tarifa.PrecoKwh;
 
 			var resultado = new ResultadoTarifaViewModel
@@ -139,7 +140,7 @@ namespace LightInvest.Controllers
 			return View("UserEnergyConsumption", viewModel);
 		}
 
-		[HttpPost("calcular-roi")]
+		[HttpGet("calcular-roi")]
 		public async Task<IActionResult> CalcularROI()
 		{
 			var user = await GetLoggedInUserAsync();
@@ -148,8 +149,9 @@ namespace LightInvest.Controllers
 				return Unauthorized("Usuário não autenticado.");
 			}
 
-			var simulacao = await SimulacaoCompleta() as ViewResult;
-			if (simulacao?.Model is not SimulacaoCompletaViewModel viewModel)
+			// Obter os dados da simulação completa
+			var simulacao = await SimulacaoCompleta(); // Retorna o ViewResult diretamente
+			if (simulacao is not ViewResult viewResult || viewResult.Model is not SimulacaoCompletaViewModel viewModel)
 			{
 				return NotFound("Erro ao obter dados da simulação.");
 			}
@@ -158,7 +160,7 @@ namespace LightInvest.Controllers
 			{
 				UserEmail = user.Email,
 				CustoInstalacao = viewModel.PrecoInstalacao,
-				CustoManutencaoAnual = 1, // Exemplo fixo, pode ser ajustado
+				CustoManutencaoAnual = 1, // Exemplo fixo
 				ConsumoEnergeticoMedio = viewModel.EnergyConsumptionViewModel.MediaAnual,
 				ConsumoEnergeticoRede = viewModel.EnergyConsumptionViewModel.MediaAnual,
 				RetornoEconomia = viewModel.ResultadoTarifaViewModel.ValorAnual,
@@ -174,7 +176,25 @@ namespace LightInvest.Controllers
 			_context.ROICalculators.Add(roiCalculator);
 			await _context.SaveChangesAsync();
 
-			return View("ROIResult", roiCalculator);
+			// Criar a ViewModel de ROI e adicionar o ROI calculado
+			var roiDashboardViewModel = new RoiCalculatorDashboardViewModel
+			{
+				CurrentRoi = roiCalculator,
+				History = _context.ROICalculators.ToList() // Exemplo para carregar o histórico de ROI
+			};
+
+			// Criar o ViewModel de Simulação Completa e adicionar o ROI calculado
+			var simulacaoCompletaViewModel = new SimulacaoCompletaViewModel
+			{
+				EnergyConsumptionViewModel = viewModel.EnergyConsumptionViewModel,
+				ResultadoTarifaViewModel = viewModel.ResultadoTarifaViewModel,
+				DadosInstalacao = viewModel.DadosInstalacao,
+				PrecoInstalacao = viewModel.PrecoInstalacao,
+				PotenciaPainel = viewModel.PotenciaPainel,
+				ROI = roiDashboardViewModel
+			};
+
+			return View("ROIResult", simulacaoCompletaViewModel);
 		}
 	}
 }
