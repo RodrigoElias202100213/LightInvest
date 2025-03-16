@@ -240,22 +240,187 @@ namespace LightInvest.Migrations
                         new
                         {
                             Id = 1,
-                            Nome = "Lisboa"
+                            Nome = "Albufeira"
                         },
                         new
                         {
                             Id = 2,
-                            Nome = "Porto"
+                            Nome = "Almada"
                         },
                         new
                         {
                             Id = 3,
-                            Nome = "Coimbra"
+                            Nome = "Amadora"
                         },
                         new
                         {
                             Id = 4,
+                            Nome = "Aveiro"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Nome = "Barreiro"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Nome = "Barcelos"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Nome = "Beja"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Nome = "Braga"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Nome = "Bragança"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Nome = "Caldas da Rainha"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Nome = "Cascais"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Nome = "Coimbra"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Nome = "Évora"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Nome = "Faro"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Nome = "Figueira da Foz"
+                        },
+                        new
+                        {
+                            Id = 15,
                             Nome = "Funchal"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Nome = "Guarda"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Nome = "Guimarães"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Nome = "Leiria"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Nome = "Lisboa"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Nome = "Matosinhos"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Nome = "Montijo"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Nome = "Odivelas"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Nome = "Oeiras"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Nome = "Portalegre"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Nome = "Portimão"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Nome = "Porto"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Nome = "Póvoa de Varzim"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Nome = "Santarem"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Nome = "Setúbal"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Nome = "Sintra"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Nome = "Tomar"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Nome = "Torres Vedras"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Nome = "Viana do castelo"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Nome = "Vila do Conde"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Nome = "Vila Nova de Gaia"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Nome = "Viseu"
                         });
                 });
 
@@ -280,17 +445,52 @@ namespace LightInvest.Migrations
                         new
                         {
                             Id = 1,
-                            Modelo = "Modelo A"
+                            Modelo = "Aiko - Comet 2U"
                         },
                         new
                         {
                             Id = 2,
-                            Modelo = "Modelo B"
+                            Modelo = "Maxeon 7"
                         },
                         new
                         {
                             Id = 3,
-                            Modelo = "Modelo C"
+                            Modelo = "Longi - HI-MO X6"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Modelo = "Huasun - Himalaya"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Modelo = "TW Solar"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Modelo = "JA Solar DeepBlue 4.0 Pro"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Modelo = "Astroenergy - Astro N5"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Modelo = "Grand Sunergy"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Modelo = "DMEGC - Infinity RT"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Modelo = "Spic"
                         });
                 });
 
@@ -319,55 +519,265 @@ namespace LightInvest.Migrations
                         {
                             Id = 1,
                             PainelSolarId = 1,
-                            Potencia = 250m
+                            Potencia = 670m
                         },
                         new
                         {
                             Id = 2,
                             PainelSolarId = 1,
-                            Potencia = 270m
+                            Potencia = 680m
                         },
                         new
                         {
                             Id = 3,
                             PainelSolarId = 1,
-                            Potencia = 300m
+                            Potencia = 690m
                         },
                         new
                         {
                             Id = 4,
-                            PainelSolarId = 2,
-                            Potencia = 300m
+                            PainelSolarId = 1,
+                            Potencia = 700m
                         },
                         new
                         {
                             Id = 5,
                             PainelSolarId = 2,
-                            Potencia = 320m
+                            Potencia = 445m
                         },
                         new
                         {
                             Id = 6,
                             PainelSolarId = 2,
-                            Potencia = 350m
+                            Potencia = 455m
                         },
                         new
                         {
                             Id = 7,
-                            PainelSolarId = 3,
-                            Potencia = 350m
+                            PainelSolarId = 2,
+                            Potencia = 465m
                         },
                         new
                         {
                             Id = 8,
-                            PainelSolarId = 3,
-                            Potencia = 380m
+                            PainelSolarId = 2,
+                            Potencia = 475m
                         },
                         new
                         {
                             Id = 9,
                             PainelSolarId = 3,
-                            Potencia = 400m
+                            Potencia = 600m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            PainelSolarId = 3,
+                            Potencia = 610m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            PainelSolarId = 3,
+                            Potencia = 620m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            PainelSolarId = 3,
+                            Potencia = 630m
+                        },
+                        new
+                        {
+                            Id = 13,
+                            PainelSolarId = 4,
+                            Potencia = 720m
+                        },
+                        new
+                        {
+                            Id = 14,
+                            PainelSolarId = 4,
+                            Potencia = 730m
+                        },
+                        new
+                        {
+                            Id = 15,
+                            PainelSolarId = 4,
+                            Potencia = 740m
+                        },
+                        new
+                        {
+                            Id = 16,
+                            PainelSolarId = 4,
+                            Potencia = 750m
+                        },
+                        new
+                        {
+                            Id = 17,
+                            PainelSolarId = 5,
+                            Potencia = 715m
+                        },
+                        new
+                        {
+                            Id = 18,
+                            PainelSolarId = 5,
+                            Potencia = 725m
+                        },
+                        new
+                        {
+                            Id = 19,
+                            PainelSolarId = 5,
+                            Potencia = 735m
+                        },
+                        new
+                        {
+                            Id = 20,
+                            PainelSolarId = 5,
+                            Potencia = 745m
+                        },
+                        new
+                        {
+                            Id = 21,
+                            PainelSolarId = 5,
+                            Potencia = 590m
+                        },
+                        new
+                        {
+                            Id = 22,
+                            PainelSolarId = 5,
+                            Potencia = 600m
+                        },
+                        new
+                        {
+                            Id = 23,
+                            PainelSolarId = 5,
+                            Potencia = 610m
+                        },
+                        new
+                        {
+                            Id = 24,
+                            PainelSolarId = 5,
+                            Potencia = 620m
+                        },
+                        new
+                        {
+                            Id = 25,
+                            PainelSolarId = 6,
+                            Potencia = 595m
+                        },
+                        new
+                        {
+                            Id = 26,
+                            PainelSolarId = 6,
+                            Potencia = 605m
+                        },
+                        new
+                        {
+                            Id = 27,
+                            PainelSolarId = 6,
+                            Potencia = 615m
+                        },
+                        new
+                        {
+                            Id = 28,
+                            PainelSolarId = 6,
+                            Potencia = 625m
+                        },
+                        new
+                        {
+                            Id = 29,
+                            PainelSolarId = 7,
+                            Potencia = 640m
+                        },
+                        new
+                        {
+                            Id = 30,
+                            PainelSolarId = 7,
+                            Potencia = 650m
+                        },
+                        new
+                        {
+                            Id = 31,
+                            PainelSolarId = 7,
+                            Potencia = 660m
+                        },
+                        new
+                        {
+                            Id = 32,
+                            PainelSolarId = 7,
+                            Potencia = 670m
+                        },
+                        new
+                        {
+                            Id = 33,
+                            PainelSolarId = 8,
+                            Potencia = 710m
+                        },
+                        new
+                        {
+                            Id = 34,
+                            PainelSolarId = 8,
+                            Potencia = 720m
+                        },
+                        new
+                        {
+                            Id = 35,
+                            PainelSolarId = 8,
+                            Potencia = 730m
+                        },
+                        new
+                        {
+                            Id = 36,
+                            PainelSolarId = 8,
+                            Potencia = 740m
+                        },
+                        new
+                        {
+                            Id = 37,
+                            PainelSolarId = 9,
+                            Potencia = 615m
+                        },
+                        new
+                        {
+                            Id = 38,
+                            PainelSolarId = 9,
+                            Potencia = 625m
+                        },
+                        new
+                        {
+                            Id = 39,
+                            PainelSolarId = 9,
+                            Potencia = 635m
+                        },
+                        new
+                        {
+                            Id = 40,
+                            PainelSolarId = 9,
+                            Potencia = 645m
+                        },
+                        new
+                        {
+                            Id = 41,
+                            PainelSolarId = 10,
+                            Potencia = 410m
+                        },
+                        new
+                        {
+                            Id = 42,
+                            PainelSolarId = 10,
+                            Potencia = 420m
+                        },
+                        new
+                        {
+                            Id = 43,
+                            PainelSolarId = 10,
+                            Potencia = 430m
+                        },
+                        new
+                        {
+                            Id = 44,
+                            PainelSolarId = 10,
+                            Potencia = 440m
                         });
                 });
 
