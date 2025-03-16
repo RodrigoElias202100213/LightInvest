@@ -21,12 +21,10 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        // Obter dados passados para a ViewBag
         var anos = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Years));
         var dividas = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Debts));
         var roiValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.RoiValues));
 
-        // Criar gráfico
         var ctx = document.getElementById('roiChart').getContext('2d');
         var roiChart = new Chart(ctx, {
             type: 'line',
@@ -64,7 +62,7 @@
                             display: true,
                             text: 'Valor ($)'
                         },
-                        beginAtZero: false // Não forçar começar do 0
+                        beginAtZero: false 
                     }
                 }
             }

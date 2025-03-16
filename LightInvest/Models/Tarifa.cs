@@ -15,7 +15,7 @@ namespace LightInvest.Models
 		public int Id { get; set; }
 		public string UserEmail { get; set; }
 		public DateTime DataAlteracao { get; set; }
-		public TipoTarifa Nome { get; set; } // Tipo de tarifa: Residencial, Comercial, Industrial
+		public TipoTarifa Nome { get; set; } 
 		public decimal PrecoKwh { get; set; }
 
 		private static readonly Dictionary<TipoTarifa, decimal> Adicionais = new()

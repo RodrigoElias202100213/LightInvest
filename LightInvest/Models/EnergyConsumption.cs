@@ -24,8 +24,8 @@ namespace LightInvest.Models
 
 		public EnergyConsumption()
 		{
-			ConsumoDiaSemana = new List<decimal>(7); // Inicializa com 7 elementos (se necessário)
-			ConsumoFimSemana = new List<decimal>(2); // Inicializa com 2 elementos (sábado e domingo)
+			ConsumoDiaSemana = new List<decimal>(7); 
+			ConsumoFimSemana = new List<decimal>(2); 
 			MesesOcupacao = new List<string>();
 		}
 

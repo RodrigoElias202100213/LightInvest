@@ -44,10 +44,9 @@ namespace LightInvest.Controllers
 			var user = await GetLoggedInUserAsync();
 			if (user == null)
 			{
-				return Unauthorized("Usuário não autenticado.");
+				return Unauthorized("Utilizador não autenticado.");
 			}
 
-			// Fetch energy consumption data
 			var energyConsumption = await _context.EnergyConsumptions
 				.Where(ec => ec.UserEmail == user.Email)
 				.FirstOrDefaultAsync();
@@ -65,18 +64,16 @@ namespace LightInvest.Controllers
 
 			if (tarifa == null)
 			{
-				return NotFound("Nenhuma tarifa associada ao usuário.");
+				return NotFound("Nenhuma tarifa associada ao utilizador.");
 			}
 
-			// Fetch installation data including panel models and available powers
 			var dadosInstalacao = await _context.DadosInstalacao
 				.Include(di => di.ModeloPainel)
-				.ThenInclude(mp => mp.Potencias) // Includes the available powers
+				.ThenInclude(mp => mp.Potencias) 
 				.Include(di => di.Cidade)
 				.Where(di => di.UserEmail == user.Email)
 				.FirstOrDefaultAsync();
 
-			// Ensure that installation data exists
 			if (dadosInstalacao == null)
 			{
 				return NotFound("Nenhum dado de instalação encontrado.");
@@ -88,16 +85,14 @@ namespace LightInvest.Controllers
 
 			if (potenciaPainel == 0)
 			{
-				return BadRequest("Nenhuma potência registrada para o modelo do painel solar.");
+				return BadRequest("Nenhuma potência registada para o modelo do painel solar.");
 			}
 
-			// Calculate energy consumption metrics
 			energyConsumption.CalcularMedias();
 			decimal custoAnual = energyConsumption.MediaAnual * tarifa.PrecoKwh;
 
 			dadosInstalacao.AtualizarPrecoInstalacao();
 
-			// Monthly consumption calculation
 			var consumoMensal = energyConsumption.MediaAnual / energyConsumption.MesesOcupacao.Count;
 
 			decimal custoMensal = consumoMensal * tarifa.PrecoKwh;
@@ -126,17 +121,16 @@ namespace LightInvest.Controllers
 
 
 
-			// Crie um modelo de exibição que inclui a potência
 			var viewModel = new SimulacaoCompletaViewModel
 			{
 				EnergyConsumptionViewModel = energyConsumptionViewModel,
 				ResultadoTarifaViewModel = resultado,
 				DadosInstalacao = dadosInstalacao,
 				PrecoInstalacao = dadosInstalacao.PrecoInstalacao,
-				PotenciaPainel = potenciaPainel // Adicionando a potência aqui
+				PotenciaPainel = potenciaPainel 
 			};
 
-			// Return the view with the model
+			
 			return View("UserEnergyConsumption", viewModel);
 		}
 
@@ -149,8 +143,7 @@ namespace LightInvest.Controllers
 				return Unauthorized("Usuário não autenticado.");
 			}
 
-			// Obter os dados da simulação completa
-			var simulacao = await SimulacaoCompleta(); // Retorna o ViewResult diretamente
+			var simulacao = await SimulacaoCompleta(); 
 			if (simulacao is not ViewResult viewResult || viewResult.Model is not SimulacaoCompletaViewModel viewModel)
 			{
 				return NotFound("Erro ao obter dados da simulação.");
@@ -160,7 +153,7 @@ namespace LightInvest.Controllers
 			{
 				UserEmail = user.Email,
 				CustoInstalacao = viewModel.PrecoInstalacao,
-				CustoManutencaoAnual = 1, // Exemplo fixo
+				CustoManutencaoAnual = 1, 
 				ConsumoEnergeticoMedio = viewModel.EnergyConsumptionViewModel.MediaAnual,
 				ConsumoEnergeticoRede = viewModel.EnergyConsumptionViewModel.MediaAnual,
 				RetornoEconomia = viewModel.ResultadoTarifaViewModel.ValorAnual,
@@ -176,14 +169,12 @@ namespace LightInvest.Controllers
 			_context.ROICalculators.Add(roiCalculator);
 			await _context.SaveChangesAsync();
 
-			// Criar a ViewModel de ROI e adicionar o ROI calculado
 			var roiDashboardViewModel = new RoiCalculatorDashboardViewModel
 			{
 				CurrentRoi = roiCalculator,
-				History = _context.ROICalculators.ToList() // Exemplo para carregar o histórico de ROI
+				History = _context.ROICalculators.ToList() 
 			};
 
-			// Criar o ViewModel de Simulação Completa e adicionar o ROI calculado
 			var simulacaoCompletaViewModel = new SimulacaoCompletaViewModel
 			{
 				EnergyConsumptionViewModel = viewModel.EnergyConsumptionViewModel,
