@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\rodri\\li\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\li\\lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\li\\lightinvest\\controllers\\energysimulationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\energysimulationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\li\\lightinvest\\controllers\\simulacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\simulacaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\li\\lightinvest\\models\\energyconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\energyconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\li\\lightinvest\\models\\pdfgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\pdfgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\li\\lightinvesttest\\energyconsumptiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\energyconsumptiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\li\\lightinvest\\views\\simulacao\\userenergyconsumption.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\simulacao\\userenergyconsumption.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\li\\lightinvest\\views\\energysimulation\\simulation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\energysimulation\\simulation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\li\\lightinvest\\views\\simulacao\\roiresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\simulacao\\roiresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\li\\lightinvest\\models\\energyconsumptionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\energyconsumptionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 23,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Simulation.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\li\\LightInvest\\Views\\EnergySimulation\\Simulation.cshtml*",
+              "RelativeToolTip": "LightInvest\\Views\\EnergySimulation\\Simulation.cshtml*",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-17T21:47:32.976Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -61,69 +74,60 @@
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PdfGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvest\\Models\\PdfGenerator.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Models\\PdfGenerator.cs",
-              "ToolTip": "C:\\Users\\rodri\\li\\LightInvest\\Models\\PdfGenerator.cs",
-              "RelativeToolTip": "LightInvest\\Models\\PdfGenerator.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "Title": "EnergyConsumptionTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvestTest\\EnergyConsumptionTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\EnergyConsumptionTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\li\\LightInvestTest\\EnergyConsumptionTests.cs",
+              "RelativeToolTip": "LightInvestTest\\EnergyConsumptionTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T21:42:53.325Z"
+              "WhenOpened": "2025-03-17T21:41:14.646Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvest\\Program.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Program.cs",
-              "ToolTip": "C:\\Users\\rodri\\li\\LightInvest\\Program.cs",
-              "RelativeToolTip": "LightInvest\\Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Title": "EnergySimulationController.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvest\\Controllers\\EnergySimulationController.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Controllers\\EnergySimulationController.cs",
+              "ToolTip": "C:\\Users\\rodri\\li\\LightInvest\\Controllers\\EnergySimulationController.cs",
+              "RelativeToolTip": "LightInvest\\Controllers\\EnergySimulationController.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAUwEwAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T21:07:50.779Z",
+              "WhenOpened": "2025-03-17T21:09:53.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnergyConsumption.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvest\\Models\\EnergyConsumption.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\EnergyConsumption.cs",
+              "ToolTip": "C:\\Users\\rodri\\li\\LightInvest\\Models\\EnergyConsumption.cs",
+              "RelativeToolTip": "LightInvest\\Models\\EnergyConsumption.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAUwGoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T21:09:51.887Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ROIResult.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvest\\Views\\Simulacao\\ROIResult.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Simulacao\\ROIResult.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\li\\LightInvest\\Views\\Simulacao\\ROIResult.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Simulacao\\ROIResult.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-16T20:40:15.969Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserEnergyConsumption.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvest\\Views\\Simulacao\\UserEnergyConsumption.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Simulacao\\UserEnergyConsumption.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\li\\LightInvest\\Views\\Simulacao\\UserEnergyConsumption.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Simulacao\\UserEnergyConsumption.cshtml",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAwwMkAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-16T20:40:08.749Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SimulacaoController.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvest\\Controllers\\SimulacaoController.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Controllers\\SimulacaoController.cs",
-              "ToolTip": "C:\\Users\\rodri\\li\\LightInvest\\Controllers\\SimulacaoController.cs",
-              "RelativeToolTip": "LightInvest\\Controllers\\SimulacaoController.cs",
-              "ViewState": "AgIAAG0BAAAAAAAAAAAAAHkBAAAHAAAAAAAAAA==",
+              "Title": "EnergyConsumptionViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\li\\LightInvest\\Models\\EnergyConsumptionViewModel.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\EnergyConsumptionViewModel.cs",
+              "ToolTip": "C:\\Users\\rodri\\li\\LightInvest\\Models\\EnergyConsumptionViewModel.cs",
+              "RelativeToolTip": "LightInvest\\Models\\EnergyConsumptionViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T20:39:49.562Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2025-03-17T21:09:51.156Z",
+              "EditorCaption": ""
             }
           ]
         }

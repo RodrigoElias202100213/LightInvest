@@ -10,6 +10,7 @@ namespace LightInvest.Models
 		public decimal MediaSemana { get; set; } 
 		public decimal MediaFimSemana { get; set; } 
 		public decimal MediaAnual { get; set; } 
+		public decimal ConsumoTotal { get; set; }
 
 	}
 

@@ -3,11 +3,6 @@ using LightInvest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-using LightInvest.Data;
-using LightInvest.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
 public class EnergySimulationController : Controller
 {
 	private readonly ApplicationDbContext _context;
@@ -67,12 +62,33 @@ public class EnergySimulationController : Controller
 			return View("Index", model);
 		}
 
-		decimal consumoTotal = CalculateTotalConsumption(model);
-		await SaveConsumptionToDatabase(user.Email, model, consumoTotal);
+		// Criar objeto EnergyConsumption e preencher com os dados do ViewModel
+		var consumo = new EnergyConsumption
+		{
+			UserEmail = user.Email,
+			ConsumoDiaSemana = model.ConsumoDiaSemana,
+			ConsumoFimSemana = model.ConsumoFimSemana,
+			MesesOcupacao = model.MesesOcupacao
+		};
+
+		// Calcular médias e consumo total utilizando a própria classe EnergyConsumption
+		consumo.CalcularMedias();
+		consumo.CalcularConsumoMensal();
+		consumo.CalcularMediaAnual();	
+
+		// Atualizar o ViewModel com os resultados calculados
+		model.MediaSemana = consumo.MediaSemana;
+		model.MediaFimSemana = consumo.MediaFimSemana;
+		model.MediaAnual = consumo.MediaAnual;
+		model.ConsumoTotal = consumo.ConsumoTotal;
+
+		// Salvar no banco de dados
+		await SaveConsumptionToDatabase(user.Email, consumo);
+
+		// Armazenar os resultados temporariamente
 		StoreTempData(model);
 
-		// Aqui, retornamos a view com os valores preenchidos, para que o usuário veja os dados novamente
-		return View(model); // Aqui passamos o model atualizado com os dados preenchidos.
+		return View(model);
 	}
 
 	private void EnsureValidData(EnergyConsumptionViewModel model)
@@ -81,74 +97,27 @@ public class EnergySimulationController : Controller
 		model.ConsumoFimSemana ??= Enumerable.Repeat(0m, 24).ToList();
 		model.MesesOcupacao ??= new List<string>();
 	}
-
-
-	private decimal CalculateTotalConsumption(EnergyConsumptionViewModel model)
-	{
-		var mesesComPrecoMaisBarato = new HashSet<string> { "Mar", "Abr", "Mai", "Set", "Out", "Nov" };
-		var horariosTarifaReduzida = new List<(int inicio, int fim)> { (0, 6), (9, 12), (22, 23) };
-		decimal consumoTotal = 0;
-
-		model.MediaSemana = Math.Round(model.ConsumoDiaSemana.Average(), 2);
-		model.MediaFimSemana = Math.Round(model.ConsumoFimSemana.Average(), 2);
-
-		foreach (var mes in model.MesesOcupacao)
-		{
-			decimal fatorDescontoMes = GetMonthDiscountFactor(mes, mesesComPrecoMaisBarato);
-			consumoTotal += CalculateHourlyConsumption(model, horariosTarifaReduzida, fatorDescontoMes);
-		}
-
-		model.MediaAnual = model.MesesOcupacao.Any() ? Math.Round(consumoTotal * (model.MesesOcupacao.Count / 12.0m), 2) : 0;
-		return consumoTotal;
-	}
-
-	private decimal GetMonthDiscountFactor(string mes, HashSet<string> mesesComPrecoMaisBarato)
-	{
-		return mesesComPrecoMaisBarato.Contains(mes) ? 0.9m : 1.0m;
-	}
-
-	private decimal CalculateHourlyConsumption(EnergyConsumptionViewModel model, List<(int inicio, int fim)> horariosTarifaReduzida, decimal fatorDescontoMes)
-	{
-		decimal consumoTotal = 0;
-		for (int hora = 0; hora < 24; hora++)
-		{
-			decimal fatorDescontoHora = horariosTarifaReduzida.Any(h => hora >= h.inicio && hora <= h.fim) ? 0.9m : 1.0m;
-			consumoTotal += ((model.ConsumoDiaSemana[hora] + model.ConsumoFimSemana[hora]) / 2) * fatorDescontoHora * fatorDescontoMes;
-		}
-		return consumoTotal;
-	}
-
-	private async Task SaveConsumptionToDatabase(string userEmail, EnergyConsumptionViewModel model, decimal consumoTotal)
+		
+	private async Task SaveConsumptionToDatabase(string userEmail, EnergyConsumption consumo)
 	{
 		var consumoExistente = await _context.EnergyConsumptions
+			.AsNoTracking()
 			.FirstOrDefaultAsync(c => c.UserEmail == userEmail);
 
 		if (consumoExistente != null)
 		{
-			consumoExistente.ConsumoDiaSemana = model.ConsumoDiaSemana;
-			consumoExistente.ConsumoFimSemana = model.ConsumoFimSemana;
-			consumoExistente.MesesOcupacao = model.MesesOcupacao;
-			consumoExistente.MediaSemana = model.MediaSemana;
-			consumoExistente.MediaFimSemana = model.MediaFimSemana;
-			consumoExistente.MediaAnual = model.MediaAnual;
-			consumoExistente.ConsumoTotal = consumoTotal;
+			consumoExistente.ConsumoDiaSemana = consumo.ConsumoDiaSemana;
+			consumoExistente.ConsumoFimSemana = consumo.ConsumoFimSemana;
+			consumoExistente.MesesOcupacao = consumo.MesesOcupacao;
+			consumoExistente.MediaSemana = consumo.MediaSemana;
+			consumoExistente.MediaFimSemana = consumo.MediaFimSemana;
+			consumoExistente.MediaAnual = consumo.MediaAnual;
+			consumoExistente.ConsumoTotal = consumo.ConsumoTotal;
 
 			_context.Entry(consumoExistente).State = EntityState.Modified;
 		}
 		else
 		{
-			var consumo = new EnergyConsumption
-			{
-				UserEmail = userEmail,
-				ConsumoDiaSemana = model.ConsumoDiaSemana,
-				ConsumoFimSemana = model.ConsumoFimSemana,
-				MesesOcupacao = model.MesesOcupacao,
-				MediaSemana = model.MediaSemana,
-				MediaFimSemana = model.MediaFimSemana,
-				MediaAnual = model.MediaAnual,
-				ConsumoTotal = consumoTotal
-			};
-
 			_context.EnergyConsumptions.Add(consumo);
 		}
 
@@ -161,6 +130,23 @@ public class EnergySimulationController : Controller
 		TempData["MesesOcupacao"] = model.MesesOcupacao;
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	///------------------------------------------------------------------------------------------------------------------------------------------------------
 	[HttpPost]
 	public async Task<IActionResult> SimularCusto(ResultadoTarifaViewModel model)
 	{

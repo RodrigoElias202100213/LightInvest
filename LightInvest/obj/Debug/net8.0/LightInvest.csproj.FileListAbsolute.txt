@@ -2560,10 +2560,10 @@ C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\staticwebassets\msbuild.build.Lig
 C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.LightInvest.props
 C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.LightInvest.props
 C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\LightInv.7F3CCE78.Up2Date
 C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\LightInvest.dll
 C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\refint\LightInvest.dll
 C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\LightInvest.pdb
 C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\ref\LightInvest.dll
+C:\Users\rodri\li\LightInvest\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
