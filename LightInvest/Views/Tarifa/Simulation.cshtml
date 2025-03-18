@@ -1,0 +1,39 @@
+﻿@model LightInvest.Models.TarifaViewModel
+
+@{
+	ViewData["Title"] = "Simulação de Tarifa";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if(ViewBag.PrecoFinal != null)
+{
+	<div class="alert alert-info">
+		<strong>Preço Final:</strong> @ViewBag.PrecoFinal
+	</div>
+}
+
+<form asp-action="Simulation" method="post">
+	<div class="form-group">
+		<label asp-for="TipoDeTarifaEscolhida">Tipo da Tarifa</label>
+		<select asp-for="TipoDeTarifaEscolhida" class="form-control">
+			@foreach (var tipo in Model.TiposDeTarifa)
+			{
+				<option value="@tipo" selected="@(tipo == Model.TipoDeTarifaEscolhida.ToString() ? "selected" : null)">@tipo</option>
+			}
+		</select>
+		<span asp-validation-for="TipoDeTarifaEscolhida" class="text-danger"></span>
+	</div>
+    
+	<div class="form-group">
+		<label asp-for="PrecoKWh">Preço por kWh</label>
+		<input asp-for="PrecoKWh" class="form-control" />
+		<span asp-validation-for="PrecoKWh" class="text-danger"></span>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Salvar Tarifa</button>
+</form>
+
+@section Scripts {
+	@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

@@ -1,4 +1,5 @@
-﻿using LightInvest.Data;
+﻿/*
+using LightInvest.Data;
 using LightInvest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -95,3 +96,4 @@ public class DadosInstalacaoController : Controller
 		return Json(consumos); 
 	}
 }
+*/

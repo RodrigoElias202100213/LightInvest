@@ -12,7 +12,7 @@
 		public List<MesConsumo> ConsumoMensal { get; set; }
 		public decimal ValorAnual { get; set; }
 		public string TarifaEscolhida { get; set; }
-		public decimal PrecoKwh { get; set; } 
+		public decimal PrecoKwh { get; set; }
 		public List<string> MesesOcupacao { get; set; }
 
 		public ResultadoTarifaViewModel()
@@ -23,8 +23,8 @@
 
 		public void AtualizarPrecoKwh(TipoTarifa tipoTarifa, decimal precoBase)
 		{
-			var tarifa = new Tarifa { Nome = tipoTarifa, PrecoKwh = precoBase };
-			PrecoKwh = tarifa.GetPrecoKwh();
+			var tarifa = new Tarifa { Tipo = tipoTarifa, PrecoKWh = precoBase };
+			PrecoKwh = tarifa.PrecoKWh;
 
 		}
 	}

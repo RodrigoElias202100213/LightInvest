@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace LightInvest.Models
 {
@@ -11,20 +14,41 @@ namespace LightInvest.Models
 
 	public class Tarifa
 	{
-		[Key]
-		public int Id { get; set; }
-		public string UserEmail { get; set; }
-		public DateTime DataAlteracao { get; set; }
-		public TipoTarifa Nome { get; set; } 
-		public decimal PrecoKwh { get; set; }
+			[Required]
+			public decimal PrecoKWh { get; set; }
 
-		private static readonly Dictionary<TipoTarifa, decimal> Adicionais = new()
-		{
-			{ TipoTarifa.Residencial, 0.0m },
-			{ TipoTarifa.Comercial, 0.15m },
-			{ TipoTarifa.Industrial, 0.12m }
-		};
+			[Key] public int Id { get; set; }
 
-		public decimal GetPrecoKwh() => PrecoKwh + (Adicionais.TryGetValue(Nome, out var adicional) ? adicional : 0);
+			[Required][EmailAddress] public string UserEmail { get; set; }
+
+			public DateTime DataAlteracao { get; private set; } = DateTime.Now;
+
+
+
+			[Required]
+			public TipoTarifa Tipo { get; set; }
+
+			public decimal PrecoFinal => PrecoKWh + ObterValorExtra();
+
+			private decimal ObterValorExtra() => Tipo switch
+			{
+				TipoTarifa.Residencial => 0.1m,
+				TipoTarifa.Comercial => 0.5m,
+				TipoTarifa.Industrial => 0.9m,
+				_ => throw new ArgumentException("Tipo de tarifa inválido")
+			};
+		}
 	}
-}
+
+
+
+
+
+
+
+
+
+
+
+
+

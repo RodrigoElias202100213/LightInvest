@@ -1,4 +1,5 @@
-﻿using ClosedXML.Excel;
+﻿/*
+using ClosedXML.Excel;
 using LightInvest.Data;
 using LightInvest.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -27,19 +28,6 @@ namespace LightInvest.Controllers
 			return string.IsNullOrEmpty(userEmail)
 				? null
 				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
-		}
-
-		private EnergyConsumptionViewModel MapToViewModel(EnergyConsumption energyConsumption)
-		{
-			return new EnergyConsumptionViewModel
-			{
-				ConsumoDiaSemana = energyConsumption.ConsumoDiaSemana,
-				ConsumoFimSemana = energyConsumption.ConsumoFimSemana,
-				MesesOcupacao = energyConsumption.MesesOcupacao,
-				MediaSemana = energyConsumption.MediaSemana,
-				MediaFimSemana = energyConsumption.MediaFimSemana,
-				MediaAnual = energyConsumption.MediaAnual
-			};
 		}
 
 		[HttpGet("simulacao-completa")]
@@ -93,20 +81,20 @@ namespace LightInvest.Controllers
 			}
 
 			energyConsumption.CalcularMedias();
-			decimal custoAnual = energyConsumption.MediaAnual * tarifa.PrecoKwh;
+			decimal custoAnual = energyConsumption.MediaAnual * tarifa.PrecoBaseKwh;
 
 			dadosInstalacao.AtualizarPrecoInstalacao();
 
 			var consumoMensal = energyConsumption.MediaAnual / energyConsumption.MesesOcupacao.Count;
 
-			decimal custoMensal = consumoMensal * tarifa.PrecoKwh;
+			decimal custoMensal = consumoMensal * tarifa.PrecoBaseKwh;
 
 			var resultado = new ResultadoTarifaViewModel
 			{
 				ConsumoTotal = energyConsumption.MediaAnual,
 				ValorAnual = custoAnual,
-				TarifaEscolhida = tarifa.Nome.ToString(),
-				PrecoKwh = tarifa.PrecoKwh,
+				TarifaEscolhida = tarifa.Nome,
+				PrecoBaseKwh = tarifa.PrecoBaseKwh,
 				MesesOcupacao = energyConsumption.MesesOcupacao,
 				ConsumoMensal = energyConsumption.MesesOcupacao
 					.Select(mes => new MesConsumo { Mes = mes, Consumo = consumoMensal, Custo = custoMensal })
@@ -163,12 +151,12 @@ namespace LightInvest.Controllers
 				RetornoEconomia = viewModel.ResultadoTarifaViewModel.ValorAnual,
 				DataCalculado = DateTime.Now
 			};
-			/*
+			
 			if (roiCalculator.RetornoEconomia <= 0)
 			{
 				return BadRequest("A economia anual deve ser maior que zero para calcular o ROI.");
 			}
-			*/
+			
 			roiCalculator.ROI = roiCalculator.CalcularROI();
 			_context.ROICalculators.Add(roiCalculator);
 			await _context.SaveChangesAsync();
@@ -240,17 +228,17 @@ namespace LightInvest.Controllers
 			}
 
 			energyConsumption.CalcularMedias();
-			decimal custoAnual = energyConsumption.MediaAnual * tarifa.PrecoKwh;
+			decimal custoAnual = energyConsumption.MediaAnual * tarifa.PrecoBaseKwh;
 			dadosInstalacao.AtualizarPrecoInstalacao();
 			var consumoMensal = energyConsumption.MediaAnual / energyConsumption.MesesOcupacao.Count;
-			decimal custoMensal = consumoMensal * tarifa.PrecoKwh;
+			decimal custoMensal = consumoMensal * tarifa.PrecoBaseKwh;
 
 			var resultado = new ResultadoTarifaViewModel
 			{
 				ConsumoTotal = energyConsumption.MediaAnual,
 				ValorAnual = custoAnual,
-				TarifaEscolhida = tarifa.Nome.ToString(),
-				PrecoKwh = tarifa.PrecoKwh,
+				TarifaEscolhida = tarifa.Nome,
+				PrecoBaseKwh = tarifa.PrecoBaseKwh,
 				MesesOcupacao = energyConsumption.MesesOcupacao,
 				ConsumoMensal = energyConsumption.MesesOcupacao
 					.Select(mes => new MesConsumo { Mes = mes, Consumo = consumoMensal, Custo = custoMensal })
@@ -303,7 +291,7 @@ namespace LightInvest.Controllers
 						csv.AppendLine($"Média Fim de Semana,{energyConsumptionViewModel.MediaFimSemana:F3} kWh");
 						csv.AppendLine($"Média Anual,{energyConsumptionViewModel.MediaAnual:F3} kWh");
 						csv.AppendLine($"Tarifa Escolhida,{resultado.TarifaEscolhida}");
-						csv.AppendLine($"Preço por kWh,{resultado.PrecoKwh:F3} €");
+						csv.AppendLine($"Preço por kWh,{resultado.PrecoBaseKwh:F3} €");
 						csv.AppendLine($"Consumo Total,{resultado.ConsumoTotal:F3} kWh");
 						csv.AppendLine($"Custo Anual,{resultado.ValorAnual:F3} €");
 
@@ -335,10 +323,10 @@ namespace LightInvest.Controllers
 							worksheet.Cell(row, 2).Value = energyConsumptionViewModel.MediaAnual;
 							row++;
 							worksheet.Cell(row, 1).Value = "Tarifa Escolhida";
-							worksheet.Cell(row, 2).Value = resultado.TarifaEscolhida;
+							worksheet.Cell(row, 2).Value = resultado.ConsumoTotal; // resultado.TarifaEscolhida;
 							row++;
 							worksheet.Cell(row, 1).Value = "Preço por kWh";
-							worksheet.Cell(row, 2).Value = resultado.PrecoKwh;
+							worksheet.Cell(row, 2).Value = resultado.PrecoBaseKwh;
 							row++;
 							worksheet.Cell(row, 1).Value = "Consumo Total";
 							worksheet.Cell(row, 2).Value = resultado.ConsumoTotal;
@@ -385,3 +373,5 @@ namespace LightInvest.Controllers
 		}
 	}
 }
+
+*/

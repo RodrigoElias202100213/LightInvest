@@ -23,9 +23,15 @@ namespace LightInvest.Models
 		[ForeignKey("ModeloPainelId")]
 		public ModeloPainelSolar ModeloPainel { get; set; }
 
+		public int PotenciaId { get; set; }
+
+		[ForeignKey("PotenciaId")]
+		public PotenciaPainelSolar Potencia { get; set; }
+
 		public int NumeroPaineis { get; set; }
 
-		public decimal ConsumoPainel { get; set; }
+		// A potência do painel é calculada diretamente a partir da Potencia
+		public decimal PotenciaDoPainel => Potencia?.Potencia ?? 0;
 
 		public decimal Inclinacao { get; set; }
 
@@ -37,7 +43,7 @@ namespace LightInvest.Models
 		public decimal PrecoInstalacao
 		{
 			get => _precoInstalacao;
-			set => _precoInstalacao = value; 
+			set => _precoInstalacao = value;
 		}
 
 		public void AtualizarPrecoInstalacao()
@@ -59,13 +65,14 @@ namespace LightInvest.Models
 				"fácil" => 1.0m,
 				"média" => 1.2m,
 				"difícil" => 1.5m,
-				_ => 1.0m 
+				_ => 1.0m
 			};
 		}
 
 		public decimal CalcularPrecoInstalacao()
 		{
-			const decimal precoBase = 5000.00m; 
+			// Agora, o preço base vem do preço do modelo de painel solar
+			decimal precoBase = ModeloPainel.Preco;
 			return precoBase * CalcularPrecoPorInclinacao() * CalcularPrecoPorDificuldade() * NumeroPaineis;
 		}
 	}

@@ -3,8 +3,6 @@
 @{
     ViewData["Title"] = "Simulação Completa de Consumo e Tarifa";
 }
-
-<!-- Estilos personalizados -->
 <style>
     .card-header {
         background-color: #f8f9fa;
@@ -49,104 +47,98 @@
 </style>
 
 <div class="container">
-    <h2 class="text-center my-4">Simulação Completa de Consumo e Tarifa</h2>
+	<h2 class="text-center my-4">Simulação Completa de Consumo e Tarifa</h2>
 
-    <!-- Exibir informações de Consumo -->
-    <div class="card mb-4">
-        <div class="card-header">Consumo de Energia</div>
-        <div class="card-body">
-            <ul class="list-group">
-                <li class="list-group-item info-item"><strong>Média Semanal:</strong> @Model.EnergyConsumptionViewModel.MediaSemana.ToString("F3") kWh</li>
-                <li class="list-group-item info-item"><strong>Média Fim de Semana:</strong> @Model.EnergyConsumptionViewModel.MediaFimSemana.ToString("F3") kWh</li>
-                <li class="list-group-item info-item"><strong>Média Anual:</strong> @Model.EnergyConsumptionViewModel.MediaAnual.ToString("F3") kWh</li>
-            </ul>
-        </div>
-    </div>
+	<div class="card mb-4">
+		<div class="card-header">Consumo de Energia</div>
+		<div class="card-body">
+			<ul class="list-group">
+				<li class="list-group-item info-item"><strong>Média Semanal:</strong> @Model.EnergyConsumptionViewModel.MediaSemana.ToString("F3") kWh</li>
+				<li class="list-group-item info-item"><strong>Média Fim de Semana:</strong> @Model.EnergyConsumptionViewModel.MediaFimSemana.ToString("F3") kWh</li>
+				<li class="list-group-item info-item"><strong>Média Anual:</strong> @Model.EnergyConsumptionViewModel.MediaAnual.ToString("F3") kWh</li>
+			</ul>
+		</div>
+	</div>
 
-    <!-- Exibir informações de Tarifa -->
-    <div class="card mb-4">
-        <div class="card-header">Tarifa Aplicada</div>
-        <div class="card-body">
-            <p><strong>Tarifa Escolhida:</strong> @Model.ResultadoTarifaViewModel.TarifaEscolhida</p>
-            <p><strong>Preço por kWh:</strong> @Model.ResultadoTarifaViewModel.PrecoKwh.ToString("F3") €</p>
-        </div>
-    </div>
+	<div class="card mb-4">
+		<div class="card-header">Tarifa Aplicada</div>
+		<div class="card-body">
+			<p><strong>Tarifa Escolhida:</strong> @Model.ResultadoTarifaViewModel.TarifaEscolhida</p>
+			<p><strong>Preço por kWh:</strong> @Model.ResultadoTarifaViewModel.PrecoKwh.ToString("F3") €</p>
+		</div>
+	</div>
 
-    <!-- Comparação de Consumo -->
-    <div class="card mb-4">
-        <div class="card-header">Comparação de Consumo</div>
-        <div class="card-body">
-            <ul class="list-group">
-                <li class="list-group-item info-item"><strong>Consumo Total:</strong> @Model.ResultadoTarifaViewModel.ConsumoTotal.ToString("F3") kWh</li>
-                <li class="list-group-item info-item"><strong>Custo Total Estimado:</strong> @Model.ResultadoTarifaViewModel.ValorAnual.ToString("F3") €</li>
-                <li class="list-group-item info-item">
-                    <strong>Média de Custo Mensal:</strong> @($"{Model.ResultadoTarifaViewModel.ValorAnual / 12:F3}") €
-                </li>
+	<div class="card mb-4">
+		<div class="card-header">Comparação de Consumo</div>
+		<div class="card-body">
+			<ul class="list-group">
+				<li class="list-group-item info-item"><strong>Consumo Total:</strong> @Model.ResultadoTarifaViewModel.ConsumoTotal.ToString("F3") kWh</li>
+				<li class="list-group-item info-item"><strong>Custo Total Estimado:</strong> @Model.ResultadoTarifaViewModel.ValorAnual.ToString("F3") €</li>
+				<li class="list-group-item info-item">
+					<strong>Média de Custo Mensal:</strong> @($"{Model.ResultadoTarifaViewModel.ValorAnual / 12:F3}") €
+				</li>
 
-                </ul>
-        </div>
-    </div>
+			</ul>
+		</div>
+	</div>
 
-    <!-- Gráfico de Consumo Mensal -->
-    <div class="chart-container">
-        <h3>Gráfico de Consumo Mensal</h3>
-        <canvas id="consumoMensalChart" width="400" height="200"></canvas>
-    </div>
+	<div class="chart-container">
+		<h3>Gráfico de Consumo Mensal</h3>
+		<canvas id="consumoMensalChart" width="400" height="200"></canvas>
+	</div>
 
-    <!-- Gráfico de Custo Mensal -->
-    <div class="chart-container">
-        <h3>Gráfico de Custo Mensal</h3>
-        <canvas id="custoMensalChart" width="400" height="200"></canvas>
-    </div>
+	<div class="chart-container">
+		<h3>Gráfico de Custo Mensal</h3>
+		<canvas id="custoMensalChart" width="400" height="200"></canvas>
+	</div>
 
-    <!-- Comparação Mensal em Tabela -->
-    <div class="table-container">
-        <h3>Distribuição Mensal do Consumo e Custo</h3>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Mês</th>
-                    <th>Consumo (kWh)</th>
-                    <th>Custo (€)</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var mesConsumo in Model.ResultadoTarifaViewModel.ConsumoMensal)
-                {
-                    <tr>
-                        <td>@mesConsumo.Mes</td>
-                        <td>@mesConsumo.Consumo.ToString("F3")</td>
-                        <td>@mesConsumo.Custo.ToString("F3")</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+	<div class="table-container">
+		<h3>Distribuição Mensal do Consumo e Custo</h3>
+		<table class="table table-bordered">
+			<thead>
+			<tr>
+				<th>Mês</th>
+				<th>Consumo (kWh)</th>
+				<th>Custo (€)</th>
+			</tr>
+			</thead>
+			<tbody>
+			@foreach (var mesConsumo in Model.ResultadoTarifaViewModel.ConsumoMensal)
+			{
+				<tr>
+					<td>@mesConsumo.Mes</td>
+					<td>@mesConsumo.Consumo.ToString("F3")</td>
+					<td>@mesConsumo.Custo.ToString("F3")</td>
+				</tr>
+			}
+			</tbody>
+		</table>
+	</div>
 
-    <!-- Exibir informações de Instalação -->
-    <div class="card mb-4">
-        <div class="card-header">Informações de Instalação</div>
-        <div class="card-body">
-            <ul class="list-group">
-                <li class="list-group-item info-item"><strong>Cidade:</strong> @(Model.DadosInstalacao.Cidade?.Nome ?? "Não disponível")</li>
-                <li class="list-group-item info-item"><strong>Modelo de Painel:</strong> @Model.DadosInstalacao.ModeloPainel.Modelo</li>
-                <li class="list-group-item info-item"><strong>Número de Painéis:</strong> @Model.DadosInstalacao.NumeroPaineis</li>
-                <li class="list-group-item info-item"><strong>Potência do Painel:</strong> @Model.PotenciaPainel.ToString("F3") kW</li>
-                <li class="list-group-item info-item"><strong>Inclinação:</strong> @Model.DadosInstalacao.Inclinacao.ToString("F3") °</li>
-                <li class="list-group-item info-item"><strong>Dificuldade de Instalação:</strong> @Model.DadosInstalacao.Dificuldade</li>
-                <li class="list-group-item info-item"><strong>Preço de Instalação:</strong> @Model.PrecoInstalacao.ToString("C")</li>
-            </ul>
-        </div>
-    </div>
+	<div class="card mb-4">
+		<div class="card-header">Informações de Instalação</div>
+		<div class="card-body">
+			<ul class="list-group">
+				<li class="list-group-item info-item"><strong>Cidade:</strong> @(Model.DadosInstalacao.Cidade?.Nome ?? "Não disponível")</li>
+				<li class="list-group-item info-item"><strong>Modelo de Painel:</strong> @Model.DadosInstalacao.ModeloPainel.Modelo</li>
+				<li class="list-group-item info-item"><strong>Número de Painéis:</strong> @Model.DadosInstalacao.NumeroPaineis</li>
+				<li class="list-group-item info-item"><strong>Potência do Painel:</strong> @Model.PotenciaPainel.ToString("F3") kW</li>
+				<li class="list-group-item info-item"><strong>Inclinação:</strong> @Model.DadosInstalacao.Inclinacao.ToString("F3") °</li>
+				<li class="list-group-item info-item"><strong>Dificuldade de Instalação:</strong> @Model.DadosInstalacao.Dificuldade</li>
+				<li class="list-group-item info-item"><strong>Preço de Instalação:</strong> @Model.PrecoInstalacao.ToString("C")</li>
+			</ul>
+		</div>
+	</div>
 
-    <div class="d-flex justify-content-between">
+	<div class="d-flex justify-content-between">
 	    
-	    <a asp-action="SimulacaoCompleta" class="btn btn-primary">Voltar</a>
+		<a asp-action="SimulacaoCompleta" class="btn btn-primary">Voltar</a>
 
-        <a href="@Url.Action("CalcularROI", "Simulacao")">Calcular ROI</a>
+		<a href="@Url.Action("CalcularROI", "Simulacao")">Calcular ROI</a>
 
-    </div>
+	</div>
 </div>
+
 
 <!-- Carregar o Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

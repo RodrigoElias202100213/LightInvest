@@ -179,11 +179,11 @@ namespace LightInvest.Migrations
                     b.Property<DateTime>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Nome")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("PrecoKwh")
+                    b.Property<decimal>("PrecoKWh")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Tipo")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserEmail")
                         .IsRequired()
