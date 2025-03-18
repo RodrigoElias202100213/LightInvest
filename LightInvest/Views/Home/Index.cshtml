@@ -50,8 +50,13 @@
             <img src="~/images/education.png" alt="Ícone Educação">
             <h3>Conteúdos Educativos</h3>
             <p>Aprofunde o seu conhecimento sobre energias renováveis e eficiência energética, explorando os artigos que temos para si.</p>
-            <img src="~/images/arrow.png" alt="Seta" class="arrow">
+            <form asp-controller="EducacaoEnergetica" asp-action="Index" method="get">
+                <button type="submit">
+                    <img src="~/images/arrow.png" alt="Seta" class="arrow">
+                </button>
+            </form>
         </div>
+
     </div>
 </div>
 

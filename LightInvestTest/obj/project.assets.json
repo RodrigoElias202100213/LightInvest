@@ -12953,19 +12953,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\verag\\.nuget\\packages\\": {}
+    "C:\\Users\\ivand\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\LightInvestTest.csproj",
+      "projectUniqueName": "C:\\Users\\ivand\\Source\\Repos\\LightInvest2\\LightInvestTest\\LightInvestTest.csproj",
       "projectName": "LightInvestTest",
-      "projectPath": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\LightInvestTest.csproj",
-      "packagesPath": "C:\\Users\\verag\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\obj\\",
+      "projectPath": "C:\\Users\\ivand\\Source\\Repos\\LightInvest2\\LightInvestTest\\LightInvestTest.csproj",
+      "packagesPath": "C:\\Users\\ivand\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ivand\\Source\\Repos\\LightInvest2\\LightInvestTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\verag\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ivand\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12980,8 +12980,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\LightInvest.csproj": {
-              "projectPath": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\LightInvest.csproj"
+            "C:\\Users\\ivand\\Source\\Repos\\LightInvest2\\LightInvest\\LightInvest.csproj": {
+              "projectPath": "C:\\Users\\ivand\\Source\\Repos\\LightInvest2\\LightInvest\\LightInvest.csproj"
             }
           }
         }
@@ -13046,7 +13046,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
