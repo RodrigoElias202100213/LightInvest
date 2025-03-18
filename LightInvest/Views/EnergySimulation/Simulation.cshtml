@@ -1,206 +1,273 @@
 ﻿@model EnergyConsumptionViewModel
 
 @{
-	ViewData["Title"] = "Consumo de Energia";
+    ViewData["Title"] = "Consumo de Energia";
 }
 
-<div class="simulation-container">
-	<div  class="simulation-box">
-		<h2>Formulário Consumo de Energia</h2>
-		<form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
+<div class="container">
+    <div class="sidebar">
+        <div class="steps">
+            <div class="step">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+            <div class="step">4</div>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Formulário Consumo de Energia</h1>
 
-			<!-- Consumo Horário Dias de Semana -->
-			<div class="section">
-				<h5>1. Consumo Horário: Segunda-feira a Sexta-feira</h5>
-				<div class="hourly-inputs">
-					@for (int i = 0; i < 24; i++)
-					{
-						<div class="hour-box">
-							<label><strong>@i h</strong></label>
-							<input type="number" class="borders" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01" 
-							       value="@(Model.ConsumoDiaSemana[i] > 0 ? Model.ConsumoDiaSemana[i].ToString("F2") : "")" />
-						</div>
-					}
+        <form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
+            <div class="section">
+                <h5>1. Consumo Médio Horário: Segunda a Sexta</h5>
+                <div class="horario">
+                    @for (int i = 0; i < 24; i++)
+                    {
+                        <div class="hora">
+                            <span>@i h</span>
+                            <input type="number" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01" value="@(Model.ConsumoDiaSemana[i] > 0 ? Model.ConsumoDiaSemana[i].ToString("F2") : "")" />
+                        </div>
+                    }
+                </div>
+            </div>
 
+            <div class="section">
+                <h5>2. Consumo Médio Horário: Feriados/Fim de Semana</h5>
+                <div class="horario">
+                    @for (int i = 0; i < 24; i++)
+                    {
+                        <div class="hora">
+                            <span>@i h</span>
+                            <input type="number" asp-for="ConsumoFimSemana[i]" min="0" step="0.01" value="@(Model.ConsumoFimSemana[i] > 0 ? Model.ConsumoFimSemana[i].ToString("F2") : "")" />
+                        </div>
+                    }
+                </div>
+            </div>
 
+            <div class="section">
+                <h5>3. Ocupação Mensal</h5>
+                <div class="month-checkboxes">
+                    @foreach (var mes in Enum.GetNames(typeof(Meses)))
+                    {
+                        <label>
+                            <input type="checkbox" name="MesesOcupacao" value="@mes" @(Model.MesesOcupacao.Contains(mes) ? "checked" : "") />
+                            @mes
+                        </label>
+                    }
+                </div>
+            </div>
 
+            <div class="section">
+                <h5>4. Estatísticas</h5>
+                <p><strong>Segunda a sexta:</strong> média @Model.MediaSemana kWh por dia</p>
+                <p><strong>Fim de semana:</strong> média @Model.MediaFimSemana kWh por dia</p>
+                <p><strong>Base anual:</strong> média @Model.MediaAnual kWh por ano</p>
+            </div>
 
-				</div>
-			</div>
-
-			<!-- Consumo Horário Fins de Semana -->
-			<div class="section">
-				<h5>2. Consumo Horário: Feriados/Fim de Semana</h5>
-				<div class="hourly-inputs">
-					@for (int i = 0; i < 24; i++)
-					{
-						<div class="hour-box">
-							<label><strong>@i h</strong></label>
-							<input type="number" class="borders" asp-for="ConsumoFimSemana[i]" min="0" step="0.01" 
-							       value="@(Model.ConsumoFimSemana[i] > 0 ? Model.ConsumoFimSemana[i].ToString("F2") : "")" />
-						</div>
-					}
-
-
-
-				</div>
-			</div>
-
-			<!--Ocupação Mensal-->
-			<div class="section">
-				<h5>3. Ocupação Mensal</h5>
-				<div class="month-checkboxes">
-					@foreach (var mes in Enum.GetNames(typeof(Meses)))
-					{
-						<label>
-							<input type="checkbox" name="MesesOcupacao" value="@mes"
-							@(Model.MesesOcupacao.Contains(mes) ? "checked" : "") />
-							@mes
-						</label>
-					}
-				</div>
-			</div>
-
-			<!-- Estatísticas -->
-			<div class="section">
-				<h5>4. Estatísticas</h5>
-				<p><strong>Segunda a sexta:</strong> média @Model.MediaSemana kWh por dia</p>
-				<p><strong>Fim de semana:</strong> média @Model.MediaFimSemana kWh por dia</p>
-				<p><strong>Base anual:</strong> média @Model.MediaAnual kWh por ano</p>
-			</div>
-
-			
-			<div id="not-hidden-button">
-				<button type="submit" class="btn">Calcular</button>
-			</div>
-
-		</form>
-	
-		</div>
-	
-	<div id="hidden-buttons">
-		<a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
-		<a href="@Url.Action("SelecionarTarifa", "EnergySimulation")" class="btn">Seguinte</a>
-	</div>
-
+            <div class="btn-container">
+                <button type="submit" class="btn">Calcular</button>
+                <a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
+                <a href="@Url.Action("SelecionarTarifa", "EnergySimulation")" class="btn">Seguinte</a>
+            </div>
+        </form>
+    </div>
 </div>
-
 <script>
-	document.querySelector('form').addEventListener('submit', function(event) {
-		const inputs = document.querySelectorAll('input[type="number"]');
+    document.querySelector('form').addEventListener('submit', function (event) {
+        const inputs = document.querySelectorAll('input[type="number"]');
 
-		inputs.forEach(input => {
-			if (input.value.trim() === '') {
-				input.value = '0';
-			}
-		});
-	});
+        inputs.forEach(input => {
+            if (input.value.trim() === '') {
+                input.value = '0';
+            }
+        });
+    });
 </script>
 
-	
 
 <style>
-	.simulation-container {
-		height: 80vh;
-		background-color: #f9f9f9;
-	}
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    nav, header {
+        margin: 0;
+        padding: 0;
+        width: 0%;
+        height: 0%;
+    }
+
+    h1 {
+        color: #065A66;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        margin-bottom:4%;
+    }
+
+    h5 {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        color: #878080;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        width: 20%;
+        background-color: #d3e1e3;
+        padding: 20px;
+        position: relative;
+    }
+
+    .steps {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-top: 50px;
+    }
+
+    .section {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 10px 0;
+        margin-bottom:4%;
+    }
+
+    .sidebar {
+        width: 20%;
+        background-color: #d3e1e3;
+        position: relative;
+    }
+
+    .steps {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #aaa;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin: 30px 0;
+        position: relative;
+    }
+
+    .step:first-child {
+        background-color: #065A66;
+    }
+
+    .step::after {
+        content: "";
+        width: 2px;
+        height: 80px; 
+        background-color: #aaa;
+        position: absolute;
+        bottom: -80px;
+        transform: translateX(-50%);
+    }
 
 
-	h2{
-		font-weight: bold;
-		font-size: 3rem;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		color: #065A66;
-		text-align: center;
-		margin-bottom: 4%;
-	}
+    .step:last-child::after {
+        display: none;
+    }
 
-	.section{ 
-		border-radius: 20px; 
-		padding: 4%; 
-		margin-bottom: 6%;
-		background-color:white;
-		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-	}
+    .content {
+        width: 80%;
+        padding: 20px;
+    }
 
+    .horario {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr); 
+        gap: 10px;
+        row-gap: 30px; 
+        text-align: center;
+    }
 
-	h5{
-		color: rgba(0, 0, 0, 0.61);
-		margin-bottom:3%;
-		font-weight:bold;
-	}
+    .hora {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-	.borders {
-		border: 1px solid black;
-		border-radius: 8px;
-	}
+    .hora input {
+        width: 50px;
+        text-align: center;
+        border: none;
+        border-bottom: 2px solid #000;
+        background: transparent;
+        outline: none;
+        padding: 2px;
+    }
 
-	.month-checkboxes {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px; 
-		font-size:20px;
-	}
+    .btn-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
 
-	.month-checkboxes label {
-		flex: 1 1 calc(25% - 10px); 
-	}
+    .btn {
+        background: #065A66;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        text-decoration: none;
+        text-align: center;
+    }
 
+    .btn:hover{
+            background: #065A66;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+    }
 
-	.hourly-inputs {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 10px;
-	}
+    .month-checkboxes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px;
+        margin-top: 10px;
+    }
 
-	.hour-box {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+    .month-checkboxes label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px; 
+    }
 
-	input[type="number"] {
-		width: 50px;
-		text-align: center;
-	}
-
-	.btn {
-		background: #065A66;
-		color: white;
-		padding: 10px 20px;
-		border: none;
-		cursor: pointer;
-		border-radius: 25px;
-	}
-
-	.btn:hover {
-		color: white; 
-		background: #054850; 
-	}
-
-	.hourly-inputs {
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
-		gap: 10px;
-	}
-
-	#not-hidden-button{
-		margin-bottom:4%;
-		display:flex;
-		justify-content:center;
-		align-items: center;
-	}
-
-	#hidden-buttons {
-		display: flex;
-		justify-content:center;
-		align-items:center;
-		gap:2%;
-	}
-
-	p{
-		font-size:18px;
-	}
+    .month-checkboxes input {
+        width: 18px; 
+        height: 18px;
+    }
 
 </style>
