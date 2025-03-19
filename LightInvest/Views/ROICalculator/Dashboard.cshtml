@@ -1,36 +1,48 @@
-﻿@model RoiCalculatorDashboardViewModel
+﻿@model LightInvest.Models.RoiCalculatorDashboardViewModel
 
 @{
     ViewBag.Title = "Dashboard ROI";
+    
+    // Cria as listas de rótulos e valores a partir do histórico, ordenando pela data
+    var roiLabels = Model.History.OrderBy(h => h.DataCalculado)
+                      .Select(h => h.DataCalculado.ToString("dd/MM/yyyy")).ToList();
+    var roiValues = Model.History.OrderBy(h => h.DataCalculado)
+                      .Select(h => h.ROI).ToList();
 }
 
 <h2>Simulação do ROI</h2>
-
-@*
-    <p>A faltar paragrafo a explicar </p>
-*@
-
 
 <div>
     <canvas id="roiChart" width="900" height="500"></canvas>
 </div>
 
+<div id="metrics">
+    <p><strong>Data do Cálculo:</strong> @Model.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
+    <p><strong>Anos até Retorno do Investimento:</strong> @Model.CurrentRoi.ROI.ToString("N1") anos</p>
+    <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
+</div>
+
+<div id="buttons">
+    <a href="@Url.Action("Index", "ROICalculator")" id="btn-v">Voltar</a>
+    <a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
+</div>
+
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        var anos = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Years));
-        var dividas = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Debts));
+        var roiLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(roiLabels));
+        var roiValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(roiValues));
 
         var ctx = document.getElementById('roiChart').getContext('2d');
         var roiChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: anos,
+                labels: roiLabels,
                 datasets: [{
-                    label: 'Dívida Remanescente ($)',
-                    data: dividas,
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    label: 'ROI (anos)',
+                    data: roiValues,
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
                     fill: true,
                     tension: 0.1
                 }]
@@ -40,13 +52,13 @@
                     x: {
                         title: {
                             display: true,
-                            text: 'Anos'
+                            text: 'Data'
                         }
                     },
                     y: {
                         title: {
                             display: true,
-                            text: 'Dívida Atual ($)'
+                            text: 'ROI (anos)'
                         },
                         beginAtZero: true
                     }
@@ -56,17 +68,6 @@
     </script>
 }
 
-<div id="metrics">
-    <p><strong>Data do Cálculo:</strong> @Model.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
-    <p><strong>Anos até Retorno do Investimento:</strong> @ViewBag.Resultado</p>
-    <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
-</div>
-
-<div id="buttons">
-    <a href="@Url.Action("Index", "ROICalculator")" id="btn-v">Voltar</a>
-    <a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
-</div>
-
 <style>
     h2 {
         text-align: center;
@@ -74,22 +75,22 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: #065A66;
         font-weight: bold;
-        margin-bottom:5%;
+        margin-bottom: 5%;
     }
 
     #metrics {
-    margin-left:13%;
-    margin-bottom:5%;
+        margin-left: 13%;
+        margin-bottom: 5%;
     }
 
     #buttons {
-        display:flex;
-        justify-content:center;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        gap:3%;
+        gap: 3%;
     }
 
-   #btn-v, #btn-pp  {
+    #btn-v, #btn-pp {
         width: 160px;
         height: 35px;
         text-align: center;
@@ -97,11 +98,11 @@
         border-radius: 20px;
         cursor: pointer;
         background-color: #065A66;
-        color:white;
-        text-decoration:none;
-        display:flex;
-        justify-content:center;
-        align-items:center;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #roiChart {
@@ -109,8 +110,6 @@
         max-height: 500px;
         display: block;
         margin: auto;
-        margin-bottom:5%;
+        margin-bottom: 5%;
     }
-
-
 </style>

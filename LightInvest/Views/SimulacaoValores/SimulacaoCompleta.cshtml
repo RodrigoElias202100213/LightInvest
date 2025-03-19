@@ -1,61 +1,238 @@
 ﻿@model LightInvest.Models.SimulacaoCompletaViewModel
 
 @{
-	ViewBag.Title = "Simulação Completa";
+    ViewBag.Title = "Simulação Completa";
+
+    // Preparar dados do gráfico de ROI
+    var roiLabels = Model.ROI.History
+                        .OrderBy(h => h.DataCalculado)
+                        .Select(h => h.DataCalculado.ToString("dd/MM/yyyy"))
+                        .ToList();
+    var roiValues = Model.ROI.History
+                        .OrderBy(h => h.DataCalculado)
+                        .Select(h => h.ROI)
+                        .ToList();
+
+    // Preparar dados para o gráfico da evolução do saldo acumulado
+    var saldoLabels = new List<string>();
+    var saldoValues = new List<decimal>();
+    foreach (var ano in Model.RetornoInvestimentoPorAno.OrderBy(a => a.Ano))
+    {
+        foreach (var mes in ano.Meses)
+        {
+            saldoLabels.Add($"{ano.Ano} - {mes.Mes}");
+            saldoValues.Add(mes.SaldoRestante);
+        }
+    }
 }
 
-<h2>Simulação Completa</h2>
+<h2 class="mt-4 text-center">Simulação Completa</h2>
 
-<section>
-	<h3>Consumo de Energia</h3>
-	<div>
-		<p><strong>Média durante a Semana:</strong> @Model.EnergyConsumptionViewModel.MediaSemana kWh</p>
-		<p><strong>Média durante o Fim de Semana:</strong> @Model.EnergyConsumptionViewModel.MediaFimSemana kWh</p>
-		<p><strong>Média Anual:</strong> @Model.EnergyConsumptionViewModel.MediaAnual kWh</p>
-		<p><strong>Consumo Total:</strong> @Model.EnergyConsumptionViewModel.ConsumoTotal kWh</p>
-	</div>
-	<div>
-		<h4>Meses de Ocupação</h4>
-		<ul>
-			@foreach (var mes in Model.EnergyConsumptionViewModel.MesesOcupacao)
-			{
-				<li>@mes</li>
-			}
-		</ul>
-	</div>
-</section>
+<div class="container">
+    <!-- Seção: Consumo de Energia -->
+    <section class="mb-5">
+        <h3>Consumo de Energia</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Média durante a Semana:</strong> @Model.EnergyConsumptionViewModel.MediaSemana kWh</p>
+                <p><strong>Média durante o Fim de Semana:</strong> @Model.EnergyConsumptionViewModel.MediaFimSemana kWh</p>
+                <p><strong>Média Anual:</strong> @Model.EnergyConsumptionViewModel.MediaAnual kWh</p>
+                <p><strong>Consumo Total:</strong> @Model.EnergyConsumptionViewModel.ConsumoTotal kWh</p>
+            </div>
+            <div class="col-md-6">
+                <h4>Meses de Ocupação</h4>
+                <ul>
+                    @foreach (var mes in Model.EnergyConsumptionViewModel.MesesOcupacao)
+                    {
+                        <li>@mes</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section>
-	<h3>Tarifa</h3>
-	<div>
-		<p><strong>Tipo de Tarifa:</strong> @Model.TarifaViewModel.TipoDeTarifaEscolhida</p>
-		<p><strong>Preço do kWh:</strong> @Model.TarifaViewModel.PrecoKWh.ToString("C")</p>
-	</div>
-</section>
+    <!-- Seção: Tarifa -->
+    <section class="mb-5">
+        <h3>Tarifa</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Tipo de Tarifa:</strong> @Model.TarifaViewModel.TipoDeTarifaEscolhida</p>
+                <p><strong>Preço do kWh:</strong> @Model.TarifaViewModel.PrecoKWh.ToString("C")</p>
+            </div>
+        </div>
+    </section>
 
-<section>
-	<h3>Detalhamento Mensal</h3>
-	<table class="table">
-		<thead>
-		<tr>
-			<th>Mês</th>
-			<th>Consumo (kWh)</th>
-			<th>Custo (R$)</th>
-		</tr>
-		</thead>
-		<tbody>
-		@foreach (var mesConsumo in Model.ResultadoTarifaViewModel.ConsumoMensal)
-		{
-			<tr>
-				<td>@mesConsumo.Mes</td>
-				<td>@mesConsumo.Consumo</td>
-				<td>@mesConsumo.Custo.ToString("C")</td>
-			</tr>
-		}
-		</tbody>
-	</table>
-	<div>
-		<p><strong>Consumo Total Mensal:</strong> @Model.ResultadoTarifaViewModel.ConsumoTotal kWh</p>
-		<p><strong>Valor Anual:</strong> @Model.ResultadoTarifaViewModel.ValorAnual.ToString("C")</p>
-	</div>
-</section>
+    <!-- Seção: Detalhamento Mensal -->
+    <section class="mb-5">
+        <h3>Detalhamento Mensal</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Mês</th>
+                    <th>Consumo (kWh)</th>
+                    <th>Custo (R$)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var mesConsumo in Model.ResultadoTarifaViewModel.ConsumoMensal)
+                {
+                    <tr>
+                        <td>@mesConsumo.Mes</td>
+                        <td>@mesConsumo.Consumo</td>
+                        <td>@mesConsumo.Custo.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div>
+            <p><strong>Consumo Total Mensal:</strong> @Model.ResultadoTarifaViewModel.ConsumoTotal kWh</p>
+            <p><strong>Valor Anual:</strong> @Model.ResultadoTarifaViewModel.ValorAnual.ToString("C")</p>
+        </div>
+    </section>
+
+    <!-- Seção: Dados de Instalação -->
+    <section class="mb-5">
+        <h3>Dados de Instalação</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Cidade:</strong> @Model.DadosInstalacao.Cidade.Nome</p>
+                <p><strong>Modelo do Painel:</strong> @Model.DadosInstalacao.ModeloPainel.ModeloNome</p>
+                <p><strong>Potência:</strong> @Model.DadosInstalacao.Potencia.Potencia W</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>Número de Painéis:</strong> @Model.DadosInstalacao.NumeroPaineis</p>
+                <p><strong>Inclinação:</strong> @Model.DadosInstalacao.Inclinacao°</p>
+                <p><strong>Dificuldade:</strong> @Model.DadosInstalacao.Dificuldade</p>
+                <p><strong>Preço da Instalação:</strong> R$ @Model.DadosInstalacao.PrecoInstalacao.ToString("N2")</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: ROI -->
+    <section class="mb-5">
+        <h3>Retorno do Investimento (ROI)</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Custo da Instalação:</strong> R$ @Model.ROI.CurrentRoi.CustoInstalacao.ToString("N2")</p>
+                <p><strong>Economia Anual Estimada:</strong> R$ @Model.ROI.CurrentRoi.RetornoEconomia.ToString("N2")</p>
+                <p><strong>Tempo de Retorno Estimado:</strong> @Model.ROI.CurrentRoi.ROI.ToString("N1") anos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gráfico: Histórico do ROI -->
+    <section class="mb-5">
+        <h3 class="text-center">Histórico do ROI</h3>
+        <div class="text-center">
+            <canvas id="roiChart" width="800" height="400"></canvas>
+        </div>
+    </section>
+
+    <!-- Gráfico: Evolução do Saldo Acumulado -->
+    <section class="mb-5">
+        <h3 class="text-center">Evolução do Saldo Acumulado</h3>
+        <div class="text-center">
+            <canvas id="saldoChart" width="800" height="400"></canvas>
+        </div>
+    </section>
+</div>
+
+
+<div class="export-buttons text-center mt-4">
+	<a href="@Url.Action("ExportPDF", "SimulacaoValores")" class="btn btn-danger mx-2">Exportar PDF</a>
+	<a href="@Url.Action("ExportCSV", "SimulacaoValores")" class="btn btn-success mx-2">Exportar CSV</a>
+	<a href="@Url.Action("ExportExcel", "SimulacaoValores")" class="btn btn-primary mx-2">Exportar Excel</a>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // --- Gráfico do Histórico do ROI ---
+        var roiLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(roiLabels));
+        var roiValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(roiValues));
+        var ctxRoi = document.getElementById('roiChart').getContext('2d');
+        var roiChart = new Chart(ctxRoi, {
+            type: 'line',
+            data: {
+                labels: roiLabels,
+                datasets: [{
+                    label: 'ROI (anos)',
+                    data: roiValues,
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Data'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'ROI (anos)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- Gráfico da Evolução do Saldo Acumulado ---
+        var saldoLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(saldoLabels));
+        var saldoValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(saldoValues));
+        var ctxSaldo = document.getElementById('saldoChart').getContext('2d');
+        var saldoChart = new Chart(ctxSaldo, {
+            type: 'line',
+            data: {
+                labels: saldoLabels,
+                datasets: [{
+                    label: 'Saldo Acumulado (R$)',
+                    data: saldoValues,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Ano - Mês'
+                        }
+                    },
+                    y: {
+                        beginAtZero: false,
+                        title: {
+                            display: true,
+                            text: 'Saldo Acumulado (R$)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+}
+
+<style>
+    h2, h3 {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+    }
+
+    .container {
+        margin-top: 20px;
+    }
+
+    #roiChart, #saldoChart {
+        margin: auto;
+        margin-bottom: 5%;
+    }
+</style>

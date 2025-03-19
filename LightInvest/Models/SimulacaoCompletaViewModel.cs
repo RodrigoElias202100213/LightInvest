@@ -6,15 +6,14 @@
 		public TarifaViewModel TarifaViewModel { get; set; }
 		public ResultadoTarifaViewModel ResultadoTarifaViewModel { get; set; }
 		public DadosInstalacao DadosInstalacao { get; set; }
-
 		public RoiCalculatorDashboardViewModel ROI { get; set; } // ROI da instalação
 
-		public List<RetornoInvestimentoMes>
-			RetornoInvestimento { get; set; } // Novo: Lista com a evolução do investimento
+		// Nova propriedade: evolução do investimento agrupada por ano
+		public List<RetornoInvestimentoAno> RetornoInvestimentoPorAno { get; set; }
 
 		public SimulacaoCompletaViewModel()
 		{
-			RetornoInvestimento = new List<RetornoInvestimentoMes>(); // Inicializa lista vazia
+			RetornoInvestimentoPorAno = new List<RetornoInvestimentoAno>(); // Inicializa lista vazia
 		}
 	}
 }
