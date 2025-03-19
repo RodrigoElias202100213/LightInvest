@@ -148,7 +148,7 @@ public class ROICalculatorController : Controller
 			History = history
 		};
 
-		ViewBag.Resultado = $"ROI Calculado: {resultadoROI:F2} anos"; 
+		ViewBag.Resultado = $"{resultadoROI:F2} anos"; 
 
 		return View("Dashboard", dashboardViewModel);
 	}

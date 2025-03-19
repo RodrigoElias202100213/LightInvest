@@ -1,48 +1,54 @@
-﻿@model LightInvest.Models.RoiCalculatorDashboardViewModel
+﻿@model RoiCalculatorDashboardViewModel
 
 @{
     ViewBag.Title = "Dashboard ROI";
-    
-    // Cria as listas de rótulos e valores a partir do histórico, ordenando pela data
-    var roiLabels = Model.History.OrderBy(h => h.DataCalculado)
-                      .Select(h => h.DataCalculado.ToString("dd/MM/yyyy")).ToList();
-    var roiValues = Model.History.OrderBy(h => h.DataCalculado)
-                      .Select(h => h.ROI).ToList();
 }
 
-<h2>Simulação do ROI</h2>
 
-<div>
-    <canvas id="roiChart" width="900" height="500"></canvas>
+<div class="container">
+
+    <div class="sidebar">
+        <div class="steps">
+            <div class="step">1</div>
+            <div class="step">2</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Simulação de ROI</h2>
+        <canvas id="roiChart" width="900" height="500"></canvas>
+
+        <div id="metrics">
+            <p><strong>Data do Cálculo:</strong> @Model.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
+            <p><strong>Anos até Retorno do Investimento:</strong> @ViewBag.Resultado</p>
+            <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
+        </div>
+
+        <div id="buttons">
+            <a href="@Url.Action("Index", "ROICalculator")" id="btn-v">Anterior</a>
+            <a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
+        </div>
+
+    </div>
 </div>
 
-<div id="metrics">
-    <p><strong>Data do Cálculo:</strong> @Model.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
-    <p><strong>Anos até Retorno do Investimento:</strong> @Model.CurrentRoi.ROI.ToString("N1") anos</p>
-    <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
-</div>
-
-<div id="buttons">
-    <a href="@Url.Action("Index", "ROICalculator")" id="btn-v">Voltar</a>
-    <a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
-</div>
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        var roiLabels = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(roiLabels));
-        var roiValues = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(roiValues));
+        var anos = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Years));
+        var dividas = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.Debts));
 
         var ctx = document.getElementById('roiChart').getContext('2d');
         var roiChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: roiLabels,
+                labels: anos,
                 datasets: [{
-                    label: 'ROI (anos)',
-                    data: roiValues,
-                    borderColor: 'rgba(153, 102, 255, 1)',
-                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    label: 'Dívida Remanescente ($)',
+                    data: dividas,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     fill: true,
                     tension: 0.1
                 }]
@@ -52,13 +58,13 @@
                     x: {
                         title: {
                             display: true,
-                            text: 'Data'
+                            text: 'Anos'
                         }
                     },
                     y: {
                         title: {
                             display: true,
-                            text: 'ROI (anos)'
+                            text: 'Dívida Atual ($)'
                         },
                         beginAtZero: true
                     }
@@ -68,7 +74,85 @@
     </script>
 }
 
+
+
 <style>
+
+    .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar {
+        width: 20%;
+        background-color: #d3e1e3;
+        padding: 20px;
+        position: relative;
+    }
+
+    .steps {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #aaa;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin: 30px 0;
+        position: relative;
+    }
+
+    .step:first-child, .step:nth-child(2) {
+        background-color: #065A66;
+    }
+
+    .step:first-child::after {
+        background-color: #065A66;
+        height: 150px;
+        bottom: -150px;
+    }
+
+    .step:nth-child(2) {
+        margin-top: 90px;
+    }
+
+
+    .step::after {
+        content: "";
+        width: 2px;
+        height: 90px;
+        background-color: #aaa;
+        position: absolute;
+        bottom: -90px;
+        transform: translateX(-50%);
+    }
+
+
+    .step:last-child::after {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+
     h2 {
         text-align: center;
         font-size: 2.5rem;
@@ -79,7 +163,6 @@
     }
 
     #metrics {
-        margin-left: 13%;
         margin-bottom: 5%;
     }
 
@@ -95,7 +178,7 @@
         height: 35px;
         text-align: center;
         font-size: 16px;
-        border-radius: 20px;
+        border-radius: 15px;
         cursor: pointer;
         background-color: #065A66;
         color: white;
@@ -112,4 +195,5 @@
         margin: auto;
         margin-bottom: 5%;
     }
+
 </style>

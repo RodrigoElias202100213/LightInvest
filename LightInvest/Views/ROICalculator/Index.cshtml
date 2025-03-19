@@ -5,167 +5,223 @@
 }
 
 <div class="roi-container">
-	<div class="roi-box">
-		<div class="roi-form">
-			<h2>Simulação de ROI</h2>
-            <div id="text-header">
-              @*
-                <p>
-                O Retorno sobre o Investimento (ROI) é um indicador essencial para avaliar a viabilidade da instalação de painéis solares.
-                Ele permite calcular em quanto tempo o investimento inicial será recuperado através da economia gerada na fatura de eletricidade.
-                Com esta simulação, podes perceber se a instalação de painéis solares compensa financeiramente e qual o impacto da economia de energia ao longo dos anos.
-                </p>
-              *@  
+    <div class="roi-box">
+        <div class="container">
+
+            <div class="sidebar">
+                <div class="steps">
+                    <div class="step">1</div>
+                    <div class="step">2</div>
+                </div>
             </div>
-			<form asp-action="Calcular" method="post">
-				<div class="form-group">
-					<label for="CustoInstalacao">Custos Iniciais de Instalação (€):</label>
-					<input type="number" asp-for="CustoInstalacao" class="form-control" placeholder="Exemplo: 10000" step="any" required/>
-				</div>
-				<div class="form-group">
-					<label for="ConsumoEnergeticoMedio">Consumo Energético Médio (anual/kWh):</label>
-					<input type="number" asp-for="ConsumoEnergeticoMedio" class="form-control" placeholder="Exemplo: 250" step="any" required/>
-				</div>
-				<div class="form-group">
-					<label for="ConsumoEnergeticoRede">Consumo Energético Rede (anual/kWh):</label>
-					<input type="number" asp-for="ConsumoEnergeticoRede" class="form-control" placeholder="Exemplo: 3000" step="any" required/>
-				</div>
-				<div class="form-group">
-					<label for="CustoManutencaoAnual">Custo de Manutenção Anual (€):</label>
-					<input type="number" asp-for="CustoManutencaoAnual" class="form-control" placeholder="Exemplo: 200" step="any" required/>
-				</div>
-				<div class="form-group">
-					<label for="RetornoEconomia">Retorno de Economia (anual/kWh):</label>
-					<input type="number" asp-for="RetornoEconomia" class="form-control" placeholder="Exemplo: 0.8" step="any" required/>
-				</div>
 
-                @if (!string.IsNullOrEmpty(ViewBag.Resultado))
-                {
-                    <div class="roi-error">
-                        <p><strong>@ViewBag.Resultado</strong></p>
+            <div class="content">
+                <h2>Simulação de ROI</h2>
+                <form asp-action="Calcular" method="post">
+                    <div class="form-group">
+                        <label for="CustoInstalacao">Custos Iniciais de Instalação (€):</label>
+                        <input type="number" asp-for="CustoInstalacao" class="form-control" placeholder="Exemplo: 10000" step="any" required />
                     </div>
-                }
+                    <div class="form-group">
+                        <label for="ConsumoEnergeticoMedio">Consumo Energético Médio (anual/kWh):</label>
+                        <input type="number" asp-for="ConsumoEnergeticoMedio" class="form-control" placeholder="Exemplo: 250" step="any" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="ConsumoEnergeticoRede">Consumo Energético Rede (anual/kWh):</label>
+                        <input type="number" asp-for="ConsumoEnergeticoRede" class="form-control" placeholder="Exemplo: 3000" step="any" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="CustoManutencaoAnual">Custo de Manutenção Anual (€):</label>
+                        <input type="number" asp-for="CustoManutencaoAnual" class="form-control" placeholder="Exemplo: 200" step="any" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="RetornoEconomia">Retorno de Economia (anual/kWh):</label>
+                        <input type="number" asp-for="RetornoEconomia" class="form-control" placeholder="Exemplo: 0.8" step="any" required />
+                    </div>
 
+                    @if (!string.IsNullOrEmpty(ViewBag.Resultado))
+                    {
+                        <div class="roi-error">
+                            <p><strong>@ViewBag.Resultado</strong></p>
+                        </div>
+                    }
 
-				<div id="end-row">
-					<a href="@Url.Action("Index", "Home")" class="btn-primary">Voltar</a>
-					<button type="submit" class="btn-submit">Calcular ROI</button>
-				</div> 
-			</form>
-		</div>
-	</div>
+                    <div id="end-row">
+                        <a href="@Url.Action("Index", "Home")" class="btn-primary">Anterior</a>
+                        <button type="submit" class="btn-submit">Calcular ROI</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
 
-.roi-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-        background-color: #f9f9f9;
-    padding: 20px;
-}
+    .roi-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 20px;
+    }
 
-.roi-box {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-    max-width: 900px;
-    margin: 20px;
-}
+    .roi-box {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 100%;
+        max-width: 1000px;
+        margin: 20px;
+    }
 
-.roi-form {
-	display:flex;
-	flex-direction: column;
-	justify-content:center;
-	align-items: center;
-    width:100%;
-}
-.roi-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #065A66;
-    font-size: 2rem;
-    font-weight: bold;
-	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-bottom:5%;
-}
+    .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+    }
 
-#text-header{
-    text-align:center;
-    margin-left:5%;
-    margin-right: 5%;
-}
+    .sidebar {
+        width: 20%;
+        background-color: #d3e1e3;
+        padding: 20px;
+        position: relative;
+    }
 
-.form-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    width: 100%;
-}
+    .steps {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.form-group label {
-    flex: 1;
-    text-align: left;
-    font-size: 16px;
-    color: #333;
-    font-weight: 500;
-    gap: 25px;
-}
+    .step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #aaa;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin: 30px 0;
+        position: relative;
+    }
 
-.form-group .form-control {
-    flex: 0.3;
-    padding: 10px;
-    border-radius: 20px;
-    border: 2px solid #ddd;
-    font-size: 14px;
-    color: #333;
-    transition: border-color 0.3s ease;
-}
+    .step:first-child {
+        background-color: #065A66;
+    }
 
-#end-row {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 9%;
-}
+    .step:first-child::after {
+        background-color: #065A66;
+        height: 150px;
+        bottom: -150px;
+    }
 
-.btn-primary, .btn-submit {
-    width: 120px;
-    height: 35px;
-    text-align: center;
-    font-size: 16px;
-    border-radius: 20px;
-    cursor: pointer;
-}
+    .step:nth-child(2) {
+        margin-top: 90px;
+    }
 
-.btn-primary {
-    background-color: #065A66;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .step::after {
+        content: "";
+        width: 2px;
+        height: 90px;
+        background-color: #aaa;
+        position: absolute;
+        bottom: -90px;
+        transform: translateX(-50%);
+    }
 
-.btn-submit {
-    background-color: #065A66;
-    color: white;
-    border: none;
-}
-
-.btn-primary:hover, .btn-submit:hover {
-    background-color: #4C7B8B;
-}
+    .step:last-child::after {
+        display: none;
+    }
 
 
-.roi-error p {
-    font-size: 15px;
-    font-weight: bold;
-    color: red;
-}
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 3rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .form-group label {
+        flex: 1;
+        text-align: left;
+        font-size: 16px;
+        color: #333;
+        font-weight: 500;
+        gap: 25px;
+    }
+
+    .form-group .form-control {
+        flex: 0.3;
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid #ddd;
+        font-size: 14px;
+        color: #333;
+        transition: border-color 0.3s ease;
+    }
+
+    #end-row {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 9%;
+    }
+
+    .btn-primary, .btn-submit {
+        width: 120px;
+        height: 35px;
+        text-align: center;
+        font-size: 16px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: #065A66;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-submit {
+        background-color: #065A66;
+        color: white;
+        border: none;
+    }
+
+    .btn-primary:hover, .btn-submit:hover {
+        background-color: #065A66;
+        color:white;
+    }
+
+    .roi-error p {
+        font-size: 15px;
+        color: red;
+    }
+
 </style>

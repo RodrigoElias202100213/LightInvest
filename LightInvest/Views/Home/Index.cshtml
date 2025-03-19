@@ -3,144 +3,185 @@
 }
 
 <div class="home-container">
-    <div class="home-box">
-        <div class="sidebar">
-            <img src="~/images/logo.png" alt="LightInvest Logo" />
-        </div>
-
-        <div class="main-content">
-
-            <div id="header">
-                <h2>Bem Vindo,</h2>
+    <!-- Barra de navegação -->
+    <div class="nav">
+        <img src="~/images/logo.png" alt="LightInvest Logo" class="logo" />
+        <div class="user-section">
+            <div id="username">
                 <p>@ViewBag.UserName!</p>
             </div>
+            <a href="@Url.Action("Logout", "Account")">
+                <img src="~/images/logout.png" alt="Logout" class="logout" />
+            </a>
+        </div>
+    </div>
 
+    <!-- About us -->
+    <div class="about">
+        <h1>Sobre Nós</h1>
+        <p>O LightInvest é uma plataforma que combina análise financeira, simulações interativas e conteúdos educativos para ajudar indivíduos e empresas a investir de forma inteligente em energias renováveis.</p>
+    </div>
 
-            <div class="choices">
-                <form asp-controller="ROICalculator" asp-action="Index">
-                    <button type="submit" class="btn">Simulações do ROI</button>
-                </form>
+    <!-- Container com as caixas de opções -->
+    <div class="container">
+        <div class="box">
+            <img src="~/images/roi.png" alt="Ícone Cálculo ROI">
+            <h3>Cálculo do ROI</h3>
+            <p>Descubra a rentabilidade do seu investimento em painéis solares. Insira os dados do seu projeto e obtenha uma análise detalhada.</p>
+            <form asp-controller="ROICalculator" asp-action="Index">
+                <button type="submit">
+                    <img src="~/images/arrow.png" alt="Seta" class="arrow">
+                </button>
+            </form>
+        </div>
 
-                <form asp-controller="EnergySimulation" asp-action="Simulation">
-	                <button type="submit" class="btn">Simulações de Tarifas Energéticas</button>
-                </form>
-                <button class="btn">Educação Energética</button>
-                
-                <div id="sair">
-                    <a href="@Url.Action("Logout", "Account")" class="btn btn-sair">Terminar Sessão</a>
-                </div>
+        <div class="box">
+            <img src="~/images/simulation.png" alt="Ícone Simulação">
+            <h3>Simulação de Tarifas Energéticas</h3>
+            <p>Compare diferentes cenários tarifários e encontre a melhor solução para si.</p>
+            <form asp-controller="EnergySimulation" asp-action="Simulation">
+                <button type="submit">
+                    <img src="~/images/arrow.png" alt="Seta" class="arrow">
+                </button>
+            </form>
+        </div>
 
-            </div>
+        <div class="box">
+            <img src="~/images/education.png" alt="Ícone Educação Energética">
+            <h3>Conteúdos Educativos</h3>
+            <p>Aprofunde o seu conhecimento sobre energias renováveis e eficiência energética, explorando os artigos que temos para si.</p>
+            <img src="~/images/arrow.png" alt="Seta" class="arrow">
         </div>
     </div>
 </div>
 
 <style>
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    nav, header {
+        margin: 0;
+        padding: 0;
+        width: 0%;
+        height: 0%;
+    }
+
     .home-container {
+        background-color: rgba(216, 231, 225, 0.27);
+        width: 100%;
+        min-height: 100vh;
+        top: 0;
+        left: 0;
+        margin: 0%;
+    }
+
+    .nav {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        height: 80vh;
-        background-color: #f9f9f9;
-    }
-
-    .home-box {
-        display: flex;
-        background: white;
-        width: 950px;
-        height: 450px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .sidebar {
+        padding: 3px 3px;
         background-color: #065A66;
-        color: white;
-        padding: 20px;
-        flex: 1;
-        display: flex;
-        flex-direction:column;
-        justify-content: center;
-        max-width: 250px;
-        height: 450px;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
 
-    .sidebar img {
-        max-width: 250px;
-        margin: 0 auto 20px;
+    .logo {
+        height: 130px;
     }
 
-    .main-content {
-        flex: 2;
+    .user-section {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        padding: 20px;
     }
 
-    #header {
-        display:flex;
-        flex-direction: column;
-        justify-content:center;
-        align-items:center;
-        text-align:center;
-    }
-
-    h2 {
-        font-weight:bold;
-        font-size: 3rem;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #065A66;
-        text-align:center;
-    }
-
-    p {
-        margin-bottom: 20px;
-        text-align: center;
-        font-size: 1.5rem;
+    #username {
+        margin-top: 6%;
+        margin-right: 10px;
+        font-size: 16px;
         font-weight: bold;
-        color:#B3D8A8;
-        margin-bottom:20%;
+        color: white;
     }
 
-    .choices {
+    .logout {
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .about {
+        text-align: center;
+        padding: 40px 20px;
+        margin: 5% 15%;
+    }
+
+    .about h1 {
+        font-family: 'Vujahday Script', cursive;
+        font-size: 50px;
+        margin-bottom: 2%;
+        margin-top: 2%;
+    }
+
+    .about p {
+        font-size: 25px;
+        color: black;
+        font-family: 'Vollkorn', serif;
+    }
+
+    .container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px 20px;
     }
 
-    .btn {
-        border-radius: 25px;
-        height: 35px;
-        width: 400px;
-        font-size: 18px;
-        background-color: #065A66;
-        color: white;
-        border: none;
-        cursor: pointer;
+    .box {
+        width: 300px;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         text-align: center;
+        background-color: #D4E0E0;
+        border: 1px solid black;
     }
 
-    .btn:hover{
-        color:white;
+    .box img {
+        height: 50px;
+        margin-bottom: 10px;
     }
 
-    .btn-sair {
-        background-color: #B3D8A8;
-        cursor:pointer ;
-        border-radius: 25px;
-        height: 35px;
-        width: 400px;
-        font-size: 18px;
-        color: white;
-        border: none;
+    .box h3 {
+        font-size: 20px;
+        margin-bottom: 11%;
+        font-family: 'Salsa', cursive;
+    }
+
+    .box p {
+        font-size: 17px;
+        color: black;
+        margin: 0 3%;
+    }
+
+    .arrow {
+        margin-top: 15px;
         cursor: pointer;
-        text-align: center;
+        transform: scale(0.2);
     }
 
-    .btn-sair:hover{
-        color:white;
+    button {
+        all: unset;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    button img {
+        display: block;
+        width: auto;
+        height: auto;
     }
 </style>
