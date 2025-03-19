@@ -1,137 +1,132 @@
 ﻿using System;
-using System.Linq;
-using LightInvest.Data;
 using LightInvest.Models;
 using LightInvest.Models.b;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 namespace LightInvest.Tests
 {
 	public class DadosInstalacaoTests
 	{
-		private DbContextOptions<ApplicationDbContext> _options;
-
-		public DadosInstalacaoTests()
+		[Fact]
+		public void CalcularPrecoInstalacao_DeveRetornarPrecoCorreto()
 		{
-			_options = new DbContextOptionsBuilder<ApplicationDbContext>()
-				.UseInMemoryDatabase(databaseName: "LightInvestTest")
-				.Options;
+			// Arrange
+			var modeloPainel = new ModeloPainelSolar
+			{
+				Id = 1,
+				ModeloNome = "Painel Solar X",
+				Preco = 2000.00m
+			};
+
+			var dadosInstalacao = new DadosInstalacao
+			{
+				ModeloPainel = modeloPainel,
+				NumeroPaineis = 10,
+				Inclinacao = 30,
+				Dificuldade = DificuldadeInstalacao.Media
+			};
+
+			// Act
+			dadosInstalacao.AtualizarPrecoInstalacao();
+
+			// Assert
+			var precoEsperado = modeloPainel.Preco * 0.3m * 1.2m * dadosInstalacao.NumeroPaineis;
+			Assert.Equal(precoEsperado, dadosInstalacao.PrecoInstalacao);
 		}
 
 		[Fact]
-		public void CalcularPrecoInstalacao_DeveCalcularPrecoCorretamente()
+		public void CalcularPrecoPorInclinacao_DeveRetornarValorCorreto()
 		{
 			// Arrange
-			using (var context = new ApplicationDbContext(_options))
+			var dadosInstalacao = new DadosInstalacao
 			{
-				var cidade = new Cidade { Nome = "Cidade Exemplo" };
+				Inclinacao = 30
+			};
 
-				var modeloPainel = new ModeloPainelSolar
-				{
-					Modelo = "Modelo X",
-					Preco = 1000.00m
-				};
+			// Act
+			var precoPorInclinacao = dadosInstalacao.CalcularPrecoPorInclinacao();
 
-				var potencia = new PotenciaPainelSolar
-				{
-					Potencia = 250.00m,
-					PainelSolar = modeloPainel
-				};
+			// Assert
+			Assert.Equal(0.3m, precoPorInclinacao);
+		}
 
-				var dadosInstalacao = new DadosInstalacao
-				{
-					UserEmail = "usuario@exemplo.com",
-					Cidade = cidade,
-					ModeloPainel = modeloPainel,
-					Potencia = potencia,
-					NumeroPaineis = 10,
-					Inclinacao = 45,
-					Dificuldade = "média"
-				};
+		[Fact]
+		public void CalcularPrecoPorDificuldade_DeveRetornarValorCorreto()
+		{
+			// Arrange
+			var dadosInstalacao = new DadosInstalacao
+			{
+				Dificuldade = DificuldadeInstalacao.Media
+			};
 
-				context.Cidades.Add(cidade);
-				context.ModelosDePaineisSolares.Add(modeloPainel);
-				context.PotenciasDePaineisSolares.Add(potencia);
-				context.DadosInstalacao.Add(dadosInstalacao);
-				context.SaveChanges();
+			// Act
+			var precoPorDificuldade = dadosInstalacao.CalcularPrecoPorDificuldade();
 
-				// Act
-				dadosInstalacao.AtualizarPrecoInstalacao();
-
-				// Assert
-				Assert.Equal(1000.00m * 0.5m * 1.2m * 10, dadosInstalacao.PrecoInstalacao);
-			}
+			// Assert
+			Assert.Equal(1.2m, precoPorDificuldade);
 		}
 
 		[Fact]
 		public void AtualizarPrecoInstalacao_DeveAtualizarPrecoCorretamente()
 		{
 			// Arrange
-			using (var context = new ApplicationDbContext(_options))
+			var modeloPainel = new ModeloPainelSolar
 			{
-				var cidade = new Cidade { Nome = "Cidade Teste" };
-				var modeloPainel = new ModeloPainelSolar { Modelo = "Painel A", Preco = 1500.00m };
-				var potencia = new PotenciaPainelSolar { Potencia = 300.00m, PainelSolar = modeloPainel };
+				Id = 1,
+				ModeloNome = "Painel Solar X",
+				Preco = 1500.00m 
+			};
 
-				var dadosInstalacao = new DadosInstalacao
-				{
-					UserEmail = "test@teste.com",
-					Cidade = cidade,
-					ModeloPainel = modeloPainel,
-					Potencia = potencia,
-					NumeroPaineis = 5,
-					Inclinacao = 60,
-					Dificuldade = "difícil"
-				};
+			var dadosInstalacao = new DadosInstalacao
+			{
+				ModeloPainel = modeloPainel,
+				NumeroPaineis = 5,
+				Inclinacao = 45, 
+				Dificuldade = DificuldadeInstalacao.Facil
+			};
 
-				context.Cidades.Add(cidade);
-				context.ModelosDePaineisSolares.Add(modeloPainel);
-				context.PotenciasDePaineisSolares.Add(potencia);
-				context.DadosInstalacao.Add(dadosInstalacao);
-				context.SaveChanges();
+			// Act
+			dadosInstalacao.AtualizarPrecoInstalacao();
 
-				// Act
-				dadosInstalacao.AtualizarPrecoInstalacao();
-
-				// Assert
-				Assert.Equal(5625.00m, dadosInstalacao.PrecoInstalacao);
-			}
+			// Assert
+			var precoEsperado = modeloPainel.Preco * 0.5m * 1.0m * dadosInstalacao.NumeroPaineis;
+			Assert.Equal(precoEsperado, dadosInstalacao.PrecoInstalacao);
 		}
 
 		[Fact]
-		public void PotenciaDoPainel_DeveRetornarPotenciaCorretamente()
+		public void CalcularPrecoInstalacao_DeveLancarExcecaoQuandoModeloPainelForNulo()
 		{
 			// Arrange
-			using (var context = new ApplicationDbContext(_options))
+			var dadosInstalacao = new DadosInstalacao
 			{
-				var cidade = new Cidade { Nome = "Cidade Teste" };
-				var modeloPainel = new ModeloPainelSolar { Modelo = "Painel X", Preco = 1200.00m };
-				var potencia = new PotenciaPainelSolar { Potencia = 200.00m, PainelSolar = modeloPainel };
+				ModeloPainel = null, // Modelo de painel nulo
+				NumeroPaineis = 5,
+				Inclinacao = 30,
+				Dificuldade = DificuldadeInstalacao.Media
+			};
 
-				var dadosInstalacao = new DadosInstalacao
-				{
-					UserEmail = "user@teste.com",
-					Cidade = cidade,
-					ModeloPainel = modeloPainel,
-					Potencia = potencia,
-					NumeroPaineis = 5,
-					Inclinacao = 40,
-					Dificuldade = "fácil"
-				};
+			// Act & Assert
+			Assert.Throws<InvalidOperationException>(() => dadosInstalacao.CalcularPrecoInstalacao());
+		}
 
-				context.Cidades.Add(cidade);
-				context.ModelosDePaineisSolares.Add(modeloPainel);
-				context.PotenciasDePaineisSolares.Add(potencia);
-				context.DadosInstalacao.Add(dadosInstalacao);
-				context.SaveChanges();
+		[Theory]
+		[InlineData(0, 0.3)]
+		[InlineData(30, 0.3)]
+		[InlineData(45, 0.5)]
+		[InlineData(75, 0.7)]
+		public void CalcularPrecoPorInclinacao_DeveRetornarValoresCorretosParaVariosAngulos(decimal inclinacao, decimal valorEsperado)
+		{
+			// Arrange
+			var dadosInstalacao = new DadosInstalacao
+			{
+				Inclinacao = inclinacao
+			};
 
-				// Act
-				var potenciaPainel = dadosInstalacao.PotenciaDoPainel;
+			// Act
+			var precoPorInclinacao = dadosInstalacao.CalcularPrecoPorInclinacao();
 
-				// Assert
-				Assert.Equal(200.00m, potenciaPainel);
-			}
+			// Assert
+			Assert.Equal(valorEsperado, precoPorInclinacao);
 		}
 	}
 }

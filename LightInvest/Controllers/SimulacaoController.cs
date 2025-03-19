@@ -1,4 +1,5 @@
 ﻿/*
+
 using ClosedXML.Excel;
 using LightInvest.Data;
 using LightInvest.Models;
@@ -73,7 +74,7 @@ namespace LightInvest.Controllers
 
 
 			var potenciaPainel = dadosInstalacao?.ModeloPainel?.Potencias
-				.FirstOrDefault(p => p.Id == dadosInstalacao.ConsumoPainel)?.Potencia ?? 0;
+				.FirstOrDefault(p => p.Id == dadosInstalacao.PotenciaDoPainel)?.Potencia ?? 0;
 
 			if (potenciaPainel == 0)
 			{
@@ -81,20 +82,20 @@ namespace LightInvest.Controllers
 			}
 
 			energyConsumption.CalcularMedias();
-			decimal custoAnual = energyConsumption.MediaAnual * tarifa.PrecoBaseKwh;
+			decimal custoAnual = energyConsumption.MediaAnual * tarifa.PrecoKWh;
 
 			dadosInstalacao.AtualizarPrecoInstalacao();
 
 			var consumoMensal = energyConsumption.MediaAnual / energyConsumption.MesesOcupacao.Count;
 
-			decimal custoMensal = consumoMensal * tarifa.PrecoBaseKwh;
+			decimal custoMensal = consumoMensal * tarifa.PrecoKWh;
 
 			var resultado = new ResultadoTarifaViewModel
 			{
 				ConsumoTotal = energyConsumption.MediaAnual,
 				ValorAnual = custoAnual,
-				TarifaEscolhida = tarifa.Nome,
-				PrecoBaseKwh = tarifa.PrecoBaseKwh,
+				TarifaEscolhida = tarifa.Tipo.ToString(),
+				PrecoKwh = tarifa.PrecoKWh,
 				MesesOcupacao = energyConsumption.MesesOcupacao,
 				ConsumoMensal = energyConsumption.MesesOcupacao
 					.Select(mes => new MesConsumo { Mes = mes, Consumo = consumoMensal, Custo = custoMensal })

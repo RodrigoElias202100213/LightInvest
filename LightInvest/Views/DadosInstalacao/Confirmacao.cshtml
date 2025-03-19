@@ -1,0 +1,18 @@
+﻿@{
+	ViewData["Title"] = "Confirmação da Instalação";
+}
+
+<div class="container text-center mt-5">
+	<h2 class="text-success">Instalação Registrada com Sucesso!</h2>
+
+	@if (ViewBag.PrecoFinal != null)
+	{
+		<p class="fs-4 mt-3">O preço estimado da instalação é: <strong>R$ @ViewBag.PrecoFinal</strong></p>
+	}
+	else
+	{
+		<p class="fs-4 mt-3">O preço estimado não foi calculado.</p>
+	}
+
+	<a href="/" class="btn btn-secondary mt-3">Voltar à Página Inicial</a>
+</div>

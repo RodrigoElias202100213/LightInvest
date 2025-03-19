@@ -84,7 +84,7 @@ namespace LightInvest.Controllers
 			// Armazena o PrecoFinal no TempData para exibição (caso necessário)
 			TempData["PrecoFinal"] = tarifa.PrecoFinal.ToString("F2");
 
-			return View(model);
+			return RedirectToAction("Create", "DadosInstalacao");
 		}
 
 		private async Task SaveTarifaToDatabase(string userEmail, Tarifa tarifa)

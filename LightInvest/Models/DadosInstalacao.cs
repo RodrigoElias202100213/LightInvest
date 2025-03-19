@@ -1,79 +1,88 @@
-﻿using LightInvest.Models;
-using LightInvest.Models.b;
+﻿using LightInvest.Models.b;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LightInvest.Models
 {
+	// Enum para dificuldade de instalação
+	public enum DificuldadeInstalacao
+	{
+		Facil,
+		Media,
+		Dificil
+	}
+
 	public class DadosInstalacao
 	{
 		[Key]
 		public int Id { get; set; }
 
 		[Required]
+		[EmailAddress] 
 		public string UserEmail { get; set; }
 
+		[Required]
 		public int CidadeId { get; set; }
 
-		[ForeignKey("CidadeId")]
-		public Cidade Cidade { get; set; }
+		[ForeignKey(nameof(CidadeId))]
+		public virtual Cidade Cidade { get; set; }
 
+		[Required]
 		public int ModeloPainelId { get; set; }
 
-		[ForeignKey("ModeloPainelId")]
-		public ModeloPainelSolar ModeloPainel { get; set; }
+		[ForeignKey(nameof(ModeloPainelId))]
+		public virtual ModeloPainelSolar ModeloPainel { get; set; }
 
+		[Required]
 		public int PotenciaId { get; set; }
 
-		[ForeignKey("PotenciaId")]
-		public PotenciaPainelSolar Potencia { get; set; }
+		[ForeignKey(nameof(PotenciaId))]
+		public virtual PotenciaPainelSolar Potencia { get; set; }
 
+		[Range(1, 1000)]
 		public int NumeroPaineis { get; set; }
 
-		// A potência do painel é calculada diretamente a partir da Potencia
-		public decimal PotenciaDoPainel => Potencia?.Potencia ?? 0;
-
+		[Range(0, 90)] 
 		public decimal Inclinacao { get; set; }
 
 		[Required]
-		public string Dificuldade { get; set; }
+		public DificuldadeInstalacao Dificuldade { get; set; }
 
-		private decimal _precoInstalacao;
-
-		public decimal PrecoInstalacao
-		{
-			get => _precoInstalacao;
-			set => _precoInstalacao = value;
-		}
+		public decimal PrecoInstalacao { get; set; }
 
 		public void AtualizarPrecoInstalacao()
 		{
-			_precoInstalacao = CalcularPrecoInstalacao();
+			PrecoInstalacao = CalcularPrecoInstalacao();
 		}
 
 		public decimal CalcularPrecoPorInclinacao()
 		{
-			if (Inclinacao <= 35) return 0.3m;
-			if (Inclinacao <= 60) return 0.5m;
+			if (Inclinacao <= 35)
+				return 0.3m;
+			if (Inclinacao <= 60)
+				return 0.5m;
 			return 0.7m;
 		}
 
-		private decimal CalcularPrecoPorDificuldade()
+		public decimal CalcularPrecoPorDificuldade()
 		{
-			return (Dificuldade?.ToLowerInvariant() ?? "") switch
+			return Dificuldade switch
 			{
-				"fácil" => 1.0m,
-				"média" => 1.2m,
-				"difícil" => 1.5m,
+				DificuldadeInstalacao.Facil => 1.0m,
+				DificuldadeInstalacao.Media => 1.2m,
+				DificuldadeInstalacao.Dificil => 1.5m,
 				_ => 1.0m
 			};
 		}
 
 		public decimal CalcularPrecoInstalacao()
 		{
-			// Agora, o preço base vem do preço do modelo de painel solar
-			decimal precoBase = ModeloPainel.Preco;
-			return precoBase * CalcularPrecoPorInclinacao() * CalcularPrecoPorDificuldade() * NumeroPaineis;
+			if (ModeloPainel == null)
+			{
+				throw new InvalidOperationException("Modelo de painel não foi carregado corretamente.");
+			}
+			return ModeloPainel.Preco * CalcularPrecoPorInclinacao() * CalcularPrecoPorDificuldade() * NumeroPaineis;
 		}
 	}
 }
