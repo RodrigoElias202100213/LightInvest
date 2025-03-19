@@ -13,8 +13,7 @@ namespace LightInvest.Models
 		public int ModeloPainelId { get; set; }
 
 		[Required(ErrorMessage = "A potência do painel solar é obrigatória.")]
-		public int PotenciaId { get; set; } // Potência selecionada
-
+		public int PotenciaId { get; set; } 
 		[Required]
 		[Range(1, 1000, ErrorMessage = "O número de painéis deve estar entre 1 e 1000.")]
 		public int NumeroPaineis { get; set; }
@@ -25,8 +24,9 @@ namespace LightInvest.Models
 
 		[Required(ErrorMessage = "A dificuldade de instalação é obrigatória.")]
 		public DificuldadeInstalacao Dificuldade { get; set; }
+		
+		public decimal PrecoInstalacao { get; set; }
 
-		// Listas inicializadas para evitar NullReferenceException
 		public List<Cidade> Cidades { get; set; } = new();
 		public List<ModeloPainelSolar> ModelosDePaineis { get; set; } = new();
 		public List<PotenciaPainelSolar> Potencias { get; set; } = new();

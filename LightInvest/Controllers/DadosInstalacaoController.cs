@@ -17,7 +17,6 @@ namespace LightInvest.Controllers
 			_context = context;
 		}
 
-		// Exibe o formulário de dados de instalação
 		[HttpGet("dados-instalacao")]
 		public async Task<IActionResult> Create()
 		{
@@ -61,7 +60,6 @@ namespace LightInvest.Controllers
 				return View(model);
 			}
 
-			// Criar a instância de DadosInstalacao
 			var dadosInstalacao = new DadosInstalacao
 			{
 				UserEmail = user.Email,
@@ -71,17 +69,17 @@ namespace LightInvest.Controllers
 				PotenciaId = model.PotenciaId,
 				NumeroPaineis = model.NumeroPaineis,
 				Inclinacao = model.Inclinacao,
-				Dificuldade = model.Dificuldade
+				Dificuldade = model.Dificuldade,
 			};
 
-			// Calcula o preço antes de salvar
+			// Atualiza o preço antes de salvar
 			dadosInstalacao.AtualizarPrecoInstalacao();
 
-			// Salvar os dados no banco com o preço calculado
 			await SalvarOuAtualizarDadosInstalacao(dadosInstalacao);
 
-			// Passa o preço calculado para a página de confirmação
+			// Armazena o preço final no TempData para ser exibido na confirmação
 			TempData["PrecoFinal"] = dadosInstalacao.PrecoInstalacao.ToString("F2");
+
 			return RedirectToAction("Confirmacao");
 		}
 
@@ -109,17 +107,32 @@ namespace LightInvest.Controllers
 		}
 
 		[HttpPost("dados-instalacao/calcular-preco")]
-		public IActionResult CalcularPrecoInstalacao(DadosInstalacao dadosInstalacao)
+		public async Task<IActionResult> CalcularPrecoInstalacao(DadosInstalacaoViewModel model)
 		{
-			var precoFinal = dadosInstalacao.CalcularPrecoInstalacao();  // Calculando o preço de instalação
-			TempData["PrecoFinal"] = precoFinal.ToString("F2");  // Armazenando o preço no TempData
-			return RedirectToAction("Confirmacao");  // Redirecionando para a página de confirmação
-		}
+			var modeloPainel = await _context.ModelosDePaineisSolares
+				.FirstOrDefaultAsync(m => m.Id == model.ModeloPainelId);
 
+			if (modeloPainel == null)
+			{
+				return BadRequest("Modelo de painel não encontrado.");
+			}
+
+			var dadosInstalacao = new DadosInstalacao
+			{
+				ModeloPainel = modeloPainel,
+				NumeroPaineis = model.NumeroPaineis,
+				Inclinacao = model.Inclinacao,
+				Dificuldade = model.Dificuldade
+			};
+
+			var precoFinal = dadosInstalacao.CalcularPrecoInstalacao();
+			return Json(new { preco = precoFinal.ToString("F2") });
+		}
 
 
 		private async Task SalvarOuAtualizarDadosInstalacao(DadosInstalacao dadosInstalacao)
 		{
+			// Verifica se já existem dados de instalação para o usuário
 			var dadosExistente = await _context.DadosInstalacao
 				.FirstOrDefaultAsync(d => d.UserEmail == dadosInstalacao.UserEmail);
 
@@ -133,14 +146,18 @@ namespace LightInvest.Controllers
 				dadosExistente.NumeroPaineis = dadosInstalacao.NumeroPaineis;
 				dadosExistente.Inclinacao = dadosInstalacao.Inclinacao;
 				dadosExistente.Dificuldade = dadosInstalacao.Dificuldade;
+				dadosExistente.PrecoInstalacao = dadosInstalacao.PrecoInstalacao;
 
+				// Marca a entidade como modificada
 				_context.DadosInstalacao.Update(dadosExistente);
 			}
 			else
 			{
-				_context.DadosInstalacao.Add(dadosInstalacao);
+				// Adiciona os novos dados de instalação
+				await _context.DadosInstalacao.AddAsync(dadosInstalacao);
 			}
 
+			// Salva as alterações na base de dados
 			await _context.SaveChangesAsync();
 		}
 

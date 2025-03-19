@@ -80,9 +80,15 @@ namespace LightInvest.Models
 		{
 			if (ModeloPainel == null)
 			{
-				throw new InvalidOperationException("Modelo de painel não foi carregado corretamente.");
+				throw new InvalidOperationException("O modelo do painel não foi carregado corretamente.");
 			}
-			return ModeloPainel.Preco * CalcularPrecoPorInclinacao() * CalcularPrecoPorDificuldade() * NumeroPaineis;
+
+			decimal precoBase = ModeloPainel.Preco;
+			decimal fatorInclinacao = CalcularPrecoPorInclinacao();
+			decimal fatorDificuldade = CalcularPrecoPorDificuldade();
+
+			return precoBase * fatorInclinacao * fatorDificuldade * NumeroPaineis;
 		}
+
 	}
 }

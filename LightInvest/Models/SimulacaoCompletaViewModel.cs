@@ -7,7 +7,7 @@
 		public DadosInstalacao DadosInstalacao { get; set; }
 		public decimal PrecoInstalacao { get; set; }
 		public decimal PotenciaPainel { get; set; }
-		public RoiCalculatorDashboardViewModel ROI { get; set; }
+		//public RoiCalculatorDashboardViewModel ROI { get; set; }
 
 	}
 

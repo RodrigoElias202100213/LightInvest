@@ -85,19 +85,19 @@ namespace LightInvest.Data
 
 			);
 
-			// Modelos
 			modelBuilder.Entity<ModeloPainelSolar>().HasData(
-				new ModeloPainelSolar { Id = 1, ModeloNome = "Aiko - Comet 2U" },
-				new ModeloPainelSolar { Id = 2, ModeloNome = "Maxeon 7" },
-				new ModeloPainelSolar { Id = 3, ModeloNome = "Longi - HI-MO X6" },
-				new ModeloPainelSolar { Id = 4, ModeloNome = "Huasun - Himalaya" },
-				new ModeloPainelSolar { Id = 5, ModeloNome = "TW Solar" },
-				new ModeloPainelSolar { Id = 6, ModeloNome = "JA Solar DeepBlue 4.0 Pro" },
-				new ModeloPainelSolar { Id = 7, ModeloNome = "Astroenergy - Astro N5" },
-				new ModeloPainelSolar { Id = 8, ModeloNome = "Grand Sunergy" },
-				new ModeloPainelSolar { Id = 9, ModeloNome = "DMEGC - Infinity RT" },
-				new ModeloPainelSolar { Id = 10,ModeloNome = "Spic" }
+				new ModeloPainelSolar { Id = 1, ModeloNome = "Aiko - Comet 2U", Preco = 1250.00m },
+				new ModeloPainelSolar { Id = 2, ModeloNome = "Maxeon 7", Preco = 1320.00m },
+				new ModeloPainelSolar { Id = 3, ModeloNome = "Longi - HI-MO X6", Preco = 1280.00m },
+				new ModeloPainelSolar { Id = 4, ModeloNome = "Huasun - Himalaya", Preco = 1300.00m },
+				new ModeloPainelSolar { Id = 5, ModeloNome = "TW Solar", Preco = 1230.00m },
+				new ModeloPainelSolar { Id = 6, ModeloNome = "JA Solar DeepBlue 4.0 Pro", Preco = 1270.00m },
+				new ModeloPainelSolar { Id = 7, ModeloNome = "Astroenergy - Astro N5", Preco = 1260.00m },
+				new ModeloPainelSolar { Id = 8, ModeloNome = "Grand Sunergy", Preco =  1240.00m },
+				new ModeloPainelSolar { Id = 9, ModeloNome = "DMEGC - Infinity RT", Preco = 1290.00m },
+				new ModeloPainelSolar { Id = 10, ModeloNome = "Spic", Preco = 910.00m }
 			);
+
 
 			// Potencia para cada painel solar
 			modelBuilder.Entity<PotenciaPainelSolar>().HasData(

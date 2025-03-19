@@ -4,6 +4,7 @@ using LightInvest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LightInvest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250319114910_InitialCreate2")]
+    partial class InitialCreate2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -450,61 +453,61 @@ namespace LightInvest.Migrations
                         {
                             Id = 1,
                             ModeloNome = "Aiko - Comet 2U",
-                            Preco = 1250.00m
+                            Preco = 250.00m
                         },
                         new
                         {
                             Id = 2,
                             ModeloNome = "Maxeon 7",
-                            Preco = 1320.00m
+                            Preco = 320.00m
                         },
                         new
                         {
                             Id = 3,
                             ModeloNome = "Longi - HI-MO X6",
-                            Preco = 1280.00m
+                            Preco = 280.00m
                         },
                         new
                         {
                             Id = 4,
                             ModeloNome = "Huasun - Himalaya",
-                            Preco = 1300.00m
+                            Preco = 300.00m
                         },
                         new
                         {
                             Id = 5,
                             ModeloNome = "TW Solar",
-                            Preco = 1230.00m
+                            Preco = 230.00m
                         },
                         new
                         {
                             Id = 6,
                             ModeloNome = "JA Solar DeepBlue 4.0 Pro",
-                            Preco = 1270.00m
+                            Preco = 270.00m
                         },
                         new
                         {
                             Id = 7,
                             ModeloNome = "Astroenergy - Astro N5",
-                            Preco = 1260.00m
+                            Preco = 260.00m
                         },
                         new
                         {
                             Id = 8,
                             ModeloNome = "Grand Sunergy",
-                            Preco = 1240.00m
+                            Preco = 240.00m
                         },
                         new
                         {
                             Id = 9,
                             ModeloNome = "DMEGC - Infinity RT",
-                            Preco = 1290.00m
+                            Preco = 290.00m
                         },
                         new
                         {
                             Id = 10,
                             ModeloNome = "Spic",
-                            Preco = 910.00m
+                            Preco = 210.00m
                         });
                 });
 
