@@ -35,7 +35,7 @@
 
 			<!-- Consumo Horário Fins de Semana -->
 			<div class="section">
-				<h5>2. Consumo Horário: Feriados/Fim de Semana</h5>
+				<h5>2. Consumo Médio Horário: Feriados/Fim de Semana</h5>
 				<div class="horario">
 					@for (int i = 0; i < 24; i++)
 					{
@@ -174,8 +174,10 @@
     }
 
     h2 {
-        color: #065A66;
+        font-weight: bold;
+        font-size: 3rem;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
         text-align: center;
         margin-bottom: 4%;
     }
@@ -216,7 +218,7 @@
     h5 {
         margin-top: 2%;
         margin-bottom: 2%;
-        color: #878080;
+        font-weight:bolder;
     }
 
     .month-checkboxes {
@@ -238,9 +240,10 @@
         height: 18px;
     }
 
-    .btn-container {
+    #btn-container {
         display: flex;
         justify-content: center;
+        align-items:center;
         gap: 10px;
         margin-top: 20px;
     }
