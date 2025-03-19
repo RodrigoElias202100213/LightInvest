@@ -49,6 +49,7 @@ namespace LightInvest.Models
 		[Required]
 		public DificuldadeInstalacao Dificuldade { get; set; }
 
+
 		public decimal PrecoInstalacao { get; set; }
 
 		public void AtualizarPrecoInstalacao()

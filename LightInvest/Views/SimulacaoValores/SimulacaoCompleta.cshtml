@@ -1,0 +1,61 @@
+﻿@model LightInvest.Models.SimulacaoCompletaViewModel
+
+@{
+	ViewBag.Title = "Simulação Completa";
+}
+
+<h2>Simulação Completa</h2>
+
+<section>
+	<h3>Consumo de Energia</h3>
+	<div>
+		<p><strong>Média durante a Semana:</strong> @Model.EnergyConsumptionViewModel.MediaSemana kWh</p>
+		<p><strong>Média durante o Fim de Semana:</strong> @Model.EnergyConsumptionViewModel.MediaFimSemana kWh</p>
+		<p><strong>Média Anual:</strong> @Model.EnergyConsumptionViewModel.MediaAnual kWh</p>
+		<p><strong>Consumo Total:</strong> @Model.EnergyConsumptionViewModel.ConsumoTotal kWh</p>
+	</div>
+	<div>
+		<h4>Meses de Ocupação</h4>
+		<ul>
+			@foreach (var mes in Model.EnergyConsumptionViewModel.MesesOcupacao)
+			{
+				<li>@mes</li>
+			}
+		</ul>
+	</div>
+</section>
+
+<section>
+	<h3>Tarifa</h3>
+	<div>
+		<p><strong>Tipo de Tarifa:</strong> @Model.TarifaViewModel.TipoDeTarifaEscolhida</p>
+		<p><strong>Preço do kWh:</strong> @Model.TarifaViewModel.PrecoKWh.ToString("C")</p>
+	</div>
+</section>
+
+<section>
+	<h3>Detalhamento Mensal</h3>
+	<table class="table">
+		<thead>
+		<tr>
+			<th>Mês</th>
+			<th>Consumo (kWh)</th>
+			<th>Custo (R$)</th>
+		</tr>
+		</thead>
+		<tbody>
+		@foreach (var mesConsumo in Model.ResultadoTarifaViewModel.ConsumoMensal)
+		{
+			<tr>
+				<td>@mesConsumo.Mes</td>
+				<td>@mesConsumo.Consumo</td>
+				<td>@mesConsumo.Custo.ToString("C")</td>
+			</tr>
+		}
+		</tbody>
+	</table>
+	<div>
+		<p><strong>Consumo Total Mensal:</strong> @Model.ResultadoTarifaViewModel.ConsumoTotal kWh</p>
+		<p><strong>Valor Anual:</strong> @Model.ResultadoTarifaViewModel.ValorAnual.ToString("C")</p>
+	</div>
+</section>

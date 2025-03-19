@@ -62,12 +62,12 @@ namespace LightInvest.Models
 
 		public void CalcularConsumoMensal()
 		{
-			// Certificar-se de que as médias foram calculadas
+			// Certificar-se de que as médias foram calculadas antes
 			CalcularMedias();
 
 			if (MesesOcupacao.Any())
 			{
-				decimal consumoTotalMensal = 0;
+				decimal consumoTotalMensal = 0; // Inicializa corretamente o acumulador
 
 				foreach (var mes in MesesOcupacao)
 				{
@@ -76,14 +76,13 @@ namespace LightInvest.Models
 					decimal consumoMes = Math.Round(consumoSemana * semanasNoMes, 1);
 
 					consumoTotalMensal += consumoMes;
-
-					Console.WriteLine($"Mês: {mes}, Número de Semanas: {semanasNoMes}, Consumo: {consumoMes}");
 				}
 
 				ConsumoTotal = Math.Round(consumoTotalMensal, 1);
+
 			}
 		}
-
+	
 
 		// Função para calcular o número de semanas em um mês
 		public int ObterNumeroDeSemanasNoMes(string mes)

@@ -60,6 +60,15 @@ namespace LightInvest.Controllers
 				return View(model);
 			}
 
+			var potenciaPainel = await _context.PotenciasDePaineisSolares
+				.FirstOrDefaultAsync(p => p.Id == model.PotenciaId);  // Busca a potência correta pelo ID
+
+			if (potenciaPainel == null)
+			{
+				ModelState.AddModelError("", "Erro: Potência do painel não encontrada.");
+				return View(model);
+			}
+
 			var dadosInstalacao = new DadosInstalacao
 			{
 				UserEmail = user.Email,
@@ -67,6 +76,7 @@ namespace LightInvest.Controllers
 				ModeloPainelId = model.ModeloPainelId,
 				ModeloPainel = modeloPainel,
 				PotenciaId = model.PotenciaId,
+				Potencia = potenciaPainel,  // Atribui a potência corretamente
 				NumeroPaineis = model.NumeroPaineis,
 				Inclinacao = model.Inclinacao,
 				Dificuldade = model.Dificuldade,
