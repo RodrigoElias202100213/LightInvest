@@ -4,16 +4,36 @@
     ViewBag.Title = "Dashboard ROI";
 }
 
-<h2>Simulação do ROI</h2>
+<div class="roi-container">
+    <div class="roi-box">
+        <div class="container">
+            <div class="sidebar">
+                <div class="steps">
+                    <div class="step">1</div>
+                    <div class="step">2</div>
+                </div>
+            </div>
+            <div class="content">
+                <h2>Simulação de ROI</h2>
 
-@*
-    <p>A faltar paragrafo a explicar </p>
-*@
+                <div>
+                    <canvas id="roiChart" width="900" height="500"></canvas>
+                </div>
+                <div id="metrics">
+                    <p><strong>Data do Cálculo:</strong> @Model.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
+                    <p><strong>Anos até Retorno do Investimento:</strong> @ViewBag.Resultado</p>
+                    <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
+                </div>
+
+                <div id="buttons">
+                    <a href="@Url.Action("Index", "ROICalculator")" id="btn-v">Voltar</a>
+                    <a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
+                </div>
+
+            </div>
 
 
-<div>
-    <canvas id="roiChart" width="900" height="500"></canvas>
-</div>
+
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -56,29 +76,91 @@
     </script>
 }
 
-<div id="metrics">
-    <p><strong>Data do Cálculo:</strong> @Model.CurrentRoi.DataCalculado.ToString("dd/MM/yyyy")</p>
-    <p><strong>Anos até Retorno do Investimento:</strong> @ViewBag.Resultado</p>
-    <p><strong>Custo de Instalação:</strong> @Model.CurrentRoi.CustoInstalacao.ToString("C")</p>
-</div>
 
-<div id="buttons">
-    <a href="@Url.Action("Index", "ROICalculator")" id="btn-v">Voltar</a>
-    <a href="@Url.Action("Index", "Home")" id="btn-pp">Página Principal</a>
-</div>
 
 <style>
-    h2 {
-        text-align: center;
-        font-size: 2.5rem;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #065A66;
-        font-weight: bold;
-        margin-bottom:5%;
+
+    .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
     }
 
+    .sidebar {
+        width: 20%;
+        background-color: #d3e1e3;
+        padding: 20px;
+        position: relative;
+    }
+
+    .steps {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #aaa;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin: 30px 0;
+        position: relative;
+    }
+
+.step:first-child, .step:nth-child(2) {
+    background-color: #065A66;
+}
+
+    .step:first-child::after {
+        background-color: #065A66;
+        height: 150px;
+        bottom: -150px;
+    }
+
+.step:nth-child(2) {
+    margin-top: 90px;
+}
+
+
+.step::after {
+    content: "";
+    width: 2px;
+    height: 90px;
+    background-color: #aaa;
+    position: absolute;
+    bottom: -90px;
+    transform: translateX(-50%);
+}
+
+
+    .step:last-child::after {
+        display: none;
+    }
+
+        .content {
+            width: 100%;
+            padding: 20px;
+        }
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #065A66;
+    font-weight: bold;
+    margin-bottom:5%;
+}
+
     #metrics {
-    margin-left:13%;
     margin-bottom:5%;
     }
 
