@@ -14,8 +14,9 @@ namespace LightInvest.Models
 
 	public class Tarifa
 	{
-			[Required]
-			public decimal PrecoKWh { get; set; }
+		[Required]
+		[Range(0.01, double.MaxValue, ErrorMessage = "O preço por kWh deve ser maior que zero.")]
+		public decimal PrecoKWh { get; set; }
 
 			[Key] public int Id { get; set; }
 
@@ -25,8 +26,8 @@ namespace LightInvest.Models
 
 
 
-			[Required]
-			public TipoTarifa Tipo { get; set; }
+		[Required(ErrorMessage = "Por favor, selecione o tipo de tarifa.")]
+		public TipoTarifa Tipo { get; set; }
 
 			public decimal PrecoFinal => PrecoKWh + ObterValorExtra();
 

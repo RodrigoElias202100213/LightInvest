@@ -23,7 +23,7 @@ namespace LightInvest.Models
 		public decimal Inclinacao { get; set; }
 
 		[Required(ErrorMessage = "A dificuldade de instalação é obrigatória.")]
-		public DificuldadeInstalacao Dificuldade { get; set; }
+		public DificuldadeInstalacao? Dificuldade { get; set; } = null;
 		
 		public decimal PrecoInstalacao { get; set; }
 

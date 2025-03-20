@@ -45,8 +45,7 @@ namespace LightInvest.Models
 		[Range(0, 90)] 
 		public decimal Inclinacao { get; set; }
 
-		[Required]
-		public DificuldadeInstalacao Dificuldade { get; set; }
+		[Required] public DificuldadeInstalacao? Dificuldade { get; set; } = null;
 
 
 		public decimal PrecoInstalacao { get; set; }

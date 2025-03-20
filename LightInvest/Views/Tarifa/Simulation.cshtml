@@ -21,8 +21,22 @@
 
 				<div class="left">
 					<form asp-action="Simulation" method="post">
+						
+						
+						<!-- Exibindo erros de validação manualmente -->
+						@if (!ViewData.ModelState.IsValid)
+						{
+							<div class="alert alert-danger">
+								<ul>
+									@foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+									{
+										<li>@error.ErrorMessage</li>
+									}
+								</ul>
+							</div>
+						}
 
-                        <div class="form-group">
+						<div class="form-group">
                             <label asp-for="PrecoKWh"><strong>1. Preço por kWh:</strong></label>
                             <p>Insira o valor do preço por KWh da sua tarifa de eletricidade (em €)</p>
                             <input asp-for="PrecoKWh" class="form-control" />
@@ -30,15 +44,20 @@
                         </div>
 
 						<div class="form-group">
-                            <label asp-for="TipoDeTarifaEscolhida"><strong>2. Tipo da Tarifa:</strong></label>
+							<label asp-for="TipoDeTarifaEscolhida"><strong>2. Tipo da Tarifa:</strong></label>
 							<select asp-for="TipoDeTarifaEscolhida" class="form-control">
+								<option value="">Escolha uma tarifa</option> <!-- Opção inicial -->
 								@foreach (var tipo in Model.TiposDeTarifa)
 								{
-									<option value="@tipo" selected="@(tipo == Model.TipoDeTarifaEscolhida.ToString() ? "selected" : null)">@tipo</option>
+									<option value="@tipo" selected="@(Model.TipoDeTarifaEscolhida?.ToString() == tipo ? "selected" : null)">
+										@tipo
+									</option>
 								}
 							</select>
 							<span asp-validation-for="TipoDeTarifaEscolhida" class="text-danger"></span>
 						</div>
+
+
 
 						<div id="horizontal-button">
                             <a href="@Url.Action("Simulation", "EnergySimulation")" class="btn">Anterior</a>
@@ -47,12 +66,6 @@
 					
                     </form>
 				</div>
-                @if (ViewBag.PrecoFinal != null)
-                {
-                    <div class="alert">
-                        <strong>Preço Final:</strong> @ViewBag.PrecoFinal
-                    </div>
-                }
 			</div>
 		</div>
 	</div>

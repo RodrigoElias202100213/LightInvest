@@ -3,73 +3,89 @@
 @{
 	ViewData["Title"] = "Consumo de Energia";
 }
+@{
+    ViewData["Title"] = "Consumo de Energia";
+}
 
 <div class="container">
-	<div class="sidebar">
-		<div class="steps">
-			<div class="step">1</div>
-			<div class="step">2</div>
-			<div class="step">3</div>
-			<div class="step">4</div>
-		</div>
-	</div>
-	<div class="content">
-		<h2>Formulário Consumo de Energia</h2>
+    <div class="sidebar">
+        <div class="steps">
+            <div class="step">1</div>
+            <div class="step">2</div>
+            <div class="step">3</div>
+            <div class="step">4</div>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Formulário Consumo de Energia</h2>
+       
+        @if (!ViewData.ModelState.IsValid)
+        {
+	        <div class="alert alert-danger">
+		        <ul>
+			        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+			        {
+				        <li>@error.ErrorMessage</li>
+			        }
+		        </ul>
+	        </div>
+        }
 
-		<form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
+        <form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
 
-			<!-- Consumo Horário Dias de Semana -->
-			<div class="section">
-				<h5>1. Consumo Médio Horário: Segunda-feira a Sexta-feira</h5>
-				<div class="horario">
-					@for (int i = 0; i < 24; i++)
-					{
-						<div class="hora">
-							<span>@i h</span>
-							<input type="number" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01"
-								   value="@(Model.ConsumoDiaSemana[i] > 0 ? Model.ConsumoDiaSemana[i].ToString("F2") : "")" />
-						</div>
-					}
-				</div>
-			</div>
+            <!-- Consumo Horário Dias de Semana -->
+            <div class="section">
+                <h5>1. Consumo Médio Horário: Segunda-feira a Sexta-feira</h5>
+               
+                <div class="horario">
+                    @for (int i = 0; i < 24; i++)
+                    {
+                        <div class="hora">
+                            <span>@i h</span>
+                            <input type="number" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01"
+                                   value="@(Model.ConsumoDiaSemana[i] > 0 ? Model.ConsumoDiaSemana[i].ToString("F2") : "")" />
+                        </div>
+                    }
+                </div>
+            </div>
 
-			<!-- Consumo Horário Fins de Semana -->
-			<div class="section">
-				<h5>2. Consumo Médio Horário: Feriados/Fim de Semana</h5>
-				<div class="horario">
-					@for (int i = 0; i < 24; i++)
-					{
-						<div class="hora">
-							<span>@i h</span>
-							<input type="number" asp-for="ConsumoFimSemana[i]" min="0" step="0.01"
-								   value="@(Model.ConsumoFimSemana[i] > 0 ? Model.ConsumoFimSemana[i].ToString("F2") : "")" />
-						</div>
-					}
-				</div>
-			</div>
+            <!-- Consumo Horário Fins de Semana -->
+            <div class="section">
+                <h5>2. Consumo Médio Horário: Feriados/Fim de Semana</h5>
+                <div class="horario">
+                    @for (int i = 0; i < 24; i++)
+                    {
+                        <div class="hora">
+                            <span>@i h</span>
+                            <input type="number" asp-for="ConsumoFimSemana[i]" min="0" step="0.01"
+                                   value="@(Model.ConsumoFimSemana[i] > 0 ? Model.ConsumoFimSemana[i].ToString("F2") : "")" />
+                        </div>
+                    }
+                </div>
+            </div>
 
-			<!--Ocupação Mensal-->
-			<div class="section">
-				<h5>3. Ocupação Mensal</h5>
-				<div class="month-checkboxes">
-					@foreach (var mes in Enum.GetNames(typeof(Meses)))
-					{
-						<label>
-							<input type="checkbox" name="MesesOcupacao" value="@mes"
-							@(Model.MesesOcupacao.Contains(mes) ? "checked" : "") />
-							@mes
-						</label>
-					}
-				</div>
-			</div>
-			<div id="btn-container">
+            <!-- Ocupação Mensal -->
+            <div class="section">
+                <h5>3. Ocupação Mensal</h5>
+                <div class="month-checkboxes">
+                    @foreach (var mes in Enum.GetNames(typeof(Meses)))
+                    {
+                        <label>
+                            <input type="checkbox" name="MesesOcupacao" value="@mes"
+                            @(Model.MesesOcupacao.Contains(mes) ? "checked" : "") />
+                            @mes
+                        </label>
+                    }
+                </div>
+            </div>
+
+            <div id="btn-container">
                 <a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
-				<button type="submit" class="btn btn-primary">Salvar e Continuar</button>
-			</div>
+                <button type="submit" class="btn btn-primary">Salvar e Continuar</button>
+            </div>
 
-		</form>
-
-	</div>
+        </form>
+    </div>
 </div>
 
 <script>

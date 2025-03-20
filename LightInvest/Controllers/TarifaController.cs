@@ -61,16 +61,19 @@ namespace LightInvest.Controllers
 				return View(model);
 			}
 
-			var tarifa = new Tarifa
+			if (model.TipoDeTarifaEscolhida != null)
 			{
-				UserEmail = user.Email,
-				PrecoKWh = model.PrecoKWh,
-				Tipo = model.TipoDeTarifaEscolhida
-			};
+				var tarifa = new Tarifa
+				{
+					UserEmail = user.Email,
+					PrecoKWh = model.PrecoKWh,
+					Tipo = model.TipoDeTarifaEscolhida.Value // Agora garantimos que não será null
+				};
 
-			await SaveTarifaToDatabase(user.Email, tarifa);
+				await SaveTarifaToDatabase(user.Email, tarifa);
 
-			TempData["PrecoFinal"] = tarifa.PrecoFinal.ToString("F2");
+				TempData["PrecoFinal"] = tarifa.PrecoFinal.ToString("F2");
+			}
 
 			return RedirectToAction("Create", "DadosInstalacao");
 		}

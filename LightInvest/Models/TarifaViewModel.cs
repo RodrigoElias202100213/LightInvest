@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace LightInvest.Models
 {
 	public class TarifaViewModel
 	{
-		public TipoTarifa TipoDeTarifaEscolhida { get; set; }
+		[Required(ErrorMessage = "Selecione um tipo de tarifa.")]
+		public TipoTarifa? TipoDeTarifaEscolhida { get; set; }
+
+		[Required(ErrorMessage = "Informe o preço por kWh.")]
+		[Range(0.01, double.MaxValue, ErrorMessage = "O preço por kWh deve ser maior que zero.")]
 		public decimal PrecoKWh { get; set; }
+
 		public List<string> TiposDeTarifa { get; set; }
 
 		public TarifaViewModel()

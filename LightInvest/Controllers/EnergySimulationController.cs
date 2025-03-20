@@ -52,12 +52,23 @@ namespace LightInvest.Controllers
 		{
 			EnsureValidData(model);
 
+			if (model.ConsumoDiaSemana.All(c => c == 0) && model.ConsumoFimSemana.All(c => c == 0))
+			{
+				ModelState.AddModelError("Consumo", "Por favor, preencha os campos de consumo.");
+			}
+
+			if (!ModelState.IsValid)
+			{
+				return View(model);
+			}
+
 			var user = await GetLoggedInUserAsync();
 			if (user == null)
 			{
 				ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
 				return View("Error", model);
 			}
+
 
 			var consumo = new EnergyConsumption
 			{

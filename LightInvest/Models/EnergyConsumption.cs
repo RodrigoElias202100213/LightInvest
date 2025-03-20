@@ -6,16 +6,29 @@ namespace LightInvest.Models
 		public int Id { get; set; }
 		public string UserEmail { get; set; }
 
-		[Required]
+		[Required(ErrorMessage = "O consumo durante a semana é obrigatório.")]
+		[MinLength(24, ErrorMessage = "É necessário informar os 24 valores de consumo diário.")]
+		[MaxLength(24, ErrorMessage = "A lista não pode ter mais de 24 valores.")]
 		public List<decimal> ConsumoDiaSemana { get; set; }
-		[Required]
+
+		[Required(ErrorMessage = "O consumo no fim de semana é obrigatório.")]
+		[MinLength(24, ErrorMessage = "É necessário informar os 24 valores de consumo do fim de semana.")]
+		[MaxLength(24, ErrorMessage = "A lista não pode ter mais de 24 valores.")]
 		public List<decimal> ConsumoFimSemana { get; set; }
-		[Required]
+
+		[Required(ErrorMessage = "Selecione pelo menos um mês de ocupação.")]
 		public List<string> MesesOcupacao { get; set; }
 
+		[Range(0, double.MaxValue, ErrorMessage = "A média semanal deve ser um valor positivo.")]
 		public decimal MediaSemana { get; set; }
+
+		[Range(0, double.MaxValue, ErrorMessage = "A média do fim de semana deve ser um valor positivo.")]
 		public decimal MediaFimSemana { get; set; }
+
+		[Range(0, double.MaxValue, ErrorMessage = "A média anual deve ser um valor positivo.")]
 		public decimal MediaAnual { get; set; }
+
+		[Range(0, double.MaxValue, ErrorMessage = "O consumo total deve ser um valor positivo.")]
 		public decimal ConsumoTotal { get; set; }
 
 		public EnergyConsumption()
