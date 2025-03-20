@@ -1,1 +1,6 @@
 .vs/
+**/staticwebassets.runtime.json
+obj/
+obj/staticwebassets.runtime.json
+
+bin/
