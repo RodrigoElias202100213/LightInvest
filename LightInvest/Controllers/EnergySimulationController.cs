@@ -8,8 +8,6 @@ namespace LightInvest.Controllers
 	public class EnergySimulationController : Controller
 	{
 		private readonly ApplicationDbContext _context;
-
-		// Removemos o parâmetro Tarifa tarifa do construtor
 		public EnergySimulationController(ApplicationDbContext context)
 		{
 			_context = context;

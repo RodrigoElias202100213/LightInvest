@@ -20,7 +20,6 @@ namespace LightInvest.Controllers
 			_context = context;
 		}
 
-		// Módulo 1: Processa os dados de EnergyConsumption
 		private async Task<EnergyConsumption> ProcessarEnergyConsumptionAsync(string userEmail)
 		{
 			var consumo = await _context.EnergyConsumptions.FirstOrDefaultAsync(c => c.UserEmail == userEmail);
@@ -45,16 +44,15 @@ namespace LightInvest.Controllers
 		{
 			var tarifa = await _context.Tarifas.FirstOrDefaultAsync(t => t.UserEmail == userEmail);
 			if (tarifa == null)
-				throw new Exception("Tarifa não encontrada para o usuário.");
+				throw new Exception("Tarifa não encontrada para o utilizador.");
 
 			var resultado = new ResultadoTarifaViewModel
 			{
 				TarifaEscolhida = tarifa.Tipo.ToString(),
-				PrecoKwh = tarifa.PrecoFinal, // Assume que a propriedade PrecoFinal já aplica o adicional
+				PrecoKwh = tarifa.PrecoFinal, 
 				MesesOcupacao = consumo.MesesOcupacao
 			};
 
-			// Calcula o consumo e custo para cada mês considerando o número de semanas
 			foreach (var mes in consumo.MesesOcupacao)
 			{
 				int semanas = consumo.ObterNumeroDeSemanasNoMes(mes);
@@ -79,12 +77,11 @@ namespace LightInvest.Controllers
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
 			if (string.IsNullOrEmpty(userEmail))
-				return BadRequest("Usuário não autenticado.");
+				return BadRequest("Utilizador não autenticado.");
 
-			// Módulo 1: Processar o consumo de energia
+	
 			var consumo = await ProcessarEnergyConsumptionAsync(userEmail);
 
-			// Módulo 2: Processar a tarifa e calcular custo mensal/anual
 			ResultadoTarifaViewModel resultadoTarifa;
 			Tarifa tarifaForVM;
 			try
@@ -97,7 +94,6 @@ namespace LightInvest.Controllers
 				return BadRequest(ex.Message);
 			}
 
-			// Buscar os dados de instalação do usuário
 			var dadosInstalacao = await _context.DadosInstalacao
 				.Include(d => d.Cidade)
 				.Include(d => d.ModeloPainel)
@@ -105,35 +101,28 @@ namespace LightInvest.Controllers
 				.FirstOrDefaultAsync(d => d.UserEmail == userEmail);
 
 			if (dadosInstalacao == null)
-				return BadRequest("Nenhum dado de instalação encontrado para este usuário.");
+				return BadRequest("Nenhum dado de instalação encontrado para este utilizador.");
 
-			// Cálculo da energia gerada mensalmente pelos painéis
-			decimal potenciaPainel = dadosInstalacao.Potencia.Potencia; // em Watts
+			decimal potenciaPainel = dadosInstalacao.Potencia.Potencia; 
 			int numeroPaineis = dadosInstalacao.NumeroPaineis;
-			decimal horasSolDiarias = 5m; // Valor fixo (ajustável conforme região)
+			decimal horasSolDiarias = 5m;
 			decimal diasNoMes = 30m;
-
-			// Energia gerada mensal (em kWh)
 			decimal energiaGeradaMensal = (potenciaPainel * numeroPaineis * horasSolDiarias * diasNoMes) / 1000;
-			// Economia mensal (em R$), usando o preço do kWh da tarifa
 			decimal economiaMensal = energiaGeradaMensal * tarifaForVM.PrecoKWh;
-			// Economia anual
 			int mesesOcupados = consumo.MesesOcupacao.Count;
 			decimal economiaAnual = economiaMensal * mesesOcupados;
 
-			// Cálculo do ROI:
-			// Fórmula: ROI = Custo da Instalação / (Economia Anual - Custo de Manutenção Anual)
 			decimal custoInstalacao = dadosInstalacao.PrecoInstalacao;
-			decimal custoManutencaoAnual = 500m; // Valor fixo de manutenção (pode ser parametrizado)
+			decimal custoManutencaoAnual = 500m; 
 			decimal roiValue = custoInstalacao / (economiaAnual - custoManutencaoAnual);
 
-			// Inserir os dados do ROI na base de dados
+
 			var roiData = new RoiCalculator
 			{
 				UserEmail = userEmail,
 				CustoInstalacao = custoInstalacao,
 				CustoManutencaoAnual = custoManutencaoAnual,
-				ConsumoEnergeticoMedio = consumo.ConsumoTotal / 12, // média mensal
+				ConsumoEnergeticoMedio = consumo.ConsumoTotal / 12, 
 				ConsumoEnergeticoRede = consumo.ConsumoTotal,
 				RetornoEconomia = economiaAnual,
 				ROI = roiValue,
@@ -143,12 +132,8 @@ namespace LightInvest.Controllers
 			_context.ROICalculators.Add(roiData);
 			await _context.SaveChangesAsync();
 
-			// Determinar quantos anos simular com base no ROI
 			int anosSimulados = Math.Max(1, (int)Math.Ceiling(roiValue));
-			// Opcional: acrescente um ano extra para visualização
-			// anosSimulados++;
 
-			// Agrupar a evolução do investimento por ano
 			var retornoInvestimentoPorAno = new List<RetornoInvestimentoAno>();
 			decimal saldoAcumulado = -custoInstalacao;
 			for (int ano = 1; ano <= anosSimulados; ano++)
@@ -159,7 +144,6 @@ namespace LightInvest.Controllers
 					saldoAcumulado += economiaMensal;
 					investimentoAno.Meses.Add(new RetornoInvestimentoMes
 					{
-						// Converte o número do mês para seu nome (ex.: 1 -> "Janeiro")
 						Mes = ObterNomeDoMes(mes),
 						EnergiaGerada = energiaGeradaMensal,
 						EconomiaMensal = economiaMensal,
@@ -169,7 +153,6 @@ namespace LightInvest.Controllers
 				retornoInvestimentoPorAno.Add(investimentoAno);
 			}
 
-			// Montar o ViewModel da simulação completa
 			var simulacao = new SimulacaoCompletaViewModel
 			{
 				EnergyConsumptionViewModel = new EnergyConsumptionViewModel
@@ -198,8 +181,6 @@ namespace LightInvest.Controllers
 
 			return View("SimulacaoCompleta", simulacao);
 		}
-
-		// Método auxiliar para converter o número do mês para o nome do mês
 		private string ObterNomeDoMes(int numeroMes)
 		{
 			string[] meses = { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
@@ -209,37 +190,30 @@ namespace LightInvest.Controllers
 
 		public async Task<IActionResult> ExportPDF()
 		{
-			// Obter os dados que serão exportados (por exemplo, chamando o método Simular ou recuperando o ViewModel)
+			
 			var userEmail = HttpContext.Session.GetString("UserEmail");
 			if (string.IsNullOrEmpty(userEmail))
-				return BadRequest("Usuário não autenticado.");
+				return BadRequest("Utilizador não autenticado.");
 
-			var viewModel = await GerarViewModelCompleto(userEmail); // implemente este método para compor o seu ViewModel
+			var viewModel = await GerarViewModelCompleto(userEmail); 
 
-			// Aqui você pode utilizar uma biblioteca como o Rotativa, iTextSharp ou similar para gerar o PDF.
-			// Exemplo com Rotativa:
-			// return new ViewAsPdf("SimulacaoCompletaPDF", viewModel) { FileName = "Simulacao.pdf" };
-
-			// Se não utilizar uma biblioteca, retorne um placeholder:
 			return Content("Funcionalidade de exportação para PDF não implementada.");
 		}
-		// Exemplo: Exportar CSV
+		
 		public async Task<IActionResult> ExportCSV()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
 			if (string.IsNullOrEmpty(userEmail))
-				return BadRequest("Usuário não autenticado.");
+				return BadRequest("Utilizador não autenticado.");
 
 			var viewModel = await GerarViewModelCompleto(userEmail);
 
-			// Cria uma string CSV (exemplo simplificado – adapte conforme os dados que deseja exportar)
 			var csv = new StringBuilder();
 			csv.AppendLine("Seção,Valor");
 			csv.AppendLine($"Média Semana,{viewModel.EnergyConsumptionViewModel.MediaSemana}");
 			csv.AppendLine($"Média Fim de Semana,{viewModel.EnergyConsumptionViewModel.MediaFimSemana}");
 			csv.AppendLine($"Média Anual,{viewModel.EnergyConsumptionViewModel.MediaAnual}");
 			csv.AppendLine($"Consumo Total,{viewModel.EnergyConsumptionViewModel.ConsumoTotal}");
-			// Acrescente os demais dados conforme necessário...
 
 			byte[] buffer = Encoding.UTF8.GetBytes(csv.ToString());
 			return File(buffer, "text/csv", "Simulacao.csv");
@@ -249,12 +223,10 @@ namespace LightInvest.Controllers
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
 			if (string.IsNullOrEmpty(userEmail))
-				return BadRequest("Usuário não autenticado.");
+				return BadRequest("Utilizador não autenticado.");
 
 			var viewModel = await GerarViewModelCompleto(userEmail);
 
-			// Para exportar para Excel, você pode usar bibliotecas como o EPPlus ou ClosedXML.
-			// Exemplo simplificado usando ClosedXML:
 			using (var workbook = new ClosedXML.Excel.XLWorkbook())
 			{
 				var ws = workbook.Worksheets.Add("Simulação Completa");
@@ -269,7 +241,7 @@ namespace LightInvest.Controllers
 				ws.Cell(4, 2).Value = viewModel.EnergyConsumptionViewModel.MediaAnual;
 				ws.Cell(5, 1).Value = "Consumo Total";
 				ws.Cell(5, 2).Value = viewModel.EnergyConsumptionViewModel.ConsumoTotal;
-				// Adicione os demais dados conforme necessário...
+				
 
 				using (var stream = new MemoryStream())
 				{
@@ -282,13 +254,8 @@ namespace LightInvest.Controllers
 			}
 		}
 		
-		
-		// Método auxiliar para montar o ViewModel completo (pode ser o mesmo que você usa na ação Simular)
 		private async Task<SimulacaoCompletaViewModel> GerarViewModelCompleto(string userEmail)
 		{
-			// Aqui você pode chamar os métodos ProcessarEnergyConsumptionAsync, ProcessarTarifaAsync, etc.
-			// e montar o SimulacaoCompletaViewModel conforme já feito na ação Simular.
-			// Exemplo:
 			var consumo = await ProcessarEnergyConsumptionAsync(userEmail);
 			ResultadoTarifaViewModel resultadoTarifa = await ProcessarTarifaAsync(userEmail, consumo);
 			var dadosInstalacao = await _context.DadosInstalacao
@@ -297,7 +264,6 @@ namespace LightInvest.Controllers
 				.Include(d => d.Potencia)
 				.FirstOrDefaultAsync(d => d.UserEmail == userEmail);
 
-			// Suponha que você já tenha calculado ROI e RetornoInvestimentoPorAno anteriormente
 			var roiData = await _context.ROICalculators.FirstOrDefaultAsync(r => r.UserEmail == userEmail);
 			var roiDashboard = new RoiCalculatorDashboardViewModel
 			{
@@ -308,18 +274,18 @@ namespace LightInvest.Controllers
 					.ToListAsync()
 			};
 
-			// Aqui você deverá recriar a lógica de cálculo da evolução do saldo acumulado e agrupar em anos...
+			
 			var simulacao = new SimulacaoCompletaViewModel
 			{
 				EnergyConsumptionViewModel = new EnergyConsumptionViewModel
 				{
-					// Preencha com os dados necessários
+					// Preencher com os dados
 				},
 				TarifaViewModel = new TarifaViewModel(await _context.Tarifas.FirstOrDefaultAsync(t => t.UserEmail == userEmail)),
 				ResultadoTarifaViewModel = resultadoTarifa,
 				DadosInstalacao = dadosInstalacao,
 				ROI = roiDashboard,
-				// Preencha a propriedade RetornoInvestimentoPorAno conforme sua lógica
+				
 			};
 
 			return simulacao;
