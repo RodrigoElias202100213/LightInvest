@@ -39,7 +39,7 @@
                                 <option value="">Selecione o modelo</option>
                                 @foreach (var modelo in Model.ModelosDePaineis)
                                 {
-                                    <option value="@modelo.Id">@modelo.ModeloNome - R$ @modelo.Preco</option>
+                                    <option value="@modelo.Id">@modelo.ModeloNome - @modelo.Preco €</option>
                                 }
                             </select>
                             <span class="text-danger" asp-validation-for="ModeloPainelId"></span>
