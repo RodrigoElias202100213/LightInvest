@@ -30,14 +30,14 @@ namespace LightInvest.Models
 			if (fimDeSemana)
 			{
 				if (hora >= 8 && hora <= 21)
-					return consumo * 0.8m; // 20% de desconto
+					return consumo * 0.8m; 
 				else
-					return consumo * 0.6m; // 40% de desconto
+					return consumo * 0.6m;
 			}
 			else
 			{
 				if (hora >= 22 || hora <= 7)
-					return consumo * 0.7m; // 30% de desconto
+					return consumo * 0.7m; 
 				else
 					return consumo;
 			}
@@ -62,12 +62,11 @@ namespace LightInvest.Models
 
 		public void CalcularConsumoMensal()
 		{
-			// Certificar-se de que as médias foram calculadas antes
 			CalcularMedias();
 
 			if (MesesOcupacao.Any())
 			{
-				decimal consumoTotalMensal = 0; // Inicializa corretamente o acumulador
+				decimal consumoTotalMensal = 0; 
 
 				foreach (var mes in MesesOcupacao)
 				{
@@ -83,19 +82,15 @@ namespace LightInvest.Models
 			}
 		}
 	
-
-		// Função para calcular o número de semanas em um mês
 		public int ObterNumeroDeSemanasNoMes(string mes)
 		{
 			var dataInicio = new DateTime(DateTime.Now.Year, MesParaNumero(mes), 1);
-			var dataFim = dataInicio.AddMonths(1).AddDays(-1); // Último dia do mês
-			int diasNoMes = (dataFim - dataInicio).Days + 1; // Conta os dias no mês
+			var dataFim = dataInicio.AddMonths(1).AddDays(-1); 
+			int diasNoMes = (dataFim - dataInicio).Days + 1; 
 
-			// Retorna o número de semanas arredondando para cima
 			return (int)Math.Ceiling(diasNoMes / 7.0);
 		}
 
-		// Função para mapear o nome do mês para seu número
 		public int MesParaNumero(string mes)
 		{
 			switch (mes.ToLower())

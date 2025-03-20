@@ -35,13 +35,13 @@ namespace LightInvest.Data
 				.HasOne(d => d.Potencia)
 				.WithMany()
 				.HasForeignKey(d => d.PotenciaId)
-				.OnDelete(DeleteBehavior.NoAction);  // Impede a exclusão em cascata para PotenciaPainelSolar
+				.OnDelete(DeleteBehavior.NoAction);  
 
 			modelBuilder.Entity<PotenciaPainelSolar>()
 				.HasOne(p => p.ModeloPainelSolar)
 				.WithMany(m => m.Potencias)
 				.HasForeignKey(p => p.ModeloPainelId)
-				.OnDelete(DeleteBehavior.Restrict);  // Impede exclusão em cascata do ModeloPainelSolar
+				.OnDelete(DeleteBehavior.Restrict); 
 
 			// Cidades
 			modelBuilder.Entity<Cidade>().HasData(

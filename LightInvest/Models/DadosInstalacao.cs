@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LightInvest.Models
 {
-	// Enum para dificuldade de instalação
 	public enum DificuldadeInstalacao
 	{
 		Facil,

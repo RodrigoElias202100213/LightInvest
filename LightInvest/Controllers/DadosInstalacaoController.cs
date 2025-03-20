@@ -46,7 +46,7 @@ namespace LightInvest.Controllers
 			var user = await ObterUsuarioLogadoAsync();
 			if (user == null)
 			{
-				ModelState.AddModelError(string.Empty, "Erro: Nenhum usuário autenticado.");
+				ModelState.AddModelError(string.Empty, "Erro: Nenhum utilizador autenticado.");
 				model = await CarregarViewModelAsync();
 				return View(model);
 			}
@@ -61,7 +61,7 @@ namespace LightInvest.Controllers
 			}
 
 			var potenciaPainel = await _context.PotenciasDePaineisSolares
-				.FirstOrDefaultAsync(p => p.Id == model.PotenciaId);  // Busca a potência correta pelo ID
+				.FirstOrDefaultAsync(p => p.Id == model.PotenciaId); 
 
 			if (potenciaPainel == null)
 			{
@@ -76,18 +76,17 @@ namespace LightInvest.Controllers
 				ModeloPainelId = model.ModeloPainelId,
 				ModeloPainel = modeloPainel,
 				PotenciaId = model.PotenciaId,
-				Potencia = potenciaPainel,  // Atribui a potência corretamente
+				Potencia = potenciaPainel,  
 				NumeroPaineis = model.NumeroPaineis,
 				Inclinacao = model.Inclinacao,
 				Dificuldade = model.Dificuldade,
 			};
 
-			// Atualiza o preço antes de salvar
+			
 			dadosInstalacao.AtualizarPrecoInstalacao();
 
 			await SalvarOuAtualizarDadosInstalacao(dadosInstalacao);
 
-			// Armazena o preço final no TempData para ser exibido na confirmação
 			TempData["PrecoFinal"] = dadosInstalacao.PrecoInstalacao.ToString("F2");
 
 			return RedirectToAction("Confirmacao");
@@ -95,14 +94,14 @@ namespace LightInvest.Controllers
 
 		public IActionResult Confirmacao()
 		{
-			var precoFinal = TempData["PrecoFinal"] as string; // Recuperando o preço final armazenado no TempData
+			var precoFinal = TempData["PrecoFinal"] as string; 
 			if (precoFinal != null)
 			{
-				ViewBag.PrecoFinal = precoFinal;  // Atribuindo o preço final ao ViewBag
+				ViewBag.PrecoFinal = precoFinal; 
 			}
 			else
 			{
-				ViewBag.PrecoFinal = "Preço não calculado";  // Caso o preço não tenha sido calculado ainda
+				ViewBag.PrecoFinal = "Preço não calculado"; 
 			}
 
 			return View();
@@ -142,13 +141,11 @@ namespace LightInvest.Controllers
 
 		private async Task SalvarOuAtualizarDadosInstalacao(DadosInstalacao dadosInstalacao)
 		{
-			// Verifica se já existem dados de instalação para o usuário
 			var dadosExistente = await _context.DadosInstalacao
 				.FirstOrDefaultAsync(d => d.UserEmail == dadosInstalacao.UserEmail);
 
 			if (dadosExistente != null)
 			{
-				// Atualiza os dados existentes
 				dadosExistente.CidadeId = dadosInstalacao.CidadeId;
 				dadosExistente.ModeloPainelId = dadosInstalacao.ModeloPainelId;
 				dadosExistente.ModeloPainel = dadosInstalacao.ModeloPainel;
@@ -158,16 +155,12 @@ namespace LightInvest.Controllers
 				dadosExistente.Dificuldade = dadosInstalacao.Dificuldade;
 				dadosExistente.PrecoInstalacao = dadosInstalacao.PrecoInstalacao;
 
-				// Marca a entidade como modificada
 				_context.DadosInstalacao.Update(dadosExistente);
 			}
 			else
 			{
-				// Adiciona os novos dados de instalação
 				await _context.DadosInstalacao.AddAsync(dadosInstalacao);
 			}
-
-			// Salva as alterações na base de dados
 			await _context.SaveChangesAsync();
 		}
 

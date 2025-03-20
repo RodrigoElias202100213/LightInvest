@@ -17,10 +17,8 @@ namespace LightInvest.Models
 			var tempHtmlFile = Path.Combine(Path.GetTempPath(), "temp.html");
 			var tempPdfFile = Path.Combine(Path.GetTempPath(), "output.pdf");
 
-			// Salvar o conteúdo HTML em um arquivo temporário
 			File.WriteAllText(tempHtmlFile, htmlContent);
 
-			// Executar o wkhtmltopdf para gerar o PDF
 			var startInfo = new ProcessStartInfo
 			{
 				FileName = _wkhtmltopdfPath,
@@ -35,10 +33,8 @@ namespace LightInvest.Models
 				process.WaitForExit();
 			}
 
-			// Ler o PDF gerado e retornar como byte array
 			var pdfBytes = File.ReadAllBytes(tempPdfFile);
 
-			// Excluir os arquivos temporários
 			File.Delete(tempHtmlFile);
 			File.Delete(tempPdfFile);
 
