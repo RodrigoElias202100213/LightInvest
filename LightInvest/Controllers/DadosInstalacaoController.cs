@@ -89,7 +89,7 @@ namespace LightInvest.Controllers
 
 			TempData["PrecoFinal"] = dadosInstalacao.PrecoInstalacao.ToString("F2");
 
-			return RedirectToAction("Confirmacao");
+			return RedirectToAction("Simular","SimulacaoValores");
 		}
 
 		public IActionResult Confirmacao()

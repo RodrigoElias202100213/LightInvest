@@ -56,7 +56,7 @@ namespace LightInvest.Controllers
 			if (user == null)
 			{
 				ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
-				return View("Index", model);
+				return View("Error", model);
 			}
 
 			var consumo = new EnergyConsumption
@@ -79,8 +79,12 @@ namespace LightInvest.Controllers
 			await SaveConsumptionToDatabase(user.Email, consumo);
 
 			StoreTempData(model);
+			return RedirectToAction("Simulation", "Tarifa");
+		}
 
-			return View(model);
+		public IActionResult RedirectToEnergyView()
+		{
+			return RedirectToAction("Simulation", "EnergySimulation");
 		}
 
 		private void EnsureValidData(EnergyConsumptionViewModel model)

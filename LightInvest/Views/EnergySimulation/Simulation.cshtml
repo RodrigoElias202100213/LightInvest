@@ -62,21 +62,11 @@
 					}
 				</div>
 			</div>
-
-			<!-- Estatísticas -->
-			<div class="section">
-				<h5>4. Estatísticas</h5>
-				<p><strong>Segunda a sexta:</strong> média @Model.MediaSemana kWh por dia</p>
-				<p><strong>Fim de semana:</strong> média @Model.MediaFimSemana kWh por dia</p>
-				<p><strong>Base anual:</strong> média @Model.MediaAnual kWh por ano</p>
-			</div>
-
-
 			<div id="btn-container">
-				<button type="submit" class="btn">Calcular</button>
+				<button type="submit" class="btn btn-primary">Salvar e Continuar</button>
 				<a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
-				<a href="@Url.Action("Simulation", "Tarifa")" class="btn">Seguinte</a>
 			</div>
+
 		</form>
 
 	</div>

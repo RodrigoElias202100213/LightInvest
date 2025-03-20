@@ -114,19 +114,19 @@
                         success: function (data) {
                             var consumoSelect = $("#consumoPainelSelect");
                             consumoSelect.empty();
-                            consumoSelect.append('<option value="">Selecione um consumo</option>');
+                            consumoSelect.append('<option value="">Selecione uma Potencia</option>');
                             $.each(data, function (index, item) {
                                 consumoSelect.append('<option value="' + item.id + '">' + item.potencia + ' kWh</option>');
                             });
                         },
                         error: function () {
                             $("#consumoPainelSelect").empty();
-                            $("#consumoPainelSelect").append('<option value="">Erro ao carregar consumos</option>');
+                            $("#consumoPainelSelect").append('<option value="">Erro ao carregar Potencia</option>');
                         }
                     });
                 } else {
                     $("#consumoPainelSelect").empty();
-                    $("#consumoPainelSelect").append('<option value="">Selecione um consumo</option>');
+                    $("#consumoPainelSelect").append('<option value="">Selecione um Potencia</option>');
                 }
             });
         });
