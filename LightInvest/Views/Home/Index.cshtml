@@ -3,7 +3,6 @@
 }
 
 <div class="home-container">
-    <!-- Barra de navegação -->
     <div class="nav">
         <img src="~/images/logo.png" alt="LightInvest Logo" class="logo" />
         <div class="user-section">
@@ -16,18 +15,16 @@
         </div>
     </div>
 
-    <!-- About us -->
     <div class="about">
         <h1>Sobre Nós</h1>
-        <p>O LightInvest é uma plataforma que combina análise financeira, simulações interativas e conteúdos educativos para ajudar indivíduos e empresas a investir de forma inteligente em energias renováveis.</p>
+        <p>O LightInvest ajuda indivíduos e empresas a investir em energias renováveis através de análise financeira, simulações interativas e conteúdos educativos.</p>
     </div>
 
-    <!-- Container com as caixas de opções -->
     <div class="container">
         <div class="box">
             <img src="~/images/roi.png" alt="Ícone Cálculo ROI">
             <h3>Cálculo do ROI</h3>
-            <p>Descubra a rentabilidade do seu investimento em painéis solares. Insira os dados do seu projeto e obtenha uma análise detalhada.</p>
+            <p>Descubra a rentabilidade do seu investimento em painéis solares.</p>
             <form asp-controller="ROICalculator" asp-action="Index">
                 <button type="submit">
                     <img src="~/images/arrow.png" alt="Seta" class="arrow">
@@ -37,8 +34,8 @@
 
         <div class="box">
             <img src="~/images/simulation.png" alt="Ícone Simulação">
-            <h3>Simulação de Tarifas Energéticas</h3>
-            <p>Compare diferentes cenários tarifários e encontre a melhor solução para si.</p>
+            <h3>Simulação Tarifária</h3>
+            <p>Compare cenários tarifários e encontre a melhor solução.</p>
             <form asp-controller="EnergySimulation" asp-action="RedirectToEnergyView">
                 <button type="submit">
                     <img src="~/images/arrow.png" alt="Seta" class="arrow">
@@ -47,9 +44,9 @@
         </div>
 
         <div class="box">
-            <img src="~/images/education.png" alt="Ícone Educação Energética">
+            <img src="~/images/education.png" alt="Ícone Educação">
             <h3>Conteúdos Educativos</h3>
-            <p>Aprofunde o seu conhecimento sobre energias renováveis e eficiência energética, explorando os artigos que temos para si.</p>
+            <p>Aprofunde o seu conhecimento em energias renováveis.</p>
             <img src="~/images/arrow.png" alt="Seta" class="arrow">
         </div>
     </div>
@@ -71,29 +68,28 @@
         height: 0%;
     }
 
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
     .home-container {
         background-color: rgba(216, 231, 225, 0.27);
-        width: 100%;
         min-height: 100vh;
-        top: 0;
-        left: 0;
-        margin: 0%;
+        padding: 10px;
     }
 
     .nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 3px 3px;
+        padding: 5px 10px;
         background-color: #065A66;
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
     }
 
     .logo {
-        height: 130px;
+        height: 90px;
     }
 
     .user-section {
@@ -102,47 +98,47 @@
     }
 
     #username {
-        margin-top: 6%;
+        margin-top: 12%;
         margin-right: 10px;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
         color: white;
     }
 
     .logout {
-        height: 30px;
+        height: 25px;
         cursor: pointer;
     }
 
     .about {
         text-align: center;
-        padding: 40px 20px;
-        margin: 5% 15%;
+        padding: 20px;
+        font-size: 18px;
     }
 
     .about h1 {
-        font-family: 'Vujahday Script', cursive;
         font-size: 50px;
-        margin-bottom: 2%;
-        margin-top: 2%;
+        font-family: 'Vujahday Script', cursive;
+        margin-bottom:3%;
+        margin-top:3%;
     }
 
     .about p {
-        font-size: 25px;
-        color: black;
-        font-family: 'Vollkorn', serif;
+        margin-left:15%;
+        margin-right:15%;
     }
 
     .container {
         display: flex;
         justify-content: center;
-        gap: 20px;
-        padding: 40px 20px;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding: 20px;
     }
 
     .box {
-        width: 300px;
-        padding: 25px;
+        width: 250px;
+        padding: 15px;
         border-radius: 10px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         text-align: center;
@@ -151,37 +147,27 @@
     }
 
     .box img {
-        height: 50px;
-        margin-bottom: 10px;
+        height: 40px;
     }
 
     .box h3 {
-        font-size: 20px;
-        margin-bottom: 11%;
+        font-size: 18px;
+        margin: 10px 0;
         font-family: 'Salsa', cursive;
     }
 
     .box p {
-        font-size: 17px;
-        color: black;
-        margin: 0 3%;
+        font-size: 14px;
     }
 
     .arrow {
-        margin-top: 15px;
+        margin-top: 10px;
         cursor: pointer;
         transform: scale(0.2);
     }
 
     button {
         all: unset;
-        display: inline-block;
         cursor: pointer;
-    }
-
-    button img {
-        display: block;
-        width: auto;
-        height: auto;
     }
 </style>

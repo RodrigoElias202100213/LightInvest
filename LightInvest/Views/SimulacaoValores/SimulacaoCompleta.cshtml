@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Simulação Completa";
 
-    // Preparar dados do gráfico de ROI
     var roiLabels = Model.ROI.History
                         .OrderBy(h => h.DataCalculado)
                         .Select(h => h.DataCalculado.ToString("dd/MM/yyyy"))
@@ -13,7 +12,6 @@
                         .Select(h => h.ROI)
                         .ToList();
 
-    // Preparar dados para o gráfico da evolução do saldo acumulado
     var saldoLabels = new List<string>();
     var saldoValues = new List<decimal>();
     foreach (var ano in Model.RetornoInvestimentoPorAno.OrderBy(a => a.Ano))
@@ -26,123 +24,138 @@
     }
 }
 
-<h2 class="mt-4 text-center">Simulação Completa</h2>
-
-<div class="container">
-    <!-- Seção: Consumo de Energia -->
-    <section class="mb-5">
-        <h3>Consumo de Energia</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <p><strong>Média durante a Semana:</strong> @Model.EnergyConsumptionViewModel.MediaSemana kWh</p>
-                <p><strong>Média durante o Fim de Semana:</strong> @Model.EnergyConsumptionViewModel.MediaFimSemana kWh</p>
-                <p><strong>Média Anual:</strong> @Model.EnergyConsumptionViewModel.MediaAnual kWh</p>
-                <p><strong>Consumo Total:</strong> @Model.EnergyConsumptionViewModel.ConsumoTotal kWh</p>
+<div class="simulacaoCompleta-container">
+    <div class="simulacaoCompleta-box">
+        <div class="container">
+            <div class="sidebar">
+                <div class="steps">
+                    <div class="step">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                    <div class="step">4</div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h4>Meses de Ocupação</h4>
-                <ul>
-                    @foreach (var mes in Model.EnergyConsumptionViewModel.MesesOcupacao)
-                    {
-                        <li>@mes</li>
-                    }
-                </ul>
+
+            <div class="content">
+                <h2>Simulação Completa</h2>
+                <!-- Seção: Consumo de Energia -->
+                <section class="form-group">
+                    <h3>1. Consumo de Energia</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Média durante a Semana:</strong> @Model.EnergyConsumptionViewModel.MediaSemana kWh</p>
+                            <p><strong>Média durante o Fim de Semana:</strong> @Model.EnergyConsumptionViewModel.MediaFimSemana kWh</p>
+                            <p><strong>Média Anual:</strong> @Model.EnergyConsumptionViewModel.MediaAnual kWh</p>
+                            <p><strong>Consumo Total:</strong> @Model.EnergyConsumptionViewModel.ConsumoTotal kWh</p>
+                            <p><strong>Meses de Ocupação:</strong></p>
+                            <ul>
+                                @foreach (var mes in Model.EnergyConsumptionViewModel.MesesOcupacao)
+                                {
+                                    <li>@mes</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção: Tarifa -->
+                <section class="form-group">
+                    <h3>2. Tarifa</h3>
+                    <p><strong>Tipo de Tarifa:</strong> @Model.TarifaViewModel.TipoDeTarifaEscolhida</p>
+                    <p><strong>Preço do kWh:</strong> @Model.TarifaViewModel.PrecoKWh.ToString("C")</p>
+                </section>
+
+                <!-- Seção: Detalhamento Mensal -->
+                <section class="form-group">
+                    <h3>3. Detalhamento Mensal</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Mês</th>
+                                <th>Consumo (kWh)</th>
+                                <th>Custo (R$)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var mesConsumo in Model.ResultadoTarifaViewModel.ConsumoMensal)
+                            {
+                                <tr>
+                                    <td>@mesConsumo.Mes</td>
+                                    <td>@mesConsumo.Consumo</td>
+                                    <td>@mesConsumo.Custo.ToString("C")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div>
+                        <p><strong>Consumo Total Mensal:</strong> @Model.ResultadoTarifaViewModel.ConsumoTotal kWh</p>
+                        <p><strong>Valor Anual:</strong> @Model.ResultadoTarifaViewModel.ValorAnual.ToString("C")</p>
+                    </div>
+                </section>
+
+                <!-- Seção: Dados de Instalação -->
+                <section class="form-group">
+                    <h3>4. Dados de Instalação</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Cidade:</strong> @Model.DadosInstalacao.Cidade.Nome</p>
+                            <p><strong>Modelo do Painel:</strong> @Model.DadosInstalacao.ModeloPainel.ModeloNome</p>
+                            <p><strong>Potência:</strong> @Model.DadosInstalacao.Potencia.Potencia W</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Número de Painéis:</strong> @Model.DadosInstalacao.NumeroPaineis</p>
+                            <p><strong>Inclinação:</strong> @Model.DadosInstalacao.Inclinacao°</p>
+                            <p><strong>Dificuldade:</strong> @Model.DadosInstalacao.Dificuldade</p>
+                            <p><strong>Preço da Instalação:</strong> R$ @Model.DadosInstalacao.PrecoInstalacao.ToString("N2")</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção: ROI -->
+                <section class="form-group">
+                    <h3>5. Retorno do Investimento (ROI)</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Custo da Instalação:</strong>  @Model.ROI.CurrentRoi.CustoInstalacao.ToString("N2")</p>
+                            <p><strong>Economia Anual Estimada:</strong>  @Model.ROI.CurrentRoi.RetornoEconomia.ToString("N2")</p>
+                            <p><strong>Tempo de Retorno Estimado:</strong> @Model.ROI.CurrentRoi.ROI.ToString("N1") anos</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gráfico: Histórico do ROI -->
+                <section class="form-group">
+                    <h3 class="text-center">6. Histórico do ROI</h3>
+                    <div class="text-center">
+                        <canvas id="roiChart" width="800" height="400"></canvas>
+                    </div>
+                </section>
+
+                <!-- Gráfico: Evolução do Saldo Acumulado -->
+                <section class="form-group">
+                    <h3 class="text-center">7. Evolução do Saldo Acumulado</h3>
+                    <div class="text-center">
+                        <canvas id="saldoChart" width="800" height="400"></canvas>
+                    </div>
+                </section>
+
+                <div class="export-buttons text-center mt-4">
+                    <a href="@Url.Action("ExportPDF", "SimulacaoValores")" class="btn btn-danger mx-2">Exportar PDF</a>
+                    <a href="@Url.Action("ExportCSV", "SimulacaoValores")" class="btn btn-success mx-2">Exportar CSV</a>
+                    <a href="@Url.Action("ExportExcel", "SimulacaoValores")" class="btn btn-primary mx-2">Exportar Excel</a>
+                </div>
+
+                <div class="horizontal-button">
+                    <a href="@Url.Action("Create", "DadosInstalacao")" class="btn">Anterior</a>
+                    <a href="@Url.Action("Index", "Home")" class="btn">Página Inicial</a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Seção: Tarifa -->
-    <section class="mb-5">
-        <h3>Tarifa</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <p><strong>Tipo de Tarifa:</strong> @Model.TarifaViewModel.TipoDeTarifaEscolhida</p>
-                <p><strong>Preço do kWh:</strong> @Model.TarifaViewModel.PrecoKWh.ToString("C")</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção: Detalhamento Mensal -->
-    <section class="mb-5">
-        <h3>Detalhamento Mensal</h3>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Mês</th>
-                    <th>Consumo (kWh)</th>
-                    <th>Custo (R$)</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var mesConsumo in Model.ResultadoTarifaViewModel.ConsumoMensal)
-                {
-                    <tr>
-                        <td>@mesConsumo.Mes</td>
-                        <td>@mesConsumo.Consumo</td>
-                        <td>@mesConsumo.Custo.ToString("C")</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-        <div>
-            <p><strong>Consumo Total Mensal:</strong> @Model.ResultadoTarifaViewModel.ConsumoTotal kWh</p>
-            <p><strong>Valor Anual:</strong> @Model.ResultadoTarifaViewModel.ValorAnual.ToString("C")</p>
-        </div>
-    </section>
-
-    <!-- Seção: Dados de Instalação -->
-    <section class="mb-5">
-        <h3>Dados de Instalação</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <p><strong>Cidade:</strong> @Model.DadosInstalacao.Cidade.Nome</p>
-                <p><strong>Modelo do Painel:</strong> @Model.DadosInstalacao.ModeloPainel.ModeloNome</p>
-                <p><strong>Potência:</strong> @Model.DadosInstalacao.Potencia.Potencia W</p>
-            </div>
-            <div class="col-md-6">
-                <p><strong>Número de Painéis:</strong> @Model.DadosInstalacao.NumeroPaineis</p>
-                <p><strong>Inclinação:</strong> @Model.DadosInstalacao.Inclinacao°</p>
-                <p><strong>Dificuldade:</strong> @Model.DadosInstalacao.Dificuldade</p>
-                <p><strong>Preço da Instalação:</strong> R$ @Model.DadosInstalacao.PrecoInstalacao.ToString("N2")</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção: ROI -->
-    <section class="mb-5">
-        <h3>Retorno do Investimento (ROI)</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <p><strong>Custo da Instalação:</strong> R$ @Model.ROI.CurrentRoi.CustoInstalacao.ToString("N2")</p>
-                <p><strong>Economia Anual Estimada:</strong> R$ @Model.ROI.CurrentRoi.RetornoEconomia.ToString("N2")</p>
-                <p><strong>Tempo de Retorno Estimado:</strong> @Model.ROI.CurrentRoi.ROI.ToString("N1") anos</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gráfico: Histórico do ROI -->
-    <section class="mb-5">
-        <h3 class="text-center">Histórico do ROI</h3>
-        <div class="text-center">
-            <canvas id="roiChart" width="800" height="400"></canvas>
-        </div>
-    </section>
-
-    <!-- Gráfico: Evolução do Saldo Acumulado -->
-    <section class="mb-5">
-        <h3 class="text-center">Evolução do Saldo Acumulado</h3>
-        <div class="text-center">
-            <canvas id="saldoChart" width="800" height="400"></canvas>
-        </div>
-    </section>
+         </div>
+     </div>
 </div>
 
 
-<div class="export-buttons text-center mt-4">
-	<a href="@Url.Action("ExportPDF", "SimulacaoValores")" class="btn btn-danger mx-2">Exportar PDF</a>
-	<a href="@Url.Action("ExportCSV", "SimulacaoValores")" class="btn btn-success mx-2">Exportar CSV</a>
-	<a href="@Url.Action("ExportExcel", "SimulacaoValores")" class="btn btn-primary mx-2">Exportar Excel</a>
-</div>
+
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -222,6 +235,35 @@
 }
 
 <style>
+    h2 {
+        font-weight: bold;
+        font-size: 3rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+
+    .simulacaoCompleta-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+    .simulacaoCompleta-box {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 100%;
+        max-width: 2900px;
+        margin: 20px;
+    }
+
+
     h2, h3 {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: #065A66;
@@ -235,4 +277,107 @@
         margin: auto;
         margin-bottom: 5%;
     }
+
+    .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .form-group {
+        margin-top:8%;
+        margin-bottom:8%;
+    }
+
+    .sidebar {
+        width: 20%;
+        background-color: #d3e1e3;
+        padding: 20px;
+        position: relative;
+    }
+
+    .steps {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #aaa;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin: 30px 0;
+        position: relative;
+    }
+
+    .step:first-child, .step:nth-child(2), .step:nth-child(3), .step:nth-child(4) {
+        background-color: #065A66;
+    }
+
+    .step:first-child::after {
+        background-color: #065A66;
+    }
+
+    .step:nth-child(2)::after {
+        background-color: #065A66;
+    }
+
+
+    .step:nth-child(3)::after {
+        background-color: #065A66;
+    }
+
+    .step::after {
+        content: "";
+        width: 2px;
+        height: 80px;
+        background-color: #aaa;
+        position: absolute;
+        bottom: -80px;
+        transform: translateX(-50%);
+    }
+
+    .step:last-child::after {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .btn {
+        margin-top: 8%;
+        background: #065A66;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .btn:hover {
+        color: white;
+        background: #054850;
+    }
+
+    .horizontal-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3%;
+    }
+
 </style>

@@ -1,19 +1,11 @@
 is_global = true
 build_property.TargetFramework = net8.0
-build_property.TargetFramework = net8.0
-build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
-build_property.UsingMicrosoftNETSdkWeb = true
-build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
-build_property.InvariantGlobalization = 
-build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
-build_property.EnforceExtendedAnalyzerRules = 
-build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LightInvest
 build_property.RootNamespace = LightInvest
@@ -46,10 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/rodri/Videos/New folder/LightInvest/Views/Account/ValidateToken.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWYWxpZGF0ZVRva2VuLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rodri/Videos/New folder/LightInvest/Views/DadosInstalacao/Confirmacao.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFkb3NJbnN0YWxhY2FvXENvbmZpcm1hY2FvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rodri/Videos/New folder/LightInvest/Views/DadosInstalacao/Create.cshtml]
@@ -88,16 +76,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/Videos/New folder/LightInvest/Views/SimulacaoValores/ROIResult.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2ltdWxhY2FvVmFsb3Jlc1xST0lSZXN1bHQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/rodri/Videos/New folder/LightInvest/Views/SimulacaoValores/SimulacaoCompleta.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2ltdWxhY2FvVmFsb3Jlc1xTaW11bGFjYW9Db21wbGV0YS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/rodri/Videos/New folder/LightInvest/Views/SimulacaoValores/UserEnergyConsumption.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2ltdWxhY2FvVmFsb3Jlc1xVc2VyRW5lcmd5Q29uc3VtcHRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rodri/Videos/New folder/LightInvest/Views/SplashScreen/SplashScreen.cshtml]
