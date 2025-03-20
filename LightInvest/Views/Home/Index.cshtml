@@ -3,18 +3,40 @@
 }
 
 <div class="home-container">
+<<<<<<< HEAD
+    <!-- Barra de navegação -->
+=======
+>>>>>>> correcao_calculos
     <div class="nav">
         <img src="~/images/logo.png" alt="LightInvest Logo" class="logo" />
         <div class="user-section">
             <div id="username">
                 <p>@ViewBag.UserName!</p>
             </div>
+<<<<<<< HEAD
+            <a href="@Url.Action("Logout", "Account")" class="btn">
+=======
             <a href="@Url.Action("Logout", "Account")">
+>>>>>>> correcao_calculos
                 <img src="~/images/logout.png" alt="Logout" class="logout" />
             </a>
         </div>
     </div>
 
+<<<<<<< HEAD
+    <!-- About us -->
+    <div class="about">
+        <h1>Sobre Nós</h1>
+        <p>O LightInvest é uma plataforma que combina análise financeira, simulações interativas e conteúdos educativos para ajudar indivíduos e empresas a investir de forma inteligente em energias renováveis.</p>
+    </div>
+
+    <!-- Container com as caixas de opções -->
+    <div class="container">
+        <div class="box">
+            <img src="~/images/roi.png" alt="Ícone ROI">
+            <h3>Cálculo do ROI</h3>
+            <p>Descubra a rentabilidade do seu investimento em painéis solares. Insira os dados do seu projeto e obtenha uma análise detalhada.</p>
+=======
     <div class="about">
         <h1>Sobre Nós</h1>
         <p>O LightInvest ajuda indivíduos e empresas a investir em energias renováveis através de análise financeira, simulações interativas e conteúdos educativos.</p>
@@ -25,6 +47,7 @@
             <img src="~/images/roi.png" alt="Ícone Cálculo ROI">
             <h3>Cálculo do ROI</h3>
             <p>Descubra a rentabilidade do seu investimento em painéis solares.</p>
+>>>>>>> correcao_calculos
             <form asp-controller="ROICalculator" asp-action="Index">
                 <button type="submit">
                     <img src="~/images/arrow.png" alt="Seta" class="arrow">
@@ -34,9 +57,15 @@
 
         <div class="box">
             <img src="~/images/simulation.png" alt="Ícone Simulação">
+<<<<<<< HEAD
+            <h3>Simulação de Tarifas Energéticas</h3>
+            <p>Compare diferentes cenários tarifários e encontre a melhor solução para si.</p>
+            <form asp-controller="EnergySimulation" asp-action="Simulation">
+=======
             <h3>Simulação Tarifária</h3>
             <p>Compare cenários tarifários e encontre a melhor solução.</p>
             <form asp-controller="EnergySimulation" asp-action="RedirectToEnergyView">
+>>>>>>> correcao_calculos
                 <button type="submit">
                     <img src="~/images/arrow.png" alt="Seta" class="arrow">
                 </button>
@@ -46,7 +75,11 @@
         <div class="box">
             <img src="~/images/education.png" alt="Ícone Educação">
             <h3>Conteúdos Educativos</h3>
+<<<<<<< HEAD
+            <p>Aprofunde o seu conhecimento sobre energias renováveis e eficiência energética, explorando os artigos que temos para si.</p>
+=======
             <p>Aprofunde o seu conhecimento em energias renováveis.</p>
+>>>>>>> correcao_calculos
             <img src="~/images/arrow.png" alt="Seta" class="arrow">
         </div>
     </div>
@@ -61,13 +94,26 @@
         height: 100%;
     }
 
+<<<<<<< HEAD
+    nav, header{
+=======
     nav, header {
+>>>>>>> correcao_calculos
         margin: 0;
         padding: 0;
         width: 0%;
         height: 0%;
     }
 
+<<<<<<< HEAD
+    .home-container {
+        background-color: rgba(216, 231, 225, 0.27);
+        width: 100%;
+        min-height: 100vh;
+        top: 0;
+        left: 0;
+        margin:0%;
+=======
     body {
         margin: 0;
         padding: 0;
@@ -78,18 +124,33 @@
         background-color: rgba(216, 231, 225, 0.27);
         min-height: 100vh;
         padding: 10px;
+>>>>>>> correcao_calculos
     }
 
     .nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+<<<<<<< HEAD
+        padding: 3px 3px;
+        background-color: #065A66;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+
+    .logo {
+        height: 130px;
+=======
         padding: 5px 10px;
         background-color: #065A66;
     }
 
     .logo {
         height: 90px;
+>>>>>>> correcao_calculos
     }
 
     .user-section {
@@ -98,20 +159,47 @@
     }
 
     #username {
+<<<<<<< HEAD
+        margin-top:6%;
+        margin-right: 10px;
+        font-size: 16px;
+=======
         margin-top: 12%;
         margin-right: 10px;
         font-size: 14px;
+>>>>>>> correcao_calculos
         font-weight: bold;
         color: white;
     }
 
     .logout {
+<<<<<<< HEAD
+        height: 30px;
+=======
         height: 25px;
+>>>>>>> correcao_calculos
         cursor: pointer;
     }
 
     .about {
         text-align: center;
+<<<<<<< HEAD
+        padding: 40px 20px;
+        margin: 5% 15%;
+    }
+
+    .about h1 {
+        font-family: 'Vujahday Script', cursive;
+        font-size: 50px;
+        margin-bottom: 2%;
+        margin-top:2%;
+    }
+
+    .about p {
+        font-size: 25px;
+        color: black;
+        font-family: 'Vollkorn', serif;
+=======
         padding: 20px;
         font-size: 18px;
     }
@@ -126,11 +214,21 @@
     .about p {
         margin-left:15%;
         margin-right:15%;
+>>>>>>> correcao_calculos
     }
 
     .container {
         display: flex;
         justify-content: center;
+<<<<<<< HEAD
+        gap: 20px;
+        padding: 40px 20px;
+    }
+
+    .box {
+        width: 300px;
+        padding: 25px;
+=======
         gap: 15px;
         flex-wrap: wrap;
         padding: 20px;
@@ -139,6 +237,7 @@
     .box {
         width: 250px;
         padding: 15px;
+>>>>>>> correcao_calculos
         border-radius: 10px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         text-align: center;
@@ -147,6 +246,34 @@
     }
 
     .box img {
+<<<<<<< HEAD
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .box h3 {
+        font-size: 20px;
+        margin-bottom: 11%;
+        font-family: 'Salsa', cursive;
+    }
+
+    .box p {
+        font-size: 17px;
+        color: black;
+        margin: 0 3%;
+    }
+
+    .arrow {
+        margin-top: 15px;
+        cursor: pointer;
+        transform: scale(0.2);
+    }
+
+    button {
+        all: unset; 
+        display: inline-block; 
+        cursor: pointer; 
+=======
         height: 40px;
     }
 
@@ -169,5 +296,14 @@
     button {
         all: unset;
         cursor: pointer;
+>>>>>>> correcao_calculos
     }
+
+    button img {
+        display: block; 
+        width: auto;
+        height: auto;
+    }
+
+
 </style>

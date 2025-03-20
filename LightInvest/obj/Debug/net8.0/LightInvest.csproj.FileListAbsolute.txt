@@ -2811,6 +2811,8 @@ C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 an
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Debug\net8.0\System.IO.Packaging.dll
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Debug\net8.0\Wkhtmltopdf.NetCore.dll
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\obj\Debug\net8.0\LightInvest.MvcApplicationPartsAssemblyInfo.cs
+<<<<<<< HEAD
+=======
 C:\Users\rodri\Videos\New folder\LightInvest\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\rodri\Videos\New folder\LightInvest\bin\Debug\net8.0\appsettings.json
 C:\Users\rodri\Videos\New folder\LightInvest\bin\Debug\net8.0\LightInvest.staticwebassets.runtime.json
@@ -3259,3 +3261,4 @@ C:\Users\rodri\Videos\New folder\LightInvest\bin\Debug\net8.0\refs\System.Diagno
 C:\Users\rodri\Videos\New folder\LightInvest\bin\Debug\net8.0\refs\System.IO.Pipelines.dll
 C:\Users\rodri\Videos\New folder\LightInvest\bin\Debug\net8.0\refs\System.Text.Encodings.Web.dll
 C:\Users\rodri\Videos\New folder\LightInvest\bin\Debug\net8.0\refs\System.Text.Json.dll
+>>>>>>> correcao_calculos
