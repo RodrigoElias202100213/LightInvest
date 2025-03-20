@@ -1,177 +1,296 @@
-﻿@model LightInvest.Models.DadosInstalacao
+﻿@model LightInvest.Models.DadosInstalacaoViewModel
 
 @{
-	ViewData["Title"] = "Simulação";
+    ViewData["Title"] = "Solicitação de Instalação";
 }
 
-<h2>Simulação</h2>
+<div class="create-simulation">
+    <div class="create-box">
+        <div class="container">
+            <div class="sidebar">
+                <div class="steps">
+                    <div class="step">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                    <div class="step">4</div>
+                </div>
+            </div>
 
-@if (TempData["ErrorMessage"] != null)
-{
-		<div class="alert alert-danger">@TempData["ErrorMessage"]</div>
-}
+            <div class="content">
+                <h2>Simulação</h2>
 
-@if (TempData["SuccessMessage"] != null)
-{
-		<div class="alert alert-success">@TempData["SuccessMessage"]</div>
-}
+                <div class="left">
+                    <form asp-action="Create" method="post">
+                        <div class="form-group">
+                            <label><strong>1. Cidade:</strong></label>
+                            <select asp-for="CidadeId" class="form-control" required>
+                                <option value="">Selecione a cidade</option>
+                                @foreach (var cidade in Model.Cidades)
+                                {
+                                    <option value="@cidade.Id">@cidade.Nome</option>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="CidadeId"></span>
+                        </div>
 
-<form asp-action="Create" method="post">
-	<div class="simulation-container">
-		<div class="simulation-box">
+                        <div class="form-group">
+                            <label><strong>2. Modelo do Painel Solar:</strong></label>
+                            <select id="modeloPainelSelect" asp-for="ModeloPainelId" class="form-control" required>
+                                <option value="">Selecione o modelo</option>
+                                @foreach (var modelo in Model.ModelosDePaineis)
+                                {
+                                    <option value="@modelo.Id">@modelo.ModeloNome - @modelo.Preco €</option>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="ModeloPainelId"></span>
+                        </div>
 
-			<!--Cidades-->
-			<div class="form-group">
-				<label for="CidadeId">Cidade</label>
-				<select asp-for="CidadeId" class="form-control" asp-items="@(new SelectList(ViewBag.Cidades, "Id", "Nome"))">
-					<option value="">Selecione uma cidade</option>
-				</select>
-			</div>
+                        <div class="form-group">
+                            <label><strong>3. Potência do Painel:</strong></label>
+                            <select id="consumoPainelSelect" asp-for="PotenciaId" class="form-control" required>
+                                <option value="">Selecione a potência</option>
+                                @foreach (var potencia in Model.Potencias)
+                                {
+	                                <option value="@potencia.Id">@potencia.Potencia W</option>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="PotenciaId"></span>
+                        </div>
 
-			<!--Numero de Paineis Solares-->
-			<div class="form-group">
-				<label for="NumeroPaineis">Número de Painéis Solares</label>
-				<input asp-for="NumeroPaineis" class="form-control" type="number" min="1" required />
-			</div>
+                        <div class="form-group">
+                            <label><strong>4. Número de Painéis:</strong></label>
+                            <input asp-for="NumeroPaineis" class="form-control" type="number" min="1" max="1000" required />
+                            <span class="text-danger" asp-validation-for="NumeroPaineis"></span>
+                        </div>
 
-			<!--Modelo do Painel-->
-			<div class="form-group">
-				<label for="ModeloPainelId">Modelo do Painel Solar</label>
-				<select asp-for="ModeloPainelId" class="form-control" id="modeloPainelSelect" asp-items="@(new SelectList(ViewBag.ModelosPaineis, "Id", "Modelo"))">
-					<option value="">Selecione um modelo</option>
-				</select>
-			</div>
+                        <div class="form-group">
+                            <label><strong>5. Inclinação (graus):</strong></label>
+                            <input asp-for="Inclinacao" class="form-control" type="number" step="0.1" min="0" max="90" required />
+                            <span class="text-danger" asp-validation-for="Inclinacao"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Dificuldade"><strong>Dificuldade da Instalação:</strong></label>
+                            <select asp-for="Dificuldade" class="form-control" required>
+                                <option value="">Escolha uma dificuldade</option>
+                                @foreach (var dificuldade in Enum.GetValues(typeof(LightInvest.Models.DificuldadeInstalacao)).Cast<LightInvest.Models.DificuldadeInstalacao>())
+                                {
+                                    <option value="@dificuldade.ToString()">@dificuldade</option>
+                                }
+                            </select>
+                            <span asp-validation-for="Dificuldade" class="text-danger"></span>
+                        </div>
 
-			<!--Consumo do Painel-->
-			<div class="form-group">
-				<label for="ConsumoPainel">Consumo do Painel (kWh)</label>
-				<select asp-for="ConsumoPainel" class="form-control" id="consumoPainelSelect">
-					<option value="">Selecione um consumo</option>
-				</select>
-			</div>
 
-			<!--Inclinação-->
-			<div class="form-group">
-				<label for="Inclinacao">Inclinação do Telhado (graus)</label>
-				<input asp-for="Inclinacao" class="form-control" type="number" step="0.01" required />
-			</div>
+                        <div class="horizontal-button">
+                            <a href="@Url.Action("Simulation", "Tarifa")" class="btn">Anterior</a>
+                            <button type="submit" class="btn">Calcular</button>
+                        </div>
+                    </form>
+                </div>
 
-			<!--Dificuldade-->
-			<div class="form-group">
-				<label for="Dificuldade">Dificuldade da Instalação</label>
-				<select asp-for="Dificuldade" class="form-control">
-					<option value="fácil">Fácil</option>
-					<option value="média">Média</option>
-					<option value="difícil">Difícil</option>
-				</select>
-			</div>
+                @if (ViewBag.Resultado != null)
+                {
+                    <div class="alert">@ViewBag.Resultado</div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
 
-			<div class="button-container">
-				<button type="submit" class="btn">Salvar</button>
-			</div>
-		</div>
-	</div>
-	
-</form>
 
 @section Scripts {
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			$(document).ready(function () {
-				$("#modeloPainelSelect").change(function () {
-					var modeloPainelId = $(this).val();
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+             $(document).ready(function () {
+            var consumoSelect = $("#consumoPainelSelect");
 
-					if (modeloPainelId) {
-						$.ajax({
-							url: "/DadosInstalacao/GetConsumosPainel",
-							type: "GET",
-							data: { modeloPainelId: modeloPainelId },
-							success: function (data) {
-								var consumoSelect = $("#consumoPainelSelect");
-								consumoSelect.empty();
-								consumoSelect.append('<option value="">Selecione um consumo</option>');
-								$.each(data, function (index, item) {
-									consumoSelect.append('<option value="' + item.id + '">' + item.potencia + ' kWh</option>');
-								});
-							},
-							error: function () {
-								$("#consumoPainelSelect").empty();
-								$("#consumoPainelSelect").append('<option value="">Erro ao carregar consumos</option>');
-							}
-						});
-					} else {
-						$("#consumoPainelSelect").empty();
-						$("#consumoPainelSelect").append('<option value="">Selecione um consumo</option>');
-					}
-				});
-			});
-		</script>
+            // Inicia a lista de potências vazia
+            consumoSelect.empty();
+
+            $("#modeloPainelSelect").change(function () {
+                var modeloPainelId = $(this).val();
+
+                consumoSelect.empty(); // Garante que começa vazio
+                consumoSelect.append('<option value="">Nenhuma opção</option>'); // Exibe a mensagem padrão
+
+                if (modeloPainelId) {
+                    $.ajax({
+                        url: "/DadosInstalacao/GetConsumosPainel",
+                        type: "GET",
+                        data: { modeloPainelId: modeloPainelId },
+                        success: function (data) {
+                            consumoSelect.empty(); // Limpa novamente antes de adicionar
+                            consumoSelect.append('<option value="">Selecione uma potência</option>');
+                            $.each(data, function (index, item) {
+                                consumoSelect.append('<option value="' + item.id + '">' + item.potencia + ' W</option>');
+                            });
+                        },
+                        error: function () {
+                            consumoSelect.empty();
+                            consumoSelect.append('<option value="">Erro ao carregar potência</option>');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 }
 
-
 <style>
-	.simulation-container {
-        height: 100vh;
+    .create-container {
+        height: 80vh;
         background-color: #f9f9f9;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-	.simulation-box {
-		display: flex;
+    .create-box {
+        display: flex;
         flex-direction: column;
         align-items: center;
         background: white;
         padding: 30px;
         border-radius: 15px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        width: 70%;
-        max-width: 600px;
-	}
+        width: 100%;
+        max-width: 1500px;
+    }
 
-	h2 {
+    .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        width: 20%;
+        background-color: #d3e1e3;
+        padding: 20px;
+        position: relative;
+    }
+
+    .steps {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #aaa;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin: 30px 0;
+        position: relative;
+    }
+
+        .step:first-child, .step:nth-child(2), .step:nth-child(3) {
+            background-color: #065A66;
+        }
+
+            .step:first-child::after {
+                background-color: #065A66;
+            }
+
+
+            .step:nth-child(2)::after {
+                background-color: #065A66;
+            }
+
+        .step::after {
+            content: "";
+            width: 2px;
+            height: 80px;
+            background-color: #aaa;
+            position: absolute;
+            bottom: -80px;
+            transform: translateX(-50%);
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h2 {
         font-weight: bold;
         font-size: 3rem;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: #065A66;
         text-align: center;
-        margin-bottom: 4%;
+        margin-bottom: 5%;
+    }
+
+    .left {
+        margin-left: 3%;
     }
 
     .form-group {
-        margin-bottom: 15px;
+        margin-bottom: 7%;
         width: 100%;
     }
 
-	 .form-control {
-        width: 100%;
+    .form-control {
+        width: 60%;
         padding: 8px;
-        border-radius: 8px;
+        border-radius: 5px;
         border: 1px solid #ccc;
     }
 
-	.button-container {
-		display:flex;
-		justify-content:center;
-		align-items:center;
-	}
+    .btn {
+        margin-top: 8%;
+        background: #065A66;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        text-decoration: none;
+        text-align: center;
+    }
 
-	.btn {
-		background: #065A66;
-		color: white;
-		padding: 10px 20px;
-		border: none;
-		cursor: pointer;
-		border-radius: 25px;
-		margin-top: 15px;
-		width: 100%;
-		text-align: center;
-	}
+        .btn:hover {
+            color: white;
+            background: #054850;
+        }
 
-	.btn:hover {
-		color: white;
-		background: #054850;
-	}
+    .horizontal-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3%;
+    }
+
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+        .alert-danger ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alert-danger li {
+            margin-bottom: 5px;
+        }
 
 </style>

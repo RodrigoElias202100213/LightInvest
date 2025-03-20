@@ -1,5 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3fb25fb1_002D62c9_002D4102_002D9869_002Da544c005d831/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="RoiCalculatorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3fb25fb1_002D62c9_002D4102_002D9869_002Da544c005d831/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RoiCalculatorTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::8F53309D-A162-4E9D-8A87-C9D3254AAC18::net8.0::RoiCalculatorTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::8F53309D-A162-4E9D-8A87-C9D3254AAC18::net8.0::EmailServiceTests&lt;/TestId&gt;&#xD;
@@ -9,5 +9,13 @@
     &lt;TestId&gt;xUnit::8F53309D-A162-4E9D-8A87-C9D3254AAC18::net8.0::ThirdPartyApiTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::8F53309D-A162-4E9D-8A87-C9D3254AAC18::net8.0::SystemStabilityTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::8F53309D-A162-4E9D-8A87-C9D3254AAC18::net8.0::LightInvestTest.EnergyConsumptionTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8F53309D-A162-4E9D-8A87-C9D3254AAC18::net8.0::LightInvestTest.TarifaTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8F53309D-A162-4E9D-8A87-C9D3254AAC18::net8.0::LightInvest.Tests.TarifaTests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=ad9927b8_002D7867_002D4363_002Db647_002D6f676576acbc/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TarifaTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::8F53309D-A162-4E9D-8A87-C9D3254AAC18::net8.0::LightInvest.Tests.TarifaTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::8F53309D-A162-4E9D-8A87-C9D3254AAC18::net8.0::LightInvest.Tests.DadosInstalacaoTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

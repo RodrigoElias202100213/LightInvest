@@ -1,6 +1,12 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\arrow.png
+wwwroot\images\education.png
 wwwroot\images\logo.png
+wwwroot\images\logout.png
+wwwroot\images\paineis_solares.png
+wwwroot\images\roi.png
+wwwroot\images\simulation.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

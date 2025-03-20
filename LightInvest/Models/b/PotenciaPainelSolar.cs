@@ -8,11 +8,11 @@ namespace LightInvest.Models.b
 		[Key]
 		public int Id { get; set; }
 
-		[ForeignKey("PainelSolar")]
-		public int PainelSolarId { get; set; }
-
 		public decimal Potencia { get; set; }
+		
+		[ForeignKey("ModeloPainelSolar")]
+		public int ModeloPainelId { get; set; }
 
-		public ModeloPainelSolar PainelSolar { get; set; }
+		public ModeloPainelSolar ModeloPainelSolar { get; set; }
 	}
 }

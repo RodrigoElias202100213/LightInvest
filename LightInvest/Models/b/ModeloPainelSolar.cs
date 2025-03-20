@@ -10,9 +10,12 @@ namespace LightInvest.Models.b
 
 		[Required]
 		[StringLength(100)]
-		public string Modelo { get; set; }
+		public string ModeloNome { get; set; }
 
-		[InverseProperty("PainelSolar")]
+		[Required]
+		[Column(TypeName = "decimal(18,2)")]
+		public decimal Preco { get; set; }
 		public List<PotenciaPainelSolar> Potencias { get; set; }
+
 	}
 }

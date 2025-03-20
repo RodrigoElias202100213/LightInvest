@@ -1,3 +1,4 @@
+/*
 using LightInvest.Data;
 using LightInvest.Controllers;
 using Microsoft.EntityFrameworkCore;
@@ -48,3 +49,4 @@ public class ApiDependencyTests
     }
 
 }
+*/

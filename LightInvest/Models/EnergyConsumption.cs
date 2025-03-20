@@ -6,16 +6,29 @@ namespace LightInvest.Models
 		public int Id { get; set; }
 		public string UserEmail { get; set; }
 
-		[Required]
+		[Required(ErrorMessage = "O consumo durante a semana é obrigatório.")]
+		[MinLength(24, ErrorMessage = "É necessário informar os 24 valores de consumo diário.")]
+		[MaxLength(24, ErrorMessage = "A lista não pode ter mais de 24 valores.")]
 		public List<decimal> ConsumoDiaSemana { get; set; }
-		[Required]
+
+		[Required(ErrorMessage = "O consumo no fim de semana é obrigatório.")]
+		[MinLength(24, ErrorMessage = "É necessário informar os 24 valores de consumo do fim de semana.")]
+		[MaxLength(24, ErrorMessage = "A lista não pode ter mais de 24 valores.")]
 		public List<decimal> ConsumoFimSemana { get; set; }
-		[Required]
+
+		[Required(ErrorMessage = "Selecione pelo menos um mês de ocupação.")]
 		public List<string> MesesOcupacao { get; set; }
 
+		[Range(0, double.MaxValue, ErrorMessage = "A média semanal deve ser um valor positivo.")]
 		public decimal MediaSemana { get; set; }
+
+		[Range(0, double.MaxValue, ErrorMessage = "A média do fim de semana deve ser um valor positivo.")]
 		public decimal MediaFimSemana { get; set; }
+
+		[Range(0, double.MaxValue, ErrorMessage = "A média anual deve ser um valor positivo.")]
 		public decimal MediaAnual { get; set; }
+
+		[Range(0, double.MaxValue, ErrorMessage = "O consumo total deve ser um valor positivo.")]
 		public decimal ConsumoTotal { get; set; }
 
 		public EnergyConsumption()
@@ -30,14 +43,14 @@ namespace LightInvest.Models
 			if (fimDeSemana)
 			{
 				if (hora >= 8 && hora <= 21)
-					return consumo * 0.8m; // 20% de desconto
+					return consumo * 0.8m; 
 				else
-					return consumo * 0.6m; // 40% de desconto
+					return consumo * 0.6m;
 			}
 			else
 			{
 				if (hora >= 22 || hora <= 7)
-					return consumo * 0.7m; // 30% de desconto
+					return consumo * 0.7m; 
 				else
 					return consumo;
 			}
@@ -62,12 +75,11 @@ namespace LightInvest.Models
 
 		public void CalcularConsumoMensal()
 		{
-			// Certificar-se de que as médias foram calculadas
 			CalcularMedias();
 
 			if (MesesOcupacao.Any())
 			{
-				decimal consumoTotalMensal = 0;
+				decimal consumoTotalMensal = 0; 
 
 				foreach (var mes in MesesOcupacao)
 				{
@@ -76,27 +88,22 @@ namespace LightInvest.Models
 					decimal consumoMes = Math.Round(consumoSemana * semanasNoMes, 1);
 
 					consumoTotalMensal += consumoMes;
-
-					Console.WriteLine($"Mês: {mes}, Número de Semanas: {semanasNoMes}, Consumo: {consumoMes}");
 				}
 
 				ConsumoTotal = Math.Round(consumoTotalMensal, 1);
+
 			}
 		}
-
-
-		// Função para calcular o número de semanas em um mês
+	
 		public int ObterNumeroDeSemanasNoMes(string mes)
 		{
 			var dataInicio = new DateTime(DateTime.Now.Year, MesParaNumero(mes), 1);
-			var dataFim = dataInicio.AddMonths(1).AddDays(-1); // Último dia do mês
-			int diasNoMes = (dataFim - dataInicio).Days + 1; // Conta os dias no mês
+			var dataFim = dataInicio.AddMonths(1).AddDays(-1); 
+			int diasNoMes = (dataFim - dataInicio).Days + 1; 
 
-			// Retorna o número de semanas arredondando para cima
 			return (int)Math.Ceiling(diasNoMes / 7.0);
 		}
 
-		// Função para mapear o nome do mês para seu número
 		public int MesParaNumero(string mes)
 		{
 			switch (mes.ToLower())
