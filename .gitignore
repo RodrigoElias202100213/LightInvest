@@ -1,6 +1,66 @@
+<<<<<<< Updated upstream
 .vs/
 **/staticwebassets.runtime.json
 obj/
 obj/staticwebassets.runtime.json
 
 bin/
+=======
+# Arquivos do Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Pastas de build do .NET
+bin/
+obj/
+out/
+*.pdb
+*.exe
+*.dll
+*.app/
+
+# Dependências
+packages/
+*.nupkg
+*.snupkg
+
+# Arquivos temporários
+*.tmp
+*.log
+
+# Configurações locais
+appsettings*.json
+
+# Arquivos de C++ gerados pelo build
+*.o
+*.obj
+*.pch
+*.ilk
+*.lib
+*.exp
+*.ipdb
+*.iobj
+*.tlog
+*.lastbuildstate
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Arquivos gerados pelo debugger
+*.pdb
+*.dbg
+
+# Arquivos do sistema
+Thumbs.db
+Desktop.ini
+
+# Outros arquivos desnecessários
+*.bak
+*.swp
+>>>>>>> Stashed changes
