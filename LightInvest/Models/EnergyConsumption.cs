@@ -43,14 +43,22 @@ namespace LightInvest.Models
 			if (fimDeSemana)
 			{
 				if (hora >= 8 && hora <= 21)
+<<<<<<< HEAD
 					return consumo * 0.8m; 
+=======
+					return consumo * 0.8m;
+>>>>>>> backup
 				else
 					return consumo * 0.6m;
 			}
 			else
 			{
 				if (hora >= 22 || hora <= 7)
+<<<<<<< HEAD
 					return consumo * 0.7m; 
+=======
+					return consumo * 0.7m;
+>>>>>>> backup
 				else
 					return consumo;
 			}
@@ -94,12 +102,21 @@ namespace LightInvest.Models
 
 			}
 		}
+<<<<<<< HEAD
 	
 		public int ObterNumeroDeSemanasNoMes(string mes)
 		{
 			var dataInicio = new DateTime(DateTime.Now.Year, MesParaNumero(mes), 1);
 			var dataFim = dataInicio.AddMonths(1).AddDays(-1); 
 			int diasNoMes = (dataFim - dataInicio).Days + 1; 
+=======
+
+		public int ObterNumeroDeSemanasNoMes(string mes)
+		{
+			var dataInicio = new DateTime(DateTime.Now.Year, MesParaNumero(mes), 1);
+			var dataFim = dataInicio.AddMonths(1).AddDays(-1);
+			int diasNoMes = (dataFim - dataInicio).Days + 1;
+>>>>>>> backup
 
 			return (int)Math.Ceiling(diasNoMes / 7.0);
 		}

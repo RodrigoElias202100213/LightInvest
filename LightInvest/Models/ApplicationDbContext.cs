@@ -35,13 +35,21 @@ namespace LightInvest.Data
 				.HasOne(d => d.Potencia)
 				.WithMany()
 				.HasForeignKey(d => d.PotenciaId)
+<<<<<<< HEAD
 				.OnDelete(DeleteBehavior.NoAction);  
+=======
+				.OnDelete(DeleteBehavior.NoAction);
+>>>>>>> backup
 
 			modelBuilder.Entity<PotenciaPainelSolar>()
 				.HasOne(p => p.ModeloPainelSolar)
 				.WithMany(m => m.Potencias)
 				.HasForeignKey(p => p.ModeloPainelId)
+<<<<<<< HEAD
 				.OnDelete(DeleteBehavior.Restrict); 
+=======
+				.OnDelete(DeleteBehavior.Restrict);
+>>>>>>> backup
 
 			// Cidades
 			modelBuilder.Entity<Cidade>().HasData(
@@ -93,7 +101,11 @@ namespace LightInvest.Data
 				new ModeloPainelSolar { Id = 5, ModeloNome = "TW Solar", Preco = 1230.00m },
 				new ModeloPainelSolar { Id = 6, ModeloNome = "JA Solar DeepBlue 4.0 Pro", Preco = 1270.00m },
 				new ModeloPainelSolar { Id = 7, ModeloNome = "Astroenergy - Astro N5", Preco = 1260.00m },
+<<<<<<< HEAD
 				new ModeloPainelSolar { Id = 8, ModeloNome = "Grand Sunergy", Preco =  1240.00m },
+=======
+				new ModeloPainelSolar { Id = 8, ModeloNome = "Grand Sunergy", Preco = 1240.00m },
+>>>>>>> backup
 				new ModeloPainelSolar { Id = 9, ModeloNome = "DMEGC - Infinity RT", Preco = 1290.00m },
 				new ModeloPainelSolar { Id = 10, ModeloNome = "Spic", Preco = 910.00m }
 			);

@@ -1,10 +1,14 @@
 {
   "Version": 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "Hash": "Wd1ah3f2vrfXEzqzFA1zyYFtzdFjzPBBneNFHII6STg=",
 =======
   "Hash": "BqBKEK+2blXQ0GQsjfV6WkSPTxJHzhLOQv3gQO74p+4=",
 >>>>>>> correcao_calculos
+=======
+  "Hash": "4DUv8W//f6IEtNXNml4Q2XSUYxEsGUs0T37eWh4e3EE=",
+>>>>>>> backup
   "Source": "LightInvest",
   "BasePath": "_content/LightInvest",
   "Mode": "Default",
@@ -15,16 +19,21 @@
       "Name": "LightInvest\\wwwroot",
       "Source": "LightInvest",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "ContentRoot": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\",
 =======
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LightInvest.styles.css",
       "SourceId": "LightInvest",
@@ -36,6 +45,12 @@
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LightInvest.styles.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "LightInvest.styles.css",
       "AssetKind": "All",
@@ -49,12 +64,17 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "OriginalItemSpec": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LightInvest.styles.css"
+=======
+      "OriginalItemSpec": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LightInvest.styles.css"
+>>>>>>> backup
     },
     {
-      "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LightInvest.bundle.scp.css",
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LightInvest.bundle.scp.css",
       "SourceId": "LightInvest",
       "SourceType": "Computed",
+<<<<<<< HEAD
       "ContentRoot": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
 =======
       "OriginalItemSpec": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LightInvest.styles.css"
@@ -65,6 +85,9 @@
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
 >>>>>>> correcao_calculos
+=======
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "LightInvest.bundle.scp.css",
       "AssetKind": "All",
@@ -78,12 +101,17 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "OriginalItemSpec": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LightInvest.bundle.scp.css"
+=======
+      "OriginalItemSpec": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LightInvest.bundle.scp.css"
+>>>>>>> backup
     },
     {
-      "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\css\\site.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
+<<<<<<< HEAD
       "ContentRoot": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\",
 =======
       "OriginalItemSpec": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\LightInvest.bundle.scp.css"
@@ -94,6 +122,9 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -110,6 +141,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\favicon.ico",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -120,6 +152,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\favicon.ico",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -135,6 +173,7 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\arrow.png",
       "SourceId": "LightInvest",
@@ -188,6 +227,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\images\\arrow.png",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "images/arrow.png",
       "AssetKind": "All",
@@ -203,10 +248,10 @@
       "OriginalItemSpec": "wwwroot\\images\\arrow.png"
     },
     {
-      "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\education.png",
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\images\\education.png",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
       "BasePath": "_content/LightInvest",
       "RelativePath": "images/education.png",
       "AssetKind": "All",
@@ -222,10 +267,29 @@
       "OriginalItemSpec": "wwwroot\\images\\education.png"
     },
     {
-      "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\logo.png",
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\images\\file.png",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+      "BasePath": "_content/LightInvest",
+      "RelativePath": "images/file.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\file.png"
+    },
+    {
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\images\\logo.png",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
       "BasePath": "_content/LightInvest",
       "RelativePath": "images/logo.png",
       "AssetKind": "All",
@@ -246,6 +310,7 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\logout.png",
       "SourceId": "LightInvest",
@@ -341,6 +406,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\images\\logout.png",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "images/logout.png",
       "AssetKind": "All",
@@ -356,10 +427,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logout.png"
     },
     {
-      "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\roi.png",
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\images\\roi.png",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
       "BasePath": "_content/LightInvest",
       "RelativePath": "images/roi.png",
       "AssetKind": "All",
@@ -375,10 +446,10 @@
       "OriginalItemSpec": "wwwroot\\images\\roi.png"
     },
     {
-      "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\simulation.png",
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\images\\simulation.png",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
       "BasePath": "_content/LightInvest",
       "RelativePath": "images/simulation.png",
       "AssetKind": "All",
@@ -394,10 +465,10 @@
       "OriginalItemSpec": "wwwroot\\images\\simulation.png"
     },
     {
-      "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\js\\site.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
       "BasePath": "_content/LightInvest",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -414,6 +485,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -424,6 +496,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -440,6 +518,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -450,6 +529,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -466,6 +551,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -476,6 +562,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -492,6 +584,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -502,6 +595,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -518,6 +617,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -528,6 +628,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -544,6 +650,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -554,6 +661,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -570,6 +683,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -580,6 +694,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -596,6 +716,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -606,6 +727,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -622,6 +749,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -632,6 +760,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -648,6 +782,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -658,6 +793,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -674,6 +815,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -684,6 +826,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -700,6 +848,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -710,6 +859,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -726,6 +881,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -736,6 +892,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -752,6 +914,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -762,6 +925,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -778,6 +947,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -788,6 +958,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -804,6 +980,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -814,6 +991,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -830,6 +1013,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -840,6 +1024,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -856,6 +1046,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -866,6 +1057,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -882,6 +1079,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -892,6 +1090,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -908,6 +1112,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -918,6 +1123,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -934,6 +1145,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -944,6 +1156,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -960,6 +1178,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -970,6 +1189,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -986,6 +1211,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -996,6 +1222,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1012,6 +1244,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1022,6 +1255,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1038,6 +1277,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1048,6 +1288,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1064,6 +1310,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1074,6 +1321,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1090,6 +1343,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1100,6 +1354,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1116,6 +1376,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1126,6 +1387,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1142,6 +1409,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1152,6 +1420,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1168,6 +1442,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1178,6 +1453,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1194,6 +1475,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1204,6 +1486,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1220,6 +1508,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1230,6 +1519,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1246,6 +1541,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1256,6 +1552,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1272,6 +1574,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1282,6 +1585,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1298,6 +1607,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1308,6 +1618,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1324,6 +1640,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1334,6 +1651,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1350,6 +1673,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1360,6 +1684,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1376,6 +1706,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1386,6 +1717,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1402,6 +1739,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1412,6 +1750,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1428,6 +1772,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1438,6 +1783,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1454,6 +1805,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1464,6 +1816,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1480,6 +1838,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1490,6 +1849,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1506,6 +1871,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1516,6 +1882,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1532,6 +1904,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1542,6 +1915,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1558,6 +1937,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1568,6 +1948,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1584,6 +1970,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1594,6 +1981,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1610,6 +2003,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1620,6 +2014,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1636,6 +2036,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1646,6 +2047,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1662,6 +2069,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1672,6 +2080,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1688,6 +2102,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1698,6 +2113,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1714,6 +2135,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1724,6 +2146,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1740,6 +2168,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1750,6 +2179,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1766,6 +2201,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1776,6 +2212,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1792,6 +2234,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1802,6 +2245,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1818,6 +2267,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1828,6 +2278,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1844,6 +2300,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1854,6 +2311,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1870,6 +2333,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1880,6 +2344,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1896,6 +2366,7 @@
     },
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Identity": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\rotativa\\wkhtmltopdf.exe",
       "SourceId": "LightInvest",
       "SourceType": "Discovered",
@@ -1906,6 +2377,12 @@
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\wwwroot\\",
 >>>>>>> correcao_calculos
+=======
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\rotativa\\wkhtmltopdf.exe",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\wwwroot\\",
+>>>>>>> backup
       "BasePath": "_content/LightInvest",
       "RelativePath": "rotativa/wkhtmltopdf.exe",
       "AssetKind": "All",

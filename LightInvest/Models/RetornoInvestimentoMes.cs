@@ -7,5 +7,10 @@
 		public decimal EconomiaMensal { get; set; }
 		public decimal SaldoRestante { get; set; }
 	}
+<<<<<<< HEAD
 	
 }
+=======
+
+}
+>>>>>>> backup

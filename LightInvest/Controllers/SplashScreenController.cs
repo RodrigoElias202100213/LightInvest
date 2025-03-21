@@ -2,8 +2,8 @@
 
 public class SplashScreenController : Controller
 {
-    public IActionResult SplashScreen()
-    {
-        return View();
-    }
+	public IActionResult SplashScreen()
+	{
+		return View();
+	}
 }

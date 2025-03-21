@@ -49,7 +49,11 @@ namespace LightInvest.Controllers
 			var resultado = new ResultadoTarifaViewModel
 			{
 				TarifaEscolhida = tarifa.Tipo.ToString(),
+<<<<<<< HEAD
 				PrecoKwh = tarifa.PrecoFinal, 
+=======
+				PrecoKwh = tarifa.PrecoFinal,
+>>>>>>> backup
 				MesesOcupacao = consumo.MesesOcupacao
 			};
 
@@ -79,7 +83,11 @@ namespace LightInvest.Controllers
 			if (string.IsNullOrEmpty(userEmail))
 				return BadRequest("Utilizador não autenticado.");
 
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> backup
 			var consumo = await ProcessarEnergyConsumptionAsync(userEmail);
 
 			ResultadoTarifaViewModel resultadoTarifa;
@@ -103,7 +111,11 @@ namespace LightInvest.Controllers
 			if (dadosInstalacao == null)
 				return BadRequest("Nenhum dado de instalação encontrado para este utilizador.");
 
+<<<<<<< HEAD
 			decimal potenciaPainel = dadosInstalacao.Potencia.Potencia; 
+=======
+			decimal potenciaPainel = dadosInstalacao.Potencia.Potencia;
+>>>>>>> backup
 			int numeroPaineis = dadosInstalacao.NumeroPaineis;
 			decimal horasSolDiarias = 5m;
 			decimal diasNoMes = 30m;
@@ -113,7 +125,11 @@ namespace LightInvest.Controllers
 			decimal economiaAnual = economiaMensal * mesesOcupados;
 
 			decimal custoInstalacao = dadosInstalacao.PrecoInstalacao;
+<<<<<<< HEAD
 			decimal custoManutencaoAnual = 500m; 
+=======
+			decimal custoManutencaoAnual = 500m;
+>>>>>>> backup
 			decimal roiValue = custoInstalacao / (economiaAnual - custoManutencaoAnual);
 
 
@@ -122,7 +138,11 @@ namespace LightInvest.Controllers
 				UserEmail = userEmail,
 				CustoInstalacao = custoInstalacao,
 				CustoManutencaoAnual = custoManutencaoAnual,
+<<<<<<< HEAD
 				ConsumoEnergeticoMedio = consumo.ConsumoTotal / 12, 
+=======
+				ConsumoEnergeticoMedio = consumo.ConsumoTotal / 12,
+>>>>>>> backup
 				ConsumoEnergeticoRede = consumo.ConsumoTotal,
 				RetornoEconomia = economiaAnual,
 				ROI = roiValue,
@@ -190,16 +210,28 @@ namespace LightInvest.Controllers
 
 		public async Task<IActionResult> ExportPDF()
 		{
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> backup
 			var userEmail = HttpContext.Session.GetString("UserEmail");
 			if (string.IsNullOrEmpty(userEmail))
 				return BadRequest("Utilizador não autenticado.");
 
+<<<<<<< HEAD
 			var viewModel = await GerarViewModelCompleto(userEmail); 
 
 			return Content("Funcionalidade de exportação para PDF não implementada.");
 		}
 		
+=======
+			var viewModel = await GerarViewModelCompleto(userEmail);
+
+			return Content("Funcionalidade de exportação para PDF não implementada.");
+		}
+
+>>>>>>> backup
 		public async Task<IActionResult> ExportCSV()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -241,7 +273,11 @@ namespace LightInvest.Controllers
 				ws.Cell(4, 2).Value = viewModel.EnergyConsumptionViewModel.MediaAnual;
 				ws.Cell(5, 1).Value = "Consumo Total";
 				ws.Cell(5, 2).Value = viewModel.EnergyConsumptionViewModel.ConsumoTotal;
+<<<<<<< HEAD
 				
+=======
+
+>>>>>>> backup
 
 				using (var stream = new MemoryStream())
 				{
@@ -253,7 +289,11 @@ namespace LightInvest.Controllers
 				}
 			}
 		}
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> backup
 		private async Task<SimulacaoCompletaViewModel> GerarViewModelCompleto(string userEmail)
 		{
 			var consumo = await ProcessarEnergyConsumptionAsync(userEmail);
@@ -274,7 +314,11 @@ namespace LightInvest.Controllers
 					.ToListAsync()
 			};
 
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> backup
 			var simulacao = new SimulacaoCompletaViewModel
 			{
 				EnergyConsumptionViewModel = new EnergyConsumptionViewModel
@@ -285,10 +329,32 @@ namespace LightInvest.Controllers
 				ResultadoTarifaViewModel = resultadoTarifa,
 				DadosInstalacao = dadosInstalacao,
 				ROI = roiDashboard,
+<<<<<<< HEAD
 				
+=======
+
+>>>>>>> backup
 			};
 
 			return simulacao;
 		}
+<<<<<<< HEAD
 	}
 }
+=======
+		public IActionResult MostrarImagem()
+		{
+			var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "file.png");
+
+			if (!System.IO.File.Exists(imagePath))
+			{
+				return NotFound("Imagem não encontrada.");
+			}
+
+			var imageBytes = System.IO.File.ReadAllBytes(imagePath);
+			return File(imageBytes, "image/png");
+		}
+
+	}
+}
+>>>>>>> backup

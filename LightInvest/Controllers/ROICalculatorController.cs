@@ -148,12 +148,16 @@ public class ROICalculatorController : Controller
 			History = history
 		};
 
+<<<<<<< HEAD
 		ViewBag.Resultado = $"{resultadoROI:F2} anos"; 
+=======
+		ViewBag.Resultado = $"{resultadoROI:F2} anos";
+>>>>>>> backup
 
 		return View("Dashboard", dashboardViewModel);
 	}
-	
-	
+
+
 	[HttpGet]
 	public async Task<IActionResult> Grafico()
 	{

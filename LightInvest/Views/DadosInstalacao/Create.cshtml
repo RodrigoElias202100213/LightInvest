@@ -51,7 +51,11 @@
                                 <option value="">Selecione a potência</option>
                                 @foreach (var potencia in Model.Potencias)
                                 {
+<<<<<<< HEAD
 	                                <option value="@potencia.Id">@potencia.Potencia W</option>
+=======
+                                    <option value="@potencia.Id">@potencia.Potencia W</option>
+>>>>>>> backup
                                 }
                             </select>
                             <span class="text-danger" asp-validation-for="PotenciaId"></span>
@@ -274,6 +278,27 @@
         align-items: center;
         gap: 3%;
     }
+<<<<<<< HEAD
+=======
+
+    .alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        padding: 10px;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+        .alert-danger ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .alert-danger li {
+            margin-bottom: 5px;
+        }
+>>>>>>> backup
 
     .alert-danger {
         background-color: #f8d7da;

@@ -18,7 +18,11 @@ namespace LightInvest.Models
 		public int Id { get; set; }
 
 		[Required]
+<<<<<<< HEAD
 		[EmailAddress] 
+=======
+		[EmailAddress]
+>>>>>>> backup
 		public string UserEmail { get; set; }
 
 		[Required]
@@ -42,7 +46,11 @@ namespace LightInvest.Models
 		[Range(1, 1000)]
 		public int NumeroPaineis { get; set; }
 
+<<<<<<< HEAD
 		[Range(0, 90)] 
+=======
+		[Range(0, 90)]
+>>>>>>> backup
 		public decimal Inclinacao { get; set; }
 
 		[Required] public DificuldadeInstalacao? Dificuldade { get; set; } = null;

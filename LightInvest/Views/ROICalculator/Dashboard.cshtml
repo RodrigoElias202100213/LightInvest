@@ -116,6 +116,7 @@
         position: relative;
     }
 
+<<<<<<< HEAD
     .step:first-child, .step:nth-child(2) {
         background-color: #065A66;
     }
@@ -145,6 +146,37 @@
     .step:last-child::after {
         display: none;
     }
+=======
+        .step:first-child, .step:nth-child(2) {
+            background-color: #065A66;
+        }
+
+            .step:first-child::after {
+                background-color: #065A66;
+                height: 150px;
+                bottom: -150px;
+            }
+
+        .step:nth-child(2) {
+            margin-top: 90px;
+        }
+
+
+        .step::after {
+            content: "";
+            width: 2px;
+            height: 90px;
+            background-color: #aaa;
+            position: absolute;
+            bottom: -90px;
+            transform: translateX(-50%);
+        }
+
+
+        .step:last-child::after {
+            display: none;
+        }
+>>>>>>> backup
 
     .content {
         width: 100%;
@@ -194,4 +226,8 @@
         margin-bottom: 5%;
     }
 
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> backup

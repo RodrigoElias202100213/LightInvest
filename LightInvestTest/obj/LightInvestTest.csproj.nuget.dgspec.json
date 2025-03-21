@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rodri\\Videos\\New folder\\LightInvestTest\\LightInvestTest.csproj": {}
+    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvestTest\\LightInvestTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rodri\\Videos\\New folder\\LightInvestTest\\LightInvestTest.csproj": {
+    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvestTest\\LightInvestTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rodri\\Videos\\New folder\\LightInvestTest\\LightInvestTest.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvestTest\\LightInvestTest.csproj",
         "projectName": "LightInvestTest",
-        "projectPath": "C:\\Users\\rodri\\Videos\\New folder\\LightInvestTest\\LightInvestTest.csproj",
+        "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvestTest\\LightInvestTest.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rodri\\Videos\\New folder\\LightInvestTest\\obj\\",
+        "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvestTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\LightInvest.csproj": {
-                "projectPath": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\LightInvest.csproj"
+              "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\LightInvest.csproj": {
+                "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\LightInvest.csproj"
               }
             }
           }
@@ -47,8 +48,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -99,18 +99,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\LightInvest.csproj": {
+    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\LightInvest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\LightInvest.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\LightInvest.csproj",
         "projectName": "LightInvest",
-        "projectPath": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\LightInvest.csproj",
+        "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\LightInvest.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\obj\\",
+        "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -125,6 +125,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -142,8 +143,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -209,7 +209,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

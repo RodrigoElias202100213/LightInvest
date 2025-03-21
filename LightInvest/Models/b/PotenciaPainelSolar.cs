@@ -13,6 +13,12 @@ namespace LightInvest.Models.b
 		[ForeignKey("ModeloPainelSolar")]
 		public int ModeloPainelId { get; set; }
 
+<<<<<<< HEAD
+=======
+		[ForeignKey("ModeloPainelSolar")]
+		public int ModeloPainelId { get; set; }
+
+>>>>>>> backup
 		public ModeloPainelSolar ModeloPainelSolar { get; set; }
 	}
 }

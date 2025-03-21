@@ -1,7 +1,10 @@
 ﻿@model EnergyConsumptionViewModel
 
 @{
-	ViewData["Title"] = "Consumo de Energia";
+    ViewData["Title"] = "Consumo de Energia";
+}
+@{
+    ViewData["Title"] = "Consumo de Energia";
 }
 @{
     ViewData["Title"] = "Consumo de Energia";
@@ -18,6 +21,7 @@
     </div>
     <div class="content">
         <h2>Formulário Consumo de Energia</h2>
+<<<<<<< HEAD
        
         @if (!ViewData.ModelState.IsValid)
         {
@@ -75,10 +79,72 @@
                             @(Model.MesesOcupacao.Contains(mes) ? "checked" : "") />
                             @mes
                         </label>
+=======
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@error.ErrorMessage</li>
+                    }
+                </ul>
+            </div>
+        }
+
+        <form asp-controller="EnergySimulation" asp-action="Simulation" method="post">
+
+            <!-- Consumo Horário Dias de Semana -->
+            <div class="section">
+                <h5>1. Consumo Médio Horário: Segunda-feira a Sexta-feira</h5>
+
+                <div class="horario">
+                    @for (int i = 0; i < 24; i++)
+                    {
+                        <div class="hora">
+                            <span>@i h</span>
+                            <input type="number" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01"
+                                   value="@(Model.ConsumoDiaSemana[i] > 0 ? Model.ConsumoDiaSemana[i].ToString("F2") : "")" />
+                        </div>
+>>>>>>> backup
                     }
                 </div>
             </div>
 
+<<<<<<< HEAD
+=======
+            <!-- Consumo Horário Fins de Semana -->
+            <div class="section">
+                <h5>2. Consumo Médio Horário: Feriados/Fim de Semana</h5>
+                <div class="horario">
+                    @for (int i = 0; i < 24; i++)
+                    {
+                        <div class="hora">
+                            <span>@i h</span>
+                            <input type="number" asp-for="ConsumoFimSemana[i]" min="0" step="0.01"
+                                   value="@(Model.ConsumoFimSemana[i] > 0 ? Model.ConsumoFimSemana[i].ToString("F2") : "")" />
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Ocupação Mensal -->
+            <div class="section">
+                <h5>3. Ocupação Mensal</h5>
+                <div class="month-checkboxes">
+                    @foreach (var mes in Enum.GetNames(typeof(Meses)))
+                    {
+                        <label>
+                            <input type="checkbox" name="MesesOcupacao" value="@mes"
+                            @(Model.MesesOcupacao.Contains(mes) ? "checked" : "") />
+                            @mes
+                        </label>
+                    }
+                </div>
+            </div>
+
+>>>>>>> backup
             <div id="btn-container">
                 <a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Salvar e Continuar</button>
@@ -89,15 +155,15 @@
 </div>
 
 <script>
-	document.querySelector('form').addEventListener('submit', function(event) {
-		const inputs = document.querySelectorAll('input[type="number"]');
+    document.querySelector('form').addEventListener('submit', function(event) {
+        const inputs = document.querySelectorAll('input[type="number"]');
 
-		inputs.forEach(input => {
-			if (input.value.trim() === '') {
-				input.value = '0';
-			}
-		});
-	});
+        inputs.forEach(input => {
+            if (input.value.trim() === '') {
+                input.value = '0';
+            }
+        });
+    });
 </script>
 
 
@@ -155,6 +221,7 @@
         position: relative;
     }
 
+<<<<<<< HEAD
     .step:first-child {
         background-color: #065A66;
     }
@@ -173,6 +240,26 @@
     .step:last-child::after {
         display: none;
     }
+=======
+        .step:first-child {
+            background-color: #065A66;
+        }
+
+        .step::after {
+            content: "";
+            width: 2px;
+            height: 80px;
+            background-color: #aaa;
+            position: absolute;
+            bottom: -80px;
+            transform: translateX(-50%);
+        }
+
+
+        .step:last-child::after {
+            display: none;
+        }
+>>>>>>> backup
 
     .content {
         width: 80%;
@@ -211,6 +298,7 @@
         align-items: center;
     }
 
+<<<<<<< HEAD
     .hora input {
         width: 50px;
         text-align: center;
@@ -220,11 +308,26 @@
         outline: none;
         padding: 2px;
     }
+=======
+        .hora input {
+            width: 50px;
+            text-align: center;
+            border: none;
+            border-bottom: 2px solid #000;
+            background: transparent;
+            outline: none;
+            padding: 2px;
+        }
+>>>>>>> backup
 
     h5 {
         margin-top: 2%;
         margin-bottom: 2%;
+<<<<<<< HEAD
         font-weight:bolder;
+=======
+        font-weight: bolder;
+>>>>>>> backup
     }
 
     .month-checkboxes {
@@ -234,6 +337,7 @@
         margin-top: 10px;
     }
 
+<<<<<<< HEAD
     .month-checkboxes label {
         display: flex;
         align-items: center;
@@ -245,11 +349,28 @@
         width: 18px;
         height: 18px;
     }
+=======
+        .month-checkboxes label {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        .month-checkboxes input {
+            width: 18px;
+            height: 18px;
+        }
+>>>>>>> backup
 
     #btn-container {
         display: flex;
         justify-content: center;
+<<<<<<< HEAD
         align-items:center;
+=======
+        align-items: center;
+>>>>>>> backup
         gap: 10px;
         margin-top: 20px;
     }
@@ -265,6 +386,7 @@
         text-align: center;
     }
 
+<<<<<<< HEAD
     .btn:hover {
         background: #065A66;
         color: white;
@@ -275,4 +397,16 @@
         text-decoration: none;
         text-align: center;
     }
+=======
+        .btn:hover {
+            background: #065A66;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+>>>>>>> backup
 </style>

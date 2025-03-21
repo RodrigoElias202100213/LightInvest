@@ -238,6 +238,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 4,
           "Children": [
             {
@@ -294,6 +295,21 @@
               "ViewState": "AgIAALUAAAAAAAAAAAAcwL0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-21T00:55:35.13Z",
+=======
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Simulation.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Views\\Tarifa\\Simulation.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Tarifa\\Simulation.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Views\\Tarifa\\Simulation.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Tarifa\\Simulation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-21T01:08:27.952Z",
+>>>>>>> backup
               "EditorCaption": ""
             },
             {
@@ -307,6 +323,7 @@
               "ViewState": "AgIAAB0BAAAAAAAAAAAcwCQBAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-21T00:46:01.174Z",
+<<<<<<< HEAD
               "EditorCaption": ""
             },
             {
@@ -320,6 +337,83 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAANQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-21T01:08:27.952Z",
+=======
+>>>>>>> backup
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 1,
+              "Title": "Tarifa.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Models\\Tarifa.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\Tarifa.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Models\\Tarifa.cs",
+              "RelativeToolTip": "LightInvest\\Models\\Tarifa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T00:52:17.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+=======
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-21T00:53:55.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TarifaController.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Controllers\\TarifaController.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Controllers\\TarifaController.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Controllers\\TarifaController.cs",
+              "RelativeToolTip": "LightInvest\\Controllers\\TarifaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T01:03:45.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TarifaViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Models\\TarifaViewModel.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\TarifaViewModel.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Models\\TarifaViewModel.cs",
+              "RelativeToolTip": "LightInvest\\Models\\TarifaViewModel.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAcwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T00:52:07.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SimulacaoCompleta.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
+              "ViewState": "AgIAALUAAAAAAAAAAAAcwL0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-21T00:55:35.13Z",
               "EditorCaption": ""
             },
             {
@@ -345,6 +439,7 @@
               "RelativeToolTip": "LightInvest\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+>>>>>>> backup
               "WhenOpened": "2025-03-21T00:53:15.18Z",
               "EditorCaption": ""
             },
@@ -471,8 +566,13 @@
               "Title": "LightInvest",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\LightInvest.csproj",
               "RelativeDocumentMoniker": "LightInvest\\LightInvest.csproj",
+<<<<<<< HEAD
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\LightInvest.csproj",
               "RelativeToolTip": "LightInvest\\LightInvest.csproj",
+=======
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\LightInvest.csproj*",
+              "RelativeToolTip": "LightInvest\\LightInvest.csproj*",
+>>>>>>> backup
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-03-21T00:57:53.242Z",

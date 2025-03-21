@@ -98,4 +98,8 @@ namespace LightInvest.Controllers
 			await _context.SaveChangesAsync();
 		}
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> backup

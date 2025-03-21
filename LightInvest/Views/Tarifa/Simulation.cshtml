@@ -1,6 +1,7 @@
 ﻿@model LightInvest.Models.TarifaViewModel
 
 @{
+<<<<<<< HEAD
 	ViewData["Title"] = "Simulação de Tarifa";
 }
 
@@ -37,12 +38,51 @@
 						}
 
 						<div class="form-group">
+=======
+    ViewData["Title"] = "Simulação de Tarifa";
+}
+
+<div class="selecionarTarifa-container">
+    <div class="selecionarTarifa-box">
+        <div class="container">
+            <div class="sidebar">
+                <div class="steps">
+                    <div class="step">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                    <div class="step">4</div>
+                </div>
+            </div>
+
+            <div class="content">
+                <h2>Formulário das Tarifas Energéticas</h2>
+
+                <div class="left">
+                    <form asp-action="Simulation" method="post">
+
+
+                        <!-- Exibindo erros de validação manualmente -->
+                        @if (!ViewData.ModelState.IsValid)
+                        {
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                    {
+                                        <li>@error.ErrorMessage</li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+
+                        <div class="form-group">
+>>>>>>> backup
                             <label asp-for="PrecoKWh"><strong>1. Preço por kWh:</strong></label>
                             <p>Insira o valor do preço por KWh da sua tarifa de eletricidade (em €)</p>
                             <input asp-for="PrecoKWh" class="form-control" />
                             <span asp-validation-for="PrecoKWh" class="text-danger"></span>
                         </div>
 
+<<<<<<< HEAD
 						<div class="form-group">
 							<label asp-for="TipoDeTarifaEscolhida"><strong>2. Tipo da Tarifa:</strong></label>
 							<select asp-for="TipoDeTarifaEscolhida" class="form-control">
@@ -69,6 +109,34 @@
 			</div>
 		</div>
 	</div>
+=======
+                        <div class="form-group">
+                            <label asp-for="TipoDeTarifaEscolhida"><strong>2. Tipo da Tarifa:</strong></label>
+                            <select asp-for="TipoDeTarifaEscolhida" class="form-control">
+                                <option value="">Escolha uma tarifa</option> <!-- Opção inicial -->
+                                @foreach (var tipo in Model.TiposDeTarifa)
+                                {
+                                    <option value="@tipo" selected="@(Model.TipoDeTarifaEscolhida?.ToString() == tipo ? "selected" : null)">
+                                        @tipo
+                                    </option>
+                                }
+                            </select>
+                            <span asp-validation-for="TipoDeTarifaEscolhida" class="text-danger"></span>
+                        </div>
+
+
+
+                        <div id="horizontal-button">
+                            <a href="@Url.Action("Simulation", "EnergySimulation")" class="btn">Anterior</a>
+                            <button type="submit" class="btn">Seguinte</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> backup
 </div>
 
 
@@ -130,6 +198,7 @@
         position: relative;
     }
 
+<<<<<<< HEAD
     .step:first-child, .step:nth-child(2) {
         background-color: #065A66;
     }
@@ -151,6 +220,29 @@
     .step:last-child::after {
         display: none;
     }
+=======
+        .step:first-child, .step:nth-child(2) {
+            background-color: #065A66;
+        }
+
+            .step:first-child::after {
+                background-color: #065A66;
+            }
+
+        .step::after {
+            content: "";
+            width: 2px;
+            height: 80px;
+            background-color: #aaa;
+            position: absolute;
+            bottom: -80px;
+            transform: translateX(-50%);
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+>>>>>>> backup
 
     .content {
         width: 100%;
@@ -194,10 +286,17 @@
         text-align: center;
     }
 
+<<<<<<< HEAD
     .btn:hover {
         color: white;
         background: #054850;
     }
+=======
+        .btn:hover {
+            color: white;
+            background: #054850;
+        }
+>>>>>>> backup
 
     #horizontal-button {
         display: flex;
@@ -206,8 +305,13 @@
         gap: 3%;
     }
 
+<<<<<<< HEAD
     .alert{
         margin-top:2%;
+=======
+    .alert {
+        margin-top: 2%;
+>>>>>>> backup
     }
 
 </style>

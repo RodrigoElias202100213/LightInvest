@@ -113,6 +113,7 @@
         position: relative;
     }
 
+<<<<<<< HEAD
     .step:first-child {
         background-color: #065A66;
     }
@@ -140,6 +141,35 @@
     .step:last-child::after {
         display: none;
     }
+=======
+        .step:first-child {
+            background-color: #065A66;
+        }
+
+            .step:first-child::after {
+                background-color: #065A66;
+                height: 150px;
+                bottom: -150px;
+            }
+
+        .step:nth-child(2) {
+            margin-top: 90px;
+        }
+
+        .step::after {
+            content: "";
+            width: 2px;
+            height: 90px;
+            background-color: #aaa;
+            position: absolute;
+            bottom: -90px;
+            transform: translateX(-50%);
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+>>>>>>> backup
 
 
     .content {
@@ -164,6 +194,7 @@
         width: 100%;
     }
 
+<<<<<<< HEAD
     .form-group label {
         flex: 1;
         text-align: left;
@@ -182,6 +213,26 @@
         color: #333;
         transition: border-color 0.3s ease;
     }
+=======
+        .form-group label {
+            flex: 1;
+            text-align: left;
+            font-size: 16px;
+            color: #333;
+            font-weight: 500;
+            gap: 25px;
+        }
+
+        .form-group .form-control {
+            flex: 0.3;
+            padding: 10px;
+            border-radius: 20px;
+            border: 2px solid #ddd;
+            font-size: 14px;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+>>>>>>> backup
 
     #end-row {
         display: flex;
@@ -214,14 +265,25 @@
         border: none;
     }
 
+<<<<<<< HEAD
     .btn-primary:hover, .btn-submit:hover {
         background-color: #065A66;
         color:white;
     }
+=======
+        .btn-primary:hover, .btn-submit:hover {
+            background-color: #065A66;
+            color: white;
+        }
+>>>>>>> backup
 
     .roi-error p {
         font-size: 15px;
         color: red;
     }
 
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> backup

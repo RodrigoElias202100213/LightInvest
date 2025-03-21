@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3MBoiIWezLc=",
+  "dgSpecHash": "2c+kqGpY4hg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\LightInvest.csproj",
+  "projectFilePath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\LightInvest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rodri\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
@@ -230,7 +230,7 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\rodri\\Videos\\New folder\\LightInvest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Problem reading the cache file C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\dadoss\\LightInvest\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     },
     {
       "code": "NU1701",

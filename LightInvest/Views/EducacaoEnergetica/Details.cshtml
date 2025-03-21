@@ -1,0 +1,29 @@
+﻿@model LightInvest.Models.EducacaoEnergetica
+
+@{
+    ViewData["Title"] = Model.Titulo;
+}
+
+<h2>@Model.Titulo</h2>
+
+<p><strong>Categoria:</strong> @Model.Categoria</p>
+<p><strong>Publicado em:</strong> @Model.DataPublicacao.ToShortDateString()</p>
+<p><strong>Autor:</strong> @Model.Autor</p>
+
+<hr />
+
+<div class="conteudo-artigo">
+    @Html.Raw(Model.Conteudo)
+</div>
+
+<p>
+    <a href="@Url.Action("Index", "EducacaoEnergetica")">Voltar à lista de artigos</a>
+</p>
+
+<style>
+    .conteudo-artigo {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        margin-top: 20px;
+    }
+</style>

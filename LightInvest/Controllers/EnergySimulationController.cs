@@ -137,4 +137,8 @@ namespace LightInvest.Controllers
 			TempData["MesesOcupacao"] = model.MesesOcupacao;
 		}
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> backup

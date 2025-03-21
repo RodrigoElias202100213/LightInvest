@@ -74,14 +74,22 @@ namespace LightInvest.Tests
 			{
 				Id = 1,
 				ModeloNome = "Painel Solar X",
+<<<<<<< HEAD
 				Preco = 1500.00m 
+=======
+				Preco = 1500.00m
+>>>>>>> backup
 			};
 
 			var dadosInstalacao = new DadosInstalacao
 			{
 				ModeloPainel = modeloPainel,
 				NumeroPaineis = 5,
+<<<<<<< HEAD
 				Inclinacao = 45, 
+=======
+				Inclinacao = 45,
+>>>>>>> backup
 				Dificuldade = DificuldadeInstalacao.Facil
 			};
 
@@ -129,4 +137,8 @@ namespace LightInvest.Tests
 			Assert.Equal(valorEsperado, precoPorInclinacao);
 		}
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> backup

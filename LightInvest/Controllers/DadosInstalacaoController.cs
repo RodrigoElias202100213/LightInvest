@@ -61,7 +61,11 @@ namespace LightInvest.Controllers
 			}
 
 			var potenciaPainel = await _context.PotenciasDePaineisSolares
+<<<<<<< HEAD
 				.FirstOrDefaultAsync(p => p.Id == model.PotenciaId); 
+=======
+				.FirstOrDefaultAsync(p => p.Id == model.PotenciaId);
+>>>>>>> backup
 
 			if (potenciaPainel == null)
 			{
@@ -77,23 +81,33 @@ namespace LightInvest.Controllers
 				ModeloPainel = modeloPainel,
 				PotenciaId = model.PotenciaId,
 				Potencia = potenciaPainel,  
+				Potencia = potenciaPainel,
 				NumeroPaineis = model.NumeroPaineis,
 				Inclinacao = model.Inclinacao,
 				Dificuldade = model.Dificuldade,
 			};
 
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> backup
 			dadosInstalacao.AtualizarPrecoInstalacao();
 
 			await SalvarOuAtualizarDadosInstalacao(dadosInstalacao);
 
 			TempData["PrecoFinal"] = dadosInstalacao.PrecoInstalacao.ToString("F2");
 
+<<<<<<< HEAD
 			return RedirectToAction("Simular","SimulacaoValores");
+=======
+			return RedirectToAction("Simular", "SimulacaoValores");
+>>>>>>> backup
 		}
 
 		public IActionResult Confirmacao()
 		{
+<<<<<<< HEAD
 			var precoFinal = TempData["PrecoFinal"] as string; 
 			if (precoFinal != null)
 			{
@@ -102,6 +116,16 @@ namespace LightInvest.Controllers
 			else
 			{
 				ViewBag.PrecoFinal = "Preço não calculado"; 
+=======
+			var precoFinal = TempData["PrecoFinal"] as string;
+			if (precoFinal != null)
+			{
+				ViewBag.PrecoFinal = precoFinal;
+			}
+			else
+			{
+				ViewBag.PrecoFinal = "Preço não calculado";
+>>>>>>> backup
 			}
 
 			return View();
