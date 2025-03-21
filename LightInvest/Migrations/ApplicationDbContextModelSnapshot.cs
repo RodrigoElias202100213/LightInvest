@@ -17,10 +17,38 @@ namespace LightInvest.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.2")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("LightInvest.Models.Artigo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Conteudo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataPublicacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImagemUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Artigos");
+                });
 
             modelBuilder.Entity("LightInvest.Models.DadosInstalacao", b =>
                 {
@@ -33,12 +61,8 @@ namespace LightInvest.Migrations
                     b.Property<int>("CidadeId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("ConsumoPainel")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("Dificuldade")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Dificuldade")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Inclinacao")
                         .HasColumnType("decimal(18,2)");
@@ -47,6 +71,9 @@ namespace LightInvest.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("NumeroPaineis")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PotenciaId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("PrecoInstalacao")
@@ -62,6 +89,8 @@ namespace LightInvest.Migrations
 
                     b.HasIndex("ModeloPainelId");
 
+                    b.HasIndex("PotenciaId");
+
                     b.ToTable("DadosInstalacao");
                 });
 
@@ -73,13 +102,15 @@ namespace LightInvest.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.PrimitiveCollection<string>("ConsumoDiaSemana")
+                    b.Property<string>("ConsumoDiaSemana")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(24)
+                        .HasColumnType("nvarchar(24)");
 
-                    b.PrimitiveCollection<string>("ConsumoFimSemana")
+                    b.Property<string>("ConsumoFimSemana")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(24)
+                        .HasColumnType("nvarchar(24)");
 
                     b.Property<decimal>("ConsumoTotal")
                         .HasColumnType("decimal(18,2)");
@@ -93,7 +124,7 @@ namespace LightInvest.Migrations
                     b.Property<decimal>("MediaSemana")
                         .HasColumnType("decimal(18,2)");
 
-                    b.PrimitiveCollection<string>("MesesOcupacao")
+                    b.Property<string>("MesesOcupacao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -179,11 +210,11 @@ namespace LightInvest.Migrations
                     b.Property<DateTime>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Nome")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("PrecoKwh")
+                    b.Property<decimal>("PrecoKWh")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Tipo")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserEmail")
                         .IsRequired()
@@ -432,10 +463,13 @@ namespace LightInvest.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Modelo")
+                    b.Property<string>("ModeloNome")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
@@ -445,52 +479,62 @@ namespace LightInvest.Migrations
                         new
                         {
                             Id = 1,
-                            Modelo = "Aiko - Comet 2U"
+                            ModeloNome = "Aiko - Comet 2U",
+                            Preco = 1250.00m
                         },
                         new
                         {
                             Id = 2,
-                            Modelo = "Maxeon 7"
+                            ModeloNome = "Maxeon 7",
+                            Preco = 1320.00m
                         },
                         new
                         {
                             Id = 3,
-                            Modelo = "Longi - HI-MO X6"
+                            ModeloNome = "Longi - HI-MO X6",
+                            Preco = 1280.00m
                         },
                         new
                         {
                             Id = 4,
-                            Modelo = "Huasun - Himalaya"
+                            ModeloNome = "Huasun - Himalaya",
+                            Preco = 1300.00m
                         },
                         new
                         {
                             Id = 5,
-                            Modelo = "TW Solar"
+                            ModeloNome = "TW Solar",
+                            Preco = 1230.00m
                         },
                         new
                         {
                             Id = 6,
-                            Modelo = "JA Solar DeepBlue 4.0 Pro"
+                            ModeloNome = "JA Solar DeepBlue 4.0 Pro",
+                            Preco = 1270.00m
                         },
                         new
                         {
                             Id = 7,
-                            Modelo = "Astroenergy - Astro N5"
+                            ModeloNome = "Astroenergy - Astro N5",
+                            Preco = 1260.00m
                         },
                         new
                         {
                             Id = 8,
-                            Modelo = "Grand Sunergy"
+                            ModeloNome = "Grand Sunergy",
+                            Preco = 1240.00m
                         },
                         new
                         {
                             Id = 9,
-                            Modelo = "DMEGC - Infinity RT"
+                            ModeloNome = "DMEGC - Infinity RT",
+                            Preco = 1290.00m
                         },
                         new
                         {
                             Id = 10,
-                            Modelo = "Spic"
+                            ModeloNome = "Spic",
+                            Preco = 910.00m
                         });
                 });
 
@@ -502,7 +546,7 @@ namespace LightInvest.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("PainelSolarId")
+                    b.Property<int>("ModeloPainelId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Potencia")
@@ -510,7 +554,7 @@ namespace LightInvest.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PainelSolarId");
+                    b.HasIndex("ModeloPainelId");
 
                     b.ToTable("PotenciasDePaineisSolares");
 
@@ -518,265 +562,265 @@ namespace LightInvest.Migrations
                         new
                         {
                             Id = 1,
-                            PainelSolarId = 1,
+                            ModeloPainelId = 1,
                             Potencia = 670m
                         },
                         new
                         {
                             Id = 2,
-                            PainelSolarId = 1,
+                            ModeloPainelId = 1,
                             Potencia = 680m
                         },
                         new
                         {
                             Id = 3,
-                            PainelSolarId = 1,
+                            ModeloPainelId = 1,
                             Potencia = 690m
                         },
                         new
                         {
                             Id = 4,
-                            PainelSolarId = 1,
+                            ModeloPainelId = 1,
                             Potencia = 700m
                         },
                         new
                         {
                             Id = 5,
-                            PainelSolarId = 2,
+                            ModeloPainelId = 2,
                             Potencia = 445m
                         },
                         new
                         {
                             Id = 6,
-                            PainelSolarId = 2,
+                            ModeloPainelId = 2,
                             Potencia = 455m
                         },
                         new
                         {
                             Id = 7,
-                            PainelSolarId = 2,
+                            ModeloPainelId = 2,
                             Potencia = 465m
                         },
                         new
                         {
                             Id = 8,
-                            PainelSolarId = 2,
+                            ModeloPainelId = 2,
                             Potencia = 475m
                         },
                         new
                         {
                             Id = 9,
-                            PainelSolarId = 3,
+                            ModeloPainelId = 3,
                             Potencia = 600m
                         },
                         new
                         {
                             Id = 10,
-                            PainelSolarId = 3,
+                            ModeloPainelId = 3,
                             Potencia = 610m
                         },
                         new
                         {
                             Id = 11,
-                            PainelSolarId = 3,
+                            ModeloPainelId = 3,
                             Potencia = 620m
                         },
                         new
                         {
                             Id = 12,
-                            PainelSolarId = 3,
+                            ModeloPainelId = 3,
                             Potencia = 630m
                         },
                         new
                         {
                             Id = 13,
-                            PainelSolarId = 4,
+                            ModeloPainelId = 4,
                             Potencia = 720m
                         },
                         new
                         {
                             Id = 14,
-                            PainelSolarId = 4,
+                            ModeloPainelId = 4,
                             Potencia = 730m
                         },
                         new
                         {
                             Id = 15,
-                            PainelSolarId = 4,
+                            ModeloPainelId = 4,
                             Potencia = 740m
                         },
                         new
                         {
                             Id = 16,
-                            PainelSolarId = 4,
+                            ModeloPainelId = 4,
                             Potencia = 750m
                         },
                         new
                         {
                             Id = 17,
-                            PainelSolarId = 5,
+                            ModeloPainelId = 5,
                             Potencia = 715m
                         },
                         new
                         {
                             Id = 18,
-                            PainelSolarId = 5,
+                            ModeloPainelId = 5,
                             Potencia = 725m
                         },
                         new
                         {
                             Id = 19,
-                            PainelSolarId = 5,
+                            ModeloPainelId = 5,
                             Potencia = 735m
                         },
                         new
                         {
                             Id = 20,
-                            PainelSolarId = 5,
+                            ModeloPainelId = 5,
                             Potencia = 745m
                         },
                         new
                         {
                             Id = 21,
-                            PainelSolarId = 5,
+                            ModeloPainelId = 5,
                             Potencia = 590m
                         },
                         new
                         {
                             Id = 22,
-                            PainelSolarId = 5,
+                            ModeloPainelId = 5,
                             Potencia = 600m
                         },
                         new
                         {
                             Id = 23,
-                            PainelSolarId = 5,
+                            ModeloPainelId = 5,
                             Potencia = 610m
                         },
                         new
                         {
                             Id = 24,
-                            PainelSolarId = 5,
+                            ModeloPainelId = 5,
                             Potencia = 620m
                         },
                         new
                         {
                             Id = 25,
-                            PainelSolarId = 6,
+                            ModeloPainelId = 6,
                             Potencia = 595m
                         },
                         new
                         {
                             Id = 26,
-                            PainelSolarId = 6,
+                            ModeloPainelId = 6,
                             Potencia = 605m
                         },
                         new
                         {
                             Id = 27,
-                            PainelSolarId = 6,
+                            ModeloPainelId = 6,
                             Potencia = 615m
                         },
                         new
                         {
                             Id = 28,
-                            PainelSolarId = 6,
+                            ModeloPainelId = 6,
                             Potencia = 625m
                         },
                         new
                         {
                             Id = 29,
-                            PainelSolarId = 7,
+                            ModeloPainelId = 7,
                             Potencia = 640m
                         },
                         new
                         {
                             Id = 30,
-                            PainelSolarId = 7,
+                            ModeloPainelId = 7,
                             Potencia = 650m
                         },
                         new
                         {
                             Id = 31,
-                            PainelSolarId = 7,
+                            ModeloPainelId = 7,
                             Potencia = 660m
                         },
                         new
                         {
                             Id = 32,
-                            PainelSolarId = 7,
+                            ModeloPainelId = 7,
                             Potencia = 670m
                         },
                         new
                         {
                             Id = 33,
-                            PainelSolarId = 8,
+                            ModeloPainelId = 8,
                             Potencia = 710m
                         },
                         new
                         {
                             Id = 34,
-                            PainelSolarId = 8,
+                            ModeloPainelId = 8,
                             Potencia = 720m
                         },
                         new
                         {
                             Id = 35,
-                            PainelSolarId = 8,
+                            ModeloPainelId = 8,
                             Potencia = 730m
                         },
                         new
                         {
                             Id = 36,
-                            PainelSolarId = 8,
+                            ModeloPainelId = 8,
                             Potencia = 740m
                         },
                         new
                         {
                             Id = 37,
-                            PainelSolarId = 9,
+                            ModeloPainelId = 9,
                             Potencia = 615m
                         },
                         new
                         {
                             Id = 38,
-                            PainelSolarId = 9,
+                            ModeloPainelId = 9,
                             Potencia = 625m
                         },
                         new
                         {
                             Id = 39,
-                            PainelSolarId = 9,
+                            ModeloPainelId = 9,
                             Potencia = 635m
                         },
                         new
                         {
                             Id = 40,
-                            PainelSolarId = 9,
+                            ModeloPainelId = 9,
                             Potencia = 645m
                         },
                         new
                         {
                             Id = 41,
-                            PainelSolarId = 10,
+                            ModeloPainelId = 10,
                             Potencia = 410m
                         },
                         new
                         {
                             Id = 42,
-                            PainelSolarId = 10,
+                            ModeloPainelId = 10,
                             Potencia = 420m
                         },
                         new
                         {
                             Id = 43,
-                            PainelSolarId = 10,
+                            ModeloPainelId = 10,
                             Potencia = 430m
                         },
                         new
                         {
                             Id = 44,
-                            PainelSolarId = 10,
+                            ModeloPainelId = 10,
                             Potencia = 440m
                         });
                 });
@@ -784,7 +828,7 @@ namespace LightInvest.Migrations
             modelBuilder.Entity("LightInvest.Models.DadosInstalacao", b =>
                 {
                     b.HasOne("LightInvest.Models.b.Cidade", "Cidade")
-                        .WithMany()
+                        .WithMany("DadosInstalacoes")
                         .HasForeignKey("CidadeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -795,20 +839,33 @@ namespace LightInvest.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("LightInvest.Models.b.PotenciaPainelSolar", "Potencia")
+                        .WithMany()
+                        .HasForeignKey("PotenciaId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.Navigation("Cidade");
 
                     b.Navigation("ModeloPainel");
+
+                    b.Navigation("Potencia");
                 });
 
             modelBuilder.Entity("LightInvest.Models.b.PotenciaPainelSolar", b =>
                 {
-                    b.HasOne("LightInvest.Models.b.ModeloPainelSolar", "PainelSolar")
+                    b.HasOne("LightInvest.Models.b.ModeloPainelSolar", "ModeloPainelSolar")
                         .WithMany("Potencias")
-                        .HasForeignKey("PainelSolarId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("ModeloPainelId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("PainelSolar");
+                    b.Navigation("ModeloPainelSolar");
+                });
+
+            modelBuilder.Entity("LightInvest.Models.b.Cidade", b =>
+                {
+                    b.Navigation("DadosInstalacoes");
                 });
 
             modelBuilder.Entity("LightInvest.Models.b.ModeloPainelSolar", b =>

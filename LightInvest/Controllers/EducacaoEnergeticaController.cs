@@ -1,64 +1,48 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using LightInvest.Models;
-using System;
-using System.Collections.Generic;
+﻿using LightInvest.Models;
+using LightInvest.Data;
+using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace LightInvest.Controllers
 {
-    public class EducacaoEnergeticaController : Controller
-    {
-        // Lista simulada de artigos educativos
-        private readonly List<EducacaoEnergetica> _artigos = new List<EducacaoEnergetica>
-        {
-            new EducacaoEnergetica
-            {
-                Id = 1,
-                Titulo = "Benefícios das Energias Renováveis",
-                Categoria = "Energia Renovável",
-                Resumo = "Descubra os benefícios econômicos e ambientais da adoção de sistemas renováveis.",
-                Conteudo = "Conteúdo completo sobre os benefícios das energias renováveis...",
-                DataPublicacao = DateTime.Now.AddDays(-15),
-                Autor = "Autor 1"
-            },
-            new EducacaoEnergetica
-            {
-                Id = 2,
-                Titulo = "Princípios Básicos de Painéis Solares",
-                Categoria = "Painéis Solares",
-                Resumo = "Aprenda os fundamentos do funcionamento dos painéis solares.",
-                Conteudo = "Conteúdo completo sobre os princípios básicos dos painéis solares...",
-                DataPublicacao = DateTime.Now.AddDays(-10),
-                Autor = "Autor 2"
-            },
-            new EducacaoEnergetica
-            {
-                Id = 3,
-                Titulo = "Cálculo do ROI e Economia Total",
-                Categoria = "Cálculos do ROI",
-                Resumo = "Entenda como calcular o Retorno sobre Investimento (ROI) em sistemas de energia renovável.",
-                Conteudo = "Conteúdo completo sobre o cálculo do ROI e economia total...",
-                DataPublicacao = DateTime.Now.AddDays(-5),
-                Autor = "Autor 3"
-            }
-        };
+	public class EducacaoEnergeticaController : Controller
+	{
+		private readonly ApplicationDbContext _context;
 
-        // GET: /EducacaoEnergetica/Index
-        public IActionResult Index()
-        {
-            // Retorna a lista de artigos para a view
-            return View(_artigos);
-        }
+		public EducacaoEnergeticaController(ApplicationDbContext context)
+		{
+			_context = context;
+		}
 
-        // GET: /EducacaoEnergetica/Details/{id}
-        public IActionResult Details(int id)
-        {
-            var artigo = _artigos.FirstOrDefault(a => a.Id == id);
-            if (artigo == null)
-            {
-                return NotFound();
-            }
-            return View(artigo);
-        }
-    }
+		[HttpGet("educacao-energetica")]
+		public async Task<IActionResult> Index()
+		{
+			var model = await CarregarViewModelAsync();
+			return View(model);
+		}
+
+		private async Task<EducacaoEnergeticaViewModel> CarregarViewModelAsync()
+		{
+			return new EducacaoEnergeticaViewModel
+			{
+				Artigos = await _context.Artigos.ToListAsync()
+			};
+		}
+
+		[HttpGet("educacao-energetica/artigo/{id}")]
+		public async Task<IActionResult> VerArtigo(int id)
+		{
+			var artigo = await _context.Artigos
+				.FirstOrDefaultAsync(a => a.Id == id);
+
+			if (artigo == null)
+			{
+				return NotFound();
+			}
+
+			return View(artigo);
+		}
+	}
 }

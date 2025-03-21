@@ -42,12 +42,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFkb3NJbnN0YWxhY2FvXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/EducacaoEnergetica/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2FjYW9FbmVyZ2V0aWNhXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/EducacaoEnergetica/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2FjYW9FbmVyZ2V0aWNhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/EducacaoEnergetica/VerArtigo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2FjYW9FbmVyZ2V0aWNhXFZlckFydGlnby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/EnergySimulation/Simulation.cshtml]
@@ -60,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/ManualTecnico/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudWFsVGVjbmljb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/ROICalculator/Dashboard.cshtml]

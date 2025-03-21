@@ -1,0 +1,12 @@
+﻿@model LightInvest.Models.Artigo
+
+<h1>@Model.Titulo</h1>
+
+<div>
+    <p><strong>Publicado em:</strong> @Model.DataPublicacao.ToString("dd/MM/yyyy")</p>
+    <p>@Model.Conteudo</p>
+    @if (!string.IsNullOrEmpty(Model.ImagemUrl))
+    {
+        <img src="@Model.ImagemUrl" alt="Imagem do Artigo" />
+    }
+</div>

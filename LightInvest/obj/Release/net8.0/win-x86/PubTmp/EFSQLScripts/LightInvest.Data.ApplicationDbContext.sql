@@ -9,9 +9,27 @@ END;
 GO
 
 BEGIN TRANSACTION;
+GO
+
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
+    WHERE [MigrationId] = N'20250321021553_Firts'
+)
+BEGIN
+    CREATE TABLE [Artigos] (
+        [Id] int NOT NULL IDENTITY,
+        [Titulo] nvarchar(max) NOT NULL,
+        [Conteudo] nvarchar(max) NOT NULL,
+        [ImagemUrl] nvarchar(max) NOT NULL,
+        [DataPublicacao] datetime2 NOT NULL,
+        CONSTRAINT [PK_Artigos] PRIMARY KEY ([Id])
+    );
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     CREATE TABLE [Cidades] (
@@ -20,17 +38,18 @@ BEGIN
         CONSTRAINT [PK_Cidades] PRIMARY KEY ([Id])
     );
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     CREATE TABLE [EnergyConsumptions] (
         [Id] int NOT NULL IDENTITY,
         [UserEmail] nvarchar(max) NOT NULL,
-        [ConsumoDiaSemana] nvarchar(max) NOT NULL,
-        [ConsumoFimSemana] nvarchar(max) NOT NULL,
+        [ConsumoDiaSemana] nvarchar(24) NOT NULL,
+        [ConsumoFimSemana] nvarchar(24) NOT NULL,
         [MesesOcupacao] nvarchar(max) NOT NULL,
         [MediaSemana] decimal(18,2) NOT NULL,
         [MediaFimSemana] decimal(18,2) NOT NULL,
@@ -39,22 +58,25 @@ BEGIN
         CONSTRAINT [PK_EnergyConsumptions] PRIMARY KEY ([Id])
     );
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     CREATE TABLE [ModelosDePaineisSolares] (
         [Id] int NOT NULL IDENTITY,
-        [Modelo] nvarchar(100) NOT NULL,
+        [ModeloNome] nvarchar(100) NOT NULL,
+        [Preco] decimal(18,2) NOT NULL,
         CONSTRAINT [PK_ModelosDePaineisSolares] PRIMARY KEY ([Id])
     );
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     CREATE TABLE [PasswordResetTokens] (
@@ -65,10 +87,11 @@ BEGIN
         CONSTRAINT [PK_PasswordResetTokens] PRIMARY KEY ([Id])
     );
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     CREATE TABLE [ROICalculators] (
@@ -84,25 +107,27 @@ BEGIN
         CONSTRAINT [PK_ROICalculators] PRIMARY KEY ([Id])
     );
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     CREATE TABLE [Tarifas] (
         [Id] int NOT NULL IDENTITY,
+        [PrecoKWh] decimal(18,2) NOT NULL,
         [UserEmail] nvarchar(max) NOT NULL,
         [DataAlteracao] datetime2 NOT NULL,
-        [Nome] int NOT NULL,
-        [PrecoKwh] decimal(18,2) NOT NULL,
+        [Tipo] int NOT NULL,
         CONSTRAINT [PK_Tarifas] PRIMARY KEY ([Id])
     );
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     CREATE TABLE [Users] (
@@ -113,10 +138,26 @@ BEGIN
         CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
     );
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
+    WHERE [MigrationId] = N'20250321021553_Firts'
+)
+BEGIN
+    CREATE TABLE [PotenciasDePaineisSolares] (
+        [Id] int NOT NULL IDENTITY,
+        [Potencia] decimal(18,2) NOT NULL,
+        [ModeloPainelId] int NOT NULL,
+        CONSTRAINT [PK_PotenciasDePaineisSolares] PRIMARY KEY ([Id]),
+        CONSTRAINT [FK_PotenciasDePaineisSolares_ModelosDePaineisSolares_ModeloPainelId] FOREIGN KEY ([ModeloPainelId]) REFERENCES [ModelosDePaineisSolares] ([Id]) ON DELETE NO ACTION
+    );
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     CREATE TABLE [DadosInstalacao] (
@@ -124,165 +165,32 @@ BEGIN
         [UserEmail] nvarchar(max) NOT NULL,
         [CidadeId] int NOT NULL,
         [ModeloPainelId] int NOT NULL,
+        [PotenciaId] int NOT NULL,
         [NumeroPaineis] int NOT NULL,
-        [ConsumoPainel] decimal(18,2) NOT NULL,
         [Inclinacao] decimal(18,2) NOT NULL,
-        [Dificuldade] nvarchar(max) NOT NULL,
+        [Dificuldade] int NOT NULL,
         [PrecoInstalacao] decimal(18,2) NOT NULL,
         CONSTRAINT [PK_DadosInstalacao] PRIMARY KEY ([Id]),
         CONSTRAINT [FK_DadosInstalacao_Cidades_CidadeId] FOREIGN KEY ([CidadeId]) REFERENCES [Cidades] ([Id]) ON DELETE CASCADE,
-        CONSTRAINT [FK_DadosInstalacao_ModelosDePaineisSolares_ModeloPainelId] FOREIGN KEY ([ModeloPainelId]) REFERENCES [ModelosDePaineisSolares] ([Id]) ON DELETE CASCADE
+        CONSTRAINT [FK_DadosInstalacao_ModelosDePaineisSolares_ModeloPainelId] FOREIGN KEY ([ModeloPainelId]) REFERENCES [ModelosDePaineisSolares] ([Id]) ON DELETE CASCADE,
+        CONSTRAINT [FK_DadosInstalacao_PotenciasDePaineisSolares_PotenciaId] FOREIGN KEY ([PotenciaId]) REFERENCES [PotenciasDePaineisSolares] ([Id])
     );
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
-)
-BEGIN
-    CREATE TABLE [PotenciasDePaineisSolares] (
-        [Id] int NOT NULL IDENTITY,
-        [PainelSolarId] int NOT NULL,
-        [Potencia] decimal(18,2) NOT NULL,
-        CONSTRAINT [PK_PotenciasDePaineisSolares] PRIMARY KEY ([Id]),
-        CONSTRAINT [FK_PotenciasDePaineisSolares_ModelosDePaineisSolares_PainelSolarId] FOREIGN KEY ([PainelSolarId]) REFERENCES [ModelosDePaineisSolares] ([Id]) ON DELETE CASCADE
-    );
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Nome') AND [object_id] = OBJECT_ID(N'[Cidades]'))
         SET IDENTITY_INSERT [Cidades] ON;
     EXEC(N'INSERT INTO [Cidades] ([Id], [Nome])
-    VALUES (1, N''Lisboa''),
-    (2, N''Porto''),
-    (3, N''Coimbra''),
-    (4, N''Funchal'')');
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Nome') AND [object_id] = OBJECT_ID(N'[Cidades]'))
-        SET IDENTITY_INSERT [Cidades] OFF;
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
-)
-BEGIN
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Modelo') AND [object_id] = OBJECT_ID(N'[ModelosDePaineisSolares]'))
-        SET IDENTITY_INSERT [ModelosDePaineisSolares] ON;
-    EXEC(N'INSERT INTO [ModelosDePaineisSolares] ([Id], [Modelo])
-    VALUES (1, N''Modelo A''),
-    (2, N''Modelo B''),
-    (3, N''Modelo C'')');
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Modelo') AND [object_id] = OBJECT_ID(N'[ModelosDePaineisSolares]'))
-        SET IDENTITY_INSERT [ModelosDePaineisSolares] OFF;
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
-)
-BEGIN
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PainelSolarId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
-        SET IDENTITY_INSERT [PotenciasDePaineisSolares] ON;
-    EXEC(N'INSERT INTO [PotenciasDePaineisSolares] ([Id], [PainelSolarId], [Potencia])
-    VALUES (1, 1, 250.0),
-    (2, 1, 270.0),
-    (3, 1, 300.0),
-    (4, 2, 300.0),
-    (5, 2, 320.0),
-    (6, 2, 350.0),
-    (7, 3, 350.0),
-    (8, 3, 380.0),
-    (9, 3, 400.0)');
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PainelSolarId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
-        SET IDENTITY_INSERT [PotenciasDePaineisSolares] OFF;
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
-)
-BEGIN
-    CREATE INDEX [IX_DadosInstalacao_CidadeId] ON [DadosInstalacao] ([CidadeId]);
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
-)
-BEGIN
-    CREATE INDEX [IX_DadosInstalacao_ModeloPainelId] ON [DadosInstalacao] ([ModeloPainelId]);
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
-)
-BEGIN
-    CREATE INDEX [IX_PotenciasDePaineisSolares_PainelSolarId] ON [PotenciasDePaineisSolares] ([PainelSolarId]);
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250315231224_InitialCreate'
-)
-BEGIN
-    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20250315231224_InitialCreate', N'9.0.2');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [Cidades] SET [Nome] = N''Albufeira''
-    WHERE [Id] = 1;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [Cidades] SET [Nome] = N''Almada''
-    WHERE [Id] = 2;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [Cidades] SET [Nome] = N''Amadora''
-    WHERE [Id] = 3;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [Cidades] SET [Nome] = N''Aveiro''
-    WHERE [Id] = 4;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Nome') AND [object_id] = OBJECT_ID(N'[Cidades]'))
-        SET IDENTITY_INSERT [Cidades] ON;
-    EXEC(N'INSERT INTO [Cidades] ([Id], [Nome])
-    VALUES (5, N''Barcelos''),
+    VALUES (1, N''Albufeira''),
+    (2, N''Almada''),
+    (3, N''Amadora''),
+    (4, N''Aveiro''),
+    (5, N''Barcelos''),
     (6, N''Beja''),
     (7, N''Braga''),
     (8, N''Bragança''),
@@ -318,278 +226,51 @@ BEGIN
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Nome') AND [object_id] = OBJECT_ID(N'[Cidades]'))
         SET IDENTITY_INSERT [Cidades] OFF;
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
-    EXEC(N'UPDATE [ModelosDePaineisSolares] SET [Modelo] = N''Aiko - Comet 2U''
-    WHERE [Id] = 1;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [ModelosDePaineisSolares] SET [Modelo] = N''Maxeon 7''
-    WHERE [Id] = 2;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [ModelosDePaineisSolares] SET [Modelo] = N''Longi - HI-MO X6''
-    WHERE [Id] = 3;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Modelo') AND [object_id] = OBJECT_ID(N'[ModelosDePaineisSolares]'))
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ModeloNome', N'Preco') AND [object_id] = OBJECT_ID(N'[ModelosDePaineisSolares]'))
         SET IDENTITY_INSERT [ModelosDePaineisSolares] ON;
-    EXEC(N'INSERT INTO [ModelosDePaineisSolares] ([Id], [Modelo])
-    VALUES (4, N''Huasun - Himalaya''),
-    (5, N''TW Solar''),
-    (6, N''JA Solar DeepBlue 4.0 Pro''),
-    (7, N''Astroenergy - Astro N5''),
-    (8, N''Grand Sunergy''),
-    (9, N''DMEGC - Infinity RT''),
-    (10, N''Spic'')');
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Modelo') AND [object_id] = OBJECT_ID(N'[ModelosDePaineisSolares]'))
+    EXEC(N'INSERT INTO [ModelosDePaineisSolares] ([Id], [ModeloNome], [Preco])
+    VALUES (1, N''Aiko - Comet 2U'', 1250.0),
+    (2, N''Maxeon 7'', 1320.0),
+    (3, N''Longi - HI-MO X6'', 1280.0),
+    (4, N''Huasun - Himalaya'', 1300.0),
+    (5, N''TW Solar'', 1230.0),
+    (6, N''JA Solar DeepBlue 4.0 Pro'', 1270.0),
+    (7, N''Astroenergy - Astro N5'', 1260.0),
+    (8, N''Grand Sunergy'', 1240.0),
+    (9, N''DMEGC - Infinity RT'', 1290.0),
+    (10, N''Spic'', 910.0)');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ModeloNome', N'Preco') AND [object_id] = OBJECT_ID(N'[ModelosDePaineisSolares]'))
         SET IDENTITY_INSERT [ModelosDePaineisSolares] OFF;
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [Potencia] = 670.0
-    WHERE [Id] = 1;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 2, [Potencia] = 445.0
-    WHERE [Id] = 2;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 3, [Potencia] = 600.0
-    WHERE [Id] = 3;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 4, [Potencia] = 720.0
-    WHERE [Id] = 4;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 5, [Potencia] = 715.0
-    WHERE [Id] = 5;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 5, [Potencia] = 590.0
-    WHERE [Id] = 6;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 6, [Potencia] = 595.0
-    WHERE [Id] = 7;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 7, [Potencia] = 640.0
-    WHERE [Id] = 8;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 8, [Potencia] = 710.0
-    WHERE [Id] = 9;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PainelSolarId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ModeloPainelId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
         SET IDENTITY_INSERT [PotenciasDePaineisSolares] ON;
-    EXEC(N'INSERT INTO [PotenciasDePaineisSolares] ([Id], [PainelSolarId], [Potencia])
-    VALUES (10, 9, 615.0),
-    (11, 10, 410.0)');
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PainelSolarId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
-        SET IDENTITY_INSERT [PotenciasDePaineisSolares] OFF;
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195205_population'
-)
-BEGIN
-    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20250316195205_population', N'9.0.2');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 1, [Potencia] = 680.0
-    WHERE [Id] = 2;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 1, [Potencia] = 690.0
-    WHERE [Id] = 3;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 1, [Potencia] = 700.0
-    WHERE [Id] = 4;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 2, [Potencia] = 445.0
-    WHERE [Id] = 5;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 2, [Potencia] = 455.0
-    WHERE [Id] = 6;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 2, [Potencia] = 465.0
-    WHERE [Id] = 7;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 2, [Potencia] = 475.0
-    WHERE [Id] = 8;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 3, [Potencia] = 600.0
-    WHERE [Id] = 9;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 3, [Potencia] = 610.0
-    WHERE [Id] = 10;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    EXEC(N'UPDATE [PotenciasDePaineisSolares] SET [PainelSolarId] = 3, [Potencia] = 620.0
-    WHERE [Id] = 11;
-    SELECT @@ROWCOUNT');
-END;
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
-)
-BEGIN
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PainelSolarId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
-        SET IDENTITY_INSERT [PotenciasDePaineisSolares] ON;
-    EXEC(N'INSERT INTO [PotenciasDePaineisSolares] ([Id], [PainelSolarId], [Potencia])
-    VALUES (12, 3, 630.0),
+    EXEC(N'INSERT INTO [PotenciasDePaineisSolares] ([Id], [ModeloPainelId], [Potencia])
+    VALUES (1, 1, 670.0),
+    (2, 1, 680.0),
+    (3, 1, 690.0),
+    (4, 1, 700.0),
+    (5, 2, 445.0),
+    (6, 2, 455.0),
+    (7, 2, 465.0),
+    (8, 2, 475.0),
+    (9, 3, 600.0),
+    (10, 3, 610.0),
+    (11, 3, 620.0),
+    (12, 3, 630.0),
     (13, 4, 720.0),
     (14, 4, 730.0),
     (15, 4, 740.0),
@@ -619,21 +300,60 @@ BEGIN
     (39, 9, 635.0),
     (40, 9, 645.0),
     (41, 10, 410.0),
-    (42, 10, 420.0),
-    (43, 10, 430.0),
+    (42, 10, 420.0);
+    INSERT INTO [PotenciasDePaineisSolares] ([Id], [ModeloPainelId], [Potencia])
+    VALUES (43, 10, 430.0),
     (44, 10, 440.0)');
-    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'PainelSolarId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ModeloPainelId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
         SET IDENTITY_INSERT [PotenciasDePaineisSolares] OFF;
 END;
+GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250316195936_populationPOWER'
+    WHERE [MigrationId] = N'20250321021553_Firts'
+)
+BEGIN
+    CREATE INDEX [IX_DadosInstalacao_CidadeId] ON [DadosInstalacao] ([CidadeId]);
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250321021553_Firts'
+)
+BEGIN
+    CREATE INDEX [IX_DadosInstalacao_ModeloPainelId] ON [DadosInstalacao] ([ModeloPainelId]);
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250321021553_Firts'
+)
+BEGIN
+    CREATE INDEX [IX_DadosInstalacao_PotenciaId] ON [DadosInstalacao] ([PotenciaId]);
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250321021553_Firts'
+)
+BEGIN
+    CREATE INDEX [IX_PotenciasDePaineisSolares_ModeloPainelId] ON [PotenciasDePaineisSolares] ([ModeloPainelId]);
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250321021553_Firts'
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20250316195936_populationPOWER', N'9.0.2');
+    VALUES (N'20250321021553_Firts', N'8.0.3');
 END;
+GO
 
 COMMIT;
 GO

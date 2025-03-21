@@ -1,39 +1,17 @@
-﻿@model IEnumerable<LightInvest.Models.EducacaoEnergetica>
+﻿@model LightInvest.Models.EducacaoEnergeticaViewModel
 
-@{
-    ViewData["Title"] = "Educação Energética";
-}
+<h1>Educação Energética</h1>
 
-<h2>Educação Energética</h2>
-
-<div class="artigos-lista">
-    @foreach (var artigo in Model)
-    {
-        <div class="artigo">
-            <h3>@Html.ActionLink(artigo.Titulo, "Details", "EducacaoEnergetica", new { id = artigo.Id }, null)</h3>
-            <p><strong>Categoria:</strong> @artigo.Categoria</p>
-            <p>@artigo.Resumo</p>
-            <p><em>Publicado em @artigo.DataPublicacao.ToShortDateString() por @artigo.Autor</em></p>
-        </div>
-    }
-</div>
-
-<style>
-    .artigos-lista {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .artigo {
-        background-color: #f8f8f8;
-        padding: 15px;
-        border-radius: 5px;
-        width: calc(33% - 20px);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-        .artigo h3 {
-            margin-top: 0;
+<div>
+    <h2>Artigos Educativos sobre Energias Renováveis</h2>
+    <ul>
+        @foreach (var artigo in Model.Artigos)
+        {
+            <li>
+                <a href="@Url.Action("VerArtigo", "EducacaoEnergetica", new { id = artigo.Id })">
+                    @artigo.Titulo
+                </a>
+            </li>
         }
-</style>
+    </ul>
+</div>

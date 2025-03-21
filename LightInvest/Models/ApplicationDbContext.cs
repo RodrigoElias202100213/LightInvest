@@ -27,6 +27,9 @@ namespace LightInvest.Data
 		public DbSet<PotenciaPainelSolar> PotenciasDePaineisSolares { get; set; }
 
 
+		public DbSet<Artigo> Artigos { get; set; }
+
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
