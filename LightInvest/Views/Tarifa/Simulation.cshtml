@@ -1,0 +1,213 @@
+﻿@model LightInvest.Models.TarifaViewModel
+
+@{
+    ViewData["Title"] = "Simulação de Tarifa";
+}
+
+<div class="selecionarTarifa-container">
+    <div class="selecionarTarifa-box">
+        <div class="container">
+            <div class="sidebar">
+                <div class="steps">
+                    <div class="step">1</div>
+                    <div class="step">2</div>
+                    <div class="step">3</div>
+                    <div class="step">4</div>
+                </div>
+            </div>
+
+            <div class="content">
+                <h2>Formulário das Tarifas Energéticas</h2>
+
+                <div class="left">
+                    <form asp-action="Simulation" method="post">
+
+
+                        <!-- Exibindo erros de validação manualmente -->
+                        @if (!ViewData.ModelState.IsValid)
+                        {
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                    {
+                                        <li>@error.ErrorMessage</li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+
+                        <div class="form-group">
+                            <label asp-for="PrecoKWh"><strong>1. Preço por kWh:</strong></label>
+                            <p>Insira o valor do preço por KWh da sua tarifa de eletricidade (em €)</p>
+                            <input asp-for="PrecoKWh" class="form-control" />
+                            <span asp-validation-for="PrecoKWh" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="TipoDeTarifaEscolhida"><strong>2. Tipo da Tarifa:</strong></label>
+                            <select asp-for="TipoDeTarifaEscolhida" class="form-control">
+                                <option value="">Escolha uma tarifa</option> <!-- Opção inicial -->
+                                @foreach (var tipo in Model.TiposDeTarifa)
+                                {
+                                    <option value="@tipo" selected="@(Model.TipoDeTarifaEscolhida?.ToString() == tipo ? "selected" : null)">
+                                        @tipo
+                                    </option>
+                                }
+                            </select>
+                            <span asp-validation-for="TipoDeTarifaEscolhida" class="text-danger"></span>
+                        </div>
+
+
+
+                        <div id="horizontal-button">
+                            <a href="@Url.Action("Simulation", "EnergySimulation")" class="btn">Anterior</a>
+                            <button type="submit" class="btn">Seguinte</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .selecionarTarifa-container {
+        max-height: 100vh;
+        background-color: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .selecionarTarifa-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 1500px;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        width: 20%;
+        background-color: #d3e1e3;
+        padding: 20px;
+        position: relative;
+    }
+
+    .steps {
+        position: absolute;
+        top: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #aaa;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        margin: 30px 0;
+        position: relative;
+    }
+
+        .step:first-child, .step:nth-child(2) {
+            background-color: #065A66;
+        }
+
+            .step:first-child::after {
+                background-color: #065A66;
+            }
+
+        .step::after {
+            content: "";
+            width: 2px;
+            height: 80px;
+            background-color: #aaa;
+            position: absolute;
+            bottom: -80px;
+            transform: translateX(-50%);
+        }
+
+        .step:last-child::after {
+            display: none;
+        }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-weight: bold;
+        font-size: 3rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+
+    .left {
+        margin-left: 6%;
+    }
+
+    .form-group {
+        margin-bottom: 7%;
+        width: 100%;
+    }
+
+    .form-control {
+        width: 60%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .btn {
+        margin-top: 8%;
+        background: #065A66;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+        .btn:hover {
+            color: white;
+            background: #054850;
+        }
+
+    #horizontal-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3%;
+    }
+
+    .alert {
+        margin-top: 2%;
+    }
+
+</style>

@@ -1,97 +1,183 @@
-﻿using LightInvest.Data;
-using LightInvest.Models;
+﻿using LightInvest.Models;
+using LightInvest.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
-public class DadosInstalacaoController : Controller
+namespace LightInvest.Controllers
 {
-	private readonly ApplicationDbContext _context;
-
-	public DadosInstalacaoController(ApplicationDbContext context)
+	public class DadosInstalacaoController : Controller
 	{
-		_context = context;
-	}
+		private readonly ApplicationDbContext _context;
 
-	// Exibe o formulário para inserir os dados de instalação
-	public async Task<IActionResult> Create()
-	{
-		var user = await GetLoggedInUserAsync();
-		if (user == null)
+		public DadosInstalacaoController(ApplicationDbContext context)
 		{
-			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
-			return RedirectToAction("Privacy", "Home"); 
+			_context = context;
 		}
 
-		ViewBag.Cidades = await _context.Cidades.ToListAsync();
-		ViewBag.ModelosPaineis = await _context.ModelosDePaineisSolares.ToListAsync();
-		return View();
-	}
-
-
-	[HttpPost]
-	[ValidateAntiForgeryToken]
-	public async Task<IActionResult> Create(DadosInstalacao dados)
-	{
-		var user = await GetLoggedInUserAsync();
-		if (user == null)
+		[HttpGet("dados-instalacao")]
+		public async Task<IActionResult> Create()
 		{
-			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
-			return RedirectToAction("Index", "Home");
+			var model = await CarregarViewModelAsync();
+			return View(model);
 		}
 
-	
-		var dadosExistentes = await _context.DadosInstalacao
-			.Where(d => d.UserEmail == user.Email)
-			.FirstOrDefaultAsync();
-
-		if (dadosExistentes == null)
+		private async Task<DadosInstalacaoViewModel> CarregarViewModelAsync()
 		{
-			dados.UserEmail = user.Email;
-			dados.AtualizarPrecoInstalacao(); 
-			_context.DadosInstalacao.Add(dados);
+			return new DadosInstalacaoViewModel
+			{
+				Cidades = await _context.Cidades.ToListAsync(),
+				ModelosDePaineis = await _context.ModelosDePaineisSolares.ToListAsync(),
+				Potencias = await _context.PotenciasDePaineisSolares.ToListAsync()
+			};
+		}
+
+		[HttpPost("dados-instalacao")]
+		public async Task<IActionResult> Create(DadosInstalacaoViewModel model)
+		{
+			if (!ModelState.IsValid)
+			{
+				model = await CarregarViewModelAsync();
+				return View(model);
+			}
+
+			var user = await ObterUsuarioLogadoAsync();
+			if (user == null)
+			{
+				ModelState.AddModelError(string.Empty, "Erro: Nenhum utilizador autenticado.");
+				model = await CarregarViewModelAsync();
+				return View(model);
+			}
+
+			var modeloPainel = await _context.ModelosDePaineisSolares
+				.FirstOrDefaultAsync(m => m.Id == model.ModeloPainelId);
+
+			if (modeloPainel == null)
+			{
+				ModelState.AddModelError("", "Erro: Modelo de painel não encontrado.");
+				return View(model);
+			}
+
+			var potenciaPainel = await _context.PotenciasDePaineisSolares
+				.FirstOrDefaultAsync(p => p.Id == model.PotenciaId);
+
+			if (potenciaPainel == null)
+			{
+				ModelState.AddModelError("", "Erro: Potência do painel não encontrada.");
+				return View(model);
+			}
+
+			var dadosInstalacao = new DadosInstalacao
+			{
+				UserEmail = user.Email,
+				CidadeId = model.CidadeId,
+				ModeloPainelId = model.ModeloPainelId,
+				ModeloPainel = modeloPainel,
+				PotenciaId = model.PotenciaId,
+				Potencia = potenciaPainel,
+				NumeroPaineis = model.NumeroPaineis,
+				Inclinacao = model.Inclinacao,
+				Dificuldade = model.Dificuldade,
+			};
+
+
+			dadosInstalacao.AtualizarPrecoInstalacao();
+
+			await SalvarOuAtualizarDadosInstalacao(dadosInstalacao);
+
+			TempData["PrecoFinal"] = dadosInstalacao.PrecoInstalacao.ToString("F2");
+
+			return RedirectToAction("Simular", "SimulacaoValores");
+		}
+
+		public IActionResult Confirmacao()
+		{
+			var precoFinal = TempData["PrecoFinal"] as string;
+			if (precoFinal != null)
+			{
+				ViewBag.PrecoFinal = precoFinal;
+			}
+			else
+			{
+				ViewBag.PrecoFinal = "Preço não calculado";
+			}
+
+			return View();
+		}
+
+		private async Task<User> ObterUsuarioLogadoAsync()
+		{
+			var userEmail = HttpContext.Session.GetString("UserEmail");
+			return string.IsNullOrEmpty(userEmail)
+				? null
+				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+		}
+
+		[HttpPost("dados-instalacao/calcular-preco")]
+		public async Task<IActionResult> CalcularPrecoInstalacao(DadosInstalacaoViewModel model)
+		{
+			var modeloPainel = await _context.ModelosDePaineisSolares
+				.FirstOrDefaultAsync(m => m.Id == model.ModeloPainelId);
+
+			if (modeloPainel == null)
+			{
+				return BadRequest("Modelo de painel não encontrado.");
+			}
+
+			var dadosInstalacao = new DadosInstalacao
+			{
+				ModeloPainel = modeloPainel,
+				NumeroPaineis = model.NumeroPaineis,
+				Inclinacao = model.Inclinacao,
+				Dificuldade = model.Dificuldade
+			};
+
+			var precoFinal = dadosInstalacao.CalcularPrecoInstalacao();
+			return Json(new { preco = precoFinal.ToString("F2") });
+		}
+
+
+		private async Task SalvarOuAtualizarDadosInstalacao(DadosInstalacao dadosInstalacao)
+		{
+			var dadosExistente = await _context.DadosInstalacao
+				.FirstOrDefaultAsync(d => d.UserEmail == dadosInstalacao.UserEmail);
+
+			if (dadosExistente != null)
+			{
+				dadosExistente.CidadeId = dadosInstalacao.CidadeId;
+				dadosExistente.ModeloPainelId = dadosInstalacao.ModeloPainelId;
+				dadosExistente.ModeloPainel = dadosInstalacao.ModeloPainel;
+				dadosExistente.PotenciaId = dadosInstalacao.PotenciaId;
+				dadosExistente.NumeroPaineis = dadosInstalacao.NumeroPaineis;
+				dadosExistente.Inclinacao = dadosInstalacao.Inclinacao;
+				dadosExistente.Dificuldade = dadosInstalacao.Dificuldade;
+				dadosExistente.PrecoInstalacao = dadosInstalacao.PrecoInstalacao;
+
+				_context.DadosInstalacao.Update(dadosExistente);
+			}
+			else
+			{
+				await _context.DadosInstalacao.AddAsync(dadosInstalacao);
+			}
 			await _context.SaveChangesAsync();
 		}
-		else
+
+		[HttpGet]
+		public async Task<IActionResult> GetConsumosPainel(int modeloPainelId)
 		{
-			dadosExistentes.CidadeId = dados.CidadeId;
-			dadosExistentes.ModeloPainelId = dados.ModeloPainelId;
-			dadosExistentes.NumeroPaineis = dados.NumeroPaineis;
-			dadosExistentes.ConsumoPainel = dados.ConsumoPainel;
-			dadosExistentes.Inclinacao = dados.Inclinacao;
-			dadosExistentes.Dificuldade = dados.Dificuldade;
-			dadosExistentes.AtualizarPrecoInstalacao(); 
-			_context.DadosInstalacao.Update(dadosExistentes);
-			await _context.SaveChangesAsync();
+			var potencia = await _context.PotenciasDePaineisSolares
+				.Where(p => p.ModeloPainelId == modeloPainelId)
+				.Select(p => new { p.Id, p.Potencia })
+				.ToListAsync();
+
+			if (potencia == null || !potencia.Any())
+			{
+				return NotFound();
+			}
+
+			return Json(potencia);
 		}
-
-		return RedirectToAction("SimulacaoCompleta", "Simulacao"); 
-	}
-
-	
-	private async Task<User> GetLoggedInUserAsync()
-	{
-		var userEmail = HttpContext.Session.GetString("UserEmail");
-		if (string.IsNullOrEmpty(userEmail))
-			return null;
-
-		return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
-	}
-
-	[HttpGet]
-	public async Task<IActionResult> GetConsumosPainel(int modeloPainelId)
-	{
-		var consumos = await _context.PotenciasDePaineisSolares
-			.Where(p => p.PainelSolarId == modeloPainelId)
-			.Select(p => new { p.Id, p.Potencia }) 
-			.ToListAsync();
-
-		if (consumos == null || !consumos.Any())
-		{
-			return NotFound(); 
-		}
-
-		return Json(consumos); 
 	}
 }

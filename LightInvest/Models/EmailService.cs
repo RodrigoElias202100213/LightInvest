@@ -3,7 +3,7 @@
 	using System.Net;
 	using System.Net.Mail;
 	using System.Threading.Tasks;
-	using Microsoft.Extensions.Configuration;  
+	using Microsoft.Extensions.Configuration;
 	public class EmailService
 	{
 		private readonly IConfiguration _configuration;
@@ -35,7 +35,7 @@
 				using (SmtpClient smtp = new SmtpClient())
 				{
 					smtp.Host = smtpServer;
-					smtp.Port = smtpPort;  
+					smtp.Port = smtpPort;
 					smtp.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
 					smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 					smtp.EnableSsl = true;

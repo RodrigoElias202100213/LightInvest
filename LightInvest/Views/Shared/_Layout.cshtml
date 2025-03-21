@@ -3,38 +3,38 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] - LightInvest</title>
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/LightInvest.styles.css" asp-append-version="true" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vujahday+Script&family=Vollkorn&family=Salsa&display=swap"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vujahday+Script&family=Vollkorn&family=Salsa&display=swap" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vujahday+Script&family=Vollkorn&family=Salsa&display=swap">
+
 	<style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
-    </style>
+		body {
+			font-family: 'Arial', sans-serif;
+			background-color: #f8f9fa;
+		}
+	</style>
 </head>
 <body>
 
-<!-- Navbar -->
-<header>
-	<nav class="navbar navbar-expand-sm navbar-dark">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="@Url.Action("Login", "Account")">LightInvest</a>
-		</div>
-	</nav>
-</header>
+	<!-- Navbar -->
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-dark">
+			<div class="container-fluid">
+			</div>
+		</nav>
+	</header>
 
-<!-- Main Content -->
-<div class="container-fluid">
-	<main role="main">
-		@RenderBody()  
-	</main>
-</div>
+	<!-- Main Content -->
+	<div class="container-fluid">
+		<main role="main">
+			@RenderBody()
+		</main>
+	</div>
 
 
-@*
+	@*
 	<!-- Footer -->
 	<footer class="footer">
 	<div class="container text-center">
@@ -44,10 +44,10 @@
 *@
 
 
-<!-- Scripts -->
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
-@await RenderSectionAsync("Scripts", required: false)
+	<!-- Scripts -->
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

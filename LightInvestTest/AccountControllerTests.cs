@@ -51,8 +51,9 @@ public class AccountControllerTests
 	{
 		var loginModel = new LoginViewModel
 		{
-			Email = "inexistente@email.com", 
-			Password = "Pass123" };
+			Email = "inexistente@email.com",
+			Password = "Pass123"
+		};
 
 		var result = await _controller.Login(loginModel) as ViewResult;
 
@@ -60,12 +61,12 @@ public class AccountControllerTests
 		Assert.False(_controller.ModelState.IsValid);
 		Assert.Contains(_controller.ModelState.Values, v => v.Errors.Any(e => e.ErrorMessage.Contains("Email ou palavra-passe não encontrada.")));
 	}
-	
+
 
 	[Fact]
 	public void Login_ReturnsView()
 	{
-		var ac = new AccountController(null,null);
+		var ac = new AccountController(null, null);
 		var result = ac.Login();
 		Assert.IsType<ViewResult>(result);
 	}
@@ -73,7 +74,7 @@ public class AccountControllerTests
 	[Fact]
 	public void Register_ReturnsViewWithRegisterViewModel()
 	{
-		var ac = new AccountController(null,null);
+		var ac = new AccountController(null, null);
 		var result = ac.Register();
 		var viewResult = Assert.IsType<ViewResult>(result);
 		Assert.IsType<RegisterViewModel>(viewResult.Model);
