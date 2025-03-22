@@ -1,19 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace LightInvest.Models
 {
 	public class EnergyConsumption
 	{
 		public int Id { get; set; }
 		public string UserEmail { get; set; }
-
+		
 		[Required(ErrorMessage = "O consumo durante a semana é obrigatório.")]
-		[MinLength(24, ErrorMessage = "É necessário informar os 24 valores de consumo diário.")]
+		[MinLength(24, ErrorMessage = "A lista deve conter exatamente 24 valores.")]
 		[MaxLength(24, ErrorMessage = "A lista não pode ter mais de 24 valores.")]
+		[Column(TypeName = "nvarchar(max)")]
 		public List<decimal> ConsumoDiaSemana { get; set; }
 
 		[Required(ErrorMessage = "O consumo no fim de semana é obrigatório.")]
-		[MinLength(24, ErrorMessage = "É necessário informar os 24 valores de consumo do fim de semana.")]
+		[MinLength(24, ErrorMessage = "A lista deve conter exatamente 24 valores.")]
 		[MaxLength(24, ErrorMessage = "A lista não pode ter mais de 24 valores.")]
+		[Column(TypeName = "nvarchar(max)")]
 		public List<decimal> ConsumoFimSemana { get; set; }
 
 		[Required(ErrorMessage = "Selecione pelo menos um mês de ocupação.")]
@@ -33,8 +36,9 @@ namespace LightInvest.Models
 
 		public EnergyConsumption()
 		{
-			ConsumoDiaSemana = new List<decimal>(new decimal[24]);
-			ConsumoFimSemana = new List<decimal>(new decimal[24]);
+			ConsumoDiaSemana = Enumerable.Repeat(0m, 24).ToList();
+			ConsumoFimSemana = Enumerable.Repeat(0m, 24).ToList();
+
 			MesesOcupacao = new List<string>();
 		}
 
@@ -106,35 +110,14 @@ namespace LightInvest.Models
 
 		public int MesParaNumero(string mes)
 		{
-			switch (mes.ToLower())
-			{
-				case "janeiro": return 1;
-				case "fevereiro": return 2;
-				case "marco": return 3;
-				case "abril": return 4;
-				case "maio": return 5;
-				case "junho": return 6;
-				case "julho": return 7;
-				case "agosto": return 8;
-				case "setembro": return 9;
-				case "outubro": return 10;
-				case "novembro": return 11;
-				case "dezembro": return 12;
-				default: throw new ArgumentException("Mês inválido");
-			}
+			return DateTime.ParseExact(mes, "MMMM", new System.Globalization.CultureInfo("pt-PT")).Month;
 		}
 
 		public void CalcularMediaAnual()
 		{
-			if (MesesOcupacao.Any())
-			{
-				MediaAnual = ConsumoTotal / MesesOcupacao.Count;
-			}
-			else
-			{
-				MediaAnual = 0;
-			}
+			MediaAnual = MesesOcupacao.Count > 0 ? Math.Round(ConsumoTotal / MesesOcupacao.Count, 1) : 0m;
 		}
+
 
 	}
 }

@@ -2,8 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using LightInvest.Data;
 using LightInvest.Models;
-using Rotativa.AspNetCore;
-using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 

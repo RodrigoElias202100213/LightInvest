@@ -17,7 +17,7 @@ namespace LightInvest.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.3")
+                .HasAnnotation("ProductVersion", "9.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -30,6 +30,10 @@ namespace LightInvest.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Categoria")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Conteudo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -37,13 +41,19 @@ namespace LightInvest.Migrations
                     b.Property<DateTime>("DataPublicacao")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("DescricaoCurta")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
                     b.Property<string>("ImagemUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
@@ -102,15 +112,15 @@ namespace LightInvest.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ConsumoDiaSemana")
+                    b.PrimitiveCollection<string>("ConsumoDiaSemana")
                         .IsRequired()
                         .HasMaxLength(24)
-                        .HasColumnType("nvarchar(24)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ConsumoFimSemana")
+                    b.PrimitiveCollection<string>("ConsumoFimSemana")
                         .IsRequired()
                         .HasMaxLength(24)
-                        .HasColumnType("nvarchar(24)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("ConsumoTotal")
                         .HasColumnType("decimal(18,2)");
@@ -124,7 +134,7 @@ namespace LightInvest.Migrations
                     b.Property<decimal>("MediaSemana")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("MesesOcupacao")
+                    b.PrimitiveCollection<string>("MesesOcupacao")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

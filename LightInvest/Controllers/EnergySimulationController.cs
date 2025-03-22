@@ -47,15 +47,27 @@ namespace LightInvest.Controllers
 				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 		}
 
+		private bool ValidarConsumo(EnergyConsumptionViewModel model)
+		{
+			if (model.ConsumoDiaSemana.All(c => c == 0) && model.ConsumoFimSemana.All(c => c == 0))
+			{
+				ModelState.AddModelError("Consumo", "Por favor, preencha os campos de consumo.");
+				return false;
+			}
+
+			return true;
+		}
+
+
 		[HttpPost("energy-simulation")]
 		public async Task<IActionResult> Simulation(EnergyConsumptionViewModel model)
 		{
 			EnsureValidData(model);
-
-			if (model.ConsumoDiaSemana.All(c => c == 0) && model.ConsumoFimSemana.All(c => c == 0))
+			if (!ValidarConsumo(model))
 			{
-				ModelState.AddModelError("Consumo", "Por favor, preencha os campos de consumo.");
+				return View(model);
 			}
+
 
 			if (!ModelState.IsValid)
 			{
@@ -100,10 +112,13 @@ namespace LightInvest.Controllers
 
 		private void EnsureValidData(EnergyConsumptionViewModel model)
 		{
-			model.ConsumoDiaSemana ??= Enumerable.Repeat(0m, 24).ToList();
-			model.ConsumoFimSemana ??= Enumerable.Repeat(0m, 24).ToList();
+			// Garantir que a lista tenha exatamente 24 elementos
+			model.ConsumoDiaSemana = model.ConsumoDiaSemana?.Take(24).ToList() ?? Enumerable.Repeat(0m, 24).ToList();
+			model.ConsumoFimSemana = model.ConsumoFimSemana?.Take(24).ToList() ?? Enumerable.Repeat(0m, 24).ToList();
 			model.MesesOcupacao ??= new List<string>();
 		}
+
+
 
 		private async Task SaveConsumptionToDatabase(string userEmail, EnergyConsumption consumo)
 		{
@@ -136,5 +151,6 @@ namespace LightInvest.Controllers
 			TempData["ConsumoTotal"] = model.MediaAnual.ToString("F2");
 			TempData["MesesOcupacao"] = model.MesesOcupacao;
 		}
+
 	}
 }

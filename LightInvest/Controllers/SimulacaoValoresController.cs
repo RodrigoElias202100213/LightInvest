@@ -218,7 +218,7 @@ namespace LightInvest.Controllers
 			byte[] buffer = Encoding.UTF8.GetBytes(csv.ToString());
 			return File(buffer, "text/csv", "Simulacao.csv");
 		}
-
+/*
 		public async Task<IActionResult> ExportExcel()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -253,7 +253,7 @@ namespace LightInvest.Controllers
 				}
 			}
 		}
-
+*/
 		private async Task<SimulacaoCompletaViewModel> GerarViewModelCompleto(string userEmail)
 		{
 			var consumo = await ProcessarEnergyConsumptionAsync(userEmail);

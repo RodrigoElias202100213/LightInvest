@@ -3,9 +3,6 @@
 @{
     ViewData["Title"] = "Consumo de Energia";
 }
-@{
-    ViewData["Title"] = "Consumo de Energia";
-}
 
 <div class="container">
     <div class="sidebar">
@@ -42,8 +39,7 @@
                     {
                         <div class="hora">
                             <span>@i h</span>
-                            <input type="number" asp-for="ConsumoDiaSemana[i]" min="0" step="0.01"
-                                   value="@(Model.ConsumoDiaSemana[i] > 0 ? Model.ConsumoDiaSemana[i].ToString("F2") : "")" />
+                            <input type="number" asp-for="ConsumoDiaSemana[@i]" min="0" step="0.01" />
                         </div>
                     }
                 </div>
@@ -57,8 +53,7 @@
                     {
                         <div class="hora">
                             <span>@i h</span>
-                            <input type="number" asp-for="ConsumoFimSemana[i]" min="0" step="0.01"
-                                   value="@(Model.ConsumoFimSemana[i] > 0 ? Model.ConsumoFimSemana[i].ToString("F2") : "")" />
+                            <input type="number" asp-for="ConsumoFimSemana[@i]" min="0" step="0.01" />
                         </div>
                     }
                 </div>
@@ -94,16 +89,13 @@
 
         inputs.forEach(input => {
             if (input.value.trim() === '') {
-                input.value = '0';
+                input.value = '0'; // Garante que valores vazios sejam preenchidos com zero
             }
         });
     });
 </script>
 
-
-
 <style>
-
     html, body {
         margin: 0;
         padding: 0;
@@ -168,7 +160,6 @@
             bottom: -80px;
             transform: translateX(-50%);
         }
-
 
         .step:last-child::after {
             display: none;
