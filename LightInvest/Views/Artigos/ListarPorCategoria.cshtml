@@ -1,0 +1,30 @@
+﻿@model List<LightInvest.Models.Artigo>
+@{
+    ViewData["Title"] = "Artigos - " + ViewBag.Categoria;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Artigos sobre @ViewBag.Categoria</h1>
+
+    @if (Model.Any())
+    {
+        <ul class="list-group">
+            @foreach (var artigo in Model)
+            {
+                <li class="list-group-item">
+                    <h5>@artigo.Titulo</h5>
+                    <p>@artigo.DescricaoCurta</p>
+                    <a asp-controller="Artigos" asp-action="Detalhes" asp-route-id="@artigo.Id" class="btn btn-primary">📖 Ler Mais</a>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p class="text-muted">Ainda não há artigos disponíveis para este tema.</p>
+    }
+
+    <div class="mt-4">
+        <a asp-controller="Artigos" asp-action="Index" class="btn btn-outline-dark">⬅ Voltar</a>
+    </div>
+</div>

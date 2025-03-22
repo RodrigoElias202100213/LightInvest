@@ -1,17 +1,17 @@
-﻿@model LightInvest.Models.EducacaoEnergeticaViewModel
+﻿@{
+    ViewData["Title"] = "Educação Energética";
+}
 
-<h1>Educação Energética</h1>
+<div class="text-center">
+    <h1 class="display-4">Educação Energética</h1>
+    <p>Escolha uma opção abaixo:</p>
 
-<div>
-    <h2>Artigos Educativos sobre Energias Renováveis</h2>
-    <ul>
-        @foreach (var artigo in Model.Artigos)
-        {
-            <li>
-                <a href="@Url.Action("VerArtigo", "EducacaoEnergetica", new { id = artigo.Id })">
-                    @artigo.Titulo
-                </a>
-            </li>
-        }
-    </ul>
+    <div class="d-grid gap-3 col-6 mx-auto">
+        <a asp-controller="Artigos" asp-action="Index" class="btn btn-primary btn-lg">📖 Artigos</a>
+        <a asp-controller="Manual" asp-action="Index" class="btn btn-secondary btn-lg">📘 Manual Técnico</a>
+    </div>
+
+    <div class="mt-4">
+        <a href="javascript:history.back()" class="btn btn-outline-dark">⬅ Voltar</a>
+    </div>
 </div>

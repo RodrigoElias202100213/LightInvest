@@ -9,6 +9,7 @@ namespace LightInvest.Models
 		public int Id { get; set; }
 
 		[Required]
+		[MaxLength(200)]
 		public string Titulo { get; set; }
 
 		[Required]
@@ -16,6 +17,10 @@ namespace LightInvest.Models
 
 		public string ImagemUrl { get; set; }
 
-		public DateTime DataPublicacao { get; set; }
+		public string Categoria { get; set; } 
+		[MaxLength(500)]
+		public string DescricaoCurta { get; set; }
+			
+		public DateTime DataPublicacao { get; set; } = DateTime.UtcNow;
 	}
 }

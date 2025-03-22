@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Artigos";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Artigos Educativos</h1>
+    <p>Escolha um tema:</p>
+
+    <div class="d-grid gap-3 col-6 mx-auto">
+        <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Energia Renovável" class="btn btn-primary btn-lg">🌱 Energia Renovável</a>
+        <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Painéis Solares" class="btn btn-secondary btn-lg">🔆 Princípios de Painéis Solares</a>
+        <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="ROI" class="btn btn-success btn-lg">💰 Cálculo de ROI</a>
+        <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Eficiência Energética" class="btn btn-warning btn-lg">⚡ Eficiência Energética</a>
+    </div>
+
+    <div class="mt-4">
+        <a asp-controller="EducacaoEnergetica" asp-action="Index" class="btn btn-outline-dark">⬅ Voltar</a>
+    </div>
+</div>
