@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using Xunit;
-using LightInvest.Models;
+using LightInvest.Models.Email;
 
 public class EmailServiceTests
 {

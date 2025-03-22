@@ -1,4 +1,5 @@
-﻿@model LightInvest.Models.DadosInstalacaoViewModel
+﻿@using LightInvest.Models.Ener
+@model LightInvest.Models.DadosInstalacaoViewModel
 
 @{
     ViewData["Title"] = "Solicitação de Instalação";
@@ -72,7 +73,7 @@
                             <label asp-for="Dificuldade"><strong>Dificuldade da Instalação:</strong></label>
                             <select asp-for="Dificuldade" class="form-control" required>
                                 <option value="">Escolha uma dificuldade</option>
-                                @foreach (var dificuldade in Enum.GetValues(typeof(LightInvest.Models.DificuldadeInstalacao)).Cast<LightInvest.Models.DificuldadeInstalacao>())
+                                @foreach (var dificuldade in Enum.GetValues(typeof(DificuldadeInstalacao)).Cast<DificuldadeInstalacao>())
                                 {
                                     <option value="@dificuldade.ToString()">@dificuldade</option>
                                 }

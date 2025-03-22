@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using LightInvest.Models;
-using LightInvest.Data;
+using LightInvest.Models.BD;
 
 public class AccountControllerTests
 {

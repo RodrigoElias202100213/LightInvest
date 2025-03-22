@@ -1,111 +1,131 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LightInvest
 build_property.RootNamespace = LightInvest
-build_property.ProjectDir = C:\Users\rodri\OneDrive\Ambiente de Trabalho\dadoss\LightInvest\
+build_property.ProjectDir = C:\Users\rodri\OneDrive\Ambiente de Trabalho\esaprojeto\LightInvest\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rodri\OneDrive\Ambiente de Trabalho\dadoss\LightInvest
+build_property.MSBuildProjectDirectory = C:\Users\rodri\OneDrive\Ambiente de Trabalho\esaprojeto\LightInvest
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Account/ForgotPassword.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Account/Login.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Account/Register.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Account/ResetPassword.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Account/ValidateToken.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Account/ValidateToken.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWYWxpZGF0ZVRva2VuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/DadosInstalacao/Create.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Artigos/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWdvc1xEZXRhbGhlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Artigos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWdvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Artigos/ListarPorCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXJ0aWdvc1xMaXN0YXJQb3JDYXRlZ29yaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/DadosInstalacao/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFkb3NJbnN0YWxhY2FvXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/EducacaoEnergetica/Index.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/EducacaoEnergetica/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2FjYW9FbmVyZ2V0aWNhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/EducacaoEnergetica/VerArtigo.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/EducacaoEnergetica/VerArtigo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2FjYW9FbmVyZ2V0aWNhXFZlckFydGlnby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/EnergySimulation/Simulation.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/EnergySimulation/Simulation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5lcmd5U2ltdWxhdGlvblxTaW11bGF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Home/Index.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Home/Privacy.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/ManualTecnico/Index.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/ManualTecnico/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFudWFsVGVjbmljb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/ROICalculator/Dashboard.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/ROICalculator/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUk9JQ2FsY3VsYXRvclxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/ROICalculator/Index.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/ROICalculator/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUk9JQ2FsY3VsYXRvclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/ROICalculator/roiRecords.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/ROICalculator/roiRecords.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUk9JQ2FsY3VsYXRvclxyb2lSZWNvcmRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Shared/Error.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/SimulacaoValores/SimulacaoCompleta.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/SimulacaoValores/SimulacaoCompleta.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2ltdWxhY2FvVmFsb3Jlc1xTaW11bGFjYW9Db21wbGV0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/SplashScreen/SplashScreen.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/SplashScreen/SplashScreen.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BsYXNoU2NyZWVuXFNwbGFzaFNjcmVlbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Tarifa/Simulation.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Tarifa/Simulation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFyaWZhXFNpbXVsYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/_ViewImports.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/_ViewStart.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rodri/OneDrive/Ambiente de Trabalho/dadoss/LightInvest/Views/Shared/_Layout.cshtml]
+[C:/Users/rodri/OneDrive/Ambiente de Trabalho/esaprojeto/LightInvest/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-a86u664hy4

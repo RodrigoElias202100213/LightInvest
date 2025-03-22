@@ -3,8 +3,8 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using LightInvest;
-using LightInvest.Data;
 using LightInvest.Models;
+using LightInvest.Models.BD;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 

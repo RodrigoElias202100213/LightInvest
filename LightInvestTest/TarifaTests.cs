@@ -1,6 +1,6 @@
 ﻿using System;
 using Xunit;
-using LightInvest.Models;
+using LightInvest.Models.Simulacao.Tarifa;
 
 namespace LightInvest.Tests
 {

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 using Xunit;
 using Microsoft.AspNetCore.Mvc.Testing;
 using LightInvest.Models;
-using LightInvest.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
+using LightInvest.Models.BD;
 
 
 

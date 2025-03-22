@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using LightInvest.Data;
-using LightInvest.Models;
+using LightInvest.Models.Email;
+using LightInvest.Models.BD;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +36,7 @@ if (!File.Exists(rotativaPath))
 */
 
 // Adicionando os serviços necessários
-builder.Services.AddSingleton<PdfGenerator>(new PdfGenerator(rotativaPath));
+//builder.Services.AddSingleton<PdfGenerator>(new PdfGenerator(rotativaPath));
 builder.Services.AddSingleton<EmailService>();
 
 // Configuração dos serviços para controladores e visualizações

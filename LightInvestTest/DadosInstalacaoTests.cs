@@ -1,6 +1,6 @@
 ﻿using System;
-using LightInvest.Models;
 using LightInvest.Models.b;
+using LightInvest.Models.Ener;
 using Xunit;
 
 namespace LightInvest.Tests

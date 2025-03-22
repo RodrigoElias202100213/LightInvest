@@ -1,10 +1,10 @@
 using Xunit;
 using LightInvest.Controllers;
 using LightInvest.Models;
-using LightInvest.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
+using LightInvest.Models.BD;
 
 public class SystemStabilityTests
 {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using LightInvest.Controllers;
-using LightInvest.Data;
-using LightInvest.Models;
+using LightInvest.Controllers.Simul;
+using LightInvest.Models.BD;
+using LightInvest.Models.Simulacao.Tarifa;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
