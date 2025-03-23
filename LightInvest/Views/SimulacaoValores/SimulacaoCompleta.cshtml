@@ -4,7 +4,6 @@
 @{
     ViewBag.Title = "Simulação Completa";
 
-    // Dados do ROI (histórico) – usados no gráfico de ROI original
     var roiLabels = Model.ROI.History
                         .OrderBy(h => h.DataCalculado)
                         .Select(h => h.DataCalculado.ToString("dd/MM/yyyy"))
@@ -14,7 +13,6 @@
                         .Select(h => h.ROI)
                         .ToList();
 
-    // Dados do saldo acumulado – utilizados para mostrar a evolução da dívida
     var saldoLabels = new List<string>();
     var saldoValues = new List<decimal>();
     foreach (var ano in Model.RetornoInvestimentoPorAno.OrderBy(a => a.Ano))
@@ -25,8 +23,6 @@
             saldoValues.Add(mes.SaldoRestante);
         }
     }
-
-    // Dados para o gráfico de detalhamento mensal (consumo e custo)
     var consumoMensalLabels = Model.ResultadoTarifaViewModel.ConsumoMensal
                                 .Select(cm => cm.Mes)
                                 .ToList();
@@ -187,7 +183,6 @@
             <a href="@Url.Action("ExportPDF", "SimulacaoValores")" class="btn">Exportar PDF</a>
             <a href="@Url.Action("ExportCSV", "SimulacaoValores")" class="btn">Exportar CSV</a>
             <a href="@Url.Action("ExportExcel", "SimulacaoValores")" class="btn">Exportar Excel</a>
-            <a href="@Url.Action("MostrarImagem", "SimulacaoValores")" class="btn">Quazyyy</a>
 
             <a href="@Url.Action("Create", "DadosInstalacao")" class="btn">Anterior</a>
             <a href="@Url.Action("Index", "Home")" class="btn">Página Inicial</a>
@@ -195,7 +190,7 @@
     </div>
 </div>
 
-<!-- Modal para exibir informações detalhadas dos gráficos -->
+<!-- Exibir informações detalhadas dos gráficos -->
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -206,7 +201,6 @@
                 </button>
             </div>
             <div class="modal-body" id="modalBody">
-                <!-- Conteúdo será preenchido via JavaScript -->
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Fechar</button>
@@ -217,7 +211,6 @@
 
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Inclua os scripts do Bootstrap se ainda não estiverem incluídos -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -335,7 +328,6 @@
                         var index = element.index;
                         var label = this.data.labels[index];
                         var value = this.data.datasets[datasetIndex].data[index];
-                        // Preenche o modal com informações detalhadas
                         document.getElementById("modalTitle").innerText = "Detalhes para " + label;
                         document.getElementById("modalBody").innerHTML = "<p>Dívida Restante: €" + value + "</p>";
                         $("#infoModal").modal('show');
@@ -398,7 +390,6 @@
     </script>
 }
 
-<!-- CSS Base importado para manter a identidade visual -->
 <style>
     html, body {
         margin: 0;
@@ -451,23 +442,26 @@
         position: relative;
     }
 
-        .step:first-child {
-            background-color: #065A66;
-        }
+    .step:first-child, .step:nth-child(2), .step:nth-child(3), .step:nth-child(4) {
+        background-color: #065A66;
+    }
 
-        .step::after {
-            content: "";
-            width: 2px;
-            height: 80px;
-            background-color: #aaa;
-            position: absolute;
-            bottom: -80px;
-            transform: translateX(-50%);
-        }
+    .step:first-child::after, .step:nth-child(2)::after, .step:nth-child(3)::after{
+        background-color: #065A66;
+    }
+    .step::after {
+        content: "";
+        width: 2px;
+        height: 80px;
+        background-color: #aaa;
+        position: absolute;
+        bottom: -80px;
+        transform: translateX(-50%);
+    }
 
-        .step:last-child::after {
-            display: none;
-        }
+    .step:last-child::after {
+        display: none;
+    }
 
     .content {
         width: 80%;
@@ -506,15 +500,15 @@
         align-items: center;
     }
 
-        .hora input {
-            width: 50px;
-            text-align: center;
-            border: none;
-            border-bottom: 2px solid #000;
-            background: transparent;
-            outline: none;
-            padding: 2px;
-        }
+    .hora input {
+        width: 50px;
+        text-align: center;
+        border: none;
+        border-bottom: 2px solid #000;
+        background: transparent;
+        outline: none;
+        padding: 2px;
+    }
 
     h5 {
         margin-top: 2%;
@@ -529,17 +523,17 @@
         margin-top: 10px;
     }
 
-        .month-checkboxes label {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 5px;
-        }
+    .month-checkboxes label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+    }
 
-        .month-checkboxes input {
-            width: 18px;
-            height: 18px;
-        }
+    .month-checkboxes input {
+        width: 18px;
+        height: 18px;
+    }
 
     #btn-container {
         display: flex;
@@ -560,10 +554,10 @@
         text-align: center;
     }
 
-        .btn:hover {
-            background: #065A66;
-            color: white;
-        }
+    .btn:hover {
+        background: #065A66;
+        color: white;
+    }
 
     .chart-container {
         margin: 20px auto;
@@ -580,9 +574,9 @@
         border-collapse: collapse;
     }
 
-        .table th, .table td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
+    .table th, .table td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
 </style>

@@ -105,14 +105,13 @@
              $(document).ready(function () {
             var consumoSelect = $("#consumoPainelSelect");
 
-            // Inicia a lista de potências vazia
             consumoSelect.empty();
 
             $("#modeloPainelSelect").change(function () {
                 var modeloPainelId = $(this).val();
 
-                consumoSelect.empty(); // Garante que começa vazio
-                consumoSelect.append('<option value="">Nenhuma opção</option>'); // Exibe a mensagem padrão
+                consumoSelect.empty(); 
+                consumoSelect.append('<option value="">Nenhuma opção</option>'); 
 
                 if (modeloPainelId) {
                     $.ajax({
@@ -120,7 +119,7 @@
                         type: "GET",
                         data: { modeloPainelId: modeloPainelId },
                         success: function (data) {
-                            consumoSelect.empty(); // Limpa novamente antes de adicionar
+                            consumoSelect.empty(); 
                             consumoSelect.append('<option value="">Selecione uma potência</option>');
                             $.each(data, function (index, item) {
                                 consumoSelect.append('<option value="' + item.id + '">' + item.potencia + ' W</option>');

@@ -59,7 +59,7 @@ namespace LightInvest.Models.Simulacao.Tarifa
 
 	public enum Meses
 	{
-		Janeiro, Fevereiro, Marco, Abril, Maio, Junho,
+		Janeiro, Fevereiro, Março, Abril, Maio, Junho,
 		Julho, Agosto, Setembro, Outubro, Novembro, Dezembro
 	}
 }

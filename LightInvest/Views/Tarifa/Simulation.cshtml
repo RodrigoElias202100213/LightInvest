@@ -23,8 +23,6 @@
                 <div class="left">
                     <form asp-action="Simulation" method="post">
 
-
-                        <!-- Exibindo erros de validação manualmente -->
                         @if (!ViewData.ModelState.IsValid)
                         {
                             <div class="alert alert-danger">
@@ -47,7 +45,7 @@
                         <div class="form-group">
                             <label asp-for="TipoDeTarifaEscolhida"><strong>2. Tipo da Tarifa:</strong></label>
                             <select asp-for="TipoDeTarifaEscolhida" class="form-control">
-                                <option value="">Escolha uma tarifa</option> <!-- Opção inicial -->
+                                <option value="">Escolha uma tarifa</option> 
                                 @foreach (var tipo in Model.TiposDeTarifa)
                                 {
                                     <option value="@tipo" selected="@(Model.TipoDeTarifaEscolhida?.ToString() == tipo ? "selected" : null)">
@@ -131,23 +129,23 @@
         position: relative;
     }
 
-        .step:first-child, .step:nth-child(2) {
-            background-color: #065A66;
-        }
+    .step:first-child, .step:nth-child(2) {
+        background-color: #065A66;
+    }
 
-            .step:first-child::after {
-                background-color: #065A66;
-            }
+    .step:first-child::after {
+        background-color: #065A66;
+    }
 
-        .step::after {
-            content: "";
-            width: 2px;
-            height: 80px;
-            background-color: #aaa;
-            position: absolute;
-            bottom: -80px;
-            transform: translateX(-50%);
-        }
+    .step::after {
+        content: "";
+        width: 2px;
+        height: 80px;
+        background-color: #aaa;
+        position: absolute;
+        bottom: -80px;
+        transform: translateX(-50%);
+    }
 
         .step:last-child::after {
             display: none;

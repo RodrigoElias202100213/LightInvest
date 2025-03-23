@@ -283,7 +283,7 @@ namespace LightInvest.Controllers.Simul
 			{
 				EnergyConsumptionViewModel = new EnergyConsumptionViewModel
 				{
-					// Preencher com os dados
+					
 				},
 				TarifaViewModel = new TarifaViewModel(await _context.Tarifas.FirstOrDefaultAsync(t => t.UserEmail == userEmail)),
 				ResultadoTarifaViewModel = resultadoTarifa,
@@ -293,18 +293,6 @@ namespace LightInvest.Controllers.Simul
 			};
 
 			return simulacao;
-		}
-		public IActionResult MostrarImagem()
-		{
-			var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images", "file.png");
-
-			if (!System.IO.File.Exists(imagePath))
-			{
-				return NotFound("Imagem não encontrada.");
-			}
-
-			var imageBytes = System.IO.File.ReadAllBytes(imagePath);
-			return File(imageBytes, "image/png");
 		}
 
 	}

@@ -68,7 +68,7 @@ namespace LightInvest.Controllers.Energy
 				{
 					UserEmail = user.Email,
 					PrecoKWh = model.PrecoKWh,
-					Tipo = model.TipoDeTarifaEscolhida.Value // Agora garantimos que não será null
+					Tipo = model.TipoDeTarifaEscolhida.Value
 				};
 
 				await SaveTarifaToDatabase(user.Email, tarifa);
