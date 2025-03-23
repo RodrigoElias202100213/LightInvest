@@ -10749,24 +10749,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rodri\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\verag\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvestTest\\LightInvestTest.csproj",
+      "projectUniqueName": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\LightInvestTest.csproj",
       "projectName": "LightInvestTest",
-      "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvestTest\\LightInvestTest.csproj",
-      "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvestTest\\obj\\",
+      "projectPath": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\LightInvestTest.csproj",
+      "packagesPath": "C:\\Users\\verag\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\rodri\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\verag\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10781,8 +10776,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\LightInvest.csproj": {
-              "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\LightInvest.csproj"
+            "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\LightInvest.csproj": {
+              "projectPath": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\LightInvest.csproj"
             }
           }
         }
@@ -10847,7 +10842,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -7,7 +7,7 @@
     <nav class="nav">
         <img src="~/images/logo.png" alt="LightInvest Logo" class="logo" />
         <div class="user-section">
-            <p id="username">@ViewBag.UserName!</p>
+            <p id="username">@ViewBag.UserName</p>
             <a href="@Url.Action("Logout", "Account")" class="btn">
                 <img src="~/images/logout.png" alt="Logout" class="logout" />
             </a>
@@ -62,11 +62,9 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Roboto', sans-serif;
     }
 
     .home-container {
-        background-color: #f4f9f9;
         min-height: 100vh;
         display: flex;
         flex-direction: column;
@@ -84,7 +82,7 @@
     }
 
     .logo {
-        height: 50px;
+        height: 100px;
     }
 
     .user-section {
@@ -93,7 +91,7 @@
     }
 
     #username {
-        margin-top: 8%;
+        margin-top: 13%;
         margin-right: 8px;
         font-size: 12px;
         font-weight: bold;
@@ -111,23 +109,24 @@
         margin: 30px 10px;
     }
 
-        .about h1 {
-            font-family: 'Caveat', cursive;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #065A66;
-            letter-spacing: 1px;
-        }
+    .about h1 {
+        font-size: 3rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: black;
+        letter-spacing: 1px;
+        /* font-family: 'Agbalumo';*/
+        font-family: 'Alegreya SC', serif;
+    }
 
-        .about p {
-            font-size: 1rem;
-            max-width: 700px;
-            margin: auto;
-            color: #333;
-            font-family: 'Comic Neue', cursive;
-            line-height: 1.4;
-            font-weight: 300;
-        }
+    .about p {
+        font-size: 1rem;
+        max-width: 700px;
+        margin: auto;
+        color: black;
+        line-height: 1.4;
+        font-weight: 300;
+    }
 
     .container {
         display: flex;
@@ -143,39 +142,37 @@
         border-radius: 10px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
-        background-color: white;
+        background-color: #D4E0E0;
         transition: transform 0.3s ease;
-        font-family: 'Arial', sans-serif;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        border: solid 1px black;
     }
 
-        .box:hover {
-            transform: translateY(-8px);
-        }
+    .box:hover {
+        transform: translateY(-8px);
+    }
 
-        .box img {
-            max-width: 100%; 
-            max-height: 90px;
-            object-fit: contain; 
-            margin-bottom: 10px;
-        }
+    .box img {
+        max-width: 100%; 
+        max-height: 50px;
+        object-fit: contain; 
+        margin-bottom: 10px;
+    }
 
-        .box h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-            font-family: 'Salsa', cursive;
-            color: #065A66;
-            font-weight: bold;
-        }
+    .box h3 {
+        font-size: 20px;
+        margin-bottom: 8px;
+        font-family: 'Salsa', cursive;
+        color: black;
+    }
 
-        .box p {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 10px;
-            font-style: italic;
-        }
+    .box p {
+        font-size: 16px;
+        color: black;
+        margin-bottom: 10px;
+    }
 
     .arrow {
         margin-top: auto;
@@ -195,10 +192,10 @@
         width: 100%;
     }
 
-        button img {
-            display: block;
-            width: auto;
-            height: auto;
-        }
+    button img {
+        display: block;
+        width: auto;
+        height: auto;
+    }
 
 </style>

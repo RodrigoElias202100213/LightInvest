@@ -1,54 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\",
+  "WorkspaceRootPath": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\controllers\\energy\\energysimulationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\energy\\energysimulationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\models\\simulacao\\energ\\energyconsumptionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\simulacao\\energ\\energyconsumptionviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\models\\simulacao\\energ\\energyconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\simulacao\\energ\\energyconsumption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\views\\energysimulation\\simulation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\energysimulation\\simulation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\controllers\\energy\\tarifacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\energy\\tarifacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\views\\tarifa\\simulation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\tarifa\\simulation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\models\\error\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\error\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\models\\simulacao\\dados instalacao\\dadosinstalacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\simulacao\\dados instalacao\\dadosinstalacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\views\\simulacaovalores\\simulacaocompleta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\simulacaovalores\\simulacaocompleta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\simulacaovalores\\simulacaocompleta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisuma\\lightinvest\\views\\dadosinstalacao\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\dadosinstalacao\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,6 +46,10 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
@@ -102,158 +70,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-23T13:13:59.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAAFQAAAAPAAAAAAAAAA==",
+              "Title": "SimulacaoCompleta.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
+              "ViewState": "AgIAACsCAAAAYx6iR/ITwCsCAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-23T12:50:29.998Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Simulation.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
-              "ViewState": "AgIAAPUAAAAAAAAAAAAAABcBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-23T10:56:26.537Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EnergyConsumption.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Models\\Simulacao\\Energ\\EnergyConsumption.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Models\\Simulacao\\Energ\\EnergyConsumption.cs",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Models\\Simulacao\\Energ\\EnergyConsumption.cs",
-              "RelativeToolTip": "LightInvest\\Models\\Simulacao\\Energ\\EnergyConsumption.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAAAHoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T11:30:06.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EnergyConsumptionViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Models\\Simulacao\\Energ\\EnergyConsumptionViewModel.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Models\\Simulacao\\Energ\\EnergyConsumptionViewModel.cs",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Models\\Simulacao\\Energ\\EnergyConsumptionViewModel.cs",
-              "RelativeToolTip": "LightInvest\\Models\\Simulacao\\Energ\\EnergyConsumptionViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T11:47:40.653Z",
+              "WhenOpened": "2025-03-23T14:49:56.058Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "EnergySimulationController.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Controllers\\Energy\\EnergySimulationController.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Controllers\\Energy\\EnergySimulationController.cs",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Controllers\\Energy\\EnergySimulationController.cs",
-              "RelativeToolTip": "LightInvest\\Controllers\\Energy\\EnergySimulationController.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAAAGwAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T11:30:17.089Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TarifaController.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Controllers\\Energy\\TarifaController.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Controllers\\Energy\\TarifaController.cs",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Controllers\\Energy\\TarifaController.cs",
-              "RelativeToolTip": "LightInvest\\Controllers\\Energy\\TarifaController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAADcAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T12:26:59.436Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DadosInstalacao.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Models\\Simulacao\\Dados Instalacao\\DadosInstalacao.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Models\\Simulacao\\Dados Instalacao\\DadosInstalacao.cs",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Models\\Simulacao\\Dados Instalacao\\DadosInstalacao.cs",
-              "RelativeToolTip": "LightInvest\\Models\\Simulacao\\Dados Instalacao\\DadosInstalacao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T11:29:56.639Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Models\\Error\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Models\\Error\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Models\\Error\\ErrorViewModel.cs",
-              "RelativeToolTip": "LightInvest\\Models\\Error\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T12:23:44.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Simulation.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\Tarifa\\Simulation.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Tarifa\\Simulation.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\Tarifa\\Simulation.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Tarifa\\Simulation.cshtml",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAAANIAAAAAAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-23T12:25:49.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-23T14:35:01.527Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SimulacaoCompleta.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACkAAAAA+Ta+AhMmwGMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-23T11:23:24.075Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\DadosInstalacao\\Create.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\DadosInstalacao\\Create.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisuma\\LightInvest\\Views\\DadosInstalacao\\Create.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\DadosInstalacao\\Create.cshtml",
-              "ViewState": "AgIAABcBAAAAAAAAAAAAAB4BAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-23T10:55:18.06Z"
+              "WhenOpened": "2025-03-23T12:50:29.998Z"
             }
           ]
         }

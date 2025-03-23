@@ -185,9 +185,9 @@
 
         <!-- Botões de Exportação e Navegação -->
         <div id="btn-container">
-            <a href="@Url.Action("ExportPDF", "SimulacaoValores")" class="btn">Exportar PDF</a>
-            <a href="@Url.Action("ExportCSV", "SimulacaoValores")" class="btn">Exportar CSV</a>
-            <a href="@Url.Action("ExportExcel", "SimulacaoValores")" class="btn">Exportar Excel</a>
+            <a href="@Url.Action("ExportPDF", "SimulacaoValores")" class="btn-pdf">Exportar PDF</a>
+            <a href="@Url.Action("ExportCSV", "SimulacaoValores")" class="btn-csv">Exportar CSV</a>
+            <a href="@Url.Action("ExportExcel", "SimulacaoValores")" class="btn-excel">Exportar Excel</a>
 
             <a href="@Url.Action("Create", "DadosInstalacao")" class="btn">Anterior</a>
             <a href="@Url.Action("Index", "Home")" class="btn">Página Inicial</a>
@@ -549,7 +549,39 @@
     }
 
     .btn {
-        background: #065A66;
+        background-color: #065A66;
+    }
+
+    .btn-pdf{
+        background-color: rgba(100, 209, 116, 0.69);
+    }
+
+    .btn-pdf:hover{
+        background-color: rgba(100, 209, 116, 0.69);
+        color:white;
+    }
+
+    .btn-csv{
+        background-color: #9B9B9B;
+    }
+
+    .btn-csv:hover {
+        background-color: #9B9B9B;
+        color:white;
+    }
+
+
+    .btn-excel {
+        background: rgba(255, 0, 0, 0.61);
+    }
+
+    .btn-excel:hover {
+            background: rgba(255, 0, 0, 0.61);
+        color:white;
+    }
+
+
+    .btn, .btn-excel, .btn-pdf, .btn-csv {
         color: white;
         padding: 10px 20px;
         border: none;
