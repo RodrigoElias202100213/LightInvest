@@ -64,11 +64,11 @@ namespace LightInvest.Controllers.Energy
 		public async Task<IActionResult> Simulation(EnergyConsumptionViewModel model)
 		{
 			EnsureValidData(model);
+
 			if (!ValidarConsumo(model))
 			{
 				return View(model);
 			}
-
 
 			if (!ModelState.IsValid)
 			{
