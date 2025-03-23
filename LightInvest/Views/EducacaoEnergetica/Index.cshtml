@@ -2,16 +2,26 @@
     ViewData["Title"] = "Educação Energética";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Educação Energética</h1>
-    <p>Escolha uma opção abaixo:</p>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 mb-4">Educação Energética</h1>
+            <p class="lead mb-4">Escolha uma opção abaixo:</p>
 
-    <div class="d-grid gap-3 col-6 mx-auto">
-        <a asp-controller="Artigos" asp-action="Index" class="btn btn-primary btn-lg">📖 Artigos</a>
-        <a asp-controller="Manual" asp-action="Index" class="btn btn-secondary btn-lg">📘 Manual Técnico</a>
-    </div>
+            <div class="d-grid gap-3 col-md-6 mx-auto">
+                <a asp-controller="Artigos" asp-action="Index" class="btn btn-primary btn-lg shadow-lg">
+                    📖 Artigos
+                </a>
+                <a asp-controller="ManualTecnico" asp-action="Index" class="btn btn-secondary btn-lg shadow-lg">
+                    📘 Manual Técnico
+                </a>
+            </div>
 
-    <div class="mt-4">
-        <a href="javascript:history.back()" class="btn btn-outline-dark">⬅ Voltar</a>
+            <div class="mt-4">
+                <a href="javascript:history.back()" class="btn btn-outline-dark btn-lg">
+                    ⬅ Voltar
+                </a>
+            </div>
+        </div>
     </div>
 </div>

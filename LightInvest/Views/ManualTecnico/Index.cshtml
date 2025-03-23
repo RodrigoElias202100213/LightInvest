@@ -1,9 +1,238 @@
-﻿<h1>Manual Técnico</h1>
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LightInvest – Manual Técnico Completo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-<p>Este manual fornece informações sobre como utilizar as funcionalidades da aplicação.</p>
+        .container {
+            max-width: 960px;
+            padding: 40px 20px;
+            margin: auto;
+        }
 
-<ul>
-    <li>Como calcular o ROI de um sistema solar</li>
-    <li>Como utilizar a seção de simulação de preços</li>
-    <li>Outras funcionalidades e recursos da aplicação</li>
-</ul>
+        h1, h2, h3, h4 {
+            color: #065a66;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .section:hover {
+                transform: scale(1.01);
+                box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+            }
+
+        .highlight {
+            background: #06b5ce;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .btn-topo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #06b5ce;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            transition: background 0.3s ease;
+        }
+
+            .btn-topo:hover {
+                background: #065a66;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Introdução -->
+        <h1 class="text-center fade-in">Bem-vindo ao <span class="highlight">LightInvest</span></h1>
+        <p class="fade-in">
+            O <strong>LightInvest</strong> é uma plataforma revolucionária que integra <em>análise financeira</em>, <em>simulações energéticas</em> e <em>conteúdos educativos</em> para guiar os investimentos em energia renovável. Nossa missão é transformar dados complexos em informações práticas e acessíveis, permitindo que indivíduos e empresas tomem decisões embasadas para um futuro sustentável.
+        </p>
+
+        <!-- Objetivos e Visão -->
+        <div class="section fade-in">
+            <h2>Objetivos e Visão</h2>
+            <p>
+                O LightInvest tem como objetivo fornecer ferramentas que possibilitem calcular com precisão o <strong>Retorno sobre Investimento (ROI)</strong> em projetos de energia renovável e simular diferentes cenários tarifários. Assim, nosso usuário pode identificar o período de retorno do investimento, comparar ofertas de tarifas e entender a economia potencial a longo prazo.
+            </p>
+            <p>
+                Nossa visão é criar um ecossistema de inovação energética onde tecnologia, sustentabilidade e eficiência financeira se unem para transformar o mercado e reduzir impactos ambientais. Inspiramo-nos em soluções reconhecidas globalmente, como os simuladores de tarifas energéticas e aplicativos de cálculo de ROI que já ajudam milhares de usuários a economizar e investir melhor.
+            </p>
+        </div>
+
+        <!-- Funcionamento da Aplicação -->
+        <div class="section fade-in">
+            <h2>Como Funciona a Aplicação?</h2>
+            <h3>1. Acesso e Gestão de Conta</h3>
+            <p>
+                O acesso ao LightInvest é seguro e ágil, utilizando protocolos modernos de <strong>Autenticação, Autorização e Auditoria (AAA)</strong>. O usuário pode criar sua conta facilmente, recuperar senhas e acessar um dashboard personalizado que reúne todas as funcionalidades da plataforma.
+            </p>
+            <h3>2. Cálculo do ROI e Simulações Tarifárias</h3>
+            <p>
+                A funcionalidade central do LightInvest consiste no cálculo do ROI para investimentos em energia renovável. A aplicação permite que o usuário insira dados detalhados como o investimento inicial, custos de instalação, consumo energético e tarifas atuais. Em seguida, utiliza fórmulas financeiras avançadas para calcular o ROI, oferecendo gráficos dinâmicos e relatórios detalhados que mostram o tempo de retorno do investimento e a rentabilidade projetada.
+            </p>
+            <p>
+                Além do ROI, nossa plataforma inclui um simulador de tarifas energéticas, inspirado em aplicações consolidadas como o <em>Poupa Energia</em>. Com esta ferramenta, o usuário pode inserir dados do seu consumo, a potência contratada e outros parâmetros relevantes para comparar diferentes ofertas do mercado e identificar a opção mais vantajosa.
+            </p>
+            <p>
+                Esses módulos são integrados para que o usuário possa alternar facilmente entre a análise financeira e a simulação de tarifas, ajustando variáveis como incentivos fiscais, variações tarifárias e custos de manutenção para obter uma visão completa do cenário energético.
+            </p>
+            <h3>3. Educação Energética e Conteúdo Interativo</h3>
+            <p>
+                Acreditamos que o conhecimento é a chave para transformar investimentos. Por isso, o LightInvest disponibiliza uma biblioteca rica em conteúdos educativos, onde são abordados desde conceitos básicos de energia renovável até análises aprofundadas sobre ROI e tarifas. Esses materiais incluem artigos, vídeos, estudos de caso e tutoriais que ajudam o usuário a entender como funcionam os modelos de simulação e o impacto de suas escolhas – tanto para o bolso quanto para o meio ambiente.
+            </p>
+        </div>
+
+        <!-- Tecnologias e Integração -->
+        <div class="section fade-in">
+            <h2>Tecnologias Utilizadas e Integração</h2>
+            <p>
+                Desenvolvido com as mais modernas tecnologias, o LightInvest utiliza <strong>Razor Pages</strong> e <strong>Bootstrap</strong> no front-end, enquanto o back-end é sustentado por <strong>.NET Core</strong> e <strong>Entity Framework</strong>. Essa estrutura robusta garante um desempenho ágil e seguro.
+            </p>
+            <p>
+                Para a visualização dos resultados, integramos bibliotecas como <strong>Chart.js</strong> e <strong>D3.js</strong>, que possibilitam a criação de gráficos interativos e dinâmicos. Essas tecnologias permitem que o usuário visualize, de forma clara e objetiva, os resultados de suas simulações e análises.
+            </p>
+            <p>
+                Nossa plataforma também está conectada a bases de dados atualizadas e APIs de simulação tarifária, o que possibilita a comparação entre diferentes fornecedores e cenários do mercado energético. Essa integração é inspirada em ferramentas de referência, como as disponibilizadas pelo RETScreen e por plataformas governamentais.
+            </p>
+        </div>
+
+        <!-- Benefícios e Impacto -->
+        <div class="section fade-in">
+            <h2>Benefícios e Impacto</h2>
+            <p>
+                Ao utilizar o LightInvest, o usuário obtém benefícios diretos e indiretos:
+            </p>
+            <ul>
+                <li><strong>Decisões Estratégicas:</strong> Com informações detalhadas, o usuário pode tomar decisões informadas sobre investimentos em energia renovável.</li>
+                <li><strong>Economia Real:</strong> A simulação tarifária mostra, com precisão, a economia mensal e anual, ajudando a identificar o comercializador mais vantajoso.</li>
+                <li><strong>Sustentabilidade:</strong> Investimentos em fontes limpas reduzem as emissões de gases de efeito estufa e promovem uma matriz energética mais sustentável.</li>
+                <li><strong>Transparência:</strong> Relatórios e dashboards interativos fornecem uma visão clara do desempenho financeiro e energético.</li>
+            </ul>
+            <p>
+                Esses benefícios fazem do LightInvest não apenas uma ferramenta financeira, mas também um aliado na transformação do cenário energético, estimulando a inovação e a eficiência.
+            </p>
+        </div>
+
+        <!-- Exemplos Práticos e Estudos de Caso -->
+        <div class="section fade-in">
+            <h2>Exemplos Práticos e Estudos de Caso</h2>
+            <p>
+                Inspirado em aplicações utilizadas por grandes distribuidoras de energia e plataformas de simulação tarifária, o LightInvest traz casos práticos que demonstram:
+            </p>
+            <ul>
+                <li>Como um sistema fotovoltaico pode ter seu investimento recuperado em 4 a 6 anos.</li>
+                <li>Comparação entre diferentes cenários tarifários, permitindo ao usuário visualizar a economia potencial em cada situação.</li>
+                <li>A análise de variáveis como incentivos fiscais, manutenção e variação tarifária, que impactam diretamente o ROI.</li>
+            </ul>
+            <p>
+                Esses exemplos ilustram como a aplicação transforma dados técnicos em insights práticos, ajudando a construir um futuro energético mais inteligente.
+            </p>
+        </div>
+
+        <!-- Inovação e Futuro -->
+        <div class="section fade-in">
+            <h2>Inovação e Perspectivas Futuras</h2>
+            <p>
+                Estamos sempre em busca de inovação. Futuras versões do LightInvest integrarão análises preditivas e algoritmos de <strong>inteligência artificial</strong> para refinar ainda mais as simulações. Pretendemos também incorporar recursos de monitoramento em tempo real por meio de dispositivos IoT, oferecendo uma experiência única e personalizada.
+            </p>
+            <p>
+                Acreditamos que a evolução contínua das tecnologias e o aprimoramento das metodologias de cálculo de ROI e simulação tarifária transformarão a forma como o mercado energético opera. Nosso objetivo é que o LightInvest se torne referência global em soluções para investimentos sustentáveis.
+            </p>
+        </div>
+
+        <!-- Conclusão -->
+        <div class="section fade-in">
+            <h2>Conclusão e Convite à Ação</h2>
+            <p>
+                Em resumo, o <strong>LightInvest</strong> reúne uma combinação poderosa de ferramentas para cálculo do ROI, simulação de tarifas e educação energética. Com um design moderno, tecnologias avançadas e conteúdos ricos, nossa plataforma oferece aos usuários todas as informações necessárias para investir de forma consciente e sustentável.
+            </p>
+            <p>
+                Convidamos você a explorar o LightInvest, testar as simulações, comparar cenários e transformar seus investimentos em energia renovável em ganhos reais para o seu negócio e para o planeta.
+            </p>
+            <p class="text-center">
+                <strong>Participe, simule, aprenda e transforme o futuro com o LightInvest!</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="btn-topo" onclick="voltarAoTopo()">🔝</button>
+
+    <script>
+        // Efeito de fade-in ao rolar a página
+        document.addEventListener("scroll", function() {
+            let elementos = document.querySelectorAll(".fade-in");
+            elementos.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                    el.classList.add("visible");
+                }
+            });
+        });
+        // Exibir ou ocultar o botão "Voltar ao Topo"
+        let botaoTopo = document.querySelector(".btn-topo");
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 300) {
+                botaoTopo.style.display = "block";
+            } else {
+                botaoTopo.style.display = "none";
+            }
+        });
+        // Função para scroll suave
+        function voltarAoTopo() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
+    

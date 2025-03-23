@@ -2,18 +2,34 @@
     ViewData["Title"] = "Artigos";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Artigos Educativos</h1>
-    <p>Escolha um tema:</p>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="display-4 mb-4">Artigos Educativos</h1>
+            <p class="lead mb-4">Escolha um tema e descubra conteúdos incríveis!</p>
 
-    <div class="d-grid gap-3 col-6 mx-auto">
-        <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Energia Renovável" class="btn btn-primary btn-lg">🌱 Energia Renovável</a>
-        <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Painéis Solares" class="btn btn-secondary btn-lg">🔆 Princípios de Painéis Solares</a>
-        <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="ROI" class="btn btn-success btn-lg">💰 Cálculo de ROI</a>
-        <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Eficiência Energética" class="btn btn-warning btn-lg">⚡ Eficiência Energética</a>
-    </div>
+            <div class="d-grid gap-3 col-10 col-sm-8 col-md-6 mx-auto">
+                <!-- Botões de categorias -->
+                <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Energia Renovável" class="btn btn-primary btn-lg py-3">
+                    🌱 Energia Renovável
+                </a>
+                <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Painéis Solares" class="btn btn-secondary btn-lg py-3">
+                    🔆 Princípios de Painéis Solares
+                </a>
+                <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="ROI" class="btn btn-success btn-lg py-3">
+                    💰 Cálculo de ROI
+                </a>
+                <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Eficiência Energética" class="btn btn-warning btn-lg py-3">
+                    ⚡ Eficiência Energética
+                </a>
+            </div>
 
-    <div class="mt-4">
-        <a asp-controller="EducacaoEnergetica" asp-action="Index" class="btn btn-outline-dark">⬅ Voltar</a>
+            <!-- Botão de Voltar -->
+            <div class="mt-4">
+                <a asp-controller="EducacaoEnergetica" asp-action="Index" class="btn btn-outline-dark btn-lg">
+                    ⬅ Voltar
+                </a>
+            </div>
+        </div>
     </div>
 </div>

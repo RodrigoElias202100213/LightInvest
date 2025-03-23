@@ -6,7 +6,7 @@ namespace LightInvest.Models.Educ.Artigos
 	public class Artigo
 	{
 		[Key]
-		public int Id { get; set; }
+		public int ArtigoId { get; set; }
 
 		[Required]
 		[MaxLength(200)]
@@ -17,10 +17,12 @@ namespace LightInvest.Models.Educ.Artigos
 
 		public string ImagemUrl { get; set; }
 
-		public string Categoria { get; set; } 
+		public string Categoria { get; set; }
 		[MaxLength(500)]
 		public string DescricaoCurta { get; set; }
-			
+
 		public DateTime DataPublicacao { get; set; } = DateTime.UtcNow;
+		public List<Artigo> ArtigosRelacionados { get; set; }
+
 	}
 }
