@@ -113,7 +113,6 @@ namespace LightInvest.Controllers.Energy
 
 		private void EnsureValidData(EnergyConsumptionViewModel model)
 		{
-			// Garantir que a lista tenha exatamente 24 elementos
 			model.ConsumoDiaSemana = model.ConsumoDiaSemana?.Take(24).ToList() ?? Enumerable.Repeat(0m, 24).ToList();
 			model.ConsumoFimSemana = model.ConsumoFimSemana?.Take(24).ToList() ?? Enumerable.Repeat(0m, 24).ToList();
 			model.MesesOcupacao ??= new List<string>();
