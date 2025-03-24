@@ -1,12 +1,11 @@
-using Xunit;
 using Moq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using LightInvest.Controllers;
-using LightInvest.Data;
-using LightInvest.Models;
-using System.Threading.Tasks;
+using LightInvest.Models.BD;
+using LightInvest.Controllers.Simul;
+using LightInvest.Models.Utilizador.Login;
+using LightInvest.Models.Simulacao.Tarifa;
 
 namespace LightInvestTest
 {
@@ -67,12 +66,11 @@ namespace LightInvestTest
 		[Fact]
 		public async Task Simular_ReturnsBadRequest_WhenUserNotAuthenticated()
 		{
-			
 			var result = await _controller.Simular();
 
-			
-			var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
-			Assert.Equal("Utilizador não autenticado.", badRequestResult.Value);
+			var unauthorizedResult = Assert.IsType<UnauthorizedObjectResult>(result);
+			Assert.Equal("Utilizador não autenticado.", unauthorizedResult.Value);
+
 		}
 	}
 }

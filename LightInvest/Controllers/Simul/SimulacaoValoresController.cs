@@ -80,8 +80,10 @@ namespace LightInvest.Controllers.Simul
 		public async Task<IActionResult> Simular()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
-			if (string.IsNullOrEmpty(userEmail))
+			if (!HttpContext.Session.TryGetValue("UserEmail", out _))
+			{
 				return Unauthorized("Utilizador não autenticado.");
+			}
 
 			var consumo = await ProcessarEnergyConsumptionAsync(userEmail);
 
