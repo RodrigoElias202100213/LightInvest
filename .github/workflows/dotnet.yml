@@ -37,14 +37,15 @@ jobs:
       run: sudo apt-get install -y libxml2-utils
 
     # Validate version using xmllint
-    - name: Validate version
+    # Validate version using git describe
+    - name: Validate version from Git
       run: |
-        version=$(xmllint --xpath "string(//Project/PropertyGroup/Version)" LightInvest/LightInvest.csproj)
-        echo "Current version: $version"
-        if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-          echo "Version is not in the correct format (x.y.z)."
-          exit 1
-        fi
+         version=$(git describe --tags --always)
+         echo "Current version: $version"
+         if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+           echo "Version is not in the correct format (x.y.z)."
+           exit 1
+         fi
 
     # Build the project
     - name: Build

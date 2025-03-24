@@ -3757,7 +3757,7 @@
           "build/net6.0/xunit.runner.visualstudio.props": {}
         }
       },
-      "LightInvest/1.0.0": {
+      "LightInvest/8.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
@@ -10781,7 +10781,7 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "LightInvest/1.0.0": {
+    "LightInvest/8.0.0": {
       "type": "project",
       "path": "../LightInvest/LightInvest.csproj",
       "msbuildProject": "../LightInvest/LightInvest.csproj"
@@ -10790,7 +10790,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "BenchmarkDotNet >= 0.14.0",
-      "LightInvest >= 1.0.0",
+      "LightInvest >= 8.0.0",
       "MSTest.TestFramework >= 3.8.2",
       "Microsoft.AspNetCore.Mvc.Testing >= 8.0.0",
       "Microsoft.NET.Test.Sdk >= 17.8.0",
