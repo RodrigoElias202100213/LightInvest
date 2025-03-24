@@ -1,11 +1,11 @@
-/*
-using LightInvest.Data;
 using LightInvest.Controllers;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using Xunit;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using LightInvest.Models.BD;
+using LightInvest.Controllers.Simul;
 
 public class ApiDependencyTests
 {
@@ -34,9 +34,7 @@ public class ApiDependencyTests
         };
     }
 
-
-
-[Fact]
+	[Fact]
     public async Task SimulacaoCompleta_ReturnsUnauthorized_IfUserNotLoggedIn()
     {
         var httpContext = new DefaultHttpContext();
@@ -49,4 +47,3 @@ public class ApiDependencyTests
     }
 
 }
-*/

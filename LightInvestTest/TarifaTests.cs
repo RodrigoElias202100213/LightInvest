@@ -26,7 +26,7 @@ namespace LightInvest.Tests
 		public void ObterValorExtra_DeveLancarExcecaoParaTipoInvalido()
 		{
 			// Arrange
-			var tarifa = new Tarifa { PrecoKWh = 0.5m, Tipo = (TipoTarifa)99 }; // Tipo inválido
+			var tarifa = new Tarifa { PrecoKWh = 0.5m, Tipo = (TipoTarifa)99 };
 
 			// Act & Assert
 			Assert.Throws<ArgumentException>(() => tarifa.PrecoFinal);

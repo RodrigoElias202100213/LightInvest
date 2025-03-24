@@ -27,7 +27,6 @@ namespace LightInvestTest
 			return _sessionStorage.TryGetValue(key, out value);
 		}
 
-		// Métodos auxiliares para facilitar o uso
 		public void SetString(string key, string value)
 		{
 			Set(key, Encoding.UTF8.GetBytes(value));

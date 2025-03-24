@@ -81,8 +81,7 @@ namespace LightInvest.Controllers.Simul
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
 			if (string.IsNullOrEmpty(userEmail))
-				return BadRequest("Utilizador não autenticado.");
-
+				return Unauthorized("Utilizador não autenticado.");
 
 			var consumo = await ProcessarEnergyConsumptionAsync(userEmail);
 

@@ -7,7 +7,6 @@ public class ConsumptionRegressionTests
 	[Fact]
 	public void CalculateTotalConsumption_ReturnsCorrectValue()
 	{
-		// Simula dados de consumo
 		var model = new EnergyConsumptionViewModel
 		{
 			ConsumoDiaSemana = new List<decimal> { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 },
@@ -17,15 +16,12 @@ public class ConsumptionRegressionTests
 
 		var controller = new EnergySimulationController();
 
-		// Calcula o consumo total
 		decimal totalConsumo = controller.CalculateTotalConsumption(model);
 
-		// Verifica se o valor está correto
 		Assert.True(totalConsumo > 0, "O consumo total deve ser maior que zero.");
 	}
 }
 
-// Classe fictícia para simular o ViewModel
 public class EnergyConsumptionViewModel
 {
 	public List<decimal> ConsumoDiaSemana { get; set; }
@@ -33,7 +29,6 @@ public class EnergyConsumptionViewModel
 	public List<string> MesesOcupacao { get; set; }
 }
 
-// Classe fictícia para simular o Controller
 public class EnergySimulationController
 {
 	public decimal CalculateTotalConsumption(EnergyConsumptionViewModel model)
