@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Threading.Tasks;
 using LightInvest.Models.BD;
+using LightInvest.Models.Roi;
+using LightInvest.Models.Utilizador.Login;
 
 public class SystemStabilityTests
 {

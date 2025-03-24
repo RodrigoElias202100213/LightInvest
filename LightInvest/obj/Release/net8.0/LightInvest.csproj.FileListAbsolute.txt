@@ -3751,3 +3751,14 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Rele
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\System.Web.Mvc.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\System.Web.Razor.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\System.Web.Helpers.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\System.Web.WebPages.Deployment.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\System.Web.WebPages.Razor.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\System.Web.WebPages.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\Microsoft.Web.Infrastructure.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\Rotativa.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\Rotativa.AspNetCore.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\LightInvest.MvcApplicationPartsAssemblyInfo.cs

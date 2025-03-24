@@ -5,6 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using LightInvest.Models;
 using LightInvest.Models.BD;
+using LightInvest.Controllers.Auth;
+using LightInvest.Models.Email;
+using LightInvest.Models.Utilizador.Login;
+using LightInvest.Models.Utilizador.Register;
 
 public class AccountControllerTests
 {

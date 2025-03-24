@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using LightInvest.Models.Email;
 using LightInvest.Models.BD;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,12 +21,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 	options.SlidingExpiration = true;
 });
 
-string rotativaPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "rotativa", "wkhtmltopdf.exe");
-
-if (!File.Exists(rotativaPath))
-{
-	throw new FileNotFoundException($"Erro: 'wkhtmltopdf.exe' não foi encontrado em {rotativaPath}. Verifique a pasta e mova o arquivo para o local correto.");
-}
+// Injetar IWebHostEnvironment para acessar o WebRootPath
+builder.Services.AddSingleton<IWebHostEnvironment>(builder.Environment);
 
 // Adicionando os serviços necessários
 builder.Services.AddSingleton<EmailService>();
@@ -42,6 +40,15 @@ builder.Services.AddSession(options =>
 });
 
 var app = builder.Build();
+
+// Verifique o caminho correto usando WebRootPath
+var env = app.Services.GetRequiredService<IWebHostEnvironment>();
+string rotativaPath = Path.Combine(env.WebRootPath, "rotativa", "wkhtmltopdf.exe");
+
+if (!File.Exists(rotativaPath))
+{
+	throw new FileNotFoundException($"Erro: 'wkhtmltopdf.exe' não foi encontrado em {rotativaPath}. Verifique o caminho e mova o arquivo para o local correto.");
+}
 
 // Configuração de ambiente e pipeline de requisições
 if (!app.Environment.IsDevelopment())

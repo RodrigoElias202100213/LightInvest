@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvesttest\\accountcontrollerthirdpartyintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\accountcontrollerthirdpartyintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvesttest\\systemstabilitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\systemstabilitytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvesttest\\simulacaovalorescontrollersecuritytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\simulacaovalorescontrollersecuritytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvesttest\\energyconsumptiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\energyconsumptiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvesttest\\roicalculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\roicalculatortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvesttest\\accountcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\accountcontrollerintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvesttest\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvesttest\\lightinvesttest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\lightinvesttest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\maisoutraoutra\\lightinvest\\views\\dadosinstalacao\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\dadosinstalacao\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 25,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,7 +114,137 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\appsettings.json",
+              "RelativeDocumentMoniker": "LightInvest\\appsettings.json",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\appsettings.json",
+              "RelativeToolTip": "LightInvest\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-24T16:16:40.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\Program.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Program.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\Program.cs",
+              "RelativeToolTip": "LightInvest\\Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAiwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:13:18.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SimulacaoValoresControllerSecurityTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
+              "RelativeToolTip": "LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:12:16.981Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "SystemStabilityTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\SystemStabilityTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\SystemStabilityTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\SystemStabilityTests.cs",
+              "RelativeToolTip": "LightInvestTest\\SystemStabilityTests.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAhwCUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:12:03.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EnergyConsumptionTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\EnergyConsumptionTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\EnergyConsumptionTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\EnergyConsumptionTests.cs",
+              "RelativeToolTip": "LightInvestTest\\EnergyConsumptionTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:11:05.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RoiCalculatorTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\RoiCalculatorTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\RoiCalculatorTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\RoiCalculatorTests.cs",
+              "RelativeToolTip": "LightInvestTest\\RoiCalculatorTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:10:54.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountControllerIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\AccountControllerIntegrationTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\AccountControllerIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\AccountControllerIntegrationTests.cs",
+              "RelativeToolTip": "LightInvestTest\\AccountControllerIntegrationTests.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:08:51.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccountControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\AccountControllerTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\AccountControllerTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\AccountControllerTests.cs",
+              "RelativeToolTip": "LightInvestTest\\AccountControllerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:05:40.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LightInvestTest",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\LightInvestTest.csproj",
+              "RelativeDocumentMoniker": "LightInvestTest\\LightInvestTest.csproj",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\LightInvestTest.csproj",
+              "RelativeToolTip": "LightInvestTest\\LightInvestTest.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-24T16:04:41.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AccountControllerThirdPartyIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\AccountControllerThirdPartyIntegrationTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\AccountControllerThirdPartyIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvestTest\\AccountControllerThirdPartyIntegrationTests.cs",
+              "RelativeToolTip": "LightInvestTest\\AccountControllerThirdPartyIntegrationTests.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:05:08.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "SimulacaoCompleta.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\SimulacaoValores\\SimulacaoCompleta.cshtml",
@@ -87,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Account\\Register.cshtml",
@@ -100,20 +270,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\Views\\DadosInstalacao\\Create.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\DadosInstalacao\\Create.cshtml",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\Views\\DadosInstalacao\\Create.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\DadosInstalacao\\Create.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAkwGMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAkwGMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-24T13:57:44.113Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "Simulation.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\Views\\Tarifa\\Simulation.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Tarifa\\Simulation.cshtml",
@@ -126,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "Simulation.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",

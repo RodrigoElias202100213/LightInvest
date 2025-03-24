@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
 using LightInvest.Models.BD;
+using Microsoft.EntityFrameworkCore;
+
 
 
 

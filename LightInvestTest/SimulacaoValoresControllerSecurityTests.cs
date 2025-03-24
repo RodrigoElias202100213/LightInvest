@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using LightInvest.Controllers.Simul;
 using LightInvest.Models.BD;
 using LightInvest.Models.Simulacao.Tarifa;
+using LightInvest.Models.Utilizador.Login;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

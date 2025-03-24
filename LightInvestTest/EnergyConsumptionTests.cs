@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 using LightInvest.Models;
+using LightInvest.Models.Simulacao.Energ;
 
 namespace LightInvestTest
 {

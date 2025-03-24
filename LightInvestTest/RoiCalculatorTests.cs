@@ -1,4 +1,5 @@
 using LightInvest.Models;
+using LightInvest.Models.Roi;
 
 namespace LightInvestTest;
 
