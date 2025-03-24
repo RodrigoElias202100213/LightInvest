@@ -1,13 +1,10 @@
-# This workflow will build a .NET project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
-
 name: .NET
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main-new" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main-new" ]
 
 jobs:
   build:
@@ -16,13 +13,63 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    # Setup .NET
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+
+    # Cache NuGet packages
+    - name: Cache NuGet packages
+      uses: actions/cache@v2
+      with:
+        path: ~/.nuget/packages
+        key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+        restore-keys: |
+          ${{ runner.os }}-nuget-
+
+    # Restore dependencies
     - name: Restore dependencies
       run: dotnet restore
+
+    # Validate version (check if it's in semver format)
+    - name: Validate version
+      run: |
+        version=$(grep -oPm1 "(?<=<Version>)[^<]+" MyProject/MyProject.csproj)  # Ajuste o caminho do seu arquivo .csproj
+        echo "Current version: $version"
+        if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          echo "Version is not in the correct format (x.y.z)."
+          exit 1
+        fi
+
+    # Run CodeQL analysis
+    - name: Set up CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: 'csharp'
+        
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2
+
+    # Run dotnet-format (linting)
+    - name: Run dotnet-format
+      run: dotnet tool restore && dotnet format --check --verbosity diagnostic
+
+    # Build the project
     - name: Build
       run: dotnet build --no-restore
+
+    # Run tests
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+    # Publish the project (optional)
+    - name: Publish
+      run: dotnet publish --configuration Release --output ./publish
+
+    # Deploy (exemplo)
+    - name: Deploy to Server
+      run: |
+        scp -r ./publish user@server:/path/to/deploy
+      if: github.ref == 'refs/heads/main-new'
