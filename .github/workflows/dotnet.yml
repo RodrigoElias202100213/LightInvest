@@ -2,9 +2,9 @@ name: .NET CI/CD
 
 on:
   push:
-    branches: [ "main-new" ]
+    branches: [ "Main-new" ]
   pull_request:
-    branches: [ "main-new" ]
+    branches: [ "Main-new" ]
 
 jobs:
   build:
