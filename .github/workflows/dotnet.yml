@@ -32,10 +32,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore LightInvest/LightInvest.csproj
 
-    # Validate version (caminho relativo)
+    # Install xmllint (caso necessário)
+    - name: Install xmllint
+      run: sudo apt-get install -y libxml2-utils
+
+    # Validate version using xmllint
     - name: Validate version
       run: |
-        version=$(grep -oPm1 "(?<=<Version>)[^<]+" LightInvest/LightInvest.csproj)
+        version=$(xmllint --xpath "string(//Project/PropertyGroup/Version)" LightInvest/LightInvest.csproj)
         echo "Current version: $version"
         if [[ ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
           echo "Version is not in the correct format (x.y.z)."
@@ -53,9 +57,3 @@ jobs:
     # Publish (optional)
     - name: Publish
       run: dotnet publish LightInvest/LightInvest.csproj --configuration Release --output ./publish
-
-    # Deploy (optional)
-    - name: Deploy to Server
-      run: |
-        scp -r ./publish user@server:/path/to/deploy
-      if: github.ref == 'refs/heads/main-new'
