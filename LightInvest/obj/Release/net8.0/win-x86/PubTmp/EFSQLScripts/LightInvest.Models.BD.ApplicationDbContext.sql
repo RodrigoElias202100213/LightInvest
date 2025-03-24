@@ -13,25 +13,27 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [Artigos] (
-        [Id] int NOT NULL IDENTITY,
+        [ArtigoId] int NOT NULL IDENTITY,
         [Titulo] nvarchar(200) NOT NULL,
         [Conteudo] nvarchar(max) NOT NULL,
         [ImagemUrl] nvarchar(max) NOT NULL,
         [Categoria] nvarchar(max) NOT NULL,
         [DescricaoCurta] nvarchar(500) NOT NULL,
         [DataPublicacao] datetime2 NOT NULL,
-        CONSTRAINT [PK_Artigos] PRIMARY KEY ([Id])
+        [ArtigoId1] int NULL,
+        CONSTRAINT [PK_Artigos] PRIMARY KEY ([ArtigoId]),
+        CONSTRAINT [FK_Artigos_Artigos_ArtigoId1] FOREIGN KEY ([ArtigoId1]) REFERENCES [Artigos] ([ArtigoId])
     );
 END;
 GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [Cidades] (
@@ -44,14 +46,14 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [EnergyConsumptions] (
         [Id] int NOT NULL IDENTITY,
         [UserEmail] nvarchar(max) NOT NULL,
-        [ConsumoDiaSemana] nvarchar(24) NOT NULL,
-        [ConsumoFimSemana] nvarchar(24) NOT NULL,
+        [ConsumoDiaSemana] nvarchar(max) NOT NULL,
+        [ConsumoFimSemana] nvarchar(max) NOT NULL,
         [MesesOcupacao] nvarchar(max) NOT NULL,
         [MediaSemana] decimal(18,2) NOT NULL,
         [MediaFimSemana] decimal(18,2) NOT NULL,
@@ -64,7 +66,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [ModelosDePaineisSolares] (
@@ -78,7 +80,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [PasswordResetTokens] (
@@ -93,7 +95,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [ROICalculators] (
@@ -113,7 +115,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [Tarifas] (
@@ -129,7 +131,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [Users] (
@@ -144,7 +146,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [PotenciasDePaineisSolares] (
@@ -159,7 +161,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE TABLE [DadosInstalacao] (
@@ -182,7 +184,23 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
+)
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'ArtigoId', N'ArtigoId1', N'Categoria', N'Conteudo', N'DataPublicacao', N'DescricaoCurta', N'ImagemUrl', N'Titulo') AND [object_id] = OBJECT_ID(N'[Artigos]'))
+        SET IDENTITY_INSERT [Artigos] ON;
+    EXEC(N'INSERT INTO [Artigos] ([ArtigoId], [ArtigoId1], [Categoria], [Conteudo], [DataPublicacao], [DescricaoCurta], [ImagemUrl], [Titulo])
+    VALUES (1, NULL, N''Energia Renovável'', CONCAT(CAST(nchar(13) AS nvarchar(max)), nchar(10), N''A energia solar é uma fonte renovável e limpa que está se tornando cada vez mais popular devido aos seus benefícios econômicos e ambientais. Este artigo explora as vantagens de adotar a energia solar tanto para residências quanto para empresas.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Benefícios Econômicos'', nchar(13), nchar(10), N''- **Redução de Custos:** A principal vantagem da energia solar é a redução da conta de energia elétrica. Ao gerar sua própria eletricidade, você diminui a dependência da rede elétrica.'', nchar(13), nchar(10), N''- **Valorização do Imóvel:** Imóveis que possuem sistemas de energia solar são geralmente mais valorizados no mercado, uma vez que têm custos operacionais menores e atraem compradores interessados em soluções sustentáveis.'', nchar(13), nchar(10), N''- **Incentivos e Subsídios:** Em muitas regiões, o governo oferece incentivos fiscais e subsídios para a instalação de sistemas fotovoltaicos, tornando o investimento mais acessível.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Benefícios Ambientais'', nchar(13), nchar(10), N''- **Redução da Pegada de Carbono:** A energia solar não emite gases de efeito estufa, o que contribui significativamente para a redução da pegada de carbono.'', nchar(13), nchar(10), N''- **Fontes Renováveis:** Ao contrário das fontes de energia tradicionais, como carvão e gás natural, a energia solar é renovável e não esgota os recursos naturais do planeta.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Conclusão'', nchar(13), nchar(10), N''Investir em energia solar é uma escolha inteligente tanto do ponto de vista econômico quanto ambiental. Ao reduzir os custos com eletricidade e contribuir para a preservação do meio ambiente, a energia solar se torna uma solução cada vez mais viável e atraente.''), ''2025-02-15T00:00:00.0000000'', N''Entenda os benefícios da energia solar para sua residência ou empresa.'', N''/images/artigos/energia-solar.jpg'', N''Benefícios da Energia Solar''),
+    (2, NULL, N''ROI'', CONCAT(CAST(nchar(13) AS nvarchar(max)), nchar(10), N''Calcular o Retorno sobre o Investimento (ROI) em sistemas fotovoltaicos é essencial para avaliar a viabilidade financeira de um projeto. Este artigo explica como calcular o ROI e por que ele é importante para qualquer instalação de energia solar.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### O que é o ROI?'', nchar(13), nchar(10), N''O ROI é uma métrica financeira usada para avaliar o desempenho de um investimento. Ele calcula o lucro ou perda relativa ao valor investido e é expresso como uma porcentagem.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Fórmula do ROI'', nchar(13), nchar(10), N''A fórmula básica para calcular o ROI é a seguinte:'', nchar(13), nchar(10), N''Para um sistema de energia solar, o retorno pode incluir a economia na conta de energia elétrica, o valor dos incentivos fiscais, e a possível valorização do imóvel. O custo do investimento inclui a instalação dos painéis solares, manutenção e outros custos operacionais.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Exemplo de Cálculo do ROI'', nchar(13), nchar(10), N''Suponhamos que você tenha investido ´20.000 € em um sistema de energia solar e, ao longo do tempo, tenha economizado 3.000 € anualmente na sua conta de energia elétrica. O cálculo do ROI seria: ROI (%) = (Retorno do Investimento / Custo do Investimento) x 100'', nchar(13), nchar(10), nchar(13), nchar(10), nchar(13), nchar(10), N''Isso significa que, em média, você terá um retorno de 15% do valor investido a cada ano.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Conclusão'', nchar(13), nchar(10), N''O cálculo do ROI ajuda a determinar se o investimento em energia solar vale a pena. Com os dados certos, você pode projetar a viabilidade financeira e o tempo de retorno do seu investimento em energia solar.''), ''2022-02-15T00:00:00.0000000'', N''Aprenda a calcular o ROI de um sistema fotovoltaico e entenda se o investimento vale a pena.'', N''/images/artigos/calcular-roi.jpg'', N''Como Calcular o Retorno sobre o Investimento em Energia Solar''),
+    (3, NULL, N''Painéis Solares'', CONCAT(CAST(nchar(13) AS nvarchar(max)), nchar(10), N''Planejar e instalar um sistema de energia solar requer um processo detalhado e bem coordenado. Este artigo apresenta um guia completo sobre como planejar e executar a instalação de um sistema fotovoltaico de forma eficiente.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Passos para o Planejamento'', nchar(13), nchar(10), N''1. **Análise de Viabilidade:** Antes de iniciar, é importante realizar uma análise detalhada do local, levando em consideração fatores como o consumo de energia, a localização e a inclinação do telhado.'', nchar(13), nchar(10), N''2. **Dimensionamento do Sistema:** A quantidade de energia que um sistema solar pode gerar depende do número de painéis e da capacidade de cada um. O dimensionamento correto do sistema é crucial para maximizar a eficiência.'', nchar(13), nchar(10), N''3. **Escolha dos Componentes:** Os componentes principais de um sistema solar são os painéis solares, o inversor e a estrutura de montagem. Escolher materiais de boa qualidade é essencial para garantir o bom funcionamento e a longevidade do sistema.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Processo de Instalação'', nchar(13), nchar(10), N''- **Instalação dos Painéis Solares:** Os painéis solares devem ser instalados de forma a otimizar a exposição solar, garantindo que eles recebam a maior quantidade de luz possível ao longo do dia.'', nchar(13), nchar(10), N''- **Conexão Elétrica:** A instalação elétrica envolve a ligação dos painéis solares ao inversor, que converte a energia gerada em energia utilizável para a residência ou empresa.'', nchar(13), nchar(10), N''- **Testes e Comissionamento:** Após a instalação, é necessário realizar testes para garantir que o sistema está funcionando corretamente e de forma segura.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Conclusão'', nchar(13), nchar(10), N''A instalação de sistemas solares é um processo técnico que exige planejamento cuidadoso. Um bom planejamento e a escolha de profissionais qualificados podem garantir que o sistema solar seja eficiente e tenha uma vida útil longa.''), ''2024-02-15T00:00:00.0000000'', N''Dicas essenciais para planejar e instalar um sistema de energia solar de forma eficiente.'', N''/images/artigos/planejamento-solar.jpg'', N''Planejamento e Instalação de Sistemas de Energia Solar'')');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'ArtigoId', N'ArtigoId1', N'Categoria', N'Conteudo', N'DataPublicacao', N'DescricaoCurta', N'ImagemUrl', N'Titulo') AND [object_id] = OBJECT_ID(N'[Artigos]'))
+        SET IDENTITY_INSERT [Artigos] OFF;
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Nome') AND [object_id] = OBJECT_ID(N'[Cidades]'))
@@ -232,7 +250,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ModeloNome', N'Preco') AND [object_id] = OBJECT_ID(N'[ModelosDePaineisSolares]'))
@@ -255,7 +273,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ModeloPainelId', N'Potencia') AND [object_id] = OBJECT_ID(N'[PotenciasDePaineisSolares]'))
@@ -313,7 +331,16 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
+)
+BEGIN
+    CREATE INDEX [IX_Artigos_ArtigoId1] ON [Artigos] ([ArtigoId1]);
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE INDEX [IX_DadosInstalacao_CidadeId] ON [DadosInstalacao] ([CidadeId]);
@@ -322,7 +349,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE INDEX [IX_DadosInstalacao_ModeloPainelId] ON [DadosInstalacao] ([ModeloPainelId]);
@@ -331,7 +358,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE INDEX [IX_DadosInstalacao_PotenciaId] ON [DadosInstalacao] ([PotenciaId]);
@@ -340,7 +367,7 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     CREATE INDEX [IX_PotenciasDePaineisSolares_ModeloPainelId] ON [PotenciasDePaineisSolares] ([ModeloPainelId]);
@@ -349,57 +376,11 @@ GO
 
 IF NOT EXISTS (
     SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322112509_initiall'
+    WHERE [MigrationId] = N'20250324210209_InitialCreate'
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20250322112509_initiall', N'8.0.0');
-END;
-GO
-
-COMMIT;
-GO
-
-BEGIN TRANSACTION;
-GO
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322120501_AtualizacaoEnergyConsumption'
-)
-BEGIN
-    DECLARE @var0 sysname;
-    SELECT @var0 = [d].[name]
-    FROM [sys].[default_constraints] [d]
-    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
-    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[EnergyConsumptions]') AND [c].[name] = N'ConsumoFimSemana');
-    IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [EnergyConsumptions] DROP CONSTRAINT [' + @var0 + '];');
-    ALTER TABLE [EnergyConsumptions] ALTER COLUMN [ConsumoFimSemana] nvarchar(max) NOT NULL;
-END;
-GO
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322120501_AtualizacaoEnergyConsumption'
-)
-BEGIN
-    DECLARE @var1 sysname;
-    SELECT @var1 = [d].[name]
-    FROM [sys].[default_constraints] [d]
-    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
-    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[EnergyConsumptions]') AND [c].[name] = N'ConsumoDiaSemana');
-    IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [EnergyConsumptions] DROP CONSTRAINT [' + @var1 + '];');
-    ALTER TABLE [EnergyConsumptions] ALTER COLUMN [ConsumoDiaSemana] nvarchar(max) NOT NULL;
-END;
-GO
-
-IF NOT EXISTS (
-    SELECT * FROM [__EFMigrationsHistory]
-    WHERE [MigrationId] = N'20250322120501_AtualizacaoEnergyConsumption'
-)
-BEGIN
-    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20250322120501_AtualizacaoEnergyConsumption', N'8.0.0');
+    VALUES (N'20250324210209_InitialCreate', N'8.0.0');
 END;
 GO
 

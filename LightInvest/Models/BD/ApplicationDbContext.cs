@@ -263,9 +263,6 @@ A instalação de sistemas solares é um processo técnico que exige planejament
 			DataPublicacao = new DateTime(2024, 2, 15)
 		}
 );
-
-
-
 		}
 	}
 
