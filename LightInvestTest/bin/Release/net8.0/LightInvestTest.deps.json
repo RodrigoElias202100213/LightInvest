@@ -37,7 +37,7 @@
       "LightInvestTest/1.0.0": {
         "dependencies": {
           "BenchmarkDotNet": "0.14.0",
-          "LightInvest": "1.0.0",
+          "LightInvest": "8.0.0",
           "MSTest.TestFramework": "3.8.2",
           "Microsoft.AspNetCore.Mvc.Testing": "8.0.0",
           "Microsoft.NET.Test.Sdk": "17.8.0",
@@ -2721,7 +2721,7 @@
         }
       },
       "xunit.runner.visualstudio/2.5.3": {},
-      "LightInvest/1.0.0": {
+      "LightInvest/8.0.0": {
         "dependencies": {
           "Markdig": "0.40.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0",
@@ -2735,8 +2735,8 @@
         },
         "runtime": {
           "LightInvest.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "8.0.0",
+            "fileVersion": "8.0.0.0"
           }
         },
         "compile": {
@@ -5905,7 +5905,7 @@
       "path": "xunit.runner.visualstudio/2.5.3",
       "hashPath": "xunit.runner.visualstudio.2.5.3.nupkg.sha512"
     },
-    "LightInvest/1.0.0": {
+    "LightInvest/8.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

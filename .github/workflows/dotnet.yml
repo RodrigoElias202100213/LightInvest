@@ -44,7 +44,3 @@ jobs:
     # Run tests
     - name: Test
       run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal
-
-    # Publish (optional)
-    - name: Publish
-      run: dotnet publish LightInvest/LightInvest.csproj --configuration Release --output ./publish
