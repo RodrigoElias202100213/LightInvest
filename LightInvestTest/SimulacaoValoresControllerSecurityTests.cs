@@ -1,13 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-using LightInvest.Controllers.Simul;
-using LightInvest.Models.BD;
-using LightInvest.Models.Simulacao.Tarifa;
-using LightInvest.Models.Utilizador.Login;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
+using Moq;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using LightInvest.Controllers;
+using LightInvest.Data;
+using LightInvest.Models;
+using System.Threading.Tasks;
 
 namespace LightInvestTest
 {
@@ -15,6 +14,8 @@ namespace LightInvestTest
 	{
 		private readonly ApplicationDbContext _context;
 		private readonly SimulacaoValoresController _controller;
+		private readonly Mock<ISession> _mockSession;
+		private readonly Mock<HttpContext> _mockHttpContext;
 
 		public SimulacaoValoresControllerSecurityTests()
 		{
@@ -22,59 +23,56 @@ namespace LightInvestTest
 			var options = new DbContextOptionsBuilder<ApplicationDbContext>()
 				.UseInMemoryDatabase(databaseName: "TestDb")
 				.Options;
-
 			_context = new ApplicationDbContext(options);
+			SeedDatabase();
 
-	
+		
 			_controller = new SimulacaoValoresController(_context);
 
 			
-			_controller.ControllerContext = new ControllerContext
-			{
-				HttpContext = new DefaultHttpContext()
-			};
+			_mockSession = new Mock<ISession>();
+			
+			byte[] dummy = null;
+			_mockSession.Setup(s => s.TryGetValue("UserEmail", out dummy)).Returns(false);
+
+			_mockHttpContext = new Mock<HttpContext>();
+			_mockHttpContext.Setup(ctx => ctx.Session).Returns(_mockSession.Object);
+
+			_controller.ControllerContext = new ControllerContext { HttpContext = _mockHttpContext.Object };
 		}
 
-		[Fact]
-		public async Task Simular_DadosInstalacaoNaoEncontrado_RetornaBadRequest()
+		private void SeedDatabase()
 		{
 			
-			var userEmail = "test@example.com";
+			_context.Users.RemoveRange(_context.Users);
+			_context.Tarifas.RemoveRange(_context.Tarifas);
+			_context.DadosInstalacao.RemoveRange(_context.DadosInstalacao);
+			_context.SaveChanges();
 
-			
 			_context.Users.Add(new User
 			{
-				Email = userEmail,
+				Email = "test@example.com",
 				Name = "Test User",
 				Password = "Senha123"
 			});
-
-			
 			_context.Tarifas.Add(new Tarifa
 			{
-				UserEmail = userEmail,
-				Tipo = TipoTarifa.Residencial, 
+				UserEmail = "test@example.com",
+				Tipo = TipoTarifa.Residencial,
 				PrecoKWh = 0.15m
 			});
+			_context.SaveChanges();
+		}
 
-			await _context.SaveChangesAsync();
-
+		[Fact]
+		public async Task Simular_ReturnsBadRequest_WhenUserNotAuthenticated()
+		{
 			
-			var httpContext = new DefaultHttpContext();
-			httpContext.Session = new MockHttpSession();
-			httpContext.Session.SetString("UserEmail", userEmail);
-
-			_controller.ControllerContext = new ControllerContext
-			{
-				HttpContext = httpContext
-			};
-
-		
 			var result = await _controller.Simular();
 
-		
+			
 			var badRequestResult = Assert.IsType<BadRequestObjectResult>(result);
-			Assert.Equal("Nenhum dado de instalação encontrado para este utilizador.", badRequestResult.Value);
+			Assert.Equal("Utilizador não autenticado.", badRequestResult.Value);
 		}
 	}
 }
