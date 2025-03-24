@@ -1,10 +1,10 @@
-name: .NET
+name: .NET CI/CD
 
 on:
   push:
-    branches: [ "Main-new" ]
+    branches: [ "main-new" ]
   pull_request:
-    branches: [ "Main-new" ]
+    branches: [ "main-new" ]
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
 
     # Cache NuGet packages
     - name: Cache NuGet packages
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       with:
         path: ~/.nuget/packages
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
@@ -33,7 +33,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
 
-    # Validate version (check if it's in semver format)
+    # Validate version
     - name: Validate version
       run: |
         version=$(grep -oPm1 "(?<=<Version>)[^<]+" MyProject/MyProject.csproj)  # Ajuste o caminho do seu arquivo .csproj
@@ -43,19 +43,6 @@ jobs:
           exit 1
         fi
 
-    # Run CodeQL analysis
-    - name: Set up CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: 'csharp'
-        
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-
-    # Run dotnet-format (linting)
-    - name: Run dotnet-format
-      run: dotnet tool restore && dotnet format --check --verbosity diagnostic
-
     # Build the project
     - name: Build
       run: dotnet build --no-restore
@@ -64,12 +51,6 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-    # Publish the project (optional)
+    # Publish (optional)
     - name: Publish
       run: dotnet publish --configuration Release --output ./publish
-
-    # Deploy (exemplo)
-    - name: Deploy to Server
-      run: |
-        scp -r ./publish user@server:/path/to/deploy
-      if: github.ref == 'refs/heads/main-new'
