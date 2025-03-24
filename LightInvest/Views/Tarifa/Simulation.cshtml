@@ -19,6 +19,7 @@
 
             <div class="content">
                 <h2>Formulário das Tarifas Energéticas</h2>
+                <p class="required-msg">Os campos marcados com <span class="required">*</span> são obrigatórios.</p>
 
                 <div class="left">
                     <form asp-action="Simulation" method="post">
@@ -36,16 +37,20 @@
                         }
 
                         <div class="form-group">
-                            <label asp-for="PrecoKWh"><strong>1. Preço por kWh:</strong></label>
+                            <label asp-for="PrecoKWh"><strong>1. Preço por kWh:<span class="required">*</span></strong></label>
+                            <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Este valor deve ser um número positivo. Exemplo: 0.25 € por kWh.">?</button>
+
                             <p>Insira o valor do preço por KWh da sua tarifa de eletricidade (em €)</p>
                             <input asp-for="PrecoKWh" class="form-control" />
                             <span asp-validation-for="PrecoKWh" class="text-danger"></span>
                         </div>
 
                         <div class="form-group">
-                            <label asp-for="TipoDeTarifaEscolhida"><strong>2. Tipo da Tarifa:</strong></label>
+                            <label asp-for="TipoDeTarifaEscolhida"><strong>2. Tipo da Tarifa<span class="required">*</span></strong></label>
+                            <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Escolha um tipo de tarifa de energia apresentado.">?</button>
+
                             <select asp-for="TipoDeTarifaEscolhida" class="form-control">
-                                <option value="">Escolha uma tarifa</option> 
+                                <option value="">Escolha uma tarifa</option>
                                 @foreach (var tipo in Model.TiposDeTarifa)
                                 {
                                     <option value="@tipo" selected="@(Model.TipoDeTarifaEscolhida?.ToString() == tipo ? "selected" : null)">
@@ -56,9 +61,8 @@
                             <span asp-validation-for="TipoDeTarifaEscolhida" class="text-danger"></span>
                         </div>
 
-
-
                         <div id="horizontal-button">
+                            <a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
                             <a href="@Url.Action("Simulation", "EnergySimulation")" class="btn">Anterior</a>
                             <button type="submit" class="btn">Seguinte</button>
                         </div>
@@ -70,6 +74,65 @@
     </div>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const precoKWhInput = document.querySelector('input[name="PrecoKWh"]');
+        const tipoTarifaSelect = document.querySelector('select[name="TipoDeTarifaEscolhida"]');
+        const form = document.querySelector('form');
+
+        function validarPrecoKWh() {
+            let value = parseFloat(precoKWhInput.value);
+
+            // Remove mensagens de erro antigas
+            const errorMessage = precoKWhInput.parentElement.querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.remove();
+            }
+
+            // Validação
+            if (isNaN(value) || value <= 0) {
+                mostrarErro(precoKWhInput, "O preço por kWh deve ser um número positivo.");
+                precoKWhInput.setCustomValidity("O preço por kWh deve ser um número positivo.");
+            } else {
+                precoKWhInput.setCustomValidity("");
+            }
+        }
+
+        function validarTipoTarifa() {
+            const errorMessage = tipoTarifaSelect.parentElement.querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.remove();
+            }
+
+            if (!tipoTarifaSelect.value) {
+                mostrarErro(tipoTarifaSelect, "É necessário escolher um tipo de tarifa.");
+                tipoTarifaSelect.setCustomValidity("É necessário escolher um tipo de tarifa.");
+            } else {
+                tipoTarifaSelect.setCustomValidity("");
+            }
+        }
+
+        function mostrarErro(elemento, mensagem) {
+            const errorText = document.createElement('div');
+            errorText.classList.add('error-message');
+            errorText.style.color = 'red';
+            errorText.textContent = mensagem;
+            elemento.parentElement.appendChild(errorText);
+        }
+
+        precoKWhInput.addEventListener('input', validarPrecoKWh);
+        tipoTarifaSelect.addEventListener('change', validarTipoTarifa);
+
+        form.addEventListener('submit', function (event) {
+            validarPrecoKWh();
+            validarTipoTarifa();
+
+            if (!form.checkValidity()) {
+                event.preventDefault(); // Impede o envio do formulário se houver erros
+            }
+        });
+    });
+</script>
 
 <style>
     .selecionarTarifa-container {
@@ -78,6 +141,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    .required {
+        color: red;
+        font-weight: bold;
+    }
+
+    .required-msg {
+        font-size: 1rem;
+        color: #065A66;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 
     .selecionarTarifa-box {
@@ -129,27 +204,27 @@
         position: relative;
     }
 
-    .step:first-child, .step:nth-child(2) {
-        background-color: #065A66;
-    }
+        .step:first-child, .step:nth-child(2) {
+            background-color: #065A66;
+        }
 
-    .step:first-child::after {
-        background-color: #065A66;
-    }
+            .step:first-child::after {
+                background-color: #065A66;
+            }
 
-    .step::after {
-        content: "";
-        width: 2px;
-        height: 80px;
-        background-color: #aaa;
-        position: absolute;
-        bottom: -80px;
-        transform: translateX(-50%);
-    }
+        .step::after {
+            content: "";
+            width: 2px;
+            height: 80px;
+            background-color: #aaa;
+            position: absolute;
+            bottom: -80px;
+            transform: translateX(-50%);
+        }
 
-    .step:last-child::after {
-        display: none;
-    }
+        .step:last-child::after {
+            display: none;
+        }
 
     .content {
         width: 100%;
@@ -209,4 +284,26 @@
         margin-top: 2%;
     }
 
+    .error-message {
+        color: red;
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .info-btn {
+        background: transparent;
+        border: none;
+        color: #065A66;
+        font-size: 18px;
+        cursor: pointer;
+    }
 </style>
+
+<!-- Certifique-se de adicionar o Bootstrap para usar tooltips -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

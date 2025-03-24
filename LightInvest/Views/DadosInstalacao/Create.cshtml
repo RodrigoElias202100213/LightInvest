@@ -20,10 +20,26 @@
             <div class="content">
                 <h2>Simulação</h2>
 
+                <p class="required-msg">Os campos marcados com <span class="required">*</span> são obrigatórios.</p>
+
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                            {
+                                <li>@error.ErrorMessage</li>
+                            }
+                        </ul>
+                    </div>
+                }
+
                 <div class="left">
                     <form asp-action="Create" method="post">
                         <div class="form-group">
-                            <label><strong>1. Cidade:</strong></label>
+                            <label><strong>1. Cidade: <span class="required">*</span></strong></label>
+                            <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Selecione a cidade onde será realizada a instalação.">?</button>
+
                             <select asp-for="CidadeId" class="form-control" required>
                                 <option value="">Selecione a cidade</option>
                                 @foreach (var cidade in Model.Cidades)
@@ -35,7 +51,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label><strong>2. Modelo do Painel Solar:</strong></label>
+                            <label><strong>2. Modelo do Painel Solar: <span class="required">*</span></strong></label>
+                            <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Escolha um modelo de painel solar adequado às suas necessidades.">?</button>
+
                             <select id="modeloPainelSelect" asp-for="ModeloPainelId" class="form-control" required>
                                 <option value="">Selecione o modelo</option>
                                 @foreach (var modelo in Model.ModelosDePaineis)
@@ -47,7 +65,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label><strong>3. Potência do Painel:</strong></label>
+                            <label><strong>3. Potência do Painel: <span class="required">*</span></strong></label>
+                            <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Selecione a potência do painel solar para determinar a produção de energia.">?</button>
+
                             <select id="consumoPainelSelect" asp-for="PotenciaId" class="form-control" required>
                                 <option value="">Selecione a potência</option>
                                 @foreach (var potencia in Model.Potencias)
@@ -59,18 +79,25 @@
                         </div>
 
                         <div class="form-group">
-                            <label><strong>4. Número de Painéis:</strong></label>
+                            <label><strong>4. Número de Painéis: <span class="required">*</span></strong></label>
+                            <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Informe quantos painéis solares deseja instalar.">?</button>
+
                             <input asp-for="NumeroPaineis" class="form-control" type="number" min="1" max="1000" required />
                             <span class="text-danger" asp-validation-for="NumeroPaineis"></span>
                         </div>
 
                         <div class="form-group">
-                            <label><strong>5. Inclinação (graus):</strong></label>
+                            <label><strong>5. Inclinação (graus): <span class="required">*</span></strong></label>
+                            <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Defina o ângulo de inclinação dos painéis para melhor captação de energia.">?</button>
+
                             <input asp-for="Inclinacao" class="form-control" type="number" step="0.1" min="0" max="90" required />
                             <span class="text-danger" asp-validation-for="Inclinacao"></span>
                         </div>
+
                         <div class="form-group">
-                            <label asp-for="Dificuldade"><strong>Dificuldade da Instalação:</strong></label>
+                            <label asp-for="Dificuldade"><strong>Dificuldade da Instalação: <span class="required">*</span></strong></label>
+                            <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Escolha o nível de dificuldade da instalação, considerando a estrutura do local.">?</button>
+
                             <select asp-for="Dificuldade" class="form-control" required>
                                 <option value="">Escolha uma dificuldade</option>
                                 @foreach (var dificuldade in Enum.GetValues(typeof(DificuldadeInstalacao)).Cast<DificuldadeInstalacao>())
@@ -81,8 +108,8 @@
                             <span asp-validation-for="Dificuldade" class="text-danger"></span>
                         </div>
 
-
                         <div class="horizontal-button">
+                            <a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
                             <a href="@Url.Action("Simulation", "Tarifa")" class="btn">Anterior</a>
                             <button type="submit" class="btn">Calcular</button>
                         </div>
@@ -97,11 +124,14 @@
         </div>
     </div>
 </div>
-
-
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
+
+
+          document.addEventListener('DOMContentLoaded', function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
              $(document).ready(function () {
             var consumoSelect = $("#consumoPainelSelect");
 
@@ -293,4 +323,27 @@
         margin-bottom: 5px;
     }
 
+    .required {
+        color: red;
+        font-weight: bold;
+    }
+
+    .required-msg {
+        font-size: 1rem;
+        color: #065A66;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .info-btn {
+        background: transparent;
+        border: none;
+        color: #065A66;
+        font-size: 18px;
+        cursor: pointer;
+    }
 </style>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
