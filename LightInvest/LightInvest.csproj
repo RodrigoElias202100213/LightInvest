@@ -16,10 +16,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="wwwroot\images\logo.jpg" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <PackageReference Include="Markdig" Version="0.40.0" />
 	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
 	  <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />

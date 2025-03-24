@@ -36,8 +36,10 @@
 
             <!-- Consumo Horário Dias de Semana -->
             <div class="section">
-                <h5>1. Consumo Médio Horário: Segunda-feira a Sexta-feira <span class="required">*</span></h5>
-                <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Informe a quantidade média de energia consumida (em kWh) durante este horário nos dias úteis.">?</button>
+                <div class="title-container">
+                    <h5>1. Consumo Médio Horário: Segunda-feira a Sexta-feira <span class="required">*</span></h5>
+                    <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Informe a quantidade média de energia consumida (em kWh) durante este horário nos dias úteis.">?</button>
+                </div>
 
                 <div class="horario">
                     @for (int i = 0; i < 24; i++)
@@ -53,8 +55,10 @@
 
             <!-- Consumo Horário Fins de Semana -->
             <div class="section">
-                <h5>2. Consumo Médio Horário: Feriados/Fim de Semana <span class="required">*</span></h5>
-                <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Informe a quantidade média de energia consumida (em kWh) durante este horário nos fins de semana e feriados.">?</button>
+                <div class="title-container">
+                    <h5>2. Consumo Médio Horário: Feriados/Fim de Semana <span class="required">*</span></h5>
+                    <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Informe a quantidade média de energia consumida (em kWh) durante este horário nos fins de semana e feriados.">?</button>
+                </div>
 
                 <div class="horario">
                     @for (int i = 0; i < 24; i++)
@@ -69,10 +73,13 @@
             </div>
 
             <!-- Ocupação Mensal -->
+
             <div class="section">
+                <div class="title-container">
+
                 <h5>3. Ocupação Mensal <span class="required">*</span></h5>
                 <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Informe os meses em que o Imovel fica habitado.">?</button>
-
+                </div>
                 <div class="month-checkboxes">
                     @foreach (var mes in Enum.GetNames(typeof(Meses)))
                     {
@@ -84,6 +91,7 @@
                     }
                 </div>
             </div>
+
 
             <div id="btn-container">
                 <a href="@Url.Action("Index", "Home")" class="btn">Cancelar</a>
@@ -157,6 +165,12 @@
         padding: 0;
         width: 0%;
         height: 0%;
+    }
+
+    .title-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .container {
@@ -263,6 +277,7 @@
         }
 
     h5 {
+        margin: 0;
         margin-top: 2%;
         margin-bottom: 2%;
         font-weight: bolder;
@@ -295,6 +310,28 @@
         margin-top: 20px;
     }
 
+    .btn {
+        background: #065A66;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 10px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+        .btn:hover {
+            background: #065A66;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+
     .required {
         color: red;
         font-weight: bold;
@@ -307,26 +344,15 @@
         margin-bottom: 10px;
     }
 
-    .btn:hover {
-        background: #065A66;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        border-radius: 10px;
-        text-decoration: none;
-        text-align: center;
-    }
-
     .alert {
         margin-top: 2%;
     }
 
     .error-message {
         color: red;
-        font-size: 0.75rem; /* Texto pequeno */
-        white-space: nowrap; /* Mantém o texto em uma única linha */
-        margin-left: 5px; /* Adiciona um pequeno espaçamento ao lado do input */
+        font-size: 0.75rem; 
+        white-space: nowrap;
+        margin-left: 5px;
         font-weight: bold;
     }
 
@@ -336,7 +362,8 @@
         color: #065A66;
         font-size: 18px;
         cursor: pointer;
-    }
+        margin-left: 10px; 
+
 
 </style>
 

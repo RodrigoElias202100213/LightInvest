@@ -16,28 +16,51 @@
                 <li id="registo">Registar</li>
             </ul>
 
-            <form method="post" onsubmit="return validateForm()">
+            <form method="post">
                 <div class="form-group">
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="Email" required />
-                    <span class="text-danger" id="emailError"></span>
-                </div>
-                <div class="form-group">
-                    <label for="password">Palavra-Passe <span class="required">*</span></label>
-                    <input type="password" id="password" name="password" placeholder="Palavra-Passe" required />
-                    <span class="text-danger" id="passwordError"></span>
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Nome" required
+                           value="@Model.Name" />
+                    @if (ViewData.ModelState["Name"]?.Errors.Count > 0)
+                    {
+                        <div class="error-message">@ViewData.ModelState["Name"].Errors[0].ErrorMessage</div>
+                    }
                 </div>
 
-                <div id="end-row">
-                    <div class="extra-actions">
-                        <a href="@Url.Action("ForgotPassword", "Account")">Esqueceu-se da palavra-passe?</a>
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit">Login</button>
-                    </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required
+                           value="@Model.Email" />
+                    @if (ViewData.ModelState["Email"]?.Errors.Count > 0)
+                    {
+                        <div class="error-message">@ViewData.ModelState["Email"].Errors[0].ErrorMessage</div>
+                    }
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Palavra-Passe</label>
+                    <input type="password" id="password" name="password" placeholder="Palavra-Passe" required
+                           value="@Model.Password" />
+                    @if (ViewData.ModelState["Password"]?.Errors.Count > 0)
+                    {
+                        <div class="error-message">@ViewData.ModelState["Password"].Errors[0].ErrorMessage</div>
+                    }
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar Palavra-Passe</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Palavra-Passe" required
+                           value="@Model.ConfirmPassword" />
+                    @if (ViewData.ModelState["ConfirmPassword"]?.Errors.Count > 0)
+                    {
+                        <div class="error-message">@ViewData.ModelState["ConfirmPassword"].Errors[0].ErrorMessage</div>
+                    }
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Registar</button>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
@@ -51,17 +74,13 @@
         background-color: #f9f9f9;
     }
 
-    .required {
-        color: red;
-        font-weight: bold;
-    }
     .register-box {
         display: flex;
         background: white;
         width: 950px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        height:563px;
+        height: 563px;
     }
 
     .sidebar {
@@ -74,15 +93,15 @@
         justify-content: center;
         color: white;
         max-width: 250px;
-        height:563px;
+        height: 563px;
     }
 
-    .sidebar img {
-        max-width: 250px;
-        margin: 0 auto 20px;
-    }
+        .sidebar img {
+            max-width: 250px;
+            margin: 0 auto 20px;
+        }
 
- 
+
     #login {
         font-weight: bold;
         font-family: 'Segoe UI', sans-serif;
@@ -116,37 +135,37 @@
         margin-bottom: 3%;
     }
 
-    .header li {
-        flex: 1;
-        text-align: center;
-        cursor: pointer;
-        padding: 10px 15px;
-        font-weight: 500;
-        text-align: center;
-        background-color: #f1f1f1;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        list-style: none;
-        margin: 0 10px;
-    }
+        .header li {
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px 15px;
+            font-weight: 500;
+            text-align: center;
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            list-style: none;
+            margin: 0 10px;
+        }
 
-    .header li a {
-        text-decoration: none; 
-        border: none; 
-        color: inherit;
-    }
+            .header li a {
+                text-decoration: none;
+                border: none;
+                color: inherit;
+            }
 
     .form-group {
         color: #065A66;
-        font-weight:bold;
-        margin-top:2%;
+        font-weight: bold;
+        margin-top: 2%;
     }
 
-    .form-group input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 20px;
-    }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+        }
 
     .form-actions {
         display: flex;
@@ -154,17 +173,17 @@
         margin-top: 3%;
     }
 
-    .form-actions button {
-        padding: 7px 25px;
-        background-color: #065A66;
-        color: white;
-        border: none;
-        border-radius: 25px;
-        font-size: 1em;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+        .form-actions button {
+            padding: 7px 25px;
+            background-color: #065A66;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
     .error-message {
         color: red;

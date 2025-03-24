@@ -5812,3 +5812,14 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Rele
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\win-x86\LightInvest.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\win-x86\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\win-x86\ref\LightInvest.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\System.Web.Mvc.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\System.Web.Razor.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\System.Web.Helpers.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\System.Web.WebPages.Deployment.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\System.Web.WebPages.Razor.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\System.Web.WebPages.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\Microsoft.Web.Infrastructure.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\Rotativa.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\bin\Release\net8.0\win-x86\Rotativa.AspNetCore.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\win-x86\LightInvest.MvcApplicationPartsAssemblyInfo.cs

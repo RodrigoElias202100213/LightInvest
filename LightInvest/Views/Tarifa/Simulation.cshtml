@@ -90,9 +90,9 @@
             }
 
             // Validação
-            if (isNaN(value) || value <= 0) {
-                mostrarErro(precoKWhInput, "O preço por kWh deve ser um número positivo.");
-                precoKWhInput.setCustomValidity("O preço por kWh deve ser um número positivo.");
+            if (isNaN(value) || value <= 0 || value > 100) {
+                mostrarErro(precoKWhInput, "O preço por kWh deve ser um número positivo e menor que 100.");
+                precoKWhInput.setCustomValidity("O preço por kWh deve ser um número positivo  e menor que 100..");
             } else {
                 precoKWhInput.setCustomValidity("");
             }
