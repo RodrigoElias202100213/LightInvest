@@ -56,7 +56,7 @@ public class ThirdPartyApiIntegrationTests : IClassFixture<WebApplicationFactory
 	[Fact]
 	public async Task GetTarifaAsync_ReturnsValidResponse()
 	{
-		// Mock da API Externa
+		
 		var httpMessageHandlerMock = new Mock<HttpMessageHandler>();
 
 		httpMessageHandlerMock
@@ -78,10 +78,10 @@ public class ThirdPartyApiIntegrationTests : IClassFixture<WebApplicationFactory
 
 		var service = new TarifaService(httpClient);
 
-		// Chamada do serviço
+		
 		var tarifa = await service.GetTarifaAsync();
 
-		// Validações
+		
 		Assert.Equal(0.55m, tarifa);
 	}
 }
