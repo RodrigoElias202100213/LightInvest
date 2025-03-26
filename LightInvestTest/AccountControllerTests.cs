@@ -32,10 +32,16 @@ public class AccountControllerTests
 		_controller = new AccountController(_context, new EmailService(null));
 	}
 
-
 	[Fact]
 	public async Task Register_DeveRetornarErro_QuandoEmailJaExiste()
 	{
+		var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == "existente@email.com");
+		if (existingUser == null)
+		{
+			_context.Users.Add(new User { Email = "existente@email.com", Name = "Utilizador Existente", Password = "Pass123" });
+			await _context.SaveChangesAsync();
+		}
+
 		var registerModel = new RegisterViewModel
 		{
 			Name = "Novo Utilizador",
@@ -44,12 +50,17 @@ public class AccountControllerTests
 			ConfirmPassword = "Pass123"
 		};
 
-		var result = await _controller.Register(registerModel) as ViewResult;
+		var result = await _controller.Register(registerModel);
 
-		Assert.NotNull(result);
+		var viewResult = Assert.IsType<ViewResult>(result);
+
 		Assert.False(_controller.ModelState.IsValid);
-		Assert.Contains(_controller.ModelState.Values, v => v.Errors.Any(e => e.ErrorMessage.Contains("Já existe")));
+
+		Assert.Contains(_controller.ModelState, kvp => kvp.Key == "Email" && kvp.Value.Errors.Any(e => e.ErrorMessage.Contains("Já existe")));
 	}
+
+
+
 	[Fact]
 	public async Task Login_DeveRetornarErro_QuandoEmailNaoExiste()
 	{
