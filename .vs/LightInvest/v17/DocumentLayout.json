@@ -3,6 +3,66 @@
   "WorkspaceRootPath": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\controllers\\educ\\artigoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\educ\\artigoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\artigos\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\artigos\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\artigos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\artigos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\artigos\\listarporcategoria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\artigos\\listarporcategoria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\models\\api\\mediastackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\api\\mediastackservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\models\\api\\mediastackarticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\api\\mediastackarticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\models\\educ\\artigos\\artigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\educ\\artigos\\artigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\models\\api\\mediastackresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\api\\mediastackresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\models\\educ\\educacaoenergeticaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\educ\\educacaoenergeticaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\controllers\\educ\\manualtecnicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\educ\\manualtecnicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\models\\bd\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\bd\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\tarifa\\simulation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\tarifa\\simulation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,10 +73,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\lightinvest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\lightinvest.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\energysimulation\\simulation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -39,36 +95,8 @@
       "RelativeMoniker": "D:0:0:{8F53309D-A162-4E9D-8A87-C9D3254AAC18}|LightInvestTest\\LightInvestTest.csproj|solutionrelative:lightinvesttest\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\controllers\\educ\\manualtecnicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\educ\\manualtecnicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\models\\bd\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\bd\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\controllers\\educ\\educacaoenergeticacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\educ\\educacaoenergeticacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\controllers\\educ\\artigoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\controllers\\educ\\artigoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\models\\educ\\educacaoenergeticaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\educ\\educacaoenergeticaviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\models\\educ\\artigos\\artigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\models\\educ\\artigos\\artigo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\verag\\onedrive - instituto polit\u00E9cnico de set\u00FAbal\\documentos\\ips\\3 ano\\pv\\lightinvest\\lightinvest\\views\\educacaoenergetica\\verartigo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -86,7 +114,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 176,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -130,152 +158,140 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Simulation.cshtml",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Tarifa\\Simulation.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Tarifa\\Simulation.cshtml",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Tarifa\\Simulation.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Tarifa\\Simulation.cshtml",
-              "ViewState": "AgIAABcBAAAAAAAAAAAAACYBAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T15:00:48.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAMAAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-25T14:58:20.828Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LightInvest.csproj",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\LightInvest.csproj",
-              "RelativeDocumentMoniker": "LightInvest\\LightInvest.csproj",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\LightInvest.csproj",
-              "RelativeToolTip": "LightInvest\\LightInvest.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-24T22:31:45.357Z"
+              "DocumentIndex": 6,
+              "Title": "MediastackArticle.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\API\\MediastackArticle.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\API\\MediastackArticle.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\API\\MediastackArticle.cs",
+              "RelativeToolTip": "LightInvest\\Models\\API\\MediastackArticle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T16:09:54.531Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "MediastackResponse.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\API\\MediastackResponse.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\API\\MediastackResponse.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\API\\MediastackResponse.cs",
+              "RelativeToolTip": "LightInvest\\Models\\API\\MediastackResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T16:08:22.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\appsettings.json",
               "RelativeDocumentMoniker": "LightInvest\\appsettings.json",
               "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\appsettings.json",
               "RelativeToolTip": "LightInvest\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-24T21:01:18.244Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "ArtigosController.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Educ\\ArtigosController.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Controllers\\Educ\\ArtigosController.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Educ\\ArtigosController.cs",
+              "RelativeToolTip": "LightInvest\\Controllers\\Educ\\ArtigosController.cs",
+              "ViewState": "AgIAACUAAACAxvGjYREfwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T20:52:17.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Detalhes.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Artigos\\Detalhes.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Artigos\\Detalhes.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Artigos\\Detalhes.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Artigos\\Detalhes.cshtml",
+              "ViewState": "AgIAAAEAAACAq6r6c8EpwCIAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T15:43:33.395Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListarPorCategoria.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Artigos\\ListarPorCategoria.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Artigos\\ListarPorCategoria.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Artigos\\ListarPorCategoria.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Artigos\\ListarPorCategoria.cshtml",
+              "ViewState": "AgIAAAAAAAAAjuM4PqENwBkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T15:43:15.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Artigos\\Index.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Artigos\\Index.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Artigos\\Index.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Artigos\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T15:47:46.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Program.cs",
               "RelativeDocumentMoniker": "LightInvest\\Program.cs",
               "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Program.cs",
               "RelativeToolTip": "LightInvest\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-24T21:01:17.114Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\BD\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Models\\BD\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\BD\\ApplicationDbContext.cs",
-              "RelativeToolTip": "LightInvest\\Models\\BD\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAP8AAAAAAAAAAAAAAAgBAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T20:55:30.589Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SimulacaoValoresController.cs",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Simul\\SimulacaoValoresController.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Controllers\\Simul\\SimulacaoValoresController.cs",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Simul\\SimulacaoValoresController.cs",
-              "RelativeToolTip": "LightInvest\\Controllers\\Simul\\SimulacaoValoresController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T20:55:04.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Simulation.cshtml",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
-              "ViewState": "AgIAABkAAAAARx4tqC0owEMAAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-24T18:54:13.634Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAADSxmlTn00wwBcAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-24T19:03:01.186Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SimulacaoValoresControllerSecurityTests.cs",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
-              "RelativeDocumentMoniker": "LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
-              "RelativeToolTip": "LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAmwD0AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T22:50:28.687Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "IEmailService.cs",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\IEmailService.cs",
-              "RelativeDocumentMoniker": "LightInvestTest\\IEmailService.cs",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\IEmailService.cs",
-              "RelativeToolTip": "LightInvestTest\\IEmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Artigo.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\Educ\\Artigos\\Artigo.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\Educ\\Artigos\\Artigo.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\Educ\\Artigos\\Artigo.cs",
+              "RelativeToolTip": "LightInvest\\Models\\Educ\\Artigos\\Artigo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T22:50:52.965Z"
+              "WhenOpened": "2025-03-24T20:52:05.531Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AccountControllerIntegrationTests.cs",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\AccountControllerIntegrationTests.cs",
-              "RelativeDocumentMoniker": "LightInvestTest\\AccountControllerIntegrationTests.cs",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\AccountControllerIntegrationTests.cs",
-              "RelativeToolTip": "LightInvestTest\\AccountControllerIntegrationTests.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "MediastackService.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\API\\MediastackService.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\API\\MediastackService.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\API\\MediastackService.cs",
+              "RelativeToolTip": "LightInvest\\Models\\API\\MediastackService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T22:50:55.015Z"
+              "WhenOpened": "2025-03-27T12:02:16.803Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ManualTecnicoController.cs",
               "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Educ\\ManualTecnicoController.cs",
               "RelativeDocumentMoniker": "LightInvest\\Controllers\\Educ\\ManualTecnicoController.cs",
@@ -287,31 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "EducacaoEnergeticaController.cs",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Educ\\EducacaoEnergeticaController.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Controllers\\Educ\\EducacaoEnergeticaController.cs",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Educ\\EducacaoEnergeticaController.cs",
-              "RelativeToolTip": "LightInvest\\Controllers\\Educ\\EducacaoEnergeticaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T20:52:23.098Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ArtigosController.cs",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Educ\\ArtigosController.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Controllers\\Educ\\ArtigosController.cs",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Educ\\ArtigosController.cs",
-              "RelativeToolTip": "LightInvest\\Controllers\\Educ\\ArtigosController.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T20:52:17.951Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 11,
               "Title": "EducacaoEnergeticaViewModel.cs",
               "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\Educ\\EducacaoEnergeticaViewModel.cs",
               "RelativeDocumentMoniker": "LightInvest\\Models\\Educ\\EducacaoEnergeticaViewModel.cs",
@@ -323,19 +315,139 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Artigo.cs",
-              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\Educ\\Artigos\\Artigo.cs",
-              "RelativeDocumentMoniker": "LightInvest\\Models\\Educ\\Artigos\\Artigo.cs",
-              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\Educ\\Artigos\\Artigo.cs",
-              "RelativeToolTip": "LightInvest\\Models\\Educ\\Artigos\\Artigo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "LightInvest\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAMCAAAAOI6yEpAUwBIAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T20:52:05.531Z"
+              "WhenOpened": "2025-03-26T15:41:46.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Simulation.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Tarifa\\Simulation.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Tarifa\\Simulation.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Tarifa\\Simulation.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Tarifa\\Simulation.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAACYBAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T15:00:48.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\BD\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Models\\BD\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Models\\BD\\ApplicationDbContext.cs",
+              "RelativeToolTip": "LightInvest\\Models\\BD\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAOQAAAAAAAAAAAAkwAwBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T20:55:30.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SimulacaoValoresController.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Simul\\SimulacaoValoresController.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Controllers\\Simul\\SimulacaoValoresController.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Simul\\SimulacaoValoresController.cs",
+              "RelativeToolTip": "LightInvest\\Controllers\\Simul\\SimulacaoValoresController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T20:55:04.618Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
+              "Title": "LightInvest.csproj",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\LightInvest.csproj",
+              "RelativeDocumentMoniker": "LightInvest\\LightInvest.csproj",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\LightInvest.csproj",
+              "RelativeToolTip": "LightInvest\\LightInvest.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-24T22:31:45.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAMAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-25T14:58:20.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Simulation.cshtml",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\EnergySimulation\\Simulation.cshtml",
+              "ViewState": "AgIAABkAAAAARx4tqC0owEMAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T18:54:13.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SimulacaoValoresControllerSecurityTests.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
+              "RelativeToolTip": "LightInvestTest\\SimulacaoValoresControllerSecurityTests.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAmwD0AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T22:50:28.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\IEmailService.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\IEmailService.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\IEmailService.cs",
+              "RelativeToolTip": "LightInvestTest\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T22:50:52.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AccountControllerIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\AccountControllerIntegrationTests.cs",
+              "RelativeDocumentMoniker": "LightInvestTest\\AccountControllerIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvestTest\\AccountControllerIntegrationTests.cs",
+              "RelativeToolTip": "LightInvestTest\\AccountControllerIntegrationTests.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T22:50:55.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "EducacaoEnergeticaController.cs",
+              "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Educ\\EducacaoEnergeticaController.cs",
+              "RelativeDocumentMoniker": "LightInvest\\Controllers\\Educ\\EducacaoEnergeticaController.cs",
+              "ToolTip": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Controllers\\Educ\\EducacaoEnergeticaController.cs",
+              "RelativeToolTip": "LightInvest\\Controllers\\Educ\\EducacaoEnergeticaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T20:52:23.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "VerArtigo.cshtml",
               "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\Views\\EducacaoEnergetica\\VerArtigo.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\EducacaoEnergetica\\VerArtigo.cshtml",
@@ -347,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "logout.png",
               "DocumentMoniker": "C:\\Users\\verag\\OneDrive - Instituto Polit\u00E9cnico de Set\u00FAbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\logout.png",
               "RelativeDocumentMoniker": "LightInvest\\wwwroot\\images\\logout.png",

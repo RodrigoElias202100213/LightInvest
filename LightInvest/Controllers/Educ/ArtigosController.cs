@@ -5,6 +5,7 @@ using LightInvest.Models;
 using LightInvest.Models.BD;
 using Markdig;
 using LightInvest.Models.Educ.Artigos;
+using Newtonsoft.Json;
 
 
 namespace LightInvest.Controllers.Educ
@@ -12,11 +13,14 @@ namespace LightInvest.Controllers.Educ
 	public class ArtigosController : Controller
 	{
 		private readonly ApplicationDbContext _context;
+        private readonly HttpClient _httpClient;
+        private readonly string _mediastackApiKey = "73261e3e3f837ec6c829b44371ae2ad7";
 
-		public ArtigosController(ApplicationDbContext context)
+        public ArtigosController(ApplicationDbContext context, HttpClient httpClient)
 		{
 			_context = context;
-		}
+            _httpClient = httpClient;
+        }
 
 		public IActionResult Index()
 		{
@@ -29,26 +33,40 @@ namespace LightInvest.Controllers.Educ
 			ViewBag.Categoria = categoria;
 			return View(artigos);
 		}
-		public IActionResult Detalhes(int id)
+
+		public async Task<IActionResult> Detalhes(int id)
 		{
 			var artigo = _context.Artigos.FirstOrDefault(a => a.ArtigoId == id);
-			if (artigo == null)
-			{
-				return NotFound();
-			}
 
-			var htmlConteudo = Markdown.ToHtml(artigo.Conteudo);
+			// Obter artigos relacionados pela categoria do artigo atual
+			var artigosRelacionados = await ObterArtigosRelacionadosDaApi(artigo.Categoria);
 
-			ViewBag.ConteudoHtml = htmlConteudo;
-
-			var artigosRelacionados = _context.Artigos
-											   .Where(a => a.Categoria == artigo.Categoria && a.ArtigoId != artigo.ArtigoId)
-											   .Take(3)
-											   .ToList();
-			artigo.ArtigosRelacionados = artigosRelacionados ?? new List<Artigo>();
+			// Passa os artigos relacionados para a view
+			artigo.ArtigosRelacionados = artigosRelacionados;
 
 			return View(artigo);
 		}
 
-	}
+
+        private async Task<List<Artigo>> ObterArtigosRelacionadosDaApi(string categoria)
+        {
+
+			string url = $"http://api.mediastack.com/v1/news?access_key=73261e3e3f837ec6c829b44371ae2ad7&categories=sustentabilidade&languages=pt";
+
+
+			var response = await _httpClient.GetStringAsync(url);
+            var artigos = JsonConvert.DeserializeObject<MediastackResponse>(response);
+
+          
+            return artigos?.Data?.Select(a => new Artigo
+            {
+                Titulo = a.Title,
+                DescricaoCurta = a.Description,
+                ImagemUrl = a.ImageUrl, 
+                Categoria = categoria,  
+            }).ToList();
+        }
+
+    }
+
 }

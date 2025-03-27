@@ -4,6 +4,7 @@ using LightInvest.Models.Email;
 using LightInvest.Models.BD;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
+using LightInvest.Services; // Importa o serviço Mediastack
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,9 @@ builder.Services.AddSingleton<IWebHostEnvironment>(builder.Environment);
 
 // Adicionando os serviços necessários
 builder.Services.AddSingleton<EmailService>();
+
+// Adicionando HttpClient para integração com APIs externas
+builder.Services.AddHttpClient<MediastackService>();
 
 // Configuração dos serviços para controladores e visualizações
 builder.Services.AddControllersWithViews();
