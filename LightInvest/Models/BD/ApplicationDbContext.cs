@@ -206,7 +206,7 @@ A energia solar é uma fonte renovável e limpa que está se tornando cada vez m
 Investir em energia solar é uma escolha inteligente tanto do ponto de vista econômico quanto ambiental. Ao reduzir os custos com eletricidade e contribuir para a preservação do meio ambiente, a energia solar se torna uma solução cada vez mais viável e atraente.",
 
 			ImagemUrl = "/images/artigos/energia-solar.jpg",
-			Categoria = "Energia Renovável",
+			Categoria = CategoriaArtigo.Energia_Renovavel,
 			DescricaoCurta = "Entenda os benefícios da energia solar para sua residência ou empresa.",
 			DataPublicacao = new DateTime(2025, 2, 15)
 		},
@@ -234,7 +234,7 @@ Isso significa que, em média, você terá um retorno de 15% do valor investido 
 O cálculo do ROI ajuda a determinar se o investimento em energia solar vale a pena. Com os dados certos, você pode projetar a viabilidade financeira e o tempo de retorno do seu investimento em energia solar.",
 
 			ImagemUrl = "/images/artigos/calcular-roi.jpg",
-			Categoria = "ROI",
+			Categoria = CategoriaArtigo.Calculo_ROI,
 			DescricaoCurta = "Aprenda a calcular o ROI de um sistema fotovoltaico e entenda se o investimento vale a pena.",
 			DataPublicacao = new DateTime(2022, 2, 15)
 		},
@@ -258,7 +258,7 @@ Planejar e instalar um sistema de energia solar requer um processo detalhado e b
 ### Conclusão
 A instalação de sistemas solares é um processo técnico que exige planejamento cuidadoso. Um bom planejamento e a escolha de profissionais qualificados podem garantir que o sistema solar seja eficiente e tenha uma vida útil longa.",
 			ImagemUrl = "/images/artigos/planejamento-solar.jpg",
-			Categoria = "Painéis Solares",
+			Categoria = CategoriaArtigo.Eficiencia_Energetica,
 			DescricaoCurta = "Dicas essenciais para planejar e instalar um sistema de energia solar de forma eficiente.",
 			DataPublicacao = new DateTime(2024, 2, 15)
 		}

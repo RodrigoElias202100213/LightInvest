@@ -1,55 +1,28 @@
-﻿@using LightInvest.Models.Educ.Artigos
-@model Artigo
-
-@{
-    ViewData["Title"] = Model.Titulo;
-}
-
-<div class="container mt-4">
+﻿<div class="mt-5">
+    <h4 class="text-muted">Artigos Relacionados</h4>
     <div class="row">
-        <div class="col-md-8 mx-auto">
-            <h1 class="display-4 text-center">@Model.Titulo</h1>
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <p class="text-muted">Publicado em: <strong>@Model.DataPublicacao.ToString("dd/MM/yyyy")</strong></p>
-                <a href="@Url.Action("ListarPorCategoria", "Artigos", new { categoria = Model.Categoria })" class="btn btn-outline-primary btn-sm">Voltar à categoria</a>
-            </div>
-
-            <div class="card mb-4">
-                @if (!string.IsNullOrEmpty(Model.ImagemUrl))
-                {
-                    <img src="@Model.ImagemUrl" alt="Imagem do Artigo" class="card-img-top img-fluid rounded">
-                }
-            </div>
-
-            <div class="content">
-                <p class="lead">@Model.Conteudo</p>
-            </div>
-
-            <div class="mt-5">
-                <h4 class="text-muted">Artigos Relacionados</h4>
-                <div class="row">
-                    @foreach (var artigoRelacionado in Model.ArtigosRelacionados)
-                    {
-                        <div class="col-md-4 mb-3">
-                            <div class="card">
-                                @if (!string.IsNullOrEmpty(artigoRelacionado.ImagemUrl))
-                                {
-                                    <img src="@artigoRelacionado.ImagemUrl" alt="Imagem Relacionada" class="card-img-top">
-                                }
-                                <div class="card-body">
-                                    <h5 class="card-title">@artigoRelacionado.Titulo</h5>
-                                    <p class="card-text">@artigoRelacionado.DescricaoCurta</p>
-                                    <a href="@Url.Action("Detalhes", "Artigos", new { id = artigoRelacionado.ArtigoId })" class="btn btn-primary">Leia mais</a>
-                                </div>
-                            </div>
+        @if (Model.ArtigosRelacionados != null && Model.ArtigosRelacionados.Any())
+        {
+            @foreach (var artigoRelacionado in Model.ArtigosRelacionados)
+            {
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        @if (!string.IsNullOrEmpty(artigoRelacionado.ImagemUrl))
+                        {
+                            <img src="@artigoRelacionado.ImagemUrl" alt="Imagem Relacionada" class="card-img-top">
+                        }
+                        <div class="card-body">
+                            <h5 class="card-title">@artigoRelacionado.Titulo</h5>
+                            <p class="card-text">@artigoRelacionado.DescricaoCurta</p>
+                            <a href="@Url.Action("Detalhes", "Artigos", new { id = artigoRelacionado.ArtigoId })" class="btn btn-primary">Leia mais</a>
                         </div>
-                    }
+                    </div>
                 </div>
-            </div>
-
-            <div class="mt-5 text-center">
-                <a href="@Url.Action("Index", "EducacaoEnergetica")" class="btn btn-outline-dark">Voltar à Página Inicial</a>
-            </div>
-        </div>
+            }
+        }
+        else
+        {
+            <p class="text-muted">Não há artigos relacionados no momento.</p>
+        }
     </div>
 </div>
