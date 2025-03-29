@@ -1,9 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-public class SplashScreenController : Controller
+namespace YourNamespace
 {
-	public IActionResult SplashScreen()
+	/// <summary>
+	/// The SplashScreenController handles the splash screen view for the application.
+	/// </summary>
+	public class SplashScreenController : Controller
 	{
-		return View();
+		/// <summary>
+		/// Displays the splash screen view.
+		/// </summary>
+		/// <returns>Returns the view for the splash screen.</returns>
+		public IActionResult SplashScreen()
+		{
+			return View();
+		}
 	}
 }

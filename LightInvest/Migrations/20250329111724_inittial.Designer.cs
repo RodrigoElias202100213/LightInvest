@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LightInvest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250324210209_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250329111724_inittial")]
+    partial class inittial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -263,6 +263,9 @@ namespace LightInvest.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsAdmin")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -274,6 +277,16 @@ namespace LightInvest.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "rodrigo.elias2003@gmail.com",
+                            IsAdmin = true,
+                            Name = "Rodrigo",
+                            Password = "rodrigoR123"
+                        });
                 });
 
             modelBuilder.Entity("LightInvest.Models.Utilizador.Pass.PasswordResetToken", b =>

@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Utilizadores";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .user-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+            .user-item p {
+                font-size: 16px;
+                color: #333;
+            }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+            .btn:hover {
+                background-color: #0056b3;
+            }
+        .user-item.admin {
+            background-color: #e9ecef;
+            border-left: 5px solid #007bff;
+        }
+
+            .user-item.admin p {
+                font-weight: bold;
+                color: #007bff;
+            }
+    </style>
+
+</head>
+<body>
+
+    <h1>Lista de Utilizadores</h1>
+
+    @foreach (var user in Model)
+    {
+        <div class="user-item @(user.IsAdmin ? "admin" : "")">
+            <p>@user.Name (@user.Email)</p>
+
+            @if (user.IsAdmin != true)
+            {
+                <a href="@Url.Action("EditUser", "Home", new { id = user.Id })" class="btn">Editar</a>
+                <a href="@Url.Action("MakeAdmin", "Home", new { id = user.Id })" class="btn">Tornar Admin</a>
+                <a href="@Url.Action("BanUser", "Home", new { id = user.Id })" class="btn">Banir</a>
+            }
+            else
+            {
+                <p>Este Utilizador é administrador e não pode ser modificado.</p>
+            }
+        </div>
+    }
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const banLinks = document.querySelectorAll("a[href*='BanUser']");
+            const adminLinks = document.querySelectorAll("a[href*='MakeAdmin']");
+
+            function confirmAction(event, action) {
+                if (!confirm(`Tem certeza de que deseja ${action} este usuário?`)) {
+                    event.preventDefault();
+                }
+            }
+
+            banLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    confirmAction(event, "banir");
+                });
+            });
+
+            adminLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    confirmAction(event, "tornar administrador");
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

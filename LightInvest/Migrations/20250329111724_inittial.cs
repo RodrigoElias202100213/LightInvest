@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace LightInvest.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class inittial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -143,7 +143,8 @@ namespace LightInvest.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IsAdmin = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -277,6 +278,11 @@ namespace LightInvest.Migrations
                     { 9, "DMEGC - Infinity RT", 1290.00m },
                     { 10, "Spic", 910.00m }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Email", "IsAdmin", "Name", "Password" },
+                values: new object[] { 1, "rodrigo.elias2003@gmail.com", true, "Rodrigo", "rodrigoR123" });
 
             migrationBuilder.InsertData(
                 table: "PotenciasDePaineisSolares",

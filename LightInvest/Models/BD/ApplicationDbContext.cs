@@ -12,46 +12,95 @@ namespace LightInvest.Models.BD
 {
 	public class ApplicationDbContext : DbContext
 	{
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ApplicationDbContext"/> class.
+		/// </summary>
+		/// <param name="options">The options to be used for the context.</param>
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
 			: base(options)
 		{
 
 		}
+
+		/// <summary>
+		/// Gets or sets the <see cref="RoiCalculator"/> entities in the database.
+		/// </summary>
 		public DbSet<RoiCalculator> ROICalculators { get; set; }
+
+		/// <summary>
+		/// Gets or sets the <see cref="User"/> entities in the database.
+		/// </summary>
 		public DbSet<User> Users { get; set; }
+
+		/// <summary>
+		/// Gets or sets the <see cref="PasswordResetToken"/> entities in the database.
+		/// </summary>
 		public DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
 
+		/// <summary>
+		/// Gets or sets the <see cref="EnergyConsumption"/> entities in the database.
+		/// </summary>
 		public DbSet<EnergyConsumption> EnergyConsumptions { get; set; }
+
+		/// <summary>
+		/// Gets or sets the <see cref="Tarifa"/> entities in the database.
+		/// </summary>
 		public DbSet<Tarifa> Tarifas { get; set; }
 
-
+		/// <summary>
+		/// Gets or sets the <see cref="DadosInstalacao"/> entities in the database.
+		/// </summary>
 		public DbSet<DadosInstalacao> DadosInstalacao { get; set; }
 
+		/// <summary>
+		/// Gets or sets the <see cref="Cidade"/> entities in the database.
+		/// </summary>
 		public DbSet<Cidade> Cidades { get; set; }
+
+		/// <summary>
+		/// Gets or sets the <see cref="ModeloPainelSolar"/> entities in the database.
+		/// </summary>
 		public DbSet<ModeloPainelSolar> ModelosDePaineisSolares { get; set; }
+
+		/// <summary>
+		/// Gets or sets the <see cref="PotenciaPainelSolar"/> entities in the database.
+		/// </summary>
 		public DbSet<PotenciaPainelSolar> PotenciasDePaineisSolares { get; set; }
 
-
+		/// <summary>
+		/// Gets or sets the <see cref="Artigo"/> entities in the database.
+		/// </summary>
 		public DbSet<Artigo> Artigos { get; set; }
 
-
+		/// <summary>
+		/// Configures the model and relationships in the database context.
+		/// </summary>
+		/// <param name="modelBuilder">The model builder used to configure the model.</param>
+		/// <remarks>This method is used to configure entity relationships and seed data.</remarks>
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
 
+
+			/// <summary>
+			/// Configures the relationship between <see cref="DadosInstalacao"/> and <see cref="PotenciaPainelSolar"/>.
+			/// </summary>
 			modelBuilder.Entity<DadosInstalacao>()
 				.HasOne(d => d.Potencia)
 				.WithMany()
 				.HasForeignKey(d => d.PotenciaId)
 				.OnDelete(DeleteBehavior.NoAction);
 
+			/// <summary>
+			/// Configures the relationship between <see cref="PotenciaPainelSolar"/> and <see cref="ModeloPainelSolar"/>.
+			/// </summary>
 			modelBuilder.Entity<PotenciaPainelSolar>()
 				.HasOne(p => p.ModeloPainelSolar)
 				.WithMany(m => m.Potencias)
 				.HasForeignKey(p => p.ModeloPainelId)
 				.OnDelete(DeleteBehavior.Restrict);
 
-			// Cidades
 			modelBuilder.Entity<Cidade>().HasData(
 				new Cidade { Id = 1, Nome = "Albufeira" },
 				new Cidade { Id = 2, Nome = "Almada" },
@@ -92,6 +141,16 @@ namespace LightInvest.Models.BD
 				new Cidade { Id = 37, Nome = "Viseu" }
 
 			);
+
+			modelBuilder.Entity<User>().HasData(new User
+			{
+				Id = 1,
+				Name = "Rodrigo",
+				Email = "rodrigo.elias2003@gmail.com",
+				Password = "rodrigoR123",
+				IsAdmin = true
+			});
+
 
 			modelBuilder.Entity<ModeloPainelSolar>().HasData(
 				new ModeloPainelSolar { Id = 1, ModeloNome = "Aiko - Comet 2U", Preco = 1250.00m },

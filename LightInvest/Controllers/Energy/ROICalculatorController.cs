@@ -8,17 +8,25 @@ public class ROICalculatorController : Controller
 {
 	private readonly ApplicationDbContext _context;
 
+	/// <summary>
+	/// Initializes the ROICalculatorController with the provided database context.
+	/// </summary>
+	/// <param name="context">The database context for accessing application data.</param>
 	public ROICalculatorController(ApplicationDbContext context)
 	{
 		_context = context;
 	}
 
+	/// <summary>
+	/// Displays the ROI calculator page. If the user has existing ROI calculation data, it is loaded.
+	/// </summary>
+	/// <returns>The view for ROI calculation.</returns>
 	public async Task<ActionResult> Index()
 	{
 		var user = await GetLoggedInUserAsync();
 		if (user == null)
 		{
-			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
+			ViewBag.Resultado = "Error: No authenticated user!";
 			return View();
 		}
 
@@ -47,6 +55,10 @@ public class ROICalculatorController : Controller
 		return View(roiCalculation);
 	}
 
+	/// <summary>
+	/// Retrieves the currently logged-in user based on the session data.
+	/// </summary>
+	/// <returns>The logged-in user if found; otherwise, null.</returns>
 	private async Task<User> GetLoggedInUserAsync()
 	{
 		var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -55,22 +67,22 @@ public class ROICalculatorController : Controller
 
 		return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 	}
+
+	/// <summary>
+	/// Calculates the ROI based on user input and displays the results.
+	/// </summary>
+	/// <param name="model">The ROI calculation model containing the user's data.</param>
+	/// <returns>The view with the calculated ROI and financial details.</returns>
 	[HttpPost]
 	public async Task<IActionResult> Calcular(RoiCalculator model)
 	{
 		var user = await GetLoggedInUserAsync();
 		if (user == null)
 		{
-			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
+			ViewBag.Resultado = "Error: No authenticated user!";
 			return View("Index", model);
 		}
-		/*
-		if (model.RetornoEconomia <= 0)
-		{
-			ViewBag.Resultado = "Erro: A economia total deve ser maior que zero!";
-			return View("Index", model);
-		}
-		*/
+
 		var roiCalculation = await _context.ROICalculators
 			.Where(r => r.UserEmail == user.Email)
 			.FirstOrDefaultAsync();
@@ -115,12 +127,12 @@ public class ROICalculatorController : Controller
 		}
 		catch (Exception ex)
 		{
-			ViewBag.Resultado = "Erro ao calcular o ROI: " + ex.Message;
+			ViewBag.Resultado = "Error calculating ROI: " + ex.Message;
 			return View("Index", model);
 		}
 
 		decimal economiaAnual = (roiCalculation.ConsumoEnergeticoRede - roiCalculation.ConsumoEnergeticoMedio)
-								 * roiCalculation.RetornoEconomia - roiCalculation.CustoManutencaoAnual;
+									* roiCalculation.RetornoEconomia - roiCalculation.CustoManutencaoAnual;
 
 		int totalAnos = (int)Math.Ceiling(resultadoROI);
 
@@ -149,19 +161,22 @@ public class ROICalculatorController : Controller
 			History = history
 		};
 
-		ViewBag.Resultado = $"{resultadoROI:F2} anos";
+		ViewBag.Resultado = $"{resultadoROI:F2} years";
 
 		return View("Dashboard", dashboardViewModel);
 	}
 
-
+	/// <summary>
+	/// Displays a graph of historical ROI calculations for the user.
+	/// </summary>
+	/// <returns>The view for displaying the ROI graph.</returns>
 	[HttpGet]
 	public async Task<IActionResult> Grafico()
 	{
 		var user = await GetLoggedInUserAsync();
 		if (user == null)
 		{
-			TempData["Resultado"] = "Erro: Nenhum utilizador autenticado!";
+			TempData["Resultado"] = "Error: No authenticated user!";
 			return RedirectToAction("Index");
 		}
 		var roiRecords = await _context.ROICalculators
@@ -171,5 +186,4 @@ public class ROICalculatorController : Controller
 
 		return View(roiRecords);
 	}
-
 }
