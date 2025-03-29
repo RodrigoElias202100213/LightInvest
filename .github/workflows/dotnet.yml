@@ -31,21 +31,7 @@ jobs:
     # Restore dependencies
     - name: Restore dependencies
       run: dotnet restore LightInvest/LightInvest.csproj
-
       
-    # Install DocFX
-    - name: Install DocFX
-      run: dotnet tool install --global docfx.console
-
-  # Generate documentation with DocFX, ignoring errors
-    - name: Generate documentation with DocFX
-      run: docfx build LightInvest/docfx.json --output LightInvest/_site --logLevel Warning
-      continue-on-error: true
-
-    # Build the project
-    - name: Build the project
-      run: dotnet build LightInvest/LightInvest.csproj --no-restore
-
     # Run tests
     - name: Run tests
       run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal
