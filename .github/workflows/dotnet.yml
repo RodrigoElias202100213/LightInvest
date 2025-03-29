@@ -44,16 +44,21 @@ jobs:
     - name: Build
       run: dotnet build LightInvest/LightInvest.csproj --no-restore --configuration Release
 
-    # Run tests
+    # Run tests and generate test-results.xml
     - name: Run Tests
       run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal --logger "trx;LogFileName=test-results.xml"
 
-    # Publish test results (Optional: Adds more insight into test results in GitHub Actions)
+    # Verifique os arquivos para garantir que o arquivo de resultados está presente
+    - name: List files
+      run: ls -alh
+
+    # Condicional para verificar se o arquivo de resultados existe antes de tentar fazer o upload
     - name: Publish Test Results
+      if: exists('test-results.xml')
       uses: actions/upload-artifact@v3
       with:
         name: test-results
-        path: test-results.xml
+        path: ./test-results.xml
 
     # Static Code Analysis with SonarCloud (Optional)
     - name: Run SonarCloud Analysis (Optional)
