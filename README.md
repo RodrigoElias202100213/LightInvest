@@ -25,7 +25,7 @@ O projeto está organizado em:
 ## Instalação e Execução
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seu-usuario/LightInvest.git
+github.com/RodrigoElias202100213/LightInvest.git
    ```
 2. Configure o banco de dados no `appsettings.json`.
 3. Execute as migrações:
