@@ -42,4 +42,4 @@ jobs:
 
     # Run DocFX with .NET SDK
     - name: Run DocFX
-      run: dotnet docfx.console.dll /path/to/your/docfx.json
+      run: dotnet docfx.console.dll /home/runner/work/LightInvest/LightInvest/LightInvest/docfx.json -o output_directory -l log.txt --logLevel Warning
