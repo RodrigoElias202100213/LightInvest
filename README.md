@@ -25,7 +25,7 @@ O projeto está organizado em:
 ## Instalação e Execução
 1. Clone o repositório:
    ```sh
-github.com/RodrigoElias202100213/LightInvest.git
+   git clone github.com/RodrigoElias202100213/LightInvest.git
    ```
 2. Configure o banco de dados no `appsettings.json`.
 3. Execute as migrações:
@@ -36,10 +36,3 @@ github.com/RodrigoElias202100213/LightInvest.git
    ```sh
    dotnet run
    ```
-
-## Contribuição
-Contribuições são bem-vindas! Para contribuir, faça um fork do repositório, crie uma branch para suas alterações e envie um pull request.
-
-## Licença
-Este projeto está licenciado sob a MIT License.
-
