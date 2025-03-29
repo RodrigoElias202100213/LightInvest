@@ -2884,3 +2884,9 @@ C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 an
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvestTest\obj\Release\net8.0\LightInvestTest.pdb
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvestTest\obj\Release\net8.0\LightInvestTest.genruntimeconfig.cache
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvestTest\obj\Release\net8.0\ref\LightInvestTest.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvestTest\bin\Release\net8.0\docfx.json
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvestTest\bin\Release\net8.0\_site\manifest.json
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvestTest\bin\Release\net8.0\_site\search-stopwords.json
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvestTest\bin\Release\net8.0\_site\api\toc.json
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvestTest\bin\Release\net8.0\_site\articles\toc.json
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvestTest\bin\Release\net8.0\_site\toc.json

@@ -1,61 +1,111 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-	<link rel="stylesheet" href="~/LightInvest.styles.css" asp-append-version="true" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vujahday+Script&family=Vollkorn&family=Salsa&display=swap">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/LightInvest.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vujahday+Script&family=Vollkorn&family=Salsa&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap">
 
-	<style>
-		body {
-			font-family: 'Arial', sans-serif;
-			background-color: #f8f9fa;
-		}
-	</style>
+    <style>
+        /* Body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
 
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>LightInvest - Invest In Your Future</title>
-	<link rel="icon" href="~/images/logo.png" type="image/png" />
+        /* Main Container */
+        .container-fluid {
+            padding: 30px 15px;
+        }
+
+        /* Button Styles */
+        button {
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+
+        /* Card Styles */
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
+
+        /* Custom Background for Main Content */
+        main {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #007bff;
+            border-radius: 10px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background-color: #0056b3;
+            }
+    </style>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LightInvest - Invest In Your Future</title>
+    <link rel="icon" href="~/images/logo.png" type="image/png" />
 
 </head>
 <body>
 
-	<!-- Navbar -->
-	<header>
-		<nav class="navbar navbar-expand-sm navbar-dark">
-			<div class="container-fluid">
-			</div>
-		</nav>
-	</header>
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
 
-	<!-- Main Content -->
-	<div class="container-fluid">
-		<main role="main">
-			@RenderBody()
-		</main>
-	</div>
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 
-
-	@*
-	<!-- Footer -->
-	<footer class="footer">
-	<div class="container text-center">
-	&copy; 2025 - LightInvest - <a href="@Url.Action("Privacy", "Home")">Privacy</a>
-	</div>
-	</footer>
-*@
-
-
-	<!-- Scripts -->
-	<script src="~/lib/jquery/dist/jquery.min.js"></script>
-	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-	<script src="~/js/site.js" asp-append-version="true"></script>
-	@await RenderSectionAsync("Scripts", required: false)
+    <script>
+        // JavaScript for smooth scrolling and navbar effect
+        document.addEventListener("DOMContentLoaded", function() {
+            // Example of hover effect for buttons
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    button.style.transform = "scale(1.05)";
+                });
+                button.addEventListener('mouseleave', function() {
+                    button.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
 </body>
 </html>

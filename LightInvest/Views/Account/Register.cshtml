@@ -37,24 +37,19 @@
                     }
                 </div>
 
-                <div class="form-group">
+                <div class="form-group password-container">
                     <label for="password">Palavra-Passe</label>
-                    <input type="password" id="password" name="password" placeholder="Palavra-Passe" required
-                           value="@Model.Password" />
-                    @if (ViewData.ModelState["Password"]?.Errors.Count > 0)
-                    {
-                        <div class="error-message">@ViewData.ModelState["Password"].Errors[0].ErrorMessage</div>
-                    }
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" placeholder="Palavra-Passe" required />
+                        <button type="button" id="togglePassword" class="toggle-password">🙉</button>
+                    </div>
                 </div>
-
-                <div class="form-group">
+                <div class="form-group password-container">
                     <label for="confirmPassword">Confirmar Palavra-Passe</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Palavra-Passe" required
-                           value="@Model.ConfirmPassword" />
-                    @if (ViewData.ModelState["ConfirmPassword"]?.Errors.Count > 0)
-                    {
-                        <div class="error-message">@ViewData.ModelState["ConfirmPassword"].Errors[0].ErrorMessage</div>
-                    }
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmar Palavra-Passe" required />
+                        <button type="button" id="toggleConfirmPassword" class="toggle-password">🙉</button>
+                    </div>
                 </div>
 
                 <div class="form-actions">
@@ -189,4 +184,54 @@
         color: red;
         font-size: 0.9em;
     }
+
+    .password-container {
+        position: relative;
+    }
+
+    .password-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+        .password-wrapper input {
+            width: 100%;
+            padding-right: 40px;
+        }
+
+    .toggle-password {
+        position: absolute;
+        right: 10px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
 </style>
+
+
+
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function () {
+        const passwordInput = document.getElementById('password');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            this.textContent = '🙈';
+        } else {
+            passwordInput.type = 'password';
+            this.textContent = '🙉';
+        }
+    });
+
+    document.getElementById('toggleConfirmPassword').addEventListener('click', function () {
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        if (confirmPasswordInput.type === 'password') {
+            confirmPasswordInput.type = 'text';
+            this.textContent = '🙈';
+        } else {
+            confirmPasswordInput.type = 'password';
+            this.textContent = '🙉';
+        }
+    });
+</script>

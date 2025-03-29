@@ -152,6 +152,7 @@ namespace LightInvest.Models.BD
 			});
 
 
+
 			modelBuilder.Entity<ModeloPainelSolar>().HasData(
 				new ModeloPainelSolar { Id = 1, ModeloNome = "Aiko - Comet 2U", Preco = 1250.00m },
 				new ModeloPainelSolar { Id = 2, ModeloNome = "Maxeon 7", Preco = 1320.00m },
