@@ -1,4 +1,11 @@
-﻿using LightInvest.Models;
+﻿/*
+ * O DadosInstalacaoController gere os dados de instalação, incluindo a criação, cálculo de preços e visualização de informações relacionadas a painéis solares.
+ * Ele permite a criação de dados de instalação, cálculo de preço de instalação, confirmação do preço, e a visualização dos dados da instalação.
+ * Também lida com a autenticação do utilizador e com salvar e atualizar os dados na base de dados.
+ */
+
+
+using LightInvest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LightInvest.Models.Ener;
@@ -65,7 +72,7 @@ namespace LightInvest.Controllers.Energy
 			var user = await ObterUsuarioLogadoAsync();
 			if (user == null)
 			{
-				ModelState.AddModelError(string.Empty, "Error: No authenticated user.");
+				ModelState.AddModelError(string.Empty, "Erro: Utilizador não autenticado.");
 				model = await CarregarViewModelAsync();
 				return View(model);
 			}
@@ -75,7 +82,7 @@ namespace LightInvest.Controllers.Energy
 
 			if (modeloPainel == null)
 			{
-				ModelState.AddModelError("", "Error: Panel model not found.");
+				ModelState.AddModelError("", "Erro: Painel não encontrado.");
 				return View(model);
 			}
 
@@ -84,7 +91,7 @@ namespace LightInvest.Controllers.Energy
 
 			if (potenciaPainel == null)
 			{
-				ModelState.AddModelError("", "Error: Panel power rating not found.");
+				ModelState.AddModelError("", "Erro: Potência do painel não encontrada.");
 				return View(model);
 			}
 
@@ -123,7 +130,7 @@ namespace LightInvest.Controllers.Energy
 			}
 			else
 			{
-				ViewBag.PrecoFinal = "Price not calculated";
+				ViewBag.PrecoFinal = "Preço não calculado";
 			}
 
 			return View();
@@ -154,7 +161,7 @@ namespace LightInvest.Controllers.Energy
 
 			if (modeloPainel == null)
 			{
-				return BadRequest("Panel model not found.");
+				return BadRequest("Modelo do painel não encontrado.");
 			}
 
 			var dadosInstalacao = new DadosInstalacao

@@ -100,7 +100,7 @@ namespace LightInvest.Controllers.Auth
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
 			if (user == null)
 			{
-				return NotFound("User not found.");
+				return NotFound("Utilizador não encontrado.");
 			}
 
 			user.IsAdmin = true;
@@ -121,7 +121,7 @@ namespace LightInvest.Controllers.Auth
 			var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
 			if (user == null)
 			{
-				return NotFound("User not found.");
+				return NotFound("Utilizador não encontrado.");
 			}
 
 			var model = new EditUserViewModel
@@ -173,7 +173,7 @@ namespace LightInvest.Controllers.Auth
 				var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == model.Id);
 				if (user == null)
 				{
-					return NotFound("User not found.");
+					return NotFound("Utilizador não encontrado.");
 				}
 
 				user.Name = model.Name;

@@ -1,4 +1,12 @@
-﻿using LightInvest.Models.BD;
+﻿/*
+ * O ROICalculatorController lida com o cálculo do Retorno do Investimento (ROI) do utilizador.
+ * Ele permite exibir a página do cálculo do ROI, calcular o ROI com base nos dados fornecidos pelo utilizador,
+ * exibir o histórico de cálculos de ROI e gerar gráficos relacionados ao ROI.
+ * O controlador também gere os dados armazenados no base de dados, como o custo de instalação, manutenção e economia anual.
+ */
+
+
+using LightInvest.Models.BD;
 using LightInvest.Models.Roi;
 using LightInvest.Models.Utilizador.Login;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +34,7 @@ public class ROICalculatorController : Controller
 		var user = await GetLoggedInUserAsync();
 		if (user == null)
 		{
-			ViewBag.Resultado = "Error: No authenticated user!";
+			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
 			return View();
 		}
 
@@ -79,7 +87,7 @@ public class ROICalculatorController : Controller
 		var user = await GetLoggedInUserAsync();
 		if (user == null)
 		{
-			ViewBag.Resultado = "Error: No authenticated user!";
+			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
 			return View("Index", model);
 		}
 
@@ -127,7 +135,7 @@ public class ROICalculatorController : Controller
 		}
 		catch (Exception ex)
 		{
-			ViewBag.Resultado = "Error calculating ROI: " + ex.Message;
+			ViewBag.Resultado = "Erro ao calcular o ROI: " + ex.Message;
 			return View("Index", model);
 		}
 
@@ -161,7 +169,7 @@ public class ROICalculatorController : Controller
 			History = history
 		};
 
-		ViewBag.Resultado = $"{resultadoROI:F2} years";
+		ViewBag.Resultado = $"{resultadoROI:F2} anos";
 
 		return View("Dashboard", dashboardViewModel);
 	}
@@ -176,7 +184,7 @@ public class ROICalculatorController : Controller
 		var user = await GetLoggedInUserAsync();
 		if (user == null)
 		{
-			TempData["Resultado"] = "Error: No authenticated user!";
+			TempData["Resultado"] = "Erro: Nenhum utilizador autenticado!";
 			return RedirectToAction("Index");
 		}
 		var roiRecords = await _context.ROICalculators

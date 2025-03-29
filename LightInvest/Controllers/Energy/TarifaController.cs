@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * O TarifaController lida com a simulação de tarifas de energia, permitindo ao utilizador escolher o tipo de tarifa
+ * e calcular o preço final com base nas suas escolhas. O controlador salva as informações de tarifa na base de dados
+ * e armazena o preço final temporariamente para uso posterior.
+ * Após a simulação, o utilizador é redirecionado para o processo de criação de dados de instalação.
+ */
+
+
+
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using LightInvest.Models.BD;
@@ -99,8 +108,6 @@ namespace LightInvest.Controllers.Energy
 				};
 
 				await SaveTarifaToDatabase(user.Email, tarifa);
-
-				// Store the final price in TempData
 				TempData["PrecoFinal"] = tarifa.PrecoFinal.ToString("F2");
 			}
 

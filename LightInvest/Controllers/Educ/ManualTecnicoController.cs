@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/*
+ * O ManualTecnicoController é responsável pela gestão da página do manual técnico.
+ * Ele contém uma única ação que exibe a página do manual técnico.
+ */
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace LightInvest.Controllers.Educ
 {

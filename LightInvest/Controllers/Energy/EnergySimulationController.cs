@@ -1,4 +1,12 @@
-﻿using LightInvest.Models.BD;
+﻿/*
+ * O EnergySimulationController lida com a simulação de consumo energético, incluindo a exibição do formulário,
+ * a validação dos dados fornecidos pelo utilizador e o armazenamento dos dados da simulação na base de dados.
+ * Ele também calcula a média anual de consumo e redireciona o utilizador para outras simulações, como a simulação de tarifas.
+ * O controlador lida com os dados temporários, garantindo que as informações sejam persistidas entre as solicitações.
+ */
+
+
+using LightInvest.Models.BD;
 using LightInvest.Models.Simulacao.Energ;
 using LightInvest.Models.Utilizador.Login;
 using Microsoft.AspNetCore.Mvc;
@@ -81,7 +89,7 @@ namespace LightInvest.Controllers.Energy
 		{
 			if (model.ConsumoDiaSemana.All(c => c == 0) && model.ConsumoFimSemana.All(c => c == 0))
 			{
-				ModelState.AddModelError("Consumo", "Please fill in the consumption fields.");
+				ModelState.AddModelError("Consumo", "Por favor preencha os campos de consumo.");
 				return false;
 			}
 
@@ -111,7 +119,7 @@ namespace LightInvest.Controllers.Energy
 			var user = await GetLoggedInUserAsync();
 			if (user == null)
 			{
-				ViewBag.Resultado = "Error: No authenticated user!";
+				ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
 				return View("Error", model);
 			}
 
