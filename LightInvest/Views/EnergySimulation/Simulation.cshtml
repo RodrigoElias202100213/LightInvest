@@ -38,7 +38,7 @@
             <div class="section">
                 <div class="title-container">
                     <h5>1. Consumo Médio Horário: Segunda-feira a Sexta-feira <span class="required">*</span></h5>
-                    <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Informe a quantidade média de energia consumida (em kWh) durante este horário nos dias úteis.">?</button>
+                    <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Insira a quantidade média de energia consumida (em kWh) durante este horário nos dias úteis.">?</button>
                 </div>
 
                 <div class="horario">
@@ -57,7 +57,7 @@
             <div class="section">
                 <div class="title-container">
                     <h5>2. Consumo Médio Horário: Feriados/Fim de Semana <span class="required">*</span></h5>
-                    <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Informe a quantidade média de energia consumida (em kWh) durante este horário nos fins de semana e feriados.">?</button>
+                    <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Insira a quantidade média de energia consumida (em kWh) durante este horário nos fins de semana e feriados.">?</button>
                 </div>
 
                 <div class="horario">
@@ -78,7 +78,7 @@
                 <div class="title-container">
 
                 <h5>3. Ocupação Mensal <span class="required">*</span></h5>
-                <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Informe os meses em que o Imovel fica habitado.">?</button>
+                <button type="button" class="info-btn" data-toggle="tooltip" data-placement="top" title="Selecione os meses em que o imóvel fica habitado.">?</button>
                 </div>
                 <div class="month-checkboxes">
                     @foreach (var mes in Enum.GetNames(typeof(Meses)))
@@ -114,26 +114,18 @@
         inputs.forEach(input => {
             input.addEventListener('input', function () {
                 let value = parseFloat(this.value);
-
-                // Remove qualquer mensagem de erro anterior
                 let errorMessage = this.parentElement.querySelector('.error-message');
                 if (errorMessage) {
                     errorMessage.remove();
                 }
 
                 if (isNaN(value) || value < 0 || value > 500) {
-                    // Cria uma nova mensagem de erro
                     errorMessage = document.createElement('span');
                     errorMessage.classList.add('error-message');
                     errorMessage.textContent = 'Valor entre 0 e 500!';
-
-                    // Adiciona a mensagem de erro ao lado do input
                     this.parentElement.appendChild(errorMessage);
-
-                    // Bloqueia a submissão do formulário enquanto o valor for inválido
                     this.setCustomValidity('O valor deve estar entre 0 e 500.');
                 } else {
-                    // Remove a restrição se o valor for válido
                     this.setCustomValidity('');
                 }
             });

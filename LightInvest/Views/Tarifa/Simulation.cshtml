@@ -82,14 +82,11 @@
 
         function validarPrecoKWh() {
             let value = parseFloat(precoKWhInput.value);
-
-            // Remove mensagens de erro antigas
             const errorMessage = precoKWhInput.parentElement.querySelector('.error-message');
             if (errorMessage) {
                 errorMessage.remove();
             }
 
-            // Validação
             if (isNaN(value) || value <= 0 || value > 100) {
                 mostrarErro(precoKWhInput, "O preço por kWh deve ser um número positivo e menor que 100.");
                 precoKWhInput.setCustomValidity("O preço por kWh deve ser um número positivo  e menor que 100..");
@@ -128,7 +125,7 @@
             validarTipoTarifa();
 
             if (!form.checkValidity()) {
-                event.preventDefault(); // Impede o envio do formulário se houver erros
+                event.preventDefault(); 
             }
         });
     });
@@ -152,7 +149,8 @@
         font-size: 1rem;
         color: #065A66;
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        margin-top:10px;
     }
 
     .selecionarTarifa-box {
@@ -204,27 +202,27 @@
         position: relative;
     }
 
-        .step:first-child, .step:nth-child(2) {
-            background-color: #065A66;
-        }
+    .step:first-child, .step:nth-child(2) {
+        background-color: #065A66;
+    }
 
-            .step:first-child::after {
-                background-color: #065A66;
-            }
+    .step:first-child::after {
+        background-color: #065A66;
+    }
 
-        .step::after {
-            content: "";
-            width: 2px;
-            height: 80px;
-            background-color: #aaa;
-            position: absolute;
-            bottom: -80px;
-            transform: translateX(-50%);
-        }
+    .step::after {
+        content: "";
+        width: 2px;
+        height: 80px;
+        background-color: #aaa;
+        position: absolute;
+        bottom: -80px;
+        transform: translateX(-50%);
+    }
 
-        .step:last-child::after {
-            display: none;
-        }
+    .step:last-child::after {
+        display: none;
+    }
 
     .content {
         width: 100%;
@@ -237,7 +235,7 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: #065A66;
         text-align: center;
-        margin-bottom: 10%;
+        margin-bottom: 4%;
     }
 
     .left {
@@ -268,10 +266,10 @@
         text-align: center;
     }
 
-        .btn:hover {
-            color: white;
-            background: #054850;
-        }
+    .btn:hover {
+        color: white;
+        background: #054850;
+    }
 
     #horizontal-button {
         display: flex;
@@ -299,7 +297,6 @@
     }
 </style>
 
-<!-- Certifique-se de adicionar o Bootstrap para usar tooltips -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
