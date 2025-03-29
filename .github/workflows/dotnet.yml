@@ -33,19 +33,17 @@ jobs:
       run: dotnet restore LightInvest/LightInvest.csproj
 
     # Build the project
-    - name: Build
+    - name: Build the project
       run: dotnet build LightInvest/LightInvest.csproj --no-restore
 
     # Run tests
-    - name: Test
+    - name: Run tests
       run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal
 
-    # Install Mono
-    - name: Install Mono
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y mono-complete
+    # Install DocFX
+    - name: Install DocFX
+      run: dotnet tool install -g docfx
 
-    # Run DocFX with Mono
-    - name: Run DocFX
-      run: mono /home/runner/.nuget/packages/docfx.console/2.59.4/tools/docfx.exe /home/runner/work/LightInvest/LightInvest/LightInvest/docfx.json -o output_directory -l log.txt --logLevel Warning
+    # Build the documentation using DocFX
+    - name: Generate documentation with DocFX
+      run: docfx build LightInvest/docfx.json --output LightInvest/_site --logLevel Warning
