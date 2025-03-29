@@ -36,11 +36,39 @@ jobs:
     - name: Install xmllint
       run: sudo apt-get install -y libxml2-utils
 
+    # Format the code (Optional, can be useful for maintaining consistent code style)
+    - name: Format Code
+      run: dotnet format --verify-no-changes
 
     # Build the project
     - name: Build
-      run: dotnet build LightInvest/LightInvest.csproj --no-restore
+      run: dotnet build LightInvest/LightInvest.csproj --no-restore --configuration Release
 
     # Run tests
-    - name: Test
-      run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal
+    - name: Run Tests
+      run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal --logger "trx;LogFileName=test-results.xml"
+
+    # Publish test results (Optional: Adds more insight into test results in GitHub Actions)
+    - name: Publish Test Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: test-results
+        path: test-results.xml
+
+    # Static Code Analysis with SonarCloud (Optional)
+    - name: Run SonarCloud Analysis (Optional)
+      uses: SonarSource/sonarcloud-github-action@v1
+      with:
+        sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
+        sonar-token: ${{ secrets.SONAR_TOKEN }}
+      
+    # Optional: Notify Slack or other services (you can replace with other services like email)
+    - name: Send notification on success
+      if: success()
+      run: |
+        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build and tests passed for Main-new!"}' ${{ secrets.SLACK_WEBHOOK_URL }}
+      
+    - name: Send notification on failure
+      if: failure()
+      run: |
+        curl -X POST -H 'Content-type: application/json' --data '{"text":"Build or tests failed for Main-new!"}' ${{ secrets.SLACK_WEBHOOK_URL }}
