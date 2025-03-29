@@ -3756,3 +3756,6 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Rele
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\LightInvest.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\ref\LightInvest.dll
+C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\docfx.json
+C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\_site\manifest.json
+C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\_site\search-stopwords.json

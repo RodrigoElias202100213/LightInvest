@@ -56,6 +56,35 @@
                 </div>
             </div>
 
+            <div class="mt-5">
+                <h4 class="text-muted">Notícias sobre Energia Solar</h4>
+                <div class="row">
+                    @if (ViewBag.NoticiasRelacionadas != null && ViewBag.NoticiasRelacionadas.Count > 0)
+                    {
+                        @foreach (var noticia in ViewBag.NoticiasRelacionadas)
+                        {
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    @if (!string.IsNullOrEmpty(noticia.Image))
+                                    {
+                                        <img src="@noticia.Image" alt="Notícia Relacionada" class="card-img-top">
+                                    }
+                                    <div class="card-body">
+                                        <h5 class="card-title">@noticia.Title</h5>
+                                        <p class="card-text">@noticia.Description</p>
+                                        <a href="@noticia.Url" target="_blank" class="btn btn-secondary">Leia mais</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted">Nenhuma notícia encontrada sobre energia solar.</p>
+                    }
+                </div>
+            </div>
+
             <div class="mt-5 text-center">
                 <a href="@Url.Action("Index", "EducacaoEnergetica")" class="btn btn-outline-dark">Voltar à Página Inicial</a>
             </div>
