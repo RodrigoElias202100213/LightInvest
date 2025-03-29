@@ -19,7 +19,7 @@ namespace LightInvest.Services
 
         public async Task<List<NewsArticle>> GetSolarPanelArticlesAsync()
         {
-            var url = $"{BaseUrl}?access_key={ApiKey}&categories=general&languages=en&keywords=solar panels";
+            var url = $"{BaseUrl}?access_key={ApiKey}&categories=general&languages=en&keywords=solar panels&limit=5";
             var response = await _httpClient.GetAsync(url);
 
             if (!response.IsSuccessStatusCode)
