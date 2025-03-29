@@ -39,3 +39,7 @@ jobs:
     # Run tests
     - name: Test
       run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal
+
+    # Run DocFX with .NET SDK
+    - name: Run DocFX
+      run: dotnet docfx.console.dll /path/to/your/docfx.json
