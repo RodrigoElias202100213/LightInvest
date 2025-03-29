@@ -1,3 +1,9 @@
+/*
+ *  O HomeController gere as ações relacionadas aos utilizadores como login, exibição da página inicial,
+ *  gerir administradores, listagem de utilizadores e manipulação de erros.
+ * 
+ */
+
 using LightInvest.Models;
 using LightInvest.Models.BD;
 using LightInvest.Models.Error;

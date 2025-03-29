@@ -1,5 +1,9 @@
-﻿// Controlador responsável por gerenciar as ações relacionadas ao login, registro, recuperação da password
-// Este controlador faz uso do serviço de email para envio de notificações de recuperação da password e de outros eventos.
+﻿/*
+ * 
+ * Controlador responsável por gerir as ações relacionadas ao login, registo, recuperação da password.
+ * Este controlador uso o serviço de email para envio de notificações de recuperação da password e de outros eventos.
+ * 
+ */
 
 using LightInvest.Models.BD;
 using LightInvest.Models.Email;
