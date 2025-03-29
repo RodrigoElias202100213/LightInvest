@@ -40,6 +40,12 @@ jobs:
     - name: Test
       run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal
 
-    # Run DocFX with .NET SDK
+    # Install Mono
+    - name: Install Mono
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y mono-complete
+
+    # Run DocFX with Mono
     - name: Run DocFX
-      run: dotnet docfx.console.dll /home/runner/work/LightInvest/LightInvest/LightInvest/docfx.json -o output_directory -l log.txt --logLevel Warning
+      run: mono /home/runner/.nuget/packages/docfx.console/2.59.4/tools/docfx.exe /home/runner/work/LightInvest/LightInvest/LightInvest/docfx.json -o output_directory -l log.txt --logLevel Warning
