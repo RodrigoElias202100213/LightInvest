@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * O SimulacaoValoresController lida com o processo de simulação de consumo de energia, tarifas e cálculo de retorno sobre o investimento (ROI) para o utilizador.
+ * Este controlador obtém os dados de consumo do utilizador, calcula os custos mensais e anuais de energia com base na tarifa escolhida, e também calcula o ROI de um sistema de painéis solares com base nos dados de instalação.
+ * Além disso, oferece funcionalidades para exportar os dados da simulação em formato CSV ou PDF (a exportação para PDF ainda não está implementada).
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -329,41 +335,5 @@ namespace LightInvest.Controllers.Simul
 
 			return simulacao;
 		}
-		/*
-			public async Task<IActionResult> ExportExcel()
-			{
-				var userEmail = HttpContext.Session.GetString("UserEmail");
-				if (string.IsNullOrEmpty(userEmail))
-					return BadRequest("Utilizador não autenticado.");
-
-				var viewModel = await GerarViewModelCompleto(userEmail);
-
-				using (var workbook = new ClosedXML.Excel.XLWorkbook())
-				{
-					var ws = workbook.Worksheets.Add("Simulação Completa");
-					ws.Cell(1, 1).Value = "Seção";
-					ws.Cell(1, 2).Value = "Valor";
-
-					ws.Cell(2, 1).Value = "Média Semana";
-					ws.Cell(2, 2).Value = viewModel.EnergyConsumptionViewModel.MediaSemana;
-					ws.Cell(3, 1).Value = "Média Fim de Semana";
-					ws.Cell(3, 2).Value = viewModel.EnergyConsumptionViewModel.MediaFimSemana;
-					ws.Cell(4, 1).Value = "Média Anual";
-					ws.Cell(4, 2).Value = viewModel.EnergyConsumptionViewModel.MediaAnual;
-					ws.Cell(5, 1).Value = "Consumo Total";
-					ws.Cell(5, 2).Value = viewModel.EnergyConsumptionViewModel.ConsumoTotal;
-
-
-					using (var stream = new MemoryStream())
-					{
-						workbook.SaveAs(stream);
-						stream.Seek(0, SeekOrigin.Begin);
-						return File(stream.ToArray(),
-							"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-							"Simulacao.xlsx");
-					}
-				}
-			}
-	*/
 	}
 }
