@@ -3756,7 +3756,6 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Rele
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\LightInvest.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\ref\LightInvest.dll
-C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\docfx.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Release\net8.0\appsettings.Development.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Release\net8.0\appsettings.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Release\net8.0\LightInvest.staticwebassets.runtime.json
@@ -3923,3 +3922,7 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\obj\Release\n
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\obj\Release\net8.0\LightInvest.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\obj\Release\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\obj\Release\net8.0\ref\LightInvest.dll
+C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\LightInvest.xml
+C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\Castle.Core.dll
+C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\Moq.dll
+C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\obj\Release\net8.0\LightInvest.xml

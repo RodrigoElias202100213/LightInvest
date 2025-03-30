@@ -6,15 +6,20 @@
     <!-- Barra de navegação -->
     <nav class="nav">
         <img src="~/images/logo.png" alt="LightInvest Logo" class="logo" />
+        
         <div class="user-section">
             <p id="username">@ViewBag.UserName</p>
-            <a href="@Url.Action("Logout", "Account")" class="btn">
+            @if (ViewBag.IsAdmin != null && ViewBag.IsAdmin == true)
+            {
+                <div class="btn-admin">
+                    <a href="@Url.Action("UserList", "Home")" class="admin">Painel de Controlo</a>
+                </div>
+            }
+            <a href="@Url.Action("Logout", "Account")" class="btn-logout">
                 <img src="~/images/logout.png" alt="Logout" class="logout" />
             </a>
         </div>
     </nav>
-    
-  
 
     <!-- Sobre Nós -->
     <section class="about">
@@ -57,17 +62,6 @@
             </form>
         </div>
 
-
-        @if (ViewBag.IsAdmin != null && ViewBag.IsAdmin == true)
-        {
-            <div class="admin-panel">
-                <a href="@Url.Action("UserList", "Home")" class="btn-admin">Painel de Controlo</a>
-            </div>
-        }
-
-
-
-
     </section>
 </div>
 
@@ -77,26 +71,6 @@
         padding: 0;
         box-sizing: border-box;
     }
-
-    .admin-panel {
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .btn-admin {
-        background-color: #065A66;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-        .btn-admin:hover {
-            background-color: #04454F;
-        }
-
 
     .home-container {
         min-height: 100vh;
@@ -122,6 +96,7 @@
     .user-section {
         display: flex;
         align-items: center;
+        gap:4px;
     }
 
     #username {
@@ -131,6 +106,37 @@
         font-weight: bold;
         color: white;
         text-transform: uppercase;
+    }
+
+    .btn-admin{
+        margin-top: 4%;
+    }
+
+    .admin {
+        color: white;
+        text-decoration: none;
+        margin-right: 8px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        cursor:pointer;
+    }
+
+    .admin:hover {
+        color: white;
+        text-decoration: none;
+        margin-top: 15%;
+        margin-right: 8px;
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .btn-logout {
+        margin-top:3%;
     }
 
     .logout {
@@ -149,7 +155,6 @@
         margin-bottom: 10px;
         color: black;
         letter-spacing: 1px;
-        /*font-family: 'Alegreya SC', serif;*/
         font-family: 'Alkatra', cursive;
     }
 
