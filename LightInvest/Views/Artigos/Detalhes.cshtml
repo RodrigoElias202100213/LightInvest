@@ -2,6 +2,7 @@
 @model Artigo
 @using System.Linq
 @using System.Security.Claims
+@using Markdig
 
 @{
     ViewData["Title"] = Model.Titulo;
@@ -24,7 +25,7 @@
             </div>
 
             <div class="content">
-                <div class="lead">@Html.Raw(ViewBag.ConteudoHtml)</div>
+                <div class="lead">@Html.Raw(ViewBag.ConteudoHtml)</div> <!-- Renderiza o conteúdo do artigo -->
             </div>
 
             <div class="mt-5">
@@ -55,6 +56,7 @@
                     }
                 </div>
             </div>
+
             <div class="mt-5">
                 <h4 class="text-muted">Notícias sobre Energia Solar</h4>
                 <div class="row">
@@ -83,54 +85,54 @@
                     }
                 </div>
             </div>
-        </div>
-        <ul class="list-group">
-            @foreach (var comentario in Model.Comentarios)
-            {
-                <li class="list-group-item d-flex justify-content-between align-items-center comment-item" style="cursor: pointer;">
-                    <div>
-                        <strong>@comentario.Autor</strong>
-                        <p>@comentario.Texto</p>
-                        <small>@comentario.DataCriacao.ToString("dd/MM/yyyy HH:mm")</small>
-                    </div>
 
-                    @if (comentario.UserId == ViewBag.UsuarioLogadoId)
+            <div class="mt-5">
+                <h4 class="text-muted">Comentários</h4>
+                <ul class="list-group">
+                    @foreach (var comentario in Model.Comentarios)
                     {
-                        <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-warning btn-sm">Editar</a>
-                    }
+                        <li class="list-group-item d-flex justify-content-between align-items-center comment-item" style="cursor: pointer;">
+                            <div>
+                                <strong>@comentario.Autor</strong>
+                                <p>@Html.Raw(Markdown.ToHtml(comentario.Texto))</p> 
+                                <small>@comentario.DataCriacao.ToString("dd/MM/yyyy HH:mm")</small>
+                            </div>
 
-                    @if (ViewBag.IsAdmin != null && (bool)ViewBag.IsAdmin)
-                    {
-                        <div class="admin-controls" style="display: none;">
-                            <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
-                                @Html.AntiForgeryToken()
-                                <input type="hidden" name="comentarioId" value="@comentario.Id" />
-                                <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
-                                <button type="submit" class="btn btn-danger btn-sm">Remover</button>
-                            </form>
-                        </div>
+                            @if (comentario.UserId == ViewBag.UsuarioLogadoId)
+                            {
+                                <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-warning btn-sm">Editar</a>
+                            }
+
+                            @if (ViewBag.IsAdmin != null && (bool)ViewBag.IsAdmin)
+                            {
+                                <div class="admin-controls">
+                                    <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="comentarioId" value="@comentario.Id" />
+                                        <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
+                                        <button type="submit" class="btn btn-danger btn-sm">Remover</button>
+                                    </form>
+                                </div>
+                            }
+                        </li>
                     }
-                </li>
-           } 
-        </ul>
+                </ul>
             </div>
 
-          <div class="mt-5">
-    <h4 class="text-muted">Adicionar Comentário</h4>
+            <div class="mt-5">
+                <h4 class="text-muted">Adicionar Comentário</h4>
+                <form asp-action="AdicionarComentario" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
 
-    <form asp-action="AdicionarComentario" method="post">
-        @Html.AntiForgeryToken()
-        <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
+                    <div class="form-group">
+                        <label for="texto">Comentário:</label>
+                        <textarea name="texto" id="texto" class="form-control" required></textarea>
+                    </div>
 
-        <div class="form-group">
-            <label for="texto">Comentário:</label>
-            <textarea name="texto" id="texto" class="form-control" required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Adicionar Comentário</button>
-    </form>
-</div>
-
+                    <button type="submit" class="btn btn-primary">Adicionar Comentário</button>
+                </form>
+            </div>
 
             <div class="mt-5 text-center">
                 <a href="@Url.Action("Index", "EducacaoEnergetica")" class="btn btn-outline-dark">Voltar à Página Inicial</a>
@@ -138,7 +140,7 @@
         </div>
     </div>
 </div>
-    
+
 @section Scripts {
     <script>
         document.querySelectorAll('.comment-item').forEach(function(item) {

@@ -47,7 +47,7 @@ namespace LightInvest.Controllers.Educ
 				return NotFound();
 			}
 
-			// Converte o conteúdo de Markdown para HTML
+			// No método Detalhes do seu controller
 			var htmlConteudo = Markdown.ToHtml(artigo.Conteudo);
 			ViewBag.ConteudoHtml = htmlConteudo;
 
@@ -69,7 +69,6 @@ namespace LightInvest.Controllers.Educ
 
 			return View(artigo);
 		}
-
 
 
 		/// <summary>
