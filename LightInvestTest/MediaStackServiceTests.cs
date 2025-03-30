@@ -15,7 +15,7 @@ public class MediaStackServiceTests
     [Fact]
     public async Task GetSolarPanelArticlesAsync_ShouldReturnArticles_WhenApiResponseIsSuccessful()
     {
-        // Arrange
+       
         var expectedArticles = new List<NewsArticle>
         {
             new NewsArticle { Title = "Solar Panel Advances", Url = "http://example.com/solar1" },
@@ -40,10 +40,10 @@ public class MediaStackServiceTests
         var httpClient = new HttpClient(mockHttpMessageHandler.Object);
         var mediaStackService = new MediaStackService(httpClient);
 
-        // Act
+       
         var result = await mediaStackService.GetSolarPanelArticlesAsync();
 
-        // Assert
+       
         Assert.NotNull(result);
         Assert.Equal(expectedArticles.Count, result.Count);
         Assert.Equal(expectedArticles[0].Title, result[0].Title);
@@ -52,7 +52,7 @@ public class MediaStackServiceTests
     [Fact]
     public async Task GetSolarPanelArticlesAsync_ShouldReturnEmptyList_WhenApiResponseFails()
     {
-        // Arrange
+        
         var mockHttpMessageHandler = new Mock<HttpMessageHandler>();
 
         mockHttpMessageHandler.Protected()
@@ -69,10 +69,10 @@ public class MediaStackServiceTests
         var httpClient = new HttpClient(mockHttpMessageHandler.Object);
         var mediaStackService = new MediaStackService(httpClient);
 
-        // Act
+       
         var result = await mediaStackService.GetSolarPanelArticlesAsync();
 
-        // Assert
+        
         Assert.NotNull(result);
         Assert.Empty(result);
     }
