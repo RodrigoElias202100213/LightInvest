@@ -1,4 +1,12 @@
-﻿using LightInvest.Models.BD;
+﻿/*
+ * O ROICalculatorController lida com o cálculo do Retorno do Investimento (ROI) do utilizador.
+ * Ele permite exibir a página do cálculo do ROI, calcular o ROI com base nos dados fornecidos pelo utilizador,
+ * exibir o histórico de cálculos de ROI e gerar gráficos relacionados ao ROI.
+ * O controlador também gere os dados armazenados no base de dados, como o custo de instalação, manutenção e economia anual.
+ */
+
+
+using LightInvest.Models.BD;
 using LightInvest.Models.Roi;
 using LightInvest.Models.Utilizador.Login;
 using Microsoft.AspNetCore.Mvc;
@@ -8,11 +16,19 @@ public class ROICalculatorController : Controller
 {
 	private readonly ApplicationDbContext _context;
 
+	/// <summary>
+	/// Initializes the ROICalculatorController with the provided database context.
+	/// </summary>
+	/// <param name="context">The database context for accessing application data.</param>
 	public ROICalculatorController(ApplicationDbContext context)
 	{
 		_context = context;
 	}
 
+	/// <summary>
+	/// Displays the ROI calculator page. If the user has existing ROI calculation data, it is loaded.
+	/// </summary>
+	/// <returns>The view for ROI calculation.</returns>
 	public async Task<ActionResult> Index()
 	{
 		var user = await GetLoggedInUserAsync();
@@ -47,6 +63,10 @@ public class ROICalculatorController : Controller
 		return View(roiCalculation);
 	}
 
+	/// <summary>
+	/// Retrieves the currently logged-in user based on the session data.
+	/// </summary>
+	/// <returns>The logged-in user if found; otherwise, null.</returns>
 	private async Task<User> GetLoggedInUserAsync()
 	{
 		var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -55,6 +75,12 @@ public class ROICalculatorController : Controller
 
 		return await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 	}
+
+	/// <summary>
+	/// Calculates the ROI based on user input and displays the results.
+	/// </summary>
+	/// <param name="model">The ROI calculation model containing the user's data.</param>
+	/// <returns>The view with the calculated ROI and financial details.</returns>
 	[HttpPost]
 	public async Task<IActionResult> Calcular(RoiCalculator model)
 	{
@@ -64,13 +90,7 @@ public class ROICalculatorController : Controller
 			ViewBag.Resultado = "Erro: Nenhum utilizador autenticado!";
 			return View("Index", model);
 		}
-		/*
-		if (model.RetornoEconomia <= 0)
-		{
-			ViewBag.Resultado = "Erro: A economia total deve ser maior que zero!";
-			return View("Index", model);
-		}
-		*/
+
 		var roiCalculation = await _context.ROICalculators
 			.Where(r => r.UserEmail == user.Email)
 			.FirstOrDefaultAsync();
@@ -120,7 +140,7 @@ public class ROICalculatorController : Controller
 		}
 
 		decimal economiaAnual = (roiCalculation.ConsumoEnergeticoRede - roiCalculation.ConsumoEnergeticoMedio)
-								 * roiCalculation.RetornoEconomia - roiCalculation.CustoManutencaoAnual;
+									* roiCalculation.RetornoEconomia - roiCalculation.CustoManutencaoAnual;
 
 		int totalAnos = (int)Math.Ceiling(resultadoROI);
 
@@ -154,7 +174,10 @@ public class ROICalculatorController : Controller
 		return View("Dashboard", dashboardViewModel);
 	}
 
-
+	/// <summary>
+	/// Displays a graph of historical ROI calculations for the user.
+	/// </summary>
+	/// <returns>The view for displaying the ROI graph.</returns>
 	[HttpGet]
 	public async Task<IActionResult> Grafico()
 	{
@@ -171,5 +194,4 @@ public class ROICalculatorController : Controller
 
 		return View(roiRecords);
 	}
-
 }

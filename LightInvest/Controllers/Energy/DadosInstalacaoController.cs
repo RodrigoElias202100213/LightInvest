@@ -1,24 +1,39 @@
-﻿using LightInvest.Models;
-using Microsoft.AspNetCore.Http;
+﻿/*
+ * O DadosInstalacaoController gere os dados de instalação, incluindo a criação, cálculo de preços e visualização de informações relacionadas a painéis solares.
+ * Ele permite a criação de dados de instalação, cálculo de preço de instalação, confirmação do preço, e a visualização dos dados da instalação.
+ * Também lida com a autenticação do utilizador e com salvar e atualizar os dados na base de dados.
+ */
+
+
+using LightInvest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
 using LightInvest.Models.Ener;
 using LightInvest.Models.BD;
 using LightInvest.Models.Utilizador.Login;
 
 namespace LightInvest.Controllers.Energy
 {
+	/// <summary>
+	/// Handles the creation and management of installation data, including pricing and panel configurations.
+	/// </summary>
 	public class DadosInstalacaoController : Controller
 	{
 		private readonly ApplicationDbContext _context;
 
+		/// <summary>
+		/// Initializes the DadosInstalacaoController with the provided database context.
+		/// </summary>
+		/// <param name="context">The database context for accessing the application data.</param>
 		public DadosInstalacaoController(ApplicationDbContext context)
 		{
 			_context = context;
 		}
 
+		/// <summary>
+		/// Displays the page for creating installation data.
+		/// </summary>
+		/// <returns>The view for creating installation data.</returns>
 		[HttpGet("dados-instalacao")]
 		public async Task<IActionResult> Create()
 		{
@@ -26,6 +41,10 @@ namespace LightInvest.Controllers.Energy
 			return View(model);
 		}
 
+		/// <summary>
+		/// Loads the data for the installation creation view model.
+		/// </summary>
+		/// <returns>The populated view model with available cities, panel models, and panel power ratings.</returns>
 		private async Task<DadosInstalacaoViewModel> CarregarViewModelAsync()
 		{
 			return new DadosInstalacaoViewModel
@@ -36,6 +55,11 @@ namespace LightInvest.Controllers.Energy
 			};
 		}
 
+		/// <summary>
+		/// Handles the POST request to create installation data.
+		/// </summary>
+		/// <param name="model">The installation data model.</param>
+		/// <returns>A redirect to the simulation page or the current view if validation fails.</returns>
 		[HttpPost("dados-instalacao")]
 		public async Task<IActionResult> Create(DadosInstalacaoViewModel model)
 		{
@@ -48,7 +72,7 @@ namespace LightInvest.Controllers.Energy
 			var user = await ObterUsuarioLogadoAsync();
 			if (user == null)
 			{
-				ModelState.AddModelError(string.Empty, "Erro: Nenhum utilizador autenticado.");
+				ModelState.AddModelError(string.Empty, "Erro: Utilizador não autenticado.");
 				model = await CarregarViewModelAsync();
 				return View(model);
 			}
@@ -58,7 +82,7 @@ namespace LightInvest.Controllers.Energy
 
 			if (modeloPainel == null)
 			{
-				ModelState.AddModelError("", "Erro: Modelo de painel não encontrado.");
+				ModelState.AddModelError("", "Erro: Painel não encontrado.");
 				return View(model);
 			}
 
@@ -84,7 +108,6 @@ namespace LightInvest.Controllers.Energy
 				Dificuldade = model.Dificuldade,
 			};
 
-
 			dadosInstalacao.AtualizarPrecoInstalacao();
 
 			await SalvarOuAtualizarDadosInstalacao(dadosInstalacao);
@@ -94,6 +117,10 @@ namespace LightInvest.Controllers.Energy
 			return RedirectToAction("Simular", "SimulacaoValores");
 		}
 
+		/// <summary>
+		/// Displays a confirmation page after calculating the installation price.
+		/// </summary>
+		/// <returns>The view for the confirmation page with the calculated price.</returns>
 		public IActionResult Confirmacao()
 		{
 			var precoFinal = TempData["PrecoFinal"] as string;
@@ -109,6 +136,10 @@ namespace LightInvest.Controllers.Energy
 			return View();
 		}
 
+		/// <summary>
+		/// Retrieves the currently authenticated user based on session data.
+		/// </summary>
+		/// <returns>The user object if found; otherwise, null.</returns>
 		private async Task<User> ObterUsuarioLogadoAsync()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -117,6 +148,11 @@ namespace LightInvest.Controllers.Energy
 				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 		}
 
+		/// <summary>
+		/// Handles the POST request to calculate the installation price based on user inputs.
+		/// </summary>
+		/// <param name="model">The installation data model containing user inputs.</param>
+		/// <returns>A JSON object with the calculated price.</returns>
 		[HttpPost("dados-instalacao/calcular-preco")]
 		public async Task<IActionResult> CalcularPrecoInstalacao(DadosInstalacaoViewModel model)
 		{
@@ -125,7 +161,7 @@ namespace LightInvest.Controllers.Energy
 
 			if (modeloPainel == null)
 			{
-				return BadRequest("Modelo de painel não encontrado.");
+				return BadRequest("Modelo do painel não encontrado.");
 			}
 
 			var dadosInstalacao = new DadosInstalacao
@@ -140,7 +176,11 @@ namespace LightInvest.Controllers.Energy
 			return Json(new { preco = precoFinal.ToString("F2") });
 		}
 
-
+		/// <summary>
+		/// Saves or updates the installation data in the database.
+		/// </summary>
+		/// <param name="dadosInstalacao">The installation data to save or update.</param>
+		/// <returns>A task representing the asynchronous operation.</returns>
 		private async Task SalvarOuAtualizarDadosInstalacao(DadosInstalacao dadosInstalacao)
 		{
 			var dadosExistente = await _context.DadosInstalacao
@@ -166,6 +206,11 @@ namespace LightInvest.Controllers.Energy
 			await _context.SaveChangesAsync();
 		}
 
+		/// <summary>
+		/// Retrieves the power consumption data for a specific panel model.
+		/// </summary>
+		/// <param name="modeloPainelId">The ID of the panel model.</param>
+		/// <returns>A JSON object containing the power data for the given panel model.</returns>
 		[HttpGet]
 		public async Task<IActionResult> GetConsumosPainel(int modeloPainelId)
 		{

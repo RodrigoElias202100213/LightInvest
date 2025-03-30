@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * O SimulacaoValoresController lida com o processo de simulação de consumo de energia, tarifas e cálculo de retorno sobre o investimento (ROI) para o utilizador.
+ * Este controlador obtém os dados de consumo do utilizador, calcula os custos mensais e anuais de energia com base na tarifa escolhida, e também calcula o ROI de um sistema de painéis solares com base nos dados de instalação.
+ * Além disso, oferece funcionalidades para exportar os dados da simulação em formato CSV ou PDF (a exportação para PDF ainda não está implementada).
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +30,16 @@ namespace LightInvest.Controllers.Simul
 			_context = context;
 		}
 
+		/// <summary>
+		/// Processes the user's energy consumption data based on their email.
+		/// </summary>
+		/// <param name="userEmail">The email address of the currently authenticated user.</param>
+		/// <returns>
+		/// An <see cref="EnergyConsumption"/> object containing processed consumption data.
+		/// </returns>
+		/// <remarks>
+		/// This method calculates average energy consumption, monthly consumption, and annual consumption for the user.
+		/// </remarks>
 		private async Task<EnergyConsumption> ProcessarEnergyConsumptionAsync(string userEmail)
 		{
 			var consumo = await _context.EnergyConsumptions.FirstOrDefaultAsync(c => c.UserEmail == userEmail);
@@ -44,6 +60,17 @@ namespace LightInvest.Controllers.Simul
 			return consumo;
 		}
 
+		/// <summary>
+		/// Processes the user's energy tariff and calculates the monthly and annual costs based on their consumption.
+		/// </summary>
+		/// <param name="userEmail">The email address of the currently authenticated user.</param>
+		/// <param name="consumo">The <see cref="EnergyConsumption"/> object that holds the user's consumption data.</param>
+		/// <returns>
+		/// A <see cref="ResultadoTarifaViewModel"/> object containing the tariff information and calculated costs for each month.
+		/// </returns>
+		/// <remarks>
+		/// This method calculates the monthly and annual energy consumption cost based on the user's chosen tariff and consumption data.
+		/// </remarks>
 		private async Task<ResultadoTarifaViewModel> ProcessarTarifaAsync(string userEmail, EnergyConsumption consumo)
 		{
 			var tarifa = await _context.Tarifas.FirstOrDefaultAsync(t => t.UserEmail == userEmail);
@@ -77,6 +104,16 @@ namespace LightInvest.Controllers.Simul
 
 			return resultado;
 		}
+
+		/// <summary>
+		/// Simulates the energy consumption, tariff, and ROI calculations for the user, and returns the simulation result.
+		/// </summary>
+		/// <returns>
+		/// A view with the simulation result displayed, including energy consumption data, tariff information, and ROI calculation.
+		/// </returns>
+		/// <remarks>
+		/// This method aggregates the user’s energy consumption data, calculates the monthly and annual costs, and computes the return on investment (ROI) based on solar panel installation.
+		/// </remarks>
 		public async Task<IActionResult> Simular()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -186,6 +223,17 @@ namespace LightInvest.Controllers.Simul
 
 			return View("SimulacaoCompleta", simulacao);
 		}
+
+		/// <summary>
+		/// Gets the name of the month from its numeric representation (1-12).
+		/// </summary>
+		/// <param name="numeroMes">The numeric value of the month (1 for January, 12 for December).</param>
+		/// <returns>
+		/// The name of the month as a string. For example, "January" for 1, "December" for 12.
+		/// </returns>
+		/// <remarks>
+		/// This method converts the numeric month value to its string name, which is used for displaying month names in reports.
+		/// </remarks>
 		private string ObterNomeDoMes(int numeroMes)
 		{
 			string[] meses = { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
@@ -193,6 +241,15 @@ namespace LightInvest.Controllers.Simul
 			return numeroMes >= 1 && numeroMes <= 12 ? meses[numeroMes - 1] : "Mês Inválido";
 		}
 
+		/// <summary>
+		/// Exports the simulation data as a PDF file (functionality not yet implemented).
+		/// </summary>
+		/// <returns>
+		/// A message indicating that the PDF export functionality is not yet implemented.
+		/// </returns>
+		/// <remarks>
+		/// This method currently only returns a message indicating that PDF export functionality has not been implemented.
+		/// </remarks>
 		public async Task<IActionResult> ExportPDF()
 		{
 
@@ -205,6 +262,15 @@ namespace LightInvest.Controllers.Simul
 			return Content("Funcionalidade de exportação para PDF não implementada.");
 		}
 
+		/// <summary>
+		/// Exports the simulation data as a CSV file.
+		/// </summary>
+		/// <returns>
+		/// A CSV file containing the energy consumption and tariff simulation data.
+		/// </returns>
+		/// <remarks>
+		/// This method generates a CSV file with key simulation data, including weekly consumption averages, total consumption, and annual consumption costs.
+		/// </remarks>
 		public async Task<IActionResult> ExportCSV()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -223,42 +289,16 @@ namespace LightInvest.Controllers.Simul
 			byte[] buffer = Encoding.UTF8.GetBytes(csv.ToString());
 			return File(buffer, "text/csv", "Simulacao.csv");
 		}
-/*
-		public async Task<IActionResult> ExportExcel()
-		{
-			var userEmail = HttpContext.Session.GetString("UserEmail");
-			if (string.IsNullOrEmpty(userEmail))
-				return BadRequest("Utilizador não autenticado.");
-
-			var viewModel = await GerarViewModelCompleto(userEmail);
-
-			using (var workbook = new ClosedXML.Excel.XLWorkbook())
-			{
-				var ws = workbook.Worksheets.Add("Simulação Completa");
-				ws.Cell(1, 1).Value = "Seção";
-				ws.Cell(1, 2).Value = "Valor";
-
-				ws.Cell(2, 1).Value = "Média Semana";
-				ws.Cell(2, 2).Value = viewModel.EnergyConsumptionViewModel.MediaSemana;
-				ws.Cell(3, 1).Value = "Média Fim de Semana";
-				ws.Cell(3, 2).Value = viewModel.EnergyConsumptionViewModel.MediaFimSemana;
-				ws.Cell(4, 1).Value = "Média Anual";
-				ws.Cell(4, 2).Value = viewModel.EnergyConsumptionViewModel.MediaAnual;
-				ws.Cell(5, 1).Value = "Consumo Total";
-				ws.Cell(5, 2).Value = viewModel.EnergyConsumptionViewModel.ConsumoTotal;
-
-
-				using (var stream = new MemoryStream())
-				{
-					workbook.SaveAs(stream);
-					stream.Seek(0, SeekOrigin.Begin);
-					return File(stream.ToArray(),
-						"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-						"Simulacao.xlsx");
-				}
-			}
-		}
-*/
+		/// <summary>
+		/// Generates the complete view model for the user, including energy consumption, tariff, and ROI data.
+		/// </summary>
+		/// <param name="userEmail">The email address of the currently authenticated user.</param>
+		/// <returns>
+		/// A <see cref="SimulacaoCompletaViewModel"/> object containing all necessary simulation data for the view.
+		/// </returns>
+		/// <remarks>
+		/// This method aggregates all relevant data (energy consumption, tariff, ROI, etc.) and prepares it for display in the simulation view.
+		/// </remarks>
 		private async Task<SimulacaoCompletaViewModel> GerarViewModelCompleto(string userEmail)
 		{
 			var consumo = await ProcessarEnergyConsumptionAsync(userEmail);
@@ -295,6 +335,5 @@ namespace LightInvest.Controllers.Simul
 
 			return simulacao;
 		}
-
 	}
 }

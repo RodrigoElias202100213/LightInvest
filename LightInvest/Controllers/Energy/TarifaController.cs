@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * O TarifaController lida com a simulação de tarifas de energia, permitindo ao utilizador escolher o tipo de tarifa
+ * e calcular o preço final com base nas suas escolhas. O controlador salva as informações de tarifa na base de dados
+ * e armazena o preço final temporariamente para uso posterior.
+ * Após a simulação, o utilizador é redirecionado para o processo de criação de dados de instalação.
+ */
+
+
+
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using LightInvest.Models.BD;
@@ -14,11 +23,19 @@ namespace LightInvest.Controllers.Energy
 	{
 		private readonly ApplicationDbContext _context;
 
+		/// <summary>
+		/// Initializes the TarifaController with the provided database context.
+		/// </summary>
+		/// <param name="context">The database context for accessing application data.</param>
 		public TarifaController(ApplicationDbContext context)
 		{
 			_context = context;
 		}
 
+		/// <summary>
+		/// Displays the tariff simulation page, initializing the view model and loading any necessary data.
+		/// </summary>
+		/// <returns>The tariff simulation view with the initialized model.</returns>
 		[HttpGet("tarifa-simulation")]
 		public async Task<IActionResult> Simulation()
 		{
@@ -27,11 +44,19 @@ namespace LightInvest.Controllers.Energy
 			return View(model);
 		}
 
+		/// <summary>
+		/// Initializes the view model for tariff simulation.
+		/// </summary>
+		/// <returns>A new instance of the TarifaViewModel.</returns>
 		private TarifaViewModel InitializeViewModel()
 		{
 			return new TarifaViewModel();
 		}
 
+		/// <summary>
+		/// Loads temporary data (such as final price) from TempData into the view model.
+		/// </summary>
+		/// <param name="model">The TarifaViewModel to load data into.</param>
 		private void LoadTempData(TarifaViewModel model)
 		{
 			if (TempData["PrecoFinal"] != null)
@@ -39,6 +64,11 @@ namespace LightInvest.Controllers.Energy
 				ViewBag.PrecoFinal = TempData["PrecoFinal"].ToString();
 			}
 		}
+
+		/// <summary>
+		/// Retrieves the currently logged-in user based on the session data.
+		/// </summary>
+		/// <returns>The logged-in user if found; otherwise, null.</returns>
 		private async Task<User> GetLoggedInUserAsync()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -47,6 +77,12 @@ namespace LightInvest.Controllers.Energy
 				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 		}
 
+		/// <summary>
+		/// Handles the form submission for the tariff simulation and calculates the final price based on user input.
+		/// The resulting tariff information is saved to the database and the final price is stored in TempData.
+		/// </summary>
+		/// <param name="model">The TarifaViewModel containing the user input for the tariff simulation.</param>
+		/// <returns>The redirect to the next action (Create in DadosInstalacao).</returns>
 		[HttpPost("tarifa-simulation")]
 		public async Task<IActionResult> Simulation(TarifaViewModel model)
 		{
@@ -72,13 +108,19 @@ namespace LightInvest.Controllers.Energy
 				};
 
 				await SaveTarifaToDatabase(user.Email, tarifa);
-
 				TempData["PrecoFinal"] = tarifa.PrecoFinal.ToString("F2");
 			}
 
 			return RedirectToAction("Create", "DadosInstalacao");
 		}
 
+		/// <summary>
+		/// Saves the tariff data to the database. If a tariff already exists for the user, it updates the existing record.
+		/// Otherwise, a new tariff record is added.
+		/// </summary>
+		/// <param name="userEmail">The email address of the user.</param>
+		/// <param name="tarifa">The Tarifa object containing the tariff data to be saved.</param>
+		/// <returns>A task representing the asynchronous operation.</returns>
 		private async Task SaveTarifaToDatabase(string userEmail, Tarifa tarifa)
 		{
 			var tarifaExistente = await _context.Tarifas.FirstOrDefaultAsync(t => t.UserEmail == userEmail);

@@ -31,16 +31,7 @@ jobs:
     # Restore dependencies
     - name: Restore dependencies
       run: dotnet restore LightInvest/LightInvest.csproj
-
-    # Install xmllint (caso necessário)
-    - name: Install xmllint
-      run: sudo apt-get install -y libxml2-utils
-
-
-    # Build the project
-    - name: Build
-      run: dotnet build LightInvest/LightInvest.csproj --no-restore
-
+      
     # Run tests
-    - name: Test
+    - name: Run tests
       run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal
