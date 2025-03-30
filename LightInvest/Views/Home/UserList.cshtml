@@ -8,13 +8,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Lista de Utilizadores</h2>
+
+        @foreach (var user in Model)
+        {
+            <div class="user-item @(user.IsAdmin ? "admin" : "")">
+                <p>@user.Name (@user.Email)</p>
+
+                @if (!user.IsAdmin)
+                {
+                    <div class="actions">
+                        <button class="btn admin-btn" data-id="@user.Id" data-action="MakeAdmin">Tornar Administrador</button>
+                        <button class="btn ban-btn" data-id="@user.Id" data-action="BanUser">Banir</button>
+                    </div>
+                }
+                else
+                {
+                    <p>Este Utilizador é administrador e não pode ser modificado.</p>
+                }
+            </div>
+        }
+    </div>
+    
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f7fa;
+            background-color: white;
             margin: 0;
-            padding: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align:center;
+            font-size: 2.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #065A66;
+            font-weight: bold;
+            margin-bottom: 7%;
+            border-bottom: 2px solid #065A66;
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         .user-item {
@@ -29,78 +67,49 @@
             transition: all 0.3s ease;
         }
 
-            .user-item p {
-                font-size: 16px;
-                color: #333;
-            }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
 
         .btn {
-            background-color: #007bff;
+            background-color: #065A66;
             color: white;
             padding: 8px 15px;
-            margin: 5px;
+            border: none;
             border-radius: 4px;
             text-decoration: none;
             font-size: 14px;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
-            .btn:hover {
-                background-color: #0056b3;
-            }
-        .user-item.admin {
-            background-color: #e9ecef;
-            border-left: 5px solid #007bff;
+
+        .btn:hover {
+            background-color: #456D73;
+            color:white;
         }
 
-            .user-item.admin p {
-                font-weight: bold;
-                color: #007bff;
-            }
+        .user-item.admin {
+            background-color: #e9ecef;
+            border-left: 5px solid #065A66;
+        }
+
+        .user-item.admin p {
+            font-weight: bold;
+            color: #065A66;
+        }
     </style>
-
-</head>
-<body>
-
-    <h1>Lista de Utilizadores</h1>
-
-    @foreach (var user in Model)
-    {
-        <div class="user-item @(user.IsAdmin ? "admin" : "")">
-            <p>@user.Name (@user.Email)</p>
-
-            @if (user.IsAdmin != true)
-            {
-                <a href="@Url.Action("EditUser", "Home", new { id = user.Id })" class="btn">Editar</a>
-                <a href="@Url.Action("MakeAdmin", "Home", new { id = user.Id })" class="btn">Tornar Admin</a>
-                <a href="@Url.Action("BanUser", "Home", new { id = user.Id })" class="btn">Banir</a>
-            }
-            else
-            {
-                <p>Este Utilizador é administrador e não pode ser modificado.</p>
-            }
-        </div>
-    }
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const banLinks = document.querySelectorAll("a[href*='BanUser']");
-            const adminLinks = document.querySelectorAll("a[href*='MakeAdmin']");
+            document.querySelectorAll(".admin-btn, .ban-btn").forEach(button => {
+                button.addEventListener("click", function () {
+                    const action = this.dataset.action;
+                    const userId = this.dataset.id;
 
-            function confirmAction(event, action) {
-                if (!confirm(`Tem certeza de que deseja ${action} este usuário?`)) {
-                    event.preventDefault();
-                }
-            }
-
-            banLinks.forEach(link => {
-                link.addEventListener("click", function (event) {
-                    confirmAction(event, "banir");
-                });
-            });
-
-            adminLinks.forEach(link => {
-                link.addEventListener("click", function (event) {
-                    confirmAction(event, "tornar administrador");
+                    if (confirm(`Tem certeza de que deseja ${action === "BanUser" ? "banir" : "tornar administrador"} este utilizador?`)) {
+                        window.location.href = `/Home/${action}?id=${userId}`;
+                    }
                 });
             });
         });
