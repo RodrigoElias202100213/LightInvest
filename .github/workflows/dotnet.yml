@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout código
+      uses: actions/checkout@v4
 
     # Setup .NET
     - name: Setup .NET
@@ -19,7 +20,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    # Cache NuGet packages
+    # Cache NuGet packages para otimizar builds futuros
     - name: Cache NuGet packages
       uses: actions/cache@v3
       with:
@@ -28,10 +29,14 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-nuget-
 
-    # Restore dependencies
+    # Restore dependências
     - name: Restore dependencies
       run: dotnet restore LightInvest/LightInvest.csproj
-      
-    # Run tests
+
+    # Build do projeto
+    - name: Build da aplicação
+      run: dotnet build LightInvest/LightInvest.csproj --configuration Release --no-restore
+
+    # Executa testes
     - name: Run tests
-      run: dotnet test LightInvest/LightInvest.csproj --no-build --verbosity normal
+      run: dotnet test LightInvest/LightInvest.csproj --configuration Release --no-build --verbosity normal
