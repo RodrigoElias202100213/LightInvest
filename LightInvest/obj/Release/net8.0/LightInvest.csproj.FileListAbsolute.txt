@@ -3757,13 +3757,6 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Rele
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\LightInvest\obj\Release\net8.0\ref\LightInvest.dll
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\docfx.json
-<<<<<<< HEAD
-C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\_site\manifest.json
-C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\_site\search-stopwords.json
-C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\Castle.Core.dll
-C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Release\net8.0\Moq.dll
-=======
->>>>>>> 382e23af657d16aaeee74c2688baa892a26a60ae
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Release\net8.0\appsettings.Development.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Release\net8.0\appsettings.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Release\net8.0\LightInvest.staticwebassets.runtime.json
