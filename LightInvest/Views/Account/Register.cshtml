@@ -37,19 +37,24 @@
                     }
                 </div>
 
-                <div class="form-group password-container">
+                <div class="form-group">
                     <label for="password">Palavra-Passe</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="password" name="password" placeholder="Palavra-Passe" required />
-       
-                    </div>
+                    <input type="password" id="password" name="password" placeholder="Palavra-Passe" required
+                           value="@Model.Password" />
+                    @if (ViewData.ModelState["Password"]?.Errors.Count > 0)
+                    {
+                        <div class="error-message">@ViewData.ModelState["Password"].Errors[0].ErrorMessage</div>
+                    }
                 </div>
-                <div class="form-group password-container">
+
+                <div class="form-group">
                     <label for="confirmPassword">Confirmar Palavra-Passe</label>
-                    <div class="password-wrapper">
-                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Palavra-Passe" required />
-                       
-                    </div>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Palavra-Passe" required
+                           value="@Model.ConfirmPassword" />
+                    @if (ViewData.ModelState["ConfirmPassword"]?.Errors.Count > 0)
+                    {
+                        <div class="error-message">@ViewData.ModelState["ConfirmPassword"].Errors[0].ErrorMessage</div>
+                    }
                 </div>
 
                 <div class="form-actions">
@@ -60,22 +65,27 @@
     </div>
 </div>
 
+
 <style>
     .register-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 80vh;
+        height: 100vh;
         background-color: #f9f9f9;
     }
 
     .register-box {
+        margin-top:10%;
+        margin-bottom:10%;
+        justify-content: center;
+        align-items: center;
         display: flex;
         background: white;
         width: 950px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        height: 563px;
+        max-height: 663px;
     }
 
     .sidebar {
@@ -183,6 +193,7 @@
     .error-message {
         color: red;
         font-size: 0.9em;
+        font-weight: normal
     }
 
     .password-container {
