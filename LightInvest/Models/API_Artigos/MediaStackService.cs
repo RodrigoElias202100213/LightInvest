@@ -9,7 +9,7 @@ namespace LightInvest.Services
     public class MediaStackService
     {
         private readonly HttpClient _httpClient;
-        private const string ApiKey = "73261e3e3f837ec6c829b44371ae2ad7";
+        private const string ApiKey = "d8b5055bff8f9fdea12220314947ccfa";
         private const string BaseUrl = "http://api.mediastack.com/v1/news";
 
         public MediaStackService(HttpClient httpClient)
