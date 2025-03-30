@@ -5,8 +5,6 @@
  * Após a simulação, o utilizador é redirecionado para o processo de criação de dados de instalação.
  */
 
-
-
 using System;
 using System.Linq;
 using System.Threading.Tasks;

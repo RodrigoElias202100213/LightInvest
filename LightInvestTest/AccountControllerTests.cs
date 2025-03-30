@@ -21,7 +21,7 @@ public class AccountControllerTests
 			.UseInMemoryDatabase(databaseName: "TestDb")
 			.Options;
 
-		_context = new ApplicationDbContext(options);
+		_context = new LightInvest.Models.BD.ApplicationDbContext(options);
 
 		_context.Users.Add(new User { Email = "existente@email.com", Name = "Utilizador Existente", Password = "Pass123" });
 

@@ -88,35 +88,47 @@
 
             <div class="mt-5">
                 <h4 class="text-muted">Comentários</h4>
+
                 <ul class="list-group">
                     @foreach (var comentario in Model.Comentarios)
                     {
-                        <li class="list-group-item d-flex justify-content-between align-items-center comment-item" style="cursor: pointer;">
+                        <li class="list-group-item d-flex justify-content-between align-items-center comment-item">
                             <div>
                                 <strong>@comentario.Autor</strong>
-                                <p>@Html.Raw(Markdown.ToHtml(comentario.Texto))</p> 
+                                <p>@Html.Raw(Markdown.ToHtml(comentario.Texto))</p>
                                 <small>@comentario.DataCriacao.ToString("dd/MM/yyyy HH:mm")</small>
                             </div>
 
-                            @if (comentario.UserId == ViewBag.UsuarioLogadoId)
-                            {
-                                <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-warning btn-sm">Editar</a>
-                            }
+                            <div class="d-flex">
+                                @if (comentario.UserId == ViewBag.UtilizadorLogadoId)
+                                {
+                                    <!-- O usuário pode editar e remover seu próprio comentário -->
+                                    <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-warning btn-sm me-2">Editar</a>
 
-                            @if (ViewBag.IsAdmin != null && (bool)ViewBag.IsAdmin)
-                            {
-                                <div class="admin-controls">
                                     <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
                                         @Html.AntiForgeryToken()
                                         <input type="hidden" name="comentarioId" value="@comentario.Id" />
                                         <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
                                         <button type="submit" class="btn btn-danger btn-sm">Remover</button>
                                     </form>
-                                </div>
-                            }
+                                }
+                                else if (ViewBag.IsAdmin != null && (bool)ViewBag.IsAdmin)
+                                {
+                                    <!-- O administrador pode remover qualquer comentário -->
+                                    <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="comentarioId" value="@comentario.Id" />
+                                        <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
+                                        <button type="submit" class="btn btn-danger btn-sm">Remover</button>
+                                    </form>
+                                }
+                            </div>
                         </li>
                     }
                 </ul>
+
+
+
             </div>
 
             <div class="mt-5">
