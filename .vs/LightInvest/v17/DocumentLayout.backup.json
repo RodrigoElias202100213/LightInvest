@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\esapvproj\\lightinvest\\views\\artigos\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\artigos\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\esapvproj\\lightinvest\\views\\educacaoenergetica\\verartigo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\educacaoenergetica\\verartigo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -41,10 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\esapvproj\\lightinvest\\views\\artigos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\artigos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\esapvproj\\lightinvest\\views\\artigos\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|solutionrelative:lightinvest\\views\\artigos\\detalhes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0ECF0FCB-7744-473A-89FF-34CE44C0DC5B}|LightInvest\\LightInvest.csproj|c:\\users\\rodri\\onedrive\\ambiente de trabalho\\esapvproj\\lightinvest\\models\\utilizador\\login\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -100,7 +100,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 320,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Document",
@@ -113,8 +113,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T00:13:47.324Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -127,73 +126,7 @@
               "ViewState": "AgIAAAEAAAAAAAAAAADwvxMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T00:14:06.69Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:39:43.009Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\ManualTecnico\\Index.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\ManualTecnico\\Index.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\ManualTecnico\\Index.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\ManualTecnico\\Index.cshtml",
-              "ViewState": "AgIAALoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:39:33.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EditUser.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\EditUser.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\EditUser.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\EditUser.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Home\\EditUser.cshtml",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:39:27.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UserList.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\UserList.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\UserList.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\UserList.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Home\\UserList.cshtml",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:39:18.409Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:39:15.977Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -229,7 +162,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "UserList.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\UserList.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\UserList.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\UserList.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Home\\UserList.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T01:39:18.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T01:39:15.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\EducacaoEnergetica\\Index.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\EducacaoEnergetica\\Index.cshtml",
@@ -237,25 +194,72 @@
               "RelativeToolTip": "LightInvest\\Views\\EducacaoEnergetica\\Index.cshtml",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABQAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:29:56.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T01:29:56.989Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "VerArtigo.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\EducacaoEnergetica\\VerArtigo.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\EducacaoEnergetica\\VerArtigo.cshtml",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\EducacaoEnergetica\\VerArtigo.cshtml",
               "RelativeToolTip": "LightInvest\\Views\\EducacaoEnergetica\\VerArtigo.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADIAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:29:59.763Z",
+              "WhenOpened": "2025-03-30T01:29:59.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\ROICalculator\\Dashboard.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T01:39:43.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Detalhes.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Artigos\\Detalhes.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Artigos\\Detalhes.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Artigos\\Detalhes.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Artigos\\Detalhes.cshtml",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAABoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T00:22:50.3Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "EditUser.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\EditUser.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\EditUser.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\EditUser.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\Home\\EditUser.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T01:39:27.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\ManualTecnico\\Index.cshtml",
+              "RelativeDocumentMoniker": "LightInvest\\Views\\ManualTecnico\\Index.cshtml",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\ManualTecnico\\Index.cshtml",
+              "RelativeToolTip": "LightInvest\\Views\\ManualTecnico\\Index.cshtml",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-30T01:39:33.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Home\\Index.cshtml",
@@ -263,12 +267,11 @@
               "RelativeToolTip": "LightInvest\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:38:36.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T01:38:36.692Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ListarPorCategoria.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Artigos\\ListarPorCategoria.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Artigos\\ListarPorCategoria.cshtml",
@@ -276,8 +279,7 @@
               "RelativeToolTip": "LightInvest\\Views\\Artigos\\ListarPorCategoria.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:29:50.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T01:29:50.812Z"
             },
             {
               "$type": "Document",
@@ -289,12 +291,11 @@
               "RelativeToolTip": "LightInvest\\Views\\Artigos\\EditarComentario.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T01:17:30.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T01:17:30.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Artigos\\Index.cshtml",
               "RelativeDocumentMoniker": "LightInvest\\Views\\Artigos\\Index.cshtml",
@@ -302,21 +303,7 @@
               "RelativeToolTip": "LightInvest\\Views\\Artigos\\Index.cshtml",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwBwAAABuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T00:22:46.397Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Detalhes.cshtml",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Artigos\\Detalhes.cshtml",
-              "RelativeDocumentMoniker": "LightInvest\\Views\\Artigos\\Detalhes.cshtml",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\Views\\Artigos\\Detalhes.cshtml",
-              "RelativeToolTip": "LightInvest\\Views\\Artigos\\Detalhes.cshtml",
-              "ViewState": "AgIAADgAAAAAAAAAAAAQwHQAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T00:22:50.3Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T00:22:46.397Z"
             },
             {
               "$type": "Document",
@@ -328,8 +315,7 @@
               "RelativeToolTip": "LightInvest\\Models\\Utilizador\\Login\\LoginViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T01:29:53.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T01:29:53.64Z"
             },
             {
               "$type": "Document",
@@ -341,8 +327,7 @@
               "RelativeToolTip": "LightInvest\\Models\\Utilizador\\Login\\User.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAowDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T00:45:21.391Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T00:45:21.391Z"
             },
             {
               "$type": "Document",
@@ -354,21 +339,19 @@
               "RelativeToolTip": "LightInvest\\Controllers\\Educ\\ArtigosController.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAuwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T00:14:51.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T00:14:51.47Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-              "Title": "LightInvest",
+              "Title": "LightInvest.csproj",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\LightInvest.csproj",
               "RelativeDocumentMoniker": "LightInvest\\LightInvest.csproj",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\ESAPVPROJ\\LightInvest\\LightInvest.csproj",
               "RelativeToolTip": "LightInvest\\LightInvest.csproj",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABIAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-03-30T00:11:54.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T00:11:54.863Z"
             },
             {
               "$type": "Document",
@@ -380,8 +363,7 @@
               "RelativeToolTip": "LightInvest\\Models\\BD\\ApplicationDbContext.cs",
               "ViewState": "AgIAAD8BAAAAAAAAAAAuwEwBAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T17:49:19.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T17:49:19.138Z"
             },
             {
               "$type": "Document",
@@ -393,8 +375,7 @@
               "RelativeToolTip": "LightInvest\\Controllers\\Energy\\EnergySimulationController.cs",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAEgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T00:50:37.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T00:50:37.261Z"
             },
             {
               "$type": "Document",
@@ -430,8 +411,7 @@
               "RelativeToolTip": "LightInvest\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-29T17:16:18.819Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T17:16:18.819Z"
             }
           ]
         }

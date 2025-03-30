@@ -24,7 +24,6 @@
             </div>
 
             <div class="content">
-                <!-- Exibe o conteúdo convertido de Markdown para HTML -->
                 <div class="lead">@Html.Raw(ViewBag.ConteudoHtml)</div>
             </div>
 
@@ -95,7 +94,6 @@
                         <small>@comentario.DataCriacao.ToString("dd/MM/yyyy HH:mm")</small>
                     </div>
 
-                    <!-- Verifica se o comentário é do usuário logado -->
                     @if (comentario.UserId == ViewBag.UsuarioLogadoId)
                     {
                         <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-warning btn-sm">Editar</a>
@@ -120,7 +118,6 @@
           <div class="mt-5">
     <h4 class="text-muted">Adicionar Comentário</h4>
 
-    <!-- Formulário para adicionar novo comentário -->
     <form asp-action="AdicionarComentario" method="post">
         @Html.AntiForgeryToken()
         <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
@@ -144,12 +141,9 @@
     
 @section Scripts {
     <script>
-        // Para administradores, ao clicar em um comentário, alterna a exibição dos controles de remoção.
         document.querySelectorAll('.comment-item').forEach(function(item) {
             item.addEventListener('click', function(e) {
-                // Evita disparar a ação se o clique foi no botão
                 if (e.target.tagName.toLowerCase() === 'button') return;
-
                 var adminControls = item.querySelector('.admin-controls');
                 if (adminControls) {
                     adminControls.style.display = (adminControls.style.display === 'none' || adminControls.style.display === '')

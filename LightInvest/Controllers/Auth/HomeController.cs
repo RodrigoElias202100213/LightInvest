@@ -147,7 +147,15 @@ namespace LightInvest.Controllers.Auth
 			{
 				return NotFound("User not found.");
 			}
+				
+			// Busca todos os comentários associados ao usuário
+			var comentarios = await _context.Comentario.Where(c => c.UserId == id).ToListAsync();
 
+			// Remove todos os comentários associados
+			if (comentarios.Any())
+			{
+				_context.Comentario.RemoveRange(comentarios);
+			}
 			_context.Users.Remove(user);
 			await _context.SaveChangesAsync();
 
