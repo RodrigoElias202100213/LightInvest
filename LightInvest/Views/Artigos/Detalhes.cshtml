@@ -17,10 +17,10 @@
                 <a href="@Url.Action("ListarPorCategoria", "Artigos", new { categoria = Model.Categoria })" class="btn btn-outline-primary btn-sm">Voltar à categoria</a>
             </div>
 
-            <div class="card mb-4">
+            <div class="card mb-4 text-center">
                 @if (!string.IsNullOrEmpty(Model.ImagemUrl))
                 {
-                    <img src="@Model.ImagemUrl" alt="Imagem do Artigo" class="card-img-top img-fluid rounded">
+                    <img src="@Model.ImagemUrl" alt="Imagem do Artigo" class="rounded" style="max-width: 30vw; height: auto; display: block; margin: 0 auto;">
                 }
             </div>
 
@@ -168,3 +168,105 @@
         });
     </script>
 }
+
+            <style>
+    /* Estilo geral para melhor estruturação */
+    .container {
+        max-width: 900px;
+    }
+
+    .card img {
+        max-width: 30%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    h1.display-4 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    
+
+    /* Estruturando as notícias sobre energia solar */
+    .row .col-md-4 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+    .card-body {
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-text {
+        font-size: 14px;
+        color: #555;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        min-height: 50px;
+    }
+
+    /* Comentários estilizados */
+    .list-group {
+        max-height: 400px;
+        overflow-y: auto;
+        border-radius: 10px;
+        padding: 10px;
+        background: #f8f9fa;
+    }
+
+    .comment-item {
+        background: white;
+        border-radius: 8px;
+        padding: 8px;
+        margin-bottom: 8px;
+        border: 2px solid #007bff;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+        font-size: 14px;
+    }
+
+        .comment-item strong {
+            color: #007bff;
+            font-size: 14px;
+        }
+
+        .comment-item p {
+            font-size: 13px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .comment-item small {
+            color: gray;
+            display: block;
+            font-size: 12px;
+        }
+
+        .comment-item .btn {
+            font-size: 11px;
+            padding: 3px 6px;
+        }
+
+            </style>
