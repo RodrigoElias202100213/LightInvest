@@ -22,7 +22,10 @@ namespace LightInvest.Models.Educ.Artigos
 		public string DescricaoCurta { get; set; }
 
 		public DateTime DataPublicacao { get; set; } = DateTime.UtcNow;
+		
 		public List<Artigo> ArtigosRelacionados { get; set; }
+		
+		public List<Comentario> Comentarios { get; set; } = new List<Comentario>();
 
 	}
 }

@@ -17,8 +17,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "8.0.0",
           "Newtonsoft.Json": "13.0.3",
           "Rotativa": "1.7.3",
-          "Rotativa.AspNetCore": "1.4.0",
-          "docfx.console": "2.59.4"
+          "Rotativa.AspNetCore": "1.4.0"
         },
         "runtime": {
           "LightInvest.dll": {}
@@ -59,7 +58,6 @@
           }
         }
       },
-      "docfx.console/2.59.4": {},
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
@@ -992,13 +990,6 @@
       "sha512": "sha512-Sf4BoE6Q3jTgFkgBkx7qztYOFELBCo+wQgpYDwal/qJ1unBH73ywPztIJKXBXORRzAeNijsuxhk94h0TIMvfYg==",
       "path": "azure.identity/1.11.4",
       "hashPath": "azure.identity.1.11.4.nupkg.sha512"
-    },
-    "docfx.console/2.59.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2tdrfFuPawcJvM5r19Po1U4ML19DSJlrKfqyjx0T90A7r6VG4DWmIkF0GBf0PBqJRMCiOXfhXRL/ssfVGZ4ppA==",
-      "path": "docfx.console/2.59.4",
-      "hashPath": "docfx.console.2.59.4.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

@@ -1,0 +1,21 @@
+﻿@model LightInvest.Models.Educ.Artigos.Comentario
+
+@{
+    ViewData["Title"] = "Editar Comentário";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="EditarComentario" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="comentarioId" value="@Model.Id" />
+    <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
+
+    <div class="form-group">
+        <label for="texto">Comentário:</label>
+        <textarea name="texto" id="texto" class="form-control" required>@Model.Texto</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    <a href="@Url.Action("Detalhes", "Artigos", new { id = Model.ArtigoId })" class="btn btn-secondary">Cancelar</a>
+</form>

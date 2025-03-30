@@ -73,6 +73,9 @@ namespace LightInvest.Models.BD
 		/// </summary>
 		public DbSet<Artigo> Artigos { get; set; }
 
+
+		public DbSet<Comentario> Comentario { get; set; }
+
 		/// <summary>
 		/// Configures the model and relationships in the database context.
 		/// </summary>
@@ -323,6 +326,38 @@ namespace LightInvest.Models.BD
 			DataPublicacao = new DateTime(2024, 2, 15)
 		}
 );
+			modelBuilder.Entity<Comentario>().HasData(
+	new Comentario
+	{
+		Id = 1,
+		Autor = "Rodrigo",
+		ArtigoId = 1, // Relacionado ao artigo "Benefícios da Energia Solar"
+		Texto = "Ótimo artigo! Muito informativo.",
+		DataCriacao = new DateTime(2025, 2, 16),
+		UserId = 1  // Relacionado ao usuário com Id 1
+					// O autor será preenchido automaticamente após a busca do User.Name no código da aplicação
+	},
+	new Comentario
+	{
+		Id = 2,
+		Autor="Rodrigo",
+		ArtigoId = 1,
+		Texto = "Gostei bastante das explicações sobre os benefícios ambientais!",
+		DataCriacao = new DateTime(2025, 2, 17),
+		UserId = 1 // Relacionado ao usuário com Id 1
+	},
+	new Comentario
+	{
+		Id = 3,
+		Autor = "Rodrigo",
+		ArtigoId = 2, // Relacionado ao artigo "Como Calcular o Retorno sobre o Investimento"
+		Texto = "A ferramenta de cálculo do ROI seria muito útil! Vocês têm alguma recomendação?",
+		DataCriacao = new DateTime(2025, 3, 1),
+		UserId = 1  // Relacionado ao usuário com Id 1
+	}
+);
+
+
 		}
 	}
 

@@ -1,93 +1,198 @@
-﻿/*
- * O ArtigosController é responsável pela gestão das funcionalidades relacionadas aos artigos na aplicação.
- * Ele inclui ações para:
- * 1. Exibir a página principal de artigos.
- * 2. Listar artigos por categoria.
- * 3. Mostrar detalhes de um artigo específico.
- * 4. Recuperar e exibir artigos relacionados com base na categoria do artigo atual.
- * 
- * Além disso, o controlador integra um serviço externo, o MediaStackService, para ir buscar notícias relacionadas. 
- * 
- */
-
-
+﻿using LightInvest.Models;
+using LightInvest.Models.BD;
+using LightInvest.Models.Educ.Artigos;
+using LightInvest.Models.Utilizador.Login;
+using LightInvest.Services;
+using Markdig;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
-using LightInvest.Models;
-using LightInvest.Models.BD;
-using Markdig;
-using LightInvest.Models.Educ.Artigos;
-using LightInvest.Services;
 
 namespace LightInvest.Controllers.Educ
 {
-    /// <summary>
-    /// The ArtigosController handles article-related actions, including listing articles by category, 
-    /// displaying article details, and retrieving related articles.
-    /// </summary>
-    public class ArtigosController : Controller
-    {
-        private readonly ApplicationDbContext _context;
-        private readonly MediaStackService _mediaStackService;
+	public class ArtigosController : Controller
+	{
+		private readonly ApplicationDbContext _context;
+		private readonly MediaStackService _mediaStackService;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ArtigosController"/> class with dependencies.
-        /// </summary>
-        /// <param name="context">The application database context.</param>
-        /// <param name="mediaStackService">The service for retrieving external news articles.</param>
-        public ArtigosController(ApplicationDbContext context, MediaStackService mediaStackService)
-        {
-            _context = context;
-            _mediaStackService = mediaStackService;
-        }
+		public ArtigosController(ApplicationDbContext context, MediaStackService mediaStackService)
+		{
+			_context = context;
+			_mediaStackService = mediaStackService;
+		}
 
-        /// <summary>
-        /// Displays the main articles page.
-        /// </summary>
-        /// <returns>The view for the articles index page.</returns>
-        public IActionResult Index()
-        {
-            return View();
-        }
+		public IActionResult Index()
+		{
+			return View();
+		}
 
-        /// <summary>
-        /// Lists articles filtered by a given category.
-        /// </summary>
-        /// <param name="categoria">The category of the articles.</param>
-        /// <returns>The view displaying articles within the specified category.</returns>
-        public IActionResult ListarPorCategoria(string categoria)
-        {
-            var artigos = _context.Artigos.Where(a => a.Categoria == categoria).ToList();
-            ViewBag.Categoria = categoria;
-            return View(artigos);
-        }
+		public IActionResult ListarPorCategoria(string categoria)
+		{
+			var artigos = _context.Artigos.Where(a => a.Categoria == categoria).ToList();
+			ViewBag.Categoria = categoria;
+			return View(artigos);
+		}
 
-        /// <summary>
-        /// Displays the details of a specific article.
-        /// </summary>
-        /// <param name="id">The ID of the article to display.</param>
-        /// <returns>The view showing the article details. If the article is not found, returns a 404 error.</returns>
-        public async Task<IActionResult> Detalhes(int id)
-        {
-            var artigo = _context.Artigos.FirstOrDefault(a => a.ArtigoId == id);
-            if (artigo == null)
-            {
-                return NotFound();
-            }
-            var htmlConteudo = Markdown.ToHtml(artigo.Conteudo);
-            ViewBag.ConteudoHtml = htmlConteudo;
+		public async Task<IActionResult> Detalhes(int id)
+		{
+			var artigo = await _context.Artigos
+				.Include(a => a.Comentarios) // Carrega os comentários relacionados
+				.Include(a => a.ArtigosRelacionados)
+				.FirstOrDefaultAsync(a => a.ArtigoId == id);
+			if (artigo == null)
+			{
+				return NotFound();
+			}
 
-            var artigosRelacionados = _context.Artigos
-                .Where(a => a.Categoria == artigo.Categoria && a.ArtigoId != artigo.ArtigoId)
-                .Take(3)
-                .ToList();
-            artigo.ArtigosRelacionados = artigosRelacionados ?? new List<Artigo>();
-            var noticiasRelacionadas = await _mediaStackService.GetSolarPanelArticlesAsync();
-            ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
+			// Converte o conteúdo de Markdown para HTML
+			var htmlConteudo = Markdown.ToHtml(artigo.Conteudo);
+			ViewBag.ConteudoHtml = htmlConteudo;
 
-            return View(artigo);
-        }
-    }
+			var artigosRelacionados = _context.Artigos
+				.Where(a => a.Categoria == artigo.Categoria && a.ArtigoId != artigo.ArtigoId)
+				.Take(3)
+				.ToList();
+			artigo.ArtigosRelacionados = artigosRelacionados ?? new List<Artigo>();
+			var noticiasRelacionadas = await _mediaStackService.GetSolarPanelArticlesAsync();
+			ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
+
+			// Verifica se o usuário é admin usando a sessão
+			var isAdmin = HttpContext.Session.GetString("IsAdmin") == "True";
+			ViewBag.IsAdmin = isAdmin;
+
+			// Obtém o ID do usuário logado
+			var usuarioLogado = await GetLoggedInUserAsync();
+			ViewBag.UsuarioLogadoId = usuarioLogado?.Id; // Passa o ID do usuário logado para a View
+
+			return View(artigo);
+		}
+
+
+
+		/// <summary>
+		/// Retrieves the currently logged-in user based on the session data.
+		/// </summary>
+		/// <returns>The logged-in user if found; otherwise, null.</returns>
+		private async Task<User> GetLoggedInUserAsync()
+		{
+			var userEmail = HttpContext.Session.GetString("UserEmail");
+			return string.IsNullOrEmpty(userEmail)
+				? null
+				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+		}
+
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> AdicionarComentario(int artigoId, string texto)
+		{
+			var artigo = await _context.Artigos.FirstOrDefaultAsync(a => a.ArtigoId == artigoId);
+			if (artigo == null)
+			{
+				return NotFound("Artigo não encontrado.");
+			}
+
+			// Recuperar o usuário logado
+			var usuarioLogado = await GetLoggedInUserAsync();
+			if (usuarioLogado == null)
+			{
+				// Se o usuário não estiver logado, redireciona para a página de login ou exibe uma mensagem de erro
+				return RedirectToAction("Login", "Account"); // Ajuste o nome da ação conforme necessário
+			}
+
+			// Criar o novo comentário
+			var comentario = new Comentario
+			{
+				ArtigoId = artigoId,
+				Texto = texto,
+				Autor = usuarioLogado.Name, // Usar o nome do usuário logado
+				DataCriacao = DateTime.UtcNow,
+				UserId = usuarioLogado.Id // Associar o comentário ao usuário logado
+			};
+
+			_context.Comentario.Add(comentario);
+			await _context.SaveChangesAsync();
+
+			return RedirectToAction("Detalhes", new { id = artigoId });
+		}
+
+
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> RemoverComentario(int comentarioId, int artigoId)
+		{
+			// Verifica a role do usuário via sessão (ajuste conforme sua lógica de autenticação)
+			var isAdmin = HttpContext.Session.GetString("IsAdmin") == "True";
+			if (!isAdmin)
+			{
+				return Unauthorized("Somente administradores podem remover comentários.");
+			}
+
+			var comentario = await _context.Comentario.FirstOrDefaultAsync(c => c.Id == comentarioId);
+			if (comentario == null)
+			{
+				return NotFound("Comentário não encontrado.");
+			}
+
+			_context.Comentario.Remove(comentario);
+			await _context.SaveChangesAsync();
+
+			return RedirectToAction("Detalhes", new { id = artigoId });
+		}
+
+		// GET: Artigos/EditarComentario/5
+		public async Task<IActionResult> EditarComentario(int comentarioId, int artigoId)
+		{
+			var comentario = await _context.Comentario
+				.FirstOrDefaultAsync(c => c.Id == comentarioId);
+
+			if (comentario == null)
+			{
+				return NotFound("Comentário não encontrado.");
+			}
+
+			// Verifica se o usuário logado é o autor do comentário
+			var usuarioLogado = await GetLoggedInUserAsync();
+			if (comentario.UserId != usuarioLogado?.Id)
+			{
+				return Unauthorized("Você não pode editar este comentário.");
+			}
+
+			return View(comentario);
+		}
+
+		// POST: Artigos/EditarComentario/5
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> EditarComentario(int comentarioId, int artigoId, string texto)
+		{
+			var comentario = await _context.Comentario
+				.FirstOrDefaultAsync(c => c.Id == comentarioId);
+
+			if (comentario == null)
+			{
+				return NotFound("Comentário não encontrado.");
+			}
+
+			// Verifica se o usuário logado é o autor do comentário
+			var usuarioLogado = await GetLoggedInUserAsync();
+			if (comentario.UserId != usuarioLogado?.Id)
+			{
+				return Unauthorized("Você não pode editar este comentário.");
+			}
+
+			// Atualiza o conteúdo do comentário
+			comentario.Texto = texto;
+			comentario.DataCriacao = DateTime.UtcNow; // Atualiza a data de criação
+
+			_context.Comentario.Update(comentario);
+			await _context.SaveChangesAsync();
+
+			return RedirectToAction("Detalhes", new { id = artigoId });
+		}
+
+	}
 }
