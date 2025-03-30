@@ -2910,8 +2910,6 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvestTest\bin\Relea
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvestTest\bin\Release\net8.0\Dia2Lib.dll
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvestTest\bin\Release\net8.0\LightInvest.deps.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvestTest\bin\Release\net8.0\LightInvest.runtimeconfig.json
-C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvestTest\bin\Release\net8.0\_site\manifest.json
-C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvestTest\bin\Release\net8.0\_site\search-stopwords.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvestTest\bin\Release\net8.0\LightInvest.staticwebassets.runtime.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvestTest\bin\Release\net8.0\LightInvest.exe
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvestTest\bin\Release\net8.0\MvcTestingAppManifest.json

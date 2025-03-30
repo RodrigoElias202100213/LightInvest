@@ -4203,8 +4203,6 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\maisoutraoutra\lightinvest\obj\Debu
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\bin\Debug\net8.0\appsettings.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\bin\Debug\net8.0\docfx.json
-C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\bin\Debug\net8.0\_site\manifest.json
-C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\bin\Debug\net8.0\_site\search-stopwords.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\bin\Debug\net8.0\LightInvest.staticwebassets.runtime.json
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\bin\Debug\net8.0\LightInvest.exe
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\bin\Debug\net8.0\LightInvest.deps.json
@@ -4365,3 +4363,5 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\obj\Debug\net
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\obj\Debug\net8.0\LightInvest.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\obj\Debug\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\lightinvest\obj\Debug\net8.0\ref\LightInvest.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Debug\net8.0\Moq.dll

@@ -74,9 +74,8 @@ public class AccountControllerTests
 
 		Assert.NotNull(result);
 		Assert.False(_controller.ModelState.IsValid);
-		Assert.Contains(_controller.ModelState.Values, v => v.Errors.Any(e => e.ErrorMessage.Contains("Email ou palavra-passe não encontrada.")));
+		Assert.Contains(_controller.ModelState.Values, v => v.Errors.Any(e => e.ErrorMessage.Contains("Email ou palavra-passe incorreta.")));
 	}
-
 
 	[Fact]
 	public void Login_ReturnsView()

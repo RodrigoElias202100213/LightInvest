@@ -3922,3 +3922,5 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\obj\Release\n
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\obj\Release\net8.0\LightInvest.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\obj\Release\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\obj\Release\net8.0\ref\LightInvest.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Release\net8.0\Castle.Core.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\ESAPVPROJ\LightInvest\bin\Release\net8.0\Moq.dll
