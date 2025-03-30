@@ -13,185 +13,181 @@ using System.Threading.Tasks;
 
 namespace LightInvest.Controllers.Educ
 {
-	public class ArtigosController : Controller
-	{
-		private readonly ApplicationDbContext _context;
-		private readonly MediaStackService _mediaStackService;
+    public class ArtigosController : Controller
+    {
+        private readonly ApplicationDbContext _context;
+        private readonly MediaStackService _mediaStackService;
 
-		public ArtigosController(ApplicationDbContext context, MediaStackService mediaStackService)
-		{
-			_context = context;
-			_mediaStackService = mediaStackService;
-		}
+        public ArtigosController(ApplicationDbContext context, MediaStackService mediaStackService)
+        {
+            _context = context;
+            _mediaStackService = mediaStackService;
+        }
 
-		public IActionResult Index()
-		{
-			return View();
-		}
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-		public IActionResult ListarPorCategoria(string categoria)
-		{
-			var artigos = _context.Artigos.Where(a => a.Categoria == categoria).ToList();
-			ViewBag.Categoria = categoria;
-			return View(artigos);
-		}
+        /// <summary>
+        /// Lists articles by category.
+        /// </summary>
+        public IActionResult ListarPorCategoria(string categoria)
+        {
+            var artigos = _context.Artigos.Where(a => a.Categoria == categoria).ToList();
+            ViewBag.Categoria = categoria;
+            return View(artigos);
+        }
 
-		public async Task<IActionResult> Detalhes(int id)
-		{
-			var artigo = await _context.Artigos
-				.Include(a => a.Comentarios) // Carrega os comentários relacionados
-				.Include(a => a.ArtigosRelacionados)
-				.FirstOrDefaultAsync(a => a.ArtigoId == id);
-			if (artigo == null)
-			{
-				return NotFound();
-			}
+        /// <summary>
+        /// Displays the details of a specific article, including comments and related articles.
+        /// </summary>
+        public async Task<IActionResult> Detalhes(int id)
+        {
+            var artigo = await _context.Artigos
+                .Include(a => a.Comentarios)
+                .Include(a => a.ArtigosRelacionados)
+                .FirstOrDefaultAsync(a => a.ArtigoId == id);
+            if (artigo == null)
+            {
+                return NotFound();
+            }
 
-			// No método Detalhes do seu controller
-			var htmlConteudo = Markdown.ToHtml(artigo.Conteudo);
-			ViewBag.ConteudoHtml = htmlConteudo;
+            var htmlConteudo = Markdown.ToHtml(artigo.Conteudo);
+            ViewBag.ConteudoHtml = htmlConteudo;
 
-			var artigosRelacionados = _context.Artigos
-				.Where(a => a.Categoria == artigo.Categoria && a.ArtigoId != artigo.ArtigoId)
-				.Take(3)
-				.ToList();
-			artigo.ArtigosRelacionados = artigosRelacionados ?? new List<Artigo>();
-			var noticiasRelacionadas = await _mediaStackService.GetSolarPanelArticlesAsync();
-			ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
+            var artigosRelacionados = _context.Artigos
+                .Where(a => a.Categoria == artigo.Categoria && a.ArtigoId != artigo.ArtigoId)
+                .Take(3)
+                .ToList();
+            artigo.ArtigosRelacionados = artigosRelacionados ?? new List<Artigo>();
+            var noticiasRelacionadas = await _mediaStackService.GetSolarPanelArticlesAsync();
+            ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
 
-			// Verifica se o usuário é admin usando a sessão
-			var isAdmin = HttpContext.Session.GetString("IsAdmin") == "True";
-			ViewBag.IsAdmin = isAdmin;
+            var isAdmin = HttpContext.Session.GetString("IsAdmin") == "True";
+            ViewBag.IsAdmin = isAdmin;
+            var utilizadorLogado = await GetLoggedInUserAsync();
+            ViewBag.UtilizadorLogadoId = utilizadorLogado?.Id;
 
-			// Obtém o ID do usuário logado
-			var usuarioLogado = await GetLoggedInUserAsync();
-			ViewBag.UsuarioLogadoId = usuarioLogado?.Id; // Passa o ID do usuário logado para a View
+            return View(artigo);
+        }
 
-			return View(artigo);
-		}
+        /// <summary>
+        /// Retrieves the currently logged-in user based on the session data.
+        /// </summary>
+        /// <returns>The logged-in user if found; otherwise, null.</returns>
+        private async Task<User> GetLoggedInUserAsync()
+        {
+            var userEmail = HttpContext.Session.GetString("UserEmail");
+            return string.IsNullOrEmpty(userEmail)
+                ? null
+                : await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
+        }
 
+        /// <summary>
+        /// Adds a comment to an article.
+        /// </summary>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AdicionarComentario(int artigoId, string texto)
+        {
+            var artigo = await _context.Artigos.FirstOrDefaultAsync(a => a.ArtigoId == artigoId);
+            if (artigo == null)
+            {
+                return NotFound("Article not found.");
+            }
+            var utilizadorLogado = await GetLoggedInUserAsync();
+            if (utilizadorLogado == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
 
-		/// <summary>
-		/// Retrieves the currently logged-in user based on the session data.
-		/// </summary>
-		/// <returns>The logged-in user if found; otherwise, null.</returns>
-		private async Task<User> GetLoggedInUserAsync()
-		{
-			var userEmail = HttpContext.Session.GetString("UserEmail");
-			return string.IsNullOrEmpty(userEmail)
-				? null
-				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
-		}
+            var comentario = new Comentario
+            {
+                ArtigoId = artigoId,
+                Texto = texto,
+                Autor = utilizadorLogado.Name,
+                DataCriacao = DateTime.UtcNow,
+                UserId = utilizadorLogado.Id
+            };
 
+            _context.Comentario.Add(comentario);
+            await _context.SaveChangesAsync();
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> AdicionarComentario(int artigoId, string texto)
-		{
-			var artigo = await _context.Artigos.FirstOrDefaultAsync(a => a.ArtigoId == artigoId);
-			if (artigo == null)
-			{
-				return NotFound("Artigo não encontrado.");
-			}
+            return RedirectToAction("Detalhes", new { id = artigoId });
+        }
 
-			// Recuperar o usuário logado
-			var usuarioLogado = await GetLoggedInUserAsync();
-			if (usuarioLogado == null)
-			{
-				// Se o usuário não estiver logado, redireciona para a página de login ou exibe uma mensagem de erro
-				return RedirectToAction("Login", "Account"); // Ajuste o nome da ação conforme necessário
-			}
+        /// <summary>
+        /// Removes a comment, only allowed for administrators.
+        /// </summary>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoverComentario(int comentarioId, int artigoId)
+        {
+            var isAdmin = HttpContext.Session.GetString("IsAdmin") == "True";
+            if (!isAdmin)
+            {
+                return Unauthorized("Only administrators can remove comments.");
+            }
 
-			// Criar o novo comentário
-			var comentario = new Comentario
-			{
-				ArtigoId = artigoId,
-				Texto = texto,
-				Autor = usuarioLogado.Name, // Usar o nome do usuário logado
-				DataCriacao = DateTime.UtcNow,
-				UserId = usuarioLogado.Id // Associar o comentário ao usuário logado
-			};
+            var comentario = await _context.Comentario.FirstOrDefaultAsync(c => c.Id == comentarioId);
+            if (comentario == null)
+            {
+                return NotFound("Comment not found.");
+            }
 
-			_context.Comentario.Add(comentario);
-			await _context.SaveChangesAsync();
+            _context.Comentario.Remove(comentario);
+            await _context.SaveChangesAsync();
 
-			return RedirectToAction("Detalhes", new { id = artigoId });
-		}
+            return RedirectToAction("Detalhes", new { id = artigoId });
+        }
 
+        /// <summary>
+        /// Renders the comment editing page.
+        /// </summary>
+        public async Task<IActionResult> EditarComentario(int comentarioId, int artigoId)
+        {
+            var comentario = await _context.Comentario.FirstOrDefaultAsync(c => c.Id == comentarioId);
+            if (comentario == null)
+            {
+                return NotFound("Comment not found.");
+            }
 
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> RemoverComentario(int comentarioId, int artigoId)
-		{
-			// Verifica a role do usuário via sessão (ajuste conforme sua lógica de autenticação)
-			var isAdmin = HttpContext.Session.GetString("IsAdmin") == "True";
-			if (!isAdmin)
-			{
-				return Unauthorized("Somente administradores podem remover comentários.");
-			}
+            var utilizadorLogado = await GetLoggedInUserAsync();
+            if (comentario.UserId != utilizadorLogado?.Id)
+            {
+                return Unauthorized("You cannot edit this comment.");
+            }
 
-			var comentario = await _context.Comentario.FirstOrDefaultAsync(c => c.Id == comentarioId);
-			if (comentario == null)
-			{
-				return NotFound("Comentário não encontrado.");
-			}
+            return View(comentario);
+        }
 
-			_context.Comentario.Remove(comentario);
-			await _context.SaveChangesAsync();
+        /// <summary>
+        /// Updates an existing comment.
+        /// </summary>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditarComentario(int comentarioId, int artigoId, string texto)
+        {
+            var comentario = await _context.Comentario.FirstOrDefaultAsync(c => c.Id == comentarioId);
+            if (comentario == null)
+            {
+                return NotFound("Comment not found.");
+            }
 
-			return RedirectToAction("Detalhes", new { id = artigoId });
-		}
+            var utilizadorLogado = await GetLoggedInUserAsync();
+            if (comentario.UserId != utilizadorLogado?.Id)
+            {
+                return Unauthorized("You cannot edit this comment.");
+            }
 
-		// GET: Artigos/EditarComentario/5
-		public async Task<IActionResult> EditarComentario(int comentarioId, int artigoId)
-		{
-			var comentario = await _context.Comentario
-				.FirstOrDefaultAsync(c => c.Id == comentarioId);
+            comentario.Texto = texto;
+            comentario.DataCriacao = DateTime.UtcNow;
 
-			if (comentario == null)
-			{
-				return NotFound("Comentário não encontrado.");
-			}
+            _context.Comentario.Update(comentario);
+            await _context.SaveChangesAsync();
 
-			// Verifica se o usuário logado é o autor do comentário
-			var usuarioLogado = await GetLoggedInUserAsync();
-			if (comentario.UserId != usuarioLogado?.Id)
-			{
-				return Unauthorized("Você não pode editar este comentário.");
-			}
-
-			return View(comentario);
-		}
-
-		// POST: Artigos/EditarComentario/5
-		[HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> EditarComentario(int comentarioId, int artigoId, string texto)
-		{
-			var comentario = await _context.Comentario
-				.FirstOrDefaultAsync(c => c.Id == comentarioId);
-
-			if (comentario == null)
-			{
-				return NotFound("Comentário não encontrado.");
-			}
-
-			// Verifica se o usuário logado é o autor do comentário
-			var usuarioLogado = await GetLoggedInUserAsync();
-			if (comentario.UserId != usuarioLogado?.Id)
-			{
-				return Unauthorized("Você não pode editar este comentário.");
-			}
-
-			// Atualiza o conteúdo do comentário
-			comentario.Texto = texto;
-			comentario.DataCriacao = DateTime.UtcNow; // Atualiza a data de criação
-
-			_context.Comentario.Update(comentario);
-			await _context.SaveChangesAsync();
-
-			return RedirectToAction("Detalhes", new { id = artigoId });
-		}
-
-	}
+            return RedirectToAction("Detalhes", new { id = artigoId });
+        }
+    }
 }
