@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LightInvestTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+211642e6e93020a342561b1c64f4413471702dce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90191f7f57564172ad37daf452bfcac53fdcfe2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("LightInvestTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LightInvestTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
