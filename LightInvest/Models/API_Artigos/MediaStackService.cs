@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace LightInvest.Services
 {
+    /// <summary>
+    /// Service responsible for fetching news articles from the MediaStack API.
+    /// </summary>
     public class MediaStackService
     {
         private readonly HttpClient _httpClient;
@@ -17,6 +20,10 @@ namespace LightInvest.Services
             _httpClient = httpClient;
         }
 
+        /// <summary>
+        /// Fetches news articles related to solar panels from the MediaStack API.
+        /// </summary>
+        /// <returns>A list of news articles.</returns>
         public async Task<List<NewsArticle>> GetSolarPanelArticlesAsync()
         {
             var url = $"{BaseUrl}?access_key={ApiKey}&categories=general&languages=en&keywords=solar panels&limit=5";
@@ -32,18 +39,5 @@ namespace LightInvest.Services
 
             return result?.Data ?? new List<NewsArticle>();
         }
-    }
-
-    public class MediaStackResponse
-    {
-        public List<NewsArticle> Data { get; set; }
-    }
-
-    public class NewsArticle
-    {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Url { get; set; }
-        public string Image { get; set; }
     }
 }

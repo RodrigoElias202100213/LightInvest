@@ -17,10 +17,20 @@ using System.Security.Cryptography;
 namespace LightInvest.Controllers.Auth
 {
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <seealso cref="Microsoft.AspNetCore.Mvc.Controller" />
 	public class AccountController : Controller
 	{
+		/// <summary>
+		/// The context
+		/// </summary>
 		private readonly ApplicationDbContext _context;
 
+		/// <summary>
+		/// The email service
+		/// </summary>
 		private readonly EmailService _emailService;
 
 		/// <summary>
@@ -37,7 +47,9 @@ namespace LightInvest.Controllers.Auth
 		/// <summary>
 		/// Action responsible for displaying the login page (GET).
 		/// </summary>
-		/// <returns>Login view.</returns>
+		/// <returns>
+		/// Login view.
+		/// </returns>
 		[HttpGet]
 		public IActionResult Login()
 		{
@@ -48,7 +60,9 @@ namespace LightInvest.Controllers.Auth
 		/// Action responsible for processing user login (POST).
 		/// </summary>
 		/// <param name="model">The login model containing the user's email and password.</param>
-		/// <returns>Redirects to the home page on success, or shows error messages on failure.</returns>
+		/// <returns>
+		/// Redirects to the home page on success, or shows error messages on failure.
+		/// </returns>
 		[HttpPost]
 		public async Task<IActionResult> Login(LoginViewModel model)
 		{
@@ -76,7 +90,9 @@ namespace LightInvest.Controllers.Auth
 		/// <summary>
 		/// Action responsible for displaying the user registration page (GET).
 		/// </summary>
-		/// <returns>Registration view.</returns>
+		/// <returns>
+		/// Registration view.
+		/// </returns>
 		public IActionResult Register()
 		{
 			return View(new RegisterViewModel());
@@ -87,7 +103,9 @@ namespace LightInvest.Controllers.Auth
 		/// Action responsible for processing user registration (POST).
 		/// </summary>
 		/// <param name="model">The registration model containing the user's name, email, and password.</param>
-		/// <returns>Redirects to the login page on successful registration, or shows error messages on failure.</returns>
+		/// <returns>
+		/// Redirects to the login page on successful registration, or shows error messages on failure.
+		/// </returns>
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Register(RegisterViewModel model)
@@ -128,7 +146,9 @@ namespace LightInvest.Controllers.Auth
 		/// <summary>
 		/// Action responsible for logging out the user and clearing the session.
 		/// </summary>
-		/// <returns>Redirects to the login page.</returns>
+		/// <returns>
+		/// Redirects to the login page.
+		/// </returns>
 		public IActionResult Logout()
 		{
 			HttpContext.Session.Clear();
@@ -138,7 +158,9 @@ namespace LightInvest.Controllers.Auth
 		/// <summary>
 		/// Action responsible for displaying the email sending page (GET).
 		/// </summary>
-		/// <returns>Email sending view.</returns>
+		/// <returns>
+		/// Email sending view.
+		/// </returns>
 		[HttpGet]
 		public IActionResult Enviaremail()
 		{
@@ -151,7 +173,9 @@ namespace LightInvest.Controllers.Auth
 		/// <param name="toAddress">The recipient's email address.</param>
 		/// <param name="subject">The subject of the email.</param>
 		/// <param name="body">The body content of the email.</param>
-		/// <returns>Redirects to the home page with a success or error message.</returns>
+		/// <returns>
+		/// Redirects to the home page with a success or error message.
+		/// </returns>
 		[HttpPost]
 		public async Task<IActionResult> Enviaremail(string toAddress, string subject, string body)
 		{
@@ -174,7 +198,9 @@ namespace LightInvest.Controllers.Auth
 		/// Action that generates a password reset token and sends it by email (POST).
 		/// </summary>
 		/// <param name="email">The user's email address for password recovery.</param>
-		/// <returns>Redirects to the "GeneratePasswordResetTokenAndSendEmail" view with a success or failure message.</returns>
+		/// <returns>
+		/// Redirects to the "GeneratePasswordResetTokenAndSendEmail" view with a success or failure message.
+		/// </returns>
 		[HttpPost]
 		public async Task<IActionResult> GeneratePasswordResetTokenAndSendEmail(string email)
 		{
@@ -221,7 +247,9 @@ namespace LightInvest.Controllers.Auth
 		/// <summary>
 		/// Action responsible for displaying the password recovery page (GET).
 		/// </summary>
-		/// <returns>Password recovery view.</returns>
+		/// <returns>
+		/// Password recovery view.
+		/// </returns>
 		[HttpGet]
 		public IActionResult ForgotPassword()
 		{
@@ -232,7 +260,9 @@ namespace LightInvest.Controllers.Auth
 		/// Action that sends a password reset token email after a recovery request (POST).
 		/// </summary>
 		/// <param name="email">The user's email address for password recovery.</param>
-		/// <returns>Redirects to the "ValidateToken" view.</returns>
+		/// <returns>
+		/// Redirects to the "ValidateToken" view.
+		/// </returns>
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> ForgotPassword(string email)
@@ -272,7 +302,9 @@ namespace LightInvest.Controllers.Auth
 		/// Action responsible for validating the reset token (GET).
 		/// </summary>
 		/// <param name="email">The email associated with the reset token.</param>
-		/// <returns>Validation view to input the token.</returns>
+		/// <returns>
+		/// Validation view to input the token.
+		/// </returns>
 		[HttpGet]
 		public IActionResult ValidateToken(string email)
 		{
@@ -288,7 +320,9 @@ namespace LightInvest.Controllers.Auth
 		/// Action that validates the password reset token (POST).
 		/// </summary>
 		/// <param name="model">The model containing the token and email for validation.</param>
-		/// <returns>Redirects to the reset password page on success, or shows error messages on failure.</returns>
+		/// <returns>
+		/// Redirects to the reset password page on success, or shows error messages on failure.
+		/// </returns>
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> ValidateToken(ValidateTokenViewModel model)
@@ -316,7 +350,9 @@ namespace LightInvest.Controllers.Auth
 		/// </summary>
 		/// <param name="email">The user's email address for password reset.</param>
 		/// <param name="token">The reset token for validating the request.</param>
-		/// <returns>Password reset form view.</returns>
+		/// <returns>
+		/// Password reset form view.
+		/// </returns>
 		[HttpGet]
 		public IActionResult ResetPassword(string email, string token)
 		{
@@ -332,7 +368,9 @@ namespace LightInvest.Controllers.Auth
 		/// Action responsible for resetting the password (POST).
 		/// </summary>
 		/// <param name="model">The model containing the new password details.</param>
-		/// <returns>Redirects to the login page on successful password reset, or shows error messages on failure.</returns>
+		/// <returns>
+		/// Redirects to the login page on successful password reset, or shows error messages on failure.
+		/// </returns>
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)

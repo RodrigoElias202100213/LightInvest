@@ -94,7 +94,7 @@ namespace LightInvest.Controllers.Educ
             var artigo = await _context.Artigos.FirstOrDefaultAsync(a => a.ArtigoId == artigoId);
             if (artigo == null)
             {
-                return NotFound("Article not found.");
+                return NotFound("Artigo não encontrado.");
             }
             var utilizadorLogado = await GetLoggedInUserAsync();
             if (utilizadorLogado == null)
@@ -124,16 +124,15 @@ namespace LightInvest.Controllers.Educ
 			var comentario = await _context.Comentario.FirstOrDefaultAsync(c => c.Id == comentarioId);
 			if (comentario == null)
 			{
-				return NotFound("Comment not found.");
+				return NotFound("Comentário não encontrado.");
 			}
 
 			var utilizadorLogado = await GetLoggedInUserAsync();
 			var isAdmin = HttpContext.Session.GetString("IsAdmin") == "True";
 
-			// Verifica se é admin OU se o usuário logado é o autor do comentário
 			if (!isAdmin && comentario.UserId != utilizadorLogado?.Id)
 			{
-				return Unauthorized("You can only delete your own comments.");
+				return Unauthorized("Só consegue eliminar os seus comentários.");
 			}
 
 			_context.Comentario.Remove(comentario);
@@ -150,13 +149,13 @@ namespace LightInvest.Controllers.Educ
             var comentario = await _context.Comentario.FirstOrDefaultAsync(c => c.Id == comentarioId);
             if (comentario == null)
             {
-                return NotFound("Comment not found.");
+                return NotFound("Comentário não encontrado.");
             }
 
             var utilizadorLogado = await GetLoggedInUserAsync();
             if (comentario.UserId != utilizadorLogado?.Id)
             {
-                return Unauthorized("You cannot edit this comment.");
+                return Unauthorized("Não pode editar este comentário.");
             }
 
             return View(comentario);
@@ -172,13 +171,13 @@ namespace LightInvest.Controllers.Educ
             var comentario = await _context.Comentario.FirstOrDefaultAsync(c => c.Id == comentarioId);
             if (comentario == null)
             {
-                return NotFound("Comment not found.");
+                return NotFound("Comentário não encontrado.");
             }
 
             var utilizadorLogado = await GetLoggedInUserAsync();
             if (comentario.UserId != utilizadorLogado?.Id)
             {
-                return Unauthorized("You cannot edit this comment.");
+                return Unauthorized("Não pode editar este comentário.");
             }
 
             comentario.Texto = texto;

@@ -1,0 +1,2168 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LightInvest</name>
+    </assembly>
+    <members>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.#ctor(LightInvest.Models.BD.ApplicationDbContext,LightInvest.Models.Email.EmailService)">
+            <summary>
+            Constructor of the controller, responsible for injecting necessary dependencies.
+            </summary>
+            <param name="context">Application context used for interacting with the database.</param>
+            <param name="emailService">Service used for sending emails.</param>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.Login">
+            <summary>
+            Action responsible for displaying the login page (GET).
+            </summary>
+            <returns>Login view.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.Login(LightInvest.Models.Utilizador.Login.LoginViewModel)">
+            <summary>
+            Action responsible for processing user login (POST).
+            </summary>
+            <param name="model">The login model containing the user's email and password.</param>
+            <returns>Redirects to the home page on success, or shows error messages on failure.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.Register">
+            <summary>
+            Action responsible for displaying the user registration page (GET).
+            </summary>
+            <returns>Registration view.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.Register(LightInvest.Models.Utilizador.Register.RegisterViewModel)">
+            <summary>
+            Action responsible for processing user registration (POST).
+            </summary>
+            <param name="model">The registration model containing the user's name, email, and password.</param>
+            <returns>Redirects to the login page on successful registration, or shows error messages on failure.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.Logout">
+            <summary>
+            Action responsible for logging out the user and clearing the session.
+            </summary>
+            <returns>Redirects to the login page.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.Enviaremail">
+            <summary>
+            Action responsible for displaying the email sending page (GET).
+            </summary>
+            <returns>Email sending view.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.Enviaremail(System.String,System.String,System.String)">
+            <summary>
+            Action responsible for sending an email with specified recipient, subject, and body.
+            </summary>
+            <param name="toAddress">The recipient's email address.</param>
+            <param name="subject">The subject of the email.</param>
+            <param name="body">The body content of the email.</param>
+            <returns>Redirects to the home page with a success or error message.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.GeneratePasswordResetTokenAndSendEmail(System.String)">
+            <summary>
+            Action that generates a password reset token and sends it by email (POST).
+            </summary>
+            <param name="email">The user's email address for password recovery.</param>
+            <returns>Redirects to the "GeneratePasswordResetTokenAndSendEmail" view with a success or failure message.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.ForgotPassword">
+            <summary>
+            Action responsible for displaying the password recovery page (GET).
+            </summary>
+            <returns>Password recovery view.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.ForgotPassword(System.String)">
+            <summary>
+            Action that sends a password reset token email after a recovery request (POST).
+            </summary>
+            <param name="email">The user's email address for password recovery.</param>
+            <returns>Redirects to the "ValidateToken" view.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.ValidateToken(System.String)">
+            <summary>
+            Action responsible for validating the reset token (GET).
+            </summary>
+            <param name="email">The email associated with the reset token.</param>
+            <returns>Validation view to input the token.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.ValidateToken(ValidateTokenViewModel)">
+            <summary>
+            Action that validates the password reset token (POST).
+            </summary>
+            <param name="model">The model containing the token and email for validation.</param>
+            <returns>Redirects to the reset password page on success, or shows error messages on failure.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.ResetPassword(System.String,System.String)">
+            <summary>
+            Action responsible for displaying the password reset form (GET).
+            </summary>
+            <param name="email">The user's email address for password reset.</param>
+            <param name="token">The reset token for validating the request.</param>
+            <returns>Password reset form view.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.AccountController.ResetPassword(ResetPasswordViewModel)">
+            <summary>
+            Action responsible for resetting the password (POST).
+            </summary>
+            <param name="model">The model containing the new password details.</param>
+            <returns>Redirects to the login page on successful password reset, or shows error messages on failure.</returns>
+        </member>
+        <member name="T:LightInvest.Controllers.Auth.HomeController">
+            <summary>
+            The HomeController class manages the user-related actions such as login, privacy, error handling, and admin management.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.HomeController.#ctor(LightInvest.Models.BD.ApplicationDbContext,Microsoft.Extensions.Logging.ILogger{LightInvest.Controllers.Auth.HomeController})">
+            <summary>
+            Initializes the HomeController with context and logger dependencies.
+            </summary>
+            <param name="context">The application database context.</param>
+            <param name="logger">The logger for logging information.</param>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.HomeController.Index">
+            <summary>
+            Displays the home page, checks if the user is logged in and if they are an admin.
+            </summary>
+            <returns>Returns the view for the home page.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.HomeController.Privacy">
+            <summary>
+            Displays the privacy policy page.
+            </summary>
+            <returns>Returns the view for the privacy page.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.HomeController.Error">
+            <summary>
+            Handles error pages and provides an error view with the request ID.
+            </summary>
+            <returns>Returns the error view with a request ID.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.HomeController.UserList">
+            <summary>
+            Displays the list of users, only accessible by an admin user.
+            </summary>
+            <returns>Returns the view with the list of users.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.HomeController.MakeAdmin(System.Int32)">
+            <summary>
+            Promotes a user to admin status by updating their 'IsAdmin' flag.
+            </summary>
+            <param name="id">The ID of the user to promote.</param>
+            <returns>Redirects to the UserList action after promoting the user.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.HomeController.EditUser(System.Int32)">
+            <summary>
+            Displays the user edit page with the current user data to modify.
+            </summary>
+            <param name="id">The ID of the user to edit.</param>
+            <returns>Returns the edit user view with the user data.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.HomeController.BanUser(System.Int32)">
+            <summary>
+            Bans a user by removing them from the database.
+            </summary>
+            <param name="id">The ID of the user to ban.</param>
+            <returns>Redirects to the UserList action after banning the user.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Auth.HomeController.EditUser(LightInvest.Models.Utilizador.Login.EditUserViewModel)">
+            <summary>
+            Edits a user's data, such as their name.
+            </summary>
+            <param name="model">The model containing the new user data.</param>
+            <returns>Redirects to the UserList action after updating the user data.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Educ.ArtigosController.ListarPorCategoria(System.String)">
+            <summary>
+            Lists articles by category.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Controllers.Educ.ArtigosController.Detalhes(System.Int32)">
+            <summary>
+            Displays the details of a specific article, including comments and related articles.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Controllers.Educ.ArtigosController.GetLoggedInUserAsync">
+            <summary>
+            Retrieves the currently logged-in user based on the session data.
+            </summary>
+            <returns>The logged-in user if found; otherwise, null.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Educ.ArtigosController.AdicionarComentario(System.Int32,System.String)">
+            <summary>
+            Adds a comment to an article.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Controllers.Educ.ArtigosController.EditarComentario(System.Int32,System.Int32)">
+            <summary>
+            Renders the comment editing page.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Controllers.Educ.ArtigosController.EditarComentario(System.Int32,System.Int32,System.String)">
+            <summary>
+            Updates an existing comment.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Controllers.Educ.EducacaoEnergeticaController">
+            <summary>
+            Controller responsible for handling Energy Education-related views and actions.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Controllers.Educ.EducacaoEnergeticaController.Index">
+            <summary>
+            Displays the main page for Energy Education.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Controllers.Educ.ManualTecnicoController">
+            <summary>
+            The ManualTecnicoController handles the technical manual page.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Controllers.Educ.ManualTecnicoController.Index">
+            <summary>
+            Displays the technical manual page.
+            </summary>
+            <returns>Returns the view for the technical manual page.</returns>
+        </member>
+        <member name="T:LightInvest.Controllers.Energy.DadosInstalacaoController">
+            <summary>
+            Handles the creation and management of installation data, including pricing and panel configurations.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.#ctor(LightInvest.Models.BD.ApplicationDbContext)">
+            <summary>
+            Initializes the DadosInstalacaoController with the provided database context.
+            </summary>
+            <param name="context">The database context for accessing the application data.</param>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.Create">
+            <summary>
+            Displays the page for creating installation data.
+            </summary>
+            <returns>The view for creating installation data.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.CarregarViewModelAsync">
+            <summary>
+            Loads the data for the installation creation view model.
+            </summary>
+            <returns>The populated view model with available cities, panel models, and panel power ratings.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.Create(LightInvest.Models.DadosInstalacaoViewModel)">
+            <summary>
+            Handles the POST request to create installation data.
+            </summary>
+            <param name="model">The installation data model.</param>
+            <returns>A redirect to the simulation page or the current view if validation fails.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.Confirmacao">
+            <summary>
+            Displays a confirmation page after calculating the installation price.
+            </summary>
+            <returns>The view for the confirmation page with the calculated price.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.ObterUsuarioLogadoAsync">
+            <summary>
+            Retrieves the currently authenticated user based on session data.
+            </summary>
+            <returns>The user object if found; otherwise, null.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.CalcularPrecoInstalacao(LightInvest.Models.DadosInstalacaoViewModel)">
+            <summary>
+            Handles the POST request to calculate the installation price based on user inputs.
+            </summary>
+            <param name="model">The installation data model containing user inputs.</param>
+            <returns>A JSON object with the calculated price.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.SalvarOuAtualizarDadosInstalacao(LightInvest.Models.Ener.DadosInstalacao)">
+            <summary>
+            Saves or updates the installation data in the database.
+            </summary>
+            <param name="dadosInstalacao">The installation data to save or update.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.GetConsumosPainel(System.Int32)">
+            <summary>
+            Retrieves the power consumption data for a specific panel model.
+            </summary>
+            <param name="modeloPainelId">The ID of the panel model.</param>
+            <returns>A JSON object containing the power data for the given panel model.</returns>
+        </member>
+        <member name="T:LightInvest.Controllers.Energy.EnergySimulationController">
+            <summary>
+            Handles the energy consumption simulation, including form submission, validation, and saving the simulation data.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.#ctor(LightInvest.Models.BD.ApplicationDbContext)">
+            <summary>
+            Initializes the EnergySimulationController with the provided database context.
+            </summary>
+            <param name="context">The database context for accessing application data.</param>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.Simulation">
+            <summary>
+            Displays the energy consumption simulation page.
+            </summary>
+            <returns>The view for energy simulation.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.InitializeViewModel">
+            <summary>
+            Initializes the view model for energy consumption simulation with default values.
+            </summary>
+            <returns>The initialized energy consumption view model.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.LoadTempData(LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel)">
+            <summary>
+            Loads data from TempData into the view model.
+            </summary>
+            <param name="model">The energy consumption view model to populate.</param>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.GetLoggedInUserAsync">
+            <summary>
+            Retrieves the currently logged-in user based on the session data.
+            </summary>
+            <returns>The logged-in user if found; otherwise, null.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.ValidarConsumo(LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel)">
+            <summary>
+            Validates the consumption data provided by the user in the view model.
+            </summary>
+            <param name="model">The energy consumption view model to validate.</param>
+            <returns>True if the consumption data is valid; otherwise, false.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.Simulation(LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel)">
+            <summary>
+            Handles the POST request to submit energy consumption data.
+            </summary>
+            <param name="model">The energy consumption view model containing the user's data.</param>
+            <returns>A redirect to the tariff simulation page if valid; otherwise, re-renders the current view with errors.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.RedirectToEnergyView">
+            <summary>
+            Redirects to the energy simulation view.
+            </summary>
+            <returns>A redirect to the energy simulation page.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.EnsureValidData(LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel)">
+            <summary>
+            Ensures the data provided by the user is valid and initializes default values if necessary.
+            </summary>
+            <param name="model">The energy consumption view model to validate and modify.</param>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.SaveConsumptionToDatabase(System.String,LightInvest.Models.Simulacao.Energ.EnergyConsumption)">
+            <summary>
+            Saves the energy consumption data to the database.
+            </summary>
+            <param name="userEmail">The email address of the user whose consumption data is being saved.</param>
+            <param name="consumo">The energy consumption data to save.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.EnergySimulationController.StoreTempData(LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel)">
+            <summary>
+            Stores energy consumption data in TempData for use in subsequent requests.
+            </summary>
+            <param name="model">The energy consumption view model to store in TempData.</param>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.TarifaController.#ctor(LightInvest.Models.BD.ApplicationDbContext)">
+            <summary>
+            Initializes the TarifaController with the provided database context.
+            </summary>
+            <param name="context">The database context for accessing application data.</param>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.TarifaController.Simulation">
+            <summary>
+            Displays the tariff simulation page, initializing the view model and loading any necessary data.
+            </summary>
+            <returns>The tariff simulation view with the initialized model.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.TarifaController.InitializeViewModel">
+            <summary>
+            Initializes the view model for tariff simulation.
+            </summary>
+            <returns>A new instance of the TarifaViewModel.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.TarifaController.LoadTempData(LightInvest.Models.Simulacao.Tarifa.TarifaViewModel)">
+            <summary>
+            Loads temporary data (such as final price) from TempData into the view model.
+            </summary>
+            <param name="model">The TarifaViewModel to load data into.</param>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.TarifaController.GetLoggedInUserAsync">
+            <summary>
+            Retrieves the currently logged-in user based on the session data.
+            </summary>
+            <returns>The logged-in user if found; otherwise, null.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.TarifaController.Simulation(LightInvest.Models.Simulacao.Tarifa.TarifaViewModel)">
+            <summary>
+            Handles the form submission for the tariff simulation and calculates the final price based on user input.
+            The resulting tariff information is saved to the database and the final price is stored in TempData.
+            </summary>
+            <param name="model">The TarifaViewModel containing the user input for the tariff simulation.</param>
+            <returns>The redirect to the next action (Create in DadosInstalacao).</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Energy.TarifaController.SaveTarifaToDatabase(System.String,LightInvest.Models.Simulacao.Tarifa.Tarifa)">
+            <summary>
+            Saves the tariff data to the database. If a tariff already exists for the user, it updates the existing record.
+            Otherwise, a new tariff record is added.
+            </summary>
+            <param name="userEmail">The email address of the user.</param>
+            <param name="tarifa">The Tarifa object containing the tariff data to be saved.</param>
+            <returns>A task representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:LightInvest.Controllers.Simul.SimulacaoValoresController.ProcessarEnergyConsumptionAsync(System.String)">
+            <summary>
+            Processes the user's energy consumption data based on their email.
+            </summary>
+            <param name="userEmail">The email address of the currently authenticated user.</param>
+            <returns>
+            An <see cref="T:LightInvest.Models.Simulacao.Energ.EnergyConsumption"/> object containing processed consumption data.
+            </returns>
+            <remarks>
+            This method calculates average energy consumption, monthly consumption, and annual consumption for the user.
+            </remarks>
+        </member>
+        <member name="M:LightInvest.Controllers.Simul.SimulacaoValoresController.ProcessarTarifaAsync(System.String,LightInvest.Models.Simulacao.Energ.EnergyConsumption)">
+            <summary>
+            Processes the user's energy tariff and calculates the monthly and annual costs based on their consumption.
+            </summary>
+            <param name="userEmail">The email address of the currently authenticated user.</param>
+            <param name="consumo">The <see cref="T:LightInvest.Models.Simulacao.Energ.EnergyConsumption"/> object that holds the user's consumption data.</param>
+            <returns>
+            A <see cref="T:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel"/> object containing the tariff information and calculated costs for each month.
+            </returns>
+            <remarks>
+            This method calculates the monthly and annual energy consumption cost based on the user's chosen tariff and consumption data.
+            </remarks>
+        </member>
+        <member name="M:LightInvest.Controllers.Simul.SimulacaoValoresController.Simular">
+            <summary>
+            Simulates the energy consumption, tariff, and ROI calculations for the user, and returns the simulation result.
+            </summary>
+            <returns>
+            A view with the simulation result displayed, including energy consumption data, tariff information, and ROI calculation.
+            </returns>
+            <remarks>
+            This method aggregates the user’s energy consumption data, calculates the monthly and annual costs, and computes the return on investment (ROI) based on solar panel installation.
+            </remarks>
+        </member>
+        <member name="M:LightInvest.Controllers.Simul.SimulacaoValoresController.ObterNomeDoMes(System.Int32)">
+            <summary>
+            Gets the name of the month from its numeric representation (1-12).
+            </summary>
+            <param name="numeroMes">The numeric value of the month (1 for January, 12 for December).</param>
+            <returns>
+            The name of the month as a string. For example, "January" for 1, "December" for 12.
+            </returns>
+            <remarks>
+            This method converts the numeric month value to its string name, which is used for displaying month names in reports.
+            </remarks>
+        </member>
+        <member name="M:LightInvest.Controllers.Simul.SimulacaoValoresController.ExportPDF">
+            <summary>
+            Exports the simulation data as a PDF file (functionality not yet implemented).
+            </summary>
+            <returns>
+            A message indicating that the PDF export functionality is not yet implemented.
+            </returns>
+            <remarks>
+            This method currently only returns a message indicating that PDF export functionality has not been implemented.
+            </remarks>
+        </member>
+        <member name="M:LightInvest.Controllers.Simul.SimulacaoValoresController.ExportCSV">
+            <summary>
+            Exports the simulation data as a CSV file.
+            </summary>
+            <returns>
+            A CSV file containing the energy consumption and tariff simulation data.
+            </returns>
+            <remarks>
+            This method generates a CSV file with key simulation data, including weekly consumption averages, total consumption, and annual consumption costs.
+            </remarks>
+        </member>
+        <member name="M:LightInvest.Controllers.Simul.SimulacaoValoresController.GerarViewModelCompleto(System.String)">
+            <summary>
+            Generates the complete view model for the user, including energy consumption, tariff, and ROI data.
+            </summary>
+            <param name="userEmail">The email address of the currently authenticated user.</param>
+            <returns>
+            A <see cref="T:LightInvest.Models.Ener.SimulacaoCompletaViewModel"/> object containing all necessary simulation data for the view.
+            </returns>
+            <remarks>
+            This method aggregates all relevant data (energy consumption, tariff, ROI, etc.) and prepares it for display in the simulation view.
+            </remarks>
+        </member>
+        <member name="T:LightInvest.Migrations.innitial">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.innitial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.innitial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.innitial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LightInvest.Migrations.AtualizacaoBD">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.AtualizacaoBD.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.AtualizacaoBD.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.AtualizacaoBD.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:LightInvest.Services.MediaStackResponse">
+            <summary>
+            Represents the response structure from the MediaStack API.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Services.MediaStackResponse.Data">
+            <summary>
+            List of news articles retrieved from the API.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Services.MediaStackService">
+            <summary>
+            Service responsible for fetching news articles from the MediaStack API.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Services.MediaStackService.GetSolarPanelArticlesAsync">
+            <summary>
+            Fetches news articles related to solar panels from the MediaStack API.
+            </summary>
+            <returns>A list of news articles.</returns>
+        </member>
+        <member name="T:LightInvest.Services.NewsArticle">
+            <summary>
+            Represents a news article with relevant details.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Services.NewsArticle.Title">
+            <summary>
+            Title of the news article.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Services.NewsArticle.Description">
+            <summary>
+            Brief description of the news article.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Services.NewsArticle.Url">
+            <summary>
+            URL link to the full news article.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Services.NewsArticle.Image">
+            <summary>
+            URL of the image associated with the news article.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.BD.ApplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{LightInvest.Models.BD.ApplicationDbContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightInvest.Models.BD.ApplicationDbContext"/> class.
+            </summary>
+            <param name="options">The options to be used for the context.</param>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.ROICalculators">
+            <summary>
+            Gets or sets the <see cref="T:LightInvest.Models.Roi.RoiCalculator"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.Users">
+            <summary>
+            Gets or sets the <see cref="T:LightInvest.Models.Utilizador.Login.User"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.PasswordResetTokens">
+            <summary>
+            Gets or sets the <see cref="T:LightInvest.Models.Utilizador.Pass.PasswordResetToken"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.EnergyConsumptions">
+            <summary>
+            Gets or sets the <see cref="T:LightInvest.Models.Simulacao.Energ.EnergyConsumption"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.Tarifas">
+            <summary>
+            Gets or sets the <see cref="T:LightInvest.Models.Simulacao.Tarifa.Tarifa"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.DadosInstalacao">
+            <summary>
+            Gets or sets the <see cref="P:LightInvest.Models.BD.ApplicationDbContext.DadosInstalacao"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.Cidades">
+            <summary>
+            Gets or sets the <see cref="T:LightInvest.Models.b.Cidade"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.ModelosDePaineisSolares">
+            <summary>
+            Gets or sets the <see cref="T:LightInvest.Models.b.ModeloPainelSolar"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.PotenciasDePaineisSolares">
+            <summary>
+            Gets or sets the <see cref="T:LightInvest.Models.b.PotenciaPainelSolar"/> entities in the database.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.BD.ApplicationDbContext.Artigos">
+            <summary>
+            Gets or sets the <see cref="T:LightInvest.Models.Educ.Artigos.Artigo"/> entities in the database.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.BD.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Configures the model and relationships in the database context.
+            </summary>
+            <param name="modelBuilder">The model builder used to configure the model.</param>
+            <remarks>This method is used to configure entity relationships and seed data.</remarks>
+        </member>
+        <member name="T:LightInvest.Models.Educ.Artigos.Artigo">
+            <summary>
+            Represents an article with content, category, related articles, and comments.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Artigo.ArtigoId">
+            <summary>
+            Unique identifier for the article.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Artigo.Titulo">
+            <summary>
+            Title of the article.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Artigo.Conteudo">
+            <summary>
+            Main content of the article.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Artigo.ImagemUrl">
+            <summary>
+            URL of the article's image.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Artigo.Categoria">
+            <summary>
+            Category to which the article belongs.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Artigo.DescricaoCurta">
+            <summary>
+            Short description of the article.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Artigo.DataPublicacao">
+            <summary>
+            Date when the article was published.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Artigo.ArtigosRelacionados">
+            <summary>
+            List of related articles.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Artigo.Comentarios">
+            <summary>
+            List of comments associated with the article.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Comentario.Id">
+            <summary>
+            Gets or sets the unique identifier for the comment.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Comentario.Texto">
+            <summary>
+            Gets or sets the content of the comment.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Comentario.Autor">
+            <summary>
+            Gets or sets the author of the comment.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Comentario.DataCriacao">
+            <summary>
+            Gets or sets the date when the comment was created.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Comentario.ArtigoId">
+            <summary>
+            Gets or sets the article to which the comment belongs.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Comentario.Artigo">
+            <summary>
+            Navigation property for the article related to this comment.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Comentario.UserId">
+            <summary>
+            Gets or sets the user who made the comment.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.Artigos.Comentario.User">
+            <summary>
+            Navigation property for the user who made the comment.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Models.Educ.EducacaoEnergeticaViewModel">
+            <summary>
+            ViewModel for Energy Education, containing a list of articles.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Educ.EducacaoEnergeticaViewModel.Artigos">
+            <summary>
+            List of articles related to energy education.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Models.Email.EmailService">
+            <summary>
+            Provides methods for sending email messages asynchronously.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.Email.EmailService.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightInvest.Models.Email.EmailService"/> class.
+            </summary>
+            <param name="configuration">The configuration object used to retrieve SMTP settings.</param>
+        </member>
+        <member name="M:LightInvest.Models.Email.EmailService.SendEmailAsync(System.String,System.String,System.String)">
+            <summary>
+            Sends an email asynchronously to a specified address with a subject and body.
+            </summary>
+            <param name="toAddress">The recipient's email address.</param>
+            <param name="subject">The subject of the email.</param>
+            <param name="body">The body content of the email.</param>
+            <returns>A task that represents the asynchronous operation. The task result is a <see cref="T:System.Boolean"/> indicating whether the email was sent successfully.</returns>
+            <remarks>
+            This method uses SMTP configuration settings from the application's configuration file.
+            </remarks>
+        </member>
+        <member name="T:LightInvest.Models.Error.ErrorViewModel">
+            <summary>
+            Represents an error view model used for displaying error information in the UI.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Error.ErrorViewModel.RequestId">
+            <summary>
+            Gets or sets the request ID associated with the error.
+            </summary>
+            <value>
+            A string representing the unique identifier for the request.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Error.ErrorViewModel.ShowRequestId">
+            <summary>
+            Gets a value indicating whether the request ID should be shown in the error view.
+            </summary>
+            <value>
+            Returns <c>true</c> if the request ID is not null or empty; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Roi.RetornoInvestimentoAno">
+            <summary>
+            Represents the return on investment (ROI) for a specific year, including the breakdown of each month.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RetornoInvestimentoAno.Ano">
+            <summary>
+            Gets or sets the year of the return on investment data.
+            </summary>
+            <value>
+            An integer representing the year for the ROI data.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RetornoInvestimentoAno.Meses">
+            <summary>
+            Gets or sets the list of monthly ROI data for the given year.
+            </summary>
+            <value>
+            A list of <see cref="T:LightInvest.Models.Roi.RetornoInvestimentoMes"/> objects, each representing the ROI for a specific month.
+            </value>
+        </member>
+        <member name="M:LightInvest.Models.Roi.RetornoInvestimentoAno.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightInvest.Models.Roi.RetornoInvestimentoAno"/> class with an empty list of months.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Models.Roi.RetornoInvestimentoMes">
+            <summary>
+            Represents the return on investment (ROI) data for a specific month, including generated energy, monthly savings, and remaining balance.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RetornoInvestimentoMes.Mes">
+            <summary>
+            Gets or sets the name of the month (e.g., "January", "February").
+            </summary>
+            <value>
+            A string representing the month of the ROI data.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RetornoInvestimentoMes.EnergiaGerada">
+            <summary>
+            Gets or sets the total energy generated during the month.
+            </summary>
+            <value>
+            A decimal representing the amount of energy generated (in kWh, for example) during the month.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RetornoInvestimentoMes.EconomiaMensal">
+            <summary>
+            Gets or sets the monthly savings achieved through the investment.
+            </summary>
+            <value>
+            A decimal representing the savings for the month (in the local currency).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RetornoInvestimentoMes.SaldoRestante">
+            <summary>
+            Gets or sets the remaining balance after the monthly savings have been accounted for.
+            </summary>
+            <value>
+            A decimal representing the remaining balance after considering the energy savings and other factors (e.g., investment cost).
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Roi.RoiCalculator">
+            <summary>
+            Represents a calculator for calculating the Return on Investment (ROI) for a specific user and energy consumption scenario.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculator.Id">
+            <summary>
+            Gets or sets the unique identifier for the ROI calculation.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculator.UserEmail">
+            <summary>
+            Gets or sets the email address of the user requesting the ROI calculation.
+            </summary>
+            <value>
+            A string representing the user's email address.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculator.CustoInstalacao">
+            <summary>
+            Gets or sets the installation cost for the energy solution.
+            </summary>
+            <value>
+            A decimal representing the installation cost (in the local currency).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculator.CustoManutencaoAnual">
+            <summary>
+            Gets or sets the annual maintenance cost for the energy solution.
+            </summary>
+            <value>
+            A decimal representing the annual maintenance cost (in the local currency).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculator.ConsumoEnergeticoMedio">
+            <summary>
+            Gets or sets the average energy consumption of the user.
+            </summary>
+            <value>
+            A decimal representing the average energy consumption (in kWh or similar units).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculator.ConsumoEnergeticoRede">
+            <summary>
+            Gets or sets the energy consumption from the grid (external electricity source).
+            </summary>
+            <value>
+            A decimal representing the energy consumed from the grid (in kWh or similar units).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculator.RetornoEconomia">
+            <summary>
+            Gets or sets the savings per unit of energy generated or saved.
+            </summary>
+            <value>
+            A decimal representing the savings achieved per unit of energy (in local currency per kWh or similar units).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculator.ROI">
+            <summary>
+            Gets or sets the Return on Investment (ROI) value, calculated from the provided inputs.
+            </summary>
+            <value>
+            A decimal representing the ROI, calculated based on the inputs provided (ratio of installation cost to annual savings).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculator.DataCalculado">
+            <summary>
+            Gets or sets the date and time when the ROI calculation was performed.
+            </summary>
+            <value>
+            A DateTime representing the date and time of the calculation.
+            </value>
+        </member>
+        <member name="M:LightInvest.Models.Roi.RoiCalculator.CalcularROI">
+            <summary>
+            Calculates the Return on Investment (ROI) based on the provided parameters.
+            </summary>
+            <returns>
+            A decimal representing the calculated ROI, which is the ratio of installation cost to annual savings.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            Thrown if any of the required values (CustoInstalacao, RetornoEconomia, ConsumoEnergeticoMedio, or ConsumoEnergeticoRede) are less than or equal to zero.
+            </exception>
+        </member>
+        <member name="T:LightInvest.Models.Roi.RoiCalculatorDashboardViewModel">
+            <summary>
+            Represents the view model for the ROI calculator dashboard, containing the current ROI calculation and the history of previous calculations.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculatorDashboardViewModel.CurrentRoi">
+            <summary>
+            Gets or sets the current ROI calculation.
+            </summary>
+            <value>
+            An instance of the <see cref="T:LightInvest.Models.Roi.RoiCalculator"/> class representing the current ROI calculation.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Roi.RoiCalculatorDashboardViewModel.History">
+            <summary>
+            Gets or sets the history of previous ROI calculations.
+            </summary>
+            <value>
+            A list of <see cref="T:LightInvest.Models.Roi.RoiCalculator"/> instances representing the history of ROI calculations made by the user.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Ener.DificuldadeInstalacao">
+            <summary>
+            Represents the difficulty levels for the installation process of solar panels.
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Ener.DificuldadeInstalacao.Facil">
+            <summary>
+            Represents an easy installation process.
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Ener.DificuldadeInstalacao.Media">
+            <summary>
+            Represents a medium-level difficulty installation process.
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Ener.DificuldadeInstalacao.Dificil">
+            <summary>
+            Represents a difficult installation process.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Models.Ener.DadosInstalacao">
+            <summary>
+            Represents the installation data for a solar panel system, including location, panel model, and installation parameters.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.Id">
+            <summary>
+            Gets or sets the unique identifier for the installation data.
+            </summary>
+            <value>
+            An integer representing the unique identifier for the installation data.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.UserEmail">
+            <summary>
+            Gets or sets the email address of the user requesting the installation.
+            </summary>
+            <value>
+            A string containing the user's email address.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.CidadeId">
+            <summary>
+            Gets or sets the city identifier where the installation will take place.
+            </summary>
+            <value>
+            An integer representing the foreign key to the city.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.Cidade">
+            <summary>
+            Gets or sets the city associated with the installation.
+            </summary>
+            <value>
+            A <see cref="P:LightInvest.Models.Ener.DadosInstalacao.Cidade"/> object representing the city where the installation will occur.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.ModeloPainelId">
+            <summary>
+            Gets or sets the panel model identifier for the installation.
+            </summary>
+            <value>
+            An integer representing the foreign key to the solar panel model.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.ModeloPainel">
+            <summary>
+            Gets or sets the solar panel model associated with the installation.
+            </summary>
+            <value>
+            A <see cref="T:LightInvest.Models.b.ModeloPainelSolar"/> object representing the panel model selected.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.PotenciaId">
+            <summary>
+            Gets or sets the panel power rating identifier.
+            </summary>
+            <value>
+            An integer representing the foreign key to the solar panel power rating.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.Potencia">
+            <summary>
+            Gets or sets the power rating associated with the solar panel.
+            </summary>
+            <value>
+            A <see cref="T:LightInvest.Models.b.PotenciaPainelSolar"/> object representing the power rating of the panel.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.NumeroPaineis">
+            <summary>
+            Gets or sets the number of panels to be installed.
+            </summary>
+            <value>
+            An integer representing the number of panels to be installed.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.Inclinacao">
+            <summary>
+            Gets or sets the tilt angle for the panels.
+            </summary>
+            <value>
+            A decimal representing the tilt angle of the panels in degrees (0 to 90).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.Dificuldade">
+            <summary>
+            Gets or sets the difficulty level for the installation.
+            </summary>
+            <value>
+            A <see cref="T:LightInvest.Models.Ener.DificuldadeInstalacao"/> value representing the difficulty of the installation.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.DadosInstalacao.PrecoInstalacao">
+            <summary>
+            Gets or sets the total price of the installation.
+            </summary>
+            <value>
+            A decimal value representing the total price for the installation.
+            </value>
+        </member>
+        <member name="M:LightInvest.Models.Ener.DadosInstalacao.AtualizarPrecoInstalacao">
+            <summary>
+            Updates the installation price by recalculating it based on the current parameters.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.Ener.DadosInstalacao.CalcularPrecoPorInclinacao">
+            <summary>
+            Calculates the price adjustment factor based on the tilt angle of the panels.
+            </summary>
+            <returns>
+            A decimal value representing the price adjustment factor for the tilt angle.
+            </returns>
+        </member>
+        <member name="M:LightInvest.Models.Ener.DadosInstalacao.CalcularPrecoPorDificuldade">
+            <summary>
+            Calculates the price adjustment factor based on the difficulty of the installation.
+            </summary>
+            <returns>
+            A decimal value representing the price adjustment factor for the installation difficulty.
+            </returns>
+        </member>
+        <member name="M:LightInvest.Models.Ener.DadosInstalacao.CalcularPrecoInstalacao">
+            <summary>
+            Calculates the total installation price based on the selected panel model, power rating, tilt angle, difficulty, and number of panels.
+            </summary>
+            <returns>
+            A decimal value representing the total installation price.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown if the panel model is not loaded correctly.
+            </exception>
+        </member>
+        <member name="T:LightInvest.Models.Ener.SimulacaoCompletaViewModel">
+            <summary>
+            Represents the complete simulation model for energy consumption, tariff selection, and ROI (Return on Investment) calculation.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Ener.SimulacaoCompletaViewModel.EnergyConsumptionViewModel">
+            <summary>
+            Gets or sets the energy consumption data view model.
+            </summary>
+            <value>
+            The energy consumption data view model containing weekly, weekend consumption, and occupancy months.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.SimulacaoCompletaViewModel.TarifaViewModel">
+            <summary>
+            Gets or sets the tariff data view model.
+            </summary>
+            <value>
+            The tariff data view model that contains tariff type and price per kWh.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.SimulacaoCompletaViewModel.ResultadoTarifaViewModel">
+            <summary>
+            Gets or sets the result of the tariff calculation.
+            </summary>
+            <value>
+            The result view model of the tariff calculation, including total consumption and monthly costs.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.SimulacaoCompletaViewModel.DadosInstalacao">
+            <summary>
+            Gets or sets the installation data view model.
+            </summary>
+            <value>
+            The installation data view model, which contains panel installation information.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.SimulacaoCompletaViewModel.ROI">
+            <summary>
+            Gets or sets the ROI calculator dashboard view model.
+            </summary>
+            <value>
+            The view model that contains the Return on Investment calculation data.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Ener.SimulacaoCompletaViewModel.RetornoInvestimentoPorAno">
+            <summary>
+            Gets or sets the list of investment returns per year.
+            </summary>
+            <value>
+            A list of investment returns calculated for each year of the simulation.
+            </value>
+        </member>
+        <member name="M:LightInvest.Models.Ener.SimulacaoCompletaViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightInvest.Models.Ener.SimulacaoCompletaViewModel"/> class.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Models.DadosInstalacaoViewModel">
+            <summary>
+            Represents the view model for installation data, including the city, panel model, power rating, number of panels, tilt angle, and installation difficulty.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.CidadeId">
+            <summary>
+            Gets or sets the city identifier for the installation.
+            </summary>
+            <value>
+            An integer representing the city identifier.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.ModeloPainelId">
+            <summary>
+            Gets or sets the panel model identifier for the installation.
+            </summary>
+            <value>
+            An integer representing the panel model identifier.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.PotenciaId">
+            <summary>
+            Gets or sets the panel power rating identifier.
+            </summary>
+            <value>
+            An integer representing the panel power rating identifier.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.NumeroPaineis">
+            <summary>
+            Gets or sets the number of panels to be installed.
+            </summary>
+            <value>
+            An integer representing the number of panels to be installed, ranging from 1 to 1000.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.Inclinacao">
+            <summary>
+            Gets or sets the tilt angle for the panels.
+            </summary>
+            <value>
+            A decimal representing the tilt angle of the panels in degrees (0 to 90).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.Dificuldade">
+            <summary>
+            Gets or sets the installation difficulty.
+            </summary>
+            <value>
+            A <see cref="T:LightInvest.Models.Ener.DificuldadeInstalacao"/> value representing the difficulty of the installation.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.PrecoInstalacao">
+            <summary>
+            Gets or sets the total installation price.
+            </summary>
+            <value>
+            A decimal representing the total price of the installation.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.Cidades">
+            <summary>
+            Gets or sets the list of cities available for installation.
+            </summary>
+            <value>
+            A list of <see cref="T:LightInvest.Models.b.Cidade"/> objects representing the available cities for installation.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.ModelosDePaineis">
+            <summary>
+            Gets or sets the list of available panel models.
+            </summary>
+            <value>
+            A list of <see cref="T:LightInvest.Models.b.ModeloPainelSolar"/> objects representing the available solar panel models.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.DadosInstalacaoViewModel.Potencias">
+            <summary>
+            Gets or sets the list of available panel power ratings.
+            </summary>
+            <value>
+            A list of <see cref="T:LightInvest.Models.b.PotenciaPainelSolar"/> objects representing the available power ratings for the panels.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.b.Cidade">
+            <summary>
+            Represents a city in the system, with a name and associated installation data.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.b.Cidade.Id">
+            <summary>
+            Gets or sets the unique identifier for the city.
+            </summary>
+            <value>
+            An integer representing the unique identifier of the city.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.b.Cidade.Nome">
+            <summary>
+            Gets or sets the name of the city.
+            </summary>
+            <value>
+            A string representing the name of the city. The maximum length is 100 characters.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.b.Cidade.DadosInstalacoes">
+            <summary>
+            Gets or sets the collection of installation data associated with the city.
+            </summary>
+            <value>
+            A collection of <see cref="T:LightInvest.Models.Ener.DadosInstalacao"/> instances representing installation data related to the city.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.b.ModeloPainelSolar">
+            <summary>
+            Represents a model of a solar panel, including its name, price, and available power ratings.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.b.ModeloPainelSolar.Id">
+            <summary>
+            Gets or sets the unique identifier for the solar panel model.
+            </summary>
+            <value>
+            An integer representing the unique identifier for the solar panel model.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.b.ModeloPainelSolar.ModeloNome">
+            <summary>
+            Gets or sets the name of the solar panel model.
+            </summary>
+            <value>
+            A string representing the name of the solar panel model. The maximum length is 100 characters.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.b.ModeloPainelSolar.Preco">
+            <summary>
+            Gets or sets the price of the solar panel model.
+            </summary>
+            <value>
+            A decimal value representing the price of the solar panel model, with two decimal places.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.b.ModeloPainelSolar.Potencias">
+            <summary>
+            Gets or sets the list of power ratings associated with the solar panel model.
+            </summary>
+            <value>
+            A collection of <see cref="T:LightInvest.Models.b.PotenciaPainelSolar"/> instances representing the power ratings of the solar panel.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.b.PotenciaPainelSolar">
+            <summary>
+            Represents the power rating of a specific solar panel model.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.b.PotenciaPainelSolar.Id">
+            <summary>
+            Gets or sets the unique identifier for the power rating of the solar panel.
+            </summary>
+            <value>
+            An integer representing the unique identifier for the power rating.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.b.PotenciaPainelSolar.Potencia">
+            <summary>
+            Gets or sets the power rating of the solar panel in kilowatts (kW).
+            </summary>
+            <value>
+            A decimal value representing the power rating of the solar panel.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.b.PotenciaPainelSolar.ModeloPainelId">
+            <summary>
+            Gets or sets the identifier for the associated solar panel model.
+            </summary>
+            <value>
+            An integer representing the foreign key to the solar panel model.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.b.PotenciaPainelSolar.ModeloPainelSolar">
+            <summary>
+            Gets or sets the associated solar panel model for this power rating.
+            </summary>
+            <value>
+            A <see cref="P:LightInvest.Models.b.PotenciaPainelSolar.ModeloPainelSolar"/> instance representing the solar panel model.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Simulacao.Energ.EnergyConsumption">
+            <summary>
+            Represents energy consumption data, including daily, weekly, and monthly consumption with the ability to apply discounts and calculate averages.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumption.Id">
+            <summary>
+            Gets or sets the unique identifier for the energy consumption record.
+            </summary>
+            <value>
+            An integer representing the unique identifier.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumption.UserEmail">
+            <summary>
+            Gets or sets the user's email associated with the energy consumption data.
+            </summary>
+            <value>
+            A string representing the user's email.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumption.ConsumoDiaSemana">
+            <summary>
+            Gets or sets the daily energy consumption during the week.
+            </summary>
+            <value>
+            A list of 24 decimal values representing the energy consumption per hour during the weekdays (Monday to Friday).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumption.ConsumoFimSemana">
+            <summary>
+            Gets or sets the daily energy consumption during the weekend.
+            </summary>
+            <value>
+            A list of 24 decimal values representing the energy consumption per hour during the weekends (Saturday and Sunday).
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumption.MesesOcupacao">
+            <summary>
+            Gets or sets the list of months the user occupies the premises.
+            </summary>
+            <value>
+            A list of strings representing the months of the year in which the premises are occupied.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumption.MediaSemana">
+            <summary>
+            Gets or sets the average weekly energy consumption after applying discounts.
+            </summary>
+            <value>
+            A decimal representing the average weekly energy consumption.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumption.MediaFimSemana">
+            <summary>
+            Gets or sets the average weekend energy consumption after applying discounts.
+            </summary>
+            <value>
+            A decimal representing the average weekend energy consumption.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumption.MediaAnual">
+            <summary>
+            Gets or sets the average annual energy consumption.
+            </summary>
+            <value>
+            A decimal representing the average annual energy consumption.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumption.ConsumoTotal">
+            <summary>
+            Gets or sets the total energy consumption for the selected months.
+            </summary>
+            <value>
+            A decimal representing the total energy consumption for the selected months.
+            </value>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Energ.EnergyConsumption.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightInvest.Models.Simulacao.Energ.EnergyConsumption"/> class.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Energ.EnergyConsumption.AplicarDesconto(System.Int32,System.Decimal,System.Boolean)">
+            <summary>
+            Applies a discount to the energy consumption based on the hour of the day and whether it's the weekend.
+            </summary>
+            <param name="hora">The hour of the day (0 to 23).</param>
+            <param name="consumo">The original energy consumption for that hour.</param>
+            <param name="fimDeSemana">A boolean indicating if it is the weekend.</param>
+            <returns>
+            A decimal value representing the adjusted energy consumption after applying the discount.
+            </returns>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Energ.EnergyConsumption.CalcularMedias">
+            <summary>
+            Calculates the average energy consumption for weekdays and weekends.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Energ.EnergyConsumption.CalcularMediaSemana">
+            <summary>
+            Calculates the average energy consumption during weekdays (Monday to Friday) after applying discounts.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Energ.EnergyConsumption.CalcularMediaFimSemana">
+            <summary>
+            Calculates the average energy consumption during weekends (Saturday and Sunday) after applying discounts.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Energ.EnergyConsumption.CalcularConsumoMensal">
+            <summary>
+            Calculates the total monthly energy consumption based on selected months and averages for weekdays and weekends.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Energ.EnergyConsumption.ObterNumeroDeSemanasNoMes(System.String)">
+            <summary>
+            Calculates the number of weeks in a given month.
+            </summary>
+            <param name="mes">The month name in full (e.g., "January", "February").</param>
+            <returns>
+            An integer representing the number of weeks in the given month.
+            </returns>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Energ.EnergyConsumption.MesParaNumero(System.String)">
+            <summary>
+            Converts a month name (e.g., "January") to its corresponding month number (e.g., 1 for January).
+            </summary>
+            <param name="mes">The name of the month in full.</param>
+            <returns>
+            An integer representing the month number (1 for January, 2 for February, etc.).
+            </returns>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Energ.EnergyConsumption.CalcularMediaAnual">
+            <summary>
+            Calculates the average annual energy consumption based on the total consumption and the number of months of occupation.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel">
+            <summary>
+            Represents the view model for energy consumption data input, including daily, weekly, and monthly consumption.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel.ConsumoDiaSemana">
+            <summary>
+            Gets or sets the daily energy consumption during the week (Monday to Friday).
+            </summary>
+            <value>
+            A list of 24 decimal values representing the energy consumption per hour of the day during the weekdays.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel.ConsumoFimSemana">
+            <summary>
+            Gets or sets the daily energy consumption during the weekend (Saturday and Sunday).
+            </summary>
+            <value>
+            A list of 24 decimal values representing the energy consumption per hour of the day during the weekends.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel.MesesOcupacao">
+            <summary>
+            Gets or sets the list of months the user occupies the premises.
+            </summary>
+            <value>
+            A list of strings representing the months of the year in which the premises are occupied.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel.MediaSemana">
+            <summary>
+            Gets or sets the average weekly energy consumption after applying discounts.
+            </summary>
+            <value>
+            A decimal representing the average weekly energy consumption.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel.MediaFimSemana">
+            <summary>
+            Gets or sets the average weekend energy consumption after applying discounts.
+            </summary>
+            <value>
+            A decimal representing the average weekend energy consumption.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel.MediaAnual">
+            <summary>
+            Gets or sets the average annual energy consumption.
+            </summary>
+            <value>
+            A decimal representing the average annual energy consumption.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Energ.EnergyConsumptionViewModel.ConsumoTotal">
+            <summary>
+            Gets or sets the total energy consumption for the selected months.
+            </summary>
+            <value>
+            A decimal representing the total energy consumption for the selected months.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Simulacao.Tarifa.SelecionarTarifaViewModel">
+            <summary>
+            Represents the view model for selecting a tariff in the energy simulation.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.SelecionarTarifaViewModel.TarifaEscolhida">
+            <summary>
+            Gets or sets the selected tariff type.
+            </summary>
+            <value>
+            A string representing the chosen tariff type.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.SelecionarTarifaViewModel.PrecoKwh">
+            <summary>
+            Gets or sets the price per kilowatt-hour (kWh) for the selected tariff.
+            </summary>
+            <value>
+            A decimal representing the price per kWh.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.SelecionarTarifaViewModel.TiposDeTarifa">
+            <summary>
+            Gets the list of available tariff types.
+            </summary>
+            <value>
+            A list of strings representing the different tariff types available, derived from the <see cref="T:LightInvest.Models.Simulacao.Tarifa.TipoTarifa"/> enum.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Simulacao.Tarifa.TipoTarifa">
+            <summary>
+            Defines the available types of energy tariffs.
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.TipoTarifa.Residencial">
+            <summary>
+            Represents the residential tariff type.
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.TipoTarifa.Comercial">
+            <summary>
+            Represents the commercial tariff type.
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.TipoTarifa.Industrial">
+            <summary>
+            Represents the industrial tariff type.
+            </summary>
+        </member>
+        <member name="T:LightInvest.Models.Simulacao.Tarifa.Tarifa">
+            <summary>
+            Represents an energy tariff with a price per kilowatt-hour (kWh) and associated tariff type.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.Tarifa.PrecoKWh">
+            <summary>
+            Gets or sets the price per kilowatt-hour (kWh) for the tariff.
+            </summary>
+            <value>
+            A decimal representing the price per kWh.
+            </value>
+            <exception cref="T:System.ArgumentException">Thrown when the price is less than or equal to zero.</exception>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.Tarifa.Id">
+            <summary>
+            Gets or sets the unique identifier for the tariff.
+            </summary>
+            <value>
+            The tariff's identifier.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.Tarifa.UserEmail">
+            <summary>
+            Gets or sets the email of the user associated with the tariff.
+            </summary>
+            <value>
+            The email address of the user.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.Tarifa.DataAlteracao">
+            <summary>
+            Gets the date when the tariff was last modified.
+            </summary>
+            <value>
+            A <see cref="T:System.DateTime"/> indicating when the tariff was last modified.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.Tarifa.Tipo">
+            <summary>
+            Gets or sets the type of the tariff (e.g., Residential, Commercial, Industrial).
+            </summary>
+            <value>
+            A <see cref="T:LightInvest.Models.Simulacao.Tarifa.TipoTarifa"/> representing the type of the tariff.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.Tarifa.PrecoFinal">
+            <summary>
+            Gets the final price for the tariff, including any extra values based on the tariff type.
+            </summary>
+            <value>
+            A decimal representing the final price per kWh, including extra charges.
+            </value>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Tarifa.Tarifa.ObterValorExtra">
+            <summary>
+            Calculates the extra value to be added to the base price based on the tariff type.
+            </summary>
+            <returns>
+            A decimal representing the additional value based on the tariff type.
+            </returns>
+        </member>
+        <member name="T:LightInvest.Models.Simulacao.Tarifa.TarifaViewModel">
+            <summary>
+            Represents the view model for a tariff, containing the tariff type and price per kWh.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.TarifaViewModel.TipoDeTarifaEscolhida">
+            <summary>
+            Gets or sets the selected tariff type.
+            </summary>
+            <value>
+            The type of the tariff chosen by the user.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.TarifaViewModel.PrecoKWh">
+            <summary>
+            Gets or sets the price per kilowatt-hour (kWh).
+            </summary>
+            <value>
+            The price per kWh.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.TarifaViewModel.TiposDeTarifa">
+            <summary>
+            Gets a list of available tariff types.
+            </summary>
+            <value>
+            A list of tariff types as string representations.
+            </value>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Tarifa.TarifaViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightInvest.Models.Simulacao.Tarifa.TarifaViewModel"/> class.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Tarifa.TarifaViewModel.#ctor(LightInvest.Models.Simulacao.Tarifa.Tarifa)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightInvest.Models.Simulacao.Tarifa.TarifaViewModel"/> class with the specified tariff.
+            </summary>
+            <param name="tarifa">The tariff object to initialize the view model with.</param>
+        </member>
+        <member name="T:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel">
+            <summary>
+            Represents the result of a tariff calculation, including total consumption and monthly costs.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel.ConsumoTotal">
+            <summary>
+            Gets or sets the total energy consumption.
+            </summary>
+            <value>
+            A decimal representing the total energy consumption.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel.ConsumoMensal">
+            <summary>
+            Gets or sets the monthly energy consumption details.
+            </summary>
+            <value>
+            A list of <see cref="T:LightInvest.Models.Simulacao.Tarifa.MesConsumo"/> representing monthly energy consumption and costs.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel.ValorAnual">
+            <summary>
+            Gets or sets the total annual cost based on the consumption.
+            </summary>
+            <value>
+            A decimal representing the total annual cost.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel.TarifaEscolhida">
+            <summary>
+            Gets or sets the chosen tariff type as a string.
+            </summary>
+            <value>
+            A string representing the selected tariff type.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel.PrecoKwh">
+            <summary>
+            Gets or sets the price per kilowatt-hour (kWh) for the selected tariff.
+            </summary>
+            <value>
+            The price per kWh.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel.MesesOcupacao">
+            <summary>
+            Gets or sets the list of months for which the user selected occupation.
+            </summary>
+            <value>
+            A list of strings representing the selected months.
+            </value>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel"/> class.
+            </summary>
+        </member>
+        <member name="M:LightInvest.Models.Simulacao.Tarifa.ResultadoTarifaViewModel.AtualizarPrecoKwh(LightInvest.Models.Simulacao.Tarifa.TipoTarifa,System.Decimal)">
+            <summary>
+            Updates the price per kWh based on the selected tariff type and base price.
+            </summary>
+            <param name="tipoTarifa">The selected tariff type.</param>
+            <param name="precoBase">The base price per kWh.</param>
+        </member>
+        <member name="T:LightInvest.Models.Simulacao.Tarifa.MesConsumo">
+            <summary>
+            Represents monthly consumption details, including the month, consumption, and cost.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.MesConsumo.Mes">
+            <summary>
+            Gets or sets the month name.
+            </summary>
+            <value>
+            A string representing the month.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.MesConsumo.Consumo">
+            <summary>
+            Gets or sets the energy consumption for the month.
+            </summary>
+            <value>
+            A decimal representing the energy consumption.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Simulacao.Tarifa.MesConsumo.Custo">
+            <summary>
+            Gets or sets the total cost for the energy consumption in the month.
+            </summary>
+            <value>
+            A decimal representing the cost of consumption.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Simulacao.Tarifa.Meses">
+            <summary>
+            Represents the months of the year.
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Janeiro">
+            <summary>
+            January
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Fevereiro">
+            <summary>
+            February
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Março">
+            <summary>
+            March
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Abril">
+            <summary>
+            April
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Maio">
+            <summary>
+            May
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Junho">
+            <summary>
+            June
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Julho">
+            <summary>
+            July
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Agosto">
+            <summary>
+            August
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Setembro">
+            <summary>
+            September
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Outubro">
+            <summary>
+            October
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Novembro">
+            <summary>
+            November
+            </summary>
+        </member>
+        <member name="F:LightInvest.Models.Simulacao.Tarifa.Meses.Dezembro">
+            <summary>
+            December
+            </summary>
+        </member>
+        <member name="T:LightInvest.Models.Utilizador.Login.EditUserViewModel">
+            <summary>
+            Represents the view model for editing user information.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.EditUserViewModel.Id">
+            <summary>
+            Gets or sets the unique identifier for the user.
+            </summary>
+            <value>
+            The identifier of the user.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.EditUserViewModel.Name">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>
+            The name of the user.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.EditUserViewModel.Email">
+            <summary>
+            Gets or sets the email address of the user.
+            </summary>
+            <value>
+            The email address of the user.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Utilizador.Login.LoginViewModel">
+            <summary>
+            Represents the view model for user login, containing the user's email and password.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.LoginViewModel.Email">
+            <summary>
+            Gets or sets the email address of the user.
+            </summary>
+            <value>
+            The email address of the user.
+            </value>
+            <example>user@example.com</example>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.LoginViewModel.Password">
+            <summary>
+            Gets or sets the password of the user.
+            </summary>
+            <value>
+            The password for the user account.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Utilizador.Login.User">
+            <summary>
+            Represents a user in the system with basic authentication information and roles.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.User.Id">
+            <summary>
+            Gets or sets the unique identifier for the user.
+            </summary>
+            <value>
+            The unique identifier for the user.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.User.Name">
+            <summary>
+            Gets or sets the name of the user.
+            </summary>
+            <value>
+            The name of the user.
+            </value>
+            <example>John Doe</example>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.User.Email">
+            <summary>
+            Gets or sets the email address of the user.
+            </summary>
+            <value>
+            The email address of the user.
+            </value>
+            <example>user@example.com</example>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.User.Password">
+            <summary>
+            Gets or sets the password of the user.
+            </summary>
+            <value>
+            The password for the user account.
+            </value>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Login.User.IsAdmin">
+            <summary>
+            Gets or sets a value indicating whether the user has administrative privileges.
+            </summary>
+            <value>
+            <c>true</c> if the user is an administrator; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:LightInvest.Models.Utilizador.Pass.ForgotPasswordViewModel">
+            <summary>
+            View model for handling the forgot password request.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Pass.ForgotPasswordViewModel.Email">
+            <summary>
+            Gets or sets the email address of the user requesting a password reset.
+            </summary>
+            <value>
+            The email address associated with the user's account.
+            </value>
+            <example>user@example.com</example>
+        </member>
+        <member name="T:LightInvest.Models.Utilizador.Pass.PasswordResetToken">
+            <summary>
+            Represents a token for resetting a user's password.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Pass.PasswordResetToken.Id">
+            <summary>
+            Gets or sets the unique identifier for the password reset token.
+            </summary>
+            <value>
+            The identifier of the password reset token.
+            </value>
+            <example>1</example>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Pass.PasswordResetToken.Email">
+            <summary>
+            Gets or sets the email address associated with the user requesting the password reset.
+            </summary>
+            <value>
+            The email address of the user.
+            </value>
+            <example>user@example.com</example>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Pass.PasswordResetToken.Token">
+            <summary>
+            Gets or sets the token used to verify the password reset request.
+            </summary>
+            <value>
+            The unique token string.
+            </value>
+            <example>abcdef123456</example>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Pass.PasswordResetToken.Expiration">
+            <summary>
+            Gets or sets the expiration date and time of the reset token.
+            </summary>
+            <value>
+            The date and time when the token expires.
+            </value>
+            <example>2025-03-29T12:00:00</example>
+        </member>
+        <member name="T:LightInvest.Models.Utilizador.Register.RegisterViewModel">
+            <summary>
+            Represents the model used for user registration in the system.
+            </summary>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Register.RegisterViewModel.Name">
+            <summary>
+            Gets or sets the user's name.
+            </summary>
+            <value>
+            A string representing the name of the user.
+            </value>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">Thrown if the name is empty or exceeds 100 characters.</exception>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Register.RegisterViewModel.Email">
+            <summary>
+            Gets or sets the user's email address.
+            </summary>
+            <value>
+            A string representing the email of the user.
+            </value>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">Thrown if the email is empty or invalid.</exception>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Register.RegisterViewModel.Password">
+            <summary>
+            Gets or sets the user's password.
+            </summary>
+            <value>
+            A string representing the user's password.
+            </value>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">Thrown if the password is empty or doesn't meet the required criteria.</exception>
+        </member>
+        <member name="P:LightInvest.Models.Utilizador.Register.RegisterViewModel.ConfirmPassword">
+            <summary>
+            Gets or sets the confirmation of the user's password.
+            </summary>
+            <value>
+            A string representing the confirmation of the password.
+            </value>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">Thrown if the confirmation password doesn't match the original password.</exception>
+        </member>
+        <member name="T:YourNamespace.SplashScreenController">
+            <summary>
+            The SplashScreenController handles the splash screen view for the application.
+            </summary>
+        </member>
+        <member name="M:YourNamespace.SplashScreenController.SplashScreen">
+            <summary>
+            Displays the splash screen view.
+            </summary>
+            <returns>Returns the view for the splash screen.</returns>
+        </member>
+        <member name="M:ROICalculatorController.#ctor(LightInvest.Models.BD.ApplicationDbContext)">
+            <summary>
+            Initializes the ROICalculatorController with the provided database context.
+            </summary>
+            <param name="context">The database context for accessing application data.</param>
+        </member>
+        <member name="M:ROICalculatorController.Index">
+            <summary>
+            Displays the ROI calculator page. If the user has existing ROI calculation data, it is loaded.
+            </summary>
+            <returns>The view for ROI calculation.</returns>
+        </member>
+        <member name="M:ROICalculatorController.GetLoggedInUserAsync">
+            <summary>
+            Retrieves the currently logged-in user based on the session data.
+            </summary>
+            <returns>The logged-in user if found; otherwise, null.</returns>
+        </member>
+        <member name="M:ROICalculatorController.Calcular(LightInvest.Models.Roi.RoiCalculator)">
+            <summary>
+            Calculates the ROI based on user input and displays the results.
+            </summary>
+            <param name="model">The ROI calculation model containing the user's data.</param>
+            <returns>The view with the calculated ROI and financial details.</returns>
+        </member>
+        <member name="M:ROICalculatorController.Grafico">
+            <summary>
+            Displays a graph of historical ROI calculations for the user.
+            </summary>
+            <returns>The view for displaying the ROI graph.</returns>
+        </member>
+        <member name="T:ResetPasswordViewModel">
+            <summary>
+            Represents the model used to reset a user's password.
+            </summary>
+        </member>
+        <member name="P:ResetPasswordViewModel.Email">
+            <summary>
+            Gets or sets the email address of the user requesting the password reset.
+            </summary>
+            <value>
+            The email address of the user.
+            </value>
+            <example>user@example.com</example>
+        </member>
+        <member name="P:ResetPasswordViewModel.Token">
+            <summary>
+            Gets or sets the token used to verify the password reset request.
+            </summary>
+            <value>
+            The token string for the password reset.
+            </value>
+            <example>abcdef123456</example>
+        </member>
+        <member name="P:ResetPasswordViewModel.NewPassword">
+            <summary>
+            Gets or sets the new password that the user wishes to set.
+            </summary>
+            <value>
+            The new password entered by the user.
+            </value>
+            <example>newSecurePassword123</example>
+        </member>
+        <member name="P:ResetPasswordViewModel.ConfirmPassword">
+            <summary>
+            Gets or sets the confirmation password to ensure the new password is correct.
+            </summary>
+            <value>
+            The confirmation password entered by the user.
+            </value>
+            <example>newSecurePassword123</example>
+        </member>
+        <member name="T:ValidateTokenViewModel">
+            <summary>
+            Represents the model used to validate a password reset token.
+            </summary>
+        </member>
+        <member name="P:ValidateTokenViewModel.Email">
+            <summary>
+            Gets or sets the email address of the user requesting token validation.
+            </summary>
+            <value>
+            The email address of the user whose token is being validated.
+            </value>
+            <example>user@example.com</example>
+        </member>
+        <member name="P:ValidateTokenViewModel.Token">
+            <summary>
+            Gets or sets the token to validate the password reset request.
+            </summary>
+            <value>
+            The token used for password reset validation.
+            </value>
+            <example>abcdef123456</example>
+        </member>
+        <member name="T:ValidPasswordAttribute">
+            <summary>
+            Custom validation attribute that ensures a password meets the required criteria:
+            - At least 8 characters long
+            - Contains at least 2 digits
+            - Contains at least 1 uppercase letter
+            </summary>
+        </member>
+        <member name="M:ValidPasswordAttribute.IsValid(System.Object)">
+            <summary>
+            Validates whether the password meets the specified criteria.
+            </summary>
+            <param name="value">The value to validate (password).</param>
+            <returns>Returns true if the password meets all requirements, otherwise false.</returns>
+        </member>
+        <member name="M:ValidPasswordAttribute.FormatErrorMessage(System.String)">
+            <summary>
+            Provides the error message that will be displayed when the password validation fails.
+            </summary>
+            <param name="name">The name of the property being validated (usually the password field).</param>
+            <returns>A string containing the error message.</returns>
+        </member>
+    </members>
+</doc>
