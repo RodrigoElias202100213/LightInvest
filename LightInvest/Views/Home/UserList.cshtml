@@ -12,7 +12,12 @@
 <body>
 
     <div class="container">
-        <h2>Lista de Utilizadores</h2>
+        <div class="header">
+            <h2>Lista de Utilizadores</h2>
+            <a href="@Url.Action("Index", "Home")" class="btn-anterior">
+                <img src="~/images/anterior.png" alt="Voltar" id="anterior" />
+            </a>
+        </div>
 
         @foreach (var user in Model)
         {
@@ -43,8 +48,13 @@
             padding: 20px;
         }
 
+        .header{
+            display:flex;
+            justify-content: space-between;
+        }
+
         h2 {
-            text-align:center;
+            margin-top:5%;
             font-size: 2.5rem;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #065A66;
@@ -53,6 +63,10 @@
             border-bottom: 2px solid #065A66;
             display: inline-block;
             padding-bottom: 5px;
+        }
+
+        #anterior{
+            transform: scale(0.1);
         }
 
         .user-item {
