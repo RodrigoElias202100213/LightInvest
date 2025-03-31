@@ -25,12 +25,28 @@
       "PackagePath": "staticwebassets\\images\\arrow_up.png"
     },
     {
+      "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\artigo.png",
+      "PackagePath": "staticwebassets\\images\\artigo.png"
+    },
+    {
+      "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\artigos.png",
+      "PackagePath": "staticwebassets\\images\\artigos.png"
+    },
+    {
       "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\education.png",
       "PackagePath": "staticwebassets\\images\\education.png"
     },
     {
       "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\energia-solar.jpg",
       "PackagePath": "staticwebassets\\images\\energia-solar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\image.png",
+      "PackagePath": "staticwebassets\\images\\image.png"
+    },
+    {
+      "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\image2.png",
+      "PackagePath": "staticwebassets\\images\\image2.png"
     },
     {
       "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\logo.png",
@@ -43,6 +59,10 @@
     {
       "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\logout.png",
       "PackagePath": "staticwebassets\\images\\logout.png"
+    },
+    {
+      "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\manual_utilizador.png",
+      "PackagePath": "staticwebassets\\images\\manual_utilizador.png"
     },
     {
       "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\images\\roi.png",
