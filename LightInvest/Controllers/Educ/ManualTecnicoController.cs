@@ -1,25 +1,24 @@
 ﻿/*
- * O ManualTecnicoController é responsável pela gestão da página do manual técnico.
- * Ele contém uma única ação que exibe a página do manual técnico.
+ * O ManualTecnicoController é responsável por gerir a página do manual técnico.
+ * Contém uma única ação que exibe a página correspondente.
  */
 
 using Microsoft.AspNetCore.Mvc;
 
 namespace LightInvest.Controllers.Educ
 {
-	/// <summary>
-	/// The ManualTecnicoController handles the technical manual page.
-	/// </summary>
-	public class ManualTecnicoController : Controller
-	{
-		/// <summary>
-		/// Displays the technical manual page.
-		/// </summary>
-		/// <returns>Returns the view for the technical manual page.</returns>
-		[HttpGet("manual-tecnico")]
-		public IActionResult Index()
-		{
-			return View();
-		}
-	}
+    /// <summary>
+    /// Controlador responsável por exibir a página do manual técnico.
+    /// </summary>
+    public class ManualTecnicoController : Controller
+    {
+        /// <summary>
+        /// Exibe a página do manual técnico.
+        /// </summary>
+        /// <returns>Retorna a view correspondente à página do manual técnico.</returns>
+        public IActionResult Index()
+        {
+            return View();
+        }
+    }
 }
