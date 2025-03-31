@@ -2,7 +2,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using LightInvest;
 using LightInvest.Models;
 using LightInvest.Models.BD;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -12,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Xunit;
 
-namespace LightInvest.Tests
+namespace LightInvestTest
 {
 	public class AccountControllerThirdPartyIntegrationTests : IClassFixture<WebApplicationFactory<Program>>
 	{
@@ -45,7 +44,7 @@ namespace LightInvest.Tests
 					var emailServiceMock = new Mock<IEmailService>();
 					emailServiceMock.Setup(x => x.SendEmailAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
 						.ReturnsAsync(true);
-					services.AddSingleton<IEmailService>(emailServiceMock.Object);
+					services.AddSingleton(emailServiceMock.Object);
 				});
 			});
 		}
@@ -64,7 +63,7 @@ namespace LightInvest.Tests
 					var emailServiceMock = new Mock<IEmailService>();
 					emailServiceMock.Setup(x => x.SendEmailAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
 						.ReturnsAsync(true);
-					services.AddSingleton<IEmailService>(emailServiceMock.Object);
+					services.AddSingleton(emailServiceMock.Object);
 				});
 			});
 
@@ -79,7 +78,7 @@ namespace LightInvest.Tests
 
 			var response = await client.PostAsync($"/Account/Enviaremail?toAddress={toAddress}&subject={subject}&body={body}", null);
 
-			Assert.Equal(System.Net.HttpStatusCode.Redirect, response.StatusCode);
+			Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
 			Assert.Contains("/Home/Index", response.Headers.Location.ToString());
 		}
 
@@ -99,7 +98,7 @@ namespace LightInvest.Tests
 					var emailServiceMock = new Mock<IEmailService>();
 					emailServiceMock.Setup(x => x.SendEmailAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
 						.ReturnsAsync(false);
-					services.AddSingleton<IEmailService>(emailServiceMock.Object);
+					services.AddSingleton(emailServiceMock.Object);
 				});
 			});
 
@@ -114,7 +113,7 @@ namespace LightInvest.Tests
 
 			var response = await client.PostAsync($"/Account/Enviaremail?toAddress={toAddress}&subject={subject}&body={body}", null);
 
-			Assert.Equal(System.Net.HttpStatusCode.Redirect, response.StatusCode);
+			Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
 			Assert.Contains("/Home/Index", response.Headers.Location.ToString());
 		}
 

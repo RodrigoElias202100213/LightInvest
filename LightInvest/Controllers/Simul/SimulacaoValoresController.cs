@@ -147,7 +147,7 @@ namespace LightInvest.Controllers.Simul
 
 			decimal potenciaPainel = dadosInstalacao.Potencia.Potencia;
 			int numeroPaineis = dadosInstalacao.NumeroPaineis;
-			decimal horasSolDiarias = 5m;
+			decimal horasSolDiarias = 10m;
 			decimal diasNoMes = 30m;
 			decimal energiaGeradaMensal = potenciaPainel * numeroPaineis * horasSolDiarias * diasNoMes / 1000;
 			decimal economiaMensal = energiaGeradaMensal * tarifaForVM.PrecoKWh;
@@ -155,7 +155,7 @@ namespace LightInvest.Controllers.Simul
 			decimal economiaAnual = economiaMensal * mesesOcupados;
 
 			decimal custoInstalacao = dadosInstalacao.PrecoInstalacao;
-			decimal custoManutencaoAnual = 500m;
+			decimal custoManutencaoAnual = 50m;
 			decimal roiValue = custoInstalacao / (economiaAnual - custoManutencaoAnual);
 
 
@@ -164,7 +164,7 @@ namespace LightInvest.Controllers.Simul
 				UserEmail = userEmail,
 				CustoInstalacao = custoInstalacao,
 				CustoManutencaoAnual = custoManutencaoAnual,
-				ConsumoEnergeticoMedio = consumo.ConsumoTotal / 12,
+				ConsumoEnergeticoMedio = consumo.ConsumoTotal / energiaGeradaMensal*12,
 				ConsumoEnergeticoRede = consumo.ConsumoTotal,
 				RetornoEconomia = economiaAnual,
 				ROI = roiValue,

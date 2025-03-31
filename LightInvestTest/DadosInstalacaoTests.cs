@@ -3,7 +3,7 @@ using LightInvest.Models.b;
 using LightInvest.Models.Ener;
 using Xunit;
 
-namespace LightInvest.Tests
+namespace LightInvestTest
 {
 	public class DadosInstalacaoTests
 	{

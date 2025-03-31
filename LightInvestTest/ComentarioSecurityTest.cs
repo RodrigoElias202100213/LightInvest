@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
-namespace LightInvest.Tests
+namespace LightInvestTest
 {
     
     public class FakeSession : ISession
