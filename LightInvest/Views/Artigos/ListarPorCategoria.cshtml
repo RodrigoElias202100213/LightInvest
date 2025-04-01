@@ -4,34 +4,108 @@
     ViewData["Title"] = "Artigos - " + ViewBag.Categoria;
 }
 
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="display-4 mb-4">Artigos sobre @ViewBag.Categoria</h1>
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Artigos sobre @ViewBag.Categoria</h2>
+            <a asp-controller="Artigos" asp-action="Index" class="btn-anterior">
+                <img src="~/images/anterior.png" alt="Voltar" id="anterior" />
+            </a>
+        </div>
 
-            @if (Model.Any())
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var artigo in Model)
             {
-                <div class="list-group">
-                    @foreach (var artigo in Model)
-                    {
-                        <div class="list-group-item mb-3 shadow-sm border-0 rounded">
-                            <h5 class="mb-2">@artigo.Titulo</h5>
-                            <p class="text-muted">@artigo.DescricaoCurta</p>
-                            <a asp-controller="Artigos" asp-action="Detalhes" asp-route-id="@artigo.ArtigoId" class="btn btn-primary btn-lg">
-                                📖 Ler Mais
-                            </a>
-                        </div>
-                    }
+                <div class="article-item">
+                    <div class="article-content">
+                        <h5 class="title">@artigo.Titulo</h5>
+                        <p class="text">@artigo.DescricaoCurta</p>
+                        <a asp-controller="Artigos" asp-action="Detalhes" asp-route-id="@artigo.ArtigoId" class="btn btn-primary">
+                            Ler Mais
+                        </a>
+                    </div>
                 </div>
             }
-            else
-            {
-                <p class="text-muted">Ainda não há artigos disponíveis para este tema.</p>
-            }
-
-            <div class="mt-4">
-                <a asp-controller="Artigos" asp-action="Index" class="btn btn-outline-dark btn-lg">⬅ Voltar</a>
-            </div>
-        </div>
+        }
+        else
+        {
+            <p class="text">Ainda não há artigos disponíveis para este tema.</p>
+        }
     </div>
-</div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        h2 {
+            margin-top: 5%;
+            font-size: 2.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #065A66;
+            font-weight: bold;
+            margin-bottom: 7%;
+            border-bottom: 2px solid #065A66;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        #anterior {
+            transform: scale(0.1);
+        }
+
+        .article-item {
+            background-color: #f0f0f0;
+            border-left: 5px solid #065A66;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        .article-item:hover {
+            background-color: #e0e0e0;
+        }
+
+        .article-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn {
+            background-color: #065A66;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.4s ease;
+            align-self: flex-start;
+        }
+
+        .btn:hover {
+            background-color: #456D73;
+            color: white;
+        }
+    </style>
+</body>
+</html>

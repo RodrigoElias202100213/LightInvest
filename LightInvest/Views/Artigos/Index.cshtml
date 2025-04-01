@@ -2,34 +2,196 @@
     ViewData["Title"] = "Artigos";
 }
 
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="display-4 mb-4">Artigos Educativos</h1>
-            <p class="lead mb-4">Escolha um tema e descubra conteúdos incríveis!</p>
+<div class="home-container">
+    <nav class="nav">
+        <img src="~/images/logo.png" alt="LightInvest Logo" class="logo" />
 
-            <div class="d-grid gap-3 col-10 col-sm-8 col-md-6 mx-auto">
-                <!-- Botões de categorias -->
-                <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Energia Renovável" class="btn btn-primary btn-lg py-3">
-                    🌱 Energia Renovável
-                </a>
-                <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Painéis Solares" class="btn btn-secondary btn-lg py-3">
-                    🔆 Princípios de Painéis Solares
-                </a>
-                <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="ROI" class="btn btn-success btn-lg py-3">
-                    💰 Cálculo de ROI
-                </a>
-                <a asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Eficiência Energética" class="btn btn-warning btn-lg py-3">
-                    ⚡ Eficiência Energética
-                </a>
-            </div>
-
-            <!-- Botão de Voltar -->
-            <div class="mt-4">
-                <a asp-controller="EducacaoEnergetica" asp-action="Index" class="btn btn-outline-dark btn-lg">
-                    ⬅ Voltar
-                </a>
-            </div>
+        <div class="user-section">
+            <a href="@Url.Action("Index", "Home")" class="btn-index"> Página Inicial </a>
+            <a href="@Url.Action("Index", "EducacaoEnergetica")" class="btn-educ"> Educação Energética </a>
+            <a href="@Url.Action("Login", "Account")" class="btn-logout">
+                <img src="~/images/logout.png" alt="Logout" class="logout" />
+            </a>
         </div>
-    </div>
+    </nav>
+
+    <h2>Artigos Educativos</h2>
+    <section class="container">
+        <div class="box">
+            <img src="~/images/artigos.png" alt="Energia Renovavél">
+            <h3>Energia Renovável</h3>
+            <p>Descubra tudo sobre fontes de energia sustentáveis.</p>
+            <form asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Energia Renovável">
+                <button type="submit" class="arrow-btn">
+                    <img src="~/images/arrow.png" alt="Seta" class="arrow">
+                </button>
+            </form>
+        </div>
+        <div class="box">
+            <img src="~/images/artigos.png" alt="Paineis Solares">
+            <h3>Princípios de Painéis Solares</h3>
+            <p>Aprenda como funcionam os painéis solares e a sua eficiência.</p>
+            <form asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Painéis Solares">
+                <button type="submit" class="arrow-btn">
+                    <img src="~/images/arrow.png" alt="Seta" class="arrow">
+                </button>
+            </form>
+        </div>
+        <div class="box">
+            <img src="~/images/artigos.png" alt="Cálculo do Roi">
+            <h3>Cálculo do ROI</h3>
+            <p>Saiba como calcular o retorno sobre o investimento energético.</p>
+            <form asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="ROI">
+                <button type="submit" class="arrow-btn">
+                    <img src="~/images/arrow.png" alt="Seta" class="arrow">
+                </button>
+            </form>
+        </div>
+        <div class="box">
+            <img src="~/images/artigos.png" alt="Eficiência Energética">
+            <h3>Eficiência Energética</h3>
+            <p>Descubra formas de otimizar o consumo de energia.</p>
+            <form asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Eficiência Energética">
+                <button type="submit" class="arrow-btn">
+                    <img src="~/images/arrow.png" alt="Seta" class="arrow">
+                </button>
+            </form>
+        </div>
+    </section>
 </div>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .home-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 20px;
+        background-color: #065A66;
+    }
+
+    .logo {
+        height: 80px;
+    }
+
+    .user-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .btn-index, .btn-index:hover, .btn-educ, .btn-educ:hover {
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .btn-logout img {
+        height: 25px;
+        cursor: pointer;
+    }
+
+    h2 {
+        margin-top: 5%;
+        margin-bottom: 5%;
+        font-size: 2.3rem;
+        color: black;
+        font-family: 'Alkatra', cursive;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        padding: 30px 10px;
+        margin-left: 40px;
+        margin-right:40px;
+    }
+
+    .box {
+        position: relative;
+        width: 300px;
+        height: 290px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        background-color: #D4E0E0;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        border: solid 1px black;
+        cursor: pointer;
+    }
+
+    .box:hover {
+        transform: translateY(-8px);
+    }
+
+    .box img {
+        max-width: 100%;
+        max-height: 50px;
+        object-fit: contain;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .box h3 {
+        margin-top: 0;
+        font-size: 22px;
+        margin-bottom: 12px;
+        font-family: 'Salsa', cursive;
+        color: black;
+    }
+
+    .box p {
+        font-size: 16px;
+        color: black;
+        margin-bottom: 2%;
+    }
+
+    .arrow {
+        position: relative;
+        z-index: 1;
+        margin-top: 0;
+        cursor: pointer;
+        transform: scale(0.3);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 25px;
+    }
+
+    .box button {
+        all: unset;
+        display: inline-block;
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 35%;
+    }
+</style>
