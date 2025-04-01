@@ -270,7 +270,7 @@ Investir em sistemas de energia solar é uma escolha inteligente tanto do ponto 
 
 			ImagemUrl = "~/images/energia-solar.jpg",
 			Categoria = "Energia Renovável",
-			DescricaoCurta = "Entenda os benefícios da energia solar para sua residência ou empresa.",
+			DescricaoCurta = "Entenda os benefícios da energia solar para a sua residência ou empresa.",
 			DataPublicacao = new DateTime(2025, 2, 15)
 		},
 		new Artigo

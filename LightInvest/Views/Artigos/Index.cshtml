@@ -7,6 +7,13 @@
         <img src="~/images/logo.png" alt="LightInvest Logo" class="logo" />
 
         <div class="user-section">
+            <p id="username">@ViewBag.UserName</p>
+            @if (ViewBag.IsAdmin != null && ViewBag.IsAdmin == true)
+            {
+                <div class="btn-admin">
+                    <a href="@Url.Action("UserList", "Home")" class="admin">Painel de Controlo</a>
+                </div>
+            }
             <a href="@Url.Action("Index", "Home")" class="btn-index"> Página Inicial </a>
             <a href="@Url.Action("Index", "EducacaoEnergetica")" class="btn-educ"> Educação Energética </a>
             <a href="@Url.Action("Login", "Account")" class="btn-logout">
@@ -18,7 +25,7 @@
     <h2>Artigos Educativos</h2>
     <section class="container">
         <div class="box">
-            <img src="~/images/artigos.png" alt="Energia Renovavél">
+            <img src="~/images/energia_renovavel.png" alt="Energia Renovavél">
             <h3>Energia Renovável</h3>
             <p>Descubra tudo sobre fontes de energia sustentáveis.</p>
             <form asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Energia Renovável">
@@ -28,7 +35,7 @@
             </form>
         </div>
         <div class="box">
-            <img src="~/images/artigos.png" alt="Paineis Solares">
+            <img src="~/images/simulation.png" alt="Paineis Solares">
             <h3>Princípios de Painéis Solares</h3>
             <p>Aprenda como funcionam os painéis solares e a sua eficiência.</p>
             <form asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Painéis Solares">
@@ -38,7 +45,7 @@
             </form>
         </div>
         <div class="box">
-            <img src="~/images/artigos.png" alt="Cálculo do Roi">
+            <img src="~/images/calculo_roi.png" alt="Cálculo do Roi">
             <h3>Cálculo do ROI</h3>
             <p>Saiba como calcular o retorno sobre o investimento energético.</p>
             <form asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="ROI">
@@ -48,7 +55,7 @@
             </form>
         </div>
         <div class="box">
-            <img src="~/images/artigos.png" alt="Eficiência Energética">
+            <img src="~/images/eficiencia_energetica.png" alt="Eficiência Energética">
             <h3>Eficiência Energética</h3>
             <p>Descubra formas de otimizar o consumo de energia.</p>
             <form asp-controller="Artigos" asp-action="ListarPorCategoria" asp-route-categoria="Eficiência Energética">

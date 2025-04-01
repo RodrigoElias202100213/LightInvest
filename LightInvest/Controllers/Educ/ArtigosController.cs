@@ -26,6 +26,17 @@ namespace LightInvest.Controllers.Educ
 
         public IActionResult Index()
         {
+            var userName = HttpContext.Session.GetString("UserName");
+            var isAdmin = HttpContext.Session.GetString("IsAdmin");
+
+            if (string.IsNullOrEmpty(userName))
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            ViewBag.UserName = userName;
+            ViewBag.IsAdmin = isAdmin == "True";
+
             return View();
         }
 

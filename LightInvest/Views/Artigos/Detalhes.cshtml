@@ -102,7 +102,6 @@
                             <div class="d-flex">
                                 @if (comentario.UserId == ViewBag.UtilizadorLogadoId)
                                 {
-                                    <!-- O usuário pode editar e remover seu próprio comentário -->
                                     <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-warning btn-sm me-2">Editar</a>
 
                                     <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
@@ -114,7 +113,6 @@
                                 }
                                 else if (ViewBag.IsAdmin != null && (bool)ViewBag.IsAdmin)
                                 {
-                                    <!-- O administrador pode remover qualquer comentário -->
                                     <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
                                         @Html.AntiForgeryToken()
                                         <input type="hidden" name="comentarioId" value="@comentario.Id" />
@@ -170,7 +168,6 @@
 }
 
             <style>
-    /* Estilo geral para melhor estruturação */
     .container {
         max-width: 900px;
     }
@@ -188,9 +185,6 @@
         margin-bottom: 20px;
     }
 
-    
-
-    /* Estruturando as notícias sobre energia solar */
     .row .col-md-4 {
         display: flex;
         justify-content: center;
@@ -228,7 +222,6 @@
         min-height: 50px;
     }
 
-    /* Comentários estilizados */
     .list-group {
         max-height: 400px;
         overflow-y: auto;

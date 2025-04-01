@@ -33,12 +33,24 @@
       "PackagePath": "staticwebassets\\images\\artigos.png"
     },
     {
+      "Id": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\calculo_roi.png",
+      "PackagePath": "staticwebassets\\images\\calculo_roi.png"
+    },
+    {
       "Id": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\education.png",
       "PackagePath": "staticwebassets\\images\\education.png"
     },
     {
+      "Id": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\eficiencia_energetica.png",
+      "PackagePath": "staticwebassets\\images\\eficiencia_energetica.png"
+    },
+    {
       "Id": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\energia-solar.png",
       "PackagePath": "staticwebassets\\images\\energia-solar.png"
+    },
+    {
+      "Id": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\energia_renovavel.png",
+      "PackagePath": "staticwebassets\\images\\energia_renovavel.png"
     },
     {
       "Id": "C:\\Users\\verag\\OneDrive - Instituto Politécnico de Setúbal\\Documentos\\IPS\\3 ano\\PV\\LightInvest\\LightInvest\\wwwroot\\images\\image.png",
