@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LightInvest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("8.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("8.0.0+10793ff2c1704cd90dddf19d95afe7896faca25a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("8.0.0+cd9931bfa53ec2c3f6dce001316487924d0254ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("LightInvest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LightInvest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("8.0.0.0")]

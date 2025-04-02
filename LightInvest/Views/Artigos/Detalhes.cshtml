@@ -10,143 +10,117 @@
 
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-8 mx-auto">
-            <h1 class="display-4 text-center">@Model.Titulo</h1>
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <p class="text-muted">Publicado em: <strong>@Model.DataPublicacao.ToString("dd/MM/yyyy")</strong></p>
-                <a href="@Url.Action("ListarPorCategoria", "Artigos", new { categoria = Model.Categoria })" class="btn btn-outline-primary btn-sm">Voltar à categoria</a>
+        <div class="container-header">
+            <div class="header">
+                <h2 class="title">@Model.Titulo</h2>
+                <a href="@Url.Action("ListarPorCategorias", "Artigos")" class="btn-anterior">
+                    <img src="~/images/anterior.png" alt="Voltar" id="anterior" />
+                </a>
             </div>
+             <p class="text-muted">Publicado em: <strong>@Model.DataPublicacao.ToString("dd/MM/yyyy")</strong></p>
+        </div>
 
-            <div class="card mb-4 text-center">
-                @if (!string.IsNullOrEmpty(Model.ImagemUrl))
+        <div class="content">
+            <div class="lead">@Html.Raw(ViewBag.ConteudoHtml)</div> 
+        </div>
+
+
+        <div class="mt-5">
+            <h4 class="text-muted">Artigos Relacionados</h4>
+            <div class="row">
+                @if (ViewBag.NoticiasRelacionadas != null && ViewBag.NoticiasRelacionadas.Count > 0)
                 {
-                    <img src="@Model.ImagemUrl" alt="Imagem do Artigo" class="rounded" style="max-width: 30vw; height: auto; display: block; margin: 0 auto;">
+                    @foreach (var noticia in ViewBag.NoticiasRelacionadas)
+                    {
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                @if (!string.IsNullOrEmpty(noticia.Image))
+                                {
+                                    <img src="@noticia.Image" alt="Notícia Relacionada" class="card-img-top">
+                                }
+                                <div class="card-body">
+                                    <h5 class="card-title">@noticia.Title</h5>
+                                    <p class="card-text">@noticia.Description</p>
+                                    <a href="@noticia.Url" target="_blank" class="btn btn-secondary">Leia mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-muted">Nenhuma notícia encontrada sobre energia solar.</p>
                 }
             </div>
+        </div>
+        <br />
+        <hr />
+        <br />
 
-            <div class="content">
-                <div class="lead">@Html.Raw(ViewBag.ConteudoHtml)</div> 
-            </div>
+        <div class="mt-5">
+            <h4 class="text-muted">Comentários</h4>
 
-            <div class="mt-5">
-                <h4 class="text-muted">Artigos Relacionados</h4>
-                <div class="row">
-                    @if (Model.ArtigosRelacionados != null && Model.ArtigosRelacionados.Any())
-                    {
-                        @foreach (var artigoRelacionado in Model.ArtigosRelacionados)
-                        {
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    @if (!string.IsNullOrEmpty(artigoRelacionado.ImagemUrl))
-                                    {
-                                        <img src="@artigoRelacionado.ImagemUrl" alt="Imagem Relacionada" class="card-img-top">
-                                    }
-                                    <div class="card-body">
-                                        <h5 class="card-title">@artigoRelacionado.Titulo</h5>
-                                        <p class="card-text">@artigoRelacionado.DescricaoCurta</p>
-                                        <a href="@Url.Action("Detalhes", "Artigos", new { id = artigoRelacionado.ArtigoId })" class="btn btn-primary">Leia mais</a>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    }
-                    else
-                    {
-                        <p class="text-muted">Não há artigos relacionados no momento.</p>
-                    }
-                </div>
-            </div>
-
-            <div class="mt-5">
-                <h4 class="text-muted">Notícias sobre Energia Solar</h4>
-                <div class="row">
-                    @if (ViewBag.NoticiasRelacionadas != null && ViewBag.NoticiasRelacionadas.Count > 0)
-                    {
-                        @foreach (var noticia in ViewBag.NoticiasRelacionadas)
-                        {
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    @if (!string.IsNullOrEmpty(noticia.Image))
-                                    {
-                                        <img src="@noticia.Image" alt="Notícia Relacionada" class="card-img-top">
-                                    }
-                                    <div class="card-body">
-                                        <h5 class="card-title">@noticia.Title</h5>
-                                        <p class="card-text">@noticia.Description</p>
-                                        <a href="@noticia.Url" target="_blank" class="btn btn-secondary">Leia mais</a>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    }
-                    else
-                    {
-                        <p class="text-muted">Nenhuma notícia encontrada sobre energia solar.</p>
-                    }
-                </div>
-            </div>
-
-            <div class="mt-5">
-                <h4 class="text-muted">Comentários</h4>
-
-                <ul class="list-group">
-                    @foreach (var comentario in Model.Comentarios)
-                    {
-                        <li class="list-group-item d-flex justify-content-between align-items-center comment-item">
-                            <div>
-                                <strong>@comentario.Autor</strong>
-                                <p>@Html.Raw(Markdown.ToHtml(comentario.Texto))</p>
+            <ul class="list-group">
+                @foreach (var comentario in Model.Comentarios)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center comment-item">
+                        <div>
+                            <strong>@comentario.Autor</strong>
                                 <small>@comentario.DataCriacao.ToString("dd/MM/yyyy HH:mm")</small>
-                            </div>
+                            <p>@Html.Raw(Markdown.ToHtml(comentario.Texto))</p>
+                                
+                                <button class="btn btn-light btn-sm me-2" title="Gostei">
+                                    <i class="fas fa-thumbs-up"></i>
+                                </button>
+                                <button class="btn btn-light btn-sm me-3" title="Não gostei">
+                                    <i class="fas fa-thumbs-down"></i>
+                                </button>
+                        </div>
 
-                            <div class="d-flex">
-                                @if (comentario.UserId == ViewBag.UtilizadorLogadoId)
-                                {
-                                    <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-warning btn-sm me-2">Editar</a>
+                        <div class="d-flex">
+                            @if (comentario.UserId == ViewBag.UtilizadorLogadoId)
+                            {
+                                <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-warning btn-sm me-2">Editar</a>
 
-                                    <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
-                                        @Html.AntiForgeryToken()
-                                        <input type="hidden" name="comentarioId" value="@comentario.Id" />
-                                        <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
-                                        <button type="submit" class="btn btn-danger btn-sm">Remover</button>
-                                    </form>
-                                }
-                                else if (ViewBag.IsAdmin != null && (bool)ViewBag.IsAdmin)
-                                {
-                                    <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
-                                        @Html.AntiForgeryToken()
-                                        <input type="hidden" name="comentarioId" value="@comentario.Id" />
-                                        <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
-                                        <button type="submit" class="btn btn-danger btn-sm">Remover</button>
-                                    </form>
-                                }
-                            </div>
-                        </li>
-                    }
-                </ul>
+                                <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="comentarioId" value="@comentario.Id" />
+                                    <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
+                                    <button type="submit" class="btn btn-danger btn-sm">Remover</button>
+                                </form>
+                            }
+                            else if (ViewBag.IsAdmin != null && (bool)ViewBag.IsAdmin)
+                            {
+                                <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="comentarioId" value="@comentario.Id" />
+                                    <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
+                                    <button type="submit" class="btn btn-danger btn-sm">Remover</button>
+                                </form>
+                            }
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
 
+        <div class="mt-5">
+            <h4 class="text-muted">Adicionar Comentário</h4>
+            <form asp-action="AdicionarComentario" method="post">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
 
+                <div class="form-group">
+                    <label for="texto">Comentário:</label>
+                    <textarea name="texto" id="texto" class="form-control" required></textarea>
+                </div>
 
-            </div>
+                <button type="submit" class="btn btn-primary">Adicionar Comentário</button>
+            </form>
+        </div>
 
-            <div class="mt-5">
-                <h4 class="text-muted">Adicionar Comentário</h4>
-                <form asp-action="AdicionarComentario" method="post">
-                    @Html.AntiForgeryToken()
-                    <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
-
-                    <div class="form-group">
-                        <label for="texto">Comentário:</label>
-                        <textarea name="texto" id="texto" class="form-control" required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Adicionar Comentário</button>
-                </form>
-            </div>
-
-            <div class="mt-5 text-center">
-                <a href="@Url.Action("Index", "EducacaoEnergetica")" class="btn btn-outline-dark">Voltar à Página Inicial</a>
-            </div>
+        <div class="mt-5 text-center">
+            <a href="@Url.Action("Index", "EducacaoEnergetica")" class="btn btn-outline-dark">Voltar à Página Inicial</a>
         </div>
     </div>
 </div>
@@ -165,101 +139,139 @@
             });
         });
     </script>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".comment-item .btn").forEach(function(button) {
+                button.addEventListener("click", function() {
+                    if (this.title === "Gostei") {
+                        this.classList.toggle("btn-success");
+                        this.classList.toggle("btn-light");
+                        this.nextElementSibling.classList.remove("btn-danger");
+                        this.nextElementSibling.classList.add("btn-light");
+                    } else if (this.title === "Não gostei") {
+                        this.classList.toggle("btn-danger");
+                        this.classList.toggle("btn-light");
+                        this.previousElementSibling.classList.remove("btn-success");
+                        this.previousElementSibling.classList.add("btn-light");
+                    }
+                });
+            });
+        });
+    </script>
+
 }
 
-            <style>
-    .container {
-        max-width: 900px;
+<style>
+
+     .header{
+            display:flex;
+            justify-content: space-between;
+        }
+
+        h2 {
+            margin-top:5%;
+            font-size: 2.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #065A66;
+            font-weight: bold;
+            margin-bottom: 7%;
+            border-bottom: 2px solid #065A66;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        #anterior{
+            transform: scale(0.1);
+        }
+
+    body {
+        background-color: #f4f4f4;
+        color: #333;
+        font-family: Arial, sans-serif;
     }
 
-    .card img {
-        max-width: 30%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
+    .container {
+        max-width: 900px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     h1.display-4 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: bold;
-        margin-bottom: 20px;
+        color: #065A66;
+        text-align: center;
     }
 
-    .row .col-md-4 {
-        display: flex;
-        justify-content: center;
+    .btn-primary {
+        background-color: #065A66;
+        border-color: #065A66;
+    }
+
+    .btn-outline-primary {
+        border-color: #065A66;
+        color: #065A66;
     }
 
     .card {
-        border-radius: 12px;
+        border-radius: 8px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+        background-color: #fff;
     }
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+    .card:hover {
+        transform: translateY(-3px);
+    }
 
-    .card-body {
-        text-align: center;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .card-title {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #333;
     }
 
     .card-text {
-        font-size: 14px;
-        color: #555;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        min-height: 50px;
-    }
-
-    .list-group {
-        max-height: 400px;
-        overflow-y: auto;
-        border-radius: 10px;
-        padding: 10px;
-        background: #f8f9fa;
+        font-size: 0.9rem;
+        color: #666;
     }
 
     .comment-item {
-        background: white;
+        background: #f8f9fa;
+        border-left: 5px solid #065A66;
         border-radius: 8px;
-        padding: 8px;
-        margin-bottom: 8px;
-        border: 2px solid #007bff;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
-        font-size: 14px;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-        .comment-item strong {
-            color: #007bff;
-            font-size: 14px;
-        }
+    .comment-item strong {
+        color: #065A66;
+    }
 
-        .comment-item p {
-            font-size: 13px;
-            margin-bottom: 5px;
-            color: #333;
-        }
+    .comment-item p {
+        font-size: 0.9rem;
+        color: #333;
+    }
 
-        .comment-item small {
-            color: gray;
-            display: block;
-            font-size: 12px;
-        }
+   
 
-        .comment-item .btn {
-            font-size: 11px;
-            padding: 3px 6px;
-        }
+    .btn-sm {
+        font-size: 0.8rem;
+    }
 
-            </style>
+    .btn-light {
+        color: #333;
+        border: 1px solid #ccc;
+    }
+
+    .btn-success {
+        background-color: green;
+    }
+
+    .btn-danger {
+        background-color: #d9534f;
+    }
+</style>

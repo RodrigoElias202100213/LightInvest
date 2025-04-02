@@ -17,5 +17,13 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-    <a href="@Url.Action("Detalhes", "Artigos", new { id = Model.ArtigoId })" class="btn btn-secondary">Cancelar</a>
+    <a href="@Url.Action("Detalhes", "Artigos", new { id = Model.ArtigoId })" class="btn">Cancelar</a>
 </form>
+
+<style>
+
+    .btn, .btn:hover {
+        background-color: #065A66;
+        color:white;
+    }
+</style>
