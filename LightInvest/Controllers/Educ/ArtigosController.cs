@@ -24,6 +24,12 @@ namespace LightInvest.Controllers.Educ
 			_mediaStackService = mediaStackService;
 		}
 
+		/// <summary>
+		/// Displays the default articles page with session information for logged-in users.
+		/// </summary>
+		/// <returns>
+		/// Redirects to the login page if the user is not logged in; otherwise, returns the view displaying articles.
+		/// </returns>
 		public IActionResult Index()
 		{
 			var userName = HttpContext.Session.GetString("UserName");
@@ -40,6 +46,13 @@ namespace LightInvest.Controllers.Educ
 			return View();
 		}
 
+		/// <summary>
+		/// Lists articles filtered by a specified category.
+		/// </summary>
+		/// <param name="categoria">The category name used to filter articles.</param>
+		/// <returns>
+		/// Returns a view displaying the list of articles in the specified category.
+		/// </returns>
 		public IActionResult ListarPorCategoria(string categoria)
 		{
 			var artigos = _context.Artigos.Where(a => a.Categoria == categoria).ToList();
@@ -47,11 +60,20 @@ namespace LightInvest.Controllers.Educ
 			return View(artigos);
 		}
 
+
+		/// <summary>
+		/// Displays the details of a specific article, including its comments and related articles.
+		/// </summary>
+		/// <param name="id">The ID of the article to be displayed.</param>
+		/// <returns>
+		/// Returns the article details view, including its content and related articles. 
+		/// If the article is not found, it returns a 404 not found response.
+		/// </returns>
 		public async Task<IActionResult> Detalhes(int id)
 		{
 			var artigo = await _context.Artigos
 				.Include(a => a.Comentarios)
-				.ThenInclude(c => c.Likes) // Inclui os Likes relacionados ao comentário
+				.ThenInclude(c => c.Likes)
 				.Include(a => a.ArtigosRelacionados)
 				.FirstOrDefaultAsync(a => a.ArtigoId == id);
 
@@ -65,7 +87,6 @@ namespace LightInvest.Controllers.Educ
 			{
 				foreach (var comentario in artigo.Comentarios)
 				{
-					// Verificar se o usuário logado curtiu ou descurtiu algum comentário
 					var like = comentario.Likes.FirstOrDefault(l => l.UserId == utilizadorLogado.Id && l.IsLike);
 					var dislike = comentario.Likes.FirstOrDefault(l => l.UserId == utilizadorLogado.Id && !l.IsLike);
 
@@ -93,6 +114,14 @@ namespace LightInvest.Controllers.Educ
 			return View(artigo);
 		}
 
+
+
+		/// <summary>
+		/// Retrieves the logged-in user based on the session's email.
+		/// </summary>
+		/// <returns>
+		/// Returns the user object if logged in, otherwise returns null.
+		/// </returns>
 		private async Task<User> GetLoggedInUserAsync()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -101,6 +130,17 @@ namespace LightInvest.Controllers.Educ
 				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 		}
 
+
+
+		/// <summary>
+		/// Adds a new comment to an article.
+		/// </summary>
+		/// <param name="artigoId">The ID of the article to which the comment is being added.</param>
+		/// <param name="texto">The text content of the comment.</param>
+		/// <returns>
+		/// Redirects to the article details page after adding the comment. 
+		/// If the user is not logged in, it redirects them to the login page.
+		/// </returns>
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> AdicionarComentario(int artigoId, string texto)
@@ -131,6 +171,18 @@ namespace LightInvest.Controllers.Educ
 			return RedirectToAction("Detalhes", new { id = artigoId });
 		}
 
+
+
+
+		/// <summary>
+		/// Removes a comment from an article.
+		/// </summary>
+		/// <param name="comentarioId">The ID of the comment to be removed.</param>
+		/// <param name="artigoId">The ID of the article from which the comment is being removed.</param>
+		/// <returns>
+		/// Redirects to the article details page after removing the comment. 
+		/// If the user does not have permission, it returns an unauthorized response.
+		/// </returns>
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> RemoverComentario(int comentarioId, int artigoId)
@@ -155,6 +207,17 @@ namespace LightInvest.Controllers.Educ
 			return RedirectToAction("Detalhes", new { id = artigoId });
 		}
 
+
+
+		/// <summary>
+		/// Displays the view for editing a comment.
+		/// </summary>
+		/// <param name="comentarioId">The ID of the comment to be edited.</param>
+		/// <param name="artigoId">The ID of the article to which the comment belongs.</param>
+		/// <returns>
+		/// Returns the comment edit view if the user has permission to edit the comment.
+		/// If the comment is not found, it returns a not found response.
+		/// </returns>
 		public async Task<IActionResult> EditarComentario(int comentarioId, int artigoId)
 		{
 			var comentario = await _context.Comentario.FirstOrDefaultAsync(c => c.Id == comentarioId);
@@ -172,6 +235,18 @@ namespace LightInvest.Controllers.Educ
 			return View(comentario);
 		}
 
+
+
+		/// <summary>
+		/// Edits an existing comment.
+		/// </summary>
+		/// <param name="comentarioId">The ID of the comment to be edited.</param>
+		/// <param name="artigoId">The ID of the article to which the comment belongs.</param>
+		/// <param name="texto">The updated text of the comment.</param>
+		/// <returns>
+		/// Redirects to the article details page after successfully updating the comment.
+		/// If the comment is not found, it returns a not found response.
+		/// </returns>
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> EditarComentario(int comentarioId, int artigoId, string texto)
@@ -197,6 +272,14 @@ namespace LightInvest.Controllers.Educ
 			return RedirectToAction("Detalhes", new { id = artigoId });
 		}
 
+		/// <summary>
+		/// Likes a specific comment.
+		/// </summary>
+		/// <param name="comentarioId">The ID of the comment to be liked.</param>
+		/// <returns>
+		/// Returns a JSON object with success status. 
+		/// If the comment is not found, it returns a not found response.
+		/// </returns>
 		[HttpPost]
 		public async Task<IActionResult> CurtirComentario(int comentarioId)
 		{
@@ -209,25 +292,20 @@ namespace LightInvest.Controllers.Educ
 				return NotFound();
 			}
 
-			// Obter o usuário logado
 			var utilizadorLogado = await GetLoggedInUserAsync();
 
-			// Verificar se o usuário já tem um "like" ou "dislike" para este comentário
 			var existingLike = comentario.Likes.FirstOrDefault(l => l.UserId == utilizadorLogado.Id);
 
-			// Se o usuário já deu "dislike", removemos o "dislike" e damos o "like"
 			if (existingLike != null)
 			{
-				// Se o "like" foi dado previamente, remove ele.
 				_context.ComentarioLike.Remove(existingLike);
 			}
 
-			// Adicionar o "like" (IsLike = true)
 			comentario.Likes.Add(new ComentarioLike
 			{
 				ComentarioId = comentarioId,
 				UserId = utilizadorLogado.Id,
-				IsLike = true  // Marcar como "like"
+				IsLike = true
 			});
 
 			await _context.SaveChangesAsync();
@@ -235,6 +313,16 @@ namespace LightInvest.Controllers.Educ
 			return Json(new { success = true });
 		}
 
+
+
+		/// <summary>
+		/// Removes the like or dislike from a comment.
+		/// </summary>
+		/// <param name="comentarioId">The ID of the comment from which the like/dislike is being removed.</param>
+		/// <returns>
+		/// Returns a JSON object with success status. 
+		/// If the comment is not found, it returns a not found response.
+		/// </returns>
 		[HttpPost]
 		public async Task<IActionResult> RemoverCurtirComentario(int comentarioId)
 		{
@@ -247,24 +335,20 @@ namespace LightInvest.Controllers.Educ
 				return NotFound();
 			}
 
-			// Obter o usuário logado
 			var utilizadorLogado = await GetLoggedInUserAsync();
 
-			// Verificar se o usuário já deu "like" ou "dislike" para este comentário
 			var existingLike = comentario.Likes.FirstOrDefault(l => l.UserId == utilizadorLogado.Id);
 
 			if (existingLike != null)
 			{
-				// Se o "like" já foi dado, removemos ele
 				_context.ComentarioLike.Remove(existingLike);
 			}
 
-			// Adicionar o "dislike" (IsLike = false)
 			comentario.Likes.Add(new ComentarioLike
 			{
 				ComentarioId = comentarioId,
 				UserId = utilizadorLogado.Id,
-				IsLike = false  // Marcar como "dislike"
+				IsLike = false
 			});
 
 			await _context.SaveChangesAsync();

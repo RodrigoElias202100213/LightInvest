@@ -74,9 +74,17 @@ namespace LightInvest.Models.BD
 		public DbSet<Artigo> Artigos { get; set; }
 
 
+		/// <summary>
+		/// Gets or sets the <see cref="ComentarioLike"/> entities in the database.
+		/// </summary>
 		public DbSet<ComentarioLike> ComentarioLike { get; set; }
 
+		/// <summary>
+		/// Gets or sets the <see cref="Comentario"/> entities in the database.
+		/// </summary>
 		public DbSet<Comentario> Comentario { get; set; }
+
+
 
 		/// <summary>
 		/// Configures the model and relationships in the database context.
@@ -147,14 +155,34 @@ namespace LightInvest.Models.BD
 
 			);
 
-			modelBuilder.Entity<User>().HasData(new User
-			{
-				Id = 1,
-				Name = "Rodrigo",
-				Email = "rodrigo.elias2003@gmail.com",
-				Password = "rodrigoR123",
-				IsAdmin = true
-			});
+			modelBuilder.Entity<User>().HasData(
+	new User
+	{
+		Id = 1,
+		Name = "Rodrigo",
+		Email = "rodrigo.elias2003@gmail.com",
+		Password = "rodrigoR123",
+		IsAdmin = true
+	},
+	new User
+	{
+		Id = 2,
+		Name = "Vera",
+		Email = "veragfernandes04@gmail.com",
+		Password = "Vera1234",
+		IsAdmin = true
+	},
+	new User
+	{
+		Id = 3,
+		Name = "LightInvest ",
+		Email = "ligthinvestuser@gmail.com",
+		Password = "LightInvest123",
+		IsAdmin = false
+	}
+
+);
+
 
 
 
@@ -172,33 +200,27 @@ namespace LightInvest.Models.BD
 			);
 
 
-			// Potencia para cada painel solar
 			modelBuilder.Entity<PotenciaPainelSolar>().HasData(
-				// Para o ModeloNome Aiko - Comet 2U
 				new PotenciaPainelSolar { Id = 1, Potencia = 670, ModeloPainelId = 1 },
 				new PotenciaPainelSolar { Id = 2, Potencia = 680, ModeloPainelId = 1 },
 				new PotenciaPainelSolar { Id = 3, Potencia = 690, ModeloPainelId = 1 },
 				new PotenciaPainelSolar { Id = 4, Potencia = 700, ModeloPainelId = 1 },
 
-				// Para o ModeloNome Maxeon 7
 				new PotenciaPainelSolar { Id = 5, Potencia = 445, ModeloPainelId = 2 },
 				new PotenciaPainelSolar { Id = 6, Potencia = 455, ModeloPainelId = 2 },
 				new PotenciaPainelSolar { Id = 7, Potencia = 465, ModeloPainelId = 2 },
 				new PotenciaPainelSolar { Id = 8, Potencia = 475, ModeloPainelId = 2 },
 
-				// Para o ModeloNome Longi - HI-MO X6
 				new PotenciaPainelSolar { Id = 9, Potencia = 600, ModeloPainelId = 3 },
 				new PotenciaPainelSolar { Id = 10, Potencia = 610, ModeloPainelId = 3 },
 				new PotenciaPainelSolar { Id = 11, Potencia = 620, ModeloPainelId = 3 },
 				new PotenciaPainelSolar { Id = 12, Potencia = 630, ModeloPainelId = 3 },
 
-				// Para o ModeloNome Huasun - Himalaya
 				new PotenciaPainelSolar { Id = 13, Potencia = 720, ModeloPainelId = 4 },
 				new PotenciaPainelSolar { Id = 14, Potencia = 730, ModeloPainelId = 4 },
 				new PotenciaPainelSolar { Id = 15, Potencia = 740, ModeloPainelId = 4 },
 				new PotenciaPainelSolar { Id = 16, Potencia = 750, ModeloPainelId = 4 },
 
-				// Para o ModeloNome TW Solar
 				new PotenciaPainelSolar { Id = 17, Potencia = 715, ModeloPainelId = 5 },
 				new PotenciaPainelSolar { Id = 18, Potencia = 725, ModeloPainelId = 5 },
 				new PotenciaPainelSolar { Id = 19, Potencia = 735, ModeloPainelId = 5 },
@@ -209,31 +231,26 @@ namespace LightInvest.Models.BD
 				new PotenciaPainelSolar { Id = 23, Potencia = 610, ModeloPainelId = 5 },
 				new PotenciaPainelSolar { Id = 24, Potencia = 620, ModeloPainelId = 5 },
 
-				// Para o ModeloNome JA Solar DeepBlue 4.0 Pro
 				new PotenciaPainelSolar { Id = 25, Potencia = 595, ModeloPainelId = 6 },
 				new PotenciaPainelSolar { Id = 26, Potencia = 605, ModeloPainelId = 6 },
 				new PotenciaPainelSolar { Id = 27, Potencia = 615, ModeloPainelId = 6 },
 				new PotenciaPainelSolar { Id = 28, Potencia = 625, ModeloPainelId = 6 },
 
-				// Para o ModeloNome Astroenergy - Astro N5
 				new PotenciaPainelSolar { Id = 29, Potencia = 640, ModeloPainelId = 7 },
 				new PotenciaPainelSolar { Id = 30, Potencia = 650, ModeloPainelId = 7 },
 				new PotenciaPainelSolar { Id = 31, Potencia = 660, ModeloPainelId = 7 },
 				new PotenciaPainelSolar { Id = 32, Potencia = 670, ModeloPainelId = 7 },
 
-				// Para o ModeloNome Grand Sunergy
 				new PotenciaPainelSolar { Id = 33, Potencia = 710, ModeloPainelId = 8 },
 				new PotenciaPainelSolar { Id = 34, Potencia = 720, ModeloPainelId = 8 },
 				new PotenciaPainelSolar { Id = 35, Potencia = 730, ModeloPainelId = 8 },
 				new PotenciaPainelSolar { Id = 36, Potencia = 740, ModeloPainelId = 8 },
 
-				// Para o ModeloNome DMEGC - Infinity RT
 				new PotenciaPainelSolar { Id = 37, Potencia = 615, ModeloPainelId = 9 },
 				new PotenciaPainelSolar { Id = 38, Potencia = 625, ModeloPainelId = 9 },
 				new PotenciaPainelSolar { Id = 39, Potencia = 635, ModeloPainelId = 9 },
 				new PotenciaPainelSolar { Id = 40, Potencia = 645, ModeloPainelId = 9 },
 
-				// Para o ModeloNome Spic
 				new PotenciaPainelSolar { Id = 41, Potencia = 410, ModeloPainelId = 10 },
 				new PotenciaPainelSolar { Id = 42, Potencia = 420, ModeloPainelId = 10 },
 				new PotenciaPainelSolar { Id = 43, Potencia = 430, ModeloPainelId = 10 },
@@ -298,7 +315,7 @@ Isso significa que, em média, terá um retorno de 15% do valor investido a cada
 ### Conclusão
 O cálculo do ROI ajuda a determinar se o investimento em energia solar vale a pena. Com os dados certos, consegue analisar e avaliar a viabilidade financeira e o tempo de retorno do seu investimento em energia solar.",
 
-			ImagemUrl = "/images/artigos/calcular-roi.jpg", // ainda não encontrei uma: por fazer
+			ImagemUrl = "/images/artigos/calcular-roi.jpg",
 			Categoria = "ROI",
 			DescricaoCurta = "Aprenda a calcular o ROI de um sistema fotovoltaico e entenda se o investimento vale a pena.",
 			DataPublicacao = new DateTime(2022, 2, 15)
@@ -322,7 +339,7 @@ Planear e instalar um sistema de energia solar requer um processo detalhado e be
 
 ### Conclusão
 A instalação de sistemas solares é um processo técnico que exige um planeamento cuidadoso. Um bom planeamento e a escolha de profissionais qualificados podem garantir que o sistema solar seja eficiente e tenha uma vida útil longa.",
-			ImagemUrl = "/images/artigos/planeamento-solar.jpg", // ainda não encontrei uma: por fazer
+			ImagemUrl = "/images/artigos/planeamento-solar.jpg",
             Categoria = "Painéis Solares",
 			DescricaoCurta = "Dicas essenciais para planear e instalar um sistema de energia solar de forma eficiente.",
 			DataPublicacao = new DateTime(2024, 2, 15)
@@ -357,8 +374,6 @@ A instalação de sistemas solares é um processo técnico que exige um planeame
 		UserId = 1 
 	}
 );
-
-
 		}
 	}
 

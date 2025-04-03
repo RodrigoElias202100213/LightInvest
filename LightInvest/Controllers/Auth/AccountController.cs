@@ -4,7 +4,6 @@
  * Este controlador uso o serviço de email para envio de notificações de recuperação da password e de outros eventos.
  * 
  */
-
 using LightInvest.Models.BD;
 using LightInvest.Models.Email;
 using LightInvest.Models.Utilizador.Login;

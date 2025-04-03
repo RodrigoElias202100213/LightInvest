@@ -16,7 +16,6 @@
             </a>
         </div>
 
-        <!-- Seções de Texto -->
         <div id="secao1" class="section">
             <div class="content">
                 <h3>Sobre o LightInvest</h3>
@@ -90,7 +89,6 @@
             </div>
         </div>
 
-        <!-- Botões para alternar as seções -->
         <button id="btnAvancar" class="btn btn-primary" onclick="alternarSecao('next')">Avançar</button>
         <button id="btnVoltar" class="btn btn-secondary" onclick="alternarSecao('prev')" style="display:none;">Voltar</button>
 
@@ -102,9 +100,7 @@
     <script>
         var secaoAtual = 1;
 
-        // Função para alternar entre as seções
         function alternarSecao(direcao) {
-            // Ocultar a seção atual
             document.getElementById('secao' + secaoAtual).style.display = 'none';
 
             if (direcao === 'next') {
@@ -113,16 +109,11 @@
                 secaoAtual--;
             }
 
-            // Verifica se a seção existe
             if (document.getElementById('secao' + secaoAtual)) {
-                // Exibe a próxima seção
                 document.getElementById('secao' + secaoAtual).style.display = 'block';
-                // Rolando para o topo da página
                 window.scrollTo({ top: 0, behavior: "smooth" });
 
-                // Mostrar ou esconder o botão de Voltar
                 document.getElementById('btnVoltar').style.display = secaoAtual > 1 ? 'inline-block' : 'none';
-                // Mostrar ou esconder o botão de Avançar
                 document.getElementById('btnAvancar').style.display = document.getElementById('secao' + (secaoAtual + 1)) ? 'inline-block' : 'none';
             }
         }
@@ -224,7 +215,6 @@
                 background: #04474F;
             }
 
-        /* Estilos dos botões */
         .btn {
             margin: 10px 0;
         }

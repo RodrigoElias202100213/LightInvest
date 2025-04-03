@@ -3,9 +3,7 @@
  * Este controller é responsável por mostrar o splash screen no inicio da utilização da plataforma
  * 
  */
-
 using Microsoft.AspNetCore.Mvc;
-
 namespace YourNamespace
 {
 	/// <summary>

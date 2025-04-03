@@ -3,7 +3,6 @@
  *  gerir administradores, listagem de utilizadores e manipulação de erros.
  * 
  */
-
 using LightInvest.Models;
 using LightInvest.Models.BD;
 using LightInvest.Models.Error;

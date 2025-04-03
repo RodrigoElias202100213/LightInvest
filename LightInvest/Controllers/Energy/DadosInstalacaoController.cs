@@ -3,8 +3,6 @@
  * Ele permite a criação de dados de instalação, cálculo de preço de instalação, confirmação do preço, e a visualização dos dados da instalação.
  * Também lida com a autenticação do utilizador e com salvar e atualizar os dados na base de dados.
  */
-
-
 using LightInvest.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

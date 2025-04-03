@@ -38,11 +38,9 @@
                                 .Select(cm => cm.Custo)
                                 .ToList();
 
-    // Dados para gráfico comparativo de consumo (Semana vs Fim de Semana)
     var consumoComparativoLabels = new string[] { "Média Semana", "Média Fim de Semana" };
     var consumoComparativoValues = new decimal[] { Model.EnergyConsumptionViewModel.MediaSemana, Model.EnergyConsumptionViewModel.MediaFimSemana };
 
-    // Cálculos adicionais utilizando dados de instalação:
     var potenciaPainel = Model.DadosInstalacao.Potencia.Potencia;
     var numeroPaineis = Model.DadosInstalacao.NumeroPaineis;
     var energiaGeradaMensal = (potenciaPainel * numeroPaineis * 5m * 30m) / 1000m;
@@ -63,7 +61,6 @@
     <div class="content">
         <h2>Simulação Completa</h2>
 
-        <!-- Seção: Consumo de Energia -->
         <section class="section">
             <h3>1. Consumo de Energia</h3>
             <div class="info-box">
@@ -84,7 +81,6 @@
             </div>
         </section>
 
-        <!-- Seção: Tarifa -->
         <section class="section">
             <h3>2. Tarifa</h3>
             <div class="info-box">
@@ -93,7 +89,6 @@
             </div>
         </section>
 
-        <!-- Seção: Detalhamento Mensal -->
         <section class="section">
             <h3>3. Detalhamento Mensal (Consumo e Custo)</h3>
             <table class="table">
@@ -120,7 +115,6 @@
             </div>
         </section>
 
-        <!-- Seção: Dados de Instalação -->
         <section class="section">
             <h3>4. Dados de Instalação</h3>
             <div class="row">
@@ -138,7 +132,6 @@
             </div>
         </section>
 
-        <!-- Seção: Retorno do Investimento (ROI) -->
         <section class="section">
             <h3>5. Retorno do Investimento (ROI)</h3>
             <div class="info-box">
@@ -146,13 +139,11 @@
                 <p><strong>Economia Anual Estimada:</strong> € @Model.ROI.CurrentRoi.RetornoEconomia.ToString("N2")</p>
                 <p><strong>Tempo de Retorno Estimado:</strong> @Model.ROI.CurrentRoi.ROI.ToString("N1") anos</p>
             </div>
-            <!-- Novo Gráfico: Evolução da Dívida (ROI ao longo do tempo) -->
             <div class="chart-container">
                 <canvas id="roiDebtChart" width="800" height="400"></canvas>
             </div>
         </section>
 
-        <!-- Gráfico: Histórico do ROI -->
         <section class="section">
             <h3 class="text-center">Histórico do ROI</h3>
             <div class="chart-container text-center">
@@ -160,7 +151,6 @@
             </div>
         </section>
 
-        <!-- Gráfico: Evolução do Saldo Acumulado -->
         <section class="section">
             <h3 class="text-center">Evolução do Saldo Acumulado</h3>
             <div class="chart-container text-center">
@@ -168,7 +158,6 @@
             </div>
         </section>
 
-        <!-- Seção: Informações Adicionais -->
         <section class="section">
             <h3>8. Informações Adicionais</h3>
             <div class="info-box">
@@ -183,7 +172,6 @@
             </div>
         </section>
 
-        <!-- Botões de Exportação e Navegação -->
         <div id="btn-container">
             <a href="@Url.Action("ExportPDF", "SimulacaoValores")" class="btn-pdf">Exportar PDF</a>
             <a href="@Url.Action("ExportCSV", "SimulacaoValores")" class="btn-csv">Exportar CSV</a>
@@ -195,7 +183,6 @@
     </div>
 </div>
 
-<!-- Exibir informações detalhadas dos gráficos -->
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -220,7 +207,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // Gráfico Comparativo: Consumo Semana vs Fim de Semana (Doughnut)
         var ctxComparativo = document.getElementById('consumoComparativoChart').getContext('2d');
         new Chart(ctxComparativo, {
             type: 'doughnut',
@@ -240,7 +226,6 @@
             }
         });
 
-        // Gráfico: Detalhamento Mensal (Consumo e Custo)
         var ctxDetalhamento = document.getElementById('detalhamentoMensalChart').getContext('2d');
         new Chart(ctxDetalhamento, {
             type: 'bar',
@@ -284,7 +269,6 @@
             }
         });
 
-        // Gráfico: Histórico do ROI
         var ctxRoi = document.getElementById('roiChart').getContext('2d');
         new Chart(ctxRoi, {
             type: 'line',
@@ -309,7 +293,6 @@
             }
         });
 
-        // Novo Gráfico: Evolução da Dívida (ROI ao longo do tempo)
         var ctxRoiDebt = document.getElementById('roiDebtChart').getContext('2d');
         new Chart(ctxRoiDebt, {
             type: 'line',
@@ -346,7 +329,6 @@
             }
         });
 
-        // Gráfico: Evolução do Saldo Acumulado
         var ctxSaldo = document.getElementById('saldoChart').getContext('2d');
         new Chart(ctxSaldo, {
             type: 'line',
@@ -371,7 +353,6 @@
             }
         });
 
-        // Gráfico: Energia Gerada Mensal vs Média de Consumo Mensal
         var ctxEnergiaVsConsumo = document.getElementById('energiaVsConsumoChart').getContext('2d');
         new Chart(ctxEnergiaVsConsumo, {
             type: 'bar',

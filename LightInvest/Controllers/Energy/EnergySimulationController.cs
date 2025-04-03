@@ -4,8 +4,6 @@
  * Ele também calcula a média anual de consumo e redireciona o utilizador para outras simulações, como a simulação de tarifas.
  * O controlador lida com os dados temporários, garantindo que as informações sejam persistidas entre as solicitações.
  */
-
-
 using LightInvest.Models.BD;
 using LightInvest.Models.Simulacao.Energ;
 using LightInvest.Models.Utilizador.Login;

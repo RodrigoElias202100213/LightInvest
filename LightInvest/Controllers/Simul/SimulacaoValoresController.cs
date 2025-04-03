@@ -3,7 +3,6 @@
  * Este controlador obtém os dados de consumo do utilizador, calcula os custos mensais e anuais de energia com base na tarifa escolhida, e também calcula o ROI de um sistema de painéis solares com base nos dados de instalação.
  * Além disso, oferece funcionalidades para exportar os dados da simulação em formato CSV ou PDF (a exportação para PDF ainda não está implementada).
  */
-
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -69,7 +69,6 @@
                             <small>@comentario.DataCriacao.ToString("dd/MM/yyyy HH:mm")</small>
                             <p>@Html.Raw(Markdown.ToHtml(comentario.Texto))</p>
 
-                            <!-- Botão Like -->
                             <button class="btn btn-light btn-sm me-2 like-btn @(comentario.liked ? "btn-success" : "")"
                                     data-comentario-id="@comentario.Id"
                                     data-action="@Url.Action("CurtirComentario", "Artigos")"
@@ -77,7 +76,6 @@
                                 <i class="fas fa-thumbs-up"></i>
                             </button>
 
-                            <!-- Botão Dislike -->
                             <button class="btn btn-light btn-sm me-2 dislike-btn @(comentario.disliked ? "btn-danger" : "")"
                                     data-comentario-id="@comentario.Id"
                                     data-action="@Url.Action("RemoverCurtirComentario", "Artigos")"
@@ -137,42 +135,35 @@
 @section Scripts {
 
     <script>
-        // Ações para Curtir (Like) e Descurtir (Dislike)
         document.querySelectorAll('.like-btn, .dislike-btn').forEach(function(button) {
             button.addEventListener('click', function() {
                 var comentarioId = this.getAttribute('data-comentario-id');
                 var actionUrl = this.getAttribute('data-action');
                 var actionType = this.classList.contains('like-btn') ? 'like' : 'dislike';
 
-                // Atualizar a cor do botão imediatamente
                 updateButtons(comentarioId, actionType);
 
-                // Fazer requisição AJAX para processar a ação
                 fetch(actionUrl, {
                     method: 'POST',
                     body: new URLSearchParams({ comentarioId: comentarioId })
                 }).then(response => response.json())
                   .then(data => {
-                      // Aqui, você pode também processar a resposta do servidor
                   }).catch(err => {
                       console.error('Erro ao processar a ação: ', err);
                   });
             });
         });
 
-        // Função para atualizar o estado dos botões de Like e Dislike
         function updateButtons(comentarioId, actionType) {
             let likeBtn = document.querySelector(`.like-btn[data-comentario-id='${comentarioId}']`);
             let dislikeBtn = document.querySelector(`.dislike-btn[data-comentario-id='${comentarioId}']`);
 
             if (actionType === 'like') {
-                // Se o botão de like for clicado, ative a cor verde (liked) e remova a cor de dislike
-                likeBtn.classList.add('btn-success'); // Adiciona a cor de like
-                dislikeBtn.classList.remove('btn-danger'); // Remove a cor de dislike
+                likeBtn.classList.add('btn-success');
+                dislikeBtn.classList.remove('btn-danger');
             } else if (actionType === 'dislike') {
-                // Se o botão de dislike for clicado, ative a cor vermelha (disliked) e remova a cor de like
-                dislikeBtn.classList.add('btn-danger'); // Adiciona a cor de dislike
-                likeBtn.classList.remove('btn-success'); // Remove a cor de like
+                dislikeBtn.classList.add('btn-danger');
+                likeBtn.classList.remove('btn-success');
             }
         }
     </script>
