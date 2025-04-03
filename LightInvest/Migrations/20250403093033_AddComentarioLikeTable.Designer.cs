@@ -4,6 +4,7 @@ using LightInvest.Models.BD;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LightInvest.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250403093033_AddComentarioLikeTable")]
+    partial class AddComentarioLikeTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -160,32 +163,6 @@ namespace LightInvest.Migrations
                             Texto = "A ferramenta de cálculo do ROI seria muito útil! Vocês têm alguma recomendação?",
                             UserId = 1
                         });
-                });
-
-            modelBuilder.Entity("LightInvest.Models.Educ.Artigos.ComentarioLike", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ComentarioId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsLike")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ComentarioId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ComentarioLike");
                 });
 
             modelBuilder.Entity("LightInvest.Models.Ener.DadosInstalacao", b =>
@@ -1000,25 +977,6 @@ namespace LightInvest.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("LightInvest.Models.Educ.Artigos.ComentarioLike", b =>
-                {
-                    b.HasOne("LightInvest.Models.Educ.Artigos.Comentario", "Comentario")
-                        .WithMany("Likes")
-                        .HasForeignKey("ComentarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LightInvest.Models.Utilizador.Login.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Comentario");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("LightInvest.Models.Ener.DadosInstalacao", b =>
                 {
                     b.HasOne("LightInvest.Models.b.Cidade", "Cidade")
@@ -1062,11 +1020,6 @@ namespace LightInvest.Migrations
                     b.Navigation("ArtigosRelacionados");
 
                     b.Navigation("Comentarios");
-                });
-
-            modelBuilder.Entity("LightInvest.Models.Educ.Artigos.Comentario", b =>
-                {
-                    b.Navigation("Likes");
                 });
 
             modelBuilder.Entity("LightInvest.Models.b.Cidade", b =>

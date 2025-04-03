@@ -13,17 +13,16 @@
         <div class="container-header">
             <div class="header">
                 <h2 class="title">@Model.Titulo</h2>
-                <a href="@Url.Action("ListarPorCategorias", "Artigos")" class="btn-anterior">
+                <a href="@Url.Action("ListarPorCategoria", "Artigos")" class="btn-anterior">
                     <img src="~/images/anterior.png" alt="Voltar" id="anterior" />
                 </a>
             </div>
-             <p class="text-muted">Publicado em: <strong>@Model.DataPublicacao.ToString("dd/MM/yyyy")</strong></p>
+            <p class="text-muted">Publicado em: <strong>@Model.DataPublicacao.ToString("dd/MM/yyyy")</strong></p>
         </div>
 
         <div class="content">
-            <div class="lead">@Html.Raw(ViewBag.ConteudoHtml)</div> 
+            <div class="lead">@Html.Raw(ViewBag.ConteudoHtml)</div>
         </div>
-
 
         <div class="mt-5">
             <h4 class="text-muted">Artigos Relacionados</h4>
@@ -53,6 +52,7 @@
                 }
             </div>
         </div>
+
         <br />
         <hr />
         <br />
@@ -66,15 +66,24 @@
                     <li class="list-group-item d-flex justify-content-between align-items-center comment-item">
                         <div>
                             <strong>@comentario.Autor</strong>
-                                <small>@comentario.DataCriacao.ToString("dd/MM/yyyy HH:mm")</small>
+                            <small>@comentario.DataCriacao.ToString("dd/MM/yyyy HH:mm")</small>
                             <p>@Html.Raw(Markdown.ToHtml(comentario.Texto))</p>
-                                
-                                <button class="btn btn-light btn-sm me-2" title="Gostei">
-                                    <i class="fas fa-thumbs-up"></i>
-                                </button>
-                                <button class="btn btn-light btn-sm me-3" title="Não gostei">
-                                    <i class="fas fa-thumbs-down"></i>
-                                </button>
+
+                            <!-- Botão Like -->
+                            <button class="btn btn-light btn-sm me-2 like-btn @(comentario.liked ? "btn-success" : "")"
+                                    data-comentario-id="@comentario.Id"
+                                    data-action="@Url.Action("CurtirComentario", "Artigos")"
+                                    title="Gostei">
+                                <i class="fas fa-thumbs-up"></i>
+                            </button>
+
+                            <!-- Botão Dislike -->
+                            <button class="btn btn-light btn-sm me-2 dislike-btn @(comentario.disliked ? "btn-danger" : "")"
+                                    data-comentario-id="@comentario.Id"
+                                    data-action="@Url.Action("RemoverCurtirComentario", "Artigos")"
+                                    title="Não gostei">
+                                <i class="fas fa-thumbs-down"></i>
+                            </button>
                         </div>
 
                         <div class="d-flex">
@@ -126,64 +135,72 @@
 </div>
 
 @section Scripts {
+
     <script>
-        document.querySelectorAll('.comment-item').forEach(function(item) {
-            item.addEventListener('click', function(e) {
-                if (e.target.tagName.toLowerCase() === 'button') return;
-                var adminControls = item.querySelector('.admin-controls');
-                if (adminControls) {
-                    adminControls.style.display = (adminControls.style.display === 'none' || adminControls.style.display === '')
-                        ? 'block'
-                        : 'none';
-                }
+        // Ações para Curtir (Like) e Descurtir (Dislike)
+        document.querySelectorAll('.like-btn, .dislike-btn').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var comentarioId = this.getAttribute('data-comentario-id');
+                var actionUrl = this.getAttribute('data-action');
+                var actionType = this.classList.contains('like-btn') ? 'like' : 'dislike';
+
+                // Atualizar a cor do botão imediatamente
+                updateButtons(comentarioId, actionType);
+
+                // Fazer requisição AJAX para processar a ação
+                fetch(actionUrl, {
+                    method: 'POST',
+                    body: new URLSearchParams({ comentarioId: comentarioId })
+                }).then(response => response.json())
+                  .then(data => {
+                      // Aqui, você pode também processar a resposta do servidor
+                  }).catch(err => {
+                      console.error('Erro ao processar a ação: ', err);
+                  });
             });
         });
+
+        // Função para atualizar o estado dos botões de Like e Dislike
+        function updateButtons(comentarioId, actionType) {
+            let likeBtn = document.querySelector(`.like-btn[data-comentario-id='${comentarioId}']`);
+            let dislikeBtn = document.querySelector(`.dislike-btn[data-comentario-id='${comentarioId}']`);
+
+            if (actionType === 'like') {
+                // Se o botão de like for clicado, ative a cor verde (liked) e remova a cor de dislike
+                likeBtn.classList.add('btn-success'); // Adiciona a cor de like
+                dislikeBtn.classList.remove('btn-danger'); // Remove a cor de dislike
+            } else if (actionType === 'dislike') {
+                // Se o botão de dislike for clicado, ative a cor vermelha (disliked) e remova a cor de like
+                dislikeBtn.classList.add('btn-danger'); // Adiciona a cor de dislike
+                likeBtn.classList.remove('btn-success'); // Remove a cor de like
+            }
+        }
     </script>
 
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".comment-item .btn").forEach(function(button) {
-                button.addEventListener("click", function() {
-                    if (this.title === "Gostei") {
-                        this.classList.toggle("btn-success");
-                        this.classList.toggle("btn-light");
-                        this.nextElementSibling.classList.remove("btn-danger");
-                        this.nextElementSibling.classList.add("btn-light");
-                    } else if (this.title === "Não gostei") {
-                        this.classList.toggle("btn-danger");
-                        this.classList.toggle("btn-light");
-                        this.previousElementSibling.classList.remove("btn-success");
-                        this.previousElementSibling.classList.add("btn-light");
-                    }
-                });
-            });
-        });
-    </script>
 
 }
 
 <style>
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
 
-     .header{
-            display:flex;
-            justify-content: space-between;
-        }
+    h2 {
+        margin-top: 5%;
+        font-size: 2.5rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+        font-weight: bold;
+        margin-bottom: 7%;
+        border-bottom: 2px solid #065A66;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
 
-        h2 {
-            margin-top:5%;
-            font-size: 2.5rem;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #065A66;
-            font-weight: bold;
-            margin-bottom: 7%;
-            border-bottom: 2px solid #065A66;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        #anterior{
-            transform: scale(0.1);
-        }
+    #anterior {
+        transform: scale(0.1);
+    }
 
     body {
         background-color: #f4f4f4;
@@ -197,13 +214,6 @@
         padding: 20px;
         border-radius: 12px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1.display-4 {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #065A66;
-        text-align: center;
     }
 
     .btn-primary {
@@ -223,9 +233,9 @@
         background-color: #fff;
     }
 
-    .card:hover {
-        transform: translateY(-3px);
-    }
+        .card:hover {
+            transform: translateY(-3px);
+        }
 
     .card-title {
         font-size: 1rem;
@@ -247,16 +257,14 @@
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .comment-item strong {
-        color: #065A66;
-    }
+        .comment-item strong {
+            color: #065A66;
+        }
 
-    .comment-item p {
-        font-size: 0.9rem;
-        color: #333;
-    }
-
-   
+        .comment-item p {
+            font-size: 0.9rem;
+            color: #333;
+        }
 
     .btn-sm {
         font-size: 0.8rem;

@@ -1,5 +1,6 @@
 ﻿using LightInvest.Models.Utilizador.Login;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -53,5 +54,16 @@ namespace LightInvest.Models.Educ.Artigos
 		/// </summary>
 		[ForeignKey("UserId")]
 		public User User { get; set; }
+
+		/// <summary>
+		/// Navigation property for the Likes (and Dislikes) associated with the comment.
+		/// </summary>
+		public List<ComentarioLike> Likes { get; set; } = new List<ComentarioLike>();
+
+		[NotMapped]
+		public bool liked { get; set; }  // Property to track whether the logged-in user liked the comment
+
+		[NotMapped]
+		public bool disliked { get; set; }  // Property to track whether the logged-in user disliked the comment
 	}
 }

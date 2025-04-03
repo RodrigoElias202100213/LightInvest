@@ -74,6 +74,8 @@ namespace LightInvest.Models.BD
 		public DbSet<Artigo> Artigos { get; set; }
 
 
+		public DbSet<ComentarioLike> ComentarioLike { get; set; }
+
 		public DbSet<Comentario> Comentario { get; set; }
 
 		/// <summary>
@@ -334,8 +336,7 @@ A instalação de sistemas solares é um processo técnico que exige um planeame
 		ArtigoId = 1, 
 		Texto = "Ótimo artigo! Muito informativo.",
 		DataCriacao = new DateTime(2025, 2, 16),
-		UserId = 1  
-					
+		UserId = 1,			
 	},
 	new Comentario
 	{
