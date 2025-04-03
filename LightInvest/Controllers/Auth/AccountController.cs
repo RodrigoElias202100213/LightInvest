@@ -12,6 +12,8 @@ using LightInvest.Models.Utilizador.Register;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
+using BCrypt.Net;
+
 
 namespace LightInvest.Controllers.Auth
 {
@@ -70,21 +72,38 @@ namespace LightInvest.Controllers.Auth
 				var user = await _context.Users
 					.FirstOrDefaultAsync(u => u.Email == model.Email);
 
-				if (user != null && user.Password == model.Password)
+				if (user != null)
 				{
-					HttpContext.Session.SetString("UserEmail", user.Email);
-					HttpContext.Session.SetString("UserName", user.Name);
-					HttpContext.Session.SetString("IsAdmin", user.IsAdmin.ToString());
+					if (!user.Password.StartsWith("$2a$") &&
+						!user.Password.StartsWith("$2b$") &&
+						!user.Password.StartsWith("$2y$"))
+					{
+						user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+						_context.Users.Update(user);
+						await _context.SaveChangesAsync();
+					}
 
-					return RedirectToAction("Index", "Home");
+					if (BCrypt.Net.BCrypt.Verify(model.Password, user.Password))
+					{
+						HttpContext.Session.SetString("UserEmail", user.Email);
+						HttpContext.Session.SetString("UserName", user.Name);
+						HttpContext.Session.SetString("IsAdmin", user.IsAdmin.ToString());
+
+						return RedirectToAction("Index", "Home");
+					}
+					else
+					{
+						ModelState.AddModelError("", "Email ou palavra-passe incorreta.");
+					}
 				}
 				else
 				{
-					ModelState.AddModelError("", "Email ou palavra-passe incorreta.");
+					ModelState.AddModelError("", "Utilizador não encontrado.");
 				}
 			}
 			return View(model);
 		}
+
 
 		/// <summary>
 		/// Action responsible for displaying the user registration page (GET).
@@ -126,13 +145,17 @@ namespace LightInvest.Controllers.Auth
 					}
 					return View(model);
 				}
+
+				string hashedPassword = BCrypt.Net.BCrypt.HashPassword(model.Password);
+
 				var user = new User()
 				{
 					Name = model.Name,
 					Email = model.Email,
-					Password = model.Password,
+					Password = hashedPassword,
 					IsAdmin = false
 				};
+
 				_context.Users.Add(user);
 				await _context.SaveChangesAsync();
 
@@ -141,7 +164,6 @@ namespace LightInvest.Controllers.Auth
 
 			return View(model);
 		}
-
 		/// <summary>
 		/// Action responsible for logging out the user and clearing the session.
 		/// </summary>
@@ -404,10 +426,12 @@ namespace LightInvest.Controllers.Auth
 					return View(model);
 				}
 
-				user.Password = model.NewPassword;
+				user.Password = BCrypt.Net.BCrypt.HashPassword(model.NewPassword);
 
 				_context.Users.Update(user);
+
 				_context.PasswordResetTokens.Remove(tokenEntry);
+
 				await _context.SaveChangesAsync();
 
 				TempData["Message"] = "Palavra-passe redefinida com sucesso! Faça login com sua nova palavra-passe.";
@@ -416,5 +440,6 @@ namespace LightInvest.Controllers.Auth
 
 			return View(model);
 		}
+
 	}
 }

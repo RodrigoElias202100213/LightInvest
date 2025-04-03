@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9NUsx7+vA9I=",
+  "dgSpecHash": "b4QkpR5cWPY=",
   "success": true,
   "projectFilePath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\LightInvest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rodri\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\rodri\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\markdig\\0.40.0\\markdig.0.40.0.nupkg.sha512",
