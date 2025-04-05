@@ -70,58 +70,78 @@ namespace LightInvest.Controllers.Educ
 		/// </returns>
 		public async Task<IActionResult> Detalhes(int id)
 		{
-			var artigo = await _context.Artigos
-				.Include(a => a.Comentarios)
-				.ThenInclude(c => c.Likes)
-				.Include(a => a.ArtigosRelacionados)
-				.FirstOrDefaultAsync(a => a.ArtigoId == id);
+            var artigo = await _context.Artigos
+              .Include(a => a.Comentarios)
+              .ThenInclude(c => c.Likes)
+              .Include(a => a.ArtigosRelacionados)
+              .FirstOrDefaultAsync(a => a.ArtigoId == id);
 
-			if (artigo == null)
+            if (artigo == null)
+            {
+                return NotFound();
+            }
+
+            var utilizadorLogado = await GetLoggedInUserAsync();
+            if (utilizadorLogado != null)
+            {
+                foreach (var comentario in artigo.Comentarios)
+                {
+                    var like = comentario.Likes.FirstOrDefault(l => l.UserId == utilizadorLogado.Id && l.IsLike);
+                    var dislike = comentario.Likes.FirstOrDefault(l => l.UserId == utilizadorLogado.Id && !l.IsLike);
+
+                    comentario.liked = like != null;
+                    comentario.disliked = dislike != null;
+                }
+            }
+
+            var htmlConteudo = Markdown.ToHtml(artigo.Conteudo);
+            ViewBag.ConteudoHtml = htmlConteudo;
+
+            var artigosRelacionados = _context.Artigos
+                .Where(a => a.Categoria == artigo.Categoria && a.ArtigoId != artigo.ArtigoId)
+                .Take(3)
+                .ToList();
+            artigo.ArtigosRelacionados = artigosRelacionados ?? new List<Artigo>();
+
+            var isAdmin = HttpContext.Session.GetString("IsAdmin") == "True";
+            ViewBag.IsAdmin = isAdmin;
+            ViewBag.UtilizadorLogadoId = utilizadorLogado?.Id;
+
+            if (id == 1)
 			{
-				return NotFound();
-			}
+                var noticiasRelacionadas = await _mediaStackService.GetRenewableEnergyArticlesAsync();
+                ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
+            }
+			else if (id == 2)
+            {
+                var noticiasRelacionadas = await _mediaStackService.GetROIArticlesAsync();
+                ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
+            }
+			
+			else if (id == 3)
+            {
+                var noticiasRelacionadas = await _mediaStackService.GetSolarPanelArticlesAsync();
+                ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
+            }
 
-			var utilizadorLogado = await GetLoggedInUserAsync();
-			if (utilizadorLogado != null)
-			{
-				foreach (var comentario in artigo.Comentarios)
-				{
-					var like = comentario.Likes.FirstOrDefault(l => l.UserId == utilizadorLogado.Id && l.IsLike);
-					var dislike = comentario.Likes.FirstOrDefault(l => l.UserId == utilizadorLogado.Id && !l.IsLike);
+            else if (id == 4)
+            {
+                var noticiasRelacionadas = await _mediaStackService.GetEnergyEfficiencyArticleAsync();
+                ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
+            }
 
-					comentario.liked = like != null;
-					comentario.disliked = dislike != null;
-				}
-			}
-
-			var htmlConteudo = Markdown.ToHtml(artigo.Conteudo);
-			ViewBag.ConteudoHtml = htmlConteudo;
-
-			var artigosRelacionados = _context.Artigos
-				.Where(a => a.Categoria == artigo.Categoria && a.ArtigoId != artigo.ArtigoId)
-				.Take(3)
-				.ToList();
-			artigo.ArtigosRelacionados = artigosRelacionados ?? new List<Artigo>();
-
-			var noticiasRelacionadas = await _mediaStackService.GetSolarPanelArticlesAsync();
-			ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
-
-			var isAdmin = HttpContext.Session.GetString("IsAdmin") == "True";
-			ViewBag.IsAdmin = isAdmin;
-			ViewBag.UtilizadorLogadoId = utilizadorLogado?.Id;
-
-			return View(artigo);
-		}
+            return View(artigo);
+        }
 
 
 
-		/// <summary>
-		/// Retrieves the logged-in user based on the session's email.
-		/// </summary>
-		/// <returns>
-		/// Returns the user object if logged in, otherwise returns null.
-		/// </returns>
-		private async Task<User> GetLoggedInUserAsync()
+        /// <summary>
+        /// Retrieves the logged-in user based on the session's email.
+        /// </summary>
+        /// <returns>
+        /// Returns the user object if logged in, otherwise returns null.
+        /// </returns>
+        private async Task<User> GetLoggedInUserAsync()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
 			return string.IsNullOrEmpty(userEmail)
