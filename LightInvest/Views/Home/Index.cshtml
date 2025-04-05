@@ -4,21 +4,22 @@
 
 <div class="home-container">
     <nav class="nav">
-        <img src="~/images/logo.png" alt="LightInvest Logo" class="logo" />
-        
-        <div class="user-section">
-            <p id="username">@ViewBag.UserName</p>
+        <div class="nav-left">
+            <img src="~/images/logo.png" alt="LightInvest Logo" class="logo" />
+        </div>
+
+        <div class="nav-right">
+            <span id="username">@ViewBag.UserName</span>
             @if (ViewBag.IsAdmin != null && ViewBag.IsAdmin == true)
             {
-                <div class="btn-admin">
-                    <a href="@Url.Action("UserList", "Home")" class="admin">Painel de Controlo</a>
-                </div>
+                <a href="@Url.Action("UserList", "Home")" class="admin">Painel de Controlo</a> 
             }
             <a href="@Url.Action("Logout", "Account")" class="btn-logout">
                 <img src="~/images/logout.png" alt="Logout" class="logout" />
             </a>
         </div>
     </nav>
+
     <section class="about">
         <h1>Sobre Nós</h1>
         <p>O LightInvest combina análise financeira, simulações interativas e conteúdos educativos para ajudar indivíduos e empresas a investir de forma inteligente em energias renováveis.</p>
@@ -84,27 +85,23 @@
         background-color: #065A66;
     }
 
-    .logo {
-        height: 100px;
+    .nav-left .logo {
+        height: 90px;
     }
 
-    .user-section {
+    .nav-right {
         display: flex;
         align-items: center;
-        gap:4px;
+        gap: 15px;
     }
 
     #username {
-        margin-top: 12%;
-        margin-right: 8px;
         font-size: 12px;
         font-weight: bold;
         color: white;
         text-transform: uppercase;
-    }
-
-    .btn-admin{
-        margin-top: 4%;
+        white-space: nowrap;
+        line-height: 1;
     }
 
     .admin, .admin:hover {
@@ -118,12 +115,8 @@
         cursor:pointer;
     }
 
-    .btn-logout {
-        margin-top:3%;
-    }
-
-    .logout {
-        height: 20px;
+    .btn-logout img {
+        height: 25px;
         cursor: pointer;
     }
 
