@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kA8Vw9aJFgafrvriG5mtGQ+2mhTOQwEJfqXqDdwLWR4=",
+  "Hash": "9uVI/1QljRlG1F/I9jKl+VlaJaJyoy9sJReQsikgEv8=",
   "Source": "LightInvest",
   "BasePath": "_content/LightInvest",
   "Mode": "Default",
@@ -1554,6 +1554,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\rotativa\\wkhtmltopdf.exe"
+    },
+    {
+      "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\videos\\artigos.mp4",
+      "SourceId": "LightInvest",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\",
+      "BasePath": "_content/LightInvest",
+      "RelativePath": "videos/artigos.mp4",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\videos\\artigos.mp4"
     },
     {
       "Identity": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\videos\\calculo_roi.mp4",

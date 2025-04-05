@@ -1,8 +1,5 @@
 namespace LightInvest.Models.Error
 {
-	/// <summary>
-	/// Represents an error view model used for displaying error information in the UI.
-	/// </summary>
 	public class ErrorViewModel
 	{
 		/// <summary>

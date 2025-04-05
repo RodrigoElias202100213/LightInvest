@@ -71,6 +71,7 @@
                 <h5>5. Resultado Final da Simulação</h5>
                 <p>Após inserir o consumo e selecionar as tarifas ou a opção de instalação de painéis solares, o utilizador recebe o resultado final da simulação. Este resultado inclui uma comparação detalhada entre os custos de energia com as diferentes opções de tarifas e, se aplicável, o impacto da instalação dos painéis solares no custo total da energia. O sistema também oferece uma estimativa do retorno financeiro a longo prazo, caso o utilizador escolha a opção de energia solar. Essa comparação permite ao utilizador tomar uma decisão informada sobre qual fornecedor de energia e qual solução tarifária ou de energia renovável melhor atende às suas necessidades.</p>
             </div>
+
             <div class="video-container">
                 <video controls autoplay loop muted style="width: 100%; height: auto; border-radius: 8px;">
                     <source src="/videos/simulacao.mp4" type="video/mp4">
@@ -80,14 +81,43 @@
         </div>
 
         <div id="secao4" class="section" style="display:none;">
+           
+            
             <div class="content">
                 <h3>Artigos e Educação Energética</h3>
-                <p>Acreditamos que a informação é essencial para um investimento consciente. O LightInvest oferece uma biblioteca de artigos educativos sobre energia renovável, sustentabilidade e análise financeira.</p>
-            </div>
+               <p>No <strong>LightInvest</strong>, acreditamos que o conhecimento é essencial para decisões conscientes e sustentáveis. Por isso, disponibilizamos uma <strong>biblioteca de artigos educativos</strong> que abordam temas como energia renovável, sustentabilidade, eficiência energética e análise financeira de projetos energéticos.</p>
+
+    <p>Estes artigos são elaborados por especialistas e têm como objetivo informar e apoiar os nossos utilizadores na compreensão dos diversos aspetos do setor energético, permitindo escolhas mais acertadas e estratégicas.</p>
+
+    <h4>O que pode encontrar nesta secção:</h4>
+    <ul>
+        <li><strong>Artigos temáticos</strong>: Conteúdos aprofundados sobre tecnologias como energia solar, autoconsumo, e tendências do mercado energético.</li>
+        <li><strong>Guias práticos</strong>: Dicas e instruções passo a passo sobre como reduzir o consumo, aumentar a eficiência e planear investimentos energéticos.</li>
+        <li><strong>Análises financeiras</strong>: Estudos e simulações que mostram o impacto económico de diferentes soluções de energia.</li>
+        <li><strong>Tópicos em destaque</strong>: Artigos atualizados sobre temas relevantes no panorama energético nacional e internacional.</li>
+    </ul>
+
+    <h4>Artigos Relacionados</h4>
+    <p>Com base no tema que estiver a consultar, a plataforma sugere <strong>artigos relacionados</strong> para aprofundar o seu conhecimento de forma contínua e personalizada.</p>
+
+    <h4>Zona de Comentários e Feedback</h4>
+    <p>Cada artigo inclui uma <strong>zona de comentários</strong> onde os utilizadores podem:</p>
+    <ul>
+        <li>Partilhar a sua opinião ou experiência sobre o tema;</li>
+        <li>Colocar dúvidas que poderão ser respondidas pela comunidade ou pela equipa do LightInvest;</li>
+        <li>Dar sugestões de novos temas ou melhorias na plataforma.</li>
+    </ul>
+
+    <p>A tua participação é fundamental para o crescimento da comunidade LightInvest. O teu feedback contribui diretamente para a melhoria contínua dos conteúdos e das funcionalidades disponíveis.</p>
+    </div>
+
             <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/samplevideo3" frameborder="0" allowfullscreen style="width: 100%; height: 200px; border-radius: 8px;"></iframe>
+                <video controls autoplay loop muted style="width: 100%; height: auto; border-radius: 8px;">
+                    <source src="/videos/artigos.mp4" type="video/mp4">
+                    O teu navegador não suporta a reprodução de vídeos.
+                </video>
             </div>
-        </div>
+      </div>
 
         <button id="btnAvancar" class="btn btn-primary" onclick="alternarSecao('next')">Avançar</button>
         <button id="btnVoltar" class="btn btn-secondary" onclick="alternarSecao('prev')" style="display:none;">Voltar</button>
@@ -184,7 +214,12 @@
             }
 
             .section .video-container {
-                flex: 1;
+                width: 80%;
+                max-width: 500px;
+                height: auto;
+                border-radius: 8px;
+                display: block;
+                margin: 0 auto;
             }
 
         .btn-topo {

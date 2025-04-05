@@ -455,3 +455,234 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250330120502_AtualizacaoBD'
+)
+BEGIN
+    EXEC(N'UPDATE [Artigos] SET [Conteudo] = CONCAT(CAST(nchar(13) AS nvarchar(max)), nchar(10), N''A energia solar é uma fonte renovável e limpa que se está a tornar cada vez mais popular devido aos seus benefícios econômicos e ambientais. Este artigo explora as vantagens de adotar a energia solar tanto para residências quanto para empresas.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Benefícios Econômicos'', nchar(13), nchar(10), N''- **Redução de Custos:** A principal vantagem da energia solar é a redução da conta de energia elétrica. Ao gerar sua própria eletricidade, diminui a dependência da rede elétrica.'', nchar(13), nchar(10), N''- **Valorização do Imóvel:** Imóveis que possuem sistemas de energia solar são geralmente mais valorizados no mercado, uma vez que têm custos operacionais menores e atraem compradores interessados em soluções sustentáveis.'', nchar(13), nchar(10), N''- **Incentivos e Subsídios:** Em muitas regiões, o governo oferece incentivos fiscais e subsídios para a instalação de sistemas fotovoltaicos, tornando o investimento mais acessível.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Benefícios Ambientais'', nchar(13), nchar(10), N''- **Redução da Pegada de Carbono:** A energia solar não emite gases de efeito estufa, o que contribui significativamente para a redução da pegada de carbono.'', nchar(13), nchar(10), N''- **Fontes Renováveis:** Ao contrário das fontes de energia tradicionais, como o carvão e o gás natural, a energia solar é renovável e não esgota os recursos naturais do planeta.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Conclusão'', nchar(13), nchar(10), N''Investir em sistemas de energia solar é uma escolha inteligente tanto do ponto de vista econômico quanto ambiental. Ao reduzir os custos com eletricidade e contribuir para a preservação do meio ambiente, a energia solar torna-se uma solução cada vez mais viável e atraente.'')
+    WHERE [ArtigoId] = 1;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250330120502_AtualizacaoBD'
+)
+BEGIN
+    EXEC(N'UPDATE [Artigos] SET [Conteudo] = CONCAT(CAST(nchar(13) AS nvarchar(max)), nchar(10), N''Calcular o Retorno sobre o Investimento (ROI) em sistemas fotovoltaicos é essencial para avaliar a viabilidade financeira de um projeto. Este artigo explica como calcular o ROI e por que ele é importante para qualquer instalação de energia solar.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### O que é o ROI?'', nchar(13), nchar(10), N''O ROI é uma métrica financeira usada para avaliar o desempenho de um investimento. Ele calcula o lucro ou perda relativa ao valor investido e é expresso como uma porcentagem.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Fórmula do ROI'', nchar(13), nchar(10), N''A fórmula básica para calcular o ROI é a seguinte:'', nchar(13), nchar(10), N''Para um sistema de energia solar, o retorno pode incluir a economia na conta de energia elétrica, o valor dos incentivos fiscais, e a possível valorização do imóvel. O custo do investimento inclui a instalação dos painéis solares, manutenção e outros custos operacionais. Se tiver interesse nesta máteria na nossa plataforma consegues aceder à ferramenta do cálculo do ROI.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Exemplo de Cálculo do ROI'', nchar(13), nchar(10), N''Suponhamos que investiu ´20.000 € numm sistema de energia solar e, ao longo do tempo, economizou 3.000 € anualmente na sua conta de energia elétrica. O cálculo do ROI seria: ROI (%) = (Retorno do Investimento / Custo do Investimento) x 100'', nchar(13), nchar(10), nchar(13), nchar(10), nchar(13), nchar(10), N''Isso significa que, em média, terá um retorno de 15% do valor investido a cada ano.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Conclusão'', nchar(13), nchar(10), N''O cálculo do ROI ajuda a determinar se o investimento em energia solar vale a pena. Com os dados certos, consegue analisar e avaliar a viabilidade financeira e o tempo de retorno do seu investimento em energia solar.'')
+    WHERE [ArtigoId] = 2;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250330120502_AtualizacaoBD'
+)
+BEGIN
+    EXEC(N'UPDATE [Artigos] SET [Conteudo] = CONCAT(CAST(nchar(13) AS nvarchar(max)), nchar(10), N''Planear e instalar um sistema de energia solar requer um processo detalhado e bem coordenado. Este artigo apresenta um guia completo sobre como planear e executar a instalação de um sistema fotovoltaico de forma eficiente.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Passos para o Planeamento'', nchar(13), nchar(10), N''1. **Análise de Viabilidade:** Antes de iniciar, é importante realizar uma análise detalhada do local, levando em consideração fatores como o consumo de energia, a localização e a inclinação do telhado.'', nchar(13), nchar(10), N''2. **Dimensionamento do Sistema:** A quantidade de energia que um sistema solar pode gerar depende do número de painéis e da capacidade de cada um. O dimensionamento correto do sistema é crucial para maximizar a eficiência.'', nchar(13), nchar(10), N''3. **Escolha dos Componentes:** Os componentes principais de um sistema solar são os painéis solares, o inversor e a estrutura de montagem. Escolher materiais de boa qualidade é essencial para garantir o bom funcionamento e a longevidade do sistema.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Processo de Instalação'', nchar(13), nchar(10), N''- **Instalação dos Painéis Solares:** Os painéis solares devem ser instalados de forma a otimizar a exposição solar, garantindo que eles recebam a maior quantidade de luz possível ao longo do dia.'', nchar(13), nchar(10), N''- **Conexão Elétrica:** A instalação elétrica envolve a ligação dos painéis solares ao inversor, que converte a energia gerada em energia utilizável para a residência ou empresa.'', nchar(13), nchar(10), N''- **Testes e Comissionamento:** Após a instalação, é necessário realizar testes para garantir que o sistema está funcionando corretamente e de forma segura.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Conclusão'', nchar(13), nchar(10), N''A instalação de sistemas solares é um processo técnico que exige um planeamento cuidadoso. Um bom planeamento e a escolha de profissionais qualificados podem garantir que o sistema solar seja eficiente e tenha uma vida útil longa.'')
+    WHERE [ArtigoId] = 3;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250330120502_AtualizacaoBD'
+)
+BEGIN
+    EXEC(N'UPDATE [Comentario] SET [Autor] = N''Rodrigo''
+    WHERE [Id] = 1;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250330120502_AtualizacaoBD'
+)
+BEGIN
+    EXEC(N'UPDATE [Comentario] SET [Autor] = N''Rodrigo''
+    WHERE [Id] = 2;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250330120502_AtualizacaoBD'
+)
+BEGIN
+    EXEC(N'UPDATE [Comentario] SET [Autor] = N''Rodrigo''
+    WHERE [Id] = 3;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250330120502_AtualizacaoBD'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250330120502_AtualizacaoBD', N'8.0.0');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250403092752_AddLikesToComentario'
+)
+BEGIN
+    EXEC(N'UPDATE [Artigos] SET [DescricaoCurta] = N''Entenda os benefícios da energia solar para a sua residência ou empresa.''
+    WHERE [ArtigoId] = 1;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250403092752_AddLikesToComentario'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250403092752_AddLikesToComentario', N'8.0.0');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250403093033_AddComentarioLikeTable'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250403093033_AddComentarioLikeTable', N'8.0.0');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250403094327_AddComentarioLikeTable2'
+)
+BEGIN
+    CREATE TABLE [ComentarioLike] (
+        [Id] int NOT NULL IDENTITY,
+        [ComentarioId] int NOT NULL,
+        [UserId] int NOT NULL,
+        CONSTRAINT [PK_ComentarioLike] PRIMARY KEY ([Id]),
+        CONSTRAINT [FK_ComentarioLike_Comentario_ComentarioId] FOREIGN KEY ([ComentarioId]) REFERENCES [Comentario] ([Id]) ON DELETE CASCADE,
+        CONSTRAINT [FK_ComentarioLike_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+    );
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250403094327_AddComentarioLikeTable2'
+)
+BEGIN
+    CREATE INDEX [IX_ComentarioLike_ComentarioId] ON [ComentarioLike] ([ComentarioId]);
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250403094327_AddComentarioLikeTable2'
+)
+BEGIN
+    CREATE INDEX [IX_ComentarioLike_UserId] ON [ComentarioLike] ([UserId]);
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250403094327_AddComentarioLikeTable2'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250403094327_AddComentarioLikeTable2', N'8.0.0');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250403095917_AddComentarioLikeTable3'
+)
+BEGIN
+    ALTER TABLE [ComentarioLike] ADD [IsLike] bit NOT NULL DEFAULT CAST(0 AS bit);
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250403095917_AddComentarioLikeTable3'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250403095917_AddComentarioLikeTable3', N'8.0.0');
+END;
+GO
+
+COMMIT;
+GO
+
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250404115254_AddComentarioLikeTable4'
+)
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Email', N'IsAdmin', N'Name', N'Password') AND [object_id] = OBJECT_ID(N'[Users]'))
+        SET IDENTITY_INSERT [Users] ON;
+    EXEC(N'INSERT INTO [Users] ([Id], [Email], [IsAdmin], [Name], [Password])
+    VALUES (2, N''veragfernandes04@gmail.com'', CAST(1 AS bit), N''Vera'', N''Vera1234''),
+    (3, N''ligthinvestuser@gmail.com'', CAST(0 AS bit), N''LightInvest '', N''LightInvest123'')');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Email', N'IsAdmin', N'Name', N'Password') AND [object_id] = OBJECT_ID(N'[Users]'))
+        SET IDENTITY_INSERT [Users] OFF;
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250404115254_AddComentarioLikeTable4'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250404115254_AddComentarioLikeTable4', N'8.0.0');
+END;
+GO
+
+COMMIT;
+GO
+

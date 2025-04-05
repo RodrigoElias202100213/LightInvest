@@ -60,7 +60,6 @@ namespace LightInvest.Controllers.Educ
 			return View(artigos);
 		}
 
-
 		/// <summary>
 		/// Displays the details of a specific article, including its comments and related articles.
 		/// </summary>

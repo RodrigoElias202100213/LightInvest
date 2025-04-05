@@ -321,6 +321,10 @@
       "PackagePath": "staticwebassets\\rotativa\\wkhtmltopdf.exe"
     },
     {
+      "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\videos\\artigos.mp4",
+      "PackagePath": "staticwebassets\\videos\\artigos.mp4"
+    },
+    {
       "Id": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\evaioutra\\LightInvest\\wwwroot\\videos\\calculo_roi.mp4",
       "PackagePath": "staticwebassets\\videos\\calculo_roi.mp4"
     },

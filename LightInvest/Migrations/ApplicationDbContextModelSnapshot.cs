@@ -374,6 +374,22 @@ namespace LightInvest.Migrations
                             IsAdmin = true,
                             Name = "Rodrigo",
                             Password = "rodrigoR123"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "veragfernandes04@gmail.com",
+                            IsAdmin = true,
+                            Name = "Vera",
+                            Password = "Vera1234"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "ligthinvestuser@gmail.com",
+                            IsAdmin = false,
+                            Name = "LightInvest ",
+                            Password = "LightInvest123"
                         });
                 });
 
