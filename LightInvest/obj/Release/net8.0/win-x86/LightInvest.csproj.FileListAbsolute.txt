@@ -7255,3 +7255,4 @@ C:\Users\rodri\ansel\esspvv\LightInvest\obj\Release\net8.0\win-x86\LightInvest.x
 C:\Users\rodri\ansel\esspvv\LightInvest\obj\Release\net8.0\win-x86\LightInvest.pdb
 C:\Users\rodri\ansel\esspvv\LightInvest\obj\Release\net8.0\win-x86\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\ansel\esspvv\LightInvest\obj\Release\net8.0\win-x86\ref\LightInvest.dll
+C:\Users\rodri\ansel\esspvv\LightInvest\bin\Release\net8.0\win-x86\xunit.abstractions.dll

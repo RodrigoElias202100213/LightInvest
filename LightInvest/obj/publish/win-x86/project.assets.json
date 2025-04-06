@@ -1595,6 +1595,19 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
+      },
+      "xunit.abstractions/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {
+            "related": ".xml"
+          }
+        }
       }
     },
     "net8.0/win-x86": {
@@ -3140,6 +3153,19 @@
         },
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "xunit.abstractions/2.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/xunit.abstractions.dll": {
+            "related": ".xml"
+          }
         }
       }
     }
@@ -5528,6 +5554,23 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "xunit.abstractions/2.0.3": {
+      "sha512": "pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg==",
+      "type": "package",
+      "path": "xunit.abstractions/2.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/xunit.abstractions.dll",
+        "lib/net35/xunit.abstractions.xml",
+        "lib/netstandard1.0/xunit.abstractions.dll",
+        "lib/netstandard1.0/xunit.abstractions.xml",
+        "lib/netstandard2.0/xunit.abstractions.dll",
+        "lib/netstandard2.0/xunit.abstractions.xml",
+        "xunit.abstractions.2.0.3.nupkg.sha512",
+        "xunit.abstractions.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -5543,7 +5586,8 @@
       "Moq >= 4.20.72",
       "Newtonsoft.Json >= 13.0.3",
       "Rotativa >= 1.7.3",
-      "Rotativa.AspNetCore >= 1.4.0"
+      "Rotativa.AspNetCore >= 1.4.0",
+      "xunit.abstractions >= 2.0.3"
     ]
   },
   "packageFolders": {
@@ -5645,6 +5689,10 @@
           "Rotativa.AspNetCore": {
             "target": "Package",
             "version": "[1.4.0, )"
+          },
+          "xunit.abstractions": {
+            "target": "Package",
+            "version": "[2.0.3, )"
           }
         },
         "imports": [
