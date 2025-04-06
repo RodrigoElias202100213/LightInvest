@@ -35,30 +35,40 @@ public class AccountControllerTests
 	[Fact]
 	public async Task Register_DeveRetornarErro_QuandoEmailJaExiste()
 	{
-		var existingUser = await _context.Users.FirstOrDefaultAsync(u => u.Email == "existente@email.com");
-		if (existingUser == null)
+		// Arrange
+		var emailExistente = "existente@email.com";
+
+		if (!await _context.Users.AnyAsync(u => u.Email == emailExistente))
 		{
-			_context.Users.Add(new User { Email = "existente@email.com", Name = "Utilizador Existente", Password = "Pass123" });
+			_context.Users.Add(new User
+			{
+				Email = emailExistente,
+				Name = "Utilizador Existente",
+				Password = BCrypt.Net.BCrypt.HashPassword("Pass123")
+			});
 			await _context.SaveChangesAsync();
 		}
 
 		var registerModel = new RegisterViewModel
 		{
-			Name = "Novo Utilizador",
-			Email = "existente@email.com",
+			Name = "Outro Nome",
+			Email = emailExistente,
 			Password = "Pass123",
 			ConfirmPassword = "Pass123"
 		};
 
+		// Act
 		var result = await _controller.Register(registerModel);
 
+		// Assert
 		var viewResult = Assert.IsType<ViewResult>(result);
-
 		Assert.False(_controller.ModelState.IsValid);
 
-		Assert.Contains(_controller.ModelState, kvp => kvp.Key == "Email" && kvp.Value.Errors.Any(e => e.ErrorMessage.Contains("Já existe")));
+		Assert.Contains(_controller.ModelState, kvp =>
+			kvp.Key == "Email" &&
+			kvp.Value.Errors.Any(e => e.ErrorMessage.Contains("Já existe"))
+		);
 	}
-
 
 
 	[Fact]
@@ -74,7 +84,7 @@ public class AccountControllerTests
 
 		Assert.NotNull(result);
 		Assert.False(_controller.ModelState.IsValid);
-		Assert.Contains(_controller.ModelState.Values, v => v.Errors.Any(e => e.ErrorMessage.Contains("Email ou palavra-passe incorreta.")));
+		Assert.Contains(_controller.ModelState.Values, v => v.Errors.Any(e => e.ErrorMessage.Contains("Utilizador não encontrado.")));
 	}
 
 	[Fact]

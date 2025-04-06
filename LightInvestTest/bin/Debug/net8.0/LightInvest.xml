@@ -234,12 +234,14 @@
         </member>
         <member name="M:LightInvest.Controllers.Educ.ArtigosController.Detalhes(System.Int32)">
             <summary>
-            Displays the details of a specific article, including its comments and related articles.
+            Displays the details of a specific article, including its comments, likes/dislikes, and related articles.
+            Also loads external content related to the article's topic through the MediaStack service.
             </summary>
             <param name="id">The ID of the article to be displayed.</param>
             <returns>
-            Returns the article details view, including its content and related articles. 
-            If the article is not found, it returns a 404 not found response.
+            Returns the view with the article details, including formatted content, comments with like/dislike states,
+            and both internal and external related articles.
+            If the article is not found, returns a 404 (Not Found) response.
             </returns>
         </member>
         <member name="M:LightInvest.Controllers.Educ.ArtigosController.GetLoggedInUserAsync">
@@ -706,6 +708,18 @@
         <member name="M:LightInvest.Migrations.AddComentarioLikeTable3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:LightInvest.Migrations.AddComentarioLikeTable4">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.AddComentarioLikeTable4.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.AddComentarioLikeTable4.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.AddComentarioLikeTable4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:LightInvest.Services.MediaStackResponse">
             <summary>
             Represents the response structure from the MediaStack API.
@@ -718,14 +732,38 @@
         </member>
         <member name="T:LightInvest.Services.MediaStackService">
             <summary>
-            Service responsible for fetching news articles from the MediaStack API.
+            Service responsible for retrieving news articles from the MediaStack API.
             </summary>
+        </member>
+        <member name="M:LightInvest.Services.MediaStackService.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Constructor for the MediaStackService.
+            </summary>
+            <param name="httpClient">HttpClient instance used to make HTTP requests.</param>
         </member>
         <member name="M:LightInvest.Services.MediaStackService.GetSolarPanelArticlesAsync">
             <summary>
-            Fetches news articles related to solar panels from the MediaStack API.
+            Retrieves articles about solar panels from the MediaStack API.
             </summary>
-            <returns>A list of news articles.</returns>
+            <returns>List of news articles about solar panels.</returns>
+        </member>
+        <member name="M:LightInvest.Services.MediaStackService.GetRenewableEnergyArticlesAsync">
+            <summary>
+            Retrieves articles about renewable energy from the MediaStack API.
+            </summary>
+            <returns>List of news articles about renewable energy.</returns>
+        </member>
+        <member name="M:LightInvest.Services.MediaStackService.GetROIArticlesAsync">
+            <summary>
+            Retrieves articles about return on investment (ROI) calculation from the MediaStack API.
+            </summary>
+            <returns>List of news articles about ROI calculation.</returns>
+        </member>
+        <member name="M:LightInvest.Services.MediaStackService.GetEnergyEfficiencyArticleAsync">
+            <summary>
+            Retrieves articles about energy efficiency from the MediaStack API.
+            </summary>
+            <returns>List of news articles about energy efficiency.</returns>
         </member>
         <member name="T:LightInvest.Services.NewsArticle">
             <summary>
@@ -1017,11 +1055,6 @@
             <remarks>
             This method uses SMTP configuration settings from the application's configuration file.
             </remarks>
-        </member>
-        <member name="T:LightInvest.Models.Error.ErrorViewModel">
-            <summary>
-            Represents an error view model used for displaying error information in the UI.
-            </summary>
         </member>
         <member name="P:LightInvest.Models.Error.ErrorViewModel.RequestId">
             <summary>

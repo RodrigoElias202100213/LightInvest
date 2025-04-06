@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="IIS Web Application Name" description="" value="LightInvest" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\rodri\\OneDrive\\Ambiente\ de\ Trabalho\\evaioutra\\LightInvest\\obj\\Release\\net8\.0\\win-x86\\PubTmp\\Out\\$" />
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\rodri\\ansel\\esspvv\\LightInvest\\obj\\Release\\net8\.0\\win-x86\\PubTmp\\Out\\$" />
   </parameter>
   <parameter name="LightInvest.Models.BD.ApplicationDbContext" description="" value="Server=tcp:lightinvest2425.database.windows.net,1433;Initial Catalog=lightinvest;Persist Security Info=False;User ID=light;Password=admin123!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="dbfullsql">
-    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\rodri\\OneDrive\\Ambiente\ de\ Trabalho\\evaioutra\\LightInvest\\obj\\Release\\net8\.0\\win-x86\\PubTmp\\EFSQLScripts\\LightInvest\.Models\.BD\.ApplicationDbContext\.sql$" />
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\rodri\\ansel\\esspvv\\LightInvest\\obj\\Release\\net8\.0\\win-x86\\PubTmp\\EFSQLScripts\\LightInvest\.Models\.BD\.ApplicationDbContext\.sql$" />
   </parameter>
 </parameters>
