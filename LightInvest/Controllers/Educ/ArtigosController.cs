@@ -60,16 +60,18 @@ namespace LightInvest.Controllers.Educ
 			return View(artigos);
 		}
 
-		/// <summary>
-		/// Displays the details of a specific article, including its comments and related articles.
-		/// </summary>
-		/// <param name="id">The ID of the article to be displayed.</param>
-		/// <returns>
-		/// Returns the article details view, including its content and related articles. 
-		/// If the article is not found, it returns a 404 not found response.
-		/// </returns>
-		public async Task<IActionResult> Detalhes(int id)
-		{
+        /// <summary>
+        /// Displays the details of a specific article, including its comments, likes/dislikes, and related articles.
+        /// Also loads external content related to the article's topic through the MediaStack service.
+        /// </summary>
+        /// <param name="id">The ID of the article to be displayed.</param>
+        /// <returns>
+        /// Returns the view with the article details, including formatted content, comments with like/dislike states,
+        /// and both internal and external related articles.
+        /// If the article is not found, returns a 404 (Not Found) response.
+        /// </returns>
+        public async Task<IActionResult> Detalhes(int id)
+        {
             var artigo = await _context.Artigos
               .Include(a => a.Comentarios)
               .ThenInclude(c => c.Likes)
@@ -108,17 +110,17 @@ namespace LightInvest.Controllers.Educ
             ViewBag.UtilizadorLogadoId = utilizadorLogado?.Id;
 
             if (id == 1)
-			{
+            {
                 var noticiasRelacionadas = await _mediaStackService.GetRenewableEnergyArticlesAsync();
                 ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
             }
-			else if (id == 2)
+            else if (id == 2)
             {
                 var noticiasRelacionadas = await _mediaStackService.GetROIArticlesAsync();
                 ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
             }
-			
-			else if (id == 3)
+
+            else if (id == 3)
             {
                 var noticiasRelacionadas = await _mediaStackService.GetSolarPanelArticlesAsync();
                 ViewBag.NoticiasRelacionadas = noticiasRelacionadas;
