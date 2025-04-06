@@ -4697,3 +4697,5 @@ C:\Users\rodri\ansel\esspvv\LightInvest\obj\Debug\net8.0\LightInvest.xml
 C:\Users\rodri\ansel\esspvv\LightInvest\obj\Debug\net8.0\LightInvest.pdb
 C:\Users\rodri\ansel\esspvv\LightInvest\obj\Debug\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\ansel\esspvv\LightInvest\obj\Debug\net8.0\ref\LightInvest.dll
+C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Debug\net8.0\docfx.json
+C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Debug\net8.0\xunit.abstractions.dll
