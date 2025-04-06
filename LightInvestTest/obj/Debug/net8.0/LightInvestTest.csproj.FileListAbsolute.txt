@@ -3909,10 +3909,18 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\evaioutra\LightInvestTest\obj\Debug
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\evaioutra\LightInvestTest\obj\Debug\net8.0\LightInvestTest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\evaioutra\LightInvestTest\obj\Debug\net8.0\ref\LightInvestTest.dll
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\CoverletSourceRootsMapping_LightInvestTest
+C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\testhost.dll
+C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\TraceReloggerLib.dll
+C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\Dia2Lib.dll
+C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvest.deps.json
+C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvest.runtimeconfig.json
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\appsettings.json
+C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\docfx.json
+C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvest.staticwebassets.runtime.json
+C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvest.exe
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\testhost.exe
-C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\testhost.dll
+C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\MvcTestingAppManifest.json
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\xunit.runner.utility.netcoreapp10.dll
@@ -3923,13 +3931,6 @@ C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\amd64\KernelTraceCo
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\amd64\msdia140.dll
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\arm64\KernelTraceControl.dll
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\arm64\msdia140.dll
-C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\TraceReloggerLib.dll
-C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\Dia2Lib.dll
-C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvest.deps.json
-C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvest.runtimeconfig.json
-C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvest.staticwebassets.runtime.json
-C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvest.exe
-C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\MvcTestingAppManifest.json
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvestTest.deps.json
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvestTest.runtimeconfig.json
 C:\Users\rodri\ansel\esspvv\LightInvestTest\bin\Debug\net8.0\LightInvestTest.dll

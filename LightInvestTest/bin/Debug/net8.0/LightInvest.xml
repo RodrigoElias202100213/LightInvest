@@ -720,6 +720,18 @@
         <member name="M:LightInvest.Migrations.AddComentarioLikeTable4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:LightInvest.Migrations.NomeDaMigração">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.NomeDaMigração.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.NomeDaMigração.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.NomeDaMigração.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:LightInvest.Services.MediaStackResponse">
             <summary>
             Represents the response structure from the MediaStack API.

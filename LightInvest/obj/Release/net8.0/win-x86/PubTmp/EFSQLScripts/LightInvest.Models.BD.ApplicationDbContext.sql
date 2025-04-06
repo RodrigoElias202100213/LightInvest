@@ -686,3 +686,41 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250406102345_NomeDaMigração'
+)
+BEGIN
+    EXEC(N'DELETE FROM [Users]
+    WHERE [Id] = 2;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250406102345_NomeDaMigração'
+)
+BEGIN
+    EXEC(N'UPDATE [Users] SET [Email] = N''lightinvestsup2425@gmail.com'', [Name] = N''LighInvestSupport'', [Password] = N''LightInvestSup123''
+    WHERE [Id] = 1;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250406102345_NomeDaMigração'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250406102345_NomeDaMigração', N'8.0.0');
+END;
+GO
+
+COMMIT;
+GO
+

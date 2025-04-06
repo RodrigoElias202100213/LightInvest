@@ -4530,6 +4530,7 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\evaioutra\LightInvest\obj\Debug\net
 C:\Users\verag\OneDrive - Instituto Politécnico de Setúbal\Documentos\IPS\3 ano\PV\LightInvest\LightInvest\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\appsettings.json
+C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\docfx.json
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\LightInvest.staticwebassets.runtime.json
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\LightInvest.exe
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\LightInvest.deps.json
@@ -4596,6 +4597,7 @@ C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\System.IdentityModel.To
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\xunit.abstractions.dll
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
 C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
@@ -4695,4 +4697,3 @@ C:\Users\rodri\ansel\esspvv\LightInvest\obj\Debug\net8.0\LightInvest.xml
 C:\Users\rodri\ansel\esspvv\LightInvest\obj\Debug\net8.0\LightInvest.pdb
 C:\Users\rodri\ansel\esspvv\LightInvest\obj\Debug\net8.0\LightInvest.genruntimeconfig.cache
 C:\Users\rodri\ansel\esspvv\LightInvest\obj\Debug\net8.0\ref\LightInvest.dll
-C:\Users\rodri\ansel\esspvv\LightInvest\bin\Debug\net8.0\xunit.abstractions.dll

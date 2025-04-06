@@ -7,6 +7,7 @@ using LightInvest.Models.Simulacao.Energ;
 using LightInvest.Models.Simulacao.Tarifa;
 using LightInvest.Models.Utilizador.Login;
 using LightInvest.Models.Utilizador.Pass;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LightInvest.Models.BD
 {
@@ -159,17 +160,9 @@ namespace LightInvest.Models.BD
 	new User
 	{
 		Id = 1,
-		Name = "Rodrigo",
-		Email = "rodrigo.elias2003@gmail.com",
-		Password = "rodrigoR123",
-		IsAdmin = true
-	},
-	new User
-	{
-		Id = 2,
-		Name = "Vera",
-		Email = "veragfernandes04@gmail.com",
-		Password = "Vera1234",
+		Name = "LighInvestSupport",
+		Email = "lightinvestsup2425@gmail.com",
+		Password = "LightInvestSup123",
 		IsAdmin = true
 	},
 	new User
@@ -180,7 +173,6 @@ namespace LightInvest.Models.BD
 		Password = "LightInvest123",
 		IsAdmin = false
 	}
-
 );
 
 

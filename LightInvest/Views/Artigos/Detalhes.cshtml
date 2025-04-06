@@ -6,6 +6,7 @@
 
 @{
     ViewData["Title"] = Model.Titulo;
+
 }
 
 <div class="container mt-4">
@@ -20,9 +21,10 @@
             <p class="text-muted">Publicado em: <strong>@Model.DataPublicacao.ToString("dd/MM/yyyy")</strong></p>
         </div>
 
-        <div class="content">
-            <div class="lead">@Html.Raw(ViewBag.ConteudoHtml)</div>
+        <div class="artigo-conteudo markdown-body">
+            @Html.Raw(ViewBag.ConteudoHtml)
         </div>
+
 
         <div class="mt-5">
             <h4 class="text-muted">Artigos Relacionados</h4>
@@ -167,8 +169,6 @@
             }
         }
     </script>
-
-
 }
 
 <style>
@@ -300,4 +300,79 @@
     .btn-danger {
         background-color: #d9534f;
     }
+
+     .markdown-body {
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+        color: #065A66;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .markdown-body h1 {
+        font-size: 2rem;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .markdown-body h2 {
+        font-size: 1.6rem;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .markdown-body h3 {
+        font-size: 1.3rem;
+    }
+
+    .markdown-body p {
+        margin: 1em 0;
+    }
+
+    .markdown-body ul {
+        padding-left: 1.5rem;
+        list-style-type: disc;
+    }
+
+    .markdown-body ol {
+        padding-left: 1.5rem;
+        list-style-type: decimal;
+    }
+
+    .markdown-body blockquote {
+        border-left: 4px solid #065A66;
+        background-color: #f9f9f9;
+        padding: 10px 15px;
+        color: #444;
+        margin: 1em 0;
+        font-style: italic;
+    }
+
+    .markdown-body a {
+        color: #007BFF;
+        text-decoration: underline;
+        transition: color 0.2s ease;
+    }
+
+        .markdown-body a:hover {
+            color: #0056b3;
+        }
+
+    .markdown-body code {
+        background-color: #f4f4f4;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: Consolas, monospace;
+    }
+
+    .markdown-body pre code {
+        display: block;
+        padding: 10px;
+        background-color: #eee;
+        overflow-x: auto;
+    }
+
 </style>

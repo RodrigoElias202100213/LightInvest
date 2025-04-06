@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "src": [
+      {
+        "files": [
+          "LightInvest/**/*.cs"
+        ],
+        "exclude": [
+          "LightInvest/Tests/**/*.cs"
+        ]
+      }
+    ],
+    "dest": "obj/api"
+  },
+  "build": {
+    "content": [
+      {
+        "files": [
+          "docs/**/*.md"
+        ]
+      }
+    ],
+    "dest": "_site"
+  }
+}
