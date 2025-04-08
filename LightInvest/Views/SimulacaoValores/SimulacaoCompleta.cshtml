@@ -3,7 +3,6 @@
 @using LightInvest.Models.Simulacao.Tarifa
 @using LightInvest.Models.Simulacao
 
-
 @model SimulacaoCompletaViewModel
 
 @{
@@ -49,6 +48,8 @@
                              Model.ResultadoTarifaViewModel.ConsumoMensal.Average(cm => cm.Consumo) : 0;
 }
 
+
+
 <div class="container">
     <div class="sidebar">
         <div class="steps">
@@ -59,12 +60,14 @@
         </div>
     </div>
 
-        <a href="@Url.Action("Index", "Home")" class="btn-anterior">
-            <img src="~/images/anterior.png" alt="Voltar" id="anterior" />
-        </a>
-
     <div class="content">        
-        <h2>Simulação Completa</h2>
+        <div class="header">
+            <h2>Simulação Completa</h2>
+            <a href="@Url.Action("Index", "Home")" class="btn-anterior">
+                <img src="~/images/anterior.png" alt="Voltar" id="anterior" />
+            </a>
+        </div>
+        
         <section class="section">
             <h3>1. Consumo de Energia</h3>
             <div class="info-box">
@@ -89,7 +92,7 @@
             <h3>2. Tarifa</h3>
             <div class="info-box">
                 <p><strong>Tipo de Tarifa:</strong> @Model.TarifaViewModel.TipoDeTarifaEscolhida</p>
-                <p><strong>Preço do kWh:</strong> @Model.TarifaViewModel.PrecoKWh.ToString("C") (em €)</p>
+                <p><strong>Preço do kWh:</strong> @Model.TarifaViewModel.PrecoKWh.ToString("C")</p>
             </div>
         </section>
 
@@ -178,11 +181,11 @@
 
         <div id="btn-container">
             <a href="@Url.Action("ExportPDF", "SimulacaoValores")" class="btn-pdf">Exportar PDF</a>
-            <button onclick="exportarExcel()">Exportar Excel</button>
-            <button onclick="exportarCSV()">Exportar CSV</button>
+            <button onclick="exportarExcel()" class="btn-excel">Exportar Excel</button>
+            <button onclick="exportarCSV()"  class="btn-csv">Exportar CSV</button>
 
             <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn-voltar-topo">
-                ↑ Voltar ao topo
+                ↑
             </button>
 
             <a href="@Url.Action("Create", "DadosInstalacao")" class="btn">Anterior</a>
@@ -526,13 +529,31 @@
         padding: 20px;
     }
 
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #anterior {
+        transform: scale(0.1);
+    }
+
     h2 {
         font-weight: bold;
         font-size: 3rem;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: #065A66;
-        text-align: center;
-        margin-bottom: 4%;
+        margin-top:5%;
+    }
+
+    h3 {
+        margin-bottom:2%;
+    }
+
+    h5 {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        font-weight: bolder;
     }
 
     .section {
@@ -568,12 +589,6 @@
         padding: 2px;
     }
 
-    h5 {
-        margin-top: 2%;
-        margin-bottom: 2%;
-        font-weight: bolder;
-    }
-
     .month-checkboxes {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -593,6 +608,32 @@
         height: 18px;
     }
 
+    .chart-container {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        max-width: 100%;
+        height: 400px;
+    }
+
+    .small-chart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 300px;
+    }
+
+    .btn {
+        background-color: #065A66;
+        color:white;
+        padding: 3px 14px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+    }
+
     #btn-container {
         display: flex;
         justify-content: center;
@@ -601,59 +642,26 @@
         margin-top: 20px;
     }
 
-    .btn {
-        background-color: #065A66;
-    }
-
-    .btn-pdf{
-        background-color: rgba(100, 209, 116, 0.69);
-    }
-
-    .btn-pdf:hover{
-        background-color: rgba(100, 209, 116, 0.69);
-        color:white;
-    }
-
-    .btn-csv{
-        background-color: #9B9B9B;
-    }
-
-    .btn-csv:hover {
-        background-color: #9B9B9B;
-        color:white;
-    }
-
-
-    .btn-excel {
-        background: rgba(255, 0, 0, 0.61);
-    }
-
-    .btn-excel:hover {
-            background: rgba(255, 0, 0, 0.61);
-        color:white;
-    }
-
-
-    .btn, .btn-excel, .btn-pdf, .btn-csv {
-        color: white;
-        padding: 10px 20px;
-        border: none;
+    .btn-pdf,.btn-pdf:hover {
+        background-color: #f0f0f0;
+        color: black;
         cursor: pointer;
-        border-radius: 10px;
-        text-decoration: none;
         text-align: center;
-    }
-
-    .btn:hover {
-        background: #065A66;
-        color: white;
+        text-decoration: none;
+        border: 1px rgba(105, 105, 105, 1) black;
+        font-family: sans-serif;
+        font-size: 16px;
+        box-shadow: inset -2px -2px 0 black, inset 2px 2px 0 black;
+        clip-path: polygon(4% 0, 96% 0, 100% 4%, 100% 96%, 96% 100%, 4% 100%, 0 96%, 0 4%);
+        transition: background-color 0.3s, color 0.3s;
+        padding: 3px 10px;
     }
 
     .btn-voltar-topo {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #007bff;
+        background-color: #065A66;
         color: white;
         border: none;
         border-radius: 50%;
@@ -661,17 +669,6 @@
         height: 40px;
         font-size: 18px;
         cursor: pointer;
-    }
-
-      .chart-container {
-  max-width: 100%;
-  height: 400px;
-}
-
-    }
-
-    .small-chart {
-        max-width: 300px;
     }
 
     .table {
