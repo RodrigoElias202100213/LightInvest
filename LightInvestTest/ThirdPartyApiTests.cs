@@ -27,7 +27,7 @@ public class TarifaService
 
 	public async Task<decimal> GetTarifaAsync()
 	{
-		var response = await _httpClient.GetAsync("tarifa"); // Apenas "tarifa", pois já temos a BaseAddress
+		var response = await _httpClient.GetAsync("tarifa"); 
 		response.EnsureSuccessStatusCode();
 
 		var content = await response.Content.ReadAsStringAsync();
@@ -73,7 +73,7 @@ public class ThirdPartyApiIntegrationTests : IClassFixture<WebApplicationFactory
 
 		var httpClient = new HttpClient(httpMessageHandlerMock.Object)
 		{
-			BaseAddress = new Uri("https://api-tarifas.com/") // Definindo a BaseAddress corretamente
+			BaseAddress = new Uri("https://api-tarifas.com/")
 		};
 
 		var service = new TarifaService(httpClient);

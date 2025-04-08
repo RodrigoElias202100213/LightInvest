@@ -270,6 +270,7 @@ namespace LightInvest.Controllers.Simul
 		/// <remarks>
 		/// This method generates a CSV file with key simulation data, including weekly consumption averages, total consumption, and annual consumption costs.
 		/// </remarks>
+		[HttpGet]
 		public async Task<IActionResult> ExportCSV()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
@@ -284,10 +285,23 @@ namespace LightInvest.Controllers.Simul
 			csv.AppendLine($"Média Fim de Semana,{viewModel.EnergyConsumptionViewModel.MediaFimSemana}");
 			csv.AppendLine($"Média Anual,{viewModel.EnergyConsumptionViewModel.MediaAnual}");
 			csv.AppendLine($"Consumo Total,{viewModel.EnergyConsumptionViewModel.ConsumoTotal}");
-
-			byte[] buffer = Encoding.UTF8.GetBytes(csv.ToString());
-			return File(buffer, "text/csv", "Simulacao.csv");
+			return Content(csv.ToString(), "text/csv", Encoding.UTF8);
 		}
+
+
+		public async Task<IActionResult> ExportExcel()
+		{
+
+			var userEmail = HttpContext.Session.GetString("UserEmail");
+			if (string.IsNullOrEmpty(userEmail))
+				return BadRequest("Utilizador não autenticado.");
+
+			var viewModel = await GerarViewModelCompleto(userEmail);
+
+			return Content("Funcionalidade de exportação para PDF não implementada.");
+		}
+
+
 		/// <summary>
 		/// Generates the complete view model for the user, including energy consumption, tariff, and ROI data.
 		/// </summary>

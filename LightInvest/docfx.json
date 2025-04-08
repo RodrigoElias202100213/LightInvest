@@ -6,7 +6,7 @@
           "files": [
             "**.csproj"
           ],
-          "src": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\maisoutraoutra\\LightInvest"
+          "src": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\FIM\\LightInvest"
         }
       ],
       "dest": "api",

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgn6bCX9dlE+7JlG8Q6dv1wAAAAACAAAAAAAQZgAAAAEAACAAAAANX40A8xVzUqDeuyAlDfxKREt8zZLOIx8tc9PU7QJxgQAAAAAOgAAAAAIAACAAAACFk6WBg5Dewx9WKgNx7hIW0A+ZxKAVvE5ZC5X/T0fjs4AAAAD30K6KjS5FmYJXdk+pww7+Z6a1zjYGBbFrnuxRDwg86bXrjsMcutyZRov8i8It8SGOjF27jjchWmq4L2kmRxbm9xyO2hg9rKi+pvfy3TGOc+CX+DIXyRFCgqDjY8R6jpymJtO/YZFPdN/Ugur6Upzf0BvJL2441SQVnstYVPRo60AAAABJ6MPUCMbLT4sqOH1z5YAPxE7DHbN730BNusiTxiw8tFSiKCL/bTJyPJGMs0lN+zs0XDAap46B4Hunl+X0Bbps</EncryptedPassword>
+    <History>True|2025-04-06T20:21:48.7370436Z||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=tcp:lightinvest2425.database.windows.net,1433%3bInitial Catalog=lightinvest%3bPersist Security Info=False%3bUser ID=light%3bPassword=admin123!%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="LightInvest.Models.BD.ApplicationDbContext">
+      <Value>Server=tcp:lightinvest2425.database.windows.net,1433%3bInitial Catalog=lightinvest%3bPersist Security Info=False%3bUser ID=light%3bPassword=admin123!%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>
