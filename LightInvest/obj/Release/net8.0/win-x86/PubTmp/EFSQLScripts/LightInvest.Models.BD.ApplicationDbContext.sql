@@ -724,3 +724,121 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250409191013_populate'
+)
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'ArtigoId', N'ArtigoId1', N'Categoria', N'Conteudo', N'DataPublicacao', N'DescricaoCurta', N'ImagemUrl', N'Titulo') AND [object_id] = OBJECT_ID(N'[Artigos]'))
+        SET IDENTITY_INSERT [Artigos] ON;
+    EXEC(N'INSERT INTO [Artigos] ([ArtigoId], [ArtigoId1], [Categoria], [Conteudo], [DataPublicacao], [DescricaoCurta], [ImagemUrl], [Titulo])
+    VALUES (4, NULL, N''Energia Renovável'', CONCAT(CAST(nchar(13) AS nvarchar(max)), nchar(10), N''A eficiência energética é uma das estratégias mais eficazes para reduzir a fatura de eletricidade. Este artigo apresenta algumas práticas simples e acessíveis que podem fazer a diferença no consumo de energia.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Dicas de Eficiência Energética'', nchar(13), nchar(10), N''1. **Iluminação LED:** Trocar lâmpadas incandescentes por LEDs pode reduzir significativamente o consumo de energia em casa ou na empresa.'', nchar(13), nchar(10), N''2. **Equipamentos Eficientes:** Optar por eletrodomésticos com classificação energética A+++ garante menor consumo de energia.'', nchar(13), nchar(10), N''3. **Isolamento Térmico:** Melhorar o isolamento térmico das divisões reduz o uso excessivo de aquecedores e ar-condicionado.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Benefícios'', nchar(13), nchar(10), N''- Redução imediata na fatura mensal;'', nchar(13), nchar(10), N''- Menor impacto ambiental;'', nchar(13), nchar(10), N''- Valorização do imóvel.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Conclusão'', nchar(13), nchar(10), N''Investir em eficiência energética é uma solução sustentável que permite poupar dinheiro e proteger o meio ambiente.''), ''2024-03-10T00:00:00.0000000'', N''Descobre como poupar energia e reduzir custos com medidas simples e eficientes.'', N''/images/artigos/eficiencia-energetica.jpg'', N''Como Reduzir a Fatura de Energia com Eficiência Energética''),
+    (5, NULL, N''Energia Renovável'', CONCAT(CAST(nchar(13) AS nvarchar(max)), nchar(10), N''Portugal tem-se destacado como um dos países europeus com maior aposta em energias renováveis. Conhece as principais vantagens de investir nesta área.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Benefícios das Renováveis'', nchar(13), nchar(10), N''1. **Redução de Custos:** A longo prazo, os investimentos em energia solar ou eólica geram poupanças consideráveis na fatura de energia.'', nchar(13), nchar(10), N''2. **Sustentabilidade Ambiental:** Reduzem a pegada de carbono e protegem os recursos naturais.'', nchar(13), nchar(10), N''3. **Incentivos e Apoios:** Existem vários programas e incentivos estatais para quem pretende investir em energias renováveis.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Perspetivas Futuras'', nchar(13), nchar(10), N''Portugal continuará a expandir a sua produção de energia limpa, criando oportunidades de investimento e desenvolvimento tecnológico.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Conclusão'', nchar(13), nchar(10), N''Investir em energias renováveis em Portugal é uma decisão inteligente, com benefícios económicos e ambientais a curto e longo prazo.''), ''2024-04-05T00:00:00.0000000'', N''Conhece as principais vantagens de apostar nas energias renováveis em Portugal.'', N''/images/artigos/renovaveis-portugal.jpg'', N''Vantagens de Investir em Energia Renovável em Portugal''),
+    (6, NULL, N''Painéis Solares'', CONCAT(CAST(nchar(13) AS nvarchar(max)), nchar(10), N''A manutenção preventiva dos painéis solares é fundamental para garantir o seu correto funcionamento e prolongar a sua vida útil. Neste artigo, partilhamos boas práticas essenciais.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Cuidados a Ter'', nchar(13), nchar(10), N''1. **Limpeza Regular:** A acumulação de poeira, folhas ou resíduos nos painéis pode reduzir a eficiência da produção de energia.'', nchar(13), nchar(10), N''2. **Inspeção de Cablagens:** Verificar se os cabos e conexões estão em bom estado evita perdas de energia ou avarias.'', nchar(13), nchar(10), N''3. **Monitorização de Desempenho:** Utilizar sistemas de monitorização permite detetar rapidamente qualquer anomalia.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Benefícios da Manutenção'', nchar(13), nchar(10), N''- Aumento da eficiência energética;'', nchar(13), nchar(10), N''- Prevenção de danos graves;'', nchar(13), nchar(10), N''- Maior rentabilidade do investimento.'', nchar(13), nchar(10), nchar(13), nchar(10), N''### Conclusão'', nchar(13), nchar(10), N''A manutenção preventiva dos painéis solares é um passo simples, mas essencial, para garantir o melhor desempenho do sistema a longo prazo.''), ''2024-05-02T00:00:00.0000000'', N''Aprende boas práticas para manter os painéis solares sempre eficientes e seguros.'', N''/images/artigos/manutencao-paineis.jpg'', N''Manutenção Preventiva de Painéis Solares: Boas Práticas'')');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'ArtigoId', N'ArtigoId1', N'Categoria', N'Conteudo', N'DataPublicacao', N'DescricaoCurta', N'ImagemUrl', N'Titulo') AND [object_id] = OBJECT_ID(N'[Artigos]'))
+        SET IDENTITY_INSERT [Artigos] OFF;
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250409191013_populate'
+)
+BEGIN
+    EXEC(N'UPDATE [Users] SET [Name] = N''LightInvest''
+    WHERE [Id] = 3;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250409191013_populate'
+)
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Email', N'IsAdmin', N'Name', N'Password') AND [object_id] = OBJECT_ID(N'[Users]'))
+        SET IDENTITY_INSERT [Users] ON;
+    EXEC(N'INSERT INTO [Users] ([Id], [Email], [IsAdmin], [Name], [Password])
+    VALUES (4, N''tiagosilva@gmail.com'', CAST(0 AS bit), N''Tiago Silva'', N''Password123''),
+    (5, N''anacosta@hotmail.com'', CAST(0 AS bit), N''Ana Costa'', N''Password123''),
+    (6, N''joaoferreira@sapo.pt'', CAST(0 AS bit), N''João Ferreira'', N''Password123''),
+    (7, N''martasantos@gmail.com'', CAST(0 AS bit), N''Marta Santos'', N''Password123''),
+    (8, N''brunorocha@hotmail.com'', CAST(0 AS bit), N''Bruno Rocha'', N''Password123''),
+    (9, N''carlamendes@sapo.pt'', CAST(0 AS bit), N''Carla Mendes'', N''Password123''),
+    (10, N''diogogomes@gmail.com'', CAST(0 AS bit), N''Diogo Gomes'', N''Password123''),
+    (11, N''filiparibeiro@hotmail.com'', CAST(0 AS bit), N''Filipa Ribeiro'', N''Password123''),
+    (12, N''andresousa@sapo.pt'', CAST(0 AS bit), N''André Sousa'', N''Password123''),
+    (13, N''raquelalmeida@gmail.com'', CAST(0 AS bit), N''Raquel Almeida'', N''Password123''),
+    (14, N''pedromartins@hotmail.com'', CAST(0 AS bit), N''Pedro Martins'', N''Password123''),
+    (15, N''sofialopes@sapo.pt'', CAST(0 AS bit), N''Sofia Lopes'', N''Password123''),
+    (16, N''ricardopinto@gmail.com'', CAST(0 AS bit), N''Ricardo Pinto'', N''Password123''),
+    (17, N''patricianunes@hotmail.com'', CAST(0 AS bit), N''Patrícia Nunes'', N''Password123''),
+    (18, N''luiscarvalho@sapo.pt'', CAST(0 AS bit), N''Luís Carvalho'', N''Password123''),
+    (19, N''beatrizfonseca@gmail.com'', CAST(0 AS bit), N''Beatriz Fonseca'', N''Password123''),
+    (20, N''miguelteixeira@hotmail.com'', CAST(0 AS bit), N''Miguel Teixeira'', N''Password123''),
+    (21, N''catiabarros@sapo.pt'', CAST(0 AS bit), N''Cátia Barros'', N''Password123''),
+    (22, N''hugocorreia@gmail.com'', CAST(0 AS bit), N''Hugo Correia'', N''Password123''),
+    (23, N''danielafaria@hotmail.com'', CAST(0 AS bit), N''Daniela Faria'', N''Password123''),
+    (24, N''rodrigo.elias2003@gmail.com'', CAST(1 AS bit), N''Rodrigo Elias'', N''rodrigoR123''),
+    (25, N''veragfernandes04@gmail.com'', CAST(1 AS bit), N''Vera Fernandes'', N''veraF123'')');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Email', N'IsAdmin', N'Name', N'Password') AND [object_id] = OBJECT_ID(N'[Users]'))
+        SET IDENTITY_INSERT [Users] OFF;
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250409191013_populate'
+)
+BEGIN
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ArtigoId', N'Autor', N'DataCriacao', N'Texto', N'UserId') AND [object_id] = OBJECT_ID(N'[Comentario]'))
+        SET IDENTITY_INSERT [Comentario] ON;
+    EXEC(N'INSERT INTO [Comentario] ([Id], [ArtigoId], [Autor], [DataCriacao], [Texto], [UserId])
+    VALUES (4, 1, N''Tiago Silva'', ''2025-03-02T00:00:00.0000000'', N''Artigo muito esclarecedor, obrigado pela partilha!'', 4),
+    (5, 1, N''Ana Costa'', ''2025-03-02T00:00:00.0000000'', N''Gostava de ver mais exemplos práticos.'', 5),
+    (6, 1, N''João Ferreira'', ''2025-03-03T00:00:00.0000000'', N''Concordo plenamente com o que foi escrito.'', 6),
+    (7, 1, N''Marta Santos'', ''2025-03-03T00:00:00.0000000'', N''Já sigo o vosso site há algum tempo, excelente trabalho.'', 7),
+    (8, 2, N''Bruno Rocha'', ''2025-03-04T00:00:00.0000000'', N''Também tenho dúvidas em relação ao ROI, podiam fazer um artigo só sobre isso.'', 8),
+    (9, 2, N''Carla Mendes'', ''2025-03-04T00:00:00.0000000'', N''Muito bom conteúdo, continue assim!'', 9),
+    (10, 2, N''Diogo Gomes'', ''2025-03-05T00:00:00.0000000'', N''Conseguem partilhar fontes adicionais sobre este tema?'', 10),
+    (11, 2, N''Filipa Ribeiro'', ''2025-03-05T00:00:00.0000000'', N''Gostei muito deste artigo, bem explicado.'', 11),
+    (12, 2, N''André Sousa'', ''2025-03-06T00:00:00.0000000'', N''Tenho uma sugestão de tema: fundos de investimento.'', 12),
+    (13, 3, N''Raquel Almeida'', ''2025-03-06T00:00:00.0000000'', N''Excelente conteúdo, parabéns!'', 13),
+    (14, 3, N''Pedro Martins'', ''2025-03-07T00:00:00.0000000'', N''Muito completo e detalhado.'', 14),
+    (15, 3, N''Sofia Lopes'', ''2025-03-07T00:00:00.0000000'', N''Era bom ter uma versão em vídeo também.'', 15),
+    (16, 3, N''Ricardo Pinto'', ''2025-03-08T00:00:00.0000000'', N''Óptima explicação dos conceitos base.'', 16),
+    (17, 3, N''Patrícia Nunes'', ''2025-03-08T00:00:00.0000000'', N''A parte dos exemplos ajudou-me muito.'', 17),
+    (18, 1, N''Luís Carvalho'', ''2025-03-09T00:00:00.0000000'', N''Gostava de saber mais sobre análise técnica.'', 18),
+    (19, 1, N''Beatriz Fonseca'', ''2025-03-09T00:00:00.0000000'', N''Parabéns pelo artigo, muito bem escrito.'', 19),
+    (20, 1, N''Miguel Teixeira'', ''2025-03-10T00:00:00.0000000'', N''O conteúdo foi muito útil para mim, obrigado.'', 20),
+    (21, 2, N''Cátia Barros'', ''2025-03-10T00:00:00.0000000'', N''Seria interessante aprofundar sobre ETFs.'', 21),
+    (22, 2, N''Hugo Correia'', ''2025-03-11T00:00:00.0000000'', N''Já partilhei com amigos, muito bom!'', 22),
+    (23, 2, N''Daniela Faria'', ''2025-03-11T00:00:00.0000000'', N''Ajudou-me a perceber melhor o mercado.'', 23),
+    (24, 5, N''Tiago Silva'', ''2025-03-12T00:00:00.0000000'', N''Este artigo me ajudou a entender melhor a importância da análise de mercado. Parabéns!'', 4),
+    (25, 5, N''Ana Costa'', ''2025-03-12T00:00:00.0000000'', N''Muito interessante, mas eu gostaria de mais exemplos de ferramentas.'', 5),
+    (26, 5, N''João Ferreira'', ''2025-03-13T00:00:00.0000000'', N''Acho que poderiam adicionar mais estudos de caso sobre ROI. Isso ajudaria bastante.'', 6),
+    (27, 5, N''Marta Santos'', ''2025-03-13T00:00:00.0000000'', N''Adorei a forma como o conteúdo foi estruturado. Fácil de entender!'', 7),
+    (28, 6, N''Bruno Rocha'', ''2025-03-14T00:00:00.0000000'', N''Muito bom, já compartilhei com a minha rede de contatos. Espero ver mais artigos assim.'', 8),
+    (29, 6, N''Carla Mendes'', ''2025-03-14T00:00:00.0000000'', N''Preciso de mais informações sobre como aplicar isso em investimentos pessoais.'', 9),
+    (30, 6, N''Diogo Gomes'', ''2025-03-15T00:00:00.0000000'', N''Muito relevante para quem está iniciando no mercado financeiro. Obrigado pelo conteúdo.'', 10)');
+    IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ArtigoId', N'Autor', N'DataCriacao', N'Texto', N'UserId') AND [object_id] = OBJECT_ID(N'[Comentario]'))
+        SET IDENTITY_INSERT [Comentario] OFF;
+END;
+GO
+
+IF NOT EXISTS (
+    SELECT * FROM [__EFMigrationsHistory]
+    WHERE [MigrationId] = N'20250409191013_populate'
+)
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20250409191013_populate', N'8.0.0');
+END;
+GO
+
+COMMIT;
+GO
+

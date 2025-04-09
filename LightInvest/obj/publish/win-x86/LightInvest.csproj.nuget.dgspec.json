@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\FIM\\LightInvest\\LightInvest.csproj": {}
+    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\fim2\\LightInvest\\LightInvest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\FIM\\LightInvest\\LightInvest.csproj": {
+    "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\fim2\\LightInvest\\LightInvest.csproj": {
       "version": "8.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\FIM\\LightInvest\\LightInvest.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\fim2\\LightInvest\\LightInvest.csproj",
         "projectName": "LightInvest",
-        "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\FIM\\LightInvest\\LightInvest.csproj",
+        "projectPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\fim2\\LightInvest\\LightInvest.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\FIM\\LightInvest\\obj\\publish\\win-x86\\",
+        "outputPath": "C:\\Users\\rodri\\OneDrive\\Ambiente de Trabalho\\fim2\\LightInvest\\obj\\publish\\win-x86\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -119,15 +120,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-              "version": "[8.0.14, 8.0.14]"
+              "version": "[8.0.15, 8.0.15]"
             },
             {
               "name": "Microsoft.NETCore.App.Runtime.win-x86",
-              "version": "[8.0.14, 8.0.14]"
+              "version": "[8.0.15, 8.0.15]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
-              "version": "[8.0.14, 8.0.14]"
+              "version": "[8.0.15, 8.0.15]"
             }
           ],
           "frameworkReferences": {
@@ -138,7 +139,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
