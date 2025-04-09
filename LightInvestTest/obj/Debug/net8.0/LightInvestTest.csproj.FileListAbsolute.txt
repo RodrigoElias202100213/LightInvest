@@ -5688,3 +5688,5 @@ C:\Users\rodri\OneDrive\Ambiente de Trabalho\fim2\LightInvestTest\obj\Debug\net8
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\fim2\LightInvestTest\obj\Debug\net8.0\LightInvestTest.pdb
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\fim2\LightInvestTest\obj\Debug\net8.0\LightInvestTest.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Ambiente de Trabalho\fim2\LightInvestTest\obj\Debug\net8.0\ref\LightInvestTest.dll
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\fim2\LightInvestTest\bin\Debug\net8.0\_site\manifest.json
+C:\Users\rodri\OneDrive\Ambiente de Trabalho\fim2\LightInvestTest\bin\Debug\net8.0\_site\search-stopwords.json

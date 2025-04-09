@@ -407,7 +407,8 @@
               "RelativeToolTip": "LightInvest\\Views\\Account\\Register.cshtml",
               "ViewState": "AgIAAMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-09T16:58:30.404Z"
+              "WhenOpened": "2025-04-09T16:58:30.404Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -419,7 +420,8 @@
               "RelativeToolTip": "LightInvest\\Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAMkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-09T16:58:21.219Z"
+              "WhenOpened": "2025-04-09T16:58:21.219Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
