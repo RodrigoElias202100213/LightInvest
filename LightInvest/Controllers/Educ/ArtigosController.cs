@@ -256,8 +256,6 @@ namespace LightInvest.Controllers.Educ
 			return View(comentario);
 		}
 
-
-
 		/// <summary>
 		/// Edits an existing comment.
 		/// </summary>

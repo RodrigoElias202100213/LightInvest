@@ -67,7 +67,7 @@ namespace LightInvest.Controllers.Energy
 				return View(model);
 			}
 
-			var user = await ObterUsuarioLogadoAsync();
+			var user = await ObterUtilizadorLogadoAsync();
 			if (user == null)
 			{
 				ModelState.AddModelError(string.Empty, "Erro: Utilizador não autenticado.");
@@ -138,7 +138,7 @@ namespace LightInvest.Controllers.Energy
 		/// Retrieves the currently authenticated user based on session data.
 		/// </summary>
 		/// <returns>The user object if found; otherwise, null.</returns>
-		private async Task<User> ObterUsuarioLogadoAsync()
+		private async Task<User> ObterUtilizadorLogadoAsync()
 		{
 			var userEmail = HttpContext.Session.GetString("UserEmail");
 			return string.IsNullOrEmpty(userEmail)

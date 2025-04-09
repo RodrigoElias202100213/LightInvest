@@ -374,7 +374,7 @@
             </summary>
             <returns>The view for the confirmation page with the calculated price.</returns>
         </member>
-        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.ObterUsuarioLogadoAsync">
+        <member name="M:LightInvest.Controllers.Energy.DadosInstalacaoController.ObterUtilizadorLogadoAsync">
             <summary>
             Retrieves the currently authenticated user based on session data.
             </summary>
