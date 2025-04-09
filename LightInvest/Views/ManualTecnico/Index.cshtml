@@ -118,10 +118,8 @@
                 </video>
             </div>
       </div>
-
-        <button id="btnAvancar" class="btn btn-primary" onclick="alternarSecao('next')">Avançar</button>
         <button id="btnVoltar" class="btn btn-secondary" onclick="alternarSecao('prev')" style="display:none;">Voltar</button>
-
+        <button id="btnAvancar" class="btn btn-primary" onclick="alternarSecao('next')">Avançar</button>
     </div>
 
     <button class="btn-topo" onclick="voltarAoTopo()">
@@ -208,19 +206,19 @@
             align-items: center;
         }
 
-            .section .content {
-                flex: 1;
-                padding-right: 20px;
-            }
+        .section .content {
+            flex: 1;
+            padding-right: 20px;
+        }
 
-            .section .video-container {
-                width: 80%;
-                max-width: 500px;
-                height: auto;
-                border-radius: 8px;
-                display: block;
-                margin: 0 auto;
-            }
+        .section .video-container {
+            width: 80%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
 
         .btn-topo {
             position: fixed;
@@ -241,14 +239,19 @@
             padding: 0;
         }
 
-            .btn-topo img {
-                width: 20px;
-                height: 20px;
-            }
+        .btn-topo img {
+            width: 20px;
+            height: 20px;
+        }
 
-            .btn-topo:hover {
-                background: #04474F;
-            }
+        .btn-topo:hover {
+            background: #04474F;
+        }
+
+        #btnAvancar{
+            background-color: #065A66;
+            color:white;
+        }
 
         .btn {
             margin: 10px 0;

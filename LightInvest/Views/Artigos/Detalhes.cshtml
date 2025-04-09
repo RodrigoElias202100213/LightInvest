@@ -87,26 +87,28 @@
                         </div>
 
                         <div class="d-flex">
-                            @if (comentario.UserId == ViewBag.UtilizadorLogadoId)
-                            {
-                                <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-warning btn-sm me-2">Editar</a>
+                            <div class="container-horizontal">
+                                @if (comentario.UserId == ViewBag.UtilizadorLogadoId)
+                                {
+                                    <a href="@Url.Action("EditarComentario", new { comentarioId = comentario.Id, artigoId = Model.ArtigoId })" class="btn btn-editar">Editar</a>
 
-                                <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
-                                    @Html.AntiForgeryToken()
-                                    <input type="hidden" name="comentarioId" value="@comentario.Id" />
-                                    <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
-                                    <button type="submit" class="btn btn-danger btn-sm">Remover</button>
-                                </form>
-                            }
-                            else if (ViewBag.IsAdmin != null && (bool)ViewBag.IsAdmin)
-                            {
-                                <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
-                                    @Html.AntiForgeryToken()
-                                    <input type="hidden" name="comentarioId" value="@comentario.Id" />
-                                    <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
-                                    <button type="submit" class="btn btn-danger btn-sm">Remover</button>
-                                </form>
-                            }
+                                    <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="comentarioId" value="@comentario.Id" />
+                                        <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
+                                        <button type="submit" class="btn btn-danger btn-sm">Remover</button>
+                                    </form>
+                                }
+                                else if (ViewBag.IsAdmin != null && (bool)ViewBag.IsAdmin)
+                                {
+                                    <form asp-action="RemoverComentario" method="post" onsubmit="return confirm('Deseja realmente remover este comentário?');">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="comentarioId" value="@comentario.Id" />
+                                        <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
+                                        <button type="submit" class="btn btn-danger btn-sm">Remover</button>
+                                    </form>
+                                }
+                            </div>
                         </div>
                     </li>
                 }
@@ -207,6 +209,11 @@
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
+    .container-horizontal {
+        display:flex;
+        gap:5px;
+    }
+
     .btn-primary {
         background-color: #065A66;
         border-color: #065A66;
@@ -284,6 +291,26 @@
         color: #333;
     }
 
+    .btn-editar {
+        background-color:grey;
+        color:white;
+        padding: 3px 10px;
+        font-size: 0.8rem;
+        text-decoration:none;
+        text-align:center;
+        justify-content:center;
+        align-items:center;
+        display:flex;
+    }
+
+    .btn-editar:hover {
+            background-color: dimgrey;
+            color: white;
+            padding: 3px 10px;
+            font-size: 0.8rem;
+            text-decoration: none;
+    }
+
     .btn-sm {
         font-size: 0.8rem;
     }
@@ -294,7 +321,7 @@
     }
 
     .btn-success {
-        background-color: green;
+        background-color: #93D679;
     }
 
     .btn-danger {
@@ -357,9 +384,9 @@
         transition: color 0.2s ease;
     }
 
-        .markdown-body a:hover {
-            color: #0056b3;
-        }
+    .markdown-body a:hover {
+        color: #0056b3;
+    }
 
     .markdown-body code {
         background-color: #f4f4f4;

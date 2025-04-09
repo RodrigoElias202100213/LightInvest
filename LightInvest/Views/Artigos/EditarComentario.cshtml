@@ -3,27 +3,55 @@
 @{
     ViewData["Title"] = "Editar Comentário";
 }
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
 
-<h1>@ViewData["Title"]</h1>
+    <form asp-action="EditarComentario" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="comentarioId" value="@Model.Id" />
+        <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
 
-<form asp-action="EditarComentario" method="post">
-    @Html.AntiForgeryToken()
-    <input type="hidden" name="comentarioId" value="@Model.Id" />
-    <input type="hidden" name="artigoId" value="@Model.ArtigoId" />
+        <div class="form-group">
+            <label for="texto">Comentário:</label>
+            <textarea name="texto" id="texto" class="form-control" required>@Model.Texto</textarea>
+        </div>
 
-    <div class="form-group">
-        <label for="texto">Comentário:</label>
-        <textarea name="texto" id="texto" class="form-control" required>@Model.Texto</textarea>
-    </div>
+        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        <a href="@Url.Action("Detalhes", "Artigos", new { id = Model.ArtigoId })" class="btn">Cancelar</a>
+    </form>
 
-    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-    <a href="@Url.Action("Detalhes", "Artigos", new { id = Model.ArtigoId })" class="btn">Cancelar</a>
-</form>
+</div>
+
 
 <style>
+    h1{
+        margin-top: 5%;
+        font-size: 2.5rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #065A66;
+        font-weight: bold;
+        margin-bottom: 3%;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .container {
+        display:flex;
+        flex-direction: column;
+    }
+
+    #texto {
+        width: 70%;
+    }
+
+    .form-group{
+        margin-bottom:3%;
+    }
 
     .btn, .btn:hover {
         background-color: #065A66;
         color:white;
+        padding: 3px 10px;
     }
+
 </style>
