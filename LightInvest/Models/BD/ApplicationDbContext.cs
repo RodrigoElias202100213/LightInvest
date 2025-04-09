@@ -157,23 +157,36 @@ namespace LightInvest.Models.BD
 			);
 
 			modelBuilder.Entity<User>().HasData(
-	new User
-	{
-		Id = 1,
-		Name = "LighInvestSupport",
-		Email = "lightinvestsup2425@gmail.com",
-		Password = "LightInvestSup123",
-		IsAdmin = true
-	},
-	new User
-	{
-		Id = 3,
-		Name = "LightInvest ",
-		Email = "ligthinvestuser@gmail.com",
-		Password = "LightInvest123",
-		IsAdmin = false
-	}
-);
+			new User { Id = 1, Name = "LighInvestSupport", Email = "lightinvestsup2425@gmail.com", Password = "LightInvestSup123", IsAdmin = true },
+			new User { Id = 3, Name = "LightInvest", Email = "ligthinvestuser@gmail.com", Password = "LightInvest123", IsAdmin = false },
+
+			new User { Id = 24, Name = "Rodrigo Elias", Email = "rodrigo.elias2003@gmail.com", Password = "rodrigoR123", IsAdmin = true },
+			new User { Id = 25, Name = "Vera Fernandes", Email = "veragfernandes04@gmail.com", Password = "veraF123", IsAdmin = true },
+
+
+
+			new User { Id = 4, Name = "Tiago Silva", Email = "tiagosilva@gmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 5, Name = "Ana Costa", Email = "anacosta@hotmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 6, Name = "João Ferreira", Email = "joaoferreira@sapo.pt", Password = "Password123", IsAdmin = false },
+			new User { Id = 7, Name = "Marta Santos", Email = "martasantos@gmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 8, Name = "Bruno Rocha", Email = "brunorocha@hotmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 9, Name = "Carla Mendes", Email = "carlamendes@sapo.pt", Password = "Password123", IsAdmin = false },
+			new User { Id = 10, Name = "Diogo Gomes", Email = "diogogomes@gmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 11, Name = "Filipa Ribeiro", Email = "filiparibeiro@hotmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 12, Name = "André Sousa", Email = "andresousa@sapo.pt", Password = "Password123", IsAdmin = false },
+			new User { Id = 13, Name = "Raquel Almeida", Email = "raquelalmeida@gmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 14, Name = "Pedro Martins", Email = "pedromartins@hotmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 15, Name = "Sofia Lopes", Email = "sofialopes@sapo.pt", Password = "Password123", IsAdmin = false },
+			new User { Id = 16, Name = "Ricardo Pinto", Email = "ricardopinto@gmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 17, Name = "Patrícia Nunes", Email = "patricianunes@hotmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 18, Name = "Luís Carvalho", Email = "luiscarvalho@sapo.pt", Password = "Password123", IsAdmin = false },
+			new User { Id = 19, Name = "Beatriz Fonseca", Email = "beatrizfonseca@gmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 20, Name = "Miguel Teixeira", Email = "miguelteixeira@hotmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 21, Name = "Cátia Barros", Email = "catiabarros@sapo.pt", Password = "Password123", IsAdmin = false },
+			new User { Id = 22, Name = "Hugo Correia", Email = "hugocorreia@gmail.com", Password = "Password123", IsAdmin = false },
+			new User { Id = 23, Name = "Daniela Faria", Email = "danielafaria@hotmail.com", Password = "Password123", IsAdmin = false }
+
+			);
 
 
 
@@ -332,41 +345,134 @@ Planear e instalar um sistema de energia solar requer um processo detalhado e be
 ### Conclusão
 A instalação de sistemas solares é um processo técnico que exige um planeamento cuidadoso. Um bom planeamento e a escolha de profissionais qualificados podem garantir que o sistema solar seja eficiente e tenha uma vida útil longa.",
 			ImagemUrl = "/images/artigos/planeamento-solar.jpg",
-            Categoria = "Painéis Solares",
+			Categoria = "Painéis Solares",
 			DescricaoCurta = "Dicas essenciais para planear e instalar um sistema de energia solar de forma eficiente.",
 			DataPublicacao = new DateTime(2024, 2, 15)
-		}
-);
-			modelBuilder.Entity<Comentario>().HasData(
-	new Comentario
-	{
-		Id = 1,
-		Autor = "Rodrigo",
-		ArtigoId = 1, 
-		Texto = "Ótimo artigo! Muito informativo.",
-		DataCriacao = new DateTime(2025, 2, 16),
-		UserId = 1,			
-	},
-	new Comentario
-	{
-		Id = 2,
-		Autor="Rodrigo",
-		ArtigoId = 1,
-		Texto = "Gostei bastante das explicações sobre os benefícios ambientais!",
-		DataCriacao = new DateTime(2025, 2, 17),
-		UserId = 1 
-	},
-	new Comentario
-	{
-		Id = 3,
-		Autor = "Rodrigo",
-		ArtigoId = 2, 
-		Texto = "A ferramenta de cálculo do ROI seria muito útil! Vocês têm alguma recomendação?",
-		DataCriacao = new DateTime(2025, 3, 1),
-		UserId = 1 
-	}
-);
-		}
-	}
+		},
+		new Artigo
+		{
+			ArtigoId = 4,
+			Titulo = "Como Reduzir a Fatura de Energia com Eficiência Energética",
+			Conteudo = @"
+A eficiência energética é uma das estratégias mais eficazes para reduzir a fatura de eletricidade. Este artigo apresenta algumas práticas simples e acessíveis que podem fazer a diferença no consumo de energia.
 
+### Dicas de Eficiência Energética
+1. **Iluminação LED:** Trocar lâmpadas incandescentes por LEDs pode reduzir significativamente o consumo de energia em casa ou na empresa.
+2. **Equipamentos Eficientes:** Optar por eletrodomésticos com classificação energética A+++ garante menor consumo de energia.
+3. **Isolamento Térmico:** Melhorar o isolamento térmico das divisões reduz o uso excessivo de aquecedores e ar-condicionado.
+
+### Benefícios
+- Redução imediata na fatura mensal;
+- Menor impacto ambiental;
+- Valorização do imóvel.
+
+### Conclusão
+Investir em eficiência energética é uma solução sustentável que permite poupar dinheiro e proteger o meio ambiente.",
+			ImagemUrl = "/images/artigos/eficiencia-energetica.jpg",
+			Categoria = "Energia Renovável",
+			DescricaoCurta = "Descobre como poupar energia e reduzir custos com medidas simples e eficientes.",
+			DataPublicacao = new DateTime(2024, 3, 10)
+		},
+new Artigo
+{
+	ArtigoId = 5,
+	Titulo = "Vantagens de Investir em Energia Renovável em Portugal",
+	Conteudo = @"
+Portugal tem-se destacado como um dos países europeus com maior aposta em energias renováveis. Conhece as principais vantagens de investir nesta área.
+
+### Benefícios das Renováveis
+1. **Redução de Custos:** A longo prazo, os investimentos em energia solar ou eólica geram poupanças consideráveis na fatura de energia.
+2. **Sustentabilidade Ambiental:** Reduzem a pegada de carbono e protegem os recursos naturais.
+3. **Incentivos e Apoios:** Existem vários programas e incentivos estatais para quem pretende investir em energias renováveis.
+
+### Perspetivas Futuras
+Portugal continuará a expandir a sua produção de energia limpa, criando oportunidades de investimento e desenvolvimento tecnológico.
+
+### Conclusão
+Investir em energias renováveis em Portugal é uma decisão inteligente, com benefícios económicos e ambientais a curto e longo prazo.",
+	ImagemUrl = "/images/artigos/renovaveis-portugal.jpg",
+	Categoria = "Energia Renovável",
+	DescricaoCurta = "Conhece as principais vantagens de apostar nas energias renováveis em Portugal.",
+	DataPublicacao = new DateTime(2024, 4, 5)
+},
+new Artigo
+{
+	ArtigoId = 6,
+	Titulo = "Manutenção Preventiva de Painéis Solares: Boas Práticas",
+	Conteudo = @"
+A manutenção preventiva dos painéis solares é fundamental para garantir o seu correto funcionamento e prolongar a sua vida útil. Neste artigo, partilhamos boas práticas essenciais.
+
+### Cuidados a Ter
+1. **Limpeza Regular:** A acumulação de poeira, folhas ou resíduos nos painéis pode reduzir a eficiência da produção de energia.
+2. **Inspeção de Cablagens:** Verificar se os cabos e conexões estão em bom estado evita perdas de energia ou avarias.
+3. **Monitorização de Desempenho:** Utilizar sistemas de monitorização permite detetar rapidamente qualquer anomalia.
+
+### Benefícios da Manutenção
+- Aumento da eficiência energética;
+- Prevenção de danos graves;
+- Maior rentabilidade do investimento.
+
+### Conclusão
+A manutenção preventiva dos painéis solares é um passo simples, mas essencial, para garantir o melhor desempenho do sistema a longo prazo.",
+	ImagemUrl = "/images/artigos/manutencao-paineis.jpg",
+	Categoria = "Painéis Solares",
+	DescricaoCurta = "Aprende boas práticas para manter os painéis solares sempre eficientes e seguros.",
+	DataPublicacao = new DateTime(2024, 5, 2)
+}
+
+
+
+);
+
+			modelBuilder.Entity<Comentario>().HasData(
+			new Comentario
+			{
+				Id = 1,
+				Autor = "Rodrigo",
+				ArtigoId = 1,
+				Texto = "Ótimo artigo! Muito informativo.",
+				DataCriacao = new DateTime(2025, 2, 16),
+				UserId = 1,
+			},
+			new Comentario
+			{
+				Id = 2,
+				Autor = "Rodrigo",
+				ArtigoId = 1,
+				Texto = "Gostei bastante das explicações sobre os benefícios ambientais!",
+				DataCriacao = new DateTime(2025, 2, 17),
+				UserId = 1
+			},
+			 new Comentario { Id = 3, Autor = "Rodrigo", ArtigoId = 2, Texto = "A ferramenta de cálculo do ROI seria muito útil! Vocês têm alguma recomendação?", DataCriacao = new DateTime(2025, 3, 1), UserId = 1 },
+			new Comentario { Id = 4, Autor = "Tiago Silva", ArtigoId = 1, Texto = "Artigo muito esclarecedor, obrigado pela partilha!", DataCriacao = new DateTime(2025, 3, 2), UserId = 4 },
+			new Comentario { Id = 5, Autor = "Ana Costa", ArtigoId = 1, Texto = "Gostava de ver mais exemplos práticos.", DataCriacao = new DateTime(2025, 3, 2), UserId = 5 },
+			new Comentario { Id = 6, Autor = "João Ferreira", ArtigoId = 1, Texto = "Concordo plenamente com o que foi escrito.", DataCriacao = new DateTime(2025, 3, 3), UserId = 6 },
+			new Comentario { Id = 7, Autor = "Marta Santos", ArtigoId = 1, Texto = "Já sigo o vosso site há algum tempo, excelente trabalho.", DataCriacao = new DateTime(2025, 3, 3), UserId = 7 },
+			new Comentario { Id = 8, Autor = "Bruno Rocha", ArtigoId = 2, Texto = "Também tenho dúvidas em relação ao ROI, podiam fazer um artigo só sobre isso.", DataCriacao = new DateTime(2025, 3, 4), UserId = 8 },
+			new Comentario { Id = 9, Autor = "Carla Mendes", ArtigoId = 2, Texto = "Muito bom conteúdo, continue assim!", DataCriacao = new DateTime(2025, 3, 4), UserId = 9 },
+			new Comentario { Id = 10, Autor = "Diogo Gomes", ArtigoId = 2, Texto = "Conseguem partilhar fontes adicionais sobre este tema?", DataCriacao = new DateTime(2025, 3, 5), UserId = 10 },
+			new Comentario { Id = 11, Autor = "Filipa Ribeiro", ArtigoId = 2, Texto = "Gostei muito deste artigo, bem explicado.", DataCriacao = new DateTime(2025, 3, 5), UserId = 11 },
+			new Comentario { Id = 12, Autor = "André Sousa", ArtigoId = 2, Texto = "Tenho uma sugestão de tema: fundos de investimento.", DataCriacao = new DateTime(2025, 3, 6), UserId = 12 },
+			new Comentario { Id = 13, Autor = "Raquel Almeida", ArtigoId = 3, Texto = "Excelente conteúdo, parabéns!", DataCriacao = new DateTime(2025, 3, 6), UserId = 13 },
+			new Comentario { Id = 14, Autor = "Pedro Martins", ArtigoId = 3, Texto = "Muito completo e detalhado.", DataCriacao = new DateTime(2025, 3, 7), UserId = 14 },
+			new Comentario { Id = 15, Autor = "Sofia Lopes", ArtigoId = 3, Texto = "Era bom ter uma versão em vídeo também.", DataCriacao = new DateTime(2025, 3, 7), UserId = 15 },
+			new Comentario { Id = 16, Autor = "Ricardo Pinto", ArtigoId = 3, Texto = "Óptima explicação dos conceitos base.", DataCriacao = new DateTime(2025, 3, 8), UserId = 16 },
+			new Comentario { Id = 17, Autor = "Patrícia Nunes", ArtigoId = 3, Texto = "A parte dos exemplos ajudou-me muito.", DataCriacao = new DateTime(2025, 3, 8), UserId = 17 },
+			new Comentario { Id = 18, Autor = "Luís Carvalho", ArtigoId = 1, Texto = "Gostava de saber mais sobre análise técnica.", DataCriacao = new DateTime(2025, 3, 9), UserId = 18 },
+			new Comentario { Id = 19, Autor = "Beatriz Fonseca", ArtigoId = 1, Texto = "Parabéns pelo artigo, muito bem escrito.", DataCriacao = new DateTime(2025, 3, 9), UserId = 19 },
+			new Comentario { Id = 20, Autor = "Miguel Teixeira", ArtigoId = 1, Texto = "O conteúdo foi muito útil para mim, obrigado.", DataCriacao = new DateTime(2025, 3, 10), UserId = 20 },
+			new Comentario { Id = 21, Autor = "Cátia Barros", ArtigoId = 2, Texto = "Seria interessante aprofundar sobre ETFs.", DataCriacao = new DateTime(2025, 3, 10), UserId = 21 },
+			new Comentario { Id = 22, Autor = "Hugo Correia", ArtigoId = 2, Texto = "Já partilhei com amigos, muito bom!", DataCriacao = new DateTime(2025, 3, 11), UserId = 22 },
+			new Comentario { Id = 23, Autor = "Daniela Faria", ArtigoId = 2, Texto = "Ajudou-me a perceber melhor o mercado.", DataCriacao = new DateTime(2025, 3, 11), UserId = 23 },
+			new Comentario { Id = 24, Autor = "Tiago Silva", ArtigoId = 5, Texto = "Este artigo me ajudou a entender melhor a importância da análise de mercado. Parabéns!", DataCriacao = new DateTime(2025, 3, 12), UserId = 4 },
+			new Comentario { Id = 25, Autor = "Ana Costa", ArtigoId = 5, Texto = "Muito interessante, mas eu gostaria de mais exemplos de ferramentas.", DataCriacao = new DateTime(2025, 3, 12), UserId = 5 },
+			new Comentario { Id = 26, Autor = "João Ferreira", ArtigoId = 5, Texto = "Acho que poderiam adicionar mais estudos de caso sobre ROI. Isso ajudaria bastante.", DataCriacao = new DateTime(2025, 3, 13), UserId = 6 },
+			new Comentario { Id = 27, Autor = "Marta Santos", ArtigoId = 5, Texto = "Adorei a forma como o conteúdo foi estruturado. Fácil de entender!", DataCriacao = new DateTime(2025, 3, 13), UserId = 7 },
+			new Comentario { Id = 28, Autor = "Bruno Rocha", ArtigoId = 6, Texto = "Muito bom, já compartilhei com a minha rede de contatos. Espero ver mais artigos assim.", DataCriacao = new DateTime(2025, 3, 14), UserId = 8 },
+			new Comentario { Id = 29, Autor = "Carla Mendes", ArtigoId = 6, Texto = "Preciso de mais informações sobre como aplicar isso em investimentos pessoais.", DataCriacao = new DateTime(2025, 3, 14), UserId = 9 },
+			new Comentario { Id = 30, Autor = "Diogo Gomes", ArtigoId = 6, Texto = "Muito relevante para quem está iniciando no mercado financeiro. Obrigado pelo conteúdo.", DataCriacao = new DateTime(2025, 3, 15), UserId = 10 }
+			);
+		}
+
+	}
 }

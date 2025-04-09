@@ -94,6 +94,36 @@ namespace LightInvest.Migrations
                             DescricaoCurta = "Dicas essenciais para planear e instalar um sistema de energia solar de forma eficiente.",
                             ImagemUrl = "/images/artigos/planeamento-solar.jpg",
                             Titulo = "Planeamento e Instalação de Sistemas de Energia Solar"
+                        },
+                        new
+                        {
+                            ArtigoId = 4,
+                            Categoria = "Energia Renovável",
+                            Conteudo = "\r\nA eficiência energética é uma das estratégias mais eficazes para reduzir a fatura de eletricidade. Este artigo apresenta algumas práticas simples e acessíveis que podem fazer a diferença no consumo de energia.\r\n\r\n### Dicas de Eficiência Energética\r\n1. **Iluminação LED:** Trocar lâmpadas incandescentes por LEDs pode reduzir significativamente o consumo de energia em casa ou na empresa.\r\n2. **Equipamentos Eficientes:** Optar por eletrodomésticos com classificação energética A+++ garante menor consumo de energia.\r\n3. **Isolamento Térmico:** Melhorar o isolamento térmico das divisões reduz o uso excessivo de aquecedores e ar-condicionado.\r\n\r\n### Benefícios\r\n- Redução imediata na fatura mensal;\r\n- Menor impacto ambiental;\r\n- Valorização do imóvel.\r\n\r\n### Conclusão\r\nInvestir em eficiência energética é uma solução sustentável que permite poupar dinheiro e proteger o meio ambiente.",
+                            DataPublicacao = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DescricaoCurta = "Descobre como poupar energia e reduzir custos com medidas simples e eficientes.",
+                            ImagemUrl = "/images/artigos/eficiencia-energetica.jpg",
+                            Titulo = "Como Reduzir a Fatura de Energia com Eficiência Energética"
+                        },
+                        new
+                        {
+                            ArtigoId = 5,
+                            Categoria = "Energia Renovável",
+                            Conteudo = "\r\nPortugal tem-se destacado como um dos países europeus com maior aposta em energias renováveis. Conhece as principais vantagens de investir nesta área.\r\n\r\n### Benefícios das Renováveis\r\n1. **Redução de Custos:** A longo prazo, os investimentos em energia solar ou eólica geram poupanças consideráveis na fatura de energia.\r\n2. **Sustentabilidade Ambiental:** Reduzem a pegada de carbono e protegem os recursos naturais.\r\n3. **Incentivos e Apoios:** Existem vários programas e incentivos estatais para quem pretende investir em energias renováveis.\r\n\r\n### Perspetivas Futuras\r\nPortugal continuará a expandir a sua produção de energia limpa, criando oportunidades de investimento e desenvolvimento tecnológico.\r\n\r\n### Conclusão\r\nInvestir em energias renováveis em Portugal é uma decisão inteligente, com benefícios económicos e ambientais a curto e longo prazo.",
+                            DataPublicacao = new DateTime(2024, 4, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DescricaoCurta = "Conhece as principais vantagens de apostar nas energias renováveis em Portugal.",
+                            ImagemUrl = "/images/artigos/renovaveis-portugal.jpg",
+                            Titulo = "Vantagens de Investir em Energia Renovável em Portugal"
+                        },
+                        new
+                        {
+                            ArtigoId = 6,
+                            Categoria = "Painéis Solares",
+                            Conteudo = "\r\nA manutenção preventiva dos painéis solares é fundamental para garantir o seu correto funcionamento e prolongar a sua vida útil. Neste artigo, partilhamos boas práticas essenciais.\r\n\r\n### Cuidados a Ter\r\n1. **Limpeza Regular:** A acumulação de poeira, folhas ou resíduos nos painéis pode reduzir a eficiência da produção de energia.\r\n2. **Inspeção de Cablagens:** Verificar se os cabos e conexões estão em bom estado evita perdas de energia ou avarias.\r\n3. **Monitorização de Desempenho:** Utilizar sistemas de monitorização permite detetar rapidamente qualquer anomalia.\r\n\r\n### Benefícios da Manutenção\r\n- Aumento da eficiência energética;\r\n- Prevenção de danos graves;\r\n- Maior rentabilidade do investimento.\r\n\r\n### Conclusão\r\nA manutenção preventiva dos painéis solares é um passo simples, mas essencial, para garantir o melhor desempenho do sistema a longo prazo.",
+                            DataPublicacao = new DateTime(2024, 5, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DescricaoCurta = "Aprende boas práticas para manter os painéis solares sempre eficientes e seguros.",
+                            ImagemUrl = "/images/artigos/manutencao-paineis.jpg",
+                            Titulo = "Manutenção Preventiva de Painéis Solares: Boas Práticas"
                         });
                 });
 
@@ -159,6 +189,249 @@ namespace LightInvest.Migrations
                             DataCriacao = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Texto = "A ferramenta de cálculo do ROI seria muito útil! Vocês têm alguma recomendação?",
                             UserId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ArtigoId = 1,
+                            Autor = "Tiago Silva",
+                            DataCriacao = new DateTime(2025, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Artigo muito esclarecedor, obrigado pela partilha!",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ArtigoId = 1,
+                            Autor = "Ana Costa",
+                            DataCriacao = new DateTime(2025, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Gostava de ver mais exemplos práticos.",
+                            UserId = 5
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ArtigoId = 1,
+                            Autor = "João Ferreira",
+                            DataCriacao = new DateTime(2025, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Concordo plenamente com o que foi escrito.",
+                            UserId = 6
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ArtigoId = 1,
+                            Autor = "Marta Santos",
+                            DataCriacao = new DateTime(2025, 3, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Já sigo o vosso site há algum tempo, excelente trabalho.",
+                            UserId = 7
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ArtigoId = 2,
+                            Autor = "Bruno Rocha",
+                            DataCriacao = new DateTime(2025, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Também tenho dúvidas em relação ao ROI, podiam fazer um artigo só sobre isso.",
+                            UserId = 8
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ArtigoId = 2,
+                            Autor = "Carla Mendes",
+                            DataCriacao = new DateTime(2025, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Muito bom conteúdo, continue assim!",
+                            UserId = 9
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ArtigoId = 2,
+                            Autor = "Diogo Gomes",
+                            DataCriacao = new DateTime(2025, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Conseguem partilhar fontes adicionais sobre este tema?",
+                            UserId = 10
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ArtigoId = 2,
+                            Autor = "Filipa Ribeiro",
+                            DataCriacao = new DateTime(2025, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Gostei muito deste artigo, bem explicado.",
+                            UserId = 11
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ArtigoId = 2,
+                            Autor = "André Sousa",
+                            DataCriacao = new DateTime(2025, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Tenho uma sugestão de tema: fundos de investimento.",
+                            UserId = 12
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ArtigoId = 3,
+                            Autor = "Raquel Almeida",
+                            DataCriacao = new DateTime(2025, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Excelente conteúdo, parabéns!",
+                            UserId = 13
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ArtigoId = 3,
+                            Autor = "Pedro Martins",
+                            DataCriacao = new DateTime(2025, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Muito completo e detalhado.",
+                            UserId = 14
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ArtigoId = 3,
+                            Autor = "Sofia Lopes",
+                            DataCriacao = new DateTime(2025, 3, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Era bom ter uma versão em vídeo também.",
+                            UserId = 15
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ArtigoId = 3,
+                            Autor = "Ricardo Pinto",
+                            DataCriacao = new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Óptima explicação dos conceitos base.",
+                            UserId = 16
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ArtigoId = 3,
+                            Autor = "Patrícia Nunes",
+                            DataCriacao = new DateTime(2025, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "A parte dos exemplos ajudou-me muito.",
+                            UserId = 17
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ArtigoId = 1,
+                            Autor = "Luís Carvalho",
+                            DataCriacao = new DateTime(2025, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Gostava de saber mais sobre análise técnica.",
+                            UserId = 18
+                        },
+                        new
+                        {
+                            Id = 19,
+                            ArtigoId = 1,
+                            Autor = "Beatriz Fonseca",
+                            DataCriacao = new DateTime(2025, 3, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Parabéns pelo artigo, muito bem escrito.",
+                            UserId = 19
+                        },
+                        new
+                        {
+                            Id = 20,
+                            ArtigoId = 1,
+                            Autor = "Miguel Teixeira",
+                            DataCriacao = new DateTime(2025, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "O conteúdo foi muito útil para mim, obrigado.",
+                            UserId = 20
+                        },
+                        new
+                        {
+                            Id = 21,
+                            ArtigoId = 2,
+                            Autor = "Cátia Barros",
+                            DataCriacao = new DateTime(2025, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Seria interessante aprofundar sobre ETFs.",
+                            UserId = 21
+                        },
+                        new
+                        {
+                            Id = 22,
+                            ArtigoId = 2,
+                            Autor = "Hugo Correia",
+                            DataCriacao = new DateTime(2025, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Já partilhei com amigos, muito bom!",
+                            UserId = 22
+                        },
+                        new
+                        {
+                            Id = 23,
+                            ArtigoId = 2,
+                            Autor = "Daniela Faria",
+                            DataCriacao = new DateTime(2025, 3, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Ajudou-me a perceber melhor o mercado.",
+                            UserId = 23
+                        },
+                        new
+                        {
+                            Id = 24,
+                            ArtigoId = 5,
+                            Autor = "Tiago Silva",
+                            DataCriacao = new DateTime(2025, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Este artigo me ajudou a entender melhor a importância da análise de mercado. Parabéns!",
+                            UserId = 4
+                        },
+                        new
+                        {
+                            Id = 25,
+                            ArtigoId = 5,
+                            Autor = "Ana Costa",
+                            DataCriacao = new DateTime(2025, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Muito interessante, mas eu gostaria de mais exemplos de ferramentas.",
+                            UserId = 5
+                        },
+                        new
+                        {
+                            Id = 26,
+                            ArtigoId = 5,
+                            Autor = "João Ferreira",
+                            DataCriacao = new DateTime(2025, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Acho que poderiam adicionar mais estudos de caso sobre ROI. Isso ajudaria bastante.",
+                            UserId = 6
+                        },
+                        new
+                        {
+                            Id = 27,
+                            ArtigoId = 5,
+                            Autor = "Marta Santos",
+                            DataCriacao = new DateTime(2025, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Adorei a forma como o conteúdo foi estruturado. Fácil de entender!",
+                            UserId = 7
+                        },
+                        new
+                        {
+                            Id = 28,
+                            ArtigoId = 6,
+                            Autor = "Bruno Rocha",
+                            DataCriacao = new DateTime(2025, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Muito bom, já compartilhei com a minha rede de contatos. Espero ver mais artigos assim.",
+                            UserId = 8
+                        },
+                        new
+                        {
+                            Id = 29,
+                            ArtigoId = 6,
+                            Autor = "Carla Mendes",
+                            DataCriacao = new DateTime(2025, 3, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Preciso de mais informações sobre como aplicar isso em investimentos pessoais.",
+                            UserId = 9
+                        },
+                        new
+                        {
+                            Id = 30,
+                            ArtigoId = 6,
+                            Autor = "Diogo Gomes",
+                            DataCriacao = new DateTime(2025, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Texto = "Muito relevante para quem está iniciando no mercado financeiro. Obrigado pelo conteúdo.",
+                            UserId = 10
                         });
                 });
 
@@ -380,8 +653,184 @@ namespace LightInvest.Migrations
                             Id = 3,
                             Email = "ligthinvestuser@gmail.com",
                             IsAdmin = false,
-                            Name = "LightInvest ",
+                            Name = "LightInvest",
                             Password = "LightInvest123"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Email = "rodrigo.elias2003@gmail.com",
+                            IsAdmin = true,
+                            Name = "Rodrigo Elias",
+                            Password = "rodrigoR123"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Email = "veragfernandes04@gmail.com",
+                            IsAdmin = true,
+                            Name = "Vera Fernandes",
+                            Password = "veraF123"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Email = "tiagosilva@gmail.com",
+                            IsAdmin = false,
+                            Name = "Tiago Silva",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Email = "anacosta@hotmail.com",
+                            IsAdmin = false,
+                            Name = "Ana Costa",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Email = "joaoferreira@sapo.pt",
+                            IsAdmin = false,
+                            Name = "João Ferreira",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Email = "martasantos@gmail.com",
+                            IsAdmin = false,
+                            Name = "Marta Santos",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Email = "brunorocha@hotmail.com",
+                            IsAdmin = false,
+                            Name = "Bruno Rocha",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Email = "carlamendes@sapo.pt",
+                            IsAdmin = false,
+                            Name = "Carla Mendes",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Email = "diogogomes@gmail.com",
+                            IsAdmin = false,
+                            Name = "Diogo Gomes",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Email = "filiparibeiro@hotmail.com",
+                            IsAdmin = false,
+                            Name = "Filipa Ribeiro",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Email = "andresousa@sapo.pt",
+                            IsAdmin = false,
+                            Name = "André Sousa",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Email = "raquelalmeida@gmail.com",
+                            IsAdmin = false,
+                            Name = "Raquel Almeida",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Email = "pedromartins@hotmail.com",
+                            IsAdmin = false,
+                            Name = "Pedro Martins",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Email = "sofialopes@sapo.pt",
+                            IsAdmin = false,
+                            Name = "Sofia Lopes",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Email = "ricardopinto@gmail.com",
+                            IsAdmin = false,
+                            Name = "Ricardo Pinto",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Email = "patricianunes@hotmail.com",
+                            IsAdmin = false,
+                            Name = "Patrícia Nunes",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Email = "luiscarvalho@sapo.pt",
+                            IsAdmin = false,
+                            Name = "Luís Carvalho",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Email = "beatrizfonseca@gmail.com",
+                            IsAdmin = false,
+                            Name = "Beatriz Fonseca",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Email = "miguelteixeira@hotmail.com",
+                            IsAdmin = false,
+                            Name = "Miguel Teixeira",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Email = "catiabarros@sapo.pt",
+                            IsAdmin = false,
+                            Name = "Cátia Barros",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Email = "hugocorreia@gmail.com",
+                            IsAdmin = false,
+                            Name = "Hugo Correia",
+                            Password = "Password123"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Email = "danielafaria@hotmail.com",
+                            IsAdmin = false,
+                            Name = "Daniela Faria",
+                            Password = "Password123"
                         });
                 });
 
