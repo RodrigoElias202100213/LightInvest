@@ -28,7 +28,7 @@ public class HomeControllerTests
 			.UseInMemoryDatabase(databaseName: "TestDb")
 			.Options;
 		_context = new ApplicationDbContext(options);
-		_context.Database.EnsureDeleted(); // Limpa os dados antes de cada teste
+		_context.Database.EnsureDeleted(); 
 		_context.Database.EnsureCreated();
 
 		_mockLogger = new Mock<ILogger<HomeController>>();

@@ -163,8 +163,6 @@ namespace LightInvest.Models.BD
 			new User { Id = 24, Name = "Rodrigo Elias", Email = "rodrigo.elias2003@gmail.com", Password = "rodrigoR123", IsAdmin = true },
 			new User { Id = 25, Name = "Vera Fernandes", Email = "veragfernandes04@gmail.com", Password = "veraF123", IsAdmin = true },
 
-
-
 			new User { Id = 4, Name = "Tiago Silva", Email = "tiagosilva@gmail.com", Password = "Password123", IsAdmin = false },
 			new User { Id = 5, Name = "Ana Costa", Email = "anacosta@hotmail.com", Password = "Password123", IsAdmin = false },
 			new User { Id = 6, Name = "João Ferreira", Email = "joaoferreira@sapo.pt", Password = "Password123", IsAdmin = false },
@@ -187,9 +185,6 @@ namespace LightInvest.Models.BD
 			new User { Id = 23, Name = "Daniela Faria", Email = "danielafaria@hotmail.com", Password = "Password123", IsAdmin = false }
 
 			);
-
-
-
 
 			modelBuilder.Entity<ModeloPainelSolar>().HasData(
 				new ModeloPainelSolar { Id = 1, ModeloNome = "Aiko - Comet 2U", Preco = 1250.00m },
@@ -370,7 +365,7 @@ A eficiência energética é uma das estratégias mais eficazes para reduzir a f
 Investir em eficiência energética é uma solução sustentável que permite poupar dinheiro e proteger o meio ambiente.",
 			ImagemUrl = "/images/artigos/eficiencia-energetica.jpg",
 			Categoria = "Energia Renovável",
-			DescricaoCurta = "Descobre como poupar energia e reduzir custos com medidas simples e eficientes.",
+			DescricaoCurta = "Descubra como poupar energia e reduzir custos com medidas simples e eficientes.",
 			DataPublicacao = new DateTime(2024, 3, 10)
 		},
 new Artigo
@@ -378,7 +373,7 @@ new Artigo
 	ArtigoId = 5,
 	Titulo = "Vantagens de Investir em Energia Renovável em Portugal",
 	Conteudo = @"
-Portugal tem-se destacado como um dos países europeus com maior aposta em energias renováveis. Conhece as principais vantagens de investir nesta área.
+Portugal tem-se destacado como um dos países europeus com maior aposta em energias renováveis. Conheça as principais vantagens de investir nesta área.
 
 ### Benefícios das Renováveis
 1. **Redução de Custos:** A longo prazo, os investimentos em energia solar ou eólica geram poupanças consideráveis na fatura de energia.
@@ -392,7 +387,7 @@ Portugal continuará a expandir a sua produção de energia limpa, criando oport
 Investir em energias renováveis em Portugal é uma decisão inteligente, com benefícios económicos e ambientais a curto e longo prazo.",
 	ImagemUrl = "/images/artigos/renovaveis-portugal.jpg",
 	Categoria = "Energia Renovável",
-	DescricaoCurta = "Conhece as principais vantagens de apostar nas energias renováveis em Portugal.",
+	DescricaoCurta = "Conheça as principais vantagens de apostar nas energias renováveis em Portugal.",
 	DataPublicacao = new DateTime(2024, 4, 5)
 },
 new Artigo
@@ -416,11 +411,9 @@ A manutenção preventiva dos painéis solares é fundamental para garantir o se
 A manutenção preventiva dos painéis solares é um passo simples, mas essencial, para garantir o melhor desempenho do sistema a longo prazo.",
 	ImagemUrl = "/images/artigos/manutencao-paineis.jpg",
 	Categoria = "Painéis Solares",
-	DescricaoCurta = "Aprende boas práticas para manter os painéis solares sempre eficientes e seguros.",
+	DescricaoCurta = "Aprenda boas práticas para manter os painéis solares sempre eficientes e seguros.",
 	DataPublicacao = new DateTime(2024, 5, 2)
 }
-
-
 
 );
 

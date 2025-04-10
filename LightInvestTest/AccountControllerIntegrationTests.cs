@@ -14,9 +14,6 @@ using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
 using LightInvest.Models.BD;
 using Microsoft.EntityFrameworkCore;
 
-
-
-
 public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFactory<Program>>, IDisposable
 {
 	private readonly HttpClient _client;
@@ -61,5 +58,4 @@ public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFac
 
 		Assert.True(response.StatusCode == System.Net.HttpStatusCode.OK || response.StatusCode == System.Net.HttpStatusCode.Redirect);
 	}
-
 }

@@ -756,6 +756,18 @@
         <member name="M:LightInvest.Migrations.SeedUsers.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:LightInvest.Migrations.SeedUsers2">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.SeedUsers2.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.SeedUsers2.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:LightInvest.Migrations.SeedUsers2.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:LightInvest.Services.MediaStackResponse">
             <summary>
             Represents the response structure from the MediaStack API.
