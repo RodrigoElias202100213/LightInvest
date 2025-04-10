@@ -47,8 +47,8 @@ namespace LightInvestTest
 			// Arrange
 			var energyConsumption = new EnergyConsumption
 			{
-				ConsumoDiaSemana = new List<decimal> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 }, //11.5
-				ConsumoFimSemana = new List<decimal> { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 }, //15.8
+				ConsumoDiaSemana = new List<decimal> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 }, 
+				ConsumoFimSemana = new List<decimal> { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33 }, 
 				MesesOcupacao = new List<string> { "Janeiro", "Fevereiro" }
 			};
 
@@ -82,7 +82,7 @@ namespace LightInvestTest
 			var consumoComDesconto = energyConsumption.AplicarDesconto(10, 100, true);
 
 			// Assert
-			Assert.Equal(80m, consumoComDesconto); // 20% de desconto
+			Assert.Equal(80m, consumoComDesconto); 
 		}
 
 		[Fact]

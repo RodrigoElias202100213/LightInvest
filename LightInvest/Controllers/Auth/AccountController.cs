@@ -104,7 +104,6 @@ namespace LightInvest.Controllers.Auth
 			return View(model);
 		}
 
-
 		/// <summary>
 		/// Action responsible for displaying the user registration page (GET).
 		/// </summary>
@@ -115,7 +114,6 @@ namespace LightInvest.Controllers.Auth
 		{
 			return View(new RegisterViewModel());
 		}
-
 
 		/// <summary>
 		/// Action responsible for processing user registration (POST).
@@ -263,7 +261,6 @@ namespace LightInvest.Controllers.Auth
 
 			return RedirectToAction("GeneratePasswordResetTokenAndSendEmail");
 		}
-
 
 		/// <summary>
 		/// Action responsible for displaying the password recovery page (GET).

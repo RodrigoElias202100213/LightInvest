@@ -99,7 +99,7 @@ namespace LightInvestTest
 			// Arrange
 			var dadosInstalacao = new DadosInstalacao
 			{
-				ModeloPainel = null, // Modelo de painel nulo
+				ModeloPainel = null, 
 				NumeroPaineis = 5,
 				Inclinacao = 30,
 				Dificuldade = DificuldadeInstalacao.Media

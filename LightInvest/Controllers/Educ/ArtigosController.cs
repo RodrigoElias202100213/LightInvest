@@ -135,8 +135,6 @@ namespace LightInvest.Controllers.Educ
             return View(artigo);
         }
 
-
-
         /// <summary>
         /// Retrieves the logged-in user based on the session's email.
         /// </summary>
@@ -150,8 +148,6 @@ namespace LightInvest.Controllers.Educ
 				? null
 				: await _context.Users.FirstOrDefaultAsync(u => u.Email == userEmail);
 		}
-
-
 
 		/// <summary>
 		/// Adds a new comment to an article.
@@ -192,9 +188,6 @@ namespace LightInvest.Controllers.Educ
 			return RedirectToAction("Detalhes", new { id = artigoId });
 		}
 
-
-
-
 		/// <summary>
 		/// Removes a comment from an article.
 		/// </summary>
@@ -227,8 +220,6 @@ namespace LightInvest.Controllers.Educ
 
 			return RedirectToAction("Detalhes", new { id = artigoId });
 		}
-
-
 
 		/// <summary>
 		/// Displays the view for editing a comment.
@@ -332,8 +323,6 @@ namespace LightInvest.Controllers.Educ
 			return Json(new { success = true });
 		}
 
-
-
 		/// <summary>
 		/// Removes the like or dislike from a comment.
 		/// </summary>
@@ -375,4 +364,4 @@ namespace LightInvest.Controllers.Educ
 			return Json(new { success = true });
 		}
 	}
-	}
+}

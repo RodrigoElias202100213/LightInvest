@@ -15,8 +15,6 @@ using LightInvest.Models.BD;
 using Microsoft.EntityFrameworkCore;
 
 
-
-
 public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFactory<Program>>, IDisposable
 {
 	private readonly HttpClient _client;
