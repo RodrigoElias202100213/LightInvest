@@ -188,9 +188,6 @@ namespace LightInvest.Models.BD
 
 			);
 
-
-
-
 			modelBuilder.Entity<ModeloPainelSolar>().HasData(
 				new ModeloPainelSolar { Id = 1, ModeloNome = "Aiko - Comet 2U", Preco = 1250.00m },
 				new ModeloPainelSolar { Id = 2, ModeloNome = "Maxeon 7", Preco = 1320.00m },
@@ -370,7 +367,7 @@ A eficiência energética é uma das estratégias mais eficazes para reduzir a f
 Investir em eficiência energética é uma solução sustentável que permite poupar dinheiro e proteger o meio ambiente.",
 			ImagemUrl = "/images/artigos/eficiencia-energetica.jpg",
 			Categoria = "Energia Renovável",
-			DescricaoCurta = "Descobre como poupar energia e reduzir custos com medidas simples e eficientes.",
+			DescricaoCurta = "Descubra como poupar energia e reduzir custos com medidas simples e eficientes.",
 			DataPublicacao = new DateTime(2024, 3, 10)
 		},
 new Artigo
@@ -392,7 +389,7 @@ Portugal continuará a expandir a sua produção de energia limpa, criando oport
 Investir em energias renováveis em Portugal é uma decisão inteligente, com benefícios económicos e ambientais a curto e longo prazo.",
 	ImagemUrl = "/images/artigos/renovaveis-portugal.jpg",
 	Categoria = "Energia Renovável",
-	DescricaoCurta = "Conhece as principais vantagens de apostar nas energias renováveis em Portugal.",
+	DescricaoCurta = "Conheça as principais vantagens de apostar nas energias renováveis em Portugal.",
 	DataPublicacao = new DateTime(2024, 4, 5)
 },
 new Artigo
@@ -416,11 +413,9 @@ A manutenção preventiva dos painéis solares é fundamental para garantir o se
 A manutenção preventiva dos painéis solares é um passo simples, mas essencial, para garantir o melhor desempenho do sistema a longo prazo.",
 	ImagemUrl = "/images/artigos/manutencao-paineis.jpg",
 	Categoria = "Painéis Solares",
-	DescricaoCurta = "Aprende boas práticas para manter os painéis solares sempre eficientes e seguros.",
+	DescricaoCurta = "Aprenda boas práticas para manter os painéis solares sempre eficientes e seguros.",
 	DataPublicacao = new DateTime(2024, 5, 2)
 }
-
-
 
 );
 
